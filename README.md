@@ -11,7 +11,7 @@
 - Practicar métodos de SCRUM.
 
 
-<img height="500" src="client/src/assets/logoElCampito.jpg" />
+<img height="350" src="client/src/assets/logoElCampito.jpg" />
 
 
 
@@ -56,7 +56,34 @@ En `client` podrá encontrar, dentro de `src`, además del archivo `index.js` (c
 - [styles] ---> aquí todos los archivos de estilos modularizados que serán llamados luego por los componentes.
 
 
-<img height="500" src="client/src/assets/front.png" />
+<img height="400" src="client/src/assets/front.png" />
+
+## __Branches__
+
+Para un manejo ordenado se recomienda crear una rama nueva por cada función o componente a trabajar...y una vez aprobado y mergeado pasar a eliminar la rama, para evitar una lista indefinida de ramas. De esa forma solo quedarnos con las ramas activas.
+
+Eliminar ramas por `consola`:
+
+```
+// para borrar la branch local
+git branch -d myRama
+
+// para borrar la branch remota
+git push origin --delete myRama
+
+```
+
+Por otro lado, `github` tiene un boton para eliminar ramas remotas.
+
+Para la creación de nuevas ramas seguir las siguientes líneas:
+
+```
+git checkout -b myRama
+
+git pull origin developer
+// nos actualiza los últimos cambios a partir de la rama de desarrollo
+
+```
 
 
 ## __Enunciado__
@@ -70,18 +97,24 @@ El administrador podrá, a través de un panel de administración, incorporar di
 - [ ] React
 - [ ] Redux
 - [ ] Express
-- [ ] MongoDB - Mongosse
+- [ ] MongoDB - Mongoose
 
 #### Plataformas de apoyo organizacional
 
 - [ ] GitHub ---> alojamos el repositorio de trabajo compartido.
-    https://github.com/SoyDento/Proyecto2022/blob/addTrello/README.md
+    https://github.com/rodrigoebravo/el-campito-refugio-henry/tree/developer
 - [ ] Trello ---> Configuramos las `U.S.` y creamos las tareas para ser tomadas por los miembros del equipo. Establecemos un procesos de avance en columnas.
     https://trello.com/b/Vj8ybG92/kanban-template
 - [ ] Figma ---> Tenemos el maquetado de la app y su perfil estético.
     https://www.figma.com/file/1J1oyIBmnfcyyrSXy0qGw3/El-Campito-Refugio-Web?node-id=0%3A1git 
 - [ ] Postman --->  Montamos las rutas del `back` para prueba y visualización.
     https://galactic-shadow-340263.postman.co/workspace/Team-Workspace~f4a73fa3-c45a-4be0-8a53-895b1b65676d/collection/20469022-c6d4459b-582c-4b0e-9744-9e1223d9ebfe?ctx=documentation
+
+#### Formularios en Drive
+
+- Voluntario: https://docs.google.com/forms/d/e/1FAIpQLSfzfLy6YUVtZjIEKod3G4uvUmjZwhE3gsLdTmdTZplgtyBeow/viewform
+- Voluntario: https://docs.google.com/forms/d/e/1FAIpQLSfzfLy6YUVtZjIEKod3G4uvUmjZwhE3gsLdTmdTZplgtyBeow/viewform
+- Voluntario: https://docs.google.com/forms/d/e/1FAIpQLSfzfLy6YUVtZjIEKod3G4uvUmjZwhE3gsLdTmdTZplgtyBeow/viewform
   
 # Testing
 
