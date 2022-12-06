@@ -1,0 +1,51 @@
+*{
+    margin: 2%;
+ /*   text-align: justify;*/
+    line-height:normal
+    
+} 
+p,li{
+    font-family: seravek-web, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    color:black
+  }
+
+.h4Naranja{
+    color: #E48125;  
+}
+ul {
+    list-style: none;
+  }
+  
+ul li::before {
+    content: "\2022";
+    color: #E48125;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+}
+ol li {
+   
+    counter-increment: list;
+    list-style-type: none;
+    position: relative;
+
+  }
+ol li:before {
+    color: #E48125;
+    content: counter(list) ") ";
+    font-family: 'TrashHand', sans-serif;
+    font-weight: bold;
+}
+h1{
+    font-family: 'TrashHand', sans-serif;  
+    color: #E48125;  
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 51px;
+}
