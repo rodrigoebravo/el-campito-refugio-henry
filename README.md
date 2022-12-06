@@ -97,7 +97,7 @@ El administrador podrá, a través de un panel de administración, incorporar di
 - [ ] React
 - [ ] Redux
 - [ ] Express
-- [ ] MongoDB - Mongosse
+- [ ] MongoDB - Mongoose
 
 #### Plataformas de apoyo organizacional
 
