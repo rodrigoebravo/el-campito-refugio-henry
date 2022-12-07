@@ -6,6 +6,9 @@ const { usersModel } = require("../models");
  * @param {*} res
  */
 
+const roles = ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "patrocinador", "sponsor", "adoptante", "voluntario"];
+
+
 const getUsers = async (req, res) => {
     const { name } = req.query; 
 
@@ -47,5 +50,5 @@ const createUser = async (req, res) => {
 module.exports = {
     getUsers,
     createUser, 
-
+    roles,
 }

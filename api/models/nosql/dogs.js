@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongooseDelete = require("mongoose-delete");
 
-const DogScheme = new mongoose.Schema(
+const dogScheme = new mongoose.Schema(
   {
     name:  String,
     gender: {
@@ -36,5 +36,5 @@ const DogScheme = new mongoose.Schema(
   }
 );
 
-DogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
-module.exports = mongoose.model("dogs", DogScheme);
+dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+module.exports = mongoose.model("dogs", dogScheme);
