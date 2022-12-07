@@ -30,7 +30,27 @@ const volunteerScheme = mongoose.Schema({
     modality: {
       type:["presencial", "virtual", "hibrido"],
       default: "definir", 
-  },
+    },
+    availability: {
+        type: Number, 
+    },
+    days: [ String ],
+    description: {
+        type: String, 
+    },
+    purpose: {
+        type: String, 
+    },
+    vehicle: {
+        type: String, 
+    },
+    carpooling: {
+        type:["si", "no","tal vez"],
+        default: "definir", 
+    },
+    question: {
+        type: String, 
+    },
 },{
     timestamps: false, 
     versionKey: false, 

@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 
 const adoptionScheme = new mongoose.Schema(
   {
+    dog: {
+        name: String,
+        id: Number
+    },
     name: {
       type: String,
     },
@@ -19,7 +23,7 @@ const adoptionScheme = new mongoose.Schema(
     description: {
         type: String,
     },
-    
+        
   },
   {
     timestamps: false,

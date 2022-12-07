@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 // const mongooseDelete = require("mongoose-delete"); // ----> borrado suave sin romper DB
 
 const patronageScheme = new mongoose.Schema(
-  {
+  { 
+    dog: {
+        name: String,
+        id: Number
+    },
     name: {
       type: String,
     },
@@ -18,6 +22,12 @@ const patronageScheme = new mongoose.Schema(
         default: Date.now 
     },
     description: {
+        type: String,
+    },    
+    total: {
+        type: Number,
+    },
+    method: {
         type: String,
     },
     

@@ -3,13 +3,15 @@ const mongooseDelete = require("mongoose-delete");
 
 const dogScheme = new mongoose.Schema(
   {
-    name:  String,
+    name:  {
+      type: String,
+    },
     gender: {
-        type:["macho", "hembra"],
+        type:["macho","hembra"],
         default: "definir",
     },
     age: {
-        type:["adulto", "viejito","cachorro"],
+        type:["adulto","adulto jóven","viejito","cachorro","especial"],
         default: "definir",
     },
     size: {

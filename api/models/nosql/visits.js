@@ -8,7 +8,7 @@ const visitScheme = new mongoose.Schema(
     },
     institution: {
       type: String,
-      default: "public",
+      default: "no institution",
     },
     email: {
       type: String,

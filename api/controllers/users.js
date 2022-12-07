@@ -6,7 +6,7 @@ const { usersModel } = require("../models");
  * @param {*} res
  */
 
-const roles = ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "patrocinador", "sponsor", "adoptante", "voluntario"];
+const roles = ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"];
 
 
 const getUsers = async (req, res) => {

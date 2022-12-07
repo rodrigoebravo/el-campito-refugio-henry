@@ -19,7 +19,7 @@ const userScheme = mongoose.Schema({
         required: true,
     },
     roles: {
-      type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "patrocinador", "sponsor", "adoptante", "voluntario"],
+      type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
       default: "public", 
   },
 },{

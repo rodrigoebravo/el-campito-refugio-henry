@@ -3,8 +3,15 @@ const mongoose = require("mongoose");
 
 const contributionsScheme = new mongoose.Schema(
   {
+    name: {
+        type: String, 
+    },
+    email: {
+        type: String,
+        unique: true,
+    }, 
     type: {
-        type:["donación", "patrocinio","sponsoreo"],
+        type:["donación","membresía","sponsoreo"],
         default: "definir", 
     },
     detail: {
