@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"); 
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 
 
 const userScheme = mongoose.Schema({
@@ -18,34 +18,46 @@ const userScheme = mongoose.Schema({
         type: String,
         required: true,
     },
-    roles: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "roles",
-        },
-    ],
+    roles: {
+      type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
+      default: "public", 
+  },
+  isDelete: {
+    type: Boolean,
+    default: false,
+  }
 },{
     timestamps: false, 
     versionKey: false, 
 }); 
 
-productSchema.statics.encryptPassword = async (password) => {
-    const salt = await bcrypt.genSalt(10);
-    return await bcrypt.hash(password, salt);
-  };
+//------ Implementación de hasheo de pass en DB
+
+// userSchema.statics.encryptPassword = async (password) => {
+//     const salt = await bcrypt.genSalt(10);
+//     return await bcrypt.hash(password, salt);
+//   };
   
-  productSchema.statics.comparePassword = async (password, receivedPassword) => {
-    return await bcrypt.compare(password, receivedPassword)
-  }
+//   userSchema.statics.comparePassword = async (password, receivedPassword) => {
+//     return await bcrypt.compare(password, receivedPassword)
+//   }
   
-  productSchema.pre("save", async function (next) {
-    const user = this;
-    if (!user.isModified("password")) {
-      return next();
-    }
-    const hash = await bcrypt.hash(user.password, 10);
-    user.password = hash;
-    next();
-  })
+//   userSchema.pre("save", async function (next) {
+//     const user = this;
+//     if (!user.isModified("password")) {
+//       return next();
+//     }
+//     const hash = await bcrypt.hash(user.password, 10);
+//     user.password = hash;
+//     next();
+//   })
+
+userScheme.pre('find', function() {
+    this.where({ isDelete: false });
+  });
+  
+userScheme.pre('findOne', function() {
+    this.where({ isDelete: false });
+  });
 
 module.exports = mongoose.model("users", userScheme); 

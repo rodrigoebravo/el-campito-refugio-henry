@@ -4,6 +4,7 @@ require("dotenv").config();
 const dbConnect = require("./config/mongo"); 
 const app = express(); 
 
+
 //meddleware 
 app.use(cors()); //error de origen cruzado
 app.use(express.json()); //Manejar data .json
@@ -17,5 +18,6 @@ app.listen(port, ()=>{
 	console.log(`http://localhost:${port}`); 
   
 }); 
+
 
 dbConnect();
