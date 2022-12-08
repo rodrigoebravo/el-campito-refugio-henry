@@ -8,7 +8,7 @@ import {
 
 export function postDog(payload){
     return async function() {
-      const post = await axios.post('http://localhost:3001/api/dogs', payload)
+      const post = await axios.post('/api/dogs', payload)
       return post
     }
 }

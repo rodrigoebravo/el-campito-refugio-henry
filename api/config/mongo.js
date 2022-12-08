@@ -22,4 +22,7 @@ const dbConnect = () => {
     }
   );
 };
+
+mongoose.set('strictQuery', false);
+
 module.exports = dbConnect;
