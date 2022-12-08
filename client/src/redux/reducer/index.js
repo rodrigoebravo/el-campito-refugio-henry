@@ -10,6 +10,16 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state
               }
+        case GET_CLOUDINARY_RESPONSE:
+            return{
+                ...state,
+                responseCloudinary: action.payload
+            }
+        case CLEAR_CLOUDINARY_RESPONSE:
+            return{
+                ...state,
+                responseCloudinary: {}
+            }
         default: 
             return {
               ...state
