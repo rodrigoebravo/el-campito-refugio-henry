@@ -1,0 +1,39 @@
+p
+{font-family: 'Seravek';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+letter-spacing: 0.06em;}
+
+.puntosDeEncuentro{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.pPuntosDeEncuentro{
+font-family: 'Seravek';
+font-style: normal;
+font-weight: 700;
+font-size: 10px;
+line-height: 20px;
+letter-spacing: 0.06em;  
+}
+strong{
+    font-weight: 10px;
+    font-size: 15px; 
+}
+
+@media (max-width: 600px) {
+    .puntosDeEncuentro {
+        display:flex;
+        flex-direction: column;
+    }
+    .visitasImg{
+        width: 150px;
+       
+    }
+  }
+  
