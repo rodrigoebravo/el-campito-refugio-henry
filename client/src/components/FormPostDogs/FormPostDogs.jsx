@@ -1,18 +1,32 @@
 import React from "react";
 import { useForm } from "react-hook-form"
-/* import useDispatch from "react-redux"
-import { postDogs } from "../../redux/actions/index" */
+import useDispatch from "react-redux"
+import { postDog } from "../../redux/actions/index"
+
 
 //para que funcione el hook hacer npm intall react-hook-form
 
 const FormPostDogs = () => {
-    /* const dispatch = useDispatch(); */
+    const dispatch = useDispatch();
     const { register, handleSubmit, formState:{ errors } } = useForm();
+
+    const dog = React.useState({
+        name:"",
+        gender:"",
+        age:"",
+        size:"",
+        race:"",
+        video:"",
+        images: [],    
+        features:"",
+        references: []
+    });
 
     const onSubmit = (data) => {
         console.log(data)
-       /*  dispatch(postDogs(data)) */
-    }
+        dispatch(postDog(dog))
+    };
+
 
     return(
         <div>
@@ -62,12 +76,16 @@ const FormPostDogs = () => {
                 
                 <div>
                     <label>Video</label>
-                    <input type="text" {...register('video')}/>
+                    <ImagenUpload
+                        name="video"
+                    />
                 </div>
                 
                 <div>
-                    <label>Imagen</label>
-                    <input type="text" {...register('imagen')}/>
+                    <label>Imagenes</label>
+                    <ImagenUpload
+                        name="image"
+                    />
                 </div>
 
                 <div>
