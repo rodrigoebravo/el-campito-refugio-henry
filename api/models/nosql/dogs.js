@@ -42,6 +42,8 @@ const dogScheme = new mongoose.Schema(
   }
 );
 
+// dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+
 dogScheme.pre('find', function() {
   this.where({ isDelete: false });
 });
@@ -51,6 +53,6 @@ dogScheme.pre('findOne', function() {
 });
 
 
-
 // dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+
 module.exports = mongoose.model("dogs", dogScheme);

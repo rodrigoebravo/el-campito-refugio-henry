@@ -26,6 +26,7 @@ const userScheme = mongoose.Schema({
     type: Boolean,
     default: false,
   }
+
 },{
     timestamps: false, 
     versionKey: false, 
@@ -41,6 +42,7 @@ const userScheme = mongoose.Schema({
 //   userSchema.statics.comparePassword = async (password, receivedPassword) => {
 //     return await bcrypt.compare(password, receivedPassword)
 //   }
+
   
 //   userSchema.pre("save", async function (next) {
 //     const user = this;
@@ -59,5 +61,6 @@ userScheme.pre('find', function() {
 userScheme.pre('findOne', function() {
     this.where({ isDelete: false });
   });
+
 
 module.exports = mongoose.model("users", userScheme); 
