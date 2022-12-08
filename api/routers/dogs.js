@@ -1,10 +1,12 @@
 const router = require("express").Router(); 
-const { getDogs, getDogById, createDog, deleteDog, updateDog} = require("../controllers/dogs"); 
+const { getDogs, getDogById, createDog, updateDog } = require("../controllers/dogs"); 
 
 router.get("/", getDogs); 
 router.get("/:id", getDogById)
-router.post("/", createDog); 
+router.post("/", createDog);
+
 router.put("/", updateDog); 
-router.delete("/:id", deleteDog); 
+
+// router.delete("/:id", deleteDog); 
 
 module.exports = router; 

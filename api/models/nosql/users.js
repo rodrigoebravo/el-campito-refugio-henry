@@ -21,12 +21,11 @@ const userScheme = mongoose.Schema({
     roles: {
       type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
       default: "public", 
-      
-    isDelete: {
-        type: Boolean,
-        default: false,
-      }
   },
+  isDelete: {
+    type: Boolean,
+    default: false,
+  }
 },{
     timestamps: false, 
     versionKey: false, 
@@ -52,5 +51,13 @@ const userScheme = mongoose.Schema({
 //     user.password = hash;
 //     next();
 //   })
+
+userScheme.pre('find', function() {
+    this.where({ isDelete: false });
+  });
+  
+userScheme.pre('findOne', function() {
+    this.where({ isDelete: false });
+  });
 
 module.exports = mongoose.model("users", userScheme); 

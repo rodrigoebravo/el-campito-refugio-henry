@@ -63,42 +63,40 @@ const createUser = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-const updateUser = async (req, res) => {
-    try { 
-      const {_id, ...data} = req.body; 
 
-    //   console.log(data); 
+const updateUser = async (req, res) => {
+  try {
+
+    const {id , value} = req.query; 
+    const body  = req.body; 
+
+    if(id && value){
+      const user = await usersModel.findByIdAndUpdate(id, {isDelete: value}, {
+        returnOriginal: false, 
+      }); 
+      res.json(user);
+
+    } else if(body){
+
+      const { _id, ...data } = req.body; 
 
       const user = await usersModel.findByIdAndUpdate(_id, data, {
         returnOriginal: false, 
       }); 
-      
       res.json(user); 
-
-    } catch (error) {
-      res.status(404).send({ error });
     }
-  };
 
-/**
- * delete user
- * @param {*} req
- * @param {*} res
- */
-const deleteUser = async (req, res) => {
-  try {
-    const { id } = req.params;
-    // await usersModel.deleteOne({ _id: id });
-    res.send({ msg: "delete" });
   } catch (error) {
     res.status(404).send({ error });
   }
 };
+
+
+
 
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   updateUser,
-  deleteUser,
-};
+}; 

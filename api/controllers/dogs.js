@@ -55,54 +55,55 @@ const getDogById = async (req, res) => {
 const createDog = async (req, res) => {
   try {
     const { body } = req;
-    console.log(body);
+
     const dog = await dogModel.create(body);
     res.json(dog);
   } catch (error) {
     res.status(404).send({ error });
   }
 };
+
+
 /**
- * update Dog
+ * updtate dog
  * @param {*} req
  * @param {*} res
  */
 const updateDog = async (req, res) => {
-    try { 
-      const {_id, ...data} = req.body; 
+  try {
 
-    //   console.log(data); 
+    const {id , value} = req.query; 
+    const body  = req.body; 
+
+    if(id && value){
+      const dog = await dogModel.findByIdAndUpdate(id, {isDelete: value}, {
+        returnOriginal: false, 
+      }); 
+      res.send(dog);
+
+    } else if(body){
+
+      const { _id, ...data } = req.body; 
 
       const dog = await dogModel.findByIdAndUpdate(_id, data, {
         returnOriginal: false, 
       }); 
-
       res.json(dog); 
-
-    } catch (error) {
-      res.status(404).send({ error });
     }
-  };
 
-/**
- * delete dogs
- * @param {*} req
- * @param {*} res
- */
-const deleteDog = async (req, res) => {
-  try {
-    const { id } = req.params;
-    // await dogModel.deleteOne({ _id: id });
-    res.send({ msg: "delete all" });
   } catch (error) {
     res.status(404).send({ error });
   }
 };
+
+
+
+
 
 module.exports = {
   getDogs,
   getDogById,
   createDog,
   updateDog,
-  deleteDog,
+  
 };
