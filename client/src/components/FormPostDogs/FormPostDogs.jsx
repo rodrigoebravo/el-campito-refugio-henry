@@ -1,17 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form"
-import useDispatch from "react-redux"
-import { postDogs } from "../../redux/actions/index"
+/* import useDispatch from "react-redux"
+import { postDogs } from "../../redux/actions/index" */
 
 //para que funcione el hook hacer npm intall react-hook-form
 
 const FormPostDogs = () => {
-    const dispatch = useDispatch();
+    /* const dispatch = useDispatch(); */
     const { register, handleSubmit, formState:{ errors } } = useForm();
 
     const onSubmit = (data) => {
         console.log(data)
-        dispatch(postDogs(data))
+       /*  dispatch(postDogs(data)) */
     }
 
     return(
