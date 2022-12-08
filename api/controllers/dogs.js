@@ -72,11 +72,11 @@ const createDog = async (req, res) => {
 const updateDog = async (req, res) => {
   try {
 
-    const {id , value} = req.query; 
+    const {id , isDelete} = req.query; 
     const body  = req.body; 
 
-    if(id && value){
-      const dog = await dogModel.findByIdAndUpdate(id, {isDelete: value}, {
+    if(id && isDelete){
+      const dog = await dogModel.findByIdAndUpdate(id, { isDelete }, {
         returnOriginal: false, 
       }); 
       res.send(dog);

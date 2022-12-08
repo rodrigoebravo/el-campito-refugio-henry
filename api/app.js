@@ -5,17 +5,16 @@ const dbConnect = require("./config/mongo");
 const app = express(); 
 
 
-//meddleware 
+//midleware
 app.use(cors()); //error de origen cruzado
 app.use(express.json()); //Manejar data .json
 
-const port = process.env.PORT || 3000; 
 
 //router 
 app.use("/api", require("./routers")); 
 
-app.listen(port, ()=>{
-	console.log(`http://localhost:${port}`); 
+app.listen(process.env.PORT, ()=>{
+	console.log(`http://localhost:${process.env.PORT}`); 
   
 }); 
 

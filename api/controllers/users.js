@@ -70,11 +70,11 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
 
-    const {id , value} = req.query; 
+    const {id , isDelete} = req.query; 
     const body  = req.body; 
 
-    if(id && value){
-      const user = await usersModel.findByIdAndUpdate(id, {isDelete: value}, {
+    if(id && isDelete){
+      const user = await usersModel.findByIdAndUpdate(id, { isDelete }, {
         returnOriginal: false, 
       }); 
       res.json(user);

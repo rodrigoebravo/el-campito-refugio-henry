@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import homeimg from '../../img/homeimg.svg'
+import homeimg from '../../img/homeimg.jpg'
 import style from './Home.module.css'
 
 const Home = () => {
