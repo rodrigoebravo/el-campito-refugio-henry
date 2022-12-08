@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
 import FormPostDogs from "./components/FormPostDogs/FormPostDogs";
-import Home from './components/Home';
+
 import Home from './components/Home/Home'
 import ConocenosDetalle from './components/ConocenosDetalle/ConocenosDetalle'
 import QuieroAdoptar from './components/QuieroAdoptar/QuieroAdoptar'
@@ -14,7 +14,7 @@ import ElCampitoEscolar from "./components/ElCampitoEscolar/ElCampitoEscolar";
 function App() {
   return (
     <BrowserRouter>
-      <Route exact path={'/home'} component={Home}/>
+      
       <Route exact path={'/form'} component={FormPostDogs}/>
        <Route exact path={'/home'} component={Home}/>
       <Route exact path={'/detalle'} component={ConocenosDetalle}/>
