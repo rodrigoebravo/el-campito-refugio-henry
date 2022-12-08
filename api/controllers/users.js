@@ -1,51 +1,104 @@
-const { usersModel } = require("../models"); 
+const { usersModel } = require("../models");
 
 /**
- * obtener usuarios
+ * get all user
  * @param {*} req
  * @param {*} res
  */
 
 const getUsers = async (req, res) => {
+  try {
     const { name } = req.query; 
 
-    try {
+    if(name){
 
-        if(name){
-            const user = await usersModel.find({ name }); 
-            res.json(user); 
-        }else {
-            const allUsers = await usersModel.find({}); 
-            res.json(allUsers); 
-        }
+        const users = await usersModel.find({name});
+        res.json(users);
+    
+    } else {
 
-    }catch(error){
-        res.status(404).send({ error }); 
-    };
-   
+        const alluser = await usersModel.find({});
+        res.json(alluser);
+    }
+
+  } catch (error) {
+    res.status(404).send({ error });
+  }
+};
+/**
+ * get a users by _id
+ *
+ * @param {*} req
+ * @param {*} res
+ */
+const getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await usersModel.findById({ _id: id });
+
+    res.json(user);
+  } catch (error) {
+    res.status(404).send({ error });
+  }
 };
 
-
 /**
- * crear un nuevo usuario
+ * create a users
  * @param {*} req
  * @param {*} res
  */
 const createUser = async (req, res) => {
-    const { body } = req; 
-    try {
-        const newUser = await usersModel.create(body); 
-        res.json(newUser); 
+  try {
+    const { body } = req;
 
-    }catch(error){
-        res.status(404).send({ error }); 
-    }; 
+    const users = await usersModel.create(body);
+    res.json(users);
 
-}; 
+  } catch (error) {
+    res.status(404).send({ error });
+  }
+};
+/**
+ * update users
+ * @param {*} req
+ * @param {*} res
+ */
+const updateUser = async (req, res) => {
+    try { 
+      const {_id, ...data} = req.body; 
 
+    //   console.log(data); 
+
+      const user = await usersModel.findByIdAndUpdate(_id, data, {
+        returnOriginal: false, 
+      }); 
+      
+      res.json(user); 
+
+    } catch (error) {
+      res.status(404).send({ error });
+    }
+  };
+
+/**
+ * delete user
+ * @param {*} req
+ * @param {*} res
+ */
+const deleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    // await usersModel.deleteOne({ _id: id });
+    res.send({ msg: "delete" });
+  } catch (error) {
+    res.status(404).send({ error });
+  }
+};
 
 module.exports = {
-    getUsers,
-    createUser, 
-
-}
+  getUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+};
