@@ -1,5 +1,6 @@
 import React from "react";
 import CardsHome from "./CardsHome";
+import Footer from "./Footer/Footer";
 
 const Home = () => {
   return (
@@ -54,7 +55,7 @@ const Home = () => {
       </div>
       <div>
         {/* En esta linea hay que invocar al componente Footer */}
-        <h2>ACA VA EL COMPONENTE FOOTER</h2>
+        <Footer/>
       </div>
     </div>
   );
