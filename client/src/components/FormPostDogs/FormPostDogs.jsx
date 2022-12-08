@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import useDispatch from "react-redux"
 import { postDog } from "../../redux/actions/index"
 
+
 //para que funcione el hook hacer npm intall react-hook-form
 
 const FormPostDogs = () => {
@@ -25,6 +26,7 @@ const FormPostDogs = () => {
         console.log(data)
         dispatch(postDog(dog))
     };
+
 
     return(
         <div>
