@@ -18,7 +18,7 @@ const FormPostDogs = () => {
         video:"",
         images: [],    
         features:"",
-        references: []  
+        references: []
     });
 
     const onSubmit = (data) => {

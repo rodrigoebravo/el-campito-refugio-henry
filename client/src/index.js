@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import dotenv from "dotenv";
 dotenv.config();
 
+//para que funcione  hacer npm intall dotenv
+
 axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
