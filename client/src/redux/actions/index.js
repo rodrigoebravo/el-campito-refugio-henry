@@ -1,7 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config();
 import axios from 'axios'
-import { CLEAR_CLOUDINARY_RESPONSE } from './types'
+import { 
+  CLEAR_CLOUDINARY_RESPONSE,
+  GET_CLOUDINARY_RESPONSE } from './types'
 
 
 export function postDog(payload){
