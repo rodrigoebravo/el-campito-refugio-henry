@@ -1,9 +1,11 @@
-import dotenv from "dotenv";
-dotenv.config();
-import axios from 'axios'
 import { 
   CLEAR_CLOUDINARY_RESPONSE,
-  GET_CLOUDINARY_RESPONSE } from './types'
+  GET_CLOUDINARY_RESPONSE,
+  REMOVE_CLOUDINARY_IMAGE } from './types';
+import axios from 'axios';
+import dotenv from "dotenv";
+dotenv.config();
+
 
 
 export function postDog(payload){
@@ -27,6 +29,15 @@ export const clearCloudinaryResponse = () => {
   return async function (dispatch) {
       dispatch({
           type: CLEAR_CLOUDINARY_RESPONSE
+      })
+  };
+}
+
+export const removeCloudinayImage = (payload) => {
+  return async function (dispatch) {
+      dispatch({
+          type: REMOVE_CLOUDINARY_IMAGE,
+          payload
       })
   };
 }

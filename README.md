@@ -11,7 +11,7 @@
 - Practicar métodos de SCRUM.
 
 
-<img height="350" src="client/src/assets/logoElCampito.jpg" />
+<img height="350" src="views/logoElCampito.jpg" />
 
 
 
@@ -56,7 +56,7 @@ En `client` podrá encontrar, dentro de `src`, además del archivo `index.js` (c
 - [styles] ---> aquí todos los archivos de estilos modularizados que serán llamados luego por los componentes.
 
 
-<img height="400" src="client/src/assets/front.png" />
+<img height="400" src="views/front.png" />
 
 ## __Branches__
 
@@ -132,3 +132,16 @@ El administrador podrá, a través de un panel de administración, incorporar di
 - Jorge Chacin : Jorge12chacin  jorge12chacin@gmail.com
 - Tomas Wolfmann: tomiwolf  tomiwolfman@gmail.com
 - Nicolas Oviedo: Nicovied0   briannoviedo@gmail.com 
+
+## __views__
+
+Algunas vistas de diseño responsive, sin implementar el menu hamburguesa tadavía...
+
+<img height="400" src="views/menuResponsive.jpg" />
+<img height="400" src="views/AdoptarResponsive.jpg" />
+<img height="400" src="views/VoluntarioResponsive.jpg" />
+<img height="400" src="views/visitasResponsive.jpg" />
+<img height="400" src="views/EscolarResposive.jpg" />
+<img height="400" src="views/donarResponsive.jpg" />
+
+
