@@ -71,9 +71,8 @@ const createDog = async (req, res) => {
  */
 const updateDog = async (req, res) => {
   try {
-
-    const {id , isDelete} = req.query; 
-    const body  = req.body; 
+    const {query:{id, isDelete}, body } = req; 
+  
 
     if(id && isDelete){
       const dog = await dogModel.findByIdAndUpdate(id, { isDelete }, {
@@ -83,7 +82,7 @@ const updateDog = async (req, res) => {
 
     } else if(body){
 
-      const { _id, ...data } = req.body; 
+      const { _id, ...data } = body; 
 
       const dog = await dogModel.findByIdAndUpdate(_id, data, {
         returnOriginal: false, 

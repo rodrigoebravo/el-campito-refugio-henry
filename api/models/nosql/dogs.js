@@ -7,15 +7,18 @@ const dogScheme = new mongoose.Schema(
       type: String,
     },
     gender: {
-        type:["macho","hembra"],
+        type: String,
+        enum: ["macho","hembra"],
         default: "definir",
     },
     age: {
-        type:["adulto","adulto jóven","viejito","cachorro","especial"],
+        type: String,
+        enum: ["adulto","adulto jóven","viejito","cachorro","especial"],
         default: "definir",
     },
     size: {
-        type:["chico", "mediano","grande"],
+        type: String,
+        enum: ["chico", "mediano","grande"],
         default: "definir", 
     },
     race: {
