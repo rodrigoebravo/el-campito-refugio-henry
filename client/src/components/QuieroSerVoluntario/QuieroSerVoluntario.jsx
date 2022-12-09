@@ -1,5 +1,6 @@
 import {React} from 'react'
 import style from './QuieroSerVoluntario.module.css'
+import Footer from '../Footer/Footer'
 
 const QuieroSerVoluntario = () => {
   return ( /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
@@ -34,8 +35,8 @@ const QuieroSerVoluntario = () => {
         <button className={style.buttonVoluntario}>institucional@versiusamosestemail</button>
         <h3>¡Te esperamos!</h3>
       </div>
+    <Footer/>
     </div>
-    /*lo mismo para el footer, va a en todas las rutas */
-    /*falta el link al form de adopcion y ver si lo hacemos nosotros  y sigue siendo un drive */)
+    )
 }
 export default QuieroSerVoluntario;

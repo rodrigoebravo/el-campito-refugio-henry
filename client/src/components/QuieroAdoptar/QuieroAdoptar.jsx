@@ -1,6 +1,6 @@
 import {React} from 'react'
 import style from './QuieroAdoptar.module.css'
-
+import Footer from '../Footer/Footer'
 const QuieroAdoptar = () => {
   return ( /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
     <div className={style.adoptarContenedor}>
@@ -47,8 +47,8 @@ const QuieroAdoptar = () => {
          que habrá personal del refugio coordinando visitas o realizando contactos por algún medio para saber cómo están.</p>
      <h3 className={style.h3centrado}>Ahora que ya te contamos todo, es hora de dar el primer paso:</h3>
       <button className={style.buttonAdoptar}>FORMULARIO DE ADOPCIÓN - LINK</button>
+        <Footer/>
     </div>
-    /*lo mismo para el footer, va a en todas las rutas */
-    /*falta el link al form de adopcion y ver si lo hacemos nosotros  y sigue siendo un drive */)
+    )
 }
 export default QuieroAdoptar;

@@ -1,6 +1,7 @@
 import style from './QuieroColaborar.module.css'
 import mercadoLibre from '../../img/logosPasarelas/mercadolibre.svg'
 import dineroMail from '../../img/logosPasarelas/dineromail.svg'
+import Footer from '../Footer/Footer'
 const QuieroColaborar = () => {
   return (
     <div>
@@ -51,6 +52,7 @@ const QuieroColaborar = () => {
           <button className={style.buttonDM}>$_____</button></div>
         </div>
       </div> 
+      <Footer/>
     </div>
   )
 }

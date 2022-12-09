@@ -1,4 +1,5 @@
 import style from './ElCampitoEscolar.module.css'
+import Footer from '../Footer/Footer'
 const ElCampitoEscolar = () => {
   return ( /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
     <div className={style.campitoContenedor}>
@@ -24,6 +25,7 @@ const ElCampitoEscolar = () => {
         <h3>Si querés programar una charla, escribinos a </h3>
         <button className={style.campitoButton}>institucional@elcampitorefugio.org</button>
       </div>
+      <Footer />
       </div>
      )
   }

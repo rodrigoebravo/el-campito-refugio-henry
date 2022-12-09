@@ -25,14 +25,16 @@ strong{
     font-weight: 10px;
     font-size: 15px; 
 }
-
+.visitasImg{
+    width: 150px;
+}
 @media (max-width: 600px) {
     .puntosDeEncuentro {
         display:flex;
         flex-direction: column;
     }
     .visitasImg{
-        width: 150px;
+        width: 125px;
        
     }
   }
