@@ -3,6 +3,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 
+
 }
 .pHome{
 font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
@@ -23,7 +24,7 @@ line-height: 18.09px
 .homeMenu{
   display: grid;
   grid-template-columns:  repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(2 1fr);
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -31,7 +32,8 @@ line-height: 18.09px
   line-height: 29px;
   letter-spacing: 0.06em;
   color:white;
-  
+ 
+
 }
 
 .adoptar{

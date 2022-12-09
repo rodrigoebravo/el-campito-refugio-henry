@@ -14,7 +14,7 @@ const Footer = () => {
         <div className={styles.footerContainer}>
             <div className={styles.infoContainer}>
                 <div>
-                    <img src={logoFooter} alt="Logo" />
+                    <img src={logoFooter} className={styles.imgFooter}alt="Logo" />
                 </div>
                 <div>
                     <div className={styles.infoIconsDiv}>
