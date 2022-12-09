@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import homeimg from '../../img/homeimg.jpg'
+// import homeimg from '../../img/homeimg.jpg'
 import style from './Home.module.css'
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
              Echeverria, Bs As, Argentina.</p>
           <h2 className={style.h2Home}>Vale la pena involucrarse</h2>
         </div>
-        <img src={homeimg} alt="homeImage" />
+        <img src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670545930/refugio/MAR_7368_2_1_wurkop.jpg" alt="homeImage" />
       </div>
       <div className={style.homeMenu}> {/* En este div le pase por porops descripcion y className para poder trabajar con cada componente por separado */}
        <Link to='/adoptar' className={style.adoptar}>Quiero adoptar</Link>
