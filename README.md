@@ -153,4 +153,9 @@ La app contara con una base de datos dinamica que permitira almacenar datos y re
 
 
 
+## Rutas del Backend: https://documenter.getpostman.com/view/20469022/2s8YzP14Vm
+
+
+
+
 
