@@ -11,7 +11,7 @@
 - Practicar métodos de SCRUM.
 
 
-<img height="350" src="views/logoElCampito.jpg" />
+<img height="350" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/logoElCampito_w1qgi3.jpg" />
 
 
 
@@ -56,7 +56,7 @@ En `client` podrá encontrar, dentro de `src`, además del archivo `index.js` (c
 - [styles] ---> aquí todos los archivos de estilos modularizados que serán llamados luego por los componentes.
 
 
-<img height="400" src="views/front.png" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546332/refugio/front_jd4tan.png" />
 
 ## __Branches__
 
@@ -137,11 +137,20 @@ El administrador podrá, a través de un panel de administración, incorporar di
 
 Algunas vistas de diseño responsive, sin implementar el menu hamburguesa tadavía...
 
-<img height="400" src="views/menuResponsive.jpg" />
-<img height="400" src="views/AdoptarResponsive.jpg" />
-<img height="400" src="views/VoluntarioResponsive.jpg" />
-<img height="400" src="views/visitasResponsive.jpg" />
-<img height="400" src="views/EscolarResposive.jpg" />
-<img height="400" src="views/donarResponsive.jpg" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/menuResponsive_pg7y2y.jpg" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/AdoptarResponsive_w5vopf.jpg" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546332/refugio/voluntarioResponsive_iirfna.jpg" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546332/refugio/visitasResponsive_n3zlbs.jpg" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/EscolarResposive_m8pftm.jpg" />
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/donarResponsive_pa4mwe.jpg" />
+
+
+## Diagrama de relaciones de la DB
+
+La app contara con una base de datos dinamica que permitira almacenar datos y relacionarlos de manera tal de presentar al administrador información útil y sensible para asistirlo en sus funciones organizacionales.
+
+<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670547158/refugio/digramaDB_p9yz9o.jpg" />
+
+
 
 

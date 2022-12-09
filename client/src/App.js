@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       
       <Route exact path={'/form'} component={FormPostDogs}/>
-       <Route exact path={'/home'} component={Home}/>
+      <Route exact path={'/home'} component={Home}/>
       <Route exact path={'/detalle'} component={ConocenosDetalle}/>
       <Route exact path={'/adoptar'} component={QuieroAdoptar}/>
       <Route exact path={'/colaborar'} component={QuieroColaborar}/>
