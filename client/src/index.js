@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
+import dotenv from "dotenv";
+dotenv.config();
+
+//para que funcione  hacer npm intall dotenv
+
+axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

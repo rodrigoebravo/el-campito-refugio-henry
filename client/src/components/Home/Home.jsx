@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import homeimg from '../../img/homeimg.svg'
 import style from './Home.module.css'
+import Footer from '../Footer/Footer'
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
        <Link to ='/voluntario' className={style.voluntario}>Quiero ser voluntario</Link>
        <Link className={style.comportamiento}>Comportamiento y sociabilizacion</Link>
       </div>
+      <Footer/>
     </div>
   );
 };

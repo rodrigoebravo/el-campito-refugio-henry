@@ -1,5 +1,6 @@
 import {React} from 'react'
 import style from './ConocenosDetalle.module.css'
+import Footer from '../Footer/Footer'
 
 const ConocenosDetalle = () => {
   return (

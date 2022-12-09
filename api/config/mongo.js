@@ -11,12 +11,18 @@ const dbConnect = () => {
       useUnifiedTopology: true,
     },
     (err, res) => {
-      if (err) {
+      
+      if (!err) {
+        console.log("***established connection***");
+      }else{
+
         console.log("***connection error***");
       }
-
-      console.log("***established connection***");
+      
     }
   );
 };
+
+mongoose.set('strictQuery', false);
+
 module.exports = dbConnect;

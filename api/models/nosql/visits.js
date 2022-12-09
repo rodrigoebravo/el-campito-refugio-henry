@@ -1,25 +1,32 @@
 const mongoose = require("mongoose");
-const mongooseDelete = require("mongoose-delete");
+// const mongooseDelete = require("mongoose-delete"); // ----> borrado suave sin romper DB
 
-const VisitScheme = new mongoose.Schema(
+const visitScheme = new mongoose.Schema(
   {
     name: {
       type: String,
     },
     institution: {
       type: String,
-      unique: true,
+      default: "no institution",
     },
     email: {
       type: String,
-      unique: true,
+    },
+    phone: {
+      type: String,
     },
     date: { 
         type: Date, 
         default: Date.now 
     },
-    amount: {
-        type: Number,
+    dateVisit: { 
+      type: Date, 
+      default: Date.now 
+    },
+    timeVisit: { 
+      type: Date, 
+      default: Date.now 
     },
     description: {
         type: String,
@@ -32,5 +39,6 @@ const VisitScheme = new mongoose.Schema(
   }
 );
 
-VisitScheme.plugin(mongooseDelete, { overrideMethods: "all" });
-module.exports = mongoose.model("visits", VisitScheme);
+// visitScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+
+module.exports = mongoose.model("visits", visitScheme);

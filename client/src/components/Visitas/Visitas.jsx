@@ -3,6 +3,7 @@ import style from './Visitas.module.css'
 import auto from '../../img/transporte/auto.svg'
 import combi from '../../img/transporte/combi.svg'
 import tren from '../../img/transporte/tren.svg'
+import Footer from '../Footer/Footer'
 
 const Visitas = () => {
   return ( /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
@@ -41,7 +42,7 @@ const Visitas = () => {
             bien el horario del transporte para empalmarcon la salida de la caravana.</p>
         </div>
       </div>
-     
+     <Footer />
     </div>
    )
 }
