@@ -1,4 +1,4 @@
-const { dogModel } = require("./models/index"); 
+const { dogModel } = require("../models/index"); 
 const info = require("./search.json"); 
 
 const pushDatabase = () =>{

@@ -4,68 +4,56 @@
         "age": 37,
         "email": "paulaspeciale@gmail.com",
         "pass": "Clave1234#",
-        "roles":["adoptante",
-                 "voluntario",
-                 "admin"]
+        "roles": "equipo1"
     },
     {
       "name": "Enzo Calvi",
       "age": 26,
       "email": "enzocalvi243@gmail.com",
       "pass": "Clave1234#",
-      "roles":["voluntario",
-               "admin",
-              "sponsor"]
+      "roles": "voluntario"
     },
     {
       "name": "Joseph Villalba Osorio",
       "age": 23,
       "email": "jhosephvillalba@gmail.com",
       "pass": "Clave1234#",
-      "roles":["voluntario",
-               "equipo2",
-              "visitante"]
+      "roles": "visitante" 
     },
     {
       "name": "Ariel Cazzulino Hartvig",
       "age": 27,
       "email": "arielcazzulino@gmail.com",
       "pass": "Clave1234#",
-      "roles":["admin",
-               "equipo1",
-              "donante"]
+      "roles": "donante" 
     },
     {
       "name": "Matías Dentoni",
       "age": 45,
       "email": "matiasdentoni@gmail.com",
       "pass": "Clave1234#",
-      "roles":["admin",
-               "equipo3",
-              "padrino"]
+      "roles": "admin" 
     },
     {
       "name": "Jorge Chacin",
       "age": 43,
       "email": "jorge12chacin@gmail.com",
       "pass": "Clave1234#",
-      "roles":["adoptante",
-              "public"]
+      "roles": "adoptante" 
     },
     {
       "name": "Tomas Wolfmann",
       "age": 25,
       "email": "tomiwolfman@gmail.com",
       "pass": "Clave1234#",
-      "roles":["public"]
+      "roles": "public" 
     },
     {
       "name": "Nicolas Oviedo",
       "age": 28,
       "email": "briannoviedo@gmail.com",
       "pass": "Clave1234#",
-      "roles":["superAdmin",
-              "padrino"]
+      "roles": "superAdmin" 
     }
 
 ]

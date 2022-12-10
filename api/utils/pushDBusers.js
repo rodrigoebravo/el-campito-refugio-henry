@@ -1,4 +1,4 @@
-const { usersModel } = require("./models/index"); 
+const { usersModel } = require("../models/index"); 
 const info = require("./usersEx.json"); 
 
 const pushDBusers = () =>{
