@@ -69,9 +69,9 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-
-    const {id , isDelete} = req.query; 
-    const body  = req.body; 
+    const {query:{id, isDelete}, body } = req; 
+    // const {id , isDelete} = req.query; 
+    // const body  = req.body; 
 
     if(id && isDelete){
       const user = await usersModel.findByIdAndUpdate(id, { isDelete }, {
@@ -81,7 +81,7 @@ const updateUser = async (req, res) => {
 
     } else if(body){
 
-      const { _id, ...data } = req.body; 
+      const { _id, ...data } = body; 
 
       const user = await usersModel.findByIdAndUpdate(_id, data, {
         returnOriginal: false, 
