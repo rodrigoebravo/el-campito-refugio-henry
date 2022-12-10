@@ -1,9 +1,4 @@
-*{
-    margin: 2%;
- /*   text-align: justify;*/
-    line-height:normal
-    
-} 
+
 p,li{
     font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
     font-style: normal;
@@ -20,7 +15,8 @@ ul {
   }
 .adoptarContenedor{
     display:flex;
-    flex-direction: column    ;
+    flex-direction: column;
+    margin: 7rem;
 }
   
 .liAdoptar::before {

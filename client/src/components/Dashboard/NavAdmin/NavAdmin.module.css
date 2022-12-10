@@ -1,0 +1,9 @@
+.div{
+  display: flex;
+  flex-direction: row;
+  height: 8rem;
+}
+.tolbar{
+  height: 5rem;
+    justify-content: center;
+}

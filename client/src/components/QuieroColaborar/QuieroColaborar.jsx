@@ -4,7 +4,7 @@ import dineroMail from '../../img/logosPasarelas/dineromail.svg'
 import Footer from '../Footer/Footer'
 const QuieroColaborar = () => {
   return (
-    <div>
+    <div className={style.div}>
       <h1 className={style.h1Colaborar}>¡Quiero colaborar!</h1>
       <p>El Campito Refugio es una ONG con sus balances al día. <br></br>Nuestra cuenta bancaria 
          está auditada a nombre del refugio por lo cual cada donación es rendida.</p>

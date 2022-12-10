@@ -2,7 +2,7 @@ import React from "react"
 // import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useDispatch, useSelector } from "react-redux"
-import { postCloudinaryPhoto, removeCloudinayImage } from "../redux/actions"
+import { postCloudinaryPhoto, removeCloudinayImage } from "../redux/actions/action"
 
 //para que funcione el hook hacer npm intall react-hook-form
 
