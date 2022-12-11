@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer'
 
 const QuieroSerVoluntario = () => {
   return ( /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
-    <div>
+    <div className={style.div}>
       <h1 className={style.h1Voluntario}>¡QUIERO SER VOLUNTARIO!</h1>
       <h3>¡En El Campito hay mucho por hacer!</h3>
       <p>Para que puedas integrarte hemos creado un espacio formativo permanente que nos ayude a potenciar la participación real y

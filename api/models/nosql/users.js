@@ -1,49 +1,53 @@
-const mongoose = require("mongoose"); 
+const mongoose = require("mongoose");
 // const bcrypt = require("bcryptjs");
 
 
-const userScheme = mongoose.Schema({
-
+const userScheme = new mongoose.Schema(
+  {
     name: {
-        type: String, 
+      type: String,
     },
     age: {
-        type: Number, 
+      type: Number,
     },
     email: {
-        type: String,
-        unique: true,
-    }, 
-    pass: {
-        type: String,
-        required: true,
+      type: String,
+      unique: true,
     },
-    roles: {
-      type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
-      default: "public", 
+    pass: {
+      type: String,
+      required: true,
+    },
+    roles: { 
+      type: String, 
+      enum: ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"], 
+      default: "public"
   },
-  isDelete: {
-    type: Boolean,
-    default: false,
+    isDelete: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: false,
+    versionKey: false,
   }
+);
 
-},{
-    timestamps: false, 
-    versionKey: false, 
-}); 
 
+// type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
+//       default: "public",
 //------ Implementación de hasheo de pass en DB
 
 // userSchema.statics.encryptPassword = async (password) => {
 //     const salt = await bcrypt.genSalt(10);
 //     return await bcrypt.hash(password, salt);
 //   };
-  
+
 //   userSchema.statics.comparePassword = async (password, receivedPassword) => {
 //     return await bcrypt.compare(password, receivedPassword)
 //   }
 
-  
 //   userSchema.pre("save", async function (next) {
 //     const user = this;
 //     if (!user.isModified("password")) {
@@ -54,13 +58,12 @@ const userScheme = mongoose.Schema({
 //     next();
 //   })
 
-userScheme.pre('find', function() {
-    this.where({ isDelete: false });
-  });
-  
-userScheme.pre('findOne', function() {
-    this.where({ isDelete: false });
-  });
+userScheme.pre("find", function () {
+  this.where({ isDelete: false });
+});
 
+userScheme.pre("findOne", function () {
+  this.where({ isDelete: false });
+});
 
-module.exports = mongoose.model("users", userScheme); 
+module.exports = mongoose.model("users", userScheme);

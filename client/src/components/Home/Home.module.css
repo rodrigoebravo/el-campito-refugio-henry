@@ -2,7 +2,7 @@
 display: flex;
 align-items: center;
 justify-content: center;
-
+margin: 2rem;
 
 }
 .pHome{
@@ -32,6 +32,7 @@ line-height: 18.09px
   line-height: 29px;
   letter-spacing: 0.06em;
   color:white;
+  margin: 2rem
  
 
 }
