@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { postDog } from "../../redux/actions/action";
-import ImagenUpload from "../ImageUpload";
+import ImagenUpload from "../ImageUpload/ImageUpload.jsx";
 
 //para que funcione el hook hacer npm intall react-hook-form
 
