@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../NavBar/NavBar"
 
 // import homeimg from '../../img/homeimg.jpg'
 
@@ -9,6 +10,7 @@ import Footer from '../Footer/Footer'
 const Home = () => {
   return (
     <div>
+      <NavBar/>
       <div className={style.homeContenedor}>
         <div>
           <p className={style.pHome}>Somos una ONG sin fines de lucro que trabaja rescatando, recuperando y

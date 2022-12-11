@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
-
 import ConocenosDetalle from './components/ConocenosDetalle/ConocenosDetalle'
 import QuieroAdoptar from './components/QuieroAdoptar/QuieroAdoptar'
 import QuieroColaborar from './components/QuieroColaborar/QuieroColaborar'
@@ -13,13 +12,15 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import AdminDogs from "./components/Dashboard/AdminDogs/AdminDogs";
 import { AdminUsers } from "./components/Dashboard/AdminUsers/AdminUsers";
 import { AdminDogsDetails } from "./components/Dashboard/AdminDogsdDetails/AdminDogsDetails";
+import Voluntario from "./components/Forms/Voluntario/Voluntario"
+import Contactanos from "./components/Contactanos/Contactanos"
 
 function App() {
   return (
     <BrowserRouter>
       <Route exact path={'/home'} component={Home}/>
       <Route exact path={'/form'} component={Voluntario}/>
-      <Route exact path={'/form2'} component={Contacto}/>
+      <Route exact path={'/contactanos'} component={Contactanos}/>
       <Route exact path={'/'} component={Home} />
       <Route exact path={'/detalle'} component={ConocenosDetalle} />
       <Route exact path={'/adoptar'} component={QuieroAdoptar} />
