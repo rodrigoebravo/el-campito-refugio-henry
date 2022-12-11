@@ -1,10 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
-import Home from './components/Home';
-import Voluntario from "./components/Forms/Voluntario/Voluntario";
-import Contacto from "./components/Forms/Contacto/Contacto"
 
+import ConocenosDetalle from './components/ConocenosDetalle/ConocenosDetalle'
+import QuieroAdoptar from './components/QuieroAdoptar/QuieroAdoptar'
+import QuieroColaborar from './components/QuieroColaborar/QuieroColaborar'
+import QuieroSerVoluntario from './components/QuieroSerVoluntario/QuieroSerVoluntario'
+import Visitas from './components/Visitas/Visitas'
+import ElCampitoEscolar from "./components/ElCampitoEscolar/ElCampitoEscolar";
+import Home from './components/Home/Home';
+import Dashboard from "./components/Dashboard/Dashboard";
+import AdminDogs from "./components/Dashboard/AdminDogs/AdminDogs";
+import { AdminUsers } from "./components/Dashboard/AdminUsers/AdminUsers";
+import { AdminDogsDetails } from "./components/Dashboard/AdminDogsdDetails/AdminDogsDetails";
 
 function App() {
   return (
@@ -12,6 +20,17 @@ function App() {
       <Route exact path={'/home'} component={Home}/>
       <Route exact path={'/form'} component={Voluntario}/>
       <Route exact path={'/form2'} component={Contacto}/>
+      <Route exact path={'/'} component={Home} />
+      <Route exact path={'/detalle'} component={ConocenosDetalle} />
+      <Route exact path={'/adoptar'} component={QuieroAdoptar} />
+      <Route exact path={'/colaborar'} component={QuieroColaborar} />
+      <Route exact path={'/voluntario'} component={QuieroSerVoluntario} />
+      <Route exact path={'/visitas'} component={Visitas} />
+      <Route exact path={'/campito'} component={ElCampitoEscolar} />
+      <Route exact path={'/admin'} component={Dashboard} />
+      <Route exact path={'/admin/Perros'} component={AdminDogs} />
+      <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
+      <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} />
     </BrowserRouter>
   );
 }

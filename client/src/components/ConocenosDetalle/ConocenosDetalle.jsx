@@ -1,9 +1,10 @@
 import {React} from 'react'
 import style from './ConocenosDetalle.module.css'
+import Footer from '../Footer/Footer'
 
 const ConocenosDetalle = () => {
   return (
-    <div>
+    <div className={style.div}>
       <h1>Conocenos en detalle</h1>
       <h3>Nosotros somos El Campito Refugio.</h3>
       <p>Nuestra misión es fomentar la participación activa de la ciudadanía en el rescate, la recuperación y la adopción de animales
@@ -28,7 +29,7 @@ patologías: problemas renales, hepáticos, cardíacos, oncológicos o diabétic
 personas de bajos recursos.</li>
       </ol>
      
-      
+      <Footer/>
     </div>
     )
 }

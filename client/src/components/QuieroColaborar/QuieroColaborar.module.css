@@ -1,0 +1,164 @@
+.div{
+margin: 7rem;
+}
+p{margin:7px}
+
+
+.contenedorPasarelas{
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  
+}
+.cuentaBancaria{
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  background: #E48125;
+  border-radius: 25px; 
+  height: 316px;
+  width: 27%;
+  padding: 20px;
+ 
+}
+.debitoAutomatico{
+  border-radius: 25px;
+  background: #6B639A;
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  height: 316px;
+  width: 63%;
+ /* height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+ }
+
+
+.debitoAutomatico > p{
+  color: #FFFFFF;
+}
+.cuentaBancaria > p{
+  color: #FFFFFF;
+}
+.pasarleML,.pasarelaDM{
+  display: flex;
+  flex-direction: row;
+  width: 100%;  
+  
+ }
+ .noWrap{
+  display: flex;
+  flex-wrap: nowrap;
+ }
+.pasarelMLbuttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+ /* grid-template-columns:  repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);*/
+
+}
+
+.pasarelaDMbuttons{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: nowrap;
+  
+  
+}
+
+.buttonML,.buttonDM{
+  background: #4FA7C1;
+  width: 217px;
+  height: 135px;
+  color:white;
+  margin:5px;
+
+/* Celeste */
+border: 3px solid #4FA7C1;
+border-radius: 25px;
+}
+.buttonDM{
+
+  background: #388B47;
+  border: 3px solid #388B47;
+
+}
+.imgML,.imgDM{
+margin:10px;
+padding: 15px;
+width: 334px;
+height: 250px;
+border: 3px solid #4FA7C1;
+border-radius: 25px;
+align-self: center;
+}
+.imgDM{
+  border: 3px solid #55BA68;
+}
+.h1Colaborar{
+  color: #55BA68;
+}
+
+
+.debitoButton{
+  background: #FAFAFA;
+  border-radius: 16px;
+  border: 3px solid ;
+  color: #6B639A;
+  width: 241px;
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  align-self: flex-end;
+
+}
+
+
+@media (max-width: 600px) {
+ 
+  .pasarleML,.pasarelaDM{
+    flex-direction: column;   
+  }
+  .buttonML{
+    width: 100px;
+    height: 100px
+  }
+  .buttonDM{
+    height: 70px
+  }
+  
+  .imgML,.imgDM{
+    align-content: center;
+    height: 150px;
+  }
+  .contenedorPasarelas{
+       
+    flex-direction: column;
+  }
+  .cuentaBancaria{
+    width: 80%;
+    
+  }
+   .debitoAutomatico{
+    width: 85%;
+    padding: 10px;
+   }
+  .pasarelMLbuttons,.pasarelaDMbuttons{
+    justify-content: center;
+  }
+  .debitoAutomatico{
+    height: 100%;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,39 @@
+Rutas en el Back
+
+Dogs
+
+Petición de Perros:
+GET `/api/dogs`
+
+Petición un perro en particular:
+GET ^`/api/dogs/${id_dog]`
+
+Borrado Lógico: 
+PUT `/api/dogs?id=${id_dog]&isDelete=true`
+
+Para modificar datos de perros:
+PUT `/api/dogs`
+enviar x body los un objeto con los nuevos datos a modificar y el id de dog
+
+Nuevo Perro:
+POST `/api/dogs`
+enviar objeto perro por Body
+
+Users
+
+Petición de Usuarios:
+GET `/api/users`
+
+Petición un usuario en particular:
+GET `/api/users/${id_user]`
+
+Borrado Lógico: 
+PUT `/api/users?id=${id_user]&isDelete=true`
+
+Para modificar datos de usuario:
+PUT `/api/users`
+enviar x body los un objeto con los nuevos datos a modificar y el id de usuario
+
+Nuevo Usuario:
+POST `/api/users`
+enviar objeto user por Body

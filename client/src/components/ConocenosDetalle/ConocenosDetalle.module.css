@@ -1,11 +1,8 @@
-*{
-    margin: 2%;
- /*   text-align: justify;*/
-    line-height:normal
-    
-} 
+.div{
+  margin: 7rem;
+}
 p,li{
-    font-family: seravek-web, sans-serif;
+    font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
     font-style: normal;
     font-weight: 200;
     font-size: 20px;

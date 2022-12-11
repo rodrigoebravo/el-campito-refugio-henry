@@ -1,0 +1,47 @@
+.div{
+  margin: 7rem;
+}
+.liVoluntario::before {
+  content: "\2022";
+  color: #4FA7C1; 
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+}
+.h1Voluntario{
+  font-family: 'TrashHand', sans-serif;  
+  color: #4FA7C1;  
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 51px;
+}
+.h3Voluntario{
+  color: #4FA7C1; 
+}
+.buttonVoluntario{
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.06em;  
+  color:#FAFAFA;
+  background-color: #4FA7C1;
+  border: 3px solid ;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  max-width: fit-content;
+}
+.voluntarioContacto{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@media (max-width: 600px) {
+  
+}

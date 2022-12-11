@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongooseDelete = require("mongoose-delete");
+// const mongooseDelete = require("mongoose-delete");
 
 const dogScheme = new mongoose.Schema(
   {
@@ -7,15 +7,18 @@ const dogScheme = new mongoose.Schema(
       type: String,
     },
     gender: {
-        type:["macho","hembra"],
+        type: String,
+        enum: ["macho","hembra"],
         default: "definir",
     },
     age: {
-        type:["adulto","adulto jóven","viejito","cachorro","especial"],
+        type: String,
+        enum: ["adulto","adulto jóven","viejito","cachorro","especial"],
         default: "definir",
     },
     size: {
-        type:["chico", "mediano","grande"],
+        type: String,
+        enum: ["chico", "mediano","grande"],
         default: "definir", 
     },
     race: {
@@ -30,7 +33,11 @@ const dogScheme = new mongoose.Schema(
         type: String,
     },
     references: [ String ],
-    
+
+    isDelete: {
+      type: Boolean,
+      default: false,
+    }
   },
   {
     timestamps: false,
@@ -38,5 +45,17 @@ const dogScheme = new mongoose.Schema(
   }
 );
 
-dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+// dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+
+dogScheme.pre('find', function() {
+  this.where({ isDelete: false });
+});
+
+dogScheme.pre('findOne', function() {
+  this.where({ isDelete: false });
+});
+
+
+// dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+
 module.exports = mongoose.model("dogs", dogScheme);
