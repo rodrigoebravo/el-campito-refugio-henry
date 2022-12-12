@@ -11,12 +11,14 @@ const app = express();
 // const {dogModel} = require("./models/index"); 
 // const info = require("../search.json"); 
 
+
 // const cargarDB = () =>{
 //     dogModel.create(info)
 //     .then(res => console.log("cargado"))
 // }
 
 app.use(morgan('tiny')); 
+
 app.use(cors()); //error de origen cruzado
 app.use(express.json()); //Manejar data .json
 

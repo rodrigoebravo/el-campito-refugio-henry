@@ -1,18 +1,27 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { postDog } from "../../redux/actions/action";
-import ImagenUpload from "../ImageUpload/ImageUpload.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { postDog, clearCloudinaryResponse, clearVideoCloudinary } from "../../redux/actions/action";
+import ImageUpload from "../ImageUpload/ImageUpload.jsx";
+import VideoUpload from "../VideoUpload/VideoUpload";
 
 //para que funcione el hook hacer npm intall react-hook-form
 
 const FormPostDogs = () => {
   const dispatch = useDispatch();
+  const cloudImages = useSelector(state => state.responseCloudinary);
+  const cloudVideo = useSelector(state => state.videoCloudinary);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  React.useEffect(()=>{ 
+      dispatch(clearVideoCloudinary());
+      dispatch(clearCloudinaryResponse());
+  },[dispatch]);  
+
 
   const dog = React.useState({
     name: "",
@@ -20,15 +29,19 @@ const FormPostDogs = () => {
     age: "",
     size: "",
     race: "",
-    video: "",
-    images: [],
+    video: cloudVideo,
+    images: cloudImages,
     features: "",
     references: [],
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    if (cloudImages.length > 1) {
+      alert('ingrese al menos una imagen del perro')
+    } else {
+      console.log(data);
     dispatch(postDog(dog));
+    }    
   };
 
   return (
@@ -75,15 +88,20 @@ const FormPostDogs = () => {
           <input type="text" {...register("race", { required: true })} />
           {errors.race?.type === "required" && <p>La raza es requerida</p>}
         </div>
-
+        
+        <div>
+          <label>Imagenes</label>
+          <ImageUpload />
+        </div>
+        
         <div>
           <label>Video</label>
-          <ImagenUpload name="video" />
+          <VideoUpload />
         </div>
 
         <div>
-          <label>Imagenes</label>
-          <ImagenUpload name="image" />
+          <label>Referencias</label>
+          <input type="text" {...register("references")} />
         </div>
 
         <div>

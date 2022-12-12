@@ -6,7 +6,7 @@ import { postCloudinaryPhoto, removeCloudinayImage } from "../../redux/actions/a
 
 //para que funcione el hook hacer npm intall react-hook-form
 
-const ImagenUpload = (props) => {
+const ImagenUpload = () => {
     
     const dispatch = useDispatch();
     const { register, handleSubmit, formState:{ errors } } = useForm();
@@ -44,14 +44,7 @@ const ImagenUpload = (props) => {
                         </div>)
                     }
                 </div>
-                <div className="advertencia">
-                    {
-                        (props.name !== "video" && cloudImages.length === 1) ? null :
-                            <label>Máximo posible de video por perro: 1. Solo se subira el primer video cargado</label>
-                    }
-                </div>
-                
-                
+                               
                 <input type="submit" value="send"/>
             </form>
         </div> 
