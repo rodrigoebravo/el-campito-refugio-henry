@@ -2,7 +2,7 @@ import style from './QuieroColaborar.module.css'
 import mercadoLibre from '../../img/logosPasarelas/mercadolibre.svg'
 import dineroMail from '../../img/logosPasarelas/dineromail.svg'
 import Footer from '../Footer/Footer'
-import Navbar from '../Navbar/NavBar'
+import Navbar from '../NavBar/NavBar'
 const QuieroColaborar = () => {
   return (
     <div>
@@ -11,15 +11,15 @@ const QuieroColaborar = () => {
     <div className={style.div}>
       
       <h1 className={style.h1Colaborar}>¡Quiero colaborar!</h1>
-      <p>El Campito Refugio es una ONG con sus balances al día. <br></br>Nuestra cuenta bancaria 
+      <p className={style.p}>El Campito Refugio es una ONG con sus balances al día. <br></br>Nuestra cuenta bancaria 
          está auditada a nombre del refugio por lo cual cada donación es rendida.</p>
-      <p>Podés solicitar tu RECIBO LEGAL escribiendo a madrinasdelcampito@gmail.com</p>
+      <p className={style.p}>Podés solicitar tu RECIBO LEGAL escribiendo a madrinasdelcampito@gmail.com</p>
       <div className={style.contenedorPasarelas}>{/* Contenedor de las pasarelas */} 
         
         <div className={style.cuentaBancaria}>
           <h2>CUENTA BANCARIA</h2> <br></br>
           <h3>Banco Santander Rio</h3>
-          <p>Refugio El Campito <br></br>Cta Cte n° 0123787 - Sucursal 180 <br></br>Alias refugioelcampito <br></br>CBU 0720180220000001237872 <br></br>CUIT 30-71212593-0</p>
+          <p className={style.p}>Refugio El Campito <br></br>Cta Cte n° 0123787 - Sucursal 180 <br></br>Alias refugioelcampito <br></br>CBU 0720180220000001237872 <br></br>CUIT 30-71212593-0</p>
         </div>
         <div className={style.debitoAutomatico}>
           <h2>POR DÉBITO AUTOMÁTICO <br></br>

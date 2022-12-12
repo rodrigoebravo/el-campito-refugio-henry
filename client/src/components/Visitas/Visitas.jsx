@@ -4,7 +4,7 @@ import auto from "../../img/transporte/auto.svg";
 import combi from "../../img/transporte/combi.svg";
 import tren from "../../img/transporte/tren.svg";
 import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/NavBar";
+import Navbar from "../NavBar/NavBar";
 
 const Visitas = () => {
   return (

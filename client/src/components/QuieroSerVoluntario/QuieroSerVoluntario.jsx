@@ -2,7 +2,7 @@
 import { React } from "react";
 import style from "./QuieroSerVoluntario.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/NavBar";
+import Navbar from "../NavBar/NavBar";
 
 const QuieroSerVoluntario = () => {
   return (
@@ -39,7 +39,7 @@ const QuieroSerVoluntario = () => {
           tiempo antes de enviarnos su solicitud.
         </p>
         <p>Ser voluntario te permitirá:</p>
-        <ul>
+        <ul className={style.ul}>
           <li className={style.liVoluntario}>
             Desarrollar las habilidades existentes y obtener nuevos
             conocimientos.

@@ -1,7 +1,9 @@
 * {
   margin: 0;
 }
-
+.icon {
+  width: 2rem;
+}
 .navbar {
   height: 100px;
   display: flex;
@@ -21,6 +23,7 @@
   list-style: none;
   text-decoration: none;
   width: 100%;
+  align-items: center;
 }
 li > a {
   color: #444445;
@@ -50,16 +53,16 @@ li > a {
   font-size: 2rem;
   cursor: pointer;
 }
-.LinkImg{
+.LinkImg {
   height: 145px;
   display: flex;
   align-self: flex-start;
 }
 .imgLogo {
   width: 100%;
-    height: 8rem;
-    display: flex;
-    align-self: flex-start;
+  height: 8rem;
+  display: flex;
+  align-self: flex-start;
 }
 .contenedorLinks {
   display: flex;

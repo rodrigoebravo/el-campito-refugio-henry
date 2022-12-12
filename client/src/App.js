@@ -16,6 +16,7 @@ import Home from "./components/Home/Home";
 import AdminIndex from "./components/ReactAdmin/index";
 import { CardsDogs } from "./components/CardsDogs/CardsDogs";
 import CardDogDetails from "./components/CardDogDetails/CardDogDetails";
+import Conocenos from "./components/Contactanos/Contactanos"
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route exact path={"/voluntario"} component={QuieroSerVoluntario} />
       <Route exact path={"/visitas"} component={Visitas} />
       <Route exact path={"/campito"} component={ElCampitoEscolar} />
+      <Route exact path={"/contactanos"} component={Conocenos} />
       <Route exact path={"/admin"} component={AdminIndex} />
       <Route exact path={"/adoptar/perros"} component={CardsDogs} />
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
@@ -36,6 +38,7 @@ function App() {
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
       <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}
     </BrowserRouter>
+    
   );
 }
 

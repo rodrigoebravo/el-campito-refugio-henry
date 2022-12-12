@@ -1,33 +1,33 @@
-.div{
-margin: 7rem;
+.div {
+  margin: 7rem;
 }
-p{margin:7px}
+.p {
+  margin: 7px;
+}
 
-
-.contenedorPasarelas{
-  color: #FFFFFF;
+.contenedorPasarelas {
+  color: #ffffff;
   display: flex;
   flex-direction: row;
   gap: 20px;
   margin: 30px 0 30px 0;
 }
-.cuentaBancaria{
+.cuentaBancaria {
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 25px;
   letter-spacing: 0.06em;
-  background: #E48125;
-  border-radius: 25px; 
+  background: #e48125;
+  border-radius: 25px;
   height: 316px;
   width: 27%;
   padding: 20px;
- 
 }
-.debitoAutomatico{
+.debitoAutomatico {
   border-radius: 25px;
-  background: #6B639A;
+  background: #6b639a;
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -36,129 +36,122 @@ p{margin:7px}
   letter-spacing: 0.06em;
   height: 316px;
   width: 63%;
- /* height: 100%;*/
+  /* height: 100%;*/
   display: flex;
   flex-direction: column;
   padding: 20px;
- }
-
-
-.debitoAutomatico > p{
-  color: #FFFFFF;
 }
-.cuentaBancaria > p{
-  color: #FFFFFF;
+
+.debitoAutomatico > p {
+  color: #ffffff;
 }
-.pasarleML,.pasarelaDM{
+.cuentaBancaria > p {
+  color: #ffffff;
+}
+.pasarleML,
+.pasarelaDM {
   display: flex;
   flex-direction: row;
-  width: 100%;  
-  
- }
- .noWrap{
+  width: 100%;
+}
+.noWrap {
   display: flex;
   flex-wrap: nowrap;
- }
-.pasarelMLbuttons{
+}
+.pasarelMLbuttons {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
- /* grid-template-columns:  repeat(5, 1fr);
+  /* grid-template-columns:  repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);*/
-
 }
 
-.pasarelaDMbuttons{
+.pasarelaDMbuttons {
   display: flex;
   flex-direction: column;
   width: 100%;
   flex-wrap: nowrap;
-  
-  
 }
 
-.buttonML,.buttonDM{
-  background: #4FA7C1;
+.buttonML,
+.buttonDM {
+  background: #4fa7c1;
   width: 217px;
   height: 135px;
-  color:white;
-  margin:5px;
+  color: white;
+  margin: 5px;
 
-/* Celeste */
-border: 3px solid #4FA7C1;
-border-radius: 25px;
+  /* Celeste */
+  border: 3px solid #4fa7c1;
+  border-radius: 25px;
 }
-.buttonDM{
+.buttonDM {
+  background: #388b47;
+  border: 3px solid #388b47;
+}
+.imgML,
+.imgDM {
+  margin: 10px;
+  padding: 15px;
+  width: 334px;
+  height: 250px;
+  border: 3px solid #4fa7c1;
+  border-radius: 25px;
+  align-self: center;
+}
+.imgDM {
+  border: 3px solid #55ba68;
+}
+.h1Colaborar {
+  color: #55ba68;
+}
 
-  background: #388B47;
-  border: 3px solid #388B47;
-
-}
-.imgML,.imgDM{
-margin:10px;
-padding: 15px;
-width: 334px;
-height: 250px;
-border: 3px solid #4FA7C1;
-border-radius: 25px;
-align-self: center;
-}
-.imgDM{
-  border: 3px solid #55BA68;
-}
-.h1Colaborar{
-  color: #55BA68;
-}
-
-
-.debitoButton{
-  background: #FAFAFA;
+.debitoButton {
+  background: #fafafa;
   border-radius: 16px;
-  border: 3px solid ;
-  color: #6B639A;
+  border: 3px solid;
+  color: #6b639a;
   width: 241px;
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 32px;
   align-self: flex-end;
-
 }
 
-
 @media (max-width: 600px) {
- 
-  .pasarleML,.pasarelaDM{
-    flex-direction: column;   
+  .pasarleML,
+  .pasarelaDM {
+    flex-direction: column;
   }
-  .buttonML{
+  .buttonML {
     width: 100px;
-    height: 100px
+    height: 100px;
   }
-  .buttonDM{
-    height: 70px
+  .buttonDM {
+    height: 70px;
   }
-  
-  .imgML,.imgDM{
+
+  .imgML,
+  .imgDM {
     align-content: center;
     height: 150px;
   }
-  .contenedorPasarelas{
-       
+  .contenedorPasarelas {
     flex-direction: column;
   }
-  .cuentaBancaria{
+  .cuentaBancaria {
     width: 80%;
-    
   }
-   .debitoAutomatico{
+  .debitoAutomatico {
     width: 85%;
     padding: 10px;
-   }
-  .pasarelMLbuttons,.pasarelaDMbuttons{
+  }
+  .pasarelMLbuttons,
+  .pasarelaDMbuttons {
     justify-content: center;
   }
-  .debitoAutomatico{
+  .debitoAutomatico {
     height: 100%;
     font-size: 15px;
   }
