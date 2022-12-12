@@ -18,25 +18,15 @@ const roles = ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3",
 
 const getUsers = async (req, res) => {
   try {
-    const _start = Number(req.query._start) || 0;
-    const _end = Number(req.query._end) || 10;
-    const limite = _end - _start;
-    let todos = await usersModel.find({});
-    let users = await usersModel
-      .find({ isDelete: true })
-      .skip(_start)
-      .limit(limite);
+    const { name } = req.query;
 
-    res.set("Access-Control-Expose-Headers", "X-Total-Count");
-    res.set("X-Total-Count", todos.length);
-
-    let i = _start;
-    const filter = users.map((e) => {
-      i++;
-      return { id: i, data: e };
-    });
-
-    res.status(200).send(filter);
+    if (name) {
+      const users = await usersModel.find({ name });
+      res.json(users);
+    } else {
+      const alluser = await usersModel.find({});
+      res.json(alluser);
+    }
   } catch (error) {
     res.status(404).send({ error });
   }

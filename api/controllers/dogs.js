@@ -7,30 +7,24 @@ const { dogModel } = require("../models");
  */
 
 const getDogs = async (req, res) => {
+  const { name } = req.query; 
+
   try {
-    const _start = Number(req.query._start) || 0;
-    const _end = Number(req.query._end) || 10;
-    const limite = _end - _start;
-    let todos = await dogModel.find({});
-    let dogs = await dogModel
-      .find({ isDelete: true })
-      .skip(_start)
-      .limit(limite);
 
-    res.set("Access-Control-Expose-Headers", "X-Total-Count");
-    res.set("X-Total-Count", todos.length);
+      if(name){
+          const user = await dogsModel.find({ name }); 
+          res.json(user); 
+      }else {
+          const allUsers = await dogsModel.find({}); 
+          res.json(allUsers); 
+      }
 
-    let i = _start;
-    const filter = dogs.map((e) => {
-      i++;
-      return { id: i, data: e };
-    });
-
-    res.status(200).send(filter);
-  } catch (error) {
-    res.status(404).send({ error });
-  }
+  }catch(error){
+      res.status(404).send({ error }); 
+  };
+ 
 };
+
 /**
  * get a dog by _id
  *
