@@ -18,7 +18,6 @@ const app = express();
 // }
 
 app.use(morgan('tiny')); 
-
 app.use(cors()); //error de origen cruzado
 app.use(express.json()); //Manejar data .json
 
