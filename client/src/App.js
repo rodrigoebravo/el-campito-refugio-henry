@@ -15,6 +15,8 @@ import Home from "./components/Home/Home";
 // import { AdminUsers } from "./components/Dashboard/AdminUsers/AdminUsers";
 // import { AdminDogsDetails } from "./components/Dashboard/AdminDogsdDetails/AdminDogsDetails";
 import AdminIndex from "./components/ReactAdmin/index";
+import { CardsDogs } from "./components/CardsDogs/CardsDogs";
+import CardDogDetails from "./components/CardDogDetails/CardDogDetails";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
       <Route exact path={"/visitas"} component={Visitas} />
       <Route exact path={"/campito"} component={ElCampitoEscolar} />
       <Route exact path={"/admin"} component={AdminIndex} />
+      <Route exact path={"/adoptar/perros"} component={CardsDogs} />
+      <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
       {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
       <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}

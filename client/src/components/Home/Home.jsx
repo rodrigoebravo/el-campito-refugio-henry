@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 
 import style from './Home.module.css'
 import Footer from '../Footer/Footer'
+import Navbar from "../Navbar/NavBar";
 
 const Home = () => {
   return (
     <div>
+        <Navbar/>
       <div className={style.homeContenedor}>
         <div>
           <p className={style.pHome}>Somos una ONG sin fines de lucro que trabaja rescatando, recuperando y
