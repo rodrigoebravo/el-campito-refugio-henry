@@ -70,4 +70,5 @@ const ConocenosDetalle = () => {
     </div>
   );
 };
+
 export default ConocenosDetalle;

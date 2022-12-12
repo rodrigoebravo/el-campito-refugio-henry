@@ -1,0 +1,10 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    width: 22px;
+    height: 24px;
+    margin-bottom: 20px;
+}

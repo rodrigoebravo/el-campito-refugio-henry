@@ -1,0 +1,53 @@
+.mainContainer{
+    width: 30vw
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label {
+    font-size: 22px;
+    font-family: 'docs-Roboto', Helvetica, Arial, sans-serif;
+}
+
+.input{
+    background: #f2f2f2;
+    border: 1px solid #888;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.inputAsunto{
+    height: 100px;
+    background: #f2f2f2;
+    border: 1px solid #888;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.submit{
+    width: 100px;
+    background-color: #E48125;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: orange;
+    transform: scale(1.05);
+}
