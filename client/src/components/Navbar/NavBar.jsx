@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-import styles from "./Navbar.module.css";
+import styles from "./NavBar.module.css";
 import Logo from "../../img/LogoCampitoColor-01 1.svg";
-
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import icon from '../../img/icons/icon_user.png'
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -73,6 +74,11 @@ const Navbar = () => {
           <li className={styles.navItem}>
             <Link to="/denuncia" className={styles.navLink} onClick={closeMenu}>
               Denunciá
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link to="/admin" className={styles.navLink} onClick={closeMenu}>
+              <img alt="img_login" src={icon} className={styles.icon}/>
             </Link>
           </li>
         </ul>

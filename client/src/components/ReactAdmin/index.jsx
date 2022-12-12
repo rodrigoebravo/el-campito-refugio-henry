@@ -16,25 +16,27 @@ const dataProvider = jsonServerProvider("http://localhost:3001");
 const AdminIndex = () => {
   return (
     <Admin dataProvider={dataProvider}>
-      <Resource
-        name="api/dogs/admin/dogs"
-        list={DogsList}
-        create={DogsCreate}
-        edit={DogsEdit}
-        show={DogsShow}
-        icon={PetsIcon}
-        options={{ label: "Perritos" }}
-      />
-      <Resource
-        name="api/users/admin/users"
-        list={UsersList}
-        create={UsersCreate}
-        edit={UsersEdit}
-        show={UsersShow}
-        icon={AccountCircleIcon}
-        options={{ label: "Usuarios" }}
-      />
-    </Admin>
+        <Resource
+          name="api/dogs/admin/dogs"
+          list={DogsList}
+          create={DogsCreate}
+          edit={DogsEdit}
+          show={DogsShow}
+          icon={PetsIcon}
+          options={{ label: "Perritos" }}
+        />
+        <Resource
+          name="api/users/admin/users"
+          list={UsersList}
+          create={UsersCreate}
+          edit={UsersEdit}
+          show={UsersShow}
+          icon={AccountCircleIcon}
+          options={{ label: "Usuarios" }}
+        />
+        
+        
+      </Admin>
   );
 };
 

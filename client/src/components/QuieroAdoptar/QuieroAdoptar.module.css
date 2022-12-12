@@ -1,61 +1,75 @@
-
-p,li{
-    font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0.06em;
-    color:black
-  }
-
-
-ul {
-    list-style: none;
-  }
-.adoptarContenedor{
-    display:flex;
-    flex-direction: column;
-    margin: 7rem;
+.liAdoptar {
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: black;
 }
-  
+
+.ulAdoptar {
+  list-style: none;
+}
+.adoptarContenedor {
+  display: flex;
+  flex-direction: column;
+  margin: 7rem;
+}
+
 .liAdoptar::before {
-    content: "\2022";
-    color: #F9C0C1; 
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
+  content: "\2022";
+  color: #f9c0c1;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
 }
 
-.h1Adoptar{
-    font-family: 'TrashHand', sans-serif;  
-    color: #F9C0C1;  
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 51px;
+.h1Adoptar {
+  font-family: "TrashHand", sans-serif;
+  color: #f9c0c1;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 51px;
 }
-.h3centrado{
-    align-items: center;
-    text-align: center;
-    margin: 50px 0px 10px 0px;
+.h3centrado {
+  align-items: center;
+  text-align: center;
+  margin: 50px 0px 10px 0px;
 }
-.buttonsDiv{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.buttonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.buttonAdoptar{
-    font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0.06em;  
-    color:#FAFAFA;
-    background-color: #F9C0C1;
-    border: 3px solid ;
-    border-radius: 16px;
-    padding: 15px;
-    text-align: center;
+.buttonAdoptar {
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #fafafa;
+  /* background-color: #4FA7C1; */
+  border: 3px solid;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background-color: #f9c0c1;
+}
+.divButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 800px) {
+  .adoptarContenedor {
+    margin: 3rem;
+  }
 }

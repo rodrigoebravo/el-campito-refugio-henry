@@ -1,11 +1,11 @@
 import { React } from "react";
 import style from "./QuieroAdoptar.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/NavBar";
+import Navbar from "../NavBar/NavBar";
 const QuieroAdoptar = () => {
   return (
     /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
-    <div>
+    <div className={style.div}>
       <Navbar />
 
       <div className={style.adoptarContenedor}>
@@ -25,7 +25,7 @@ const QuieroAdoptar = () => {
           Consideraciones a tener en cuenta antes de tomar la decisión de
           adoptar:
         </h3>
-        <ul>
+        <ul className={style.ulAdoptar}>
           <li className={style.liAdoptar}>
             Los perros no son un juguete. El perro es parte de la familia y
             todos tienen que estar de acuerdo con la adopción.
@@ -102,12 +102,14 @@ const QuieroAdoptar = () => {
           que habrá personal del refugio coordinando visitas o realizando
           contactos por algún medio para saber cómo están.
         </p>
-        <h3 className={style.h3centrado}>
-          Ahora que ya te contamos todo, es hora de dar el primer paso:
-        </h3>
-        <button className={style.buttonAdoptar}>
-          FORMULARIO DE ADOPCIÓN - LINK
-        </button>
+        <div className={style.divButton}>
+          <h3 className={style.h3centrado}>
+            Ahora que ya te contamos todo, es hora de dar el primer paso:
+          </h3>
+          <button className={style.buttonAdoptar}>
+            FORMULARIO DE ADOPCIÓN - LINK
+          </button>
+        </div>
         <Footer />
       </div>
     </div>
