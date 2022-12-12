@@ -1,0 +1,14 @@
+.divCard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.name {
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+}
+.imgCard {
+  width: 300px;
+  border-radius: 1rem;
+  /* border: solid 2px #000; */
+}
+

@@ -5,11 +5,14 @@ import IconsBar from "../IconsBar/IconsBar";
 // import homeimg from '../../img/homeimg.jpg'
 import style from './Home.module.css'
 import Footer from '../Footer/Footer'
+import Navbar from "../Navbar/NavBar";
 
 const Home = () => {
   return (
     <div>
-      <NavBar/>
+
+        <Navbar/>
+
       <div className={style.homeContenedor}>
         <div className={style.halfHomeContenedor}>
           <div>

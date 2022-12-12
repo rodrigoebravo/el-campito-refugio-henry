@@ -1,9 +1,17 @@
 import {
-  CLEAR_CLOUDINARY_RESPONSE, CLEAR_CLOUDINARY_VIDEO,
-  GET_CLOUDINARY_RESPONSE, VIDEO_CLOUDINARY_RESPONSE,
+  CLEAR_CLOUDINARY_RESPONSE,
+  CLEAR_CLOUDINARY_VIDEO,
+  GET_CLOUDINARY_RESPONSE,
+  VIDEO_CLOUDINARY_RESPONSE,
   GET_USERS,
-  REMOVE_CLOUDINARY_IMAGE, GET_DOGS, GET_DOGS_DETAILS, CLEAR_DETAILS,
-  CLEAR_ALL_DOGS
+  REMOVE_CLOUDINARY_IMAGE,
+  GET_DOGS,
+  GET_DOGS_DETAILS,
+  CLEAR_DETAILS,
+  CLEAR_ALL_DOGS,
+  FILTER_DOGS_BY_GENDER,
+  FILTER_DOGS_BY_AGE,
+  FILTER_DOGS_BY_SIZE
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
@@ -114,3 +122,24 @@ export function clearDogs() {
     type: CLEAR_ALL_DOGS,
   })
 }
+
+export function filterDogsByGender(payload) {
+  return {
+    type: FILTER_DOGS_BY_GENDER,
+    payload
+  }
+}
+export function filterDogsByAge(payload) {
+  return {
+    type: FILTER_DOGS_BY_AGE,
+    payload
+  }
+}
+export function filterDogsBySize(payload) {
+  return {
+    type: FILTER_DOGS_BY_SIZE,
+    payload
+  }
+}
+
+
