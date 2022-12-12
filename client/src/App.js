@@ -34,7 +34,7 @@ function App() {
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
       {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
-      <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> 
+      <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}
     </BrowserRouter>
   );
 }

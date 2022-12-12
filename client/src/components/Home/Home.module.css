@@ -1,118 +1,100 @@
-
-.homeContenedor {
+.homeContenedor{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 2rem;
-}
-.pHome {
+  
+  }
+  .pHome{
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 19px;
-  line-height: 18.09px;
-
-}
-.h2Home {
-  font-family: "TrashHand";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 51px;
-  color: #4fa7c1;
-}
-
-
-.homeImage{
-  width: 100%;
-  height: 100%;
-}
-
-.homeMenu{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2 1fr);
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 29px;
-  letter-spacing: 0.06em;
-  color: white;
-  margin: 2rem;
-
-}
-.adoptar,
-.donaciones,
-.campito,
-.comunicacion,
-.comportamiento,
-.visitas,
-.veterinaria,
-.voluntario {
-  height: 200px;
-  text-decoration: none;
-  color: white;
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0.06em;
-  padding: 15px;
-}
-.adoptar {
-  background-color: #f9c0c1;
-}
-.donaciones {
-  background-color: #6b639a;
-}
-.visitas {
-  background-color: #fca24f;
-}
-.veterinaria {
-  background-color: #444445;
-}
-.campito {
-  background-color: #55ba68;
-}
-.comunicacion,
-.comportamiento {
-  background-color: #e48125;
-}
-.voluntario {
-  background-color: #4fa7c1;
-}
-
-img {
-  width: 400px;
-}
-@media (max-width: 600px) {
-  .homeContenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  line-height: 18.09px
+  
   }
-  .homeMenu {
-    font-size: 15px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+  .h2Home{
+    font-family: 'TrashHand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 51px;
+    color: #4FA7C1;
   }
-  .adoptar,
-  .donaciones,
-  .campito,
-  .comunicacion,
-  .comportamiento,
-  .visitas,
-  .veterinaria,
-  .voluntario {
-    padding: 5px;
-    height: 55px;
-    border-radius: 15px;
-    text-align: center;
+  .homeMenu{
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-template-rows: repeat(2 1fr);
+    font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.06em;
+    color:white;
+    margin: 2rem
+   
+  
   }
-
-  .h2Home {
-    font-size: 33px;
+  
+  .adoptar{
+    background-color: #F9C0C1;
   }
-}
+  .donaciones{
+    background-color: #6B639A;
+  }
+  .visitas{
+    background-color: #FCA24F;
+  }
+  .veterinaria{
+    background-color: #444445;
+  }
+  .campito{
+    background-color: #55BA68;
+  }
+  .comunicacion, .comportamiento{
+    background-color: #E48125;
+  }
+  .voluntario{
+    background-color: #4FA7C1;
+  }
+  a{
+    text-decoration: none;
+    color:white;
+    height: 200px;
+    font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.06em;
+    padding: 15px;
+    }
+  img{
+    width: 400px;
+  }
+  @media (max-width: 600px) {
+    .homeContenedor {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .homeMenu{
+      font-size: 15px; 
+      grid-template-columns:  repeat(1, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      
+    }
+    a{
+      padding: 5px;
+      height: 55px;
+      border-radius: 15px;
+      text-align: center;
+        
+    }
+   
+    .h2Home{
+      font-size: 33px;
+    }
+  
+  }

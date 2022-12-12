@@ -5,7 +5,7 @@ import IconsBar from "../IconsBar/IconsBar";
 // import homeimg from '../../img/homeimg.jpg'
 import style from './Home.module.css'
 import Footer from '../Footer/Footer'
-import Navbar from "../Navbar/NavBar";
+import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
   return (

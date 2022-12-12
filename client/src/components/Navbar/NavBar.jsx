@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import styles from "./NavBar.module.css";
+import styles from "./Navbar.module.css";
 import Logo from "../../img/LogoCampitoColor-01 1.svg";
 
 import { FiMenu, FiX } from "react-icons/fi";
