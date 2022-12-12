@@ -1,6 +1,6 @@
 import {
-  CLEAR_CLOUDINARY_RESPONSE,
-  GET_CLOUDINARY_RESPONSE,
+  CLEAR_CLOUDINARY_RESPONSE, CLEAR_CLOUDINARY_VIDEO,
+  GET_CLOUDINARY_RESPONSE, VIDEO_CLOUDINARY_RESPONSE,
   GET_USERS,
   REMOVE_CLOUDINARY_IMAGE, GET_DOGS, GET_DOGS_DETAILS, CLEAR_DETAILS,
   CLEAR_ALL_DOGS
@@ -41,6 +41,24 @@ export const removeCloudinayImage = (payload) => {
     dispatch({
       type: REMOVE_CLOUDINARY_IMAGE,
       payload
+    })
+  };
+}
+
+export const postCloudinaryVideo = (postData) => {
+  return async (dispatch) => {
+    const json = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NAME_CLOUDINARY}/image/upload`, postData)
+    return dispatch({
+      type: VIDEO_CLOUDINARY_RESPONSE,
+      payload: json.data.secure_url
+    })
+  }
+}
+
+export const clearVideoCloudinary = () => {
+  return async function (dispatch) {
+    dispatch({
+      type: CLEAR_CLOUDINARY_VIDEO
     })
   };
 }

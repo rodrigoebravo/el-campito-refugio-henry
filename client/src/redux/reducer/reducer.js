@@ -1,8 +1,8 @@
 import {
     POST_DOG,
     POST_USER,
-    GET_CLOUDINARY_RESPONSE,
-    CLEAR_CLOUDINARY_RESPONSE,
+    GET_CLOUDINARY_RESPONSE, VIDEO_CLOUDINARY_RESPONSE,
+    CLEAR_CLOUDINARY_RESPONSE, CLEAR_CLOUDINARY_VIDEO,
     REMOVE_CLOUDINARY_IMAGE,
     GET_USERS,
     GET_DOGS,
@@ -18,6 +18,7 @@ const initialState = {
     allUsers: [],
     allDogs: [],
     responseCloudinary: [],
+    videoCloudinary: ""
 
 }
 
@@ -75,6 +76,17 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 responseCloudinary: imagesFilter
+            }
+        case VIDEO_CLOUDINARY_RESPONSE:
+
+            return {
+                ...state,
+                videoCloudinary: action.payload
+            }
+        case CLEAR_CLOUDINARY_VIDEO:
+            return {
+                ...state,
+                videoCloudinary: ""
             }
         default:
             return {
