@@ -1,0 +1,117 @@
+.mainContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fafafa;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 50vw;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    min-height: 160px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+
+.itemCheckbox{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    min-height: 160px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    font-family: 'docs-Roboto', Helvetica, Arial, sans-serif;
+}
+
+.required{
+    color: red;
+}
+
+.input{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #888;
+    width: 45%;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.input:focus, .inputDate:focus {
+  outline:none;
+  outline-offset: 0;
+  border-bottom: 2px solid #E48125;
+}
+
+.input:active, .inputDate:active{
+  outline:none;
+  outline-offset: 0;
+  border-bottom: 2px solid #E48125;
+}
+
+.inputDate{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #888;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.checkboxContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 20px;
+    height:fit-content;
+}
+
+.checkbox:active{
+    color:#E48125;
+    background-color:#E48125;
+}
+
+.select{
+    width: min-content;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.submit{
+    width: 100px;
+    background-color: #E48125;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    margin: -20px 0px 50px 0px;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: orange;
+    transform: scale(1.05);
+}

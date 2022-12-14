@@ -36,4 +36,7 @@ border: 3px solid ;
     .campitoContenedor{
         width: 100%;
     }
+    .campitoContenedor{
+        margin: 3rem;
+    }
 }
