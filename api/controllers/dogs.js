@@ -73,7 +73,7 @@ const updateDog = async (req, res) => {
     if (id && isDelete) {
       const dog = await dogModel.findByIdAndUpdate(
         id,
-        { isDelete },
+        { isDeleted: isDelete },
         {
           returnOriginal: false,
         }
@@ -92,70 +92,67 @@ const updateDog = async (req, res) => {
   }
 };
 
-const adminDogs = async (req, res) => {
-  try {
-    const users = await dogModel.find({});
-    res.status(201).send(users);
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
+// const adminDogs = async (req, res) => {
+//   try {
+//     const users = await dogModel.find({});
+//     res.status(201).send(users);
+//   } catch (e) {
+//     res.status(404).send({ error: e });
+//   }
+// };
 
-const adminDogsID = async (req, res) => {
-  try {
-    const {
-      params: { id },
-    } = req;
+// const adminDogsID = async (req, res) => {
+//   try {
+//     const {
+//       params: { id },
+//     } = req;
 
-    const users = await dogModel.findOne({ _id: id });
-    res.json(users);
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
+//     const users = await dogModel.findOne({ _id: id });
+//     res.json(users);
+//   } catch (e) {
+//     res.status(404).send({ error: e });
+//   }
+// };
 
-const adminUpdate = async (req, res) => {
-  try {
-    // const { body } = req;
-    const {
-      body: { id, ...data },
-    } = req;
+// const adminUpdate = async (req, res) => {
+//   try {
+//     // const { body } = req;
+//     const {
+//       body: { id, ...data },
+//     } = req;
 
-    // console.log(id);
-    // console.log(data);
+//     // console.log(id);
+//     // console.log(data);
 
-    const user = await dogModel.findByIdAndUpdate({ _id: id }, data, {
-      returnOriginal: false,
-    });
+//     const user = await dogModel.findByIdAndUpdate({ _id: id }, data, {
+//       returnOriginal: false,
+//     });
 
-    res.json({ data: user });
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
+//     res.json({ data: user });
+//   } catch (e) {
+//     res.status(404).send({ error: e });
+//   }
+// };
 
-const adminDelete = async (req, res) => {
-  try {
-    // const { body } = req;
-    const id = req.params.id;
+// const adminDelete = async (req, res) => {
+//   try {
+//     // const { body } = req;
+//     const id = req.params.id;
 
-    console.log(id);
+//     console.log(id);
 
-    const userDelete = await dogModel.findById(id);
-    await modelUser.deleteOne({ _id: id });
-    res.json(userDelete);
-  } catch (e) {
-    res.status(404).send(e);
-  }
-};
+//     const userDelete = await dogModel.findById(id);
+//     await modelUser.deleteOne({ _id: id });
+//     res.json(userDelete);
+//   } catch (e) {
+//     res.status(404).send(e);
+//   }
+// };
 
 module.exports = {
   getDogs,
   getDogById,
   createDog,
   updateDog,
-  adminDogs,
-  adminDogsID,
-  adminUpdate,
-  adminDelete,
+
 };

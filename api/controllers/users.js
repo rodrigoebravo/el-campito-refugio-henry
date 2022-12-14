@@ -80,13 +80,12 @@ const updateUser = async (req, res) => {
       query: { id, isDelete },
       body,
     } = req;
-    // const {id , isDelete} = req.query;
-    // const body  = req.body;
 
+    
     if (id && isDelete) {
       const user = await usersModel.findByIdAndUpdate(
         id,
-        { isDelete },
+        { isDeleted: isDelete },
         {
           returnOriginal: false,
         }
@@ -105,81 +104,11 @@ const updateUser = async (req, res) => {
   }
 };
 
-const adminUsers = async (req, res) => {
-  try {
-    const users = await usersModel.find({});
-    res.status(201).send(users);
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
 
-const adminUsersId = async (req, res) => {
-  try {
-    const {
-      params: { id },
-    } = req;
-
-    const users = await usersModel.findOne({ _id: id });
-    res.json(users);
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
-
-const adminUpdate = async (req, res) => {
-  try {
-    // const { body } = req;
-    const {
-      body: { id, ...data },
-    } = req;
-
-    // console.log(id);
-    // console.log(data);
-
-    const user = await usersModel.findByIdAndUpdate({ _id: id }, data, {
-      returnOriginal: false,
-    });
-
-    res.json({ data: user });
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
-
-const adminCreate = async (req, res) => {
-  try {
-    const { data } = req.body;
-    const user = await usersModel.create(data);
-    res.status(200).send(user);
-  } catch (error) {
-    res.status(404).send({ error });
-  }
-};
-
-const adminDelete = async (req, res) => {
-  try {
-    // const { body } = req;
-    const id = req.params.id;
-
-    console.log(id);
-
-    const userDelete = await usersModel.findById(id);
-    await modelUser.deleteOne({ _id: id });
-    res.json(userDelete);
-  } catch (e) {
-    res.status(404).send(e);
-  }
-};
 
 module.exports = {
   getUsers,
   getUserById,
   createUser,
   updateUser,
-  adminCreate,
-  adminDelete,
-  adminUsers,
-  adminUpdate,
-  adminUsersId,
 };

@@ -34,7 +34,7 @@ const dogScheme = new mongoose.Schema(
     },
     references: [ String ],
 
-    isDelete: {
+    isDeleted: {
       type: Boolean,
       default: false,
     }
@@ -48,11 +48,11 @@ const dogScheme = new mongoose.Schema(
 // dogScheme.plugin(mongooseDelete, { overrideMethods: "all" });
 
 dogScheme.pre('find', function() {
-  this.where({ isDelete: false });
+  this.where({ isDeleted: false });
 });
 
 dogScheme.pre('findOne', function() {
-  this.where({ isDelete: false });
+  this.where({ isDeleted: false });
 });
 
 
