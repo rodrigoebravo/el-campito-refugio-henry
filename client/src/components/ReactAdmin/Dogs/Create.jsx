@@ -1,4 +1,4 @@
-import { Create, SimpleForm, TextInput } from "react-admin";
+import { Create, SimpleForm, TextInput, ImageInput, ImageField } from "react-admin";
 
 const PostCreate = (props) => {
   return (
@@ -11,6 +11,12 @@ const PostCreate = (props) => {
         <TextInput source="race" label="Raza" fullWidth />
         <TextInput source="features" multiline label="Descripción" fullWidth />
         <TextInput source="references" label="Caracteristicas" fullWidth />
+        <ImageInput source="images" label="Fotografías" multiple>
+            <ImageField source="src" title="title" />
+        </ImageInput>
+        <ImageInput source="video" label="Video" >
+            <ImageField source="src" title="title" />
+        </ImageInput>
       </SimpleForm>
     </Create>
   );
