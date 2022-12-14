@@ -107,56 +107,43 @@ const updateUser = async (req, res) => {
 
 const adminUsers = async (req, res) => {
   try {
-    const _start = Number(req.query._start) || 0;
-    const _end = Number(req.query._end) || 10;
-    const limite = _end - _start;
-    let todos = await usersModel.find({});
-    let users = await usersModel
-      .find({ isDelete: true })
-      .skip(_start)
-      .limit(limite);
-
-    res.set("Access-Control-Expose-Headers", "X-Total-Count");
-    res.set("X-Total-Count", todos.length);
-
-    let i = _start;
-    const filter = users.map((e) => {
-      i++;
-      return { id: i, data: e };
-    });
-
-    res.status(200).send(filter);
-  } catch (error) {
-    res.status(404).send({ error });
+    const users = await usersModel.find({});
+    res.status(201).send(users);
+  } catch (e) {
+    res.status(404).send({ error: e });
   }
 };
 
 const adminUsersId = async (req, res) => {
   try {
-    const { id } = req.params;
+    const {
+      params: { id },
+    } = req;
 
-    const user = await usersModel
-      .find({})
-      .skip(id - 1)
-      .limit(1);
-
-    res.status(200).json({ id: id, data: user[0] });
-  } catch (error) {
-    res.status(404).send({ error });
+    const users = await usersModel.findOne({ _id: id });
+    res.json(users);
+  } catch (e) {
+    res.status(404).send({ error: e });
   }
 };
 
 const adminUpdate = async (req, res) => {
   try {
-    const { data } = req.body;
-    const { id } = req.params;
+    // const { body } = req;
+    const {
+      body: { id, ...data },
+    } = req;
 
-    const userUpdate = await usersModel.findByIdAndUpdate(data._id, data, {
+    // console.log(id);
+    // console.log(data);
+
+    const user = await usersModel.findByIdAndUpdate({ _id: id }, data, {
       returnOriginal: false,
     });
-    res.status(200).json({ id: id, data: userUpdate });
-  } catch (error) {
-    res.status(404).send({ error });
+
+    res.json({ data: user });
+  } catch (e) {
+    res.status(404).send({ error: e });
   }
 };
 
@@ -171,18 +158,18 @@ const adminCreate = async (req, res) => {
 };
 
 const adminDelete = async (req, res) => {
-  const { id } = req.params;
-  let users = await usersModel.find({});
+  try {
+    // const { body } = req;
+    const id = req.params.id;
 
-  const userUpdate = await usersModel.findByIdAndUpdate(
-    users[id - 1]._id,
-    { isDelete: !users[id - 1].isDelete },
-    {
-      returnOriginal: false,
-    }
-  );
+    console.log(id);
 
-  res.status(200).json({ id: id, data: userUpdate });
+    const userDelete = await usersModel.findById(id);
+    await modelUser.deleteOne({ _id: id });
+    res.json(userDelete);
+  } catch (e) {
+    res.status(404).send(e);
+  }
 };
 
 module.exports = {

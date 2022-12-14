@@ -12,10 +12,10 @@ const DogList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <ImageField source="data.images[1]" label="Perrito" />
-        <TextField source="data.name" label="Nombre" />
-        <TextField source="data.gender" label="Sexo" />
-        <TextField source="data.age" label="Edad" />
+        <ImageField source="images[1]" label="Perrito" />
+        <TextField source="name" label="Nombre" />
+        <TextField source="gender" label="Sexo" />
+        <TextField source="age" label="Edad" />
         <EditButton basepath="/api/dogs/admin/dogs" />
         <DeleteWithConfirmButton basepath="/api/dogs/admin/dogs" />
         <ShowButton />
