@@ -5,24 +5,24 @@ const DogShow = () => {
     <Show>
       <SimpleShowLayout>
         <TextField
-          source="data.name"
+          source="name"
           label="Nombre"
           sx={{ fontSize: "h3.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="data.age"
+          source="age"
           label="Edad"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="data.email"
+          source="email"
           label="Email"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="data.roles"
+          source="roles"
           label="Rol"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}

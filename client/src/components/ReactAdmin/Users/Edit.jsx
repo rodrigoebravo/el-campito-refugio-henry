@@ -10,10 +10,10 @@ const PostEdit = (props) => {
     >
       <SimpleForm>
         <TextInput source="id" disabled fullWidth />
-        <TextInput source="data.name" label="Nombre" fullWidth />
-        <TextInput source="data.email" label="Email" fullWidth />
-        <TextInput source="data.age" label="Edad" fullWidth />
-        <TextInput source="data.roles" label="Rol" fullWidth />
+        <TextInput source="name" label="Nombre" fullWidth />
+        <TextInput source="email" label="Email" fullWidth />
+        <TextInput source="age" label="Edad" fullWidth />
+        <TextInput source="roles" label="Rol" fullWidth />
       </SimpleForm>
     </Edit>
   );
