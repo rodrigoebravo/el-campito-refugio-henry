@@ -70,7 +70,7 @@
 .voluntario {
   background-color: #4fa7c1;
 }
-.homeMenu a{
+a {
   text-decoration: none;
   color: white;
   height: 200px;
@@ -84,7 +84,7 @@
 img {
   width: 400px;
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .homeContenedor {
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ img {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(8, 1fr);
   }
-  .homeMenu a{
+  a {
     padding: 5px;
     height: 55px;
     border-radius: 15px;
