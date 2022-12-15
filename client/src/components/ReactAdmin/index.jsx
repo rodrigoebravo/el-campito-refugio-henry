@@ -1,24 +1,37 @@
 import { Admin, Resource } from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
-import List from "./Dogs/List";
-import Show from "./Dogs/Show";
-import Edit from "./Dogs/Edit";
-import Create from "./Dogs/Create";
+import DogsList from "./Dogs/List";
+import DogsShow from "./Dogs/Show";
+import DogsEdit from "./Dogs/Edit";
+import DogsCreate from "./Dogs/Create";
+import UsersList from "./Users/List";
+import UsersShow from "./Users/Show";
+import UsersEdit from "./Users/Edit";
+import UsersCreate from "./Users/Create";
 import PetsIcon from "@mui/icons-material/Pets";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-const dataProvider = jsonServerProvider("http://localhost:3001");
+import dataProvider from "../../dataProvider";
 
 const AdminIndex = () => {
   return (
     <Admin dataProvider={dataProvider}>
       <Resource
         name="api/dogs/admin/dogs"
-        list={List}
-        create={Create}
-        edit={Edit}
+        list={DogsList}
+        create={DogsCreate}
+        edit={DogsEdit}
+        show={DogsShow}
         icon={PetsIcon}
-        show={Show}
         options={{ label: "Perritos" }}
+      />
+      <Resource
+        name="api/users/admin/users"
+        list={UsersList}
+        create={UsersCreate}
+        edit={UsersEdit}
+        show={UsersShow}
+        icon={AccountCircleIcon}
+        options={{ label: "Usuarios" }}
       />
     </Admin>
   );

@@ -1,48 +1,42 @@
-.homeContenedor{
+.homeContenedor {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  margin: 4rem 2rem ;
+  margin: 2rem 2rem 0;
 }
-
-.halfHomeContenedor{
-  width: 50%;
+.pHome {
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 18.09px;
+}
+.halfHomeContenedor {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
-
-.textContainer{
-  width: 100%;
-  margin: 0 25% 0 25%;
+.IconsBar {
+  display: flex;
+  margin: 0 3rem 0 0;
 }
-
-.pHome{
-font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-font-style: normal;
-font-weight: 300;
-font-size: 19px;
-line-height: 18.09px
-
+.textContainer {
+  padding: 2rem;
 }
-.h2Home{
-  font-family: 'TrashHand';
+.homeImage {
+  width: 42rem;
+}
+.h2Home {
+  font-family: "TrashHand";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 51px;
-  color: #4FA7C1;
+  color: #4fa7c1;
 }
-
-.homeImage{
-  width: 100%;
-  height: 100%;
-}
-
-.homeMenu{
+.homeMenu {
   display: grid;
-  grid-template-columns:  repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2 1fr);
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-style: normal;
@@ -50,34 +44,35 @@ line-height: 18.09px
   font-size: 20px;
   line-height: 29px;
   letter-spacing: 0.06em;
-  color:white;
-  margin: 0px 2rem 0px 2rem;
+  color: white;
+  margin: 0 2rem 2rem;
 }
 
-.adoptar{
-  background-color: #F9C0C1;
+.adoptar {
+  background-color: #f9c0c1;
 }
-.donaciones{
-  background-color: #6B639A;
+.donaciones {
+  background-color: #6b639a;
 }
-.visitas{
-  background-color: #FCA24F;
+.visitas {
+  background-color: #fca24f;
 }
-.veterinaria{
+.veterinaria {
   background-color: #444445;
 }
-.campito{
-  background-color: #55BA68;
+.campito {
+  background-color: #55ba68;
 }
-.comunicacion, .comportamiento{
-  background-color: #E48125;
+.comunicacion,
+.comportamiento {
+  background-color: #e48125;
 }
-.voluntario{
-  background-color: #4FA7C1;
+.voluntario {
+  background-color: #4fa7c1;
 }
 .homeMenu a{
   text-decoration: none;
-  color:white;
+  color: white;
   height: 200px;
   font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
   font-size: 24px;
@@ -85,37 +80,68 @@ line-height: 18.09px
   line-height: 29px;
   letter-spacing: 0.06em;
   padding: 15px;
-  }
-img{
+}
+img {
   width: 400px;
 }
 @media (max-width: 768px) {
   .homeContenedor {
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  
-  .halfHomeContenedor{
-    width: 100%;
-  }
-  .homeMenu{
-    font-size: 15px; 
-    grid-template-columns:  repeat(1, 1fr);
+  .homeMenu {
+    font-size: 15px;
+    grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    
   }
   .homeMenu a{
     padding: 5px;
     height: 55px;
     border-radius: 15px;
     text-align: center;
-      
-  }
- 
-  .h2Home{
-    font-size: 33px;
   }
 
+  .h2Home {
+    font-size: 33px;
+  }
+}
+@media (max-width: 1050px) {
+  .homeImage {
+    width: 30rem;
+  }
+}
+
+@media (max-width:900px) {
+  .homeImage {
+    width: 25rem;
+  }
+}
+
+
+@media (max-width:800px) {
+  .halfHomeContenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .homeContenedor {
+    display: flex;
+    flex-direction: column;
+  }
+  .IconsBar{
+    display: flex;
+    flex-direction: row;
+    margin:  0 2rem;
+  }
+}
+@media (max-width:500px) {
+  .halfHomeContenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

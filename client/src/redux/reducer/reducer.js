@@ -8,11 +8,14 @@ import {
     GET_DOGS,
     GET_DOGS_DETAILS,
     CLEAR_DETAILS,
-    CLEAR_ALL_DOGS
+    CLEAR_ALL_DOGS,
+    FILTER_DOGS_BY_GENDER,
+    FILTER_DOGS_BY_AGE,
+    FILTER_DOGS_BY_SIZE
 } from '../actions/types'
 
 const initialState = {
-    dog: {},
+    dogs: [],
     user: {},
     detailsDogs: [],
     allUsers: [],
@@ -87,6 +90,53 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 videoCloudinary: ""
+            }
+        case FILTER_DOGS_BY_GENDER:
+            const filtredByGender = state.allDogs
+            const dogsFiltered = action.payload === 'All' ? filtredByGender : filtredByGender.filter(el => el.gender === action.payload)
+            if (dogsFiltered.length === 0) {
+                alert("No se encontraron perros con ese filtro")
+                return {
+                    ...state,
+                    dogs: filtredByGender
+                }
+            } else {
+                return {
+                    ...state,
+                    dogs: dogsFiltered
+                }
+            }
+
+        case FILTER_DOGS_BY_AGE:
+            const filtredByAge = state.allDogs
+            const dogsFilteredByAge = action.payload === 'All' ? filtredByAge : filtredByAge.filter(el => el.age === action.payload)
+            if (dogsFilteredByAge.length === 0) {
+                alert("No se encontraron perros con ese filtro")
+                return {
+                    ...state,
+                    dogs: filtredByAge
+                }
+            } else {
+                return {
+                    ...state,
+                    dogs: dogsFilteredByAge
+                }
+
+            }
+        case FILTER_DOGS_BY_SIZE:
+            const filtredBySize = state.allDogs
+            const dogsFilteredBySize = action.payload === 'All' ? filtredBySize : filtredBySize.filter(el => el.size === action.payload)
+            if (dogsFilteredBySize.length === 0) {
+                alert("No se encontraron perros con ese filtro")
+                return {
+                    ...state,
+                    dogs: filtredBySize
+                }
+            } else {
+                return {
+                    ...state,
+                    dogs: dogsFilteredBySize
+                }
             }
         default:
             return {

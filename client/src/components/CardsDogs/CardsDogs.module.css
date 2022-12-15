@@ -1,0 +1,49 @@
+.divContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 1rem;
+}
+.h2 {
+  font-family: "TrashHand", sans-serif;
+  color: #e48125;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 51px;
+}
+.divCards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  user-select: none;
+}
+.card {
+  margin: 2rem;
+}
+.btnBack{
+  position: absolute;
+  top:2rem;
+  left:2rem;
+  text-decoration: none;
+}
+.Link {
+  text-decoration: none;
+  color: #000;
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+}
+
+@media (max-width:600px) {
+  .h2{
+    font-size: 40px;
+  }
+}
+
+@media (max-width:400px) {
+  .h2{
+    font-size: 30px;
+  }
+}

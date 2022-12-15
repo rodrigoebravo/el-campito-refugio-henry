@@ -11,43 +11,34 @@ const DogShow = () => {
     <Show>
       <SimpleShowLayout>
         <TextField
-          source="data.name"
+          source="name"
           label="Nombre"
           sx={{ fontSize: "h3.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="data.gender"
+          source="gender"
           label="Sexo"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="data.size"
+          source="size"
           label="Tamaño"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="data.race"
+          source="race"
           label="Raza"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
-        <TextField
-          source="data.features"
-          multiline
-          label="Descripción"
-          fullWidth
-        />
-        <TextField
-          source="data.references[0]"
-          label="Caracteristicas"
-          fullWidth
-        />
+        <TextField source="features" multiline label="Descripción" fullWidth />
+        <TextField source="references[0]" label="Caracteristicas" fullWidth />
         <WrapperField fullWidth>
-          <ImageField source="data.images[0]" src="" title="perrito" />
-          <ImageField source="data.images[1]" src="" title="perrito" />
-          <ImageField source="data.images[2]" src="" title="perrito" />
+          <ImageField source="images[0]" src="" title="perrito" />
+          <ImageField source="images[1]" src="" title="perrito" />
+          <ImageField source="images[2]" src="" title="perrito" />
         </WrapperField>
       </SimpleShowLayout>
     </Show>
