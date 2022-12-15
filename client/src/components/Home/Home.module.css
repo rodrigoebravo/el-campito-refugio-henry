@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 4rem 2rem ;
 }
 
@@ -74,7 +75,7 @@ line-height: 18.09px
 .voluntario{
   background-color: #4FA7C1;
 }
-a{
+.homeMenu a{
   text-decoration: none;
   color:white;
   height: 200px;
@@ -88,12 +89,16 @@ a{
 img{
   width: 400px;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .homeContenedor {
       display:flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+  }
+  
+  .halfHomeContenedor{
+    width: 100%;
   }
   .homeMenu{
     font-size: 15px; 
@@ -101,7 +106,7 @@ img{
     grid-template-rows: repeat(8, 1fr);
     
   }
-  a{
+  .homeMenu a{
     padding: 5px;
     height: 55px;
     border-radius: 15px;

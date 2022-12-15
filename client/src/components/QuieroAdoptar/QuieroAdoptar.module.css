@@ -58,4 +58,5 @@ ul {
     border-radius: 16px;
     padding: 15px;
     text-align: center;
+    cursor: pointer;
 }

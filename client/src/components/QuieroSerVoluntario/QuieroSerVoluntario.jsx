@@ -30,8 +30,8 @@ const QuieroSerVoluntario = () => {
           <li className={style.liVoluntario}>Saber más sobre los que hacer y ser parte de un equipo.</li>
           <li className={style.liVoluntario}>Hacer algo a la vez desafiante y muy gratificante.</li>
           <li className={style.liVoluntario}>Divertirte.</li>
-        </ul>
           <li className={style.liVoluntario}>Pasar tiempo de calidad con nuestros camperitos.</li>        
+        </ul>
         <div className={style.voluntarioContacto}>
         {/**aca iria una galeria con las fotos de los voluntarios */}
           <button className={style.buttonVoluntario}>institucional@versiusamosestemail</button>

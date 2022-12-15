@@ -1,8 +1,18 @@
+.backgroundSolution{
+    background-color: #fafafa;
+}
+
 .mainContainer{
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #fafafa;
+}
+
+.mainContainer h2 {
+    font-size: 50px;
+    font-weight: 400;
+    margin: 50px 0 50px 0;
 }
 
 .form{
@@ -114,4 +124,8 @@
 .submit:hover{
     background-color: orange;
     transform: scale(1.05);
+}
+
+.error {
+    color: red;
 }
