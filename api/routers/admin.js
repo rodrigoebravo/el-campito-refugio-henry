@@ -20,7 +20,7 @@ const {
 router.get("/dogs", adminDogs);
 router.get("/dogs/:id", adminDogsId);
 router.post("/dogs", adminCreateDog);
-router.put("/dogs", adminUpdateDog);
+router.put("/dogs/:id", adminUpdateDog);
 router.delete("/dogs/:id", adminDeleteDog);
 //------ /api/admin/users
 router.get("/users", adminUsers);

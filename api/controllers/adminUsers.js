@@ -15,7 +15,7 @@ const adminUsers = async (req, res) => {
         params: { id },
       } = req;
   
-      const users = await usersModel.findOne({ _id: id });
+      const users = await usersModel.findById({ _id: id });
       res.json(users);
     } catch (e) {
       res.status(404).send({ error: e });
@@ -59,7 +59,7 @@ const adminUsers = async (req, res) => {
   
       console.log(id);
   
-      const userDelete = await usersModel.findByIdAndUpdate({_id: id}, {isDeleted: true}, {
+      const userDelete = await usersModel.findByIdAndUpdate({_id: id}, {isDelete: true}, {
         returnOriginal: false,
       });
       // await modelUser.deleteOne({ _id: id });

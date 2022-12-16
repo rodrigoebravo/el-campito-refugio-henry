@@ -37,8 +37,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/dogs", require("./hook/dogHook"));
-app.use("/api/users", require("./hook/userHook"));
+app.use("/api/admin/dogs", require("./hook/dogHook"));
+app.use("/api/admin/users", require("./hook/userHook"));
+
 
 app.use("/api", require("./routers"));
 

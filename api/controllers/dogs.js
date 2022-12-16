@@ -73,7 +73,7 @@ const updateDog = async (req, res) => {
     if (id && isDelete) {
       const dog = await dogModel.findByIdAndUpdate(
         id,
-        { isDeleted: isDelete },
+        { isDelete },
         {
           returnOriginal: false,
         }

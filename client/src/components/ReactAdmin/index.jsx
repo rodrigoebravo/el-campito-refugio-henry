@@ -16,7 +16,7 @@ const AdminIndex = () => {
   return (
     <Admin dataProvider={dataProvider}>
       <Resource
-        name="api/dogs/admin/dogs"
+        name="api/admin/dogs"
         list={DogsList}
         create={DogsCreate}
         edit={DogsEdit}
@@ -25,7 +25,7 @@ const AdminIndex = () => {
         options={{ label: "Perritos" }}
       />
       <Resource
-        name="api/users/admin/users"
+        name="api/admin/users"
         list={UsersList}
         create={UsersCreate}
         edit={UsersEdit}

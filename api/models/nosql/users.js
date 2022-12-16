@@ -23,7 +23,7 @@ const userScheme = new mongoose.Schema(
       enum: ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"], 
       default: "public"
   },
-    isDeleted: {
+    isDelete: {
       type: Boolean,
       default: false,
     },
@@ -59,11 +59,11 @@ const userScheme = new mongoose.Schema(
 //   })
 
 userScheme.pre("find", function () {
-  this.where({ isDeleted: false });
+  this.where({ isDelete: false });
 });
 
 userScheme.pre("findOne", function () {
-  this.where({ isDeleted: false });
+  this.where({ isDelete: false });
 });
 
 module.exports = mongoose.model("users", userScheme);
