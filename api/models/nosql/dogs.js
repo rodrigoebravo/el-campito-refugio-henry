@@ -42,6 +42,11 @@ const dogScheme = new mongoose.Schema(
     isSponsored: {
       type: Boolean,
       default: false,
+    },
+    
+    toAdopt: {
+      type: Boolean,
+      default: false,
     }
   },
   {
