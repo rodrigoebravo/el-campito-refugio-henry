@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { postDog, clearCloudinaryResponse, clearVideoCloudinary } from "../../redux/actions/action";
+import { postDog, clearCloudinaryResponse } from "../../redux/actions/action";
 import ImageUpload from "../ImageUpload/ImageUpload.jsx";
 import VideoUpload from "../VideoUpload/VideoUpload";
 
@@ -9,7 +9,7 @@ import VideoUpload from "../VideoUpload/VideoUpload";
 
 const FormPostDogs = () => {
   const dispatch = useDispatch();
-  const cloudImages = useSelector(state => state.responseCloudinary);
+  const cloudImages = useSelector(state => state.imagesCloudinary);
   const cloudVideo = useSelector(state => state.videoCloudinary);
   const {
     register,
@@ -18,7 +18,6 @@ const FormPostDogs = () => {
   } = useForm();
 
   React.useEffect(()=>{ 
-      dispatch(clearVideoCloudinary());
       dispatch(clearCloudinaryResponse());
   },[dispatch]);  
 
@@ -100,8 +99,8 @@ const FormPostDogs = () => {
         </div>
 
         <div>
-          <label>Referencias</label>
-          <input type="text" {...register("references")} />
+          <label>Características</label>
+          <input type="text" {...register("features")} />
         </div>
 
         <div>

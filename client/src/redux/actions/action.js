@@ -1,6 +1,5 @@
 import {
   CLEAR_CLOUDINARY_RESPONSE,
-  CLEAR_CLOUDINARY_VIDEO,
   GET_CLOUDINARY_RESPONSE,
   VIDEO_CLOUDINARY_RESPONSE,
   GET_USERS,
@@ -16,7 +15,7 @@ import {
 import axios from 'axios';
 import dotenv from "dotenv";
 dotenv.config();
-
+// const {NAME_CLOUDINARY} = process.env;
 
 
 export function postDog(payload) {
@@ -28,7 +27,9 @@ export function postDog(payload) {
 
 export const postCloudinaryPhoto = (postData) => {
   return async (dispatch) => {
-    const json = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NAME_CLOUDINARY}/image/upload`, postData)
+    console.log(postData); // dman2cjk5
+    const json = await axios.post(`https://api.cloudinary.com/v1_1/dman2cjk5/image/upload`, postData)
+    console.log(json.data.secure_url);
     return dispatch({
       type: GET_CLOUDINARY_RESPONSE,
       payload: json.data.secure_url
@@ -55,7 +56,7 @@ export const removeCloudinayImage = (payload) => {
 
 export const postCloudinaryVideo = (postData) => {
   return async (dispatch) => {
-    const json = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NAME_CLOUDINARY}/image/upload`, postData)
+    const json = await axios.post(`https://api.cloudinary.com/v1_1/dman2cjk5/auto/upload`, postData)
     return dispatch({
       type: VIDEO_CLOUDINARY_RESPONSE,
       payload: json.data.secure_url
@@ -63,13 +64,6 @@ export const postCloudinaryVideo = (postData) => {
   }
 }
 
-export const clearVideoCloudinary = () => {
-  return async function (dispatch) {
-    dispatch({
-      type: CLEAR_CLOUDINARY_VIDEO
-    })
-  };
-}
 
 export const getUsers = () => {
   return async function (dispatch) {

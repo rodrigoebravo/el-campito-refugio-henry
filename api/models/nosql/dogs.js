@@ -13,7 +13,7 @@ const dogScheme = new mongoose.Schema(
     },
     age: {
         type: String,
-        enum: ["adulto","adulto jóven","viejito","cachorro","especial"],
+        enum: ["adulto","adulto jóven","viejito","cachorro"],
         default: "definir",
     },
     size: {
@@ -38,15 +38,12 @@ const dogScheme = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    isDelete: {
-      type: Boolean,
-      default: false,
-    },
 
     isSponsored: {
       type: Boolean,
       default: false,
     },
+    
     toAdopt: {
       type: Boolean,
       default: false,

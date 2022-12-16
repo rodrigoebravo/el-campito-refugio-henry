@@ -1,5 +1,6 @@
 import { fetchUtils } from "react-admin";
 import { stringify } from "query-string";
+import pushCloudinary from './hooks/pushCloudinary';
 
 const apiUrl = "http://localhost:3001";
 const httpClient = fetchUtils.fetchJson;
@@ -73,13 +74,21 @@ const dataProvider = {
     }).then(({ json }) => ({ data: json }));
   },
 
-  create: (resource, params) =>
+  create: async (resource, params) => {
+    const images = params.data.images;
+    const video = params.data.video;
+    const urlsImages = await pushCloudinary(images);
+    const urlVideo = await pushCloudinary(video);
+    params.data.images = urlsImages;
+    params.data.video = urlVideo;
+    console.log(params.data);
     httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
     }).then(({ json }) => ({
       data: { ...params.data, id: json._id },
-    })),
+    }))
+    },
 
   delete: (resource, params) =>
     httpClient(`${apiUrl}/${resource}/${params.id}`, {
