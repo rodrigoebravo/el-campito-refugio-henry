@@ -24,13 +24,10 @@ const adminUsers = async (req, res) => {
   
   const adminUpdateUser = async (req, res) => {
     try {
-      // const { body } = req;
+
       const {
         body: { id, ...data },
       } = req;
-  
-      // console.log(id);
-      // console.log(data);
   
       const user = await usersModel.findByIdAndUpdate({ _id: id }, data, {
         returnOriginal: false,
@@ -62,7 +59,7 @@ const adminUsers = async (req, res) => {
       const userDelete = await usersModel.findByIdAndUpdate({_id: id}, {isDelete: true}, {
         returnOriginal: false,
       });
-      // await modelUser.deleteOne({ _id: id });
+  
       res.status(201).send(userDelete);
     } catch (e) {
       res.status(404).send(e);

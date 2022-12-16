@@ -25,11 +25,8 @@ const adminDogsId = async (req, res) => {
 
 const adminUpdateDog = async (req, res) => {
   try {
-    const { params:{id}, body} = req;
+    const { params:{ id }, body} = req;
   
-
-    // console.log(id);
-    // console.log(body);
 
     const dog = await dogModel.findByIdAndUpdate({_id:id}, body , {
       returnOriginal: false,
