@@ -6,7 +6,7 @@ const volunteerScheme = mongoose.Schema({
     name: {
         type: String, 
     },
-    age: { 
+    birthday: { 
         type: Date, 
         default: Date.now 
     },
@@ -14,11 +14,11 @@ const volunteerScheme = mongoose.Schema({
         type: String,
         unique: true,
     }, 
-    phone: {
+    telephone: {
         type: String,
         required: true,
     },
-    name: {
+    location: {
         type: String, 
     },
     area: {
@@ -26,15 +26,23 @@ const volunteerScheme = mongoose.Schema({
     },
     profession: {
         type: String, 
+    }, 
+    interest: {
+        type: String, 
     },
     modality: {
-      type:["presencial", "virtual", "hibrido"],
-      default: "definir", 
+        type: String,
+        enum: ["presencial", "virtual", "hibrido"],
+        default: "definir", 
     },
     availability: {
         type: Number, 
     },
     days: [ String ],
+
+    clarification: {
+        type: String, 
+    },
     description: {
         type: String, 
     },
@@ -45,12 +53,19 @@ const volunteerScheme = mongoose.Schema({
         type: String, 
     },
     carpooling: {
-        type:["si", "no","tal vez"],
+        type: String,
+        enum: ["si", "no","tal vez"],
         default: "definir", 
-    },
+    },    
     question: {
         type: String, 
     },
+    isPending: {
+        type: Boolean,
+        default: false,
+    },
+
+
 },{
     timestamps: false, 
     versionKey: false, 

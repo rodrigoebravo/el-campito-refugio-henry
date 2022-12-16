@@ -1,10 +1,9 @@
 const models = {
     usersModel: require("./nosql/users"),
-    visitsModel: require("./nosql/visits"),
     dogModel: require("./nosql/dogs"),
-    adoptionModel: require("./nosql/adoption"),
-    volunteerModel: require("./nosql/volunteer"),
-    patronageModel: require("./nosql/patronage"),
+    adoptionsModel: require("./nosql/adoptions"),
+    volunteersModel: require("./nosql/volunteers.js"),
+    pressModel: require("./nosql/press"),
     contibutionsModel: require("./nosql/contributions.js")
 }
 
