@@ -1,21 +1,14 @@
 const mongoose = require("mongoose");
 // const mongooseDelete = require("mongoose-delete"); // ----> borrado suave sin romper DB
 
-const adoptionScheme = new mongoose.Schema(
+const pressScheme = new mongoose.Schema(
   {
-    dog: {
+    media: {
         name: String,
-        id: Number
     },
-    name: {
+    link: {
       type: String,
-    },
-    email: {
-      type: String,
-    },
-    phone: {
-      type: String,
-    },
+    },    
     date: { 
         type: Date, 
         default: Date.now 
@@ -23,6 +16,8 @@ const adoptionScheme = new mongoose.Schema(
     description: {
         type: String,
     },
+    dogs: [String],
+    
         
   },
   {
@@ -31,6 +26,6 @@ const adoptionScheme = new mongoose.Schema(
   }
 );
 
-// adoptionScheme.plugin(mongooseDelete, { overrideMethods: "all" });
+// pressScheme.plugin(mongooseDelete, { overrideMethods: "all" });
 
-module.exports = mongoose.model("adoptions", adoptionScheme);
+module.exports = mongoose.model("press", pressScheme);

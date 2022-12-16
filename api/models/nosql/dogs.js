@@ -37,6 +37,19 @@ const dogScheme = new mongoose.Schema(
     isDelete: {
       type: Boolean,
       default: false,
+    },
+    isDelete: {
+      type: Boolean,
+      default: false,
+    },
+
+    isSponsored: {
+      type: Boolean,
+      default: false,
+    },
+    toAdopt: {
+      type: Boolean,
+      default: false,
     }
   },
   {

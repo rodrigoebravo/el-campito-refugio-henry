@@ -14,6 +14,9 @@ const userScheme = new mongoose.Schema(
       type: String,
       unique: true,
     },
+    phone: {
+      type: String,
+    },
     pass: {
       type: String,
       required: true,
@@ -22,7 +25,7 @@ const userScheme = new mongoose.Schema(
       type: String, 
       enum: ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"], 
       default: "public"
-  },
+    },
     isDelete: {
       type: Boolean,
       default: false,
@@ -58,12 +61,12 @@ const userScheme = new mongoose.Schema(
 //     next();
 //   })
 
-userScheme.pre("find", function () {
-  this.where({ isDelete: false });
-});
+// userScheme.pre("find", function () {
+//   this.where({ isDelete: false });
+// });
 
-userScheme.pre("findOne", function () {
-  this.where({ isDelete: false });
-});
+// userScheme.pre("findOne", function () {
+//   this.where({ isDelete: false });
+// });
 
 module.exports = mongoose.model("users", userScheme);

@@ -1,8 +1,9 @@
-const { dogModel } = require("../models/index"); 
+const { dogsModel } = require("../models/index"); 
 const info = require("./search.json"); 
+// console.log(info);
 
 const pushDatabase = () =>{
-    dogModel.create(info)
+    dogsModel.create(info)
     .then(res => console.log("Estado de DB: dogs cargados"))
 };
 
