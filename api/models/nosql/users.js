@@ -20,9 +20,12 @@ const userScheme = new mongoose.Schema(
     },
     roles: { 
       type: String, 
-      enum: ["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"], 
+      enum: ["public", "superAdmin", "admin", "voluntario", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante"], 
       default: "public"
-  },
+    }, 
+    image: {
+      type: String,
+    },
     isDelete: {
       type: Boolean,
       default: false,
