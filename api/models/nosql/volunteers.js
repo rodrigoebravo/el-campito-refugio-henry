@@ -65,12 +65,23 @@ const volunteerScheme = mongoose.Schema({
         default: false,
     },
 
+    isDelete: {
+        type: Boolean, 
+        default: false
+      }
 
 },{
     timestamps: false, 
     versionKey: false, 
 }); 
 
-
+volunteerScheme.pre('find', function() {
+    this.where({ isDelete: false });
+  });
+  
+volunteerScheme.pre('findOne', function() {
+    this.where({ isDelete: false });
+  });
+  
 
 module.exports = mongoose.model("volunteers", volunteerScheme); 

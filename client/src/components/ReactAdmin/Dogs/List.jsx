@@ -9,6 +9,7 @@ import {
 } from "react-admin";
 
 const DogList = (props) => {
+
   return (
     <List {...props}>
       <Datagrid>

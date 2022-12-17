@@ -31,6 +31,16 @@ const {
 } = require("../controllers/adminVolunteers"); 
 
 
+const {
+  adminPress,
+  adminPressId,
+  adminCreatePress,
+  adminUpdatePress,
+  adminDeletePress
+
+} = require("../controllers/adminPress"); 
+
+
 //------ /api/admin/dogs
 router.get("/dogs", adminDogs);
 router.get("/dogs/:id", adminDogsId);
@@ -50,5 +60,13 @@ router.get("/volunteers/:id", adminVolunteerId);
 router.post("/volunteers", adminCreateVolunteer);
 router.put("/volunteers/:id", adminUpdateVolunteer);
 router.delete("/volunteers/:id", adminDeleteVolunteer);
+
+//------ /api/admin/press
+router.get("/press", adminPress);
+router.get("/press/:id", adminPressId);
+router.post("/press", adminCreatePress);
+router.put("/press/:id", adminUpdatePress);
+router.delete("/press/:id", adminDeletePress);
+
 
 module.exports = router;
