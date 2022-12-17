@@ -14,8 +14,9 @@ const contributionsScheme = new mongoose.Schema(
       type: String,
     },
     type: {
-        type:["donación", "padrinazgo", "membresía","sponsoreo"],
-        default: "definir", 
+        type: String,
+        enum: ["donación", "padrinazgo", "membresía","sponsoreo"],
+        // default: "definir", 
     },
     detail: {
       type: String,
