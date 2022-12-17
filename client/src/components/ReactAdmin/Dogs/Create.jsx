@@ -1,8 +1,9 @@
 import { Create, SimpleForm, TextInput, ImageInput, SelectInput, BooleanInput,
   CheckboxGroupInput, ImageField } from "react-admin";
 
-const PostCreate = (props) => {
-  
+
+const DogsCreate = (props) => {
+
   return (
     <Create title={"Agregar un perrito"} {...props}>
       <SimpleForm>
@@ -44,4 +45,4 @@ const PostCreate = (props) => {
   );
 };
 
-export default PostCreate;
+export default DogsCreate;

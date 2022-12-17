@@ -1,29 +1,23 @@
 import { Show, SimpleShowLayout, TextField } from "react-admin";
 
-const UsersShow = () => {
+const PressShow = () => {
   return (
     <Show>
       <SimpleShowLayout>
         <TextField
-          source="name"
-          label="Nombre"
+          source="media"
+          label="Medio"
           sx={{ fontSize: "h3.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="age"
-          label="Edad"
+          source="title"
+          label="Título"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="email"
-          label="Email"
-          fullWidth
-          sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-        />
-        <TextField
-          source="roles"
-          label="Rol"
+          source="date"
+          label="fecha"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
@@ -32,4 +26,4 @@ const UsersShow = () => {
   );
 };
 
-export default UsersShow;
+export default PressShow;

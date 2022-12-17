@@ -7,7 +7,7 @@ const convertStringToNumber = value => {
 };
       
 
-const PostCreate = (props) => {
+const UsersCreate = (props) => {
   return (
     <Create title={"Crear usuario"} {...props}>
       <SimpleForm>
@@ -37,4 +37,4 @@ const PostCreate = (props) => {
   );
 };
 
-export default PostCreate;
+export default UsersCreate;

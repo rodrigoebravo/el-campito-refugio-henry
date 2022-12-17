@@ -1,7 +1,7 @@
 import { Edit, SimpleForm, TextInput, ImageInput, SelectInput,
   CheckboxGroupInput, ImageField } from "react-admin";
 
-const PostEdit = (props) => {
+const DogsEdit = (props) => {
   return (
     <Edit
       title={"Editar datos"}
@@ -47,4 +47,4 @@ const PostEdit = (props) => {
   );
 };
 
-export default PostEdit;
+export default DogsEdit;

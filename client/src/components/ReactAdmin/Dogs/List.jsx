@@ -8,7 +8,8 @@ import {
   DeleteWithConfirmButton,
 } from "react-admin";
 
-const DogList = (props) => {
+
+const DogsList = (props) => {
 
   return (
     <List {...props}>
@@ -25,4 +26,4 @@ const DogList = (props) => {
   );
 };
 
-export default DogList;
+export default DogsList;
