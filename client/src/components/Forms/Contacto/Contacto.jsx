@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import styles from "./Contacto.module.css"
+import styles from "./Contacto.module.css";
+import Footer from "../../Footer/Footer"
 
 const Contacto = () =>{
     
@@ -9,26 +10,24 @@ const Contacto = () =>{
     const onSubmit = (data) => {
         console.log(data)
     }
-    
+     
     return(
         <div className={styles.mainContainer}>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-            <div className = {styles.item}>
-                    <label className={styles.label}>Nombre</label>
+
+                 
+                <div className = {styles.item}>
+                    <label className={styles.label}>Nombre y Apellido</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
-                        {...register('name', {required: true })}
-                    />
-                    {errors.name?.type === 'required' && <p>Ingrese su nombre</p>}
-                    
+                        {...register('name', {required: true })} />
+                    {errors.name?.type === 'required' && <p>Ingrese su nombre</p>}                    
                 </div>
                 
                 <div className = {styles.item}>
-                    <label className={styles.label}>Apellido</label>
+                    <label className={styles.label}>Si pertenece a alguna organización específiquela por favor</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
-                        {...register('surname', {required: true })}
+                        {...register('organization', {required: false })}
                     />
-                    {errors.surname?.type === 'required' && <p>Ingrese su apellido</p>}
-                    
                 </div>
 
                 <div className = {styles.item}>
@@ -44,7 +43,7 @@ const Contacto = () =>{
                 </div>
 
                 <div className = {styles.item}>
-                    <label className={styles.label}>Telefono</label>
+                    <label className={styles.label}>Teléfono</label>
                     <input type="tel" className={styles.input} placeholder="ej: 1161906190" 
                         {...register('telephone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />
@@ -54,14 +53,32 @@ const Contacto = () =>{
                 
                 <div className = {styles.item}>
                     <label className={styles.label}>Asunto</label>
-                    <textarea className={styles.inputAsunto} 
-                        {...register('subject', { required: true})}
-                    />
-                    {errors.subject?.type === 'required' && <p>Escribir motivo de contacto</p>}
+                    <select className={styles.select} {...register('type', {required: true})}>
+                        <option value="adopciones">adopciones</option>                        
+                        <option value="consulta">consulta general</option>
+                        <option value="reclamo">reclamo</option>
+                        <option value="donaciones">donaciones</option>
+                        <option value="débitos automáticos">débitos automáticos</option>
+                        <option value="campito escolar">charlas para colegios</option>
+                        <option value="visita">visita</option>
+                        <option value="denuncias">denuncias</option>
+                        <option value="prensa">para medios de comunicación</option>
+                        <option value="felicitaciones">felicitaciones</option>
+                        <option value="otro">otro</option>
+                    </select>
+                    {errors.type?.type === 'required' && <p>selecciones una opción</p>}
+                </div>
+
+                <div className = {styles.item}>
+                    <label className={styles.label}>Cuéntenos !!! Su consulta es importante para nosotros 😊 !!</label>
+                    <input type="text" className={styles.input} placeholder="Tu respuesta"
+                        {...register('description', {required: true })} />
+                    {errors.description?.type === 'required' && <p>Ingrese su nombre</p>}                    
                 </div>
 
                 <input type="submit" value="Enviar" className = {styles.submit}/>
             </form>
+            <Footer /> 
         </div>
     )
 }

@@ -64,16 +64,16 @@ const volunteerScheme = mongoose.Schema({
         type: Boolean,
         default: false,
     },
-
     isDelete: {
         type: Boolean, 
         default: false
-      }
+    }
 
 },{
     timestamps: false, 
     versionKey: false, 
 }); 
+
 
 volunteerScheme.pre('find', function() {
     this.where({ isDelete: false });

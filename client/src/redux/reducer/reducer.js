@@ -1,8 +1,9 @@
 import {
     POST_DOG,
     POST_USER,
-    GET_CLOUDINARY_RESPONSE, VIDEO_CLOUDINARY_RESPONSE,
-    CLEAR_CLOUDINARY_RESPONSE, CLEAR_CLOUDINARY_VIDEO,
+    GET_CLOUDINARY_RESPONSE, 
+    VIDEO_CLOUDINARY_RESPONSE,
+    CLEAR_CLOUDINARY_RESPONSE, 
     REMOVE_CLOUDINARY_IMAGE,
     GET_USERS,
     GET_DOGS,
@@ -20,7 +21,8 @@ const initialState = {
     detailsDogs: [],
     allUsers: [],
     allDogs: [],
-    responseCloudinary: [],
+    responseCloudinary: "",
+    imagesCloudinary: [],
     videoCloudinary: ""
 
 }
@@ -64,15 +66,11 @@ export default function rootReducer(state = initialState, action) {
                 dog: action.payload
             }
         case GET_CLOUDINARY_RESPONSE:
-
+            const link =  action.payload;
             return {
                 ...state,
-                responseCloudinary: [...state.responseCloudinary, ...action.payload]
-            }
-        case CLEAR_CLOUDINARY_RESPONSE:
-            return {
-                ...state,
-                responseCloudinary: []
+                responseCloudinary: link,
+                imagesCloudinary: [...state.imagesCloudinary, link]
             }
         case REMOVE_CLOUDINARY_IMAGE:
             const imagesFilter = state.responseCloudinary.filter(i => i !== action.payload)
@@ -86,10 +84,12 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 videoCloudinary: action.payload
             }
-        case CLEAR_CLOUDINARY_VIDEO:
+        case CLEAR_CLOUDINARY_RESPONSE:
             return {
                 ...state,
-                videoCloudinary: ""
+                videoCloudinary: "",
+                imagesCloudinary: "",
+                responseCloudinary: []
             }
         case FILTER_DOGS_BY_GENDER:
             const filtredByGender = state.allDogs

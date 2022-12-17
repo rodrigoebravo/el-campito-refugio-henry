@@ -5,6 +5,7 @@ const models = {
     volunteersModel: require("./nosql/volunteers"),
     pressModel: require("./nosql/press"),
     contibutionsModel: require("./nosql/contributions")
+
 }
 
 module.exports = models; 

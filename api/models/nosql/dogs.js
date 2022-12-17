@@ -15,6 +15,7 @@ const dogScheme = new mongoose.Schema(
         type: String,
         enum: ["adulto","adulto jóven","viejito","cachorro"],
         // default: "definir",
+
     },
     size: {
         type: String,
