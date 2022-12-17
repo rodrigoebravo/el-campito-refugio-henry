@@ -6,7 +6,7 @@ const convertStringToNumber = value => {
    return isNaN(float) ? null : float;
 };
 
-const PostEdit = (props) => {
+const UsersEdit = (props) => {
   return (
     <Edit
       title={"Editar datos"}
@@ -41,4 +41,4 @@ const PostEdit = (props) => {
   );
 };
 
-export default PostEdit;
+export default UsersEdit;

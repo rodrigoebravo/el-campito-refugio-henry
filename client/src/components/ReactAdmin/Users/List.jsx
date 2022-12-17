@@ -7,7 +7,7 @@ import {
   DeleteWithConfirmButton,
 } from "react-admin";
 
-const DogList = (props) => {
+const UsersList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
@@ -22,4 +22,4 @@ const DogList = (props) => {
   );
 };
 
-export default DogList;
+export default UsersList;

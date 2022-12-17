@@ -6,7 +6,7 @@ import {
   WrapperField,
 } from "react-admin";
 
-const DogShow = () => {
+const DogsShow = () => {
   return (
     <Show>
       <SimpleShowLayout>
@@ -45,4 +45,4 @@ const DogShow = () => {
   );
 };
 
-export default DogShow;
+export default DogsShow;

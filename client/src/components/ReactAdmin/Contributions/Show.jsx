@@ -1,19 +1,13 @@
 import { Show, SimpleShowLayout, TextField } from "react-admin";
 
-const UsersShow = () => {
+const ContribShow = () => {
   return (
     <Show>
       <SimpleShowLayout>
         <TextField
           source="name"
-          label="Nombre"
+          label="Contribuyente"
           sx={{ fontSize: "h3.fontSize", fontWeight: "light" }}
-        />
-        <TextField
-          source="age"
-          label="Edad"
-          fullWidth
-          sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
           source="email"
@@ -22,14 +16,16 @@ const UsersShow = () => {
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
         <TextField
-          source="roles"
-          label="Rol"
+          source="type"
+          label="Tipo de Contribución"
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
+        
+        
       </SimpleShowLayout>
     </Show>
   );
 };
 
-export default UsersShow;
+export default ContribShow;
