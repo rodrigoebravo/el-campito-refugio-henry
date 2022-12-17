@@ -8,7 +8,9 @@ import {
   DeleteWithConfirmButton,
 } from "react-admin";
 
+
 const DogsList = (props) => {
+
   return (
     <List {...props}>
       <Datagrid>
@@ -16,8 +18,8 @@ const DogsList = (props) => {
         <TextField source="name" label="Nombre" />
         <TextField source="gender" label="Sexo" />
         <TextField source="age" label="Edad" />
-        <EditButton basepath="/api/dogs/admin/dogs" />
-        <DeleteWithConfirmButton basepath="/api/dogs/admin/dogs" />
+        <EditButton basepath="/api/admin/dogs" />
+        <DeleteWithConfirmButton basepath="/api/admin/dogs" />
         <ShowButton />
       </Datagrid>
     </List>

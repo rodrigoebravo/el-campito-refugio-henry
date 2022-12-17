@@ -8,7 +8,6 @@ import ig from "../../img/icons/IG.svg"
 import fb from "../../img/icons/FB.svg"
 import yt from "../../img/icons/YT.svg"
 import tw from "../../img/icons/TW.svg"
-import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -42,38 +41,38 @@ const Footer = () => {
             <div>
               <p className={styles.seguinos}>¡Seguinos!</p>
               <div>
-                <Link
-                  to="https://www.instagram.com/refugioelcampito/"
-                  target="_blank"
+                <a
+                  href="https://www.instagram.com/refugioelcampihref/"
+                  rel="noreferrer"
                 >
                   <img
                     src={ig}
                     alt="Instagram icon"
                     className={styles.socialIcons}
                   />
-                </Link>
-                <Link
-                  to="https://www.facebook.com/elcampitorefugio" target="_blank">
+                </a>
+                <a
+                  href="https://www.facebook.com/elcampihrefrefugio" rel="noreferrer" >
                   <img
                     src={fb}
                     alt="Facebook icon"
                     className={styles.socialIcons}
                   />
-                </Link>
-                <Link
-                  to="https://www.youtube.com/@campitorefugio" target="_blank">
+                </a>
+                <a
+                  href="https://www.youtube.com/@campihrefrefugio" rel="noreferrer">
                   <img src={yt} alt="Youtube icon" className={styles.socialIcons} />
-                </Link>
-                <Link
-                  to="https://twitter.com/elcampito" target="_blank">
+                </a>
+                <a
+                  href="https://twitter.com/elcampihref" rel="noreferrer">
                   <img src={tw} alt="Twitter icon" className={styles.socialIcons} />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
           <div className={styles.copyrightContainer}>
             <p className={styles.copyright}>
-              El Campito Refugio Todos los derechos reservados.
+              El Campihref Refugio hrefdos los derechos reservados.
             </p>
           </div>
         </div>

@@ -14,8 +14,8 @@ const UsersList = (props) => {
         <TextField source="name" label="Nombre" />
         <TextField source="email" label="Email" />
         <TextField source="roles" label="Rol" />
-        <EditButton basepath="/api/users/admin/users" />
-        <DeleteWithConfirmButton basepath="/api/users/admin/users" />
+        <EditButton basepath="/api/admin/users" />
+        <DeleteWithConfirmButton basepath="/api/admin/users" />
         <ShowButton />
       </Datagrid>
     </List>

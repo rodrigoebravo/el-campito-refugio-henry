@@ -1,11 +1,13 @@
 import { Create, SimpleForm, TextInput, ImageInput, SelectInput, BooleanInput,
   CheckboxGroupInput, ImageField } from "react-admin";
 
+
 const DogsCreate = (props) => {
+
   return (
     <Create title={"Agregar un perrito"} {...props}>
       <SimpleForm>
-        <TextInput source="id" disabled fullWidth />
+        {/* <TextInput source="id" disabled fullWidth /> */}
         <TextInput source="name" label="Nombre" fullWidth />
         <SelectInput source="gender" label="Sexo" choices={[
             { id: 'hembra', name: 'hembra' },
