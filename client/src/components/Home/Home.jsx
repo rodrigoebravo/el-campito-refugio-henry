@@ -37,28 +37,28 @@ const Home = () => {
       <div className={style.homeMenu}>
         {" "}
         {/* En este div le pase por porops descripcion y className para poder trabajar con cada componente por separado */}
-        <Link to="/adoptar" className={style.adoptar}>
+        <Link to="/adoptar" className={`${style.adoptar} ${style.a}`}>
           Quiero adoptar
         </Link>
-        <Link to="/colaborar" className={style.donaciones}>
+        <Link to="/colaborar" className={`${style.donaciones} ${style.a}`}>
           Donaciones y padrinazgos
         </Link>
-        <Link to="/visitas" className={style.visitas}>
+        <Link to="/visitas" className={`${style.visitas} ${style.a}`}>
           Visitas
         </Link>
-        <Link to="/home" className={style.veterinaria}>
+        <Link to="/home" className={`${style.veterinaria} ${style.a}`}>
           Veterinaria y Unidad de Cuidados Intensivos
         </Link>
-        <Link to="/campito" className={style.campito}>
+        <Link to="/campito" className={`${style.veterinaria} ${style.a}`}>
           El Campito escolar
         </Link>
-        <Link to="/home" className={style.comunicacion}>
+        <Link to="/home" className={`${style.comunicacion} ${style.a}`}>
           Comunicación, prensa y redes Sociales
         </Link>
-        <Link to="/voluntario" className={style.voluntario}>
+        <Link to="/voluntario" className={`${style.voluntario} ${style.a}`}>
           Quiero ser voluntario
         </Link>
-        <Link className={style.comportamiento}>
+        <Link className={`${style.comportamiento} ${style.a}`}>
           Comportamiento y sociabilizacion
         </Link>
       </div>
