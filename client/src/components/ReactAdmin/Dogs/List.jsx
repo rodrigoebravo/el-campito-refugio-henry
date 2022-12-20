@@ -7,17 +7,16 @@ import {
   ImageField,
   DeleteWithConfirmButton,
 } from "react-admin";
-
+import Filters from "./Filters";
 
 const DogsList = (props) => {
-
   return (
-    <List {...props}>
+    <List {...props} aside={<Filters />}>
       <Datagrid>
-        <ImageField source="images[1]" label="Perrito" />
+        <ImageField source="images[1]" label="Perrito" sortable={false} />
         <TextField source="name" label="Nombre" />
-        <TextField source="gender" label="Sexo" />
-        <TextField source="age" label="Edad" />
+        <TextField source="gender" label="Sexo" sortable={false} />
+        <TextField source="age" label="Edad" sortable={false} />
         <EditButton basepath="/api/admin/dogs" />
         <DeleteWithConfirmButton basepath="/api/admin/dogs" />
         <ShowButton />
