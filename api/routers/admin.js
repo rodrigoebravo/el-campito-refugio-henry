@@ -5,50 +5,47 @@ const {
   adminDogsId,
   adminCreateDog,
   adminUpdateDog,
-  adminDeleteDog, 
+  adminDeleteDog,
 } = require("../controllers/adminDogs");
 
-const {  
+const {
   adminUsers,
   adminUsersId,
   adminCreateUser,
   adminUpdateUser,
-  adminDeleteUser,  
+  adminDeleteUser,
 } = require("../controllers/adminUsers");
 
 const {
-    adminDeleteAdoption,
-    adminAdoptions,
-    adminUpdateAdoption,
-    adminAdoptionsId,
+  adminDeleteAdoption,
+  adminAdoptions,
+  adminUpdateAdoption,
+  adminAdoptionsId,
 } = require("../controllers/adminAdopt");
 
 const {
-    adminCreateContrib,
-    adminContrib,
-    adminContribId,
-    adminUpdateContrib,
-    adminDeleteContrib,
-  } = require("../controllers/adminUsers");
+  adminCreateContrib,
+  adminContrib,
+  adminContribId,
+  adminUpdateContrib,
+  adminDeleteContrib,
+} = require("../controllers/adminContrib");
 
 const {
   adminVolunteer,
   adminVolunteerId,
   adminCreateVolunteer,
   adminUpdateVolunteer,
-  adminDeleteVolunteer
-} = require("../controllers/adminVolunteers"); 
-
+  adminDeleteVolunteer,
+} = require("../controllers/adminVolunteers");
 
 const {
   adminPress,
   adminPressId,
   adminCreatePress,
   adminUpdatePress,
-  adminDeletePress
-} = require("../controllers/adminPress"); 
-
-
+  adminDeletePress,
+} = require("../controllers/adminPress");
 
 //------ /api/admin/dogs
 router.get("/dogs", adminDogs);
@@ -91,6 +88,4 @@ router.post("/press", adminCreatePress);
 router.put("/press/:id", adminUpdatePress);
 router.delete("/press/:id", adminDeletePress);
 
-
 module.exports = router;
-
