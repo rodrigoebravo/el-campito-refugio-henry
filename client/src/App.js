@@ -16,7 +16,10 @@ import Home from "./components/Home/Home";
 import AdminIndex from "./components/ReactAdmin/index";
 import { CardsDogs } from "./components/CardsDogs/CardsDogs";
 import CardDogDetails from "./components/CardDogDetails/CardDogDetails";
-import Conocenos from "./components/Contactanos/Contactanos"
+import Conocenos from "./components/Contactanos/Contactanos";
+import Voluntario from "./components/Forms/Voluntario/Voluntario.jsx";
+import Adopcion from "./components/Forms/Adopcion/Adopcion.jsx";
+import Contacto from "./components/Forms/Contacto/Contacto";
 
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
       <Route exact path={"/admin"} component={AdminIndex} />
       <Route exact path={"/adoptar/perros"} component={CardsDogs} />
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
+      <Route exact path={"/volunteerForm"} component={Voluntario} />
+      <Route exact path={"/AdoptionForm"} component={Adopcion} />
+      <Route exact path={"/ContactForm"} component={Contacto} />
       {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
       <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}

@@ -1,17 +1,40 @@
-import { Create, SimpleForm, TextInput } from "react-admin";
+import { Create, SimpleForm, TextInput, ImageInput, SelectInput,
+   ImageField } from "react-admin";
 
-const PostCreate = (props) => {
+const convertStringToNumber = value => {
+    const float = parseFloat(value);
+    return isNaN(float) ? null : float;
+};
+      
+
+const UsersCreate = (props) => {
   return (
     <Create title={"Crear usuario"} {...props}>
       <SimpleForm>
-        <TextInput source="data.name" label="Nombre" fullWidth />
-        <TextInput source="data.email" label="Email" fullWidth />
-        <TextInput source="data.age" label="Edad" fullWidth />
-        <TextInput source="data.roles" label="Rol" fullWidth />
-        <TextInput source="data.pass" label="Contraseña" fullWidth />
+        <TextInput source="name" label="Nombre" fullWidth />
+        <TextInput source="email" label="Email" fullWidth />
+        <TextInput source="age" label="Edad" type="number" parse={convertStringToNumber} fullWidth />
+        <TextInput source="pass" label="Contraseña" fullWidth />
+        <SelectInput source="roles" labelpublic="Rol" choices={[
+            { id: 'public', name: 'public' },
+            { id: 'superAdmin', name: 'superAdmin' },
+            { id: 'admin', name: 'admin' },
+            { id: 'voluntario', name: 'voluntario' },
+            { id: 'equipo1', name: 'equipo1' },
+            { id: 'equipo2', name: 'equipo2' },
+            { id: 'equipo3', name: 'equipo3' },
+            { id: 'visitante', name: 'visitante' },
+            { id: 'donante', name: 'donante' },
+            { id: 'padrino', name: 'padrino' },
+            { id: 'sponsor', name: 'sponsor' },
+            { id: 'adoptante', name: 'adoptante' },
+        ]} />
+        <ImageInput source="image" label="Fótografía" >
+            <ImageField source="src" title="title" />
+        </ImageInput>
       </SimpleForm>
     </Create>
   );
 };
 
-export default PostCreate;
+export default UsersCreate;

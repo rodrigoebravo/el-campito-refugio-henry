@@ -10,8 +10,11 @@ const contributionsScheme = new mongoose.Schema(
         type: String,
         unique: true,
     }, 
+    phone: {
+      type: String,
+    },
     type: {
-        type:["donación","membresía","sponsoreo"],
+        type:["donación", "padrinazgo", "membresía","sponsoreo"],
         default: "definir", 
     },
     detail: {
@@ -26,6 +29,17 @@ const contributionsScheme = new mongoose.Schema(
     },
     method: {
         type: String,
+    },
+    dog: {
+      name: String,
+        id: Number
+    },
+    user: {
+      type: String,
+    },
+    isPending: {
+      type: Boolean,
+      default: false,
     },
     
   },

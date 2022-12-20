@@ -7,19 +7,19 @@ import {
   DeleteWithConfirmButton,
 } from "react-admin";
 
-const DogList = (props) => {
+const UsersList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="data.name" label="Nombre" />
-        <TextField source="data.email" label="Email" />
-        <TextField source="data.roles" label="Rol" />
-        <EditButton basepath="/api/users/admin/users" />
-        <DeleteWithConfirmButton basepath="/api/users/admin/users" />
+        <TextField source="name" label="Nombre" />
+        <TextField source="email" label="Email" />
+        <TextField source="roles" label="Rol" />
+        <EditButton basepath="/api/admin/users" />
+        <DeleteWithConfirmButton basepath="/api/admin/users" />
         <ShowButton />
       </Datagrid>
     </List>
   );
 };
 
-export default DogList;
+export default UsersList;

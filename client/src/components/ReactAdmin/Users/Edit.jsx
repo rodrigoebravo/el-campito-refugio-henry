@@ -1,6 +1,12 @@
-import { Edit, SimpleForm, TextInput } from "react-admin";
+import { Edit, SimpleForm, TextInput, ImageInput, SelectInput,
+  ImageField } from "react-admin";
 
-const PostEdit = (props) => {
+const convertStringToNumber = value => {
+   const float = parseFloat(value);
+   return isNaN(float) ? null : float;
+};
+
+const UsersEdit = (props) => {
   return (
     <Edit
       title={"Editar datos"}
@@ -9,14 +15,30 @@ const PostEdit = (props) => {
       mutationMode="pessimistic"
     >
       <SimpleForm>
-        <TextInput source="id" disabled fullWidth />
-        <TextInput source="data.name" label="Nombre" fullWidth />
-        <TextInput source="data.email" label="Email" fullWidth />
-        <TextInput source="data.age" label="Edad" fullWidth />
-        <TextInput source="data.roles" label="Rol" fullWidth />
+      <TextInput source="name" label="Nombre" fullWidth />
+        <TextInput source="email" label="Email" fullWidth />
+        <TextInput source="age" label="Edad" type="number" parse={convertStringToNumber} fullWidth />
+        <TextInput source="pass" label="Contraseña" fullWidth />
+        <SelectInput source="roles" labelpublic="Rol" choices={[
+            { id: 'public', name: 'public' },
+            { id: 'superAdmin', name: 'superAdmin' },
+            { id: 'admin', name: 'admin' },
+            { id: 'voluntario', name: 'voluntario' },
+            { id: 'equipo1', name: 'equipo1' },
+            { id: 'equipo2', name: 'equipo2' },
+            { id: 'equipo3', name: 'equipo3' },
+            { id: 'visitante', name: 'visitante' },
+            { id: 'donante', name: 'donante' },
+            { id: 'padrino', name: 'padrino' },
+            { id: 'sponsor', name: 'sponsor' },
+            { id: 'adoptante', name: 'adoptante' },
+        ]} />
+        <ImageInput source="image" label="Fótografía" >
+            <ImageField source="src" title="title" />
+        </ImageInput>
       </SimpleForm>
     </Edit>
   );
 };
 
-export default PostEdit;
+export default UsersEdit;
