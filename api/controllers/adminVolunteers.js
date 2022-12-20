@@ -43,16 +43,6 @@ const adminUpdateVolunteer = async (req, res) => {
   }
 };
 
-const adminCreateVolunteer = async (req, res) => {
-  try {
-    const { body } = req;
-    const volunteer = await volunteersModel.create(body);
-    res.status(200).send({ data: volunteer });
-  } catch (e) {
-    res.status(404).send({ error: e });
-  }
-};
-
 const adminDeleteVolunteer = async (req, res) => {
   try {
     const id = req.params.id;
@@ -74,7 +64,6 @@ const adminDeleteVolunteer = async (req, res) => {
 module.exports = {
   adminVolunteer,
   adminVolunteerId,
-  adminCreateVolunteer,
   adminUpdateVolunteer,
   adminDeleteVolunteer,
 };

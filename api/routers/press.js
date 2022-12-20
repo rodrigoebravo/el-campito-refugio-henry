@@ -1,8 +1,8 @@
 const router = require("express").Router();
 
-const { adminPress, adminPressId } = require("../controllers/adminPress");
+const { getPress, getPressId } = require("../controllers/press");
 
-router.get("/", adminPress);
-router.get("/:id", adminPressId);
+router.get("/", getPress);
+router.get("/:id", getPressId);
 
 module.exports = router;

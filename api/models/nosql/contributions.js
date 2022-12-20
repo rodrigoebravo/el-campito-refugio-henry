@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const contributionsScheme = new mongoose.Schema(
   {
-    name: {
+    user: {
         type: String, 
     },
     email: {
@@ -14,7 +14,8 @@ const contributionsScheme = new mongoose.Schema(
       type: String,
     },
     type: {
-        type:["donación", "padrinazgo", "membresía","sponsoreo"],
+        type: String,
+        enum: ["donación", "padrinazgo", "membresía","sponsoreo"],
         default: "definir", 
     },
     detail: {
@@ -34,10 +35,15 @@ const contributionsScheme = new mongoose.Schema(
       name: String,
         id: Number
     },
-    user: {
-      type: String,
+    isPending: {
+      type: Boolean,
+      default: false,
     },
     isPending: {
+      type: Boolean,
+      default: false,
+    },
+    isDelete: {
       type: Boolean,
       default: false,
     },
