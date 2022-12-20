@@ -29,12 +29,11 @@ const {
     adminContribId,
     adminUpdateContrib,
     adminDeleteContrib,
-  } = require("../controllers/adminUsers");
+  } = require("../controllers/adminContrib");
 
 const {
   adminVolunteer,
   adminVolunteerId,
-  adminCreateVolunteer,
   adminUpdateVolunteer,
   adminDeleteVolunteer
 } = require("../controllers/adminVolunteers"); 
@@ -80,7 +79,6 @@ router.delete("/contributions/:id", adminDeleteContrib);
 //------ /api/admin/volunteers
 router.get("/volunteers", adminVolunteer);
 router.get("/volunteers/:id", adminVolunteerId);
-router.post("/volunteers", adminCreateVolunteer);
 router.put("/volunteers/:id", adminUpdateVolunteer);
 router.delete("/volunteers/:id", adminDeleteVolunteer);
 

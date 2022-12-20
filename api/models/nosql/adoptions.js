@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const adoptionScheme = mongoose.Schema({
 
-    dog: {
+    id_dog: {
         type: String, 
     },
     name: {
@@ -124,6 +124,10 @@ const adoptionScheme = mongoose.Schema({
         type: Boolean,
         default: true,
     },
+    isDelete: {
+        type: Boolean,
+        default: false,
+      },
     
 },{
     timestamps: false, 
