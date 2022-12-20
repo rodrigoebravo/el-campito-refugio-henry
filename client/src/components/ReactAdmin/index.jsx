@@ -10,26 +10,26 @@ import UsersList from "./Users/List";
 import UsersShow from "./Users/Show";
 import UsersEdit from "./Users/Edit";
 import UsersCreate from "./Users/Create";
-import RadioIcon from '@mui/icons-material/Radio';
+import RadioIcon from "@mui/icons-material/Radio";
 import PressCreate from "./Press/Create";
 import PressEdit from "./Press/Edit";
 import PressList from "./Press/List";
 import PressShow from "./Press/Show";
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import ContribCreate from "./Contributions/Create";
 import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
 import ContribShow from "./Contributions/Show";
-import HandshakeRoundedIcon from '@mui/icons-material/HandshakeRounded';
+import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 import VoluntShow from "./Volunteers/Show";
 import VoluntEdit from "./Volunteers/Edit";
 import VoluntList from "./Volunteers/List";
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import AdopList from "./Adoptions/List";
 import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
-
-
+import SsidChartIcon from "@mui/icons-material/SsidChart";
+import Stats from "./Stats/Stats";
 
 const AdminIndex = () => {
   return (
@@ -85,6 +85,14 @@ const AdminIndex = () => {
         show={AdopShow}
         icon={FavoriteRoundedIcon}
         options={{ label: "Adopciones" }}
+      />
+      <Resource
+        name="api/admin/stats"
+        list={Stats}
+        // edit={AdopEdit}
+        // show={AdopShow}
+        icon={SsidChartIcon}
+        options={{ label: "Estadisticas" }}
       />
     </Admin>
   );
