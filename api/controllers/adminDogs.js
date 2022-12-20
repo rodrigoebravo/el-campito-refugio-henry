@@ -2,12 +2,27 @@ const { dogModel } = require("../models");
 
 const adminDogs = async (req, res) => {
   try {
-    // const { filter, range, sort} = req;
-    // console.log({filter, range:range[0], sort});
-    const users = await dogModel.find({});
-    res.status(201).send(users);
-  } catch (e) {
-    res.status(404).send({ error: e });
+    const filtro = JSON.parse(req.query.filter);
+    if (filtro) {
+      if (filtro.name) {
+        const { name } = filtro;
+        console.log(filtro);
+        const dogs = await dogModel.find({ name: new RegExp(name, "i") });
+        if (dogs.length) {
+          res.status(200).send(dogs);
+        } else {
+          res.status(404).send({ dogs });
+        }
+      } else {
+        const dogs = await dogModel.find(filtro);
+        res.status(200).send(dogs);
+      }
+    } else {
+      const dogs = await dogModel.find({});
+      res.status(200).send(dogs);
+    }
+  } catch (error) {
+    res.status(400).send({ error: "Error en la solicitud" });
   }
 };
 
