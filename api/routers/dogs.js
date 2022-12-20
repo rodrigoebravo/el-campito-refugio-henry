@@ -1,8 +1,8 @@
 const router = require("express").Router();
 
-const { adminDogs, adminDogsId } = require("../controllers/adminDogs");
+const { getDogs, getDogsId } = require("../controllers/dogs");
 
-router.get("/", adminDogs);
-router.get("/:id", adminDogsId);
+router.get("/", getDogs);
+router.get("/:id", getDogsId);
 
 module.exports = router;

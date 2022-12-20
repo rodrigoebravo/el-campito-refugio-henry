@@ -71,7 +71,7 @@ const adminCreateDog = async (req, res) => {
 const adminDeleteDog = async (req, res) => {
   try {
     // const { body } = req;
-    const id = req.params.id;
+    const { id }= req.params;
 
     const dogDelete = await dogModel.findByIdAndUpdate(
       { _id: id },

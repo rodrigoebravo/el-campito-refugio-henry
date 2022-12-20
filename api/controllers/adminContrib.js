@@ -24,19 +24,16 @@ const adminContrib = async (req, res) => {
   
   const adminUpdateContrib = async (req, res) => {
     try {
-      // const { body } = req;
       const {
-        body: { id, ...data },
+        params: { id },
+        body,
       } = req;
   
-      // console.log(id);
-      // console.log(data);
-  
-      const contribution = await contributionsModel.findByIdAndUpdate({ _id: id }, data, {
+      const c = await contributionsModel.findByIdAndUpdate({ _id: id }, body, {
         returnOriginal: false,
       });
   
-      res.json({ data: contribution });
+      res.json({ data: c });
     } catch (e) {
       res.status(404).send({ error: e });
     }

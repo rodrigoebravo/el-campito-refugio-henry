@@ -24,19 +24,16 @@ const adminAdoptions = async (req, res) => {
   
   const adminUpdateAdoption = async (req, res) => {
     try {
-      // const { body } = req;
       const {
-        body: { id, ...data },
+        params: { id },
+        body,
       } = req;
   
-      // console.log(id);
-      // console.log(data);
-  
-      const user = await adoptionsModel.findByIdAndUpdate({ _id: id }, data, {
+      const adop = await adoptionsModel.findByIdAndUpdate({ _id: id }, body, {
         returnOriginal: false,
       });
   
-      res.json({ data: user });
+      res.json({ data: adop });
     } catch (e) {
       res.status(404).send({ error: e });
     }

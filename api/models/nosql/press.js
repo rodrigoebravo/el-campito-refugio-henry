@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const pressScheme = new mongoose.Schema(
   {
     media: {
-        name: String,
+      type: String,
     },
     link: {
       type: String,
@@ -12,6 +12,9 @@ const pressScheme = new mongoose.Schema(
     date: { 
         type: Date, 
         default: Date.now 
+    },
+    title: {
+      type: String,
     },
     description: {
         type: String,

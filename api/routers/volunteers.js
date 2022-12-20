@@ -1,8 +1,8 @@
 const router = require("express").Router();
 
-const { adminCreateVolunteer } = require("../controllers/adminVolunteers");
+const { CreateVolunteer } = require("../controllers/volunteers");
 
-router.post("/", adminCreateVolunteer);
+router.post("/", CreateVolunteer);
 // router.get("/:id", adminDogsId);
 
 module.exports = router;
