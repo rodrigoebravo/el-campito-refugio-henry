@@ -2,8 +2,24 @@ const { volunteersModel } = require("../models");
 
 const adminVolunteer = async (req, res) => {
   try {
-    const volunteer = await volunteersModel.find({});
-    res.status(201).send(volunteer);
+    const volunteers = await volunteersModel.find({}).populate("user", {
+      contribution: 0,
+      adoptions: 0,
+      isDelete: 0,
+      volunteer: 0
+    });
+   
+    const volunteersMapping = volunteers.map(v => {
+      let {user:{_id:idUser, ...basicData }, ...dataVolunteer} = v.toObject();
+      return {
+        idUser,
+        ...basicData,
+        ...dataVolunteer
+      }
+    })
+
+    res.status(201).send(volunteersMapping);
+
   } catch (error) {
     res.status(404).send({ error });
   }
@@ -15,8 +31,21 @@ const adminVolunteerId = async (req, res) => {
       params: { id },
     } = req;
 
-    const volunteer = await volunteersModel.findById({ _id: id });
-    res.json(volunteer);
+    const volunteer = await volunteersModel.findById({ _id: id }).populate("user", {
+      contribution: 0,
+      adoptions: 0,
+      isDelete: 0,
+      volunteer: 0
+    });
+
+    const {user:{_id:idUser, ...basicData }, ...dataVolunteer} = volunteer.toObject(); 
+
+    res.status(200).send({
+      idUser,
+      ...basicData,
+      ...dataVolunteer
+    }); 
+
   } catch (e) {
     res.status(404).send({ error: e });
   }

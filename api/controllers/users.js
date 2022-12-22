@@ -1,5 +1,6 @@
 const { usersModel } = require("../models");
 
+
 const getUsers = async (req, res) => {
   try {
     const users = await usersModel.find({});
@@ -23,8 +24,20 @@ const getUsersId = async (req, res) => {
 };
 
 
+const createUser = async (req, res) => {
+  try {
+    const { body } = req;
+    const user = await usersModel.create(body);
+    res.status(200).send({ data: user });
+  } catch (e) {
+    res.status(404).send({ error: e });
+  }
+};
+
+
 
 module.exports = {
+  createUser,
   getUsers, 
   getUsersId,
 };
