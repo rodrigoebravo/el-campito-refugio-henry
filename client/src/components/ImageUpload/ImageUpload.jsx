@@ -2,7 +2,7 @@ import React from "react"
 // import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Container, FormGroup, Input } from "reactstrap"  // too Modal
-import { postCloudinaryPhoto, removeCloudinayImage } from "../../redux/actions/action"
+import { postCloudinaryPhoto, clearCloudinaryResponse } from "../../redux/actions/action"
 import styles from "./ImageUpload.module.css"
 
 //para que funcione el hook hacer npm intall react-hook-form
@@ -13,19 +13,19 @@ const ImagenUpload = () => {
     
     const cloudImages = useSelector(state => state.imagesCloudinary);
 
+    
     const uploadImage = async (e) => {
         console.log(e.target.files);
         const files = e.target.files;
         const data = new FormData();
         data.append('file', files[0]);
         data.append('upload_preset', 'el_campito_ONG'); //CAMBIAR POR VARIABLE DE ENTORNO
-        console.log(data.append);
+        
         dispatch(postCloudinaryPhoto(data))
     };
 
-    const handleDelete = (e)=> {
-        const link = e.target.value;
-        dispatch(removeCloudinayImage(link))
+    const handleDelete = ()=> {        
+        dispatch(clearCloudinaryResponse())
     };
 
     // const handleSubmit = (data) => {
@@ -39,7 +39,7 @@ const ImagenUpload = () => {
     <div id="Image">
          <div >
          {/* <form    onSubmit={(e) => handleSubmit(e)} > */}
-            <label className={styles.title}>Product Image</label>
+            <label className={styles.title}>Image</label>
             <Container>
                 <FormGroup>
                 <Input
@@ -51,16 +51,16 @@ const ImagenUpload = () => {
                 />
                 </FormGroup>
             </Container>
-            <div className="lista de imagenes">
-                        { cloudImages.length < 1 ? null :
-                            cloudImages.map( (el, index) =>
-                                <div className="borra image" key={`o${index}`}>
-                                <p>{el}</p>
-                                <img src={el} alt="Girl in a jacket" width="500" ></img>
-                                <button value={el} onClick={(e)=>handleDelete(e)}>X</button>
-                                </div>)
+            
+            <div className="image">
+                        { !cloudImages ? null :                            
+                                <div className="video" >
+                                    <button  onClick={(e)=>handleDelete(e)}>X</button>
+                                    <img src={cloudImages} alt="Girl in a jacket" width="500" ></img>                                                              
+                                </div>
                         }
             </div>
+                     
                                 
             {/* <input type="submit" value="send"/> */}
         </div >                

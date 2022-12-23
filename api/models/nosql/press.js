@@ -6,6 +6,9 @@ const pressScheme = new mongoose.Schema(
     media: {
       type: String,
     },
+    type: {
+      type: String,
+    },
     link: {
       type: String,
     },    
@@ -19,8 +22,12 @@ const pressScheme = new mongoose.Schema(
     description: {
         type: String,
     },
-    dogs: [String],
-    
+    img: {
+      type: String,
+    },
+    favicon: {
+      type: String,
+    },    
     isDelete: {
       type: Boolean, 
       default: false
