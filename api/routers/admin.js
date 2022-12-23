@@ -5,39 +5,38 @@ const {
   adminDogsId,
   adminCreateDog,
   adminUpdateDog,
-  adminDeleteDog, 
+  adminDeleteDog,
 } = require("../controllers/adminDogs");
 
-const {  
+const {
   adminUsers,
   adminUsersId,
   adminCreateUser,
   adminUpdateUser,
-  adminDeleteUser,  
+  adminDeleteUser,
 } = require("../controllers/adminUsers");
 
 const {
-    adminDeleteAdoption,
-    adminAdoptions,
-    adminUpdateAdoption,
-    adminAdoptionsId,
+  adminDeleteAdoption,
+  adminAdoptions,
+  adminUpdateAdoption,
+  adminAdoptionsId,
 } = require("../controllers/adminAdopt");
 
 const {
-    adminCreateContrib,
-    adminContrib,
-    adminContribId,
-    adminUpdateContrib,
-    adminDeleteContrib,
-  } = require("../controllers/adminContrib");
+  adminCreateContrib,
+  adminContrib,
+  adminContribId,
+  adminUpdateContrib,
+  adminDeleteContrib,
+} = require("../controllers/adminContrib");
 
 const {
   adminVolunteer,
   adminVolunteerId,
   adminUpdateVolunteer,
-  adminDeleteVolunteer
-} = require("../controllers/adminVolunteers"); 
-
+  adminDeleteVolunteer,
+} = require("../controllers/adminVolunteers");
 
 const {
   adminPress,
@@ -52,6 +51,7 @@ const {
   adminInterfaceId,
   adminUpdateInterface
 } = require("../controllers/adminInterface"); 
+
 
 
 
@@ -95,11 +95,10 @@ router.post("/press", adminCreatePress);
 router.put("/press/:id", adminUpdatePress);
 router.delete("/press/:id", adminDeletePress);
 
+
 //------ /api/admin/interfaces
 router.get("/nterfaces", adminInterface);
 router.get("/nterfaces/:id", adminInterfaceId);
 router.put("/nterfaces/:id", adminUpdateInterface);
 
-
 module.exports = router;
-

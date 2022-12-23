@@ -70,7 +70,7 @@
 .voluntario {
   background-color: #4fa7c1;
 }
-a {
+.a {
   text-decoration: none;
   color: white;
   height: 200px;
@@ -81,7 +81,7 @@ a {
   letter-spacing: 0.06em;
   padding: 15px;
 }
-img {
+.img {
   width: 400px;
 }
 @media (max-width: 600px) {
@@ -96,7 +96,7 @@ img {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(8, 1fr);
   }
-  a {
+  .a {
     padding: 5px;
     height: 55px;
     border-radius: 15px;
@@ -113,14 +113,13 @@ img {
   }
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
   .homeImage {
     width: 25rem;
   }
 }
 
-
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .halfHomeContenedor {
     display: flex;
     justify-content: center;
@@ -131,13 +130,13 @@ img {
     display: flex;
     flex-direction: column;
   }
-  .IconsBar{
+  .IconsBar {
     display: flex;
     flex-direction: row;
-    margin:  0 2rem;
+    margin: 0 2rem;
   }
 }
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .halfHomeContenedor {
     display: flex;
     justify-content: center;

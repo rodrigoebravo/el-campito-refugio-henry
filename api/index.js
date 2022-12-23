@@ -1,6 +1,8 @@
 const dbConnect = require("./config/mongo");
+const print = require("./utils/myConsole"); 
 const app = require("./app");
 require("dotenv").config();
+
 // const pushDatabase = require("./utils/pushDatabase");
 // const pushDBusers = require("./utils/pushDBusers");
 
@@ -13,15 +15,14 @@ dbConnect().then((res) => {
 
   // pushDatabase();
   // pushDBusers();
-  
   app.listen(process.env.PORT, () => {
-    console.log("***Successfully connected***");
-    console.log(`http://localhost:${PORT}`);
+    print.succe("Successfully connected");
+    print.listen(`http://localhost:${PORT}`);
   });
 },
 
   (error) => {
-    console.log("***Connection error***");
+    print.error("Connection error");
   }
 );
 

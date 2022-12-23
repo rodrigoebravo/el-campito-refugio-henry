@@ -3,24 +3,26 @@ const mongoose = require("mongoose");
 
 const adoptionScheme = mongoose.Schema({
 
-    id_dog: {
-        type: String, 
+    dog: {
+        type: mongoose.Types.ObjectId,
+        ref: "dogs", 
     },
-    name: {
-        type: String, 
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref:"users", 
     },
-    birthday: { 
-        type: Date, 
-        default: Date.now 
-    },
-    email: {
-        type: String,
-        unique: true,
-    }, 
-    telephone: {
-        type: String,
-        required: true,
-    },
+    // birthday: { 
+    //     type: Date, 
+    //     default: Date.now 
+    // },
+    // email: {
+    //     type: String,
+    //     unique: true,
+    // }, 
+    // telephone: {
+    //     type: String,
+    //     required: true,
+    // },
     location: {
         type: String, 
     },
@@ -97,7 +99,7 @@ const adoptionScheme = mongoose.Schema({
     },
     authorization: {
         type: String,
-        enum: ["si", "no", "tal vez"],
+        enum: ["si", "no", "tal vez", "definir"],
         default: "definir", 
     },
     sleep: {
