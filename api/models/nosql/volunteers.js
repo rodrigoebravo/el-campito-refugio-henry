@@ -3,21 +3,26 @@ const mongoose = require("mongoose");
 
 const volunteerScheme = mongoose.Schema({
 
-    name: {
-        type: String, 
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: "users",
     },
-    birthday: { 
-        type: Date, 
-        default: Date.now 
-    },
-    email: {
-        type: String,
-        unique: true,
-    }, 
-    telephone: {
-        type: String,
-        required: true,
-    },
+    
+    // name: {
+    //     type: String, 
+    // },
+    // birthday: { 
+    //     type: Date, 
+    //     default: Date.now 
+    // },
+    // email: {
+    //     type: String,
+    //     unique: true,
+    // }, 
+    // telephone: {
+    //     type: String,
+    //     required: true,
+    // },
     location: {
         type: String, 
     },

@@ -30,6 +30,18 @@ const userScheme = new mongoose.Schema(
     image: {
       type: String,
     },
+    volunteer:{
+      type: mongoose.Types.ObjectId,
+      ref: "volunteers",
+    },
+    contribution: [{
+      type: mongoose.Types.ObjectId,
+      ref: "contributions",
+    }],
+    adoptions:[{
+      type: mongoose.Types.ObjectId,
+      ref: "adoptions",
+    }],
     isDelete: {
       type: Boolean,
       default: false,
