@@ -1,18 +1,20 @@
-const { volunteersModel } = require("../models");
+const { volunteersModel} = require("../models");
 
 const adminVolunteer = async (req, res) => {
   try {
+
     const volunteers = await volunteersModel.find({}).populate("user", {
       contribution: 0,
       adoptions: 0,
       isDelete: 0,
-      volunteer: 0
+      volunteer: 0,
+      pass: 0
     });
    
     const volunteersMapping = volunteers.map(v => {
-      let {user:{_id:idUser, ...basicData }, ...dataVolunteer} = v.toObject();
+      const {user:{_id, ...basicData }, ...dataVolunteer} = v.toObject();
       return {
-        idUser,
+        idUser: _id,
         ...basicData,
         ...dataVolunteer
       }
@@ -35,13 +37,14 @@ const adminVolunteerId = async (req, res) => {
       contribution: 0,
       adoptions: 0,
       isDelete: 0,
-      volunteer: 0
+      volunteer: 0,
+      pass: 0
     });
 
-    const {user:{_id:idUser, ...basicData }, ...dataVolunteer} = volunteer.toObject(); 
+    const {user:{_id, ...basicData }, ...dataVolunteer} = volunteer.toObject(); 
 
     res.status(200).send({
-      idUser,
+      idUser: _id,
       ...basicData,
       ...dataVolunteer
     }); 

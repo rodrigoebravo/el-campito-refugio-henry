@@ -99,7 +99,7 @@ const adoptionScheme = mongoose.Schema({
     },
     authorization: {
         type: String,
-        enum: ["si", "no", "tal vez"],
+        enum: ["si", "no", "tal vez", "definir"],
         default: "definir", 
     },
     sleep: {

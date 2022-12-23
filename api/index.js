@@ -15,7 +15,6 @@ dbConnect().then((res) => {
 
   // pushDatabase();
   // pushDBusers();
-  
   app.listen(process.env.PORT, () => {
     print.succe("Successfully connected");
     print.listen(`http://localhost:${PORT}`);

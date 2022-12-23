@@ -34,6 +34,7 @@ const CreateVolunteer = async (req, res) => {
         contribution: 0,
         adoptions: 0,
         isDelete: 0,
+        pass: 0
 
         });
 
@@ -61,6 +62,7 @@ const CreateVolunteer = async (req, res) => {
         contribution: 0,
         adoptions: 0,
         isDelete: 0,
+        pass: 0
 
         });
 
@@ -77,6 +79,8 @@ const CreateVolunteer = async (req, res) => {
     res.status(404).send({ error: e });
   }
 };
+
+
 
 module.exports = {
   CreateVolunteer,

@@ -2,8 +2,25 @@ const { adoptionsModel } = require("../models");
 
 const adminAdoptions = async (req, res) => {
     try {
-      const adoptions = await adoptionsModel.find({});
-      res.status(201).send(adoptions);
+      const adoptions = await adoptionsModel.find({}).populate("user dog", {
+        name: 1,
+        _id: 1
+      });
+      
+      const adoptionsMapping = adoptions.map(adoption => {
+
+        let { user, dog, ...data } = adoption.toObject();
+        return {
+          user: user.name,
+          dog: dog.name,
+          idUSer: user._id,
+          idDog: dog._id,
+          ...data
+        }
+      }); 
+
+      res.status(201).send(adoptionsMapping);
+
     } catch (e) {
       res.status(404).send({ error: e });
     }
@@ -15,8 +32,21 @@ const adminAdoptions = async (req, res) => {
         params: { id },
       } = req;
   
-      const adoptions = await adoptionsModel.findById({ _id: id });
-      res.json(adoptions);
+      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog", {
+        name: 1,
+        _id: 1
+      });
+
+      const { user, dog, ...data } = adoption.toObject(); 
+
+      res.json({
+        user: user.name,
+        dog: dog.name,
+        idUSer: user._id,
+        idDog: dog._id,
+        ...data
+      });
+
     } catch (e) {
       res.status(404).send({ error: e });
     }
@@ -34,6 +64,7 @@ const adminAdoptions = async (req, res) => {
       });
   
       res.json({ data: adop });
+      
     } catch (e) {
       res.status(404).send({ error: e });
     }
