@@ -43,8 +43,17 @@ const {
   adminPressId,
   adminCreatePress,
   adminUpdatePress,
-  adminDeletePress,
-} = require("../controllers/adminPress");
+  adminDeletePress
+} = require("../controllers/adminPress"); 
+
+const {
+  adminInterface,
+  adminInterfaceId,
+  adminUpdateInterface
+} = require("../controllers/adminInterface"); 
+
+
+
 
 //------ /api/admin/dogs
 router.get("/dogs", adminDogs);
@@ -85,5 +94,11 @@ router.get("/press/:id", adminPressId);
 router.post("/press", adminCreatePress);
 router.put("/press/:id", adminUpdatePress);
 router.delete("/press/:id", adminDeletePress);
+
+
+//------ /api/admin/interfaces
+router.get("/nterfaces", adminInterface);
+router.get("/nterfaces/:id", adminInterfaceId);
+router.put("/nterfaces/:id", adminUpdateInterface);
 
 module.exports = router;

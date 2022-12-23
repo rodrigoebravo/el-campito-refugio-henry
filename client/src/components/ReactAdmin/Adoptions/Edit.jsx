@@ -1,10 +1,6 @@
 import { Edit, SimpleForm, TextInput, BooleanInput, SelectInput,
   DateInput, CheckboxGroupInput } from "react-admin";
 
-const convertStringToNumber = value => {
-   const float = parseFloat(value);
-   return isNaN(float) ? null : float;
-};
 
 const AdopEdit = (props) => {
   return (

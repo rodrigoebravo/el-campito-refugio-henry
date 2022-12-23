@@ -11,7 +11,7 @@
 - Practicar métodos de SCRUM.
 
 
-<img height="350" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/logoElCampito_w1qgi3.jpg" />
+<img height="350" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/logoElCampito_za9dew.jpg" />
 
 
 
@@ -56,7 +56,7 @@ En `client` podrá encontrar, dentro de `src`, además del archivo `index.js` (c
 - [styles] ---> aquí todos los archivos de estilos modularizados que serán llamados luego por los componentes.
 
 
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546332/refugio/front_jd4tan.png" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/front_bwpmeg.png" />
 
 ## __Branches__
 
@@ -114,7 +114,7 @@ El administrador podrá, a través de un panel de administración, incorporar di
 
 - Voluntario: https://docs.google.com/forms/d/e/1FAIpQLSfzfLy6YUVtZjIEKod3G4uvUmjZwhE3gsLdTmdTZplgtyBeow/viewform
 - Adopción: https://docs.google.com/forms/d/1Fub4ZXrLIFDk0qaKhO3btWn-rX3hvmgeLYpi98wBbbI/viewform?edit_requested=true
-- Voluntario: https://docs.google.com/forms/d/e/1FAIpQLSfzfLy6YUVtZjIEKod3G4uvUmjZwhE3gsLdTmdTZplgtyBeow/viewform
+
   
 # Testing
 
@@ -135,21 +135,32 @@ El administrador podrá, a través de un panel de administración, incorporar di
 
 ## __views__
 
-Algunas vistas de diseño responsive, sin implementar el menu hamburguesa tadavía...
+Algunas vistas de diseño mobile...
 
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/menuResponsive_pg7y2y.jpg" />
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/AdoptarResponsive_w5vopf.jpg" />
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546332/refugio/voluntarioResponsive_iirfna.jpg" />
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546332/refugio/visitasResponsive_n3zlbs.jpg" />
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/EscolarResposive_m8pftm.jpg" />
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670546331/refugio/donarResponsive_pa4mwe.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-11-47-481_com.mi.globalbrowser_fjm7x4.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-12-37-664_com.mi.globalbrowser_oslvbv.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-12-26-103_com.mi.globalbrowser_qtqa2v.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-13-07-263_com.mi.globalbrowser_toqyxs.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-12-08-836_com.mi.globalbrowser_r0q4tg.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-14-17-624_com.mi.globalbrowser_c574rh.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-14-07-769_com.mi.globalbrowser_fgmt4a.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-13-12-754_com.mi.globalbrowser_dgkehb.jpg" />
 
 
 ## Diagrama de relaciones de la DB
 
 La app contara con una base de datos dinamica que permitira almacenar datos y relacionarlos de manera tal de presentar al administrador información útil y sensible para asistirlo en sus funciones organizacionales.
 
-<img height="400" src="https://res.cloudinary.com/dman2cjk5/image/upload/v1670547158/refugio/digramaDB_p9yz9o.jpg" />
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/diagramaDB_za9a3h.jpg" />
+
+
+## Panel de Aministrador
+
+Desde el Panel de Administrador podrán consultar todas las tables de la base de dato, crear nuevos input y editarlos en caso de requerir modificaciones.
+
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/admin_mayyzz.jpg" />
+
+<img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/adminUser_ywlyfk.jpg" />
 
 
 

@@ -76,13 +76,36 @@ const dataProvider = {
   },
 
   create: async (resource, params) => {
-    const images = params.data.images;
-    const video = params.data.video;
-    const urlsImages = await pushCloudinary(images);
-    const urlVideo = await pushCloudinary(video);
-    params.data.images = urlsImages;
-    params.data.video = urlVideo;
-    console.log(params.data);
+    
+    if (resource === "dogs") {      
+      const urlsImages = await pushCloudinary(params.data.images);
+      const urlVideo = await pushCloudinary(params.data.video);
+      params.data.images = urlsImages;
+      params.data.video = urlVideo;
+      console.log(params.data);
+    };
+    if (resource === "users") {
+      const urlsImage = await pushCloudinary(params.data.image);
+      params.data.image = urlsImage;
+      console.log(params.data);
+    };
+    if (resource === "interfaces") {      
+      const urlsSlider = await pushCloudinary(params.data.slider);
+      params.data.slider = urlsSlider;
+      const urlimgNosotros = await pushCloudinary(params.data.imgNosotros);
+      params.data.imgNosotros = urlimgNosotros;
+      const urlimgColabora = await pushCloudinary(params.data.imgColabora);
+      params.data.imgNosotros = urlimgColabora;
+      const urlimgVoluntarios = await pushCloudinary(params.data.imgVoluntarios);
+      params.data.imgNosotros = urlimgVoluntarios;      
+      console.log(params.data);
+    };
+    if (resource === "press" && params.data.img) {
+      const urlImg = await pushCloudinary(params.data.img);
+      params.data.image = urlImg;
+      console.log(params.data);
+    };
+
     httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
