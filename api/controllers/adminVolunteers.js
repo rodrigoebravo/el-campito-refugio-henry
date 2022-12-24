@@ -75,7 +75,7 @@ const adminUpdateVolunteer = async (req, res) => {
     ); 
 
     await usersModel.findByIdAndUpdate({ _id: volunteerUpdate.user._id },
-      { name, age, birthday, email, phone, pass, image }
+      { name, birthday, email, phone }
     );
 
     const volunteer = await volunteersModel.findById({ _id: id }).populate("user", {
