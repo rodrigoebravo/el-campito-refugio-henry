@@ -12,7 +12,7 @@ const CreateVolunteer = async (req, res) => {
 
     if (!userDb) {
 
-      let newUser = await usersModel.create({
+      const newUser = await usersModel.create({
         name,
         age,
         birthday,
@@ -23,7 +23,7 @@ const CreateVolunteer = async (req, res) => {
       });
      
 
-      let newVolunteer = await volunteersModel.create({
+      const newVolunteer = await volunteersModel.create({
         user: newUser._id,
         ...data
       })
@@ -31,13 +31,19 @@ const CreateVolunteer = async (req, res) => {
       newUser.volunteer = newVolunteer._id; 
       await newUser.save(); 
 
-      let volunteerCreated = await volunteersModel.findById({_id: newVolunteer._id}).populate("user"); 
+      const volunteerCreated = await volunteersModel.findById({_id: newVolunteer._id}).populate("user"); 
 
-      res.status(201).send(volunteerCreated); 
+      const {
+        user: { _id, ...basicData },
+        ...dataVolun
+      } = volunteerCreated.toObject();
+
+      res.status(201).send(
+        { idUser: _id, ...basicData, ...dataVolun }); 
 
     }else{
 
-      let newVolunteer = await volunteersModel.create({
+      const newVolunteer = await volunteersModel.create({
         user: userDb._id,
         ...data
       })
@@ -45,8 +51,20 @@ const CreateVolunteer = async (req, res) => {
       userDb.volunteer = newVolunteer._id; 
       await userDb.save(); 
 
-      let volunteerCreated = await volunteersModel.findById({_id: newVolunteer._id}).populate("user"); 
-      res.status(201).send(volunteerCreated); 
+      const volunteerCreated = await volunteersModel.findById({_id: newVolunteer._id}).populate("user",{  contribution: 0,
+        adoptions: 0,
+        isDelete: 0,
+        volunteer: 0,
+        pass: 0,
+      });
+  
+        const {
+          user: { _id, ...basicData },
+          ...dataVolun
+        } = volunteerCreated.toObject();
+
+      res.status(201).send(
+        { idUser: _id, ...basicData, ...dataVolun }); 
     }
   } catch (e) {
     res.status(404).send({ error: e });

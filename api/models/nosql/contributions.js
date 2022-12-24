@@ -11,13 +11,6 @@ const contributionsScheme = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: "dogs",
     },
-    // email: {
-    //     type: String,
-    //     unique: true,
-    // }, 
-    // phone: {
-    //   type: String,
-    // },
     type: {
         type: String,
         enum: ["donación", "padrinazgo", "membresía","sponsoreo"],

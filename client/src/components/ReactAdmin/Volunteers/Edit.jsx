@@ -23,13 +23,13 @@ const VoluntEdit = (props) => {
         <TextInput source="area" label="Localidad" fullWidth />
         <TextInput source="profession" label="Profesión" fullWidth />
         <TextInput source="interest" label="Área de interés en particular para trabajar en el refugio" fullWidth />
-        <SelectInput source="roles" labelpublic="Modalidad" choices={[
+        <SelectInput source="modality" labelpublic="Modalidad" choices={[
             { id: 'presencial', name: 'presencial' },
             { id: 'virtual', name: 'virtual' },
             { id: 'hibrido', name: 'hibrido' },
         ]} />
         <TextInput source="availability" label="Tiempo dispone" type="number" parse={convertStringToNumber} fullWidth />
-        <CheckboxGroupInput source="references" label="Días disponibles" choices={[
+        <CheckboxGroupInput source="days" label="Días disponibles" choices={[
             { id: 'u000', name: 'lunes' },
             { id: 'u001', name: 'martes' },
             { id: 'u002', name: 'miércoles' },
