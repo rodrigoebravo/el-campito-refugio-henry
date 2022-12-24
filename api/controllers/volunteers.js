@@ -3,77 +3,50 @@ const { volunteersModel, usersModel } = require("../models");
 const CreateVolunteer = async (req, res) => {
   try {
     const {
-      body: { name, age, email, phone, pass, image, ...data }
+      body: { name, age, birthday, email, phone, pass, image, ...data }
     } = req;
 
     //buscar usuario
     const userDb = await usersModel.findOne({ email });
 
+
     if (!userDb) {
 
-
-      const newUser = await usersModel.create({
+      let newUser = await usersModel.create({
         name,
         age,
+        birthday,
         email,
         phone,
         pass,
         image,
       });
+     
 
-      const volunteer = await volunteersModel.create({
+      let newVolunteer = await volunteersModel.create({
         user: newUser._id,
-        ...data,
-      });
+        ...data
+      })
 
-      newUser.volunteer = volunteer._id; // id data volunteer
-      await newUser.save();
+      newUser.volunteer = newVolunteer._id; 
+      await newUser.save(); 
 
-      const newVolunteer = await volunteersModel.findById({ _id: volunteer._id }).populate("user", {
-        volunteer: 0,
-        contribution: 0,
-        adoptions: 0,
-        isDelete: 0,
-        pass: 0
+      let volunteerCreated = await volunteersModel.findById({_id: newVolunteer._id}).populate("user"); 
 
-        });
+      res.status(201).send(volunteerCreated); 
 
+    }else{
 
-        const {user:{_id:idUser, ...basicData }, ...dataVolunteer} = newVolunteer.toObject(); 
-
-        res.status(200).send({
-          idUser,
-          ...basicData,
-          ...dataVolunteer
-        }); 
-
-    } else {
-
-      const newVolunteer = await volunteersModel.create({
+      let newVolunteer = await volunteersModel.create({
         user: userDb._id,
-        ...data,
-      });
+        ...data
+      })
 
-      userDb.volunteer = newVolunteer._id; // id data volunteer
-      await userDb.save();
+      userDb.volunteer = newVolunteer._id; 
+      await userDb.save(); 
 
-      const volunteerDb = await volunteersModel.findById({ _id: newVolunteer._id }).populate("user", {
-        volunteer: 0,
-        contribution: 0,
-        adoptions: 0,
-        isDelete: 0,
-        pass: 0
-
-        });
-
-      
-        const {user:{_id:idUser, ...basicData }, ...dataVolunteer} = volunteerDb.toObject(); 
-
-        res.status(200).send({
-          idUser,
-          ...basicData,
-          ...dataVolunteer
-        }); 
+      let volunteerCreated = await volunteersModel.findById({_id: newVolunteer._id}).populate("user"); 
+      res.status(201).send(volunteerCreated); 
     }
   } catch (e) {
     res.status(404).send({ error: e });

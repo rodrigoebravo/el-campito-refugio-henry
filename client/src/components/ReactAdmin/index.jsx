@@ -28,8 +28,13 @@ import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import AdopList from "./Adoptions/List";
 import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
+import HomeIcon from '@mui/icons-material/Home';
+import InterfacesEdit from "./Interfaces/Edit";
+import InterfacesList from "./Interfaces/List";
+import InterfacesShow from "./Interfaces/Show";
 import SsidChartIcon from "@mui/icons-material/SsidChart";
 import Stats from "./Stats/Stats";
+
 
 const AdminIndex = () => {
   return (
@@ -86,6 +91,14 @@ const AdminIndex = () => {
         icon={FavoriteRoundedIcon}
         options={{ label: "Adopciones" }}
       />
+      <Resource
+        name="api/admin/interfaces"
+        list={InterfacesList}
+        edit={InterfacesEdit}
+        show={InterfacesShow}
+        icon={HomeIcon}
+        options={{ label: "Interfaz de Usuario" }}
+       />
       <Resource
         name="api/admin/stats"
         list={Stats}

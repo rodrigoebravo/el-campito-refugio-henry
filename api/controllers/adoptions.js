@@ -20,7 +20,7 @@ const adoptionPost = async (req, res) => {
      }
     } = req;
 
-    console.log(idDog)
+    // console.log(idDog)
     const userDb = await usersModel.findOne({ email });
 
     if (!userDb) {

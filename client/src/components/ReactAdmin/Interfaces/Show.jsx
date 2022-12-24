@@ -1,14 +1,14 @@
 import { Show, SimpleShowLayout } from "react-admin";
 
-const VoluntShow = () => {
+const InterfacesShow = () => {
   return (
     <Show>
       <SimpleShowLayout>
-        
-        
+       
+       
       </SimpleShowLayout>
     </Show>
   );
 };
 
-export default VoluntShow;
+export default InterfacesShow;

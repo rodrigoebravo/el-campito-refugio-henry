@@ -6,7 +6,6 @@ const adminDogs = async (req, res) => {
     if (filtro) {
       if (filtro.name) {
         const { name } = filtro;
-        console.log(filtro);
         const dogs = await dogModel.find({ name: new RegExp(name, "i") });
         if (dogs.length) {
           res.status(200).send(dogs);

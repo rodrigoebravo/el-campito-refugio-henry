@@ -18,7 +18,7 @@ const VoluntEdit = (props) => {
         <TextInput source="name" label="Voluntario" fullWidth />
         <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
         <TextInput source="email" label="e-mail" fullWidth />
-        <TextInput source="telephone" label="Teléfono" fullWidth />
+        <TextInput source="phone" label="Teléfono" fullWidth />
         <TextInput source="location" label="Domicilio" fullWidth />
         <TextInput source="area" label="Localidad" fullWidth />
         <TextInput source="profession" label="Profesión" fullWidth />

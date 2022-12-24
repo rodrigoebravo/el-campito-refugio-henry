@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
     }
 
     res.setHeader("Access-Control-Expose-Headers", "Content-Range");
-    res.setHeader("Content-Range", `users 0-${count}/${count}`);
+    res.setHeader("Content-Range", `dogs 0-${count}/${count}`);
     next();
   });
 };
