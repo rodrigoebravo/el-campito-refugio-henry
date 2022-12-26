@@ -14,9 +14,6 @@ const interfacesScheme = new mongoose.Schema(
     colaboraText: {
       type: String,
     },
-    imgColabora: {
-        type: String,
-    },
     visitasText: {
       type: String,
     },

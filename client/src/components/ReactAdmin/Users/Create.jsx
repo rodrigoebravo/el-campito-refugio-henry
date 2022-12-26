@@ -1,10 +1,10 @@
 import { Create, SimpleForm, TextInput, ImageInput, SelectInput,
-   ImageField } from "react-admin";
+   ImageField, DateInput } from "react-admin";
 
-const convertStringToNumber = value => {
-    const float = parseFloat(value);
-    return isNaN(float) ? null : float;
-};
+// const convertStringToNumber = value => {
+//     const float = parseFloat(value);
+//     return isNaN(float) ? null : float;
+// };
       
 
 const UsersCreate = (props) => {
@@ -13,7 +13,8 @@ const UsersCreate = (props) => {
       <SimpleForm>
         <TextInput source="name" label="Nombre" fullWidth />
         <TextInput source="email" label="Email" fullWidth />
-        <TextInput source="age" label="Edad" type="number" parse={convertStringToNumber} fullWidth />
+        <TextInput source="phone" label="Teléfono" fullWidth />
+        <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
         <TextInput source="pass" label="Contraseña" fullWidth />
         <SelectInput source="roles" labelpublic="Rol" choices={[
             { id: 'public', name: 'public' },

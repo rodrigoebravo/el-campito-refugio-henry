@@ -9,7 +9,7 @@ const dogScheme = new mongoose.Schema(
     gender: {
         type: String,
         enum: ["macho","hembra"],
-        // default: "definir",
+        default: "definir",
     },
     age: {
         type: String,
@@ -20,7 +20,7 @@ const dogScheme = new mongoose.Schema(
     size: {
         type: String,
         enum: ["chico", "mediano","grande"],
-        // default: "definir", 
+        default: "definir", 
     },
     race: {
         type: String,

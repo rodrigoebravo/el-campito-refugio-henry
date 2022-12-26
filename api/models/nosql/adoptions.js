@@ -7,9 +7,15 @@ const adoptionScheme = mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "dogs", 
     },
+    nameDog: {
+        type: String, 
+    },
     user: {
         type: mongoose.Types.ObjectId,
         ref:"users", 
+    },
+    nameUser: {
+        type: String, 
     },
     // birthday: { 
     //     type: Date, 
@@ -23,6 +29,10 @@ const adoptionScheme = mongoose.Schema({
     //     type: String,
     //     required: true,
     // },
+    date: { 
+        type: Date, 
+        default: Date.now 
+    },
     location: {
         type: String, 
     },
@@ -135,6 +145,14 @@ const adoptionScheme = mongoose.Schema({
     timestamps: false, 
     versionKey: false, 
 }); 
+
+adoptionScheme.pre("find", function () {
+    this.where({ isDelete: false });
+  });
+  
+adoptionScheme.pre("findOne", function () {
+    this.where({ isDelete: false });
+  });
 
 
 

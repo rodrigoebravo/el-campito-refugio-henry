@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { CreateVolunteer, volunteerById } = require("../controllers/volunteers");
+const { CreateVolunteer } = require("../controllers/volunteers");
 
 router.post("/", CreateVolunteer);
 

@@ -9,7 +9,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643434/refugio/agustin1_nitkg3.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643435/refugio/agustin2_uu7t48.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643436/refugio/agustin3_kuuabz.jpg"],
-      "caracteristicas": "Agustín llegó al refugio sin un ojito. Es un perro muy mimoso y compañero.",
+      "features": "Agustín llegó al refugio sin un ojito. Es un perro muy mimoso y compañero.",
       "references": ["Se lleva con perros"]
     },
     {
@@ -23,7 +23,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643437/refugio/akamaru2_ylinqn.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643437/refugio/akamaru3_cws7eq.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643437/refugio/akamaru4_aqopnc.jpg"],
-      "caracteristicas": "Dulce, bueno, sociable. Edad 7 años. Se lleva con todos. Pasea con correa. (2018)",
+      "features": "Dulce, bueno, sociable. Edad 7 años. Se lleva con todos. Pasea con correa. (2018)",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos",
                       "Discapacitado",
@@ -39,7 +39,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643439/refugio/andre1_pnvvni.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643440/refugio/andre2_lfssve.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643441/refugio/andre3_riodoq.jpg"],
-      "caracteristicas": " Muy dulce. Se lleva bien con todos: perros, perras y niños.",
+      "features": " Muy dulce. Se lleva bien con todos: perros, perras y niños.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos",
                       "Cuidados especiales"] 
@@ -55,7 +55,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643403/refugio/bala2_rnzqli.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643403/refugio/bala3_qugg47.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643403/refugio/bala4_dp5zga.jpg"],
-      "caracteristicas": "Activo, alegre",
+      "features": "Activo, alegre",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"] 
     },
@@ -69,7 +69,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/batman1_aqiaoi.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/batman2_rtwobx.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/batman3_lb4577.jpg"],
-      "caracteristicas": "Enérgico, activo. Dulce con la gente. Se lleva con algunos perros",
+      "features": "Enérgico, activo. Dulce con la gente. Se lleva con algunos perros",
       "references": ["Se lleva con perros"] 
     },
     {
@@ -82,7 +82,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643405/refugio/dulce1_xuwc4n.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643405/refugio/dulce2_cx6ilv.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643405/refugio/dulce3_e8qf5p.jpg"],
-      "caracteristicas": "Es muy dulce con las personas. Tiene caracter con otros perros.",
+      "features": "Es muy dulce con las personas. Tiene caracter con otros perros.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"] 
     },
@@ -97,7 +97,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/colo2_fh1xn7.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/colo3_kaltsv.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643405/refugio/colo4_yl3bdi.jpg"],
-      "caracteristicas": "",
+      "features": "",
       "references": [] 
     },
     {
@@ -110,7 +110,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/fito1_g2wgsy.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/fito2_zb3hme.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/fito3_krrtoi.jpg"],
-      "caracteristicas": "Dulce, enérgico.",
+      "features": "Dulce, enérgico.",
       "references": ["Carácter especial"] 
     },
     {
@@ -124,7 +124,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/hund2_de2ayf.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/hund3_lba5mp.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/hund4_kqwgqt.jpg"],
-      "caracteristicas": "Alegre, obediente, cariñoso, activo.",
+      "features": "Alegre, obediente, cariñoso, activo.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -138,7 +138,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/isadora1_ddnnky.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/isadora2_sume54.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/isadora3_l3myky.jpg"],
-      "caracteristicas": "Sociable. Se lleva bien con todos.",
+      "features": "Sociable. Se lleva bien con todos.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -152,14 +152,14 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/leoBur1_ck5jox.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/leoBur2_azbdne.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643412/refugio/leoBur3_niq36z.jpg"],
-      "caracteristicas": "",
+      "features": "",
       "references": ["Se lleva con perros",
                       "Carácter especial"]
     },
     {
       "name": "Milagros Negra",
       "gender": "hembra",
-      "age": "viejito ",
+      "age": "viejito",
       "size": "mediano",
       "race": "mestizo",
       "video":"",
@@ -167,7 +167,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643420/refugio/miliNegra2_d5xpuu.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643421/refugio/miliNegra3_r17cni.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643421/refugio/MiliNegra4_haqkt4.jpg"],
-      "caracteristicas": "Dulce.",
+      "features": "Dulce.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -181,7 +181,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643421/refugio/mimi1_wrzegu.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643421/refugio/mimi2_pjnqwv.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643421/refugio/mimi3_ffwvxe.jpg"],
-      "caracteristicas": "Dulce, cariñosa, tranquila.",
+      "features": "Dulce, cariñosa, tranquila.",
       "references": ["Se lleva con perros"]
     },
     {
@@ -194,7 +194,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643421/refugio/mire1_bsifjk.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643423/refugio/mire2_gichye.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643425/refugio/mire3_ck6llg.jpg"],
-      "caracteristicas": "DUDA: NO LA CONOZCO",
+      "features": "DUDA: NO LA CONOZCO",
       "references": []
     },
     {
@@ -208,7 +208,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643425/refugio/momi2_ddsuq6.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643425/refugio/momi3_dzzkvf.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643426/refugio/momi4_snasuu.jpg"],
-      "caracteristicas": "Dócil, sociable, tranquila.",
+      "features": "Dócil, sociable, tranquila.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -223,7 +223,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643426/refugio/mora2_sn5uct.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643426/refugio/mora3_zylywa.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643426/refugio/mora4_rkg73f.jpg"],
-      "caracteristicas": "Cariñosa, obediente.",
+      "features": "Cariñosa, obediente.",
       "references": ["Se lleva con perros"]
     },
     {
@@ -236,7 +236,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643428/refugio/rami1_msixpy.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643430/refugio/rami2_vis4e9.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643430/refugio/rami3_gyfb0z.jpg"],
-      "caracteristicas": "Activo, enérgico.",
+      "features": "Activo, enérgico.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -251,7 +251,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/lady2_bjhong.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/lady3_u6k3kf.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643407/refugio/lady4_jheean.jpg"],
-      "caracteristicas": "Dúlce, activa, enérgica, cariñosa.",
+      "features": "Dúlce, activa, enérgica, cariñosa.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -266,7 +266,7 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643432/refugio/tifon2_oe4z7a.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643433/refugio/tifon3_snisf6.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643434/refugio/tifon4_l7qqvx.jpg"],
-      "caracteristicas": "Muy cariñoso con las personas. Se lleva con niños.",
+      "features": "Muy cariñoso con las personas. Se lleva con niños.",
       "references": ["Se lleva con perros",
                       "Carácter especial"]
     },
@@ -280,7 +280,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643405/refugio/firu1_qis8hl.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643405/refugio/firu2_qugrwh.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643406/refugio/firu3_vwz7ht.jpg"],
-      "caracteristicas": "Buena, dócil, dulce, obediente, tranquila, cariñosa.",
+      "features": "Buena, dócil, dulce, obediente, tranquila, cariñosa.",
       "references": ["Se lleva con perros",
                       "Se lleva con chicos"]
     },
@@ -294,7 +294,7 @@
       "images":["https://res.cloudinary.com/dakezkhho/image/upload/v1671643431/refugio/saja1_hugm48.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643431/refugio/saja2_pxotki.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643432/refugio/saja3_ni15lr.jpg"],
-      "caracteristicas": "Activo, fuerte. Le falta el ojo izquierdo.",
+      "features": "Activo, fuerte. Le falta el ojo izquierdo.",
       "references": ["Se lleva con perros"]
     },
     {
@@ -308,13 +308,13 @@
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/balta2_f8n5ul.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/balta3_yhp8kh.jpg",
                "https://res.cloudinary.com/dakezkhho/image/upload/v1671643404/refugio/balta4_zftfso.jpg"],
-      "caracteristicas": "Tranquilo. Camina con correa y le gusta hacer siestas.",
+      "features": "Tranquilo. Camina con correa y le gusta hacer siestas.",
       "references": ["Se lleva con perros"]
     },
     {
       "name": "ALELI",
       "gender": "hembra",
-      "age": "viejito ",
+      "age": "viejito",
       "size": "grande",
       "race": "mestiza",
       "video":"",

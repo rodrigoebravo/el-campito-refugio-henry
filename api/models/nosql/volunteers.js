@@ -7,7 +7,10 @@ const volunteerScheme = mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "users",
     },
-    
+    date: { 
+        type: Date, 
+        default: Date.now 
+    },
     // name: {
     //     type: String, 
     // },
