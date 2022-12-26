@@ -7,9 +7,10 @@ const userScheme = new mongoose.Schema(
     name: {
       type: String,
     },
+
     birthday: { 
         type: Date, 
-        default: Date.now 
+        default: Date.now =
     },
     email: {
       type: String,

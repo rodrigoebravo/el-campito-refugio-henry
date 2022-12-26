@@ -33,6 +33,7 @@ const adoptionScheme = mongoose.Schema({
         type: Date, 
         default: Date.now 
     },
+
     location: {
         type: String, 
     },

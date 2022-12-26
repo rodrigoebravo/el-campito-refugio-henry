@@ -2,6 +2,7 @@ const { dogModel } = require("../models");
 
 const adminDogs = async (req, res) => {
   try {
+
     // const filtro = JSON.parse(req.query.filter);
     // if (filtro) {
     //   if (filtro.name) {

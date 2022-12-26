@@ -7,6 +7,7 @@ const adminVolunteer = async (req, res) => {
       adoptions: 0,
       isDelete: 0,
       volunteer: 0,
+      pass: 0,
     });  
     // volunteers = JSON.parse(volunteers)
     // console.log(volunteers);
@@ -27,6 +28,7 @@ const adminVolunteer = async (req, res) => {
         console.log(response);
         return response;      
       
+
     });
 
     res.status(201).send(volunteersMapping);
@@ -81,7 +83,7 @@ const adminUpdateVolunteer = async (req, res) => {
     ); 
 
     await usersModel.findByIdAndUpdate({ _id: volunteerUpdate.user._id },
-      { name, birthday, phone, roles }
+      { name, birthday, phone, roles, email }
     );
 
     const volunteer = await volunteersModel.findById({ _id: id }).populate("user", {

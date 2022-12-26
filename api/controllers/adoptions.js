@@ -13,6 +13,7 @@ const adoptionPost = async (req, res) => {
     } = req;
     console.log(dataAdopter);
     console.log(idDog)
+
     const userDb = await usersModel.findOne({ email });
     const dogDb = await dogModel.findOne({ _id: idDog });
 
