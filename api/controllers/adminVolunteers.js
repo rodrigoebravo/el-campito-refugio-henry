@@ -8,19 +8,27 @@ const adminVolunteer = async (req, res) => {
       isDelete: 0,
       volunteer: 0,
       pass: 0,
-    });
-
-    const volunteersMapping = volunteers.map((v) => {
-      const {
-        user: { _id, ...basicData },
-        ...dataVolunteer
-      } = v.toObject();
+    });  
+    // volunteers = JSON.parse(volunteers)
+    // console.log(volunteers);
+    const volunteersMapping = volunteers
+    .filter((v)=> v.user )
+    .map((v) => {      
+      // console.log(v);      
+        const {
+          user: { _id, ...basicData },
+          ...dataVolunteer
+        } = v.toObject();
+  
+        let response = {
+          idUser: _id,
+          ...basicData,
+          ...dataVolunteer,
+        };
+        console.log(response);
+        return response;      
       
-      return {
-        idUser: _id,
-        ...basicData,
-        ...dataVolunteer,
-      };
+
     });
 
     res.status(201).send(volunteersMapping);
@@ -64,7 +72,7 @@ const adminUpdateVolunteer = async (req, res) => {
   try {
     const {
       params: { id },
-      body: { name, age, birthday, email, phone, pass, image, ...dataVolunteer },
+      body: { name, birthday, email, phone, roles, ...dataVolunteer },
     } = req;
 
     const volunteerUpdate = await volunteersModel.findByIdAndUpdate({ _id: id },
@@ -75,7 +83,7 @@ const adminUpdateVolunteer = async (req, res) => {
     ); 
 
     await usersModel.findByIdAndUpdate({ _id: volunteerUpdate.user._id },
-      { name, birthday, email, phone }
+      { name, birthday, phone, roles, email }
     );
 
     const volunteer = await volunteersModel.findById({ _id: id }).populate("user", {

@@ -21,14 +21,7 @@ const Adopcion = () =>{
                     <img src="https://lh3.googleusercontent.com/Xrk9glCZQbiti8CsC-ArJQk2mD4mZYsZRHSNie6TJktCsN8bsGNIf9CgkW_IWnyhewva9NvbWi9vn7LvCLV1ln5OlRO8n1RZmV-GOMUP4iPJ3lk5RhfuR6tPodN0StzNEQ=w502" alt="perrito" width="500" />
                 </div>
 
-                <div className = {styles.item}>
-                    <label className={styles.label}>¿Qué perro te interesó?</label>
-                    <input type="text" className={styles.input} placeholder="Tu respuesta"
-                        {...register('dog', {required: true })}
-                    />
-                    {errors.dog?.type === 'required' && <p>Ingrese el nombre del perro</p>}                    
-                </div>
-                
+                                
                 <div className = {styles.item}>
                     <label className={styles.label}>Correo</label>
                     <input type="text" className={styles.input} placeholder="Tu dirección de correo electrónico"
@@ -75,7 +68,7 @@ const Adopcion = () =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Teléfono</label>
                     <input type="tel" className={styles.input} placeholder="ej: 1161906190" 
-                        {...register('telephone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
+                        {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />
                     {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
                     {errors.telephone?.type === 'pattern' && <p>El numero ingresado es invalido</p>}

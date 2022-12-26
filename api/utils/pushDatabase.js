@@ -1,5 +1,5 @@
 const { dogModel } = require("../models/index"); 
-const info = require("./search.json"); 
+const info = require("./dogs.json"); 
 // console.log(info);
 
 const pushDatabase = () =>{

@@ -7,7 +7,7 @@ const adminUsers = async (req, res) => {
   } catch (e) {
     res.status(404).send({ error: e });
   }
-};
+}; 
 
 const adminUsersId = async (req, res) => {
   try {

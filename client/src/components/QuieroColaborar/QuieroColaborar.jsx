@@ -1,6 +1,6 @@
 import style from './QuieroColaborar.module.css'
-import mercadoLibre from '../../img/logosPasarelas/mercadolibre.svg'
-import dineroMail from '../../img/logosPasarelas/dineromail.svg'
+// import mercadoLibre from '../../img/logosPasarelas/mercadolibre.svg'
+// import dineroMail from '../../img/logosPasarelas/dineromail.svg'
 import Footer from '../Footer/Footer'
 import Navbar from '../NavBar/NavBar'
 const QuieroColaborar = () => {
@@ -31,7 +31,7 @@ const QuieroColaborar = () => {
         </div>
       </div>    
         <div className={style.pasarleML}>
-        <img src ={mercadoLibre} className={style.imgML} alt="Logo Mercado Libre"/>
+        <img src ="https://res.cloudinary.com/dakezkhho/image/upload/v1671806580/refugio/medios%20de%20pago/mercadolibre_jhklsb.svg" className={style.imgML} alt="Logo Mercado Libre"/>
         <div className={style.pasarelDMbuttons}>
         <div className={style.noWrap}> <button className={style.buttonML}>$200</button>
           <button className={style.buttonML}>$300</button>
@@ -45,7 +45,7 @@ const QuieroColaborar = () => {
         </div>
       </div>  
       <div className={style.pasarelaDM}>
-        <img src ={dineroMail} className={style.imgDM} alt="Logo Mercado Libre"/>
+        <img src ="https://res.cloudinary.com/dakezkhho/image/upload/v1671808252/refugio/medios%20de%20pago/cafecito_rhi2y8.png" className={style.imgDM} alt="Logo Mercado Libre"/>
         <div className={style.pasarelaDMbuttons}>
           <div className={style.noWrap}><button className={style.buttonDM}>$15</button>
           <button className={style.buttonDM}>$50</button>

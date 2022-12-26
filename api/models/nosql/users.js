@@ -7,9 +7,10 @@ const userScheme = new mongoose.Schema(
     name: {
       type: String,
     },
-    birthday: {
-      type: Date,
-      
+
+    birthday: { 
+        type: Date, 
+        default: Date.now =
     },
     email: {
       type: String,
@@ -21,6 +22,7 @@ const userScheme = new mongoose.Schema(
     pass: {
       type: String,
       required: true,
+      default: "1234"
     },
     roles: { 
       type: String, 
@@ -78,12 +80,12 @@ const userScheme = new mongoose.Schema(
 //     next();
 //   })
 
-// userScheme.pre("find", function () {
-//   this.where({ isDelete: false });
-// });
+userScheme.pre("find", function () {
+  this.where({ isDelete: false });
+});
 
-// userScheme.pre("findOne", function () {
-//   this.where({ isDelete: false });
-// });
+userScheme.pre("findOne", function () {
+  this.where({ isDelete: false });
+});
 
 module.exports = mongoose.model("users", userScheme);

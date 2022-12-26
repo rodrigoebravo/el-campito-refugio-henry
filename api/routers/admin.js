@@ -49,7 +49,9 @@ const {
 const {
   adminInterface,
   adminInterfaceId,
-  adminUpdateInterface
+  adminUpdateInterface,
+  adminCreateInterface,
+  adminDeleteInterface
 } = require("../controllers/adminInterface"); 
 
 
@@ -97,8 +99,10 @@ router.delete("/press/:id", adminDeletePress);
 
 
 //------ /api/admin/interfaces
-router.get("/nterfaces", adminInterface);
-router.get("/nterfaces/:id", adminInterfaceId);
-router.put("/nterfaces/:id", adminUpdateInterface);
+router.get("/interfaces", adminInterface);
+router.get("/interfaces/:id", adminInterfaceId);
+router.put("/interfaces/:id", adminUpdateInterface);
+router.post("/interfaces", adminCreateInterface);
+router.delete("/interfaces/:id", adminDeleteInterface);
 
 module.exports = router;
