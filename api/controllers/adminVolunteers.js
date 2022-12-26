@@ -15,6 +15,7 @@ const adminVolunteer = async (req, res) => {
         user: { _id, ...basicData },
         ...dataVolunteer
       } = v.toObject();
+      
       return {
         idUser: _id,
         ...basicData,
@@ -63,7 +64,7 @@ const adminUpdateVolunteer = async (req, res) => {
   try {
     const {
       params: { id },
-      body: { name, age, email, phone, pass, image, ...dataVolunteer },
+      body: { name, age, birthday, email, phone, pass, image, ...dataVolunteer },
     } = req;
 
     const volunteerUpdate = await volunteersModel.findByIdAndUpdate({ _id: id },
@@ -74,7 +75,7 @@ const adminUpdateVolunteer = async (req, res) => {
     ); 
 
     await usersModel.findByIdAndUpdate({ _id: volunteerUpdate.user._id },
-      { name, age, email, phone, pass, image }
+      { name, birthday, email, phone }
     );
 
     const volunteer = await volunteersModel.findById({ _id: id }).populate("user", {

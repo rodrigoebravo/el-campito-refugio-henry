@@ -7,22 +7,6 @@ const volunteerScheme = mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "users",
     },
-    
-    // name: {
-    //     type: String, 
-    // },
-    // birthday: { 
-    //     type: Date, 
-    //     default: Date.now 
-    // },
-    // email: {
-    //     type: String,
-    //     unique: true,
-    // }, 
-    // telephone: {
-    //     type: String,
-    //     required: true,
-    // },
     location: {
         type: String, 
     },

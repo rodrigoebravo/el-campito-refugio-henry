@@ -37,9 +37,10 @@ app.use((req, res, next) => {
   next();
 });
 
+//list of midlewares
 app.use("/api/admin/dogs", require("./hook/dogHook"));
 app.use("/api/admin/users", require("./hook/userHook"));
-
+app.use("/api/admin/volunteers", require("./hook/volunteersHook"));
 
 app.use("/api", require("./routers"));
 
