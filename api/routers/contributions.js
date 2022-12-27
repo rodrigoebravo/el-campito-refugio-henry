@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const {
-    contributionPost } = require("../controllers/contributions");
 
+const { contributionPost } = require("../controllers/contributions");
 
 router.post("/", contributionPost);
 
