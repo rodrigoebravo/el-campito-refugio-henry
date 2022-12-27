@@ -65,9 +65,12 @@ const contributionPost = async (req, res) => {
         type,
         ...dataContibution,
       });
-  
-      userDb.contribution = [...userDb.contribution, newCertificate._id];
-      await userDb.save();
+
+      if(name && email){
+        
+        userDb.contribution = [...userDb.contribution, newCertificate._id];
+        await userDb.save();
+      }
   
       if (type === "padrinazgo") {
         const dog = await dogModel.findById({ _id: idDog });
