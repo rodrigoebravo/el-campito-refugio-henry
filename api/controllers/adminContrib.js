@@ -2,23 +2,38 @@ const { contributionsModel, usersModel, dogModel } = require("../models");
 
 const adminContrib = async (req, res) => {
     try {
-      const contributions = await contributionsModel.find({})
-      // .populate("user dog", { name: 1, _id: 1 });
+      const contributions = await contributionsModel.find({}).populate("user dog", {
+        name: 1, 
+        _id: 1,
+        email:1,
+        phone: 1
+      }); 
 
-      // const contribMapping = contributions.map( c => {
+      const mappingContributions = contributions.map(c => {
+        let { user , dog, ...data } = c.toObject(); 
 
-      //   let { user, dog, ...data } = c.toObject();
-      //   return {
-      //     user: user.name || null,
-      //     dog: dog.name || null,
-      //     idUSer: user._id || null,
-      //     idDog: dog._id || null,
-      //     ...data
-      //   }
-      // }); 
+        if(!user.name){
+          return {
+            name: "Anonimo",
+            idUser: user._id,
+            nameDog: dog.name,
+            idDog: dog._id,
+            ...data
+          }
+        }
 
-      // res.status(201).send(contribMapping);
-      res.status(201).send(contributions);
+        return {
+          name: user.name,
+          email: user.email,
+          phone: user.phone,
+          nameDog: dog.name,
+          idUser: user._id,
+          idDog: dog._id,
+          ...data
+        }
+      }); 
+
+      res.status(201).send(mappingContributions);
 
     } catch (e) {
       res.status(404).send({ error: e });
