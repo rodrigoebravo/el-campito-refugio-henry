@@ -1,10 +1,6 @@
 import { Edit, SimpleForm, TextInput, BooleanInput, SelectInput,
   DateInput, CheckboxGroupInput } from "react-admin";
 
-const convertStringToNumber = value => {
-   const float = parseFloat(value);
-   return isNaN(float) ? null : float;
-};
 
 const AdopEdit = (props) => {
   return (
@@ -14,12 +10,12 @@ const AdopEdit = (props) => {
       disableAuthentication
       mutationMode="pessimistic"
     >
-      <SimpleForm>
+      <SimpleForm> 
         <TextInput source="dog" label="Camperito" fullWidth />
         <TextInput source="name" label="Adoptante (nombre y apellido)" fullWidth />
         <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
         <TextInput source="email" label="e-mail" fullWidth />
-        <TextInput source="telephone" label="Teléfono" fullWidth />
+        <TextInput source="phone" label="Teléfono" fullWidth />
         <TextInput source="location" label="Domicilio" fullWidth />
         <TextInput source="area" label="Localidad" fullWidth />
         <TextInput source="peoples" label="Personas en la casa" fullWidth />

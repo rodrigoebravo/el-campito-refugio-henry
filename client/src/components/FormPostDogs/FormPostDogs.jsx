@@ -3,14 +3,12 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { postDog, clearCloudinaryResponse } from "../../redux/actions/action";
 import ImageUpload from "../ImageUpload/ImageUpload.jsx";
-import VideoUpload from "../VideoUpload/VideoUpload";
 
 //para que funcione el hook hacer npm intall react-hook-form
 
 const FormPostDogs = () => {
   const dispatch = useDispatch();
   const cloudImages = useSelector(state => state.imagesCloudinary);
-  const cloudVideo = useSelector(state => state.videoCloudinary);
   const {
     register,
     handleSubmit,
@@ -28,7 +26,6 @@ const FormPostDogs = () => {
     age: "",
     size: "",
     race: "",
-    video: cloudVideo,
     images: cloudImages,
     features: "",
     references: [],
@@ -93,10 +90,7 @@ const FormPostDogs = () => {
           <ImageUpload />
         </div>
         
-        <div>
-          <label>Video</label>
-          <VideoUpload />
-        </div>
+       
 
         <div>
           <label>Características</label>

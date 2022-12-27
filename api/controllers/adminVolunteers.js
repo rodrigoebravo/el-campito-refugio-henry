@@ -1,9 +1,37 @@
-const { volunteersModel } = require("../models");
+const { volunteersModel, usersModel } = require("../models");
 
 const adminVolunteer = async (req, res) => {
   try {
-    const volunteer = await volunteersModel.find({});
-    res.status(201).send(volunteer);
+    const volunteers = await volunteersModel.find({}).populate("user", {
+      contribution: 0,
+      adoptions: 0,
+      isDelete: 0,
+      volunteer: 0,
+      pass: 0,
+    });  
+    // volunteers = JSON.parse(volunteers)
+    // console.log(volunteers);
+    const volunteersMapping = volunteers
+    .filter((v)=> v.user )
+    .map((v) => {      
+      // console.log(v);      
+        const {
+          user: { _id, ...basicData },
+          ...dataVolunteer
+        } = v.toObject();
+  
+        let response = {
+          idUser: _id,
+          ...basicData,
+          ...dataVolunteer,
+        };
+        console.log(response);
+        return response;      
+      
+
+    });
+
+    res.status(201).send(volunteersMapping);
   } catch (error) {
     res.status(404).send({ error });
   }
@@ -15,8 +43,26 @@ const adminVolunteerId = async (req, res) => {
       params: { id },
     } = req;
 
-    const volunteer = await volunteersModel.findById({ _id: id });
-    res.json(volunteer);
+    const volunteer = await volunteersModel
+      .findById({ _id: id })
+      .populate("user", {
+        contribution: 0,
+        adoptions: 0,
+        isDelete: 0,
+        volunteer: 0,
+        pass: 0,
+      });
+
+    const {
+      user: { _id, ...basicData },
+      ...dataVolunteer
+    } = volunteer.toObject();
+
+    res.status(200).send({
+      idUser: _id,
+      ...basicData,
+      ...dataVolunteer,
+    });
   } catch (e) {
     res.status(404).send({ error: e });
   }
@@ -26,18 +72,35 @@ const adminUpdateVolunteer = async (req, res) => {
   try {
     const {
       params: { id },
-      body,
+      body: { name, birthday, email, phone, roles, ...dataVolunteer },
     } = req;
 
-    const volunteer = await volunteersModel.findByIdAndUpdate(
-      { _id: id },
-      body,
+    const volunteerUpdate = await volunteersModel.findByIdAndUpdate({ _id: id },
+      dataVolunteer,
       {
         returnOriginal: false,
       }
+    ); 
+
+    await usersModel.findByIdAndUpdate({ _id: volunteerUpdate.user._id },
+      { name, birthday, phone, roles, email }
     );
 
-    res.json({ data: volunteer });
+    const volunteer = await volunteersModel.findById({ _id: id }).populate("user", {
+      contribution: 0,
+      adoptions: 0,
+      isDelete: 0,
+      volunteer: 0,
+      pass: 0,
+    });
+
+    const {
+      user: { _id, ...basicData },
+      ...dataVolun
+    } = volunteer.toObject();
+
+    res.status(200).send({data: { idUser: _id, ...basicData, ...dataVolun }});
+    
   } catch (e) {
     res.status(404).send({ error: e });
   }
@@ -53,9 +116,18 @@ const adminDeleteVolunteer = async (req, res) => {
       {
         returnOriginal: false,
       }
-    );
+    ).populate("user",{  contribution: 0,
+      adoptions: 0,
+      isDelete: 0,
+      volunteer: 0,
+      pass: 0,});
 
-    res.status(201).send(volunteerDelete);
+      const {
+        user: { _id, ...basicData },
+        ...dataVolun
+      } = volunteerDelete.toObject();
+
+    res.status(201).send({ idUser: _id, ...basicData, ...dataVolun });
   } catch (e) {
     res.status(404).send({ error: e });
   }

@@ -56,11 +56,7 @@ const Navbar = () => {
                   Contactanos 
 					</Link>
 				</li>
-            <li className={styles.navItem}>
-            <Link to="/denuncia" className={styles.navLink} onClick={closeMenu}>
-                Denunciá
-				</Link>
-				</li>
+            
 			</ul>
 			</div>
 		</nav>

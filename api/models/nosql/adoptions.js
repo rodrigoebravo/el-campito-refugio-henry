@@ -3,24 +3,37 @@ const mongoose = require("mongoose");
 
 const adoptionScheme = mongoose.Schema({
 
-    id_dog: {
+    dog: {
+        type: mongoose.Types.ObjectId,
+        ref: "dogs", 
+    },
+    nameDog: {
         type: String, 
     },
-    name: {
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref:"users", 
+    },
+    nameUser: {
         type: String, 
     },
-    birthday: { 
+    // birthday: { 
+    //     type: Date, 
+    //     default: Date.now 
+    // },
+    // email: {
+    //     type: String,
+    //     unique: true,
+    // }, 
+    // telephone: {
+    //     type: String,
+    //     required: true,
+    // },
+    date: { 
         type: Date, 
         default: Date.now 
     },
-    email: {
-        type: String,
-        unique: true,
-    }, 
-    telephone: {
-        type: String,
-        required: true,
-    },
+
     location: {
         type: String, 
     },
@@ -97,7 +110,7 @@ const adoptionScheme = mongoose.Schema({
     },
     authorization: {
         type: String,
-        enum: ["si", "no", "tal vez"],
+        enum: ["si", "no", "tal vez", "definir"],
         default: "definir", 
     },
     sleep: {
@@ -133,6 +146,14 @@ const adoptionScheme = mongoose.Schema({
     timestamps: false, 
     versionKey: false, 
 }); 
+
+adoptionScheme.pre("find", function () {
+    this.where({ isDelete: false });
+  });
+  
+adoptionScheme.pre("findOne", function () {
+    this.where({ isDelete: false });
+  });
 
 
 

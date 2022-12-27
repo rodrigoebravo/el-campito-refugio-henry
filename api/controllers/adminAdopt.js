@@ -1,9 +1,31 @@
-const { adoptionsModel } = require("../models");
+const { adoptionsModel, usersModel, dogModel } = require("../models");
 
 const adminAdoptions = async (req, res) => {
     try {
-      const adoptions = await adoptionsModel.find({});
-      res.status(201).send(adoptions);
+      const adoptions = await adoptionsModel.find({}).populate("user dog");
+      
+      const adoptionsMapping = adoptions
+      .filter((a)=> a.user && a.dog )
+      .map(adop=> { 
+
+        const { user, dog, ...data } = adop.toObject(); 
+
+        return {
+          user: user._id,
+          nameUser: user.name,
+          email: user.email,
+          phone: user.phone,
+          birthday: user.birthday,
+          dog: dog._id,
+          nameDog: dog.name,
+          ...data
+        };
+      }); 
+
+      res.status(201).send(adoptionsMapping);
+
+      // res.status(201).send(adoptions);
+
     } catch (e) {
       res.status(404).send({ error: e });
     }
@@ -15,8 +37,21 @@ const adminAdoptions = async (req, res) => {
         params: { id },
       } = req;
   
-      const adoptions = await adoptionsModel.findById({ _id: id });
-      res.json(adoptions);
+      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog");      
+     
+      const { user, dog, ...data } = adoption.toObject(); 
+
+      res.json({
+        user: user._id,
+        nameUser: user.name,
+        email: user.email,
+        phone: user.phone,
+        birthday: user.birthday,
+        dog: dog._id,
+        nameDog: dog.name,
+        ...data
+      });
+
     } catch (e) {
       res.status(404).send({ error: e });
     }
@@ -26,14 +61,35 @@ const adminAdoptions = async (req, res) => {
     try {
       const {
         params: { id },
-        body,
+        body: { birthday, email, phone,  ...dataAdop },
       } = req;
   
-      const adop = await adoptionsModel.findByIdAndUpdate({ _id: id }, body, {
+      await adoptionsModel.findByIdAndUpdate({ _id: id }, dataAdop, {
         returnOriginal: false,
-      });
+      });       
   
-      res.json({ data: adop });
+      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog", {
+        name: 1,
+        _id: 1
+      });
+
+      const { user, dog, ...data } = adoption.toObject(); 
+
+      await usersModel.findByIdAndUpdate({ _id: user._id },
+        { birthday, phone, email }
+      );     
+      
+      res.json({
+        user: user._id,
+        nameUser: user.name,
+        email,
+        phone,
+        birthday,
+        dog: dog._id,
+        nameDog: dog.name,
+        ...data
+      });
+      
     } catch (e) {
       res.status(404).send({ error: e });
     }

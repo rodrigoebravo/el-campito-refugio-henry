@@ -22,7 +22,7 @@ const Voluntario = () =>{
                     <input type="text" className={styles.input} placeholder="Tu dirección de correo electrónico"
                         {...register('email', {
                             required: true,
-                            pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/    
+                            pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/    
                         })}
                     />
                     {errors.email?.type === 'pattern' && <p>Formato de Email incorrecto</p>}
@@ -56,7 +56,7 @@ const Voluntario = () =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Telefono</label>
                     <input type="tel" className={styles.input} placeholder="ej: 1161906190" 
-                        {...register('telephone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
+                        {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />
                     {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
                     {errors.telephone?.type === 'pattern' && <p>El numero ingresado es invalido</p>}

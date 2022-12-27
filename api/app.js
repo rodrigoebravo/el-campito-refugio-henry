@@ -37,8 +37,14 @@ app.use((req, res, next) => {
   next();
 });
 
+//list of midlewares
 app.use("/api/admin/dogs", require("./hook/dogHook"));
 app.use("/api/admin/users", require("./hook/userHook"));
+app.use("/api/admin/volunteers", require("./hook/volunteersHook"));
+app.use("/api/admin/adoptions", require("./hook/adopHook"));
+app.use("/api/admin/press", require("./hook/pressHook"));
+app.use("/api/admin/contributions", require("./hook/contribHook"));
+app.use("/api/admin/interfaces", require("./hook/interfaceHook"));
 
 
 app.use("/api", require("./routers"));

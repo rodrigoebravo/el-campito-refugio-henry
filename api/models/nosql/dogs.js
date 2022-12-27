@@ -9,18 +9,18 @@ const dogScheme = new mongoose.Schema(
     gender: {
         type: String,
         enum: ["macho","hembra"],
-        // default: "definir",
+        default: "definir",
     },
     age: {
         type: String,
-        enum: ["adulto","adulto jóven","viejito","cachorro"],
-        // default: "definir",
+        enum: ["adulto","adulto jóven","viejito","cachorro","definir"],
+        default: "definir",
 
     },
     size: {
         type: String,
         enum: ["chico", "mediano","grande"],
-        // default: "definir", 
+        default: "definir", 
     },
     race: {
         type: String,
@@ -35,11 +35,6 @@ const dogScheme = new mongoose.Schema(
     },
     references: [ String ],
 
-    isDelete: {
-      type: Boolean,
-      default: false,
-    },
-
     isSponsored: {
       type: Boolean,
       default: false,
@@ -48,7 +43,21 @@ const dogScheme = new mongoose.Schema(
     toAdopt: {
       type: Boolean,
       default: false,
-    }
+    },
+    adopters: [{
+      type: mongoose.Types.ObjectId,
+      ref: "users",
+    }],
+
+    godparents: [{
+      type:mongoose.Types.ObjectId,
+      ref: "users",
+    }],
+
+    isDelete: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: false,

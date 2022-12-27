@@ -18,6 +18,7 @@ const getDogsId = async (req, res) => {
     } = req;
 
     const dogs = await dogModel.findById({ _id: id });
+    
     res.json(dogs);
   } catch (e) {
     res.status(404).send({ error: e });

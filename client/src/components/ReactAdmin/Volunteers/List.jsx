@@ -12,9 +12,9 @@ const VoluntList = (props) => {
     <List {...props}>
       <Datagrid>
         <TextField source="name" label="Voluntario" />
-        <TextField source="birthday" label="Fecha de Nacimiento" />
+        <TextField source="age" label="edad" /> {/**modif*/}
         <TextField source="email" label="Email" />
-        <TextField source="telephone" label="Teléfono" />
+        <TextField source="phone" label="Teléfono" />
         <EditButton basepath="/api/admin/volunteers" />
         <DeleteWithConfirmButton basepath="/api/admin/volunteers" />
         <ShowButton />

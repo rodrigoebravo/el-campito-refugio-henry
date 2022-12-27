@@ -1,17 +1,15 @@
 const mongoose = require("mongoose");
 // const mongooseDelete = require("mongoose-delete"); // ----> borrado suave sin romper DB
 
-const contributionsScheme = new mongoose.Schema(
-  {
+const contributionsScheme = new mongoose.Schema({
     user: {
-        type: String, 
+        type: mongoose.Types.ObjectId,
+        ref: "users", 
     },
-    email: {
-        type: String,
-        unique: true,
-    }, 
-    phone: {
-      type: String,
+
+    dog: {
+      type: mongoose.Types.ObjectId,
+      ref: "dogs",
     },
     type: {
         type: String,
@@ -31,14 +29,7 @@ const contributionsScheme = new mongoose.Schema(
     method: {
         type: String,
     },
-    dog: {
-      name: String,
-        id: Number
-    },
-    isPending: {
-      type: Boolean,
-      default: false,
-    },
+  
     isPending: {
       type: Boolean,
       default: false,
@@ -47,13 +38,20 @@ const contributionsScheme = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    
   },
   {
     timestamps: false,
     versionKey: false,
   }
 );
+
+contributionsScheme.pre("find", function () {
+  this.where({ isDelete: false });
+});
+
+contributionsScheme.pre("findOne", function () {
+  this.where({ isDelete: false });
+});
 
 // contributionsScheme.plugin(mongooseDelete, { overrideMethods: "all" });
 

@@ -1,5 +1,5 @@
 import { Edit, SimpleForm, TextInput, ImageInput, SelectInput,
-  CheckboxGroupInput, ImageField } from "react-admin";
+  CheckboxGroupInput, ImageField, BooleanInput } from "react-admin";
 
 const DogsEdit = (props) => {
   return (
@@ -39,9 +39,9 @@ const DogsEdit = (props) => {
         <ImageInput source="images" label="Fotografías" multiple>
             <ImageField source="src" title="title" />
         </ImageInput>
-        <ImageInput source="video" label="Video" >
-            <ImageField source="src" title="title" />
-        </ImageInput>
+        <TextInput source="url del video en YouTube" label="Nombre" fullWidth />
+        <BooleanInput label="¿ Se puede apadrinar ?" source="isSponsored" />
+        <BooleanInput label="¿ Se puede adoptar ?" source="toAdopt" />
       </SimpleForm>
     </Edit>
   );
