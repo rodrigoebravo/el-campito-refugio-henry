@@ -1,26 +1,32 @@
 const { dogModel } = require("../models");
 
+function ordAZ(a, b) {
+  if (a.name < b.name) return -1;
+  if (b.name < a.name) return 1;
+  return 0;
+}
+
 const adminDogs = async (req, res) => {
   try {
     const filtro = JSON.parse(req.query.filter);
+    let dogs = [];
+    const ordenar = JSON.parse(req.query.sort);
+    let orden = ordenar[1].toLowerCase() || "asc";
+
     if (filtro) {
       if (filtro.name) {
         const { name } = filtro;
         console.log(filtro);
-        const dogs = await dogModel.find({ name: new RegExp(name, "i") });
-        if (dogs.length) {
-          res.status(200).send(dogs);
-        } else {
-          res.status(404).send({ dogs });
-        }
+        dogs = await dogModel
+          .find({ name: new RegExp(name, "i") })
+          .sort({ name: orden });
       } else {
-        const dogs = await dogModel.find(filtro);
-        res.status(200).send(dogs);
+        dogs = await dogModel.find(filtro).sort({ name: orden });
       }
     } else {
-      const dogs = await dogModel.find({});
-      res.status(200).send(dogs);
+      dogs = await dogModel.find({}).sort({ name: orden });
     }
+    res.status(200).send(dogs);
   } catch (error) {
     res.status(400).send({ error: "Error en la solicitud" });
   }
@@ -71,7 +77,7 @@ const adminCreateDog = async (req, res) => {
 const adminDeleteDog = async (req, res) => {
   try {
     // const { body } = req;
-    const { id }= req.params;
+    const { id } = req.params;
 
     const dogDelete = await dogModel.findByIdAndUpdate(
       { _id: id },

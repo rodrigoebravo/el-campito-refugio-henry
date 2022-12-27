@@ -8,6 +8,7 @@ import {
   DeleteWithConfirmButton,
 } from "react-admin";
 import Filters from "./Filters";
+import PersonOffIcon from "@mui/icons-material/PersonOff";
 
 const DogsList = (props) => {
   return (
@@ -17,9 +18,13 @@ const DogsList = (props) => {
         <TextField source="name" label="Nombre" />
         <TextField source="gender" label="Sexo" sortable={false} />
         <TextField source="age" label="Edad" sortable={false} />
-        <EditButton basepath="/api/admin/dogs" />
-        <DeleteWithConfirmButton basepath="/api/admin/dogs" />
-        <ShowButton />
+        <ShowButton label="Detalles" />
+        <EditButton basepath="/api/admin/dogs" label="Editar datos" />
+        <DeleteWithConfirmButton
+          basepath="/api/admin/dogs"
+          label="Dar de baja"
+          icon={<PersonOffIcon />}
+        />
       </Datagrid>
     </List>
   );
