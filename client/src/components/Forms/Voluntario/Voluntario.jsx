@@ -1,20 +1,47 @@
 import React from "react";
 import { useForm } from "react-hook-form"
+import { useDispatch } from "react-redux"
 import styles from "./Voluntario.module.css"
-import Footer from "../../Footer/Footer"
+import Footer from "../../Footer/Footer" 
+import { postVolunteer } from "../../../redux/actions/action"
+
 
 const Voluntario = () =>{
+
+    const [storage, setStorage] = React.useState({});
     
-    const { register, handleSubmit, formState:{ errors } } = useForm();
+    React.useEffect(()=>{
+        setStorage(JSON.parse(localStorage.getItem('user')));
+      },[]);
+    
+    
+    const { register, handleSubmit, formState:{ errors } } = useForm({
+        defaultValues: {
+            name: storage.data.name || "",
+            email: storage.data.email || "", 
+            phone: storage.data.phone || "", 
+            birthday: storage.data.birthday || "",
+            location: "", area: "", profession: "", interest: "",
+            modality: "", availability: 0, days: [], clarification:"",
+            description: "", purpose:"", vehicle: "", carpooling: "",    
+            question: ""
+        }
+      });    
+
+    const dispatch = useDispatch();
 
     const onSubmit = (data) => {
         data.availability = parseInt(data.availability);
         console.log(data)
+        // e.preventDefault();
+        dispatch(postVolunteer(data));
+        alert('form create successfuly!');
+        // e.target.reset();        
     }
 
     return(
         <div className={styles.mainContainer}>
-            <h2>Convocatoria a Voluntarios</h2>
+            <h2>Solicitud para Voluntarios</h2>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 
                 <div className = {styles.item}>
@@ -127,7 +154,7 @@ const Voluntario = () =>{
                         <p>Sábado</p>
                     </div>
                 </div>
-
+ 
                 <div className = {styles.item}>
                     <label className={styles.label}>Aclaranos un poco los dos puntos anteriores</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"

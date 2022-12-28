@@ -1,14 +1,45 @@
-import React from "react";
+import React from "react"
+import { useDispatch } from "react-redux"
 import { useForm } from "react-hook-form"
 import styles from "./Adopcion.module.css"
 import Footer from "../../Footer/Footer"
+import { postAdoption } from "../../../redux/actions/action"
 
-const Adopcion = () =>{
+const Adopcion = (props) =>{
     
-    const { register, handleSubmit, formState:{ errors } } = useForm();
+    const [storage, setStorage] = React.useState({});
+    const [dog, setDog] = React.useState("");
+    
+    React.useEffect(()=>{
+        setStorage(JSON.parse(localStorage.getItem('user')));
+        setDog(props.match.params.id)
+      },[props.match.params.id]);
+    
+    const { register, handleSubmit, formState:{ errors } } = useForm({
+        defaultValues: {
+            idDog: dog,
+            name: storage.name,
+            email: storage.email, 
+            phone: storage.phone, 
+            birthday: storage.birthday,
+            location: "", area: "", people:"", accordance: "", description: "",
+            otherAnimals: "", expatiate: "", castrated: "", reason: "",
+            vaccinated: "", events: "", holidays: "", babies:"", allergies: "",
+            items: [], home: [], freshAir: [], status: "", authorization: "",
+            sleep: "", loneliness: "", walk:"", moving: "", adaptation: "",
+            sterilization: ""
+        }
+      });    
+
+    const dispatch = useDispatch();
 
     const onSubmit = (data) => {
+        data.people = parseInt(data.people);
         console.log(data)
+        // e.preventDefault();
+        dispatch(postAdoption(data));
+        alert('form create successfuly!');
+        // e.target.reset();        
     }
     
 
@@ -16,12 +47,7 @@ const Adopcion = () =>{
         <div className={styles.mainContainer}>
             <h2>Formulario de Adopción</h2>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-
-                <div className = {styles.image}>
-                    <img src="https://lh3.googleusercontent.com/Xrk9glCZQbiti8CsC-ArJQk2mD4mZYsZRHSNie6TJktCsN8bsGNIf9CgkW_IWnyhewva9NvbWi9vn7LvCLV1ln5OlRO8n1RZmV-GOMUP4iPJ3lk5RhfuR6tPodN0StzNEQ=w502" alt="perrito" width="500" />
-                </div>
-
-                                
+          
                 <div className = {styles.item}>
                     <label className={styles.label}>Correo</label>
                     <input type="text" className={styles.input} placeholder="Tu dirección de correo electrónico"

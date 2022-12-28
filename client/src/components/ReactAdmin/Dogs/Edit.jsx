@@ -29,11 +29,11 @@ const DogsEdit = (props) => {
         ]} />
         <TextInput source="race" label="Raza" fullWidth />
         <CheckboxGroupInput source="references" label="Referencias" choices={[
-            { id: 'a000', name: 'Se lleva con perros' },
-            { id: 'u001', name: 'Se lleva con hembras	' },
-            { id: 'u002', name: 'Cuidados especiales	' },
-            { id: 'u003', name: 'Discapacitado' },
-            { id: 'a004', name: 'Carácter especial' },
+            { id: 'Se lleva con perros', name: 'Se lleva con perros' },
+            { id: 'uSe lleva con hembras', name: 'Se lleva con hembras' },
+            { id: 'Cuidados especiales', name: 'Cuidados especiales' },
+            { id: 'Discapacitado', name: 'Discapacitado' },
+            { id: 'Carácter especial', name: 'Carácter especial' },
         ]} />
         <TextInput source="features" label="Caracteristicas" fullWidth />
         <ImageInput source="images" label="Fotografías" multiple>

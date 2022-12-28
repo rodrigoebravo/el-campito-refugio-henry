@@ -76,20 +76,20 @@ const dataProvider = {
   },
 
   create: async (resource, params) => {
+
+    console.log(params.data)
     
-    if (resource === "dogs") {      
+    if (resource === "api/admin/dogs" && params.data.images) {      
       const urlsImages = await pushCloudinary(params.data.images);
-      const urlVideo = await pushCloudinary(params.data.video);
-      params.data.images = urlsImages;
-      params.data.video = urlVideo;
+      params.data.images = urlsImages.toString();
       console.log(params.data);
     };
-    if (resource === "users") {
+    if (resource === "api/admin/users" && params.data.image) {
       const urlsImage = await pushCloudinary(params.data.image);
       params.data.image = urlsImage;
       console.log(params.data);
     };
-    if (resource === "interfaces") {      
+    if (resource === "api/admin/interfaces") {      
       const urlsSlider = await pushCloudinary(params.data.slider);
       params.data.slider = urlsSlider;
       const urlimgNosotros = await pushCloudinary(params.data.imgNosotros);
@@ -100,18 +100,24 @@ const dataProvider = {
       params.data.imgNosotros = urlimgVoluntarios;      
       console.log(params.data);
     };
-    if (resource === "press" && params.data.img) {
+    if (resource === "api/admin/press" && params.data.img &&
+      typeof params.data.img !== "string") {
       const urlImg = await pushCloudinary(params.data.img);
       params.data.image = urlImg;
       console.log(params.data);
     };
 
+    console.log(JSON.stringify(params.data));
+
     httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
-    }).then(({ json }) => ({
-      data: { ...params.data, id: json._id },
-    }))
+    }).then(({ json }) => ({ ...json, id: json._id }))
+    // .then((response) => {
+    //   response.json.id = response.json._id;
+    //   return response
+    //   })
+
     },
 
   delete: (resource, params) =>

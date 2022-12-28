@@ -61,6 +61,8 @@ const adminCreateDog = async (req, res) => {
   try {
     const { body } = req;
 
+    body.images = body.images.replace('[','').replace(']','').split(',');
+
     const dog = await dogModel.create(body);
 
     res.status(200).send({ data: dog });

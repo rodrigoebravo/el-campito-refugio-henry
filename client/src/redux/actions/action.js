@@ -8,7 +8,10 @@ import {
   CLEAR_ALL_DOGS,
   FILTER_DOGS_BY_GENDER,
   FILTER_DOGS_BY_AGE,
-  FILTER_DOGS_BY_SIZE
+  FILTER_DOGS_BY_SIZE,
+  POST_VOLUNTEER,
+  POST_ADOPTION,
+  POST_CONTRIBUTION
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
@@ -111,6 +114,39 @@ export function filterDogsBySize(payload) {
   return {
     type: FILTER_DOGS_BY_SIZE,
     payload
+  }
+}
+export function postVolunteer (data) {
+  return async (dispatch) => {
+    console.log(data); 
+    const json = await axios.post(`/api/volunteers`, data)
+    console.log(json.data);
+    return dispatch({
+      type: POST_VOLUNTEER,
+      payload: json.data
+    })
+  }
+}
+export function postAdoption (data) {
+  return async (dispatch) => {
+    console.log(data); 
+    const json = await axios.post(`/api/adoptions`, data)
+    console.log(json.data);
+    return dispatch({
+      type: POST_ADOPTION,
+      payload: json.data
+    })
+  }
+}
+export function postContribution (data) {
+  return async (dispatch) => {
+    console.log(data); 
+    const json = await axios.post(`/api/contributions`, data)
+    console.log(json.data);
+    return dispatch({
+      type: POST_CONTRIBUTION,
+      payload: json.data
+    })
   }
 }
 
