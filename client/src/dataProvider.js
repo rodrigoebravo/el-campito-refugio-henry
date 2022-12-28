@@ -77,12 +77,30 @@ const dataProvider = {
 
   create: async (resource, params) => {
 
-    console.log(params.data)
+    // console.log(params.data)
+    // let aux3 = params.data.references.toString()
+    // let aux4 = params.data.references.join(' ')
+    // console.log(aux3);
+    // console.log(aux4);
     
     if (resource === "api/admin/dogs" && params.data.images) {      
       const urlsImages = await pushCloudinary(params.data.images);
-      params.data.images = urlsImages.toString();
+      // urlsImages = JSON.parse(urlsImages)
+      console.log(urlsImages);
+      let aux = urlsImages.map((e)=> "hola")
+        
+//       const obj = Object.assign({}, aux);
+// console.log(obj)
+
+
+//       aux = JSON.stringify(aux) //  result.toString()
+
+      // let aux2 = aux.join(' ')      
+      console.log(aux);
+      
+      params.data.images = aux;  // .toString(); // //  
       console.log(params.data);
+      console.log(params.data.images);
     };
     if (resource === "api/admin/users" && params.data.image) {
       const urlsImage = await pushCloudinary(params.data.image);
@@ -107,12 +125,16 @@ const dataProvider = {
       console.log(params.data);
     };
 
+    console.log(params.data);
     console.log(JSON.stringify(params.data));
+    console.log(params.data.toString());
+
 
     httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
     }).then(({ json }) => ({ ...json, id: json._id }))
+
     // .then((response) => {
     //   response.json.id = response.json._id;
     //   return response
