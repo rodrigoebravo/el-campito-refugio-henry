@@ -1,11 +1,5 @@
 const { dogModel } = require("../models");
 
-function ordAZ(a, b) {
-  if (a.name < b.name) return -1;
-  if (b.name < a.name) return 1;
-  return 0;
-}
-
 const adminDogs = async (req, res) => {
   try {
     const filtro = JSON.parse(req.query.filter);

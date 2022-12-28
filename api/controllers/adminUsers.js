@@ -2,12 +2,29 @@ const { usersModel } = require("../models");
 
 const adminUsers = async (req, res) => {
   try {
-    const users = await usersModel.find({});
-    res.status(201).send(users);
-  } catch (e) {
-    res.status(404).send({ error: e });
+    const filtro = JSON.parse(req.query.filter);
+    let users = [];
+    const ordenar = JSON.parse(req.query.sort);
+    let orden = ordenar[1].toLowerCase() || "asc";
+
+    if (filtro) {
+      if (filtro.name) {
+        const { name } = filtro;
+        console.log(filtro);
+        users = await usersModel
+          .find({ name: new RegExp(name, "i") })
+          .sort({ name: orden });
+      } else {
+        users = await usersModel.find(filtro).sort({ name: orden });
+      }
+    } else {
+      users = await usersModel.find({}).sort({ name: orden });
+    }
+    res.status(200).send(users);
+  } catch (error) {
+    res.status(400).send({ error: "Error en la solicitud" });
   }
-}; 
+};
 
 const adminUsersId = async (req, res) => {
   try {
