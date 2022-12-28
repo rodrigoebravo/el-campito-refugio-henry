@@ -7,15 +7,16 @@ import {
   DeleteWithConfirmButton,
 } from "react-admin";
 
+import Filters from "./Filters";
+
 const VoluntList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} aside={<Filters />}>
       <Datagrid>
         <TextField source="name" label="Voluntario" />
         <TextField source="age" label="edad" /> {/**modif*/}
         <TextField source="email" label="Email" />
         <TextField source="phone" label="Teléfono" />
-        <EditButton basepath="/api/admin/volunteers" />
         <DeleteWithConfirmButton basepath="/api/admin/volunteers" />
         <ShowButton />
       </Datagrid>

@@ -6,7 +6,7 @@ import {
   Loading,
   useListContext,
 } from "react-admin";
-import { Card, CardContent, Grid } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 import CakeIcon from "@mui/icons-material/Cake";
 import TransgenderIcon from "@mui/icons-material/Transgender";
 import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
