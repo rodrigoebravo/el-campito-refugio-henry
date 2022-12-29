@@ -66,8 +66,9 @@ const dataProvider = {
     }
 
     if (resource === "api/admin/dogs") {
-      console.log(params.data.images)
-      params.data.images = await pushCloudinary(params.data.images); // DA UN PROBLEMA AL UPDATE CON CLOUDINARY 
+      let newImages = params.data.images.filter(img => typeof img !== "string");  
+      params.data.images = newImages;
+      params.data.images = await pushCloudinary(newImages); 
     }
 
     if (resource === "api/admin/press") {
