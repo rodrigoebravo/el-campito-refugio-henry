@@ -11,7 +11,7 @@ const contributionPost = async (req, res) => {
       body: { name, email, phone, idDog, type, ...dataContibution },
     } = req;
 
-    // console.log(name, email, phone, idDog, type, dataContibution); 
+    
 
     if(name == undefined && email == undefined && type == undefined){ 
 

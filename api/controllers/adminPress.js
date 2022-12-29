@@ -1,4 +1,4 @@
-const linkPreviewGenerator = require("link-preview-generator");
+// const linkPreviewGenerator = require("link-preview-generator");
 const { pressModel } = require("../models");
 
 const adminPress = async (req, res) => {
@@ -44,12 +44,16 @@ const adminUpdatePress = async (req, res) => {
 const adminCreatePress = async (req, res) => {
   try {
     const { body } = req;
-    const previewData = await linkPreviewGenerator(body.link);
-    previewData.date = body.date;
-    previewData.media = body.media;
-    console.log(previewData);
-    const press = await pressModel.create(previewData);
+    // console.log(body);
+    // const previewData = await linkPreviewGenerator(body.link);
+    // previewData.date = body.date;
+    // previewData.media = body.media;
+    // console.log(previewData);
+    const press = await pressModel.create(body); 
+
     res.status(200).send({ data: press });
+
+    
   } catch (e) {
     res.status(404).send({ error: e });
   }

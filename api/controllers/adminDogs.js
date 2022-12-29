@@ -1,5 +1,6 @@
 const { dogModel } = require("../models");
 
+
 const adminDogs = async (req, res) => {
   try {
 
@@ -60,10 +61,10 @@ const adminUpdateDog = async (req, res) => {
 const adminCreateDog = async (req, res) => {
   try {
     const { body } = req;
-
+    // console.log(body)     
     const dog = await dogModel.create(body);
 
-    res.status(200).send({ data: dog });
+    res.status(200).send({data: dog});
   } catch (e) {
     res.status(404).send({ error: e });
   }
