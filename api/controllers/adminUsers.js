@@ -29,6 +29,9 @@ const adminUpdateUser = async (req, res) => {
       body,
     } = req;
 
+    console.log(body);
+    
+
     const user = await usersModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
     });
