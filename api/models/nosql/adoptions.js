@@ -147,13 +147,13 @@ const adoptionScheme = mongoose.Schema({
     versionKey: false, 
 }); 
 
-adoptionScheme.pre("find", function () {
-    this.where({ isDelete: false });
-  });
+// adoptionScheme.pre("find", function () {
+//     this.where({ isDelete: false });
+//   });
   
-adoptionScheme.pre("findOne", function () {
-    this.where({ isDelete: false });
-  });
+// adoptionScheme.pre("findOne", function () {
+//     this.where({ isDelete: false });
+//   });
 
 
 

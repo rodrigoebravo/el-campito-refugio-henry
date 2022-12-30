@@ -45,13 +45,13 @@ const contributionsScheme = new mongoose.Schema({
   }
 );
 
-contributionsScheme.pre("find", function () {
-  this.where({ isDelete: false });
-});
+// contributionsScheme.pre("find", function () {
+//   this.where({ isDelete: false });
+// });
 
-contributionsScheme.pre("findOne", function () {
-  this.where({ isDelete: false });
-});
+// contributionsScheme.pre("findOne", function () {
+//   this.where({ isDelete: false });
+// });
 
 // contributionsScheme.plugin(mongooseDelete, { overrideMethods: "all" });
 
