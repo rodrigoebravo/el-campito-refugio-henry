@@ -2,7 +2,7 @@ const { adoptionsModel, usersModel, dogModel } = require("../models");
 
 const adminAdoptions = async (req, res) => {
     try {
-      const adoptions = await adoptionsModel.find({}).populate("user dog");
+      const adoptions = await adoptionsModel.find({isDelete: false}).populate("user dog");
       
       const adoptionsMapping = adoptions
       .filter((a)=> a.user && a.dog )
