@@ -14,7 +14,7 @@ const adminPress = async (req, res) => {
         date: obj.date.toJSON().slice(0, 10)  || "",
         title: obj.title || "",
         description: obj.description || "",
-        img: { src: obj.img, index:[index] } || "",
+        img: { src: obj.img, index:[index] } || { src: "", index:[index] },
         favicon: obj.favicon || "",
         isDelete: obj.isDelete
       }
@@ -42,7 +42,7 @@ const adminPressId = async (req, res) => {
       date: press.date.toJSON().slice(0, 10)  || "",
       title: press.title || "",
       description: press.description || "",
-      img: { src: press.img, index:0 } || "",
+      img: { src: press.img, index:0 } || { src: "", index:0 },
       favicon: press.favicon || "",
       isDelete: press.isDelete
     }
