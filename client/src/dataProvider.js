@@ -61,24 +61,56 @@ const dataProvider = {
 
   update: async (resource, params) => {
 
-    if (resource === "api/admin/users") {
+    if ( resource === "api/admin/users" && params.data.image.hasOwnProperty("rawFile") ) {
       params.data.image = await pushCloudinary(params.data.image);
+    } else {   
+      params.data.image = params.data.image.src;
     }
 
-    if (resource === "api/admin/dogs") {
-      console.log(params.data.images)
-      params.data.images = await pushCloudinary(params.data.images); // DA UN PROBLEMA AL UPDATE CON CLOUDINARY 
+    if ( resource === "api/admin/dogs" 
+          && params.data.images.length > 0 ) {
+      let newImages = params.data.images.filter( (img) => img.hasOwnProperty("rawFile") );
+      newImages = await pushCloudinary(newImages);
+      let oldImages = params.data.images.filter( (img) => img.hasOwnProperty("src") );
+      let urlsOld = oldImages.map((img)=>  img.src  );
+      params.data.images = [...newImages,...urlsOld];      
     }
 
-    if (resource === "api/admin/press") {
-      params.data.img = await pushCloudinary(params.data.img); 
+    if (resource === "api/admin/press" && params.data.img.hasOwnProperty("rawFile") ) {
+      params.data.img = await pushCloudinary(params.data.img);
+    } else {
+      params.data.img = params.data.img.src;
     }
 
 
     if (resource === "api/admin/interfaces") {
-      params.data.slider = await pushCloudinary(params.data.slider);
-      params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
-      params.data.imgVoluntarios = await pushCloudinary( params.data.imgVoluntarios);
+      if (params.data.imgVoluntarios.hasOwnProperty("rawFile")) {
+        params.data.imgVoluntarios = await pushCloudinary( params.data.imgVoluntarios);
+      } else { 
+        params.data.imgVoluntarios = params.data.imgVoluntarios.src;
+      };
+      if (params.data.imgNosotros.hasOwnProperty("rawFile")) {
+        params.data.imgNosotros = await pushCloudinary( params.data.imgNosotros);
+      } else { 
+        params.data.imgVoluntarios = params.data.imgVoluntarios.src
+      };
+
+      
+      
+      if (params.data.slider.length > 0 ) {
+        let newSlider = []
+        params.data.slider.forEach( async(e) => {
+          if (e.hasOwnProperty("rawFile")) {
+            e = await pushCloudinary( e );
+          } else { 
+            e = e.src
+          };
+          newSlider.push(e)
+        });
+        params.data.slider = newSlider;
+      }
+
+      
     }
 
     const http = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
