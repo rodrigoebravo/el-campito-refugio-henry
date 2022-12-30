@@ -1,4 +1,5 @@
-import { Edit, SimpleForm, TextInput, DateInput } from "react-admin";
+import { Edit, SimpleForm, TextInput, DateInput,
+  ImageInput, ImageField  } from "react-admin";
 
 
 
@@ -16,8 +17,9 @@ const PressEdit = (props) => {
         <DateInput source="date" label="Fecha" fullWidth />
         <TextInput source="title" label="Titular" fullWidth />
         <TextInput source="description" label="Breve descripción" fullWidth />
-        <TextInput source="dogs" label="Relación a algún perro" fullWidth />
-          
+        <ImageInput source="img" label="Archivo multimedia" >
+            <ImageField source="src" title="title" />
+        </ImageInput> 
       </SimpleForm>
     </Edit>
   );

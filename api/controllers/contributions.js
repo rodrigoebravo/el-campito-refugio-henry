@@ -48,16 +48,7 @@ const contributionPost = async (req, res) => {
           email,
           phone,
         });
-      }
-  
-      await usersModel.findByIdAndUpdate(
-        { _id: userDb._id },
-        {
-          name,
-          email,
-          phone
-        },
-      );
+      }     
   
       const newCertificate = await contributionsModel.create({
         user: userDb._id,
@@ -65,16 +56,21 @@ const contributionPost = async (req, res) => {
         type,
         ...dataContibution,
       });
-
-      if(name && email){
         
+      await usersModel.findByIdAndUpdate({ _id: userDb._id },
+        { name, email, phone },
+      );
+
+      if(name && email){  
+        if (type === "padrinazgo")  userDb.roles = [...userDb.roles, "padrino"]; 
+        if (type === "donación")  userDb.roles = [...userDb.roles, "donante"]; 
+
         userDb.contribution = [...userDb.contribution, newCertificate._id];
         await userDb.save();
       }
   
       if (type === "padrinazgo") {
-        const dog = await dogModel.findById({ _id: idDog });
-  
+        const dog = await dogModel.findById({ _id: idDog });  
         dog.godparents = [...dog.godparents, userDb._id];
         await dog.save();
       }

@@ -1,6 +1,6 @@
 import { fetchUtils } from "react-admin";
 import { stringify } from "query-string";
-import pushCloudinary from './hooks/pushCloudinary';
+import pushCloudinary from "./hooks/pushCloudinary";
 
 const apiUrl = "http://localhost:3001";
 const httpClient = fetchUtils.fetchJson;
@@ -24,7 +24,7 @@ const dataProvider = {
       ),
     }));
   },
-  
+
   getOne: (resource, params) =>
     httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
       data: { ...json, id: json._id }, //!
@@ -59,11 +59,42 @@ const dataProvider = {
     }));
   },
 
-  update: (resource, params) =>
-    httpClient(`${apiUrl}/${resource}/${params.id}`, {
+  update: async (resource, params) => {
+
+    if (resource === "api/admin/users") {
+      params.data.image = await pushCloudinary(params.data.image);
+    }
+
+    if (resource === "api/admin/dogs") {
+      console.log(params.data.images)
+      params.data.images = await pushCloudinary(params.data.images); // DA UN PROBLEMA AL UPDATE CON CLOUDINARY 
+    }
+
+    if (resource === "api/admin/press") {
+      params.data.img = await pushCloudinary(params.data.img); 
+    }
+
+
+    if (resource === "api/admin/interfaces") {
+      params.data.slider = await pushCloudinary(params.data.slider);
+      params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
+      // params.data.imgNosotros = await pushCloudinary(params.data.imgColabora); // NO ESTA EN LOS CAMPOS DE INTERFACES!!!!
+      params.data.imgVoluntarios = await pushCloudinary( params.data.imgVoluntarios);
+    }
+
+    const http = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "PUT",
       body: JSON.stringify(params.data),
-    }).then(({ json }) => ({ data: { ...json, id: json._id } })), // {...json, id: json._id}
+    }); 
+
+    const { json } = http;
+
+    return {
+      data: { ...params.data, id: json._id },
+    };
+
+  },
+
 
   updateMany: (resource, params) => {
     const query = {
@@ -77,70 +108,32 @@ const dataProvider = {
 
   create: async (resource, params) => {
 
-    // console.log(params.data)
-    // let aux3 = params.data.references.toString()
-    // let aux4 = params.data.references.join(' ')
-    // console.log(aux3);
-    // console.log(aux4);
-    
-    if (resource === "api/admin/dogs" && params.data.images) {      
-      const urlsImages = await pushCloudinary(params.data.images);
-      // urlsImages = JSON.parse(urlsImages)
-      console.log(urlsImages);
-      let aux = urlsImages.map((e)=> "hola")
-        
-//       const obj = Object.assign({}, aux);
-// console.log(obj)
+    if (resource === "api/admin/dogs") {
+      params.data.images = await pushCloudinary(params.data.images); //verificado
+    }
 
+    if (resource === "api/admin/users") {
+      params.data.image = await pushCloudinary(params.data.image);
+    }
 
-//       aux = JSON.stringify(aux) //  result.toString()
+    if (resource === "api/admin/interfaces") {
+      params.data.slider = await pushCloudinary(params.data.slider);
+      params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
+      // params.data.imgNosotros = await pushCloudinary(params.data.imgColabora); // NO ESTA EN LOS CAMPOS DE INTERFACES!!!!
+      params.data.imgNosotros = await pushCloudinary( params.data.imgVoluntarios);
+    }
 
-      // let aux2 = aux.join(' ')      
-      console.log(aux);
-      
-      params.data.images = aux;  // .toString(); // //  
-      console.log(params.data);
-      console.log(params.data.images);
-    };
-    if (resource === "api/admin/users" && params.data.image) {
-      const urlsImage = await pushCloudinary(params.data.image);
-      params.data.image = urlsImage;
-      console.log(params.data);
-    };
-    if (resource === "api/admin/interfaces") {      
-      const urlsSlider = await pushCloudinary(params.data.slider);
-      params.data.slider = urlsSlider;
-      const urlimgNosotros = await pushCloudinary(params.data.imgNosotros);
-      params.data.imgNosotros = urlimgNosotros;
-      const urlimgColabora = await pushCloudinary(params.data.imgColabora);
-      params.data.imgNosotros = urlimgColabora;
-      const urlimgVoluntarios = await pushCloudinary(params.data.imgVoluntarios);
-      params.data.imgNosotros = urlimgVoluntarios;      
-      console.log(params.data);
-    };
-    if (resource === "api/admin/press" && params.data.img &&
-      typeof params.data.img !== "string") {
-      const urlImg = await pushCloudinary(params.data.img);
-      params.data.image = urlImg;
-      console.log(params.data);
-    };
-
-    console.log(params.data);
-    console.log(JSON.stringify(params.data));
-    console.log(params.data.toString());
-
-
-    httpClient(`${apiUrl}/${resource}`, {
+    const http = await httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
-    }).then(({ json }) => ({ ...json, id: json._id }))
+    });
 
-    // .then((response) => {
-    //   response.json.id = response.json._id;
-    //   return response
-    //   })
+    const { json } = http;
 
-    },
+    return {
+      data: { ...params.data, id: json._id },
+    };
+  },
 
   delete: (resource, params) =>
     httpClient(`${apiUrl}/${resource}/${params.id}`, {

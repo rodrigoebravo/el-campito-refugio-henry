@@ -4,12 +4,12 @@ import { Create, SimpleForm, TextInput, ImageInput, SelectInput, BooleanInput,
 const valida = (values) => {
     const errors = {};
     if (!values.name) errors.name = 'required';
-    // if (!values.age) errors.age = 'required';
-    // if (!values.size) errors.size = 'required';
-    // if (!values.gender) errors.gender = 'required';
-    // if (!values.race) errors.race = 'required';
-    // if (!values.references) errors.references = 'required';
-    // if (!values.features) errors.features = 'required';
+    if (!values.age) errors.age = 'required';
+    if (!values.size) errors.size = 'required';
+    if (!values.gender) errors.gender = 'required';
+    if (!values.race) errors.race = 'required';
+    if (!values.references) errors.references = 'required';
+    if (!values.features) errors.features = 'required';
 
     return errors
 };
