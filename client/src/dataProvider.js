@@ -122,6 +122,7 @@ const dataProvider = {
       params.data.imgNosotros = await pushCloudinary( params.data.imgVoluntarios);
     }
 
+
     const http = await httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),

@@ -14,6 +14,7 @@ const adminContrib = async (req, res) => {
 
         if(!user.name){
           return {
+
             name: "anónimo",
             idUser: user._id,
             nameDog: dog.name,

@@ -4,7 +4,7 @@ const CreateVolunteer = async (req, res) => {
   try {
     const {
       body: { name, email, phone, birthday, ...data }
-    } = req; console.log(data);
+    } = req; 
 
     //buscar usuario
     const userDb = await usersModel.findOne({ email });
@@ -17,6 +17,7 @@ const CreateVolunteer = async (req, res) => {
 
       const volunteer = await volunteersModel.create({
         user: newUser._id,
+        isPending: true, //estado del vultario pendiente !
         ...data,
       });
 
@@ -43,13 +44,14 @@ const CreateVolunteer = async (req, res) => {
 
     } else {
 
-      await usersModel.findByIdAndUpdate({ _id: userDb._i }, 
-        {name, birthday, phone, isDelete: false}, {
-        returnOriginal: false,
-      });
+      await usersModel.findByIdAndUpdate(
+        { _id: userDb._id }, 
+        {name, birthday, phone, isDelete: false}
+        );
 
       const newVolunteer = await volunteersModel.create({
         user: userDb._id,
+        isPending: true,
         ...data,
       });
 

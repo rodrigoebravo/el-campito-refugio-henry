@@ -24,7 +24,7 @@ const userScheme = new mongoose.Schema(
       default: "1234"
     },
     roles: { 
-      type: String, 
+      type: [String], 
       enum: ["public", "superAdmin", "admin", "voluntario", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante"], 
       default: "public"
 
