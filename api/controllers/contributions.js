@@ -13,6 +13,7 @@ const contributionPost = async (req, res) => {
 
     // console.log(name, email, phone, idDog, type, dataContibution); 
 
+
     if(name == undefined && email == undefined && type == undefined){ 
 
        const newCertificate = await contributionsModel.create({
@@ -80,7 +81,7 @@ const contributionPost = async (req, res) => {
       const { user, dog, ...dataCertificate  } = certificate.toObject(); 
 
       res.status(201).send({
-        user: user.name,
+        name: user.name,
         idUser: user._id,
         dog: dog.name,
         idDog,

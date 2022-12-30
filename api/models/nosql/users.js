@@ -79,12 +79,5 @@ const userScheme = new mongoose.Schema(
 //     next();
 //   })
 
-userScheme.pre("find", function () {
-  this.where({ isDelete: false });
-});
-
-userScheme.pre("findOne", function () {
-  this.where({ isDelete: false });
-});
 
 module.exports = mongoose.model("users", userScheme);
