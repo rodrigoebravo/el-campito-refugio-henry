@@ -25,19 +25,25 @@ const dataProvider = {
     }));
   },
 
-  getOne: (resource, params) =>
-    httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
-      data: { ...json, id: json._id }, //!
-    })),
 
-  getMany: (resource, params) => {
+  getOne: async (resource, params) => {
+    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`);
+
+    return {
+      data: { ...json, id: json._id },
+    };
+  },
+
+  getMany: async (resource, params) => {
     const query = {
       filter: JSON.stringify({ id: params.ids }),
     };
     const url = `${apiUrl}/${resource}?${stringify(query)}`;
-    return httpClient(url).then(({ json }) => ({
-      data: json.map((resource) => ({ ...resource, id: resource._id })),
-    }));
+    const { json } = await httpClient(url);
+
+    return {
+      data: json.map((res) => ({ ...res, id: res._id })),
+    };
   },
 
   getManyReference: (resource, params) => {
@@ -59,7 +65,7 @@ const dataProvider = {
     }));
   },
 
-  update: async (resource, params) => {
+  update: async (resource, params) => 
 
     if ( resource === "api/admin/users" && params.data.image.hasOwnProperty("rawFile") ) {
       params.data.image = await pushCloudinary(params.data.image);
@@ -120,11 +126,13 @@ const dataProvider = {
 
     const { json } = http;
 
+
     return {
       data: { ...params.data, id: json._id },
     };
 
   },
+
 
 
   updateMany: (resource, params) => {
@@ -154,22 +162,32 @@ const dataProvider = {
     }
 
     const http = await httpClient(`${apiUrl}/${resource}`, {
+
       method: "POST",
       body: JSON.stringify(params.data),
     });
 
+
     const { json } = http;
+
 
     return {
       data: { ...params.data, id: json._id },
     };
   },
 
-  delete: (resource, params) =>
-    httpClient(`${apiUrl}/${resource}/${params.id}`, {
+  delete: async (resource, params) => {
+    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "DELETE",
       params: JSON.stringify(params.id),
-    }).then(({ json }) => ({ ...json, id: json._id })), //data: {...json, id: json._id, }
+    });
+
+    return {
+      //data: {...json, id: json._id, }
+      ...json,
+      id: json._id,
+    };
+  },
 
   deleteMany: (resource, params) => {
     const query = {

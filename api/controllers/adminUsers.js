@@ -23,10 +23,12 @@ const adminUsers = async (req, res) => {
     })
     console.log(newUsers);
     res.status(201).send(newUsers);
+
   } catch (e) {
     res.status(404).send({ error: e });
   }
 }; 
+
 
 const adminUsersId = async (req, res) => {
   try {
@@ -63,6 +65,7 @@ const adminUpdateUser = async (req, res) => {
       body,
     } = req;
 
+
     const user = await usersModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
     });
@@ -88,7 +91,6 @@ const adminDeleteUser = async (req, res) => {
     // const { body } = req;
     const id = req.params.id;
 
-    console.log(id);
 
     const userDelete = await usersModel.findByIdAndUpdate(
       { _id: id },

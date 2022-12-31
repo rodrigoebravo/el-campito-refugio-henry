@@ -11,7 +11,9 @@ const contributionPost = async (req, res) => {
       body: { name, email, phone, idDog, type, ...dataContibution },
     } = req;
 
+
     // console.log(name, email, phone, idDog, type, dataContibution); 
+
 
     if(name == undefined && email == undefined && type == undefined){ 
 
@@ -30,15 +32,16 @@ const contributionPost = async (req, res) => {
       const { dog, ...dataCertificate } = certificate.toObject(); //salida 
 
       res.status(201).send({
-        user: "Anónimo",
+        user: "anónimo",
         dog: dataDog.name,
         idDog,
         ...dataCertificate
       }); 
 
-      // res.json(certificate); 
+      res.json(certificate); 
 
     }else {
+
 
       let userDb = await usersModel.findOne({ email });
   
@@ -73,7 +76,25 @@ const contributionPost = async (req, res) => {
         const dog = await dogModel.findById({ _id: idDog });  
         dog.godparents = [...dog.godparents, userDb._id];
         await dog.save();
+
       }
+  
+      await usersModel.findByIdAndUpdate(
+        { _id: userDb._id },
+        {
+          name,
+          email,
+          phone
+        },
+      );
+  
+      const newCertificate = await contributionsModel.create({
+        user: userDb._id,
+        dog: idDog,
+        type,
+        ...dataContibution,
+      });
+
 
       const certificate = await contributionsModel.findById({_id: newCertificate._id}).populate("user dog"); 
 
@@ -81,6 +102,7 @@ const contributionPost = async (req, res) => {
 
       res.status(201).send({
         user: user.name,
+
         idUser: user._id,
         dog: dog.name,
         idDog,
@@ -98,3 +120,4 @@ const contributionPost = async (req, res) => {
 module.exports = {
   contributionPost,
 };
+
