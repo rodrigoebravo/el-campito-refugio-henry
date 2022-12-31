@@ -1,5 +1,4 @@
 import {
-  SavedQueriesList,
   FilterLiveSearch,
   FilterList,
   FilterListItem,
@@ -25,7 +24,6 @@ const Filters = () => {
   return (
     <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 650 }}>
       <CardContent>
-        <SavedQueriesList title="Filtros guardados" />
         <FilterLiveSearch source="name" />
         <FilterList label="Adoptable" icon={<AddHomeIcon />}>
           <FilterListItem label="Sí" value={{ adoptable: true }} />
