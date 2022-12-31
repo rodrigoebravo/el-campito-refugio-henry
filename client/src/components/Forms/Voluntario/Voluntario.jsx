@@ -8,18 +8,24 @@ import { postVolunteer } from "../../../redux/actions/action"
 
 const Voluntario = (props) =>{
 
-    const [storage, setStorage] = React.useState({
-        data: {name:"", email:"", birthday:"", phone:""}
+    const [storage, setStorage] = React.useState({ 
+        data: { name:"Tu respuesta", email:"Tu respuesta", 
+            phone:"Tu respuesta", birthday:"Tu respuesta" }
     });
 
     // const st = JSON.parse(localStorage.getItem('user'));
-    const obj = props && props.hasOwnProperty('data') ? 
-            props : { data: {name:"", email:"", birthday:"", phone:""}}
-    setStorage(obj);
     
-    // React.useEffect(()=>{        
-    // },[props]);
     
+    React.useEffect(()=>{    
+        console.log(props);
+        const obj =
+            ( props && props.hasOwnProperty('data') ) ? 
+            props : 
+            { data: {name:"Tu respuesta", email:"Tu respuesta", phone:"Tu respuesta", birthday:"Tu respuesta"}}
+        setStorage(obj);    
+    },[props]);
+    
+    console.log(storage);
     
     const { register, handleSubmit, formState:{ errors } } = useForm({});    
 
@@ -41,19 +47,19 @@ const Voluntario = (props) =>{
                 
                 <div className = {styles.item}>
                     <label className={styles.label}>Nombre y Apellido</label>
-                    <input value={storage.data.name? storage.data.name : ""} 
-                        type="text" className={styles.input} 
-                        placeholder={storage.data.name? storage.data.name : "Tu respuesta"}
+                    <input 
+                        value={storage.data.name === "Tu respuesta"? undefined : storage.data.name}
+                        type="text"      className={styles.input}  placeholder="Tu respuesta"
                         {...register('name', {required: true })}
                     />
-                    {errors.name?.type === 'required' && <p>Ingrese su nombre</p>}
+                    {errors.name?.type === 'required' && <p>Ingrese su nombre, por favor</p>}                    
                 </div>
 
                 <div className = {styles.item}>
                     <label className={styles.label}>Correo</label>
-                    <input value={storage.data.email? storage.data.email : ""} 
-                        type="text" className={styles.input} 
-                        placeholder={storage.data.email? storage.data.email : "Tu e-mail"}
+                    <input 
+                        value={storage.data.email === "Tu respuesta"? undefined : storage.data.email}
+                        type="text" className={styles.input}  placeholder="Tu respuesta"
                         {...register('email', {
                             required: true,
                             pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/    
@@ -64,10 +70,10 @@ const Voluntario = (props) =>{
                 </div>
                 
                 <div className = {styles.item}>
-                    <label className={styles.label}>Telefono</label>
-                    <input value={storage.data.phone? storage.data.phone : ""}
+                    <label className={styles.label}>Teléfono</label>
+                    <input 
+                        value={storage.data.phone === "Tu respuesta"? undefined : storage.data.phone}
                         type="tel" className={styles.input} 
-                        placeholder={storage.data.phone? storage.data.phone : "ej: 1161906190"} 
                         {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />
                     {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
@@ -76,8 +82,9 @@ const Voluntario = (props) =>{
 
                 <div className = {styles.item}>
                     <label className={styles.label}>Fecha de nacimiento</label>
-                    <input value={storage.data.email? storage.data.email : ""}
-                        type="date" className={styles.inputDate}
+                    <input 
+                        value={storage.data.birthday === "Tu respuesta"? undefined : storage.data.birthday}
+                        type="date" className={styles.inputDate} min="1923-01-01"
                         {...register('birthday', {required: true})}/>
                     {errors.date?.type === 'required' && <p>Fecha de nacimiento requerida</p>}
                 </div>

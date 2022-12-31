@@ -38,8 +38,8 @@ function App() {
       <Route exact path={"/adoptar/perros"} component={CardsDogs} />
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
       <Route exact path={"/volunteerForm"} component={Voluntario} />
-      <Route exact path={"/AdoptionForm"} component={Adopcion} />
-      <Route exact path={"/ContactForm"} component={Contacto} />
+      <Route exact path={"/adoptionForm"} component={Adopcion} />
+      <Route exact path={"/contactForm"} component={Contacto} />
       {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
       <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}

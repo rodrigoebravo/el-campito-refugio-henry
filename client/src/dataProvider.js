@@ -150,7 +150,6 @@ const dataProvider = {
     if (resource === "api/admin/interfaces") {
       params.data.slider = await pushCloudinary(params.data.slider);
       params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
-      // params.data.imgNosotros = await pushCloudinary(params.data.imgColabora); // NO ESTA EN LOS CAMPOS DE INTERFACES!!!!
       params.data.imgNosotros = await pushCloudinary( params.data.imgVoluntarios);
     }
 
