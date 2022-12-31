@@ -25,6 +25,7 @@ const dataProvider = {
     }));
   },
 
+
   getOne: async (resource, params) => {
     const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`);
 
@@ -63,6 +64,7 @@ const dataProvider = {
       total: parseInt(headers.get("Content-Range").split("/").pop(), 10),
     }));
   },
+
 
   update: async (resource, params) => {
 
@@ -127,17 +129,24 @@ const dataProvider = {
         break;
       default:
         break;
+
     }
 
-    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
+    const http = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "PUT",
       body: JSON.stringify(params.data),
-    });
+    }); 
+
+    const { json } = http;
+
 
     return {
       data: { ...params.data, id: json._id },
     };
+
   },
+
+
 
   updateMany: (resource, params) => {
     const query = {
@@ -150,6 +159,7 @@ const dataProvider = {
   },
 
   create: async (resource, params) => {
+
     if (resource === "api/admin/dogs") {
       params.data.images = await pushCloudinary(params.data.images); //verificado
     }
@@ -161,21 +171,18 @@ const dataProvider = {
     if (resource === "api/admin/interfaces") {
       params.data.slider = await pushCloudinary(params.data.slider);
       params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
-      // params.data.imgNosotros = await pushCloudinary(params.data.imgColabora); // NO ESTA EN LOS CAMPOS DE INTERFACES!!!!
-      params.data.imgNosotros = await pushCloudinary(
-        params.data.imgVoluntarios
-      );
+      params.data.imgNosotros = await pushCloudinary( params.data.imgVoluntarios);
     }
 
-    if (resource === "api/admin/press") {
-      console.log(params.data);
-      params.data.img = await pushCloudinary(params.data.img);
-    }
+    const http = await httpClient(`${apiUrl}/${resource}`, {
 
-    const { json } = await httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
     });
+
+
+    const { json } = http;
+
 
     return {
       data: { ...params.data, id: json._id },

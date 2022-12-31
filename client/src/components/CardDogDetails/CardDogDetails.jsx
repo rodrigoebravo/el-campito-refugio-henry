@@ -109,6 +109,16 @@ const CardDogDetails = (props) => {
             <>No hay info</>
           )}
         </div>
+        <Link to={`/adoptionForm/${props.match.params.id}`}>    
+          <div className={style.button}>
+            <h3>Adoptar</h3>
+          </div>           
+        </Link>   
+        <Link to={`/colaborar/${props.match.params.id}`}>    
+          <div className={style.button}>
+            <h3>Apadrinar</h3>
+          </div>           
+        </Link>  
       </div>
     );
   }

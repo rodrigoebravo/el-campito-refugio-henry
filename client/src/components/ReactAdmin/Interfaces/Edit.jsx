@@ -1,6 +1,16 @@
-import { Edit, SimpleForm, TextInput, ImageInput, ImageField } from "react-admin";
 
+import {
+  Toolbar, SaveButton, Edit, SimpleForm, TextInput, ImageInput, ImageField
+} from 'react-admin';
 
+const CustomToolbar = props => (
+  <Toolbar
+      {...props}
+      sx={{ display: 'flex', justifyContent: 'space-between' }}
+  >
+      <SaveButton />
+  </Toolbar>
+);
 
 const InterfacesEdit = (props) => {
   return (
@@ -10,7 +20,7 @@ const InterfacesEdit = (props) => {
       disableAuthentication
       mutationMode="pessimistic"
     >
-      <SimpleForm>
+      <SimpleForm  toolbar={<CustomToolbar />}>
         <ImageInput source="slider" label="Fotografías de Slider" multiple>
             <ImageField source="src" title="title" />
         </ImageInput>
@@ -19,9 +29,7 @@ const InterfacesEdit = (props) => {
             <ImageField source="src" title="title" />
         </ImageInput>
         <TextInput source="colaboraText" label="Texto en Colaborá" fullWidth />
-        <ImageInput source="imgColabora" label="Fótografía en Colaborá" >
-            <ImageField source="src" title="title" />
-        </ImageInput>
+        
         <TextInput source="visitasText" label="Texto en Visitas" fullWidth />
         <TextInput source="escolarText" label="Texto en Escolar" fullWidth />
         <ImageInput source="imgVoluntarios" label="Fótografía en Voluntarios" >

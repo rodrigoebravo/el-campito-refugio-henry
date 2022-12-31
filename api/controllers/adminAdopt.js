@@ -67,17 +67,26 @@ const adminAdoptions = async (req, res) => {
       await adoptionsModel.findByIdAndUpdate({ _id: id }, dataAdop, {
         returnOriginal: false,
       });       
+
+      const users1 = await usersModel.findOne({ email })
+      
+      let roles = users1.roles;
+
+      if ( dataAdop.isPending === false ) roles.concat('adoptante');
+
+      await usersModel.findByIdAndUpdate({ _id: user._id },
+        { birthday, phone, email, roles }
+      );   
   
       const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog", {
         name: 1,
         _id: 1
       });
 
-      const { user, dog, ...data } = adoption.toObject(); 
+      const { user, dog, ...data } = adoption.toObject();    
+     
 
-      await usersModel.findByIdAndUpdate({ _id: user._id },
-        { birthday, phone, email }
-      );     
+       
       
       res.json({
         user: user._id,

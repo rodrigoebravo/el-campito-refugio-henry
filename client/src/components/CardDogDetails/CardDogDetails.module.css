@@ -25,3 +25,9 @@
 .imgDog{
   border-radius: 1.5rem;
 }
+.button{
+  border-radius: 15%;
+  background-color: blueviolet;
+  margin: 2rem;
+  padding: 1rem;
+}
