@@ -78,19 +78,21 @@ const adminUpdateVolunteer = async (req, res) => {
   try {
     const {
       params: { id },
-      body: { name, birthday, email, phone, roles, ...dataVolunteer },
+      body: { name, birthday, email, phone, ...dataVolunteer },
     } = req;
 
-    const volunteerUpdate = await volunteersModel.findByIdAndUpdate(
-      { _id: id },
-      dataVolunteer,
-      {
-        returnOriginal: false,
-      }
-    );
+    await volunteersModel.findByIdAndUpdate({ _id: id }, dataVolunteer, {
+      returnOriginal: false,
+    });
+
+    const users1 = await usersModel.findOne({ email });
+
+    let roles = users1.roles;
+
+    if (dataVolunteer.isPending === false) roles.concat("voluntario");
 
     await usersModel.findByIdAndUpdate(
-      { _id: volunteerUpdate.user._id },
+      { _id: users1._id },
       { name, birthday, phone, roles, email }
     );
 

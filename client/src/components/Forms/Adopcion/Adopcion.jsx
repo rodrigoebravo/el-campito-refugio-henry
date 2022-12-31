@@ -1,14 +1,43 @@
-import React from "react";
+import React from "react"
+import { useDispatch } from "react-redux"
 import { useForm } from "react-hook-form"
 import styles from "./Adopcion.module.css"
 import Footer from "../../Footer/Footer"
+import { postAdoption } from "../../../redux/actions/action"
 
-const Adopcion = () =>{
+const Adopcion = (props) =>{
     
-    const { register, handleSubmit, formState:{ errors } } = useForm();
+    const [storage, setStorage] = React.useState({ 
+        data: { idDog: "63a73695b6fac7bd5efacdb2",
+            name:"Tu respuesta", email:"Tu respuesta", 
+            phone:"Tu respuesta", birthday:"Tu respuesta" }
+    });
+
+    // const st = JSON.parse(localStorage.getItem('user'));
+    
+    
+    React.useEffect(()=>{    
+        console.log(props);
+        const obj =
+            ( props && props.hasOwnProperty('data') ) ? 
+            props : 
+            { data: {idDog: "63a73695b6fac7bd5efacdb2", name:"Tu respuesta", email:"Tu respuesta", phone:"Tu respuesta", birthday:"Tu respuesta"}}
+        setStorage(obj);    
+    },[props]);
+    
+    console.log(storage);
+    
+    const { register, handleSubmit, formState:{ errors } } = useForm({});    
+
+    const dispatch = useDispatch();
 
     const onSubmit = (data) => {
+        data.people = parseInt(data.people);
         console.log(data)
+        // e.preventDefault();
+        dispatch(postAdoption(data));
+        alert('form create successfuly!');
+        // e.target.reset();        
     }
     
 
@@ -17,14 +46,40 @@ const Adopcion = () =>{
             <h2>Formulario de Adopción</h2>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 
-                <div className = {styles.image}>
-                    <img src="https://lh3.googleusercontent.com/Xrk9glCZQbiti8CsC-ArJQk2mD4mZYsZRHSNie6TJktCsN8bsGNIf9CgkW_IWnyhewva9NvbWi9vn7LvCLV1ln5OlRO8n1RZmV-GOMUP4iPJ3lk5RhfuR6tPodN0StzNEQ=w502" alt="perrito" width="500" />
+                <div className = {styles.item}>
+                    <label className={styles.label}>ID del Camperito</label>
+                    <input 
+                        value={storage.data.idDog}
+                        type="text"      className={styles.input} 
+                        {...register('idDog', {required: true })}
+                    />
+                    {errors.name?.type === 'required' && <p>ID del Camperito necesario</p>}                    
+                </div>
+                          
+                <div className = {styles.item}>
+                    <label className={styles.label}>Nombre y Apellido</label>
+                    <input 
+                        value={storage.data.name === "Tu respuesta"? undefined : storage.data.name}
+                        type="text"      className={styles.input}  placeholder="Tu respuesta"
+                        {...register('name', {required: true })}
+                    />
+                    {errors.name?.type === 'required' && <p>Ingrese su nombre, por favor</p>}                    
+                </div>
+                
+                <div className = {styles.item}>
+                    <label className={styles.label}>Fecha de nacimiento</label>
+                    <input 
+                        value={storage.data.birthday === "Tu respuesta"? undefined : storage.data.birthday}
+                        type="date" className={styles.inputDate} min="1923-01-01"
+                        {...register('birthday', {required: true})}/>
+                    {errors.date?.type === 'required' && <p>Fecha de nacimiento requerida</p>}
                 </div>
 
-                                
                 <div className = {styles.item}>
                     <label className={styles.label}>Correo</label>
-                    <input type="text" className={styles.input} placeholder="Tu dirección de correo electrónico"
+                    <input 
+                        value={storage.data.email === "Tu respuesta"? undefined : storage.data.email}
+                        type="text" className={styles.input}  placeholder="Tu respuesta"
                         {...register('email', {
                             required: true,
                             pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/    
@@ -33,20 +88,16 @@ const Adopcion = () =>{
                     {errors.email?.type === 'pattern' && <p>Formato de Email incorrecto</p>}
                     {errors.email?.type === 'required' && <p>Email requerido</p>}
                 </div>
-
-                <div className = {styles.item}>
-                    <label className={styles.label}>Nombre y Apellido</label>
-                    <input type="text" className={styles.input} placeholder="Tu respuesta"
-                        {...register('name', {required: true })}
-                    />
-                    {errors.name?.type === 'required' && <p>Ingrese su nombre, por favor</p>}                    
-                </div>
                 
                 <div className = {styles.item}>
-                    <label className={styles.label}>Fecha de nacimiento</label>
-                    <input type="date" className={styles.inputDate}
-                        {...register('birthday', {required: true})}/>
-                    {errors.date?.type === 'required' && <p>Fecha de nacimiento requerida</p>}
+                    <label className={styles.label}>Teléfono</label>
+                    <input 
+                        value={storage.data.phone === "Tu respuesta"? undefined : storage.data.phone}
+                        type="tel" className={styles.input} 
+                        {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
+                    />
+                    {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
+                    {errors.telephone?.type === 'pattern' && <p>El numero ingresado es invalido</p>}
                 </div>
                 
                 <div className = {styles.item} >
@@ -63,16 +114,7 @@ const Adopcion = () =>{
                         {...register('area', {required: true})}
                     />
                     {errors.area?.type === 'required' && <p>Localidad requerida</p>}
-                </div>
-              
-                <div className = {styles.item}>
-                    <label className={styles.label}>Teléfono</label>
-                    <input type="tel" className={styles.input} placeholder="ej: 1161906190" 
-                        {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
-                    />
-                    {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
-                    {errors.telephone?.type === 'pattern' && <p>El numero ingresado es invalido</p>}
-                </div>
+                </div>              
 
                 <div className = {styles.item}>
                     <label className={styles.label}>¿Cuantas Personas viven en la casa?</label>

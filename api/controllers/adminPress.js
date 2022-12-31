@@ -4,8 +4,24 @@ const { pressModel } = require("../models");
 const adminPress = async (req, res) => {
   try {
     const press = await pressModel.find({});
-
-    res.status(201).send(press);
+    // console.log(press);
+    let newPress = [];
+    press.forEach((obj, index)=>{
+      let newObj = {
+        _id: obj._id,
+        media: obj.media,
+        link: obj?.link || "",
+        date: obj.date.toJSON().slice(0, 10)  || "",
+        title: obj.title || "",
+        description: obj.description || "",
+        img: { src: obj.img, index:[index] } || { src: "", index:[index] },
+        favicon: obj.favicon || "",
+        isDelete: obj.isDelete
+      }
+      newPress.push(newObj);
+    })
+    console.log(newPress);
+    res.status(201).send(newPress);
   } catch (e) {
     res.status(404).send({ error: e });
   }
@@ -18,7 +34,20 @@ const adminPressId = async (req, res) => {
     } = req;
 
     const press = await pressModel.findById({ _id: id });
-    res.json(press);
+
+    let newPress = {
+      _id: press._id,
+      media: press.media,
+      link: press.link || "",
+      date: press.date.toJSON().slice(0, 10)  || "",
+      title: press.title || "",
+      description: press.description || "",
+      img: { src: press.img, index:0 } || { src: "", index:0 },
+      favicon: press.favicon || "",
+      isDelete: press.isDelete
+    }
+    // console.log(newPress);
+    res.json(newPress);
   } catch (e) {
     res.status(404).send({ error: e });
   }
@@ -44,12 +73,14 @@ const adminUpdatePress = async (req, res) => {
 const adminCreatePress = async (req, res) => {
   try {
     const { body } = req;
-    // console.log(body);
-    // const previewData = await linkPreviewGenerator(body.link);
-    // previewData.date = body.date;
-    // previewData.media = body.media;
-    // console.log(previewData);
-    const press = await pressModel.create(body); 
+
+    const previewData = await linkPreviewGenerator(body.link) || {};
+    previewData.date = body.date;
+    previewData.media = body.media;
+    previewData.link = body.link;
+    console.log(previewData);
+
+    const press = await pressModel.create(previewData);
 
     res.status(200).send({ data: press });
 

@@ -20,7 +20,24 @@ const adminUsers = async (req, res) => {
     } else {
       users = await usersModel.find({}).sort({ name: orden });
     }
-    res.status(200).send(users);
+    let newUsers = [];
+    users.forEach((obj, index) => {
+      let newObj = {
+        _id: obj._id || "",
+        name: obj.name || "",
+        email: obj.email || "",
+        birthday: obj.birthday?.toISOString().slice(0, 10) || "",
+        phone: obj.phone || "",
+        roles: obj.roles || [],
+        image: { src: obj.image || "", index: [index] },
+        volunteer: obj.volunteer || "",
+        contribution: obj.contribution || [],
+        adoptions: obj.adoptions || [],
+      };
+      newUsers.push(newObj);
+    });
+    console.log(newUsers);
+    res.status(201).send(newUsers);
   } catch (error) {
     res.status(400).send({ error: "Error en la solicitud" });
   }
@@ -32,8 +49,23 @@ const adminUsersId = async (req, res) => {
       params: { id },
     } = req;
 
-    const users = await usersModel.findById({ _id: id });
-    res.json(users);
+    const user = await usersModel.findById({ _id: id });
+    console.log(user);
+
+    let newObj = {
+      _id: user._id || "",
+      name: user.name || "",
+      email: user.email || "",
+      birthday: user.birthday?.toISOString().slice(0, 10) || "",
+      phone: user.phone || "",
+      roles: user.roles || [],
+      image: { src: user.image || "", index: 0 },
+      volunteer: user.volunteer || "",
+      contribution: user.contribution || [],
+      adoptions: user.adoptions || [],
+    };
+
+    res.json(newObj);
   } catch (e) {
     res.status(404).send({ error: e });
   }

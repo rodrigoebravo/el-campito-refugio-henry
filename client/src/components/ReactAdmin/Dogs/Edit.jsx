@@ -13,6 +13,14 @@ import {
 } from "react-admin";
 import { Grid } from "@mui/material";
 
+const valida = (values) => {
+  const errors = {};
+  // if (!values.name) errors.name = 'required';
+  // if (!values.age) errors.age = 'required';
+
+  return errors;
+};
+
 const DogsEdit = (props) => {
   return (
     <Edit

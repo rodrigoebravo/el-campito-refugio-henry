@@ -12,6 +12,9 @@ const contributionPost = async (req, res) => {
     } = req;
 
 
+    // console.log(name, email, phone, idDog, type, dataContibution); 
+
+
     if(name == undefined && email == undefined && type == undefined){ 
 
        const newCertificate = await contributionsModel.create({
@@ -29,15 +32,16 @@ const contributionPost = async (req, res) => {
       const { dog, ...dataCertificate } = certificate.toObject(); //salida 
 
       res.status(201).send({
-        user: "Anónimo",
+        user: "anónimo",
         dog: dataDog.name,
         idDog,
         ...dataCertificate
       }); 
 
-      // res.json(certificate); 
+      res.json(certificate); 
 
     }else {
+
 
       let userDb = await usersModel.findOne({ email });
   
@@ -47,6 +51,32 @@ const contributionPost = async (req, res) => {
           email,
           phone,
         });
+      }     
+  
+      const newCertificate = await contributionsModel.create({
+        user: userDb._id,
+        dog: idDog,
+        type,
+        ...dataContibution,
+      });
+        
+      await usersModel.findByIdAndUpdate({ _id: userDb._id },
+        { name, email, phone },
+      );
+
+      if(name && email){  
+        if (type === "padrinazgo")  userDb.roles = [...userDb.roles, "padrino"]; 
+        if (type === "donación")  userDb.roles = [...userDb.roles, "donante"]; 
+
+        userDb.contribution = [...userDb.contribution, newCertificate._id];
+        await userDb.save();
+      }
+  
+      if (type === "padrinazgo") {
+        const dog = await dogModel.findById({ _id: idDog });  
+        dog.godparents = [...dog.godparents, userDb._id];
+        await dog.save();
+
       }
   
       await usersModel.findByIdAndUpdate(
@@ -65,25 +95,14 @@ const contributionPost = async (req, res) => {
         ...dataContibution,
       });
 
-      if(name && email){
-        
-        userDb.contribution = [...userDb.contribution, newCertificate._id];
-        await userDb.save();
-      }
-  
-      if (type === "padrinazgo") {
-        const dog = await dogModel.findById({ _id: idDog });
-  
-        dog.godparents = [...dog.godparents, userDb._id];
-        await dog.save();
-      }
 
       const certificate = await contributionsModel.findById({_id: newCertificate._id}).populate("user dog"); 
 
       const { user, dog, ...dataCertificate  } = certificate.toObject(); 
 
       res.status(201).send({
-        name: user.name,
+        user: user.name,
+
         idUser: user._id,
         dog: dog.name,
         idDog,
@@ -101,3 +120,4 @@ const contributionPost = async (req, res) => {
 module.exports = {
   contributionPost,
 };
+

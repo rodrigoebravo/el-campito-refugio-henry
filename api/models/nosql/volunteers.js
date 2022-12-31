@@ -55,7 +55,7 @@ const volunteerScheme = mongoose.Schema({
     },
     isPending: {
         type: Boolean,
-        default: false,
+        default: true,
     },
     isDelete: {
         type: Boolean, 
