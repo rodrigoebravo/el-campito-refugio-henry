@@ -7,6 +7,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  BarChart,
+  Bar,
 } from "recharts";
 import { Card, CardContent, Grid } from "@mui/material";
 
@@ -57,13 +59,57 @@ const data = [
 
 const Filters = () => (
   <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 650 }}>
-    <CardContent></CardContent>
+    <CardContent>
+      <button>Hola</button>
+    </CardContent>
   </Card>
 );
 
-export default class Example extends PureComponent {
-  static demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
+const Linear = () => (
+  <LineChart
+    width={1200}
+    height={750}
+    data={data}
+    margin={{
+      top: 10,
+      right: 5,
+      left: 10,
+      bottom: 5,
+    }}
+  >
+    <CartesianGrid strokeDasharray="3 3" />
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    <Legend />
+    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+  </LineChart>
+);
 
+const Barra = () => (
+  <BarChart
+    width={500}
+    height={300}
+    data={data}
+    margin={{
+      top: 5,
+      right: 30,
+      left: 20,
+      bottom: 5,
+    }}
+  >
+    <CartesianGrid strokeDasharray="3 3" />
+    <XAxis dataKey="name" />
+    <YAxis />
+    <Tooltip />
+    <Legend />
+    <Bar dataKey="pv" fill="#8884d8" />
+    <Bar dataKey="uv" fill="#82ca9d" />
+  </BarChart>
+);
+
+export default class Grafico extends PureComponent {
   render() {
     return (
       <Grid container spacing={2}>
@@ -73,30 +119,7 @@ export default class Example extends PureComponent {
         <Grid item xs={6}>
           <Card sx={{ mr: 0, ml: 0, mt: 5, width: 1300, height: 800 }}>
             <CardContent>
-              <LineChart
-                width={1200}
-                height={750}
-                data={data}
-                margin={{
-                  top: 10,
-                  right: 5,
-                  left: 10,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="pv"
-                  stroke="#8884d8"
-                  activeDot={{ r: 8 }}
-                />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-              </LineChart>
+              <Barra></Barra>
             </CardContent>
           </Card>
         </Grid>
