@@ -12,7 +12,7 @@ const adminUsers = async (req, res) => {
         const { name } = filtro;
         console.log(filtro);
         users = await usersModel
-          .find({ name: new RegExp(name, "i") })
+          .find({ name: new RegExp(name, "i"), isDelete: false })
           .sort({ name: orden });
       } else {
         users = await usersModel.find(filtro).sort({ name: orden });
@@ -70,8 +70,6 @@ const adminDeleteUser = async (req, res) => {
   try {
     // const { body } = req;
     const id = req.params.id;
-
-    console.log(id);
 
     const userDelete = await usersModel.findByIdAndUpdate(
       { _id: id },

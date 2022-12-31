@@ -10,7 +10,7 @@ const userScheme = new mongoose.Schema(
 
     birthday: { 
         type: Date, 
-        default: Date.now =
+        default: Date.now //Quitar
     },
     email: {
       type: String,
@@ -25,7 +25,7 @@ const userScheme = new mongoose.Schema(
       default: "1234"
     },
     roles: { 
-      type: String, 
+      type: [String], 
       enum: ["public", "superAdmin", "admin", "voluntario", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante"], 
       default: "public"
 
@@ -80,12 +80,5 @@ const userScheme = new mongoose.Schema(
 //     next();
 //   })
 
-userScheme.pre("find", function () {
-  this.where({ isDelete: false });
-});
-
-userScheme.pre("findOne", function () {
-  this.where({ isDelete: false });
-});
 
 module.exports = mongoose.model("users", userScheme);

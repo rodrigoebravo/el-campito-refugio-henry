@@ -11,21 +11,6 @@ const volunteerScheme = mongoose.Schema({
         type: Date, 
         default: Date.now 
     },
-    // name: {
-    //     type: String, 
-    // },
-    // birthday: { 
-    //     type: Date, 
-    //     default: Date.now 
-    // },
-    // email: {
-    //     type: String,
-    //     unique: true,
-    // }, 
-    // telephone: {
-    //     type: String,
-    //     required: true,
-    // },
     location: {
         type: String, 
     },
@@ -83,13 +68,13 @@ const volunteerScheme = mongoose.Schema({
 }); 
 
 
-volunteerScheme.pre('find', function() {
-    this.where({ isDelete: false });
-  });
+// volunteerScheme.pre('find', function() {
+//     this.where({ isDelete: false });
+//   });
   
-volunteerScheme.pre('findOne', function() {
-    this.where({ isDelete: false });
-  });
+// volunteerScheme.pre('findOne', function() {
+//     this.where({ isDelete: false });
+//   });
   
 
 module.exports = mongoose.model("volunteers", volunteerScheme); 

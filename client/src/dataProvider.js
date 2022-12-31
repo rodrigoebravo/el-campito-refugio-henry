@@ -1,6 +1,6 @@
 import { fetchUtils } from "react-admin";
 import { stringify } from "query-string";
-import pushCloudinary from './hooks/pushCloudinary';
+import pushCloudinary from "./hooks/pushCloudinary";
 
 const apiUrl = "http://localhost:3001";
 const httpClient = fetchUtils.fetchJson;
@@ -24,20 +24,25 @@ const dataProvider = {
       ),
     }));
   },
-  
-  getOne: (resource, params) =>
-    httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
-      data: { ...json, id: json._id }, //!
-    })),
 
-  getMany: (resource, params) => {
+  getOne: async (resource, params) => {
+    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`);
+
+    return {
+      data: { ...json, id: json._id },
+    };
+  },
+
+  getMany: async (resource, params) => {
     const query = {
       filter: JSON.stringify({ id: params.ids }),
     };
     const url = `${apiUrl}/${resource}?${stringify(query)}`;
-    return httpClient(url).then(({ json }) => ({
-      data: json.map((resource) => ({ ...resource, id: resource._id })),
-    }));
+    const { json } = await httpClient(url);
+
+    return {
+      data: json.map((res) => ({ ...res, id: res._id })),
+    };
   },
 
   getManyReference: (resource, params) => {
@@ -59,11 +64,53 @@ const dataProvider = {
     }));
   },
 
-  update: (resource, params) =>
-    httpClient(`${apiUrl}/${resource}/${params.id}`, {
+  update: async (resource, params) => {
+    if (
+      resource === "api/admin/users" &&
+      params.data.image.hasOwnProperty("rawFile")
+    ) {
+      console.log(params.data.image);
+      params.data.image = await pushCloudinary(params.data.image);
+    }
+
+    if (
+      resource === "api/admin/dogs" &&
+      params.data.images.some((e) => e.hasOwnProperty("rawFile"))
+    ) {
+      let newImages = params.data.images.filter(
+        (img) => typeof img !== "string"
+      );
+      params.data.images = newImages;
+      params.data.images = await pushCloudinary(newImages);
+    }
+
+    if (
+      resource === "api/admin/press" &&
+      params.data.img.hasOwnProperty("rawFile")
+    ) {
+      params.data.img = await pushCloudinary(params.data.img);
+    }
+
+    if (
+      resource === "api/admin/interfaces" 
+    ) {
+      params.data.slider = await pushCloudinary(params.data.slider);
+      params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
+      // params.data.imgNosotros = await pushCloudinary(params.data.imgColabora); // NO ESTA EN LOS CAMPOS DE INTERFACES!!!!
+      params.data.imgVoluntarios = await pushCloudinary(
+        params.data.imgVoluntarios
+      );
+    }
+
+    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "PUT",
       body: JSON.stringify(params.data),
-    }).then(({ json }) => ({ data: { ...json, id: json._id } })), // {...json, id: json._id}
+    });
+
+    return {
+      data: { ...params.data, id: json._id },
+    };
+  },
 
   updateMany: (resource, params) => {
     const query = {
@@ -76,49 +123,50 @@ const dataProvider = {
   },
 
   create: async (resource, params) => {
-    
-    if (resource === "dogs") {      
-      const urlsImages = await pushCloudinary(params.data.images);
-      const urlVideo = await pushCloudinary(params.data.video);
-      params.data.images = urlsImages;
-      params.data.video = urlVideo;
-      console.log(params.data);
-    };
-    if (resource === "users") {
-      const urlsImage = await pushCloudinary(params.data.image);
-      params.data.image = urlsImage;
-      console.log(params.data);
-    };
-    if (resource === "interfaces") {      
-      const urlsSlider = await pushCloudinary(params.data.slider);
-      params.data.slider = urlsSlider;
-      const urlimgNosotros = await pushCloudinary(params.data.imgNosotros);
-      params.data.imgNosotros = urlimgNosotros;
-      const urlimgColabora = await pushCloudinary(params.data.imgColabora);
-      params.data.imgNosotros = urlimgColabora;
-      const urlimgVoluntarios = await pushCloudinary(params.data.imgVoluntarios);
-      params.data.imgNosotros = urlimgVoluntarios;      
-      console.log(params.data);
-    };
-    if (resource === "press" && params.data.img) {
-      const urlImg = await pushCloudinary(params.data.img);
-      params.data.image = urlImg;
-      console.log(params.data);
-    };
+    if (resource === "api/admin/dogs") {
+      params.data.images = await pushCloudinary(params.data.images); //verificado
+    }
 
-    httpClient(`${apiUrl}/${resource}`, {
+    if (resource === "api/admin/users") {
+      params.data.image = await pushCloudinary(params.data.image);
+    }
+
+    if (resource === "api/admin/interfaces") {
+      params.data.slider = await pushCloudinary(params.data.slider);
+      params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
+      // params.data.imgNosotros = await pushCloudinary(params.data.imgColabora); // NO ESTA EN LOS CAMPOS DE INTERFACES!!!!
+      params.data.imgNosotros = await pushCloudinary(
+        params.data.imgVoluntarios
+      );
+    }
+
+    if (resource === "api/admin/press") {
+      console.log(params.data);
+      params.data.img = await pushCloudinary(params.data.img);
+    }
+
+    const { json } = await httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
-    }).then(({ json }) => ({
-      data: { ...params.data, id: json._id },
-    }))
-    },
+    });
 
-  delete: (resource, params) =>
-    httpClient(`${apiUrl}/${resource}/${params.id}`, {
+    return {
+      data: { ...params.data, id: json._id },
+    };
+  },
+
+  delete: async (resource, params) => {
+    const { json } = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "DELETE",
       params: JSON.stringify(params.id),
-    }).then(({ json }) => ({ ...json, id: json._id })), //data: {...json, id: json._id, }
+    });
+
+    return {
+      //data: {...json, id: json._id, }
+      ...json,
+      id: json._id,
+    };
+  },
 
   deleteMany: (resource, params) => {
     const query = {

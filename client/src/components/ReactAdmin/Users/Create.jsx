@@ -1,4 +1,4 @@
-import { Create, SimpleForm, TextInput, ImageInput, SelectInput,
+import { Create, SimpleForm, TextInput, ImageInput, SelectArrayInput,
    ImageField, DateInput } from "react-admin";
 
 // const convertStringToNumber = value => {
@@ -16,7 +16,7 @@ const UsersCreate = (props) => {
         <TextInput source="phone" label="Teléfono" fullWidth />
         <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
         <TextInput source="pass" label="Contraseña" fullWidth />
-        <SelectInput source="roles" labelpublic="Rol" choices={[
+        <SelectArrayInput source="roles" labelpublic="Rol" choices={[
             { id: 'public', name: 'public' },
             { id: 'superAdmin', name: 'superAdmin' },
             { id: 'admin', name: 'admin' },
@@ -37,5 +37,7 @@ const UsersCreate = (props) => {
     </Create>
   );
 };
+
+
 
 export default UsersCreate;
