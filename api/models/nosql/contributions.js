@@ -11,13 +11,6 @@ const contributionsScheme = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: "dogs",
     },
-    // email: {
-    //     type: String,
-    //     unique: true,
-    // }, 
-    // phone: {
-    //   type: String,
-    // },
     type: {
         type: String,
         enum: ["donación", "padrinazgo", "membresía","sponsoreo"],
@@ -51,6 +44,14 @@ const contributionsScheme = new mongoose.Schema({
     versionKey: false,
   }
 );
+
+// contributionsScheme.pre("find", function () {
+//   this.where({ isDelete: false });
+// });
+
+// contributionsScheme.pre("findOne", function () {
+//   this.where({ isDelete: false });
+// });
 
 // contributionsScheme.plugin(mongooseDelete, { overrideMethods: "all" });
 

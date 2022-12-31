@@ -6,14 +6,19 @@ import { postCloudinaryPhoto, clearCloudinaryResponse } from "../../redux/action
 import styles from "./ImageUpload.module.css"
 
 //para que funcione el hook hacer npm intall react-hook-form
-
+   
 const ImagenUpload = () => {    
-    
+     
     const dispatch = useDispatch();
     
-    const cloudImages = useSelector(state => state.imagesCloudinary);
+    const cloudImages = useSelector(state => state.responseCloudinary);
 
-    
+    // hacer en el componente padre para limpiar store
+    // React.useEffect(()=>{
+    //     dispatch(clearCloudinaryResponse());
+    //   },[dispatch]);
+
+
     const uploadImage = async (e) => {
         console.log(e.target.files);
         const files = e.target.files;
@@ -56,7 +61,7 @@ const ImagenUpload = () => {
                         { !cloudImages ? null :                            
                                 <div className="video" >
                                     <button  onClick={(e)=>handleDelete(e)}>X</button>
-                                    <img src={cloudImages} alt="Girl in a jacket" width="500" ></img>                                                              
+                                    <img src={cloudImages} alt="algo falló" width="500" ></img>                                                              
                                 </div>
                         }
             </div>

@@ -2,19 +2,19 @@ import {
   List,
   Datagrid,
   TextField,
-  EditButton,
   ShowButton,
   DeleteWithConfirmButton,
 } from "react-admin";
 
+import Filters from "./Filters";
+
 const UsersList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} aside={<Filters />}>
       <Datagrid>
         <TextField source="name" label="Nombre" />
         <TextField source="email" label="Email" />
         <TextField source="roles" label="Rol" />
-        <EditButton basepath="/api/admin/users" />
         <DeleteWithConfirmButton basepath="/api/admin/users" />
         <ShowButton />
       </Datagrid>

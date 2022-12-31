@@ -1,25 +1,30 @@
-const { adoptionsModel } = require("../models");
+const { adoptionsModel, usersModel, dogModel } = require("../models");
 
 const adminAdoptions = async (req, res) => {
     try {
-      const adoptions = await adoptionsModel.find({}).populate("user dog", {
-        name: 1,
-        _id: 1
-      });
+      const adoptions = await adoptionsModel.find({isDelete: false}).populate("user dog");
       
-      const adoptionsMapping = adoptions.map(adoption => {
+      const adoptionsMapping = adoptions
+      .filter((a)=> a.user && a.dog )
+      .map(adop=> { 
 
-        let { user, dog, ...data } = adoption.toObject();
+        const { user, dog, ...data } = adop.toObject(); 
+
         return {
-          user: user.name,
-          dog: dog.name,
-          idUSer: user._id,
-          idDog: dog._id,
+          user: user._id,
+          nameUser: user.name,
+          email: user.email,
+          phone: user.phone,
+          birthday: user.birthday,
+          dog: dog._id,
+          nameDog: dog.name,
           ...data
-        }
+        };
       }); 
 
       res.status(201).send(adoptionsMapping);
+
+      // res.status(201).send(adoptions);
 
     } catch (e) {
       res.status(404).send({ error: e });
@@ -32,18 +37,18 @@ const adminAdoptions = async (req, res) => {
         params: { id },
       } = req;
   
-      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog", {
-        name: 1,
-        _id: 1
-      });
-
+      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog");      
+     
       const { user, dog, ...data } = adoption.toObject(); 
 
       res.json({
-        user: user.name,
-        dog: dog.name,
-        idUSer: user._id,
-        idDog: dog._id,
+        user: user._id,
+        nameUser: user.name,
+        email: user.email,
+        phone: user.phone,
+        birthday: user.birthday,
+        dog: dog._id,
+        nameDog: dog.name,
         ...data
       });
 
@@ -56,14 +61,43 @@ const adminAdoptions = async (req, res) => {
     try {
       const {
         params: { id },
-        body,
+        body: { birthday, email, phone,  ...dataAdop },
       } = req;
   
-      const adop = await adoptionsModel.findByIdAndUpdate({ _id: id }, body, {
+      await adoptionsModel.findByIdAndUpdate({ _id: id }, dataAdop, {
         returnOriginal: false,
-      });
+      });       
+
+      const users1 = await usersModel.findOne({ email })
+      
+      let roles = users1.roles;
+
+      if ( dataAdop.isPending === false ) roles.concat('adoptante');
+
+      await usersModel.findByIdAndUpdate({ _id: user._id },
+        { birthday, phone, email, roles }
+      );   
   
-      res.json({ data: adop });
+      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog", {
+        name: 1,
+        _id: 1
+      });
+
+      const { user, dog, ...data } = adoption.toObject();    
+     
+
+       
+      
+      res.json({
+        user: user._id,
+        nameUser: user.name,
+        email,
+        phone,
+        birthday,
+        dog: dog._id,
+        nameDog: dog.name,
+        ...data
+      });
       
     } catch (e) {
       res.status(404).send({ error: e });

@@ -20,16 +20,12 @@ const ContribEdit = (props) => {
         <TextInput source="phone" label="Teléfona" fullWidth />
         <SelectInput source="type" labelpublic="Tipo de Contribución" choices={[
             { id: 'donación', name: 'donación' },
-            { id: 'padrinazgo', name: 'padrinazgo' },
-            { id: 'membresía', name: 'membresía' },
-            { id: 'sponsoreo', name: 'sponsoreo' },
+            { id: 'sponsoreo', name: 'sponsoreo' }
         ]} />
         <TextInput source="detail" label="Detalle" fullWidth />
         <DateInput source="date" label="Fecha" fullWidth />
         <TextInput source="total" label="Monto" type="number" parse={convertStringToNumber} fullWidth />
         <TextInput source="method" label="Metodo de Pago" fullWidth />
-        <TextInput source="dog" label="Perro asociado" fullWidth />
-        <TextInput source="user" label="Usuario asociado" fullWidth />
         <BooleanInput label="Pendiente" source="isPending" />
       </SimpleForm>
     </Edit>

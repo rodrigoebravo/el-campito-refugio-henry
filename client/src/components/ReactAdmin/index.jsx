@@ -14,7 +14,6 @@ import RadioIcon from "@mui/icons-material/Radio";
 import PressCreate from "./Press/Create";
 import PressEdit from "./Press/Edit";
 import PressList from "./Press/List";
-import PressShow from "./Press/Show";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import ContribCreate from "./Contributions/Create";
 import ContribEdit from "./Contributions/Edit";
@@ -28,13 +27,12 @@ import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import AdopList from "./Adoptions/List";
 import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
 import InterfacesEdit from "./Interfaces/Edit";
 import InterfacesList from "./Interfaces/List";
 import InterfacesShow from "./Interfaces/Show";
 import SsidChartIcon from "@mui/icons-material/SsidChart";
 import Stats from "./Stats/Stats";
-
 
 const AdminIndex = () => {
   return (
@@ -62,7 +60,6 @@ const AdminIndex = () => {
         list={PressList}
         create={PressCreate}
         edit={PressEdit}
-        show={PressShow}
         icon={RadioIcon}
         options={{ label: "Prensa" }}
       />
@@ -98,7 +95,7 @@ const AdminIndex = () => {
         show={InterfacesShow}
         icon={HomeIcon}
         options={{ label: "Interfaz de Usuario" }}
-       />
+      />
       <Resource
         name="api/admin/stats"
         list={Stats}

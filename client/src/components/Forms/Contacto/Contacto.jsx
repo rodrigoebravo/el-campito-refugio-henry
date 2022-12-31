@@ -42,7 +42,7 @@ const Contacto = () =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Teléfono</label>
                     <input type="tel" className={styles.input} placeholder="ej: 1161906190" 
-                        {...register('telephone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
+                        {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />
                     {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
                     {errors.telephone?.type === 'pattern' && <p>El numero ingresado es invalido</p>}
