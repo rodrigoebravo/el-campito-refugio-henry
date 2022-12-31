@@ -58,7 +58,7 @@ const Home = () => {
         <Link to="/voluntario" className={`${style.voluntario} ${style.a}`}>
           Quiero ser voluntario
         </Link>
-        <Link className={`${style.comportamiento} ${style.a}`}>
+        <Link to="/home" className={`${style.comportamiento} ${style.a}`}>
           Comportamiento y sociabilizacion
         </Link>
       </div>

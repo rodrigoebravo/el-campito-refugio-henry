@@ -11,9 +11,9 @@ const PressList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="media" label="Nombre" />
-        <TextField source="title" label="Email" />
-        <TextField source="date" label="Rol" />
+        <TextField source="media" label="Medio" />
+        <TextField source="title" label="Título" />
+        <TextField source="date" label="Fecha" />
         <EditButton basepath="/api/admin/press" />
         <DeleteWithConfirmButton basepath="/api/admin/press" />
         <ShowButton />

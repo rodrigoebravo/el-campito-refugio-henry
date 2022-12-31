@@ -1,6 +1,15 @@
 import { Edit, SimpleForm, TextInput, ImageInput, SelectInput,
   CheckboxGroupInput, ImageField, BooleanInput } from "react-admin";
 
+
+const valida = (values) => {
+    const errors = {};
+    // if (!values.name) errors.name = 'required';
+    // if (!values.age) errors.age = 'required';
+
+    return errors
+};
+
 const DogsEdit = (props) => {
   return (
     <Edit
@@ -9,8 +18,8 @@ const DogsEdit = (props) => {
       disableAuthentication
       mutationMode="pessimistic"
     >
-      <SimpleForm>
-      <TextInput source="id" disabled fullWidth />
+      <SimpleForm validate={valida} warnWhenUnsavedChanges>
+        {/* <TextInput source="id" disabled fullWidth /> */}
         <TextInput source="name" label="Nombre" fullWidth />
         <SelectInput source="gender" label="Sexo" choices={[
             { id: 'hembra', name: 'hembra' },
@@ -29,17 +38,17 @@ const DogsEdit = (props) => {
         ]} />
         <TextInput source="race" label="Raza" fullWidth />
         <CheckboxGroupInput source="references" label="Referencias" choices={[
-            { id: 'a000', name: 'Se lleva con perros' },
-            { id: 'u001', name: 'Se lleva con hembras	' },
-            { id: 'u002', name: 'Cuidados especiales	' },
-            { id: 'u003', name: 'Discapacitado' },
-            { id: 'a004', name: 'Carácter especial' },
+            { id: 'Se lleva con perros', name: 'Se lleva con perros' },
+            { id: 'Se lleva con hembras', name: 'Se lleva con hembras' },
+            { id: 'Cuidados especiales', name: 'Cuidados especiales' },
+            { id: 'Discapacitado', name: 'Discapacitado' },
+            { id: 'Carácter especial', name: 'Carácter especial' },
         ]} />
         <TextInput source="features" label="Caracteristicas" fullWidth />
         <ImageInput source="images" label="Fotografías" multiple>
-            <ImageField source="src" title="title" />
+            <ImageField source="src" index="index" />
         </ImageInput>
-        <TextInput source="url del video en YouTube" label="Nombre" fullWidth />
+        <TextInput source="video" label="reemplazar url del video en YouTube" fullWidth />
         <BooleanInput label="¿ Se puede apadrinar ?" source="isSponsored" />
         <BooleanInput label="¿ Se puede adoptar ?" source="toAdopt" />
       </SimpleForm>

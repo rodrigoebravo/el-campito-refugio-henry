@@ -33,9 +33,9 @@ const DogsShow = () => {
           fullWidth
           sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
         />
-        <TextField source="features" multiline label="Descripción" fullWidth />
-        <TextField source="references[0]" label="Caracteristicas" fullWidth />
-        <WrapperField fullWidth>
+        <TextField source="features" label="Características" fullWidth />
+        <TextField source="references"  label="Referencias" fullWidth />
+        <WrapperField fullWidth>          
           <ImageField source="images[0]" src="" title="perrito" />
           <ImageField source="images[1]" src="" title="perrito" />
           <ImageField source="images[2]" src="" title="perrito" />

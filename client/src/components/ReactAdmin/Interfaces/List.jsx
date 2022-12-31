@@ -2,6 +2,7 @@ import {
   List,
   Datagrid,
   TextField,
+  ImageField,
   EditButton,
   ShowButton,
 } from "react-admin";
@@ -10,9 +11,8 @@ const InterfacesList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="slider" label="Fotografías de Slider" />
-        <TextField source="homeText" label="Texto del Home" />
-        <TextField source="imgNosotros" label="Fótografía en Nosotros" />
+        <ImageField source="slider"  src="src"  sx={{ '& img': { maxWidth: 50, maxHeight: 50, objectFit: 'contain' } }} />
+        <TextField source="homeText" label="Textos e Imagenes de la Interfaz de Usuario" />        
         <EditButton basepath="/api/admin/interfaces" />
         <ShowButton />
       </Datagrid>
