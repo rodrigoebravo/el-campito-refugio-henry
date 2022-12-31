@@ -2,18 +2,23 @@ import React from "react";
 import NavBar from "../NavBar/NavBar"
 import Form from "../Forms/Contacto/Contacto"
 import Footer from "../Footer/Footer"
-import Styles from "./Contactanos.module.css"
+import styles from "./Contactanos.module.css"
 
-const Conocenos = () => {
+const Contactanos = () => {
     return(
-        <>
+        <div className={styles.mainContactanos}>
             <NavBar/>
-            <div className={Styles.mainContainer}>
+            <h2 className= {styles.h2Contactanos}>CONTACTANOS</h2>
+        <section className={styles.mainContainer}>
                 <Form/>
-            </div>
+        </section>
+        <section className={styles.sectionContactanos} >
+            <p><span className={styles.spanContactanos}>Contactanos a nuestras redes sociales o a</span></p>
+            <button className={styles.buttonContactanos}>institucional@elcampitorefugio.org</button>
+        </section>
             <Footer/>
-        </>
+        </div>
     )
 }
 
-export default Conocenos;
+export default Contactanos;

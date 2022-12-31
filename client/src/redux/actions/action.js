@@ -8,7 +8,8 @@ import {
   CLEAR_ALL_DOGS,
   FILTER_DOGS_BY_GENDER,
   FILTER_DOGS_BY_AGE,
-  FILTER_DOGS_BY_SIZE
+  FILTER_DOGS_BY_SIZE,
+  GET_PRESS
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
@@ -111,6 +112,19 @@ export function filterDogsBySize(payload) {
   return {
     type: FILTER_DOGS_BY_SIZE,
     payload
+  }
+}
+export const getPress = () => {
+  return async function (dispatch) {
+    try {
+      let json = await axios("/api/press")
+      return dispatch({
+        type: GET_PRESS,
+        payload: json.data
+      })
+    } catch {
+      console.log("error en traer press")
+    }
   }
 }
 

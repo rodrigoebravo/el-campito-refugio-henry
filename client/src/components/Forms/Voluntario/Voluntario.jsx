@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form"
 import styles from "./Voluntario.module.css"
+import Navbar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer"
 
 const Voluntario = () =>{
@@ -13,8 +14,10 @@ const Voluntario = () =>{
     }
 
     return(
+        <div>
+        <Navbar/>
         <div className={styles.mainContainer}>
-            <h2>Convocatoria a Voluntarios</h2>
+            <h2 className={styles.h3formVoluntarios}>Convocatoria a Voluntarios</h2>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 
                 <div className = {styles.item}>
@@ -176,7 +179,9 @@ const Voluntario = () =>{
 
                 <input type="submit" value="Enviar" className = {styles.submit}/>
             </form>   
-            <Footer />     
+                
+        </div>
+         <Footer />
         </div>
     )
 }

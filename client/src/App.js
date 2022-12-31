@@ -6,7 +6,6 @@ import QuieroAdoptar from './components/QuieroAdoptar/QuieroAdoptar'
 import QuieroColaborar from './components/QuieroColaborar/QuieroColaborar'
 import QuieroSerVoluntario from './components/QuieroSerVoluntario/QuieroSerVoluntario'
 import Visitas from './components/Visitas/Visitas'
-import ElCampitoEscolar from "./components/ElCampitoEscolar/ElCampitoEscolar";
 import FormPostDogs from "./components/FormPostDogs/FormPostDogs";
 import Home from "./components/Home/Home";
 // import Dashboard from "./components/Dashboard/Dashboard";
@@ -14,12 +13,18 @@ import Home from "./components/Home/Home";
 // import { AdminUsers } from "./components/Dashboard/AdminUsers/AdminUsers";
 // import { AdminDogsDetails } from "./components/Dashboard/AdminDogsdDetails/AdminDogsDetails";
 import AdminIndex from "./components/ReactAdmin/index";
-import { CardsDogs } from "./components/CardsDogs/CardsDogs";
+import  CardsDogs  from "./components/CardsDogs/CardsDogs";
 import CardDogDetails from "./components/CardDogDetails/CardDogDetails";
-import Conocenos from "./components/Contactanos/Contactanos";
+import Contactanos from "./components/Contactanos/Contactanos";
 import Voluntario from "./components/Forms/Voluntario/Voluntario.jsx";
 import Adopcion from "./components/Forms/Adopcion/Adopcion.jsx";
 import Contacto from "./components/Forms/Contacto/Contacto";
+import Proyectos from "./components/Proyectos/Proyectos.jsx"
+import ProyectoEscolar from "./components/Proyectos/ProyectoEscolar.jsx"
+import Cuidados from "./components/Cuidados/Cuidados.jsx"
+import Denuncias from "./components/Denuncias/Denuncias.jsx"
+import Prensa from "./components/Prensa/Prensa.jsx"
+import PrensaGrafica from "./components/Prensa/PrensaGrafica";
 
 
 function App() {
@@ -32,14 +37,20 @@ function App() {
       <Route exact path={"/colaborar"} component={QuieroColaborar} />
       <Route exact path={"/voluntario"} component={QuieroSerVoluntario} />
       <Route exact path={"/visitas"} component={Visitas} />
-      <Route exact path={"/campito"} component={ElCampitoEscolar} />
-      <Route exact path={"/contactanos"} component={Conocenos} />
+      <Route exact path={"/contactanos"} component={Contactanos} />
       <Route exact path={"/admin"} component={AdminIndex} />
       <Route exact path={"/adoptar/perros"} component={CardsDogs} />
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
       <Route exact path={"/volunteerForm"} component={Voluntario} />
       <Route exact path={"/AdoptionForm"} component={Adopcion} />
       <Route exact path={"/ContactForm"} component={Contacto} />
+      <Route exact path={"/proyectos"} component={Proyectos} />
+      <Route exact path={"/proyectoescolar"} component={ProyectoEscolar} />
+      <Route exact path={"/cuidados"} component={Cuidados} />
+      <Route exact path={"/denuncias"} component={Denuncias} />
+      <Route exact path={"/prensa"} component={Prensa} />
+      <Route exact path={"/prensa/grafica"} component={PrensaGrafica} />
+
       {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
       <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}

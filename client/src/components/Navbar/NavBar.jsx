@@ -19,51 +19,30 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className={styles.navbar}>
-			<img  src={Logo} alt="LogoCampito" className={styles.imgLogo}/>
-			<div onClick={handleClick} className={styles.navIcon}>
-				{open ? <FiX /> : <FiMenu />}
-			</div>
-			<div className={styles.contenedorLinks}>
+		<header>
+		<div className={styles.headerNav}>
+		<Link to="./"><img src={Logo} className={styles.imgLogo} alt="Logo del campito"/></Link>
+		<div onClick={handleClick} className={styles.navIcon}>
+				{open ? <FiX /> :<i class="fas fa-bars appear fa-4xs"></i>}	</div>
+		</div>
+		<nav>
 			<ul className={open ? styles.navLinksActive : styles.navLinks}>
-				<li className={styles.navItem}>
-					<Link to="/detalle" className={styles.navLink} onClick={closeMenu}>
-						Nosotros 
-					</Link>
-				</li>
-				<li className={styles.navItem}>
-					<Link to="/colaborar" className={styles.navLink} onClick={closeMenu}>
-                  Colaborá 
-					</Link>
-				</li>
-				<li className={styles.navItem}>
-            <Link to="/adoptar" className={styles.navLink} onClick={closeMenu}>
-                  Adoptá 
-					</Link>
-				</li>
-				<li className={styles.navItem}>
-            <Link to="/visitas" className={styles.navLink} onClick={closeMenu}>
-                  Visitanos 
-					</Link>
-				</li>
-            <li className={styles.navItem}>
-            <Link to="/voluntario" className={styles.navLink} onClick={closeMenu}>
-                Voluntariado 
-					</Link>
-				</li>
-            <li className={styles.navItem}>
-            <Link to="/contactanos" className={styles.navLink} onClick={closeMenu}>
-                  Contactanos 
-					</Link>
-				</li>
-            <li className={styles.navItem}>
-            <Link to="/denuncia" className={styles.navLink} onClick={closeMenu}>
-                Denunciá
-				</Link>
-				</li>
-			</ul>
-			</div>
+						<li> <Link to="/detalle" onClick={closeMenu}> Nosotros</Link> </li>
+						<li className={styles.hidden}>|</li>
+						<li> <Link to="/colaborar" onClick={closeMenu}> Colabor&aacute;</Link> </li>
+						<li className={styles.hidden} >|</li>
+						<li> <Link to="/adoptar"  onClick={closeMenu}> Adopt&aacute;</Link> </li>
+						<li className={styles.hidden}>|</li>
+						<li> <Link to="/voluntario"  onClick={closeMenu}> Voluntariado</Link> </li>
+						<li className={styles.hidden}>|</li>
+						<li> <Link to="/proyectos"  onClick={closeMenu}> Proyectos</Link> </li>
+						<li className={styles.hidden}> |</li>
+						<li> <Link to="/contactanos"  onClick={closeMenu}> Contactanos</Link> </li>
+				</ul>
 		</nav>
+	
+		
+</header>
 	);
 };
 

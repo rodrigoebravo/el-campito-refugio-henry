@@ -10,7 +10,8 @@ import {
     CLEAR_ALL_DOGS,
     FILTER_DOGS_BY_GENDER,
     FILTER_DOGS_BY_AGE,
-    FILTER_DOGS_BY_SIZE
+    FILTER_DOGS_BY_SIZE,
+    GET_PRESS
 } from '../actions/types'
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
     detailsDogs: [],
     allUsers: [],
     allDogs: [],
+    press:[],
     responseCloudinary: ""    
 
 }
@@ -121,6 +123,11 @@ export default function rootReducer(state = initialState, action) {
                     dogs: dogsFilteredBySize
                 }
             }
+            case GET_PRESS:
+                return {
+                    ...state,
+                    press: action.payload
+                }
         default:
             return {
                 ...state

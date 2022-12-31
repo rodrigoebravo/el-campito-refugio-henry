@@ -1,68 +1,50 @@
 
 import { React } from "react";
-import style from "./QuieroSerVoluntario.module.css";
+import styles from "./QuieroSerVoluntario.module.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
+import { Link } from "react-router-dom";
+import imgVoluntarios from "../../img/img-voluntariado.png"
 
 const QuieroSerVoluntario = () => {
   return (
     <div>
       <Navbar />
-      <div className={style.div}>
-        <h1 className={style.h1Voluntario}>¡QUIERO SER VOLUNTARIO!</h1>
-        <h3>¡En El Campito hay mucho por hacer!</h3>
-        <p>
-          Para que puedas integrarte hemos creado un espacio formativo
-          permanente que nos ayude a potenciar la participación real y efectiva
-          de aquellos que deseen dejar de ser visitantes para convertirse en
-          voluntarios de nuestra ONG.
-          <br></br>Todos los años El Campito abre la inscripción para reclutar
-          voluntarios que posean un real compromiso para trabajar en las
-          distintas áreas de nuestro refugio: proveyendo compañía, estímulo y
-          ejercicio a nuestros Camperitos, brindando su trabajo en caniles,
-          enfermería, página web, redes sociales, foto/video, colectas,
-          reeducación y sociabilización, evaluando adoptantes, efectuando
-          traslados y rescates, trabajando en jornadas y asistiendo a colegios
-          para concientizar, dando la bienvenida y asistiendo a nuestros
-          visitantes.
+      <div className={styles.div}>
+        <h2 className={styles.h2Voluntario}>¡QUIERO SER VOLUNTARIO!</h2>
+        <p className={styles.pVoluntario}><span  className={styles.spanVoluntario}>¡En El Campito hay mucho por hacer!</span></p>
+        <p className={styles.pVoluntario}>Todos los años El Campito abre la inscripci&oacute;n para reclutar voluntarios que posean un real compromiso para trabajar en las distintas &aacute;reas de nuestro refugio  ¡Vos pod&eacute;s ser uno de ellos!
         </p>
-        <h3 className={style.h3Voluntario}>¡Vos podés ser uno de ellos!</h3>
-        <p>
-          Deberemos consensuar con cada voluntario su compromiso inicial, y
-          establecer acuerdos acerca de su disposición temporal,
-          responsabilidades y tareas sin dejar de exigir su cumplimiento.
-          <br></br>
-          No todos los que se anoten alcanzarán la categoría de voluntario, pues
-          se elegirán para tareas específicas y la cantidad de los mismos será
-          determinada por la naturaleza de las tareas a desarrollar. Les pedimos
-          que piensen muy cuidadosamente acerca de la posibilidad de dar su
-          tiempo antes de enviarnos su solicitud.
+          <p className={styles.pVoluntario}>No todos los que se anoten ser&aacute;n voluntarios, pues se elegir&aacute;n para tareas espec&iacute;ficas y la cantidad de los mismos ser&aacute; determinada por la naturaleza de esas tareas a desarrollar. 
         </p>
-        <p>Ser voluntario te permitirá:</p>
-        <ul className={style.ul}>
-          <li className={style.liVoluntario}>
+        <h3 className={styles.h3Voluntario}>¡Vos podés ser uno de ellos!</h3>
+       
+        <img src={imgVoluntarios}  alt="Voluntarios" className={styles.imgVoluntarios}/>
+        <p className={styles.pVoluntario}>Ser voluntario te permitir&aacute;:</p>
+        <ul className={styles.ul}>
+          <li className={styles.liVoluntario}>
             Desarrollar las habilidades existentes y obtener nuevos
             conocimientos.
           </li>
-          <li className={style.liVoluntario}>Conocer gente nueva.</li>
-          <li className={style.liVoluntario}>
+          <li className={styles.liVoluntario}>Conocer gente nueva.</li>
+          <li className={styles.liVoluntario}>
             Saber más sobre los que hacer y ser parte de un equipo.
           </li>
-          <li className={style.liVoluntario}>Divertirte.</li>
-          <li className={style.liVoluntario}>
+          <li className={styles.liVoluntario}>Divertirte.</li>
+          <li className={styles.liVoluntario}>
             Hacer algo a la vez desafiante y muy gratificante.
           </li>
-          <li className={style.liVoluntario}>
+          <li className={styles.liVoluntario}>
             Pasar tiempo de calidad con nuestros camperitos.
           </li>
         </ul>
         {/**aca iria una galeria con las fotos de los voluntarios */}
-        <div className={style.voluntarioContacto}>
-          <h3>Para anotarte, escribinos un mail contándonos sobre vos a</h3>
-          <button className={style.buttonVoluntario}>
-            institucional@versiusamosestemail
-          </button>
-          <h3>¡Te esperamos!</h3>
+        <div className={styles.voluntarioContacto}>
+        <p className={styles.pVoluntario}><span  className={styles.spanVoluntario}>Para sumarte a nuestra base de datos completa el siguiente formulario:</span></p>
+          <Link to="volunteerForm" className={styles.aVoluntario}>
+           Formulario
+          </Link>
+          <p className={styles.pVoluntario}><span  className={styles.spanVoluntario}>¡Te esperamos!</span></p>
         </div>
         <Footer />
       </div>

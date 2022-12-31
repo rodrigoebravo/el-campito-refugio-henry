@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 import style from "./CardsDogs.module.css";
 import Loading from "../Loading/Loading";
 import Filters from "../Filters/Filters";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
-export const CardsDogs = () => {
+ const CardsDogs = () => {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
 
@@ -51,10 +52,9 @@ export const CardsDogs = () => {
     return <Loading />;
   } else {
     return (
+      <div><Navbar/>
       <div className={style.divContainer}>
-        <Link to={"/"} className={style.btnBack}>
-          <ArrowBackIcon />
-        </Link>
+      
         <h2 className={style.h2}>Conocenos Nuestros Perritos</h2>
         <div>
           <Filters filterGender={filterGender} filterAge={filterAge} filterSize={filterSize}/>
@@ -83,6 +83,9 @@ export const CardsDogs = () => {
           currentPage={currentPage}
         />
       </div>
+      <Footer/>
+      </div>
     );
   }
 };
+export default CardsDogs;
