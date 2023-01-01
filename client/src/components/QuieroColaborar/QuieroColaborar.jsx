@@ -1,7 +1,7 @@
 import styles from './QuieroColaborar.module.css'
-import mercadoLibre from '../../img/logosPasarelas/mercado-pago.png'
-import cafecito from '../../img/logosPasarelas/cafecito.png'
-import paypal from '../../img/logosPasarelas/paypal.svg'
+import mercadoLibre from '../../assets/img/logosPasarelas/mercado-pago.png'
+import cafecito from '../../assets/img/logosPasarelas/cafecito.png'
+import paypal from '../../assets/img/logosPasarelas/paypal.svg'
 import Footer from '../Footer/Footer'
 import Navbar from '../NavBar/NavBar'
 const QuieroColaborar = () => {

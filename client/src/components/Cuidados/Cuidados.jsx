@@ -2,14 +2,14 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import styles from "./Cuidados.module.css"
-import imgVoluntario2 from "../../img/escolar/img-voluntarios2.jpg"
-import imgVoluntario3 from "../../img/escolar/img-voluntarios3.jpg"
-import imgVoluntario4 from "../../img/escolar/img-voluntarios4.jpg"
-import imgVoluntario5 from "../../img/escolar/img-voluntarios5.jpg"
-import imgVoluntario6 from "../../img/escolar/img-voluntarios6.jpg"
-import imgVoluntario7 from "../../img/escolar/img-voluntarios7.jpg"
-import imgVoluntario8 from "../../img/escolar/img-voluntarios8.jpg"
-import imgVoluntario9 from "../../img/escolar/img-voluntarios9.jpg"
+import imgVoluntario2 from "../../assets/img/escolar/img-voluntarios2.jpg"
+import imgVoluntario3 from "../../assets/img/escolar/img-voluntarios3.jpg"
+import imgVoluntario4 from "../../assets/img/escolar/img-voluntarios4.jpg"
+import imgVoluntario5 from "../../assets/img/escolar/img-voluntarios5.jpg"
+import imgVoluntario6 from "../../assets/img/escolar/img-voluntarios6.jpg"
+import imgVoluntario7 from "../../assets/img/escolar/img-voluntarios7.jpg"
+import imgVoluntario8 from "../../assets/img/escolar/img-voluntarios8.jpg"
+import imgVoluntario9 from "../../assets/img/escolar/img-voluntarios9.jpg"
 const Cuidados = () => {
   return (
     <div>

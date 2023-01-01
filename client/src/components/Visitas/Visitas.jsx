@@ -2,14 +2,14 @@ import { React } from "react";
 import styles from "./Visitas.module.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
-import correa from "../../img/visitas/correa.png"
-import repelente from "../../img/visitas/repelente.png"
-import protector from "../../img/visitas/protector.png"
-import abrigo from  "../../img/visitas/abrigo.png"
-import comida from  "../../img/visitas/comida.png"
-import auto from  "../../img/visitas/auto.png"
-import combi from  "../../img/visitas/colectivo.png"
-import tren from  "../../img/visitas/tren.png"
+import correa from "../../assets/img/visitas/correa.png"
+import repelente from "../../assets/img/visitas/repelente.png"
+import protector from "../../assets/img/visitas/protector.png"
+import abrigo from  "../../assets/img/visitas/abrigo.png"
+import comida from  "../../assets/img/visitas/comida.png"
+import auto from  "../../assets/img/visitas/auto.png"
+import combi from  "../../assets/img/visitas/colectivo.png"
+import tren from  "../../assets/img/visitas/tren.png"
 
 const Visitas = () => {
   return (

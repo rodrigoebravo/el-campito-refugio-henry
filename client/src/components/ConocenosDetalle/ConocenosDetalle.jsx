@@ -2,7 +2,7 @@ import { React } from "react";
 import styles from "./ConocenosDetalle.module.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
-import imgDetalle from '../../img/img-nosotros.jpg'
+import imgDetalle from '../../assets/img/img-nosotros.jpg'
 
 const ConocenosDetalle = () => {
   return (

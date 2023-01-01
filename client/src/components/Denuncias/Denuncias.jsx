@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import imgDenuncia from "../../img/img-denuncias.jpg"
+import imgDenuncia from "../../assets/img/img-denuncias.jpg"
 import styles from "./Denuncias.module.css"
 const Denuncias = () => {
   return (

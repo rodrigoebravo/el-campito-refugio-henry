@@ -1,0 +1,33 @@
+.cardSize{ 
+  width: 90%;
+  border: 3px solid #FCA24F;;
+  border-radius: 20px;
+  padding: 20px;
+  margin:20px;
+  display: flex;
+}
+
+.pCardPress{
+  font-size: 1em;
+  font-family: 'Seravek', 'sans-serif';
+  letter-spacing:normal
+}
+
+.h3CardPress{
+  font-family: 'Seravek', 'sans-serif';
+  color:#FCA24F;
+  text-transform: uppercase;
+}
+.imgLogoTele{
+  width: 100px;
+  height: auto;
+}
+
+.prensaTeleContenedor{
+  padding: 5px;
+  margin:5px;
+
+}
+@media (max-width: 800px) {
+  
+}

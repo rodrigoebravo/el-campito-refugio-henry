@@ -24,7 +24,10 @@ import ProyectoEscolar from "./components/Proyectos/ProyectoEscolar.jsx"
 import Cuidados from "./components/Cuidados/Cuidados.jsx"
 import Denuncias from "./components/Denuncias/Denuncias.jsx"
 import Prensa from "./components/Prensa/Prensa.jsx"
-import PrensaGrafica from "./components/Prensa/PrensaGrafica";
+import PrensaGrafica from "./components/Prensa/Grafica/PrensaGrafica.jsx"
+import PrensaTelevision from "./components/Prensa/Television/PrensaTelevision";
+import PrensaRadio from "./components/Prensa/Radio/PrensaRadio.jsx";
+import PrensaAmigos from "./components/Prensa/ArtistasAmigos/ArtistasAmigos.jsx";
 
 
 function App() {
@@ -50,6 +53,9 @@ function App() {
       <Route exact path={"/denuncias"} component={Denuncias} />
       <Route exact path={"/prensa"} component={Prensa} />
       <Route exact path={"/prensa/grafica"} component={PrensaGrafica} />
+      <Route exact path={"/prensa/television"} component={PrensaTelevision} />
+      <Route exact path={"/prensa/radio"} component={PrensaRadio} />
+      <Route exact path={"/prensa/amigos"} component={PrensaAmigos} />
 
       {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
       <Route exact path={'/admin/Usuarios'} component={AdminUsers} />

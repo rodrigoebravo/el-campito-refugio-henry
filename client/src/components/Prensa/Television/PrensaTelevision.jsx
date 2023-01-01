@@ -1,33 +1,31 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPress} from "../../redux/actions/action";
-import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
-import CardPrensaGrafica from "./CardPrensaGrafica";
-import styles from "./PrensaGrafica.module.css"
 
+import NavBar from "../../NavBar/NavBar";
+import Footer from "../../Footer/Footer";
+
+import styles from "./PrensaTelevision.module.css"
+import press from "./prensa.json"
+import CardPrensaTelevision from "./CardPrensaTelevision";
 
 const PrensaGrafica = () => {
-  const dispatch = useDispatch();
-  const press = useSelector((state) => state.press);
-  
-  useEffect(() => {
-   
-    dispatch(getPress());
-  }, [dispatch]);
+
+  //aca va un useefect
+
   return(
     <div>
      <NavBar/>
+     <h2 className={styles.h2PrensaTele}>Prensa Television</h2>
      <div className={styles.card}>
      {press?.map((el) => {
             return (
              
                 
-                  <CardPrensaGrafica
+                  <CardPrensaTelevision
                     key={el._id}
-                    img={el.img}
+                    link={el.link}
                     media={el.media}
-                    date={el.date}
+                    logo={el.logo}
                     title={el.title}
                     description={el.description}
                   />

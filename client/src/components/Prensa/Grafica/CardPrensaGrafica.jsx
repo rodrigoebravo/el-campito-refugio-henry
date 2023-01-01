@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./CardPrensaGrafica.module.css"
 import { FcLeave, FcNews } from  "react-icons/fc";
 
-const CardPrensaGrafica = ({ img, media, date, title, description }) => {
+const CardPrensaGrafica = ({ img, media, date, title, description, link }) => {
   
   return (
     <div className={styles.cardSize} >
     
-     <h3 className={styles.h3CardPress}>{title}</h3>
+    <a href={link} className={styles.aPrensa}> <h3 className={styles.h3CardPress}>{title}</h3></a>
      <img className={styles.imgCardPress} src={img}/>
      <p className={styles.pCardPress}>{description}</p>
      <div>

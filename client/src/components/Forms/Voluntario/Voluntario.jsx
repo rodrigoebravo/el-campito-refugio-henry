@@ -2,14 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux"
 import styles from "./Voluntario.module.css"
-<<<<<<< HEAD
 import Navbar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer"
-=======
-import Footer from "../../Footer/Footer" 
-import { postVolunteer } from "../../../redux/actions/action"
->>>>>>> daa9054ab53925f082f6d120bc35b37e409da643
-
+import {postVolunteer} from "../../../redux/actions/action"
 
 const Voluntario = (props) =>{
 
@@ -49,11 +44,7 @@ const Voluntario = (props) =>{
         <div>
         <Navbar/>
         <div className={styles.mainContainer}>
-<<<<<<< HEAD
             <h2 className={styles.h3formVoluntarios}>Convocatoria a Voluntarios</h2>
-=======
-            <h2>Solicitud para Voluntarios</h2>
->>>>>>> daa9054ab53925f082f6d120bc35b37e409da643
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 
                 <div className = {styles.item}>

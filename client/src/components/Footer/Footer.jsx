@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css"
-import logoFooter from "../../img/icons/logoFooter.svg"
+import logoFooter from "../../assets/img/icons/logoFooter.svg"
+
 
 import { TiLocation  } from "react-icons/ti";
 

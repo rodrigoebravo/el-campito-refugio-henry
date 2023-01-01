@@ -4,7 +4,7 @@ import styles from "./QuieroSerVoluntario.module.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
-import imgVoluntarios from "../../img/img-voluntariado.png"
+import imgVoluntarios from "../../assets/img/img-voluntariado.png"
 
 const QuieroSerVoluntario = () => {
   return (

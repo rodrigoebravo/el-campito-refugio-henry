@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import grafica from "../../img/prensa/grafica.png"
-import radio from "../../img/prensa/radio.png"
-import television from "../../img/prensa/television.png"
-import artistas from "../../img/prensa/artistas.png"
+import grafica from "../../assets/img/prensa/grafica.png"
+import radio from "../../assets/img/prensa/radio.png"
+import television from "../../assets/img/prensa/television.png"
+import artistas from "../../assets/img/prensa/artistas.png"
 import styles from "./Prensa.module.css"
 import { Link } from "react-router-dom";
 const Prensa = () => {
@@ -44,31 +44,31 @@ const Prensa = () => {
             </section>
             <section>
                 <div className={styles.prensaContainer}>
-                    <Link to ="prensa/grafica">
+                    <Link to ="/prensa/grafica">
                         <div className={styles.prensaLinks}>
                             <img src={grafica} alt="Gr&aacute;fica" className={styles.imgPrensa}/> 
                             <p className={styles.pLightOrange}><span>Gr&aacute;fica</span></p>
                            
                         </div>
                     </Link>
-                    <a href="prensa-television.html">
+                    <Link to ="/prensa/television">
                     <div className={styles.prensaLinks}>
                             <img src={television} alt="Televisi&oacute;n"className={styles.imgPrensa}/>
                             <p  className={styles.pLightOrange}><span>Televisi&oacute;n</span></p>
                         </div>
-                    </a>
-                    <a href="prensa-radio.html">
+                    </Link>
+                    <Link to ="/prensa/radio">
                     <div className={styles.prensaLinks}>
                             <img src={radio} alt="Radio" className={styles.imgPrensa}/>
                             <p  className={styles.pLightOrange}><span>Radio</span></p>
                         </div>
-                    </a>
-                    <a href="prensa-artistas.html">
+                    </Link>
+                    <Link to ="/prensa/amigos">
                     <div className={styles.prensaLinks}>
                             <img src={artistas} alt="Artistas amigos" className={styles.imgPrensa}/>
                             <p className={styles.pLightOrange}><span>Artistas amigos</span></p>
                         </div>
-                    </a>
+                    </Link>
                 </div>
             </section>
             <section className={styles.prensaButtonContainer}>

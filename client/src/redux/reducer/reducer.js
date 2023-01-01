@@ -11,13 +11,7 @@ import {
     FILTER_DOGS_BY_GENDER,
     FILTER_DOGS_BY_AGE,
     FILTER_DOGS_BY_SIZE,
-<<<<<<< HEAD
     GET_PRESS
-=======
-    POST_VOLUNTEER,
-    POST_ADOPTION,
-    POST_CONTRIBUTION
->>>>>>> daa9054ab53925f082f6d120bc35b37e409da643
 } from '../actions/types'
 
 const initialState = {
@@ -26,15 +20,8 @@ const initialState = {
     detailsDogs: [],
     allUsers: [],
     allDogs: [],
-<<<<<<< HEAD
     press:[],
     responseCloudinary: ""    
-=======
-    responseCloudinary: "",
-    volunteer: {},
-    adoption: {},
-    contribution: {}
->>>>>>> daa9054ab53925f082f6d120bc35b37e409da643
 
 }
 
@@ -136,30 +123,11 @@ export default function rootReducer(state = initialState, action) {
                     dogs: dogsFilteredBySize
                 }
             }
-<<<<<<< HEAD
             case GET_PRESS:
                 return {
                     ...state,
                     press: action.payload
                 }
-=======
-        case POST_VOLUNTEER:
-            return {
-                ...state,
-                volunteer: action.payload
-            }
-        case POST_ADOPTION:
-            return {
-                ...state,
-                adoption: action.payload
-            }
-        case POST_CONTRIBUTION:
-            return {
-                ...state,
-                contribution: action.payload
-            }
-
->>>>>>> daa9054ab53925f082f6d120bc35b37e409da643
         default:
             return {
                 ...state

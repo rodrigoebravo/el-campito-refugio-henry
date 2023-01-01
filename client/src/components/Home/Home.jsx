@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
-import homeimg from '../../img/homeimg.jpg'
+import homeimg from '../../assets/img/homeimg.jpg'
 import styles from "./Home.module.css";
 import Footer from "../Footer/Footer";
 

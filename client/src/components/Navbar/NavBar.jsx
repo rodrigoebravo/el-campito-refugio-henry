@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 
 import styles from "./NavBar.module.css";
-import Logo from "../../img/LogoCampitoColor-01 1.svg";
+import Logo from "../../assets/img/LogoCampitoColor-01.svg"
+//import Logo from "../../img/LogoCampitoColor-01 1.svg";
 
 import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
