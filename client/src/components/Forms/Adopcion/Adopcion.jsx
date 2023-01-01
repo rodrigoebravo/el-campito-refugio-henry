@@ -6,30 +6,36 @@ import Footer from "../../Footer/Footer"
 import { postAdoption } from "../../../redux/actions/action"
 
 const Adopcion = (props) =>{
+
+    // const user = JSON.parse(localStorage.getItem('user'));
+    const user = {};
+
+    const idDog = props.match.params._id;
     
     const [storage, setStorage] = React.useState({ 
-        data: { idDog: "63a73695b6fac7bd5efacdb2",
             name:"Tu respuesta", email:"Tu respuesta", 
-            phone:"Tu respuesta", birthday:"Tu respuesta" }
-    });
-
-    // const st = JSON.parse(localStorage.getItem('user'));
-    
-    
-    React.useEffect(()=>{    
-        console.log(props);
-        const obj =
-            ( props && props.hasOwnProperty('data') ) ? 
-            props : 
-            { data: {idDog: "63a73695b6fac7bd5efacdb2", name:"Tu respuesta", email:"Tu respuesta", phone:"Tu respuesta", birthday:"Tu respuesta"}}
-        setStorage(obj);    
-    },[props]);
+            phone:"Tu respuesta", birthday:"Tu respuesta" 
+    });           
+        
+    // React.useEffect(()=>{            
+    // },[user]);
     
     console.log(storage);
     
     const { register, handleSubmit, formState:{ errors } } = useForm({});    
 
     const dispatch = useDispatch();
+
+    // function handleChange(e) {
+    //     setStorage({
+    //       ...storage,
+    //       [e.target.name]: e.target.value,
+    //     });
+    // }
+    
+    // if (user && user.data.info.name !== "") setStorage(user.data.info); 
+    // const obj = {  name:"Tu respuesta", email:"Tu respuesta", phone:"Tu respuesta", birthday:"Tu respuesta" }
+    // setStorage(obj);    
 
     const onSubmit = (data) => {
         data.people = parseInt(data.people);
@@ -43,13 +49,13 @@ const Adopcion = (props) =>{
 
     return(
         <div className={styles.mainContainer}>
-            <h2>Formulario de Adopción</h2>
+            <h2 className={styles.h3form}>Formulario de Adopción</h2>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 
                 <div className = {styles.item}>
                     <label className={styles.label}>ID del Camperito</label>
                     <input 
-                        value={storage.data.idDog}
+                        value={idDog}  
                         type="text"      className={styles.input} 
                         {...register('idDog', {required: true })}
                     />
@@ -59,7 +65,7 @@ const Adopcion = (props) =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Nombre y Apellido</label>
                     <input 
-                        value={storage.data.name === "Tu respuesta"? undefined : storage.data.name}
+                        value={storage.name === "Tu respuesta"? undefined : storage.name}
                         type="text"      className={styles.input}  placeholder="Tu respuesta"
                         {...register('name', {required: true })}
                     />
@@ -69,7 +75,7 @@ const Adopcion = (props) =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Fecha de nacimiento</label>
                     <input 
-                        value={storage.data.birthday === "Tu respuesta"? undefined : storage.data.birthday}
+                        value={storage.birthday === "Tu respuesta"? undefined : storage.birthday}
                         type="date" className={styles.inputDate} min="1923-01-01"
                         {...register('birthday', {required: true})}/>
                     {errors.date?.type === 'required' && <p>Fecha de nacimiento requerida</p>}
@@ -78,7 +84,7 @@ const Adopcion = (props) =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Correo</label>
                     <input 
-                        value={storage.data.email === "Tu respuesta"? undefined : storage.data.email}
+                        value={storage.email === "Tu respuesta"? undefined : storage.email}
                         type="text" className={styles.input}  placeholder="Tu respuesta"
                         {...register('email', {
                             required: true,
@@ -92,7 +98,7 @@ const Adopcion = (props) =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Teléfono</label>
                     <input 
-                        value={storage.data.phone === "Tu respuesta"? undefined : storage.data.phone}
+                        value={storage.phone === "Tu respuesta"? undefined : storage.phone}
                         type="tel" className={styles.input} 
                         {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />

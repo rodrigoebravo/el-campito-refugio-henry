@@ -2,12 +2,12 @@
 import { React } from "react";
 import style from "./QuieroSerVoluntario.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+// import Navbar from "../NavBar/NavBar";
 
 const QuieroSerVoluntario = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={style.div}>
         <h1 className={style.h1Voluntario}>¡QUIERO SER VOLUNTARIO!</h1>
         <h3>¡En El Campito hay mucho por hacer!</h3>

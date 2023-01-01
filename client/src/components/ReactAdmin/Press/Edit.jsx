@@ -8,6 +8,7 @@ import {
   TextField,
   ImageInput,
   ImageField,
+  SelectInput
 } from "react-admin";
 
 import { Grid } from "@mui/material";
@@ -24,6 +25,12 @@ const PressEdit = (props) => {
         <Grid container spacing={3}>
           <Grid item xs={9}>
             <TextField
+              source="media"
+              label={false}
+              sx={{ fontSize: "h3.fontSize", fontWeight: "light" }}
+            />
+            <br></br>
+            <TextField
               source="title"
               label={false}
               sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
@@ -34,11 +41,16 @@ const PressEdit = (props) => {
               source="date"
               sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
             />
+            <br></br>
+            <TextField
+              label={false}
+              source="type"
+              sx={{ fontSize: "h6.fontSize", fontWeight: "light" }}
+            />
           </Grid>
           <Grid item xs={3} style={{ textAlign: "center" }}>
             <ImageField
-              source="img"
-              title={false}
+              source="img.src"
               sx={{
                 "& img": {
                   maxWidth: 1000,
@@ -53,7 +65,23 @@ const PressEdit = (props) => {
       </SimpleShowLayout>
       <TabbedForm>
         <FormTab label="Medio">
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
+            <Grid item xs={3}>
+              <TextInput source="media" label="Medio" fullWidth />
+            </Grid>
+            <Grid item xs={4}>
+              <SelectInput
+                source="type"
+                label="Soporte"
+                choices={[
+                  { id: "Prensa Gráfica", name: "Prensa Gráfica" },
+                  { id: "Televisión / Audiovisual", name: "Televisión / Audiovisual" },
+                  { id: "Radio / Audio", name: "Radio / Audio" },
+                  { id: "Artistas Amigos", name: "Artistas Amigos" },
+                ]}
+                fullWidth
+              />
+            </Grid>
             <Grid item xs={3}>
               <DateInput source="date" label="Fecha" fullWidth />
             </Grid>
@@ -78,7 +106,9 @@ const PressEdit = (props) => {
           </Grid>
         </FormTab>
         <FormTab label="Multimedia">
-          <ImageInput source="img" label={false}></ImageInput>
+          <ImageInput source="img" label="Fótografía" >
+              <ImageField source="src" title="title" />
+          </ImageInput>
         </FormTab>
       </TabbedForm>
     </Edit>

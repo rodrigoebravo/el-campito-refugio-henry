@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "./Contacto.module.css";
-import Footer from "../../Footer/Footer"
 
 const Contacto = () =>{
     
@@ -14,8 +13,6 @@ const Contacto = () =>{
     return(
         <div className={styles.mainContainer}>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-
-                 
                 <div className = {styles.item}>
                     <label className={styles.label}>Nombre y Apellido</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
@@ -78,7 +75,7 @@ const Contacto = () =>{
 
                 <input type="submit" value="Enviar" className = {styles.submit}/>
             </form>
-            <Footer /> 
+            
         </div>
     )
 }

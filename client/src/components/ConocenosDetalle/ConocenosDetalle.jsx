@@ -1,12 +1,12 @@
 import { React } from "react";
 import style from "./ConocenosDetalle.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+// import Navbar from "../NavBar/NavBar";
 
 const ConocenosDetalle = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className={style.div}>
         <h1 className={style.h1}>Conocenos en detalle</h1>

@@ -46,7 +46,8 @@ const DogsEdit = (props) => {
           </Grid>
           <Grid item xs={3} style={{ textAlign: "center" }}>
             <ImageField
-              source="images[0]"
+              source="images"
+              src="src"
               title={false}
               sx={{
                 "& img": {

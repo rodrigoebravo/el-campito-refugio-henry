@@ -2,11 +2,11 @@ import style from './QuieroColaborar.module.css'
 // import mercadoLibre from '../../img/logosPasarelas/mercadolibre.svg'
 // import dineroMail from '../../img/logosPasarelas/dineromail.svg'
 import Footer from '../Footer/Footer'
-import Navbar from '../NavBar/NavBar'
+// import Navbar from '../NavBar/NavBar'
 const QuieroColaborar = () => {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
 
     <div className={style.div}>
       

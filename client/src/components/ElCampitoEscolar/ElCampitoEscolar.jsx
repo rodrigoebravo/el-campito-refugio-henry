@@ -1,11 +1,11 @@
 import style from "./ElCampitoEscolar.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+// import Navbar from "../NavBar/NavBar";
 
 const ElCampitoEscolar = () => {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className={style.campitoContenedor}>
         <h1 className={style.h1Campito}>El campito escolar</h1>
         <p>
