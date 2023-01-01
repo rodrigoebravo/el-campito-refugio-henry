@@ -9,12 +9,13 @@
   width: 1em;
 }
 
-.h1Voluntario {
-  font-family: "TrashHand", sans-serif;
+.h2Voluntario {
+  font-family: 'Trashhand';
+  font-size: 2.8em;
   color: #4fa7c1;
   font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
+  font-weight: bold;
+  margin-top: 20px;
   line-height: 51px;
 }
 .ul{
@@ -22,9 +23,16 @@
 }
 .h3Voluntario {
   color: #4fa7c1;
+  font-size: 1.3em;
+  text-transform: uppercase; 
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
-.buttonVoluntario {
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+.aVoluntario {
+  font-family: 'Seravek', Calibri, Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -37,6 +45,7 @@
   padding: 15px;
   text-align: center;
   max-width: fit-content;
+  text-decoration: none;
 }
 .voluntarioContacto {
   display: flex;
@@ -45,8 +54,26 @@
   justify-content: center;
   margin-top: 3rem;
 }
-
-@media (max-width: 600px) {
+.spanVoluntario{
+  font-family: 'Seravek', 'sans-serif';
+  font-weight: bold;
+  font-size: 1em;
+}
+.pVoluntario{
+  display: block;
+  margin-top: 20px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 1em;
+  font-weight: 300;
+}
+.imgVoluntarios{
+  width:100%;
+  height:auto
+}
+@media (max-width: 800px) {
   .div {
     margin: 3rem;
   }

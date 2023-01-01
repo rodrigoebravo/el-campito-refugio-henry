@@ -11,7 +11,8 @@ import {
   FILTER_DOGS_BY_SIZE,
   POST_VOLUNTEER,
   POST_ADOPTION,
-  POST_CONTRIBUTION
+  POST_CONTRIBUTION,
+  GET_PRESS
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
@@ -150,4 +151,16 @@ export function postContribution (data) {
   }
 }
 
-
+export const getPress = () => {
+  return async function (dispatch) {
+    try {
+      let json = await axios("/api/press")
+      return dispatch({
+        type: GET_PRESS,
+        payload: json.data
+      })
+    } catch {
+      console.log("error en traer press")
+    }
+  }
+}

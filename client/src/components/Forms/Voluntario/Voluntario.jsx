@@ -2,9 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux"
 import styles from "./Voluntario.module.css"
-import Footer from "../../Footer/Footer" 
-import { postVolunteer } from "../../../redux/actions/action"
-
+import Navbar from "../../NavBar/NavBar";
+import Footer from "../../Footer/Footer"
+import {postVolunteer} from "../../../redux/actions/action"
 
 const Voluntario = (props) =>{
 
@@ -41,8 +41,10 @@ const Voluntario = (props) =>{
     }
 
     return(
+        <div>
+        <Navbar/>
         <div className={styles.mainContainer}>
-            <h2>Solicitud para Voluntarios</h2>
+            <h2 className={styles.h3formVoluntarios}>Convocatoria a Voluntarios</h2>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 
                 <div className = {styles.item}>
@@ -211,7 +213,9 @@ const Voluntario = (props) =>{
 
                 <input type="submit" value="Enviar" className = {styles.submit}/>
             </form>   
-            <Footer />     
+                
+        </div>
+         <Footer />
         </div>
     )
 }
