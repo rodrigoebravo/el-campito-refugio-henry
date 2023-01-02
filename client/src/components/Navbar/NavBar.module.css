@@ -14,13 +14,7 @@ header {
           align-items: center;
   text-align: center;
 }
-.navLink{
-  align-items: center;
-}
-.userNav{
-  width: 4rem;
-  border-radius: 100%;
-}
+
 nav {
   width: 70%;
   margin-top: 15px;
@@ -98,7 +92,7 @@ nav{
     display: flex;
     flex-direction: row;
     align-content: space-around;
-    background-color: aqua;
+   
    
   }
   .hidden {
