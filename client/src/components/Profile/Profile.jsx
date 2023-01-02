@@ -10,7 +10,7 @@ import Registro from "../ProfileAuth0/RegisterGoogle/Registro";
 
 const Profile = () => {
   const [items, setItems] = useState([]);
-  const { user, isLoading,logout } = useAuth0();
+  const { user, isLoading, logout } = useAuth0();
 
   const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -30,23 +30,12 @@ const Profile = () => {
     window.location.reload();
   }
 
- 
-
   if (isLoading) {
     return <Registro />;
   } else if (items.length === 0 && user) {
     return <Registro />;
-    // let registerUsers = {
-    //   email: user.email,
-    //   pass: user.name,
-    //   name:user.name,
-    //   image:user.picture
-    // };
-    // setTimeout()
-    // logout()
-    // return(<button onClick={registerUserGoogle(registerUsers)}>x</button>)
+
   } else {
-  
     return (
       <div className={styles.divUserData}>
         {items.data?.info ? (
@@ -79,13 +68,15 @@ const Profile = () => {
               )}
               <h2>Email: {items.data?.info.email}</h2>
               <h2>Tu rol de usuario es: {items.data?.info.roles}</h2>
-              { items.data?.info.roles.includes("admin") ||  items.data?.info.roles.includes("super")? (
+              {items.data?.info.roles.includes("admin") ||
+              items.data?.info.roles.includes("super") ? (
                 <h4>Puedes acceder al Panel de administrador</h4>
               ) : (
                 <h4>Tu rol no te permite realizar ciertas acciones</h4>
               )}
               <div className={styles.divButtons}>
-                {items.data?.info.roles.includes("admin") ||  items.data?.info.roles.includes("superAdmin") ? (
+                {items.data?.info.roles.includes("admin") ||
+                items.data?.info.roles.includes("superAdmin") ? (
                   <Link to="/admin" className={styles.ButtonDashboard}>
                     Panel Admin
                   </Link>
@@ -98,6 +89,7 @@ const Profile = () => {
                 </Link>
 
                 <Button
+                  id="ButtonDashboard2"
                   variant="contained"
                   color="error"
                   onClick={() => {
@@ -119,21 +111,21 @@ const Profile = () => {
               {buttonClicked ? (
                 <>
                   <RegisterForm />
-           
-                    <h2>
-                      Si ya tienes cuenta
-                      <span onClick={handleButtonClick} className={styles.span}>
-                        Inicia Sesión
-                      </span>
-                    </h2>
-                    <Link to="/" className={styles.ButtonDashboard2}>
-                  Home
-                </Link>
+
+                  <h2>
+                    Si ya tienes cuenta
+                    <span onClick={handleButtonClick} className={styles.span}>
+                      Inicia Sesión
+                    </span>
+                  </h2>
+                  <Link to="/" className={styles.ButtonDashboard2}>
+                    Home
+                  </Link>
                 </>
               ) : (
                 <>
                   <LoginForm />
-                  
+
                   <h2>
                     Si no tienes cuenta
                     <span onClick={handleButtonClick} className={styles.span}>
@@ -141,8 +133,8 @@ const Profile = () => {
                     </span>
                   </h2>
                   <Link to="/" className={styles.ButtonDashboard2}>
-                  Home
-                </Link>
+                    Home
+                  </Link>
                 </>
               )}
             </div>
