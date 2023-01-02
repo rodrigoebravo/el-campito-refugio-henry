@@ -35,6 +35,9 @@ import SsidChartIcon from "@mui/icons-material/SsidChart";
 import Stats from "./Stats/Stats";
 
 const AdminIndex = () => {
+  
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user)
   return (
     <Admin dataProvider={dataProvider}>
       <Resource

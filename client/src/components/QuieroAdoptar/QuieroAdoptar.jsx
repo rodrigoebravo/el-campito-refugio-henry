@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const QuieroAdoptar = () => {
   return (
     
-    <div>
+    <div className={styles.container}>
       <Navbar />
 
       <div className={styles.mainAdoptar} >

@@ -1,36 +1,34 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import './App.css';
-import ConocenosDetalle from './components/ConocenosDetalle/ConocenosDetalle'
-import QuieroAdoptar from './components/QuieroAdoptar/QuieroAdoptar'
-import QuieroColaborar from './components/QuieroColaborar/QuieroColaborar'
-import QuieroSerVoluntario from './components/QuieroSerVoluntario/QuieroSerVoluntario'
-import Visitas from './components/Visitas/Visitas'
+import "./App.css";
+import ConocenosDetalle from "./components/ConocenosDetalle/ConocenosDetalle";
+import QuieroAdoptar from "./components/QuieroAdoptar/QuieroAdoptar";
+import QuieroColaborar from "./components/QuieroColaborar/QuieroColaborar";
+import QuieroSerVoluntario from "./components/QuieroSerVoluntario/QuieroSerVoluntario";
+import Visitas from "./components/Visitas/Visitas";
 import FormPostDogs from "./components/FormPostDogs/FormPostDogs";
 import Home from "./components/Home/Home";
-// import Dashboard from "./components/Dashboard/Dashboard";
-// import AdminDogs from "./components/Dashboard/AdminDogs/AdminDogs";
-// import { AdminUsers } from "./components/Dashboard/AdminUsers/AdminUsers";
-// import { AdminDogsDetails } from "./components/Dashboard/AdminDogsdDetails/AdminDogsDetails";
 import AdminIndex from "./components/ReactAdmin/index";
-import  CardsDogs  from "./components/CardsDogs/CardsDogs";
+import CardsDogs from "./components/CardsDogs/CardsDogs";
 import CardDogDetails from "./components/CardDogDetails/CardDogDetails";
 import Contactanos from "./components/Contactanos/Contactanos";
 import Voluntario from "./components/Forms/Voluntario/Voluntario.jsx";
 import Adopcion from "./components/Forms/Adopcion/Adopcion.jsx";
 import Contacto from "./components/Forms/Contacto/Contacto";
-import Proyectos from "./components/Proyectos/Proyectos.jsx"
-import ProyectoEscolar from "./components/Proyectos/ProyectoEscolar.jsx"
-import Cuidados from "./components/Cuidados/Cuidados.jsx"
-import Denuncias from "./components/Denuncias/Denuncias.jsx"
-import Prensa from "./components/Prensa/Prensa.jsx"
-import PrensaGrafica from "./components/Prensa/Grafica/PrensaGrafica.jsx"
+import Proyectos from "./components/Proyectos/Proyectos.jsx";
+import ProyectoEscolar from "./components/Proyectos/ProyectoEscolar.jsx";
+import Cuidados from "./components/Cuidados/Cuidados.jsx";
+import Denuncias from "./components/Denuncias/Denuncias.jsx";
+import Prensa from "./components/Prensa/Prensa.jsx";
+import PrensaGrafica from "./components/Prensa/Grafica/PrensaGrafica.jsx";
 import PrensaTelevision from "./components/Prensa/Television/PrensaTelevision";
 import PrensaRadio from "./components/Prensa/Radio/PrensaRadio.jsx";
 import PrensaAmigos from "./components/Prensa/ArtistasAmigos/ArtistasAmigos.jsx";
-
+import Profile from "./components/Profile/Profile";
+import NoAccess from "./components/NoAccess/NoAccess";
 
 function App() {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <BrowserRouter>
       <Route exact path={"/form"} component={FormPostDogs} />
@@ -41,7 +39,6 @@ function App() {
       <Route exact path={"/voluntario"} component={QuieroSerVoluntario} />
       <Route exact path={"/visitas"} component={Visitas} />
       <Route exact path={"/contactanos"} component={Contactanos} />
-      <Route exact path={"/admin"} component={AdminIndex} />
       <Route exact path={"/adoptar/perros"} component={CardsDogs} />
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
       <Route exact path={"/volunteerForm"} component={Voluntario} />
@@ -56,12 +53,15 @@ function App() {
       <Route exact path={"/prensa/television"} component={PrensaTelevision} />
       <Route exact path={"/prensa/radio"} component={PrensaRadio} />
       <Route exact path={"/prensa/amigos"} component={PrensaAmigos} />
+      <Route exact path={"/profile"} component={Profile} />
 
-      {/* <Route exact path={'/admin/Perros'} component={AdminDogs} />
-      <Route exact path={'/admin/Usuarios'} component={AdminUsers} />
-      <Route exact path={'/admin/Perros/:id'} component={AdminDogsDetails} /> */}
+      {(user && user.data?.info.roles.includes("admin")) ||
+      (user && user.data?.info.roles.includes("superAdmin")) ? (
+        <Route exact path={"/admin"} component={AdminIndex} />
+      ) : (
+        <Route exact path={"/admin"} component={NoAccess} />
+      )}
     </BrowserRouter>
-    
   );
 }
 

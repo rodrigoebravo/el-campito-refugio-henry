@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import styles from "./NavBar.module.css";
+import user from "../../assets/img/icons/icon_user.png"
 import Logo from "../../assets/img/LogoCampitoColor-01.svg"
 //import Logo from "../../img/LogoCampitoColor-01 1.svg";
 
@@ -15,6 +16,7 @@ const Navbar = () => {
 		setOpen(!open);
 	};
 
+	
 	const closeMenu = () => {
 		setOpen(false);
 	};
@@ -39,6 +41,11 @@ const Navbar = () => {
 						<li> <Link to="/proyectos"  onClick={closeMenu}> Proyectos</Link> </li>
 						<li className={styles.hidden}> |</li>
 						<li> <Link to="/contactanos"  onClick={closeMenu}> Contactanos</Link> </li>
+						<li className={styles.hidden}> |</li>
+						<li className={styles.navItem}><Link to="/profile" className={styles.navLink} onClick={closeMenu}> Perfil
+						{/* <img src={user} alt="user" className={styles.userNav}></img> */}
+						
+						</Link> </li>
 				</ul>
 		</nav>
 	

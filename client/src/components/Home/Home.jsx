@@ -4,10 +4,15 @@ import NavBar from "../NavBar/NavBar";
 import homeimg from '../../assets/img/homeimg.jpg'
 import styles from "./Home.module.css";
 import Footer from "../Footer/Footer";
+import { useAuth0 } from "@auth0/auth0-react";
+import Modal from "../Modal/Modal";
 
 const Home = () => {
+    const { user } = useAuth0();
   return (
-    <div>
+    <div className={styles.container}>
+        {console.log(user)}
+        {user ? <Modal /> : <></>}
       <NavBar />
       <main className={styles.home}>
         <section>

@@ -1,3 +1,6 @@
+.container{
+  padding: 50px;
+}
 .mainAdoptar{
   display: flex;
   flex-direction: row-reverse;

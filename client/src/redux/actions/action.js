@@ -164,3 +164,17 @@ export const getPress = () => {
     }
   }
 }
+
+export function registerFunction(payload) {
+  return async function () {
+    const post = await axios.post("/api/auth/register", payload);
+    return post;
+  };
+}
+
+export function loginFunctionA0(payload) {
+  return async function () {
+    const post = await axios.post("/api/auth/login", payload);
+    return post;
+  };
+}

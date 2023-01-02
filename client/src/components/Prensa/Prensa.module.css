@@ -1,3 +1,7 @@
+
+.container{
+  padding: 50px;
+}
 .parentColumn{
   display: -webkit-box;
   display: -ms-flexbox;
