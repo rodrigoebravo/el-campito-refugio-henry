@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer'
 import Navbar from '../NavBar/NavBar'
 const QuieroColaborar = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar/>
       <main className={styles.colaborar}>
         <section>

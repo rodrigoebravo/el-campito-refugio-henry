@@ -8,7 +8,7 @@ import imgVoluntarios from "../../assets/img/img-voluntariado.png"
 
 const QuieroSerVoluntario = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
       <div className={styles.div}>
         <h2 className={styles.h2Voluntario}>¡QUIERO SER VOLUNTARIO!</h2>

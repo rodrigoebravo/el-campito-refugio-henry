@@ -12,7 +12,7 @@ import imgVoluntario8 from "../../assets/img/escolar/img-voluntarios8.jpg"
 import imgVoluntario9 from "../../assets/img/escolar/img-voluntarios9.jpg"
 const Cuidados = () => {
   return (
-    <div>
+    <div className={styles.container}>
     <NavBar/>
       <main className={styles.parentColumn}>
         <div className={styles.parent}>

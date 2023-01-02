@@ -13,7 +13,7 @@ import tren from  "../../assets/img/visitas/tren.png"
 
 const Visitas = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
       <main className={styles.visitas}>
         <div className={styles.parentColumn}>

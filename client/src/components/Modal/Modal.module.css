@@ -1,0 +1,30 @@
+.modalDiv {
+  display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 50px;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.modalDivsup{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background-color: rgba(0,0,0,.7);
+  z-index: 1000;
+}
+
+.h2modal{
+  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  margin: 1rem;
+}

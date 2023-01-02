@@ -17,7 +17,7 @@ const PrensaGrafica = () => {
     dispatch(getPress());
   }, [dispatch]);
   return(
-    <div>
+    <div className={styles.container}>
      <NavBar/>
      <h2 className={styles.h2Prensa}>Prensa Grafica</h2>
      <div className={styles.card}>

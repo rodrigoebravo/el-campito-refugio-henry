@@ -9,7 +9,7 @@ import styles from "./Prensa.module.css"
 import { Link } from "react-router-dom";
 const Prensa = () => {
   return(
-    <div>
+    <div className={styles.container}>
     <NavBar/>
        <main className={styles.parentColumn}>
         <div className={styles.parentColumn}>

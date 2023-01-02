@@ -21,12 +21,19 @@ const Footer = () => {
                    <h4>#ADOPTANOCOMPRES</h4>
                </div>
             </div>
-            <div className={styles.redes}>
+        <div className={styles.redes}>
                 <h4 className={styles.h4Footer}>¡Seguinos!</h4>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-youtube"></i>
-                <i class="fa-brands fa-twitter"></i>
+                <a
+                  href="https://www.instagram.com/refugioelcampihref/"
+                  rel="noreferrer"
+                ><i class="fa-brands fa-instagram"></i></a>
+                <a
+                  href="https://www.facebook.com/elcampihrefrefugio" rel="noreferrer" ><i class="fa-brands fa-facebook"></i></a>
+                <a
+                  href="https://www.youtube.com/@campihrefrefugio" rel="noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                <a
+                  href="https://twitter.com/elcampihref" rel="noreferrer">
+                 <i class="fa-brands fa-twitter"></i></a>
                 <i class="fa-brands fa-linkedin"></i>
                 <i class="fa-brands fa-tiktok"></i>
             </div>

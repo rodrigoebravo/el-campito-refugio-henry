@@ -13,7 +13,7 @@ import imgVoluntario9 from "../../assets/img/escolar/img-voluntarios9.jpg"
 
 const ProyectoEscolar = () => {
   return(
-      <div >
+      <div className={styles.container}>
           <NavBar/>
           <div className={styles.proyectoEscolarmain}>
             <section>

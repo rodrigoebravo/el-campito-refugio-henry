@@ -11,7 +11,7 @@ import CardPrensaRadio from "./CardPrensaRadio"
 const PrensaRadio = () => {
  
   return(
-    <div>
+    <div className={styles.container}>
      <NavBar/>
      <h2 className={styles.h2PrensaRadio}>Prensa Radio</h2>
      <div className={styles.card}>
