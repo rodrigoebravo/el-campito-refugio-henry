@@ -6,7 +6,7 @@ import imgDetalle from '../../assets/img/img-nosotros.jpg'
 
 const ConocenosDetalle = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
       <div className={styles.conocenosContenedor}>
       <img src={imgDetalle} className={styles.imgConocenos} alt="Nosotros"/>

@@ -5,7 +5,7 @@ import imgDenuncia from "../../assets/img/img-denuncias.jpg"
 import styles from "./Denuncias.module.css"
 const Denuncias = () => {
   return (
-    <div>
+    <div className={styles.container}>
     <NavBar/>
     <main className={styles.parent}>
         <section className={styles.denunciasSection}>

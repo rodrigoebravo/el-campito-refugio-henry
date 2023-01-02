@@ -13,7 +13,7 @@ const PrensaGrafica = () => {
   //aca va un useefect
 
   return(
-    <div>
+    <div className={styles.container}> 
      <NavBar/>
      <h2 className={styles.h2PrensaTele}>Prensa Television</h2>
      <div className={styles.card}>

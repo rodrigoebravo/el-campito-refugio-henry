@@ -11,7 +11,7 @@ import press from "./prensa.json"
 const ArtistasAmigos = () => {
 
   return(
-    <div>
+    <div className={styles.container}>
      <NavBar/>
      <h2 className={styles.h2PrensaAmigos}>Artistas Amigos</h2>
      <div className={styles.card}>
