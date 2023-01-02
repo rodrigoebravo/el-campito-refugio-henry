@@ -89,6 +89,12 @@ i{
     width:15%;
     height:auto
 }
+i {
+    color: #E48125;
+    font-size: 1.6em;
+    margin-top: 20px;
+    align-self: flex-end;
+}
 @media (max-width: 800px) {
     .imgFooter{
         display:none
