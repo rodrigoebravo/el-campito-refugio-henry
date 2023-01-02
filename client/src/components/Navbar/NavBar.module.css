@@ -92,7 +92,7 @@ nav{
     display: flex;
     flex-direction: row;
     align-content: space-around;
-    background-color: aqua;
+   
    
   }
   .hidden {
