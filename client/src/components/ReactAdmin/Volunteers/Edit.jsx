@@ -31,12 +31,12 @@ const VoluntEdit = (props) => {
         <TextInput source="availability" label="Tiempo dispone (horas a la semana)" type="number" parse={convertStringToNumber} fullWidth />
 
         <CheckboxGroupInput source="days" label="Días disponibles" choices={[
-            { id: 'u000', name: 'lunes' },
-            { id: 'u001', name: 'martes' },
-            { id: 'u002', name: 'miércoles' },
-            { id: 'u003', name: 'jueves' },
-            { id: 'u004', name: 'viernes' },
-            { id: 'u005', name: 'sábado' },
+            { id: 'lunes', name: 'lunes' },
+            { id: 'martes', name: 'martes' },
+            { id: 'miércoles', name: 'miércoles' },
+            { id: 'jueves', name: 'jueves' },
+            { id: 'viernes', name: 'viernes' },
+            { id: 'sábado', name: 'sábado' },
         ]} />
         <TextInput source="clarification" label="aclaración sobre disponibilidad" fullWidth />
         <TextInput source="description" label="Que puede sumar" fullWidth />
