@@ -1,0 +1,110 @@
+
+footer{
+    
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    
+    flex-direction: column;
+    padding: 50px 20px 10px 20px;
+    
+    justify-content: space-around;
+    
+    -ms-flex-align: space-around;
+    
+    text-align: center;
+}
+.footerContainer{
+   
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    
+    flex-direction: row;
+    
+    justify-content: space-around;
+    -webkit-box-align: center;
+    
+    align-items: center;
+    text-align: left;   
+}
+.infoContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;   
+  
+
+
+}
+.redes{
+    margin-top: 40px;   
+}
+.derechos{
+    margin-top: 50px;  
+}
+i{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.pFooter{
+    margin-top: 10px;
+    
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+}
+.h4Footer{
+    font-size: 1.2em;
+    font-weight: 900; 
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.derechos {
+    margin-top: 50px;
+    font-size: 1em;
+    color: #444445;
+    font-weight: 300;
+}
+
+.imgFooter{
+    width:15%;
+    height:auto
+}
+i {
+    color: #E48125;
+    font-size: 1.6em;
+    margin-top: 20px;
+    align-self: flex-end;
+}
+@media (max-width: 800px) {
+    .imgFooter{
+        display:none
+    }
+    .footerContainer{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 20px 10px 20px;
+    }
+    .redes{
+        margin-top: 10px;   
+    }
+}
