@@ -1,0 +1,83 @@
+.container{
+  padding: 50px;
+}
+.div {
+  margin: 7rem;
+}
+.liVoluntario::before {
+  content: "\2022";
+  color: #4fa7c1;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+
+.h2Voluntario {
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+  color: #4fa7c1;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 20px;
+  line-height: 51px;
+}
+.ul{
+  list-style: none;
+}
+.h3Voluntario {
+  color: #4fa7c1;
+  font-size: 1.3em;
+  text-transform: uppercase; 
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.aVoluntario {
+  font-family: 'Seravek', Calibri, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #fafafa;
+  background-color: #4fa7c1;
+  border: 3px solid;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  max-width: fit-content;
+  text-decoration: none;
+}
+.voluntarioContacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.spanVoluntario{
+  font-family: 'Seravek', 'sans-serif';
+  font-weight: bold;
+  font-size: 1em;
+}
+.pVoluntario{
+  display: block;
+  margin-top: 20px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 1em;
+  font-weight: 300;
+}
+.imgVoluntarios{
+  width:100%;
+  height:auto
+}
+@media (max-width: 800px) {
+  .div {
+    margin: 3rem;
+  }
+}

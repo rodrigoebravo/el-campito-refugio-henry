@@ -1,20 +1,21 @@
-// const linkPreviewGenerator = require("link-preview-generator");
+const linkPreviewGenerator = require("link-preview-generator");
 const { pressModel } = require("../models");
 
 const adminPress = async (req, res) => {
   try {
     const press = await pressModel.find({});
-    // console.log(press);
+    console.log(press);
     let newPress = [];
     press.forEach((obj, index)=>{
       let newObj = {
         _id: obj._id,
-        media: obj.media,
-        link: obj?.link || "",
-        date: obj.date.toJSON().slice(0, 10)  || "",
+        media: obj.media || "",
+        type: obj.type || "",
+        link: obj.link || "",
+        date: obj.date?.toJSON().slice(0, 10)  || "",
         title: obj.title || "",
         description: obj.description || "",
-        img: { src: obj.img, index:[index] } || { src: "", index:[index] },
+        img: { src: obj.img || "", index:index },
         favicon: obj.favicon || "",
         isDelete: obj.isDelete
       }
@@ -39,7 +40,7 @@ const adminPressId = async (req, res) => {
       _id: press._id,
       media: press.media,
       link: press.link || "",
-      date: press.date.toJSON().slice(0, 10)  || "",
+      date: press.date?.toJSON().slice(0, 10)  || "",
       title: press.title || "",
       description: press.description || "",
       img: { src: press.img, index:0 } || { src: "", index:0 },
@@ -74,10 +75,16 @@ const adminCreatePress = async (req, res) => {
   try {
     const { body } = req;
 
-    const previewData = await linkPreviewGenerator(body.link) || {};
+    const previewData = {};
+
+    if (body.link) {
+      previewData = await linkPreviewGenerator(body.link) || {};
+    }
+
     previewData.date = body.date;
     previewData.media = body.media;
     previewData.link = body.link;
+    previewData.type = body.type;
     console.log(previewData);
 
     const press = await pressModel.create(previewData);
@@ -86,7 +93,7 @@ const adminCreatePress = async (req, res) => {
 
     
   } catch (e) {
-    res.status(404).send({ error: e });
+    res.send({ error: e });
   }
 };
 

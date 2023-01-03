@@ -1,0 +1,22 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  width: 22px;
+  height: 24px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .icons{
+    margin: 1rem;
+  }
+}
