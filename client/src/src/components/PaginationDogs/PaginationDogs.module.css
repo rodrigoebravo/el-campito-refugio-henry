@@ -1,0 +1,20 @@
+.container{
+display: flex;
+flex-direction: row;
+}
+.container2{
+  margin: 2rem;
+}
+.buttonPagDog{
+  border-radius: 15px; 
+  border: 3px solid #55BA68;
+  padding: 20px;
+  color: #FFFFFF;
+  background-color: #55BA68;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1em;
+      font-family: 'Seravek', 'sans-serif';
+      text-transform: uppercase;
+      margin:10px
+}

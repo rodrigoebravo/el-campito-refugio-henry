@@ -1,0 +1,78 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Trashhand";
+    src: url("../../assets/fonts/TrashHand.TTF");
+  }
+  @font-face {
+    font-family: "Seravek";
+    src: url("../../assets/fonts/Seravek.ttf");
+  }
+.mainContactanos{
+    padding: 50px; 
+}
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.h2Contactanos{
+    margin-bottom: 20px;
+    color: #F9C0C1;
+    font-family: 'Trashhand';
+    font-size: 2.8em;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.spanContactanos{
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Seravek', 'sans-serif';
+    font-size: 1.125em;
+    color: #444445;
+}
+.sectionContactanos{
+    width: 100% !important;
+    margin-top: 40px;
+    -webkit-box-pack: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+    display: flex;
+    flex-direction: column
+}
+.buttonContactanos{
+    width: auto;
+    padding: 20px;
+    min-height: 0;
+    height: 75px;
+    margin-top: 20px; 
+    background-color: #F9C0C1;
+    text-align: center;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.8em;
+}
+
+@media (max-width: 800px) {
+    .buttonContactanos {
+   
+    width: 100%;
+    font-size: 1.3em;
+    }
+    .spanContactanos{
+        font-size: 1.1em;    
+    }
+  }
+  
