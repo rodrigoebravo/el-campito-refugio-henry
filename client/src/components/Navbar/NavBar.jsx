@@ -16,6 +16,7 @@ const Navbar = () => {
 		setOpen(!open);
 	};
 
+
 	
 	const closeMenu = () => {
 		setOpen(false);

@@ -14,7 +14,7 @@ const Cuidados = () => {
   return (
     <div className={styles.container}>
     <NavBar/>
-      <main className={styles.parentColumn}>
+      <main className={styles.parentColumn} id="main">
         <div className={styles.parent}>
             <section>
                 <h2 className={styles.h2cuidados}>CUIDADOS DENTRO DEL REFUGIO</h2>

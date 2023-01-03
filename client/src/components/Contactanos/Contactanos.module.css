@@ -42,13 +42,13 @@
 }
 .sectionContactanos{
     width: 100% !important;
-    margin-top: 40px;  
-    -webkit-box-pack: center; 
-    -webkit-box-align: center;
-      align-items: center;
+    margin-top: 40px;
+    -webkit-box-pack: center;
+    align-items: center;
     text-align: center;
-        display: block;
-        -webkit-box-direction: normal;
+    display: block;
+    display: flex;
+    flex-direction: column
 }
 .buttonContactanos{
     width: auto;

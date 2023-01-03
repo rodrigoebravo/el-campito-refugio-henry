@@ -5,6 +5,15 @@
     background-color: #fafafa;
 }
 
+.divContenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+
 .form{
     display: flex;
     flex-direction: column;
@@ -42,8 +51,10 @@
 .label {
     display: flex;
     flex-direction: column;
-    font-size: 25px;
-    font-family: 'docs-Roboto', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-family: 'Seravek', 'sans-serif';
+    color: #444445;
+    font-weight: 300;
 }
 
 .required{
@@ -54,8 +65,8 @@
     background: transparent;
     border: 0;
     border-bottom: 2px solid #888;
-    width: 45%;
-    font-size: 20px;
+    width: 65%;
+    font-size: 1em;
     padding-bottom: 5px;
 }
 
@@ -115,3 +126,25 @@
     background-color: orange;
     transform: scale(1.05);
 }
+.h3form{
+    color: #55BA68;
+    font-family: 'Trashhand';
+    font-size: 2.8em;
+    padding-bottom: 10px;
+}
+.buttonLoad {
+    width: auto;
+    padding: 20px;
+    min-height: 0;
+    height: 75px;
+    margin: 100px;
+    text-align: center;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    background-color: #F9C0C1;
+    text-decoration: none;
+    cursor: pointer;
+  }

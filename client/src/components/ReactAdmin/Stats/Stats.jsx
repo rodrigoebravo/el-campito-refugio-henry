@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { useState } from "react";
 import {
   LineChart,
   Line,
@@ -11,63 +11,64 @@ import {
   Bar,
 } from "recharts";
 import { Card, CardContent, Grid } from "@mui/material";
+// import { StaticRouter } from "react-router";
 
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: "Mes A",
+    apadrinados: 40,
+    adopciones: 24,
+    amt: 24,
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: "Mes B",
+    apadrinados: 30,
+    adopciones: 13,
+    amt: 22,
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: "Mes C",
+    apadrinados: 20,
+    adopciones: 98,
+    amt: 22,
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: "Mes D",
+    apadrinados: 27,
+    adopciones: 39,
+    amt: 20,
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: "Mes E",
+    apadrinados: 18,
+    adopciones: 48,
+    amt: 21,
   },
   {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    name: "Mes F",
+    apadrinados: 23,
+    adopciones: 38,
+    amt: 25,
   },
   {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    name: "Mes G",
+    apadrinados: 34,
+    adopciones: 43,
+    amt: 21,
   },
 ];
 
-const Filters = () => (
+const Filters = ({ prop }) => (
   <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 650 }}>
     <CardContent>
-      <button>Hola</button>
+      <button onClick={(e) => prop(e)}>Cambiar</button>
     </CardContent>
   </Card>
 );
 
 const Linear = () => (
   <LineChart
-    width={1200}
+    width={1100}
     height={750}
     data={data}
     margin={{
@@ -82,15 +83,20 @@ const Linear = () => (
     <YAxis />
     <Tooltip />
     <Legend />
-    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+    <Line
+      type="monotone"
+      dataKey="adopciones"
+      stroke="#8884d8"
+      activeDot={{ r: 8 }}
+    />
+    <Line type="monotone" dataKey="apadrinados" stroke="#82ca9d" />
   </LineChart>
 );
 
 const Barra = () => (
   <BarChart
-    width={500}
-    height={300}
+    width={1100}
+    height={750}
     data={data}
     margin={{
       top: 5,
@@ -104,26 +110,27 @@ const Barra = () => (
     <YAxis />
     <Tooltip />
     <Legend />
-    <Bar dataKey="pv" fill="#8884d8" />
-    <Bar dataKey="uv" fill="#82ca9d" />
+    <Bar dataKey="adopciones" fill="#8884d8" />
+    <Bar dataKey="apadrinados" fill="#82ca9d" />
   </BarChart>
 );
 
-export default class Grafico extends PureComponent {
-  render() {
-    return (
-      <Grid container spacing={2}>
-        <Grid item xs={2}>
-          <Filters />
-        </Grid>
-        <Grid item xs={6}>
-          <Card sx={{ mr: 0, ml: 0, mt: 5, width: 1300, height: 800 }}>
-            <CardContent>
-              <Barra></Barra>
-            </CardContent>
-          </Card>
-        </Grid>
+export default function Grafico() {
+  const [state, setstate] = useState(true);
+
+  let handleChange = (event) => {
+    setstate(!state);
+  };
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={2}>
+        <Filters prop={handleChange} />
       </Grid>
-    );
-  }
+      <Grid item xs={6}>
+        <Card sx={{ mr: 0, ml: 0, mt: 5, width: 1300, height: 800 }}>
+          <CardContent>{state ? <Barra /> : <Linear />}</CardContent>
+        </Card>
+      </Grid>
+    </Grid>
+  );
 }
