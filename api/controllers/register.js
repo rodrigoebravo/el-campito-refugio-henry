@@ -4,7 +4,6 @@ const User = require("../models/nosql/users");
 const register = async (req, res) => {
   const { name, email, pass, roles } = req.body;
 
-
   User.findOne({ User }).then((usuario) => {
     if (usuario) {
       return res.json({ mensaje: "Ya existe un usuario con ese correo" });
@@ -22,11 +21,9 @@ const register = async (req, res) => {
             image,
           });
 
-          
           nuevoUsuario
             .save()
             .then((usuario) => {
-
               res.json({ mensaje: "Usuario creado correctamente", usuario });
             })
             .catch((error) => console.log(error,"error al crear usuario"));

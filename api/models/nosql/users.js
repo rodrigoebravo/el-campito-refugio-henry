@@ -1,14 +1,15 @@
 const mongoose = require("mongoose");
 // const bcrypt = require("bcryptjs");
 
+
 const userScheme = new mongoose.Schema(
   {
     name: {
       type: String,
     },
 
-    birthday: {
-      type: Date,
+    birthday: { 
+        type: Date, 
     },
     email: {
       type: String,
@@ -20,7 +21,7 @@ const userScheme = new mongoose.Schema(
     pass: {
       type: String,
       required: true,
-      default: "1234",
+      default: "1234"
     },
     roles: { 
       type: [String], 
@@ -31,22 +32,18 @@ const userScheme = new mongoose.Schema(
     image: {
       type: String,
     },
-    volunteer: {
+    volunteer:{
       type: mongoose.Types.ObjectId,
       ref: "volunteers",
     },
-    contribution: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "contributions",
-      },
-    ],
-    adoptions: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "adoptions",
-      },
-    ],
+    contribution: [{
+      type: mongoose.Types.ObjectId,
+      ref: "contributions",
+    }],
+    adoptions:[{
+      type: mongoose.Types.ObjectId,
+      ref: "adoptions",
+    }],
     isDelete: {
       type: Boolean,
       default: false,
@@ -57,6 +54,7 @@ const userScheme = new mongoose.Schema(
     versionKey: false,
   }
 );
+
 
 // type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
 //       default: "public",
@@ -80,5 +78,6 @@ const userScheme = new mongoose.Schema(
 //     user.password = hash;
 //     next();
 //   })
+
 
 module.exports = mongoose.model("users", userScheme);
