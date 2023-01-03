@@ -60,36 +60,21 @@ const adminDogsId = async (req, res) => {
     } = req;
 
     const dog = await dogModel.findById({ _id: id });
+    let { images: imgs, ...data } = dog.toObject();
 
-    let aux = [];
-    if (dog.images && dog.images.length > 0) {
-      dog.images.forEach((i, index) => {
-        aux.push({ src: i || "", index: index });
-      });
-    }
-    let newObj = {
-      _id: dog._id || "",
-      name: dog.name || "",
-      gender: dog.gender || "",
-      age: dog.age || "",
-      size: dog.size || "",
-      race: dog.race || "",
-      video: dog.video || "",
-      images: aux || [],
-      features: dog.features || "",
-      references: dog.references || [],
-      isSponsored: dog.isSponsored || false,
-      toAdopt: dog.toAdopt || false,
-      adopters: dog.adopters || [],
-      godparents: dog.godparents || [],
-    };
-
-    res.json(newObj);
+    res.json({
+      ...data,
+      images: imgs.map((img, index) => {
+        return {
+          src: img || "",
+          index,
+        };
+      }),
+    });
   } catch (e) {
     res.status(404).send({ error: e });
   }
 };
-
 const adminUpdateDog = async (req, res) => {
   try {
     const {
