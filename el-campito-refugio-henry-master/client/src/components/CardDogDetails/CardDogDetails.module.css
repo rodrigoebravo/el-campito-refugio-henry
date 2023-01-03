@@ -1,0 +1,77 @@
+.divContenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+.divImgs {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+ 
+
+}
+
+.imgDog{
+  border-radius: 25px;
+  border: 3px solid #4FA7C1;
+  padding: 10px;
+}
+.divCaracteristicas{
+  display: flex;
+  flex-direction: column;
+  background-color: #4FA7C1;
+  font-family: 'Seravek', 'sans-serif';
+  font-weight: bold;
+    color: #FFFFFF;
+    width: 65%;
+    border-radius: 25px;
+    padding: 15px;
+    margin:15px
+}
+.btnButton{
+  background-color: #4FA7C1;
+  border: 3px solid #4FA7C1;
+  width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 15px;
+     font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1em;
+   margin:15px;
+   padding:15px
+   
+}
+.btnButton:hover{
+  background-color: #FFFFFF;
+ color: #4FA7C1;
+ border: 3px solid #4FA7C1;
+
+}
+.buttonAdoptar {
+  width: auto;
+  padding: 20px;
+  min-height: 0;
+  height: 75px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.8em;
+  background-color: #F9C0C1;
+  text-decoration: none;
+}
+@media (max-width: 800px) {
+  .imgDog{
+    width:90%;
+  }
+  p{font-size: 1em;}
+}

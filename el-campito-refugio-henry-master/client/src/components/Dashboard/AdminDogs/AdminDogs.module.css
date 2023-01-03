@@ -1,0 +1,24 @@
+.divspecs {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  justify-content: space-around;
+  background: #f5f2f2e0;
+  margin: 0 5rem;
+  user-select: none;
+}
+.divNames {
+  display: flex;
+  width: 8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.Link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 1rem;
+  letter-spacing: 0;
+  padding: 0;
+}

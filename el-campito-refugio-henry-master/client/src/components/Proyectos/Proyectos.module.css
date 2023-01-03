@@ -1,0 +1,57 @@
+
+@font-face {
+  font-family: "Trashhand";
+  src: url("../../assets/fonts/TrashHand.TTF");
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("../../assets/fonts/Seravek.ttf");
+}
+body {
+  width: 100%;
+  font-family: 'Seravek', 'sans-serif';
+  font-size: 1.125em;
+  color: #444445;
+  font-weight: 300;
+}
+.mainProyectos{
+  display: block;
+  padding: 50px;
+}
+.h2Proyectos{
+  color: #4FA7C1;
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.boxContainer{
+  height: 250px;
+  width: 25%;
+  padding: 50px;
+  background-color: #55BA68;
+  color: -webkit-link;
+  cursor: pointer;
+
+}
+.linkProyectos{
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+.boxContainer {
+    width: 50%;
+    height: auto !important;
+}
+}

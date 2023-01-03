@@ -1,0 +1,125 @@
+.container{
+  padding: 50px;
+}
+.content{
+  width: 90%;
+}
+.pHomeS{
+  font-size: 1em;
+  margin-top: 20px;
+}
+.pHomeXS{
+  font-size: 0.8em;
+  margin-top: 20px; 
+}
+.h2Home{
+  margin-top: 20px; 
+}
+.boxContainer{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-flow: flex wrap;
+      flex-flow: flex wrap; 
+}
+.boxBgPink,.boxBgGreen,.boxBgOrange,.boxBgPurple,.boxBgLightOrange,.boxBgLightBlue,.boxBgGrey{
+  height: 250px;
+  width: 25%;
+  padding: 50px;
+  background-color: #F9C0C1;
+}
+.boxBgGreen{
+  background-color: #55BA68;
+}
+.boxBgOrange{
+  background-color: #E48125;
+}
+.boxBgPurple{
+  background-color: #6B639A;  
+}
+.boxBgLightOrange{
+  background-color: #FCA24F;
+}
+.boxBgLightBlue{
+  background-color: #4FA7C1; 
+}
+.boxBgGrey{
+  background-color: #444445; 
+}
+.h1Home{
+  color: #4FA7C1;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+.articleHome{
+  display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 50px;
+}
+.h2Home{
+  margin-top: 20px;
+  color: #4FA7C1;
+    font-family: 'Trashhand';
+    font-size: 2.8em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold
+}
+.h3Home{
+  color: #FFFFFF;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+   
+}
+a{
+  text-decoration: none;
+}
+
+.imgHome{
+  width: 50%;
+  padding: 0;
+  margin:10px;
+  overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+@media (max-width: 800px) {
+  .home{
+    width: 100%;
+    padding: 0;
+  margin:0;
+  }
+  .articleHome {
+    flex-direction: column;
+  }
+  .imgHome{
+    width: 100%;
+ 
+  }
+  .boxBgPink,.boxBgGreen,.boxBgOrange,.boxBgPurple,.boxBgLightOrange,.boxBgLightBlue,.boxBgGrey{
+    width: 50%;
+    height: auto
+    
+  }
+}

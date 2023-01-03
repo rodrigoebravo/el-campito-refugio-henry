@@ -1,0 +1,63 @@
+.divContendor {
+  margin: 5rem;
+  width: 60%;
+  height: 50vh;
+}
+
+.divSubContendor {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.divSubContendor2 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 13rem;
+  width: 20rem;
+  align-content: center;
+  justify-content: space-between;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+
+}
+.input{
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: medium;
+  margin: 0.3rem 0;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.butonLogin {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.loginGoogle {
+  margin: 1rem;
+}
+.error{
+  background-color: red;
+}
+
+.ButtonDashboard2 {
+  margin: 2rem 2rem;
+  background-color: #1976d2;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.ButtonDashboard2:hover {
+  background-color: #0640ae;
+}
