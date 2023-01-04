@@ -1,8 +1,6 @@
 import React, { useState } from "react"
-
 import styles from "./BarraDeNavegacion.module.css";
 import Logo from "../../assets/img/LogoCampitoColor-01.svg"
-
 import {  FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +11,7 @@ const BarraDeNavegacion = () => {
 	const handleClick = () => {
 		setOpen(!open);
 	};
+
 
 	const closeMenu = () => {
 		setOpen(false);

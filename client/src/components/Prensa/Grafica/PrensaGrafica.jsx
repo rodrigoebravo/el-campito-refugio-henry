@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getPress } from "../../../redux/actions/action";
-import NavBar from "../../NavBar/NavBar";
+import BarraDeNavegacion from "../../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../../Footer/Footer";
 import CardPrensaGrafica from "./CardPrensaGrafica";
 import styles from "./PrensaGrafica.module.css";
@@ -14,7 +14,7 @@ const PrensaGrafica = () => {
   }, [dispatch]);
   return (
     <div className={styles.container}>
-      <NavBar />
+      <BarraDeNavegacion />
       <h2 className={styles.h2Prensa}>Prensa Grafica</h2>
       <div className={styles.card}>
         {press?.map((el) => {

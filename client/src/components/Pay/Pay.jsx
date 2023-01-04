@@ -6,6 +6,7 @@ const Pay = () => {
   }
   setTimeout(goHome, 3000);
   return <div>Pay</div>;
+  
 };
 
 export default Pay;

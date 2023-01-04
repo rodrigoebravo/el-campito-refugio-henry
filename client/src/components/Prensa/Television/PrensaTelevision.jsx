@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import NavBar from "../../NavBar/NavBar";
+import BarraDeNavegacion from "../../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../../Footer/Footer";
 
 import styles from "./PrensaTelevision.module.css"
@@ -14,7 +14,7 @@ const PrensaGrafica = () => {
 
   return(
     <div className={styles.container}> 
-     <NavBar/>
+     <BarraDeNavegacion/>
      <h2 className={styles.h2PrensaTele}>Prensa Television</h2>
      <div className={styles.card}>
      {press?.map((el) => {

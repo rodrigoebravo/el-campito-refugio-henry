@@ -8,7 +8,7 @@ const axios = require("axios")
         {
           amount: {
             currency_code: 'USD',
-            value: '50',
+            value: '10',
           },
         },
       ],
@@ -16,8 +16,8 @@ const axios = require("axios")
         brand_name: 'El Campito Refugio',
         landing_page: 'NO_PREFERENCE',
         user_action: 'PAY_NOW',
-        return_url: `${HOST}/capture-order`,
-        cancel_url: `${HOST}/cancel-payment`,
+        return_url: `http://localhost:3000/pay`,
+        cancel_url: `http://localhost:3000/`,
       },
     };
 
