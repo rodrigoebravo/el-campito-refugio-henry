@@ -7,6 +7,8 @@ import axios from 'axios';
 import dotenv from "dotenv";
 import { Provider } from 'react-redux';
 import store from './redux/store/store'
+import { Auth0Provider } from "@auth0/auth0-react";
+
 dotenv.config();
 
 //para que funcione  hacer npm intall dotenv
@@ -17,7 +19,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+    <Auth0Provider
+        domain="dev-i2ktot5tu17k7x45.us.auth0.com"
+        clientId="a5EV2B0kWxPioUIHkQUJIkc9yTnZPnuX"
+        redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
     </React.StrictMode>
   </Provider>,
 );

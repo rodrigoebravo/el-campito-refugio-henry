@@ -1,0 +1,32 @@
+.cardSize{ 
+  width: 90%;
+  border: 3px solid #4FA7C1;
+  border-radius: 20px;
+  padding: 20px;
+}
+.imgCardPress{
+  width: 100%;
+  border-radius: 20px;
+}
+.pCardPress{
+  font-size: 1em;
+  font-family: 'Seravek', 'sans-serif';
+  letter-spacing:normal
+}
+.spanCardPress{
+ display:block;
+ 
+  background-color: #4FA7C1;
+  border-radius: 10px;
+  padding: 5px;
+  margin:5px;
+
+ 
+  color:white
+}
+.h3CardPress{
+  font-family: 'Seravek', 'sans-serif';
+}
+.aPrensa{
+  text-decoration: none;
+}

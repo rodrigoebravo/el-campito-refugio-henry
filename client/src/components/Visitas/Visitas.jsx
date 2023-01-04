@@ -1,74 +1,93 @@
 import { React } from "react";
-import style from "./Visitas.module.css";
-import auto from "../../img/transporte/auto.svg";
-import combi from "../../img/transporte/combi.svg";
-import tren from "../../img/transporte/tren.svg";
+import styles from "./Visitas.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
+import correa from "../../assets/img/visitas/correa.png"
+import repelente from "../../assets/img/visitas/repelente.png"
+import protector from "../../assets/img/visitas/protector.png"
+import abrigo from  "../../assets/img/visitas/abrigo.png"
+import comida from  "../../assets/img/visitas/comida.png"
+import auto from  "../../assets/img/visitas/auto.png"
+import combi from  "../../assets/img/visitas/colectivo.png"
+import tren from  "../../assets/img/visitas/tren.png"
 
 const Visitas = () => {
   return (
-    <div>
-      <Navbar />
-
-      <div className={style.div}>
-        <h1>visitas</h1>
-        <p>
-          Por ahora las visitas están suspendidas hasta nuevo aviso, pero igual
-          queremos contarte de qué se trata: <br></br>
-          Los sábados son las visitas al refugio, excepto el primer fin de
-          semana de cada mes que pasa al domingo. Si llueve se suspende, así que
-          si tenes dudas antes de salir para el refugio chequeá nuestras redes
-          sociales.
-          <br></br>
-          Recordá traer correas, lapiceras para llenar los cuestionarios de
-          salud, repelente y protector solar (para el verano), abrigo (para el
-          invierno) y lo que quieras para pasar el día (bebida, comida,
-          reposeras, etc.) Vení a llenarte el alma ayudándolos, dándoles amor a
-          nuestros camperitos y compartiendo con nosotros una hermosa tarde.
-        </p>
-        <h3>Punto de encuentro</h3>
-        <div className={style.puntosDeEncuentro}>
-          <div className={style.divImg}>
-            <img src={auto} className={style.visitasImg} alt="auto img" />
-            <h4>Si vas en auto</h4>
-            <p className={style.pPuntosDeEncuentro}>
-              Nos encontramos en Av. Hipólito Yrigoyen al 18500, Longchamps, en
-              la estación de servicio AXION a las 13.00 hs. De ahí partimos
-              PUNTUALMENTE a las 13.30 hs. en caravana hacia el refugio. La
-              estación de servicio es sólo un punto de encuentro ya que el
-              refugio queda en zona rural, alejado
-            </p>
-          </div>
-          <div className={style.divImg}>
-            <img src={combi} className={style.visitasImg} alt="combi img" />
-            <h4>Combis al refugio</h4>
-            <p className={style.pPuntosDeEncuentro}>
-              {" "}
-              Las combis salen del centro porteño hacia el refugio y a la vuelta
-              te dejan en el Obelisco. Para más información y para reservar tu
-              lugar, tenés que escribir CON ANTICIPACION a:
-              campitotraslado@gmail.com. Otras Combis
-              (https://www.fullbus.com.ar) Otra opción es este servicio de
-              combis,Fullbus, que te dejan en la AXION (previo aviso).s
-            </p>
-          </div>
-          <div className={style.divImg}>
-            <img src={tren} className={style.visitasImg} alt="tren img" />
-            <h4>Si vas en tren</h4>
-            <p className={style.pPuntosDeEncuentro}>
-              {" "}
-              Tren Roca: te acercan los ramales GLEW y ALEJANDRO KORN. Consultá
-              los horarios en la web: https://www.trenroca.com.ar/
-              horarios/constitucion-temperley.php Bajate en la estación
-              LONGCHAMPS y caminá unas cuadras hasta la estación de servicio
-              AXION y calculá bien el horario del transporte para empalmarcon la
-              salida de la caravana.
-            </p>
-          </div>
+    <div className={styles.container}>
+      <BarraDeNavegacion />
+      <main className={styles.visitas}>
+        <div className={styles.parentColumn}>
+            <section>
+                <h2 className={styles.h2Visitas}>VISITAS</h2>
+                <p className={styles.pVisitas}>Por ahora las visitas est&aacute;n suspendidas hasta nuevo aviso, pero igual queremos contarte de
+                    qu&eacute; se
+                    trata:</p>
+                    <p  className={styles.pVisitas}>Las visitas son el primer domingo de cada mes y los s&aacute;bados siguientes. Se suspende por lluvia o mal
+                    clima, por esto aconsejamos siempre chequear nuestras redes sociales antes de salir. No hace falta
+                    que te anotes previamente.
+                </p>
+                <p  className={styles.pVisitas}><span className={styles.spanVisitas}>Record&aacute; traer:</span>
+                </p>
+                <div className={styles.parentTransporte}>
+                    <div className={styles.transporte}>
+                        <img src={correa} className={styles.imgVisitas} alt="Correas" />
+                        <p className={styles.pOrange}><span className={styles.spanVisitas}>Correas</span></p>
+                    </div>
+                    <div className={styles.transporte}>
+                        <img src={repelente} alt="Repelente para mosquitos" className={styles.imgVisitas} />
+                        <p className={styles.pOrange}><span className={styles.spanVisitas}>Repelente para mosquitos</span></p>
+                    </div>
+                    <div className={styles.transporte}>
+                        <img src={protector} alt="Protector solar" className={styles.imgVisitas}/>
+                        <p className={styles.pOrange}><span className={styles.spanVisitas}>Protector solar</span></p>
+                    </div>
+                    <div className={styles.transporte}>
+                        <img src={abrigo} alt="Abrigo" className={styles.imgVisitas}/>
+                        <p className={styles.pOrange}><span className={styles.spanVisitas}>Abrigo</span></p>
+                    </div>
+                </div>
+                <p><span className={styles.spanVisitas}>y lo que quieras para pasar el d&iacute;a en el pasto junto a ellos (bebidas, comida, lonitas, reposeras,
+                    etc.)</span></p>
+                    <div className={styles.parent}>
+                        <img src={comida} alt="Comida" className={styles.imgVisitas}/>
+                        <p className={styles.pMargin}>Si quer&eacute;s hacerles un mimo especial, te contamos un secreto: a los camperitos les encanta el arroz
+                    con pollo (hervido, sin sal ni condimentos porque hay muchos que tienen patolog&iacute;as y siguen dietas
+                    especiales)
+                </p></div>
+                
+                <h2 className={styles.h2Visitas}>¡Mientras ellos esperan su familia para siempre, seamos la manada que los acompaña!
+                </h2>
+            </section>
+            <section>
+                <h4 className={styles.h4Visitas}>¿C&oacute;MO LLEGAR?</h4>
+                <div className={styles.transporteContainer}>
+                <div className={styles.transporte}>
+                        <img src={auto} alt="Auto" width="90px" height="auto"/>
+                        <p className={styles.pOrange}><span  className={styles.spanVisitas}>Si vas en auto</span></p>
+                        <p className={styles.pVisitas}>Pod&eacute;s venir los d&iacute;as de visitas directamente con tu auto, sin que te anotes. Contamos con
+                            estacionamiento en la puerta. Nos encontras ac&aacute;: <a className={styles.aVisitas}
+                                href="https://g.page/elcampitorefugio?share">https://g.page/elcampitorefugio</a>
+                        </p>
+                    </div>
+                    <div className={styles.transporte}>
+                        <img src={combi} alt="Combi" width="80px" height="auto"/>
+                        <p className={styles.pOrange}><span  className={styles.spanVisitas}>Combis al refugio</span></p>
+                        <p className={styles.pVisitas}>Solo contratamos este servicio para determinados eventos, y siempre lo informamos en redes
+                            sociales. Aqu&iacute; s&iacute; es necesario anotarse y reservar el asiento.</p>
+                    </div>
+                    <div className={styles.transporte}>
+                        <img src={tren} alt="Tren" width="80px" height="auto"/>
+                        <p className={styles.pOrange}><span  className={styles.spanVisitas}>Si vas en tren</span></p>
+                        <p className={styles.pVisitas}>Pod&eacute;s venir en el tren Roca: te acercan los ramales GLEW y ALEJANDRO KORN. Desde all&iacute; deber&aacute;s
+                            tomar un remis (hay varios en zona pero te aconsejamos que averigues previamente si est&aacute;n
+                            trabajando)</p>
+                    </div>
+                </div>
+            </section>
         </div>
-        <Footer />
-      </div>
+    </main>
+      
+      <Footer />
     </div>
   );
 };

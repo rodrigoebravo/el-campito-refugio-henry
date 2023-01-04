@@ -11,7 +11,6 @@ const contributionPost = async (req, res) => {
       body: { name, email, phone, idDog, type, ...dataContibution },
     } = req;
 
-    
 
     if(name == undefined && email == undefined && type == undefined){ 
 
@@ -67,6 +66,9 @@ const contributionPost = async (req, res) => {
       });
 
       if(name && email){
+        if (type === "padrinazgo")  userDb.roles = [...userDb.roles, "padrino"]; 
+        if (type === "donación")  userDb.roles = [...userDb.roles, "donante"]; 
+
         
         userDb.contribution = [...userDb.contribution, newCertificate._id];
         await userDb.save();
@@ -84,7 +86,7 @@ const contributionPost = async (req, res) => {
       const { user, dog, ...dataCertificate  } = certificate.toObject(); 
 
       res.status(201).send({
-        user: user.name,
+        name: user.name,
         idUser: user._id,
         dog: dog.name,
         idDog,

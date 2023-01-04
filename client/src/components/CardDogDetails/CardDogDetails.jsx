@@ -5,11 +5,12 @@ import {
   clearDogs,
 } from "../../redux/actions/action";
 import { useDispatch, useSelector } from "react-redux";
-import style from "./CardDogDetails.module.css";
-import Button from "@mui/material/Button";
+import styles from "./CardDogDetails.module.css";
+// import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Loading from "../Loading/Loading";
+// import Navbar from "../NavBar/NavBar"
+import Footer from "../Footer/Footer";
 
 const CardDogDetails = (props) => {
   const dispatch = useDispatch();
@@ -33,82 +34,108 @@ const CardDogDetails = (props) => {
     return <Loading />;
   } else {
     return (
-      <div className={style.divContenedor}>
-        <Link to={"/adoptar/perros/"} className={style.btnBack}>
-          <ArrowBackIcon />
-        </Link>
-        <div className={style.divImgs}>
+      <div className={styles.divContenedor}>
+        {/* <Navbar/> */}
+        <div className={styles.divImgs}>
           {photoActual !== 0 ? (
-            <Button
-              className={style.btnButton}
-              variant="contained"
-              sx={{ margin: "0 1rem" }}
+            <button
+              className={styles.btnButton}
               onClick={() => setPhotoActual(photoActual - 1)}
             >
               prev
-            </Button>
+            </button>
           ) : (
-            <Button
-              className={style.btnButton}
-              variant="contained"
+            <button
+              className={styles.btnButton}
               disabled
-              sx={{ margin: "0 1rem" }}
               onClick={() => setPhotoActual(photoActual - 1)}
             >
               prev
-            </Button>
+            </button>
           )}
           <img
-            className={style.imgDog}
+            className={styles.imgDog}
             alt="imgsola"
             src={detailsDogs.images[photoActual]}
           ></img>
 
           {photoActual >= 0 && detailsDogs.images.length - 1 > photoActual ? (
-            <Button
-              variant="contained"
-              sx={{ margin: "0 1rem" }}
+            <button
+              className={styles.btnButton}
               onClick={() => setPhotoActual(photoActual + 1)}
             >
               next
-            </Button>
+            </button>
           ) : (
-            <Button
-              variant="contained"
+            <button
+              className={styles.btnButton}
               disabled
-              sx={{ margin: "0 1rem" }}
               onClick={() => setPhotoActual(photoActual + 1)}
             >
               next
-            </Button>
+            </button>
           )}
         </div>
-        <div className={style.divCaracteristicas}>
-          <h3>Nombre: {detailsDogs.name}</h3>
 
-          <h3>
-            Genero:{detailsDogs.gender ? detailsDogs.gender : <>No hay info</>}
-          </h3>
-          <h3>Edad: {detailsDogs.age ? detailsDogs.age : <>No hay info</>}</h3>
-          <h3>
-            Tamaño: {detailsDogs.size ? detailsDogs.size : <>No hay info</>}
-          </h3>
-          <h3>
-            Raza: {detailsDogs.race ? detailsDogs.size : <>No hay info</>}
-          </h3>
-          <h3>
-            Caracteristicas:{" "}
+        <div className={styles.divCaracteristicas}>
+          <p>
+            <span>Nombre: </span>
+            {detailsDogs.name}
+          </p>
+
+          <p>
+            <span>Genero: </span>
+            {detailsDogs.gender ? detailsDogs.gender : <>No hay info</>}
+          </p>
+          <p>
+            <span>Edad: </span>
+            {detailsDogs.age ? detailsDogs.age : <>No hay info</>}
+          </p>
+          <p>
+            <span>Tamaño: </span>
+            {detailsDogs.size ? detailsDogs.size : <>No hay info</>}
+          </p>
+          <p>
+            {" "}
+            <span>Raza: </span>{" "}
+            {detailsDogs.race ? detailsDogs.size : <>No hay info</>}
+          </p>
+          <p>
+            <span>Caracteristicas: </span>{" "}
             {detailsDogs.features ? detailsDogs.features : <>No hay info</>}
-          </h3>
-          <h3>Referencias:</h3>
+          </p>
+          <p>
+            <span>Referencias: </span>{" "}
+          </p>
           {detailsDogs.references ? (
             detailsDogs.references.map((ref) => {
-              return <h3 key={ref}> {ref}</h3>;
+              return <p key={ref}> {ref}</p>;
             })
           ) : (
             <>No hay info</>
           )}
         </div>
+        <p>
+          <span>
+            Si quer&eacute;s adoptar completa el siguiente formulario:
+          </span>
+        </p>
+        <Link
+          className={styles.buttonAdoptar}
+          to={`/adoptionForm/${detailsDogs._id}`}
+        >
+          ADOPTAME
+        </Link>
+        <p>
+          <span>Si quer&eacute;s colaborar podes hacerlo en:</span>
+        </p>
+        <Link
+          to={`/colaborar/${detailsDogs._id}`}
+          className={styles.buttonAdoptar}
+        >
+          APADRINAR
+        </Link>
+        <Footer />
       </div>
     );
   }

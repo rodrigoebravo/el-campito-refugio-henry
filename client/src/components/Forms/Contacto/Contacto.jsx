@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "./Contacto.module.css";
-import Footer from "../../Footer/Footer"
 
 const Contacto = () =>{
     
@@ -14,8 +13,6 @@ const Contacto = () =>{
     return(
         <div className={styles.mainContainer}>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-
-                 
                 <div className = {styles.item}>
                     <label className={styles.label}>Nombre y Apellido</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
@@ -35,7 +32,7 @@ const Contacto = () =>{
                     <input type="text" className={styles.input} placeholder="Tu dirección de correo electrónico"
                         {...register('email', {
                             required: true,
-                            pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/    
+                            pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/    
                         })}
                     />
                     {errors.email?.type === 'pattern' && <p>Formato de Email incorrecto</p>}
@@ -78,7 +75,7 @@ const Contacto = () =>{
 
                 <input type="submit" value="Enviar" className = {styles.submit}/>
             </form>
-            <Footer /> 
+            
         </div>
     )
 }

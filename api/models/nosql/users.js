@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 // const bcrypt = require("bcryptjs");
 
-
 const userScheme = new mongoose.Schema(
   {
     name: {
       type: String,
     },
 
-    birthday: { 
-        type: Date, 
-        default: Date.now //Quitar
+    birthday: {
+      type: Date,
     },
     email: {
       type: String,
@@ -22,7 +20,7 @@ const userScheme = new mongoose.Schema(
     pass: {
       type: String,
       required: true,
-      default: "1234"
+      default: "1234",
     },
     roles: { 
       type: [String], 
@@ -33,18 +31,22 @@ const userScheme = new mongoose.Schema(
     image: {
       type: String,
     },
-    volunteer:{
+    volunteer: {
       type: mongoose.Types.ObjectId,
       ref: "volunteers",
     },
-    contribution: [{
-      type: mongoose.Types.ObjectId,
-      ref: "contributions",
-    }],
-    adoptions:[{
-      type: mongoose.Types.ObjectId,
-      ref: "adoptions",
-    }],
+    contribution: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "contributions",
+      },
+    ],
+    adoptions: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "adoptions",
+      },
+    ],
     isDelete: {
       type: Boolean,
       default: false,
@@ -55,7 +57,6 @@ const userScheme = new mongoose.Schema(
     versionKey: false,
   }
 );
-
 
 // type:["public", "superAdmin", "admin", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante", "voluntario"],
 //       default: "public",
@@ -79,13 +80,5 @@ const userScheme = new mongoose.Schema(
 //     user.password = hash;
 //     next();
 //   })
-
-userScheme.pre("find", function () {
-  this.where({ isDelete: false });
-});
-
-userScheme.pre("findOne", function () {
-  this.where({ isDelete: false });
-});
 
 module.exports = mongoose.model("users", userScheme);
