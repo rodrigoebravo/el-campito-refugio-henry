@@ -1,14 +1,14 @@
 import { React } from "react";
 import styles from "./QuieroAdoptar.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import imgAdoptar from "../../assets/img/img-adopta.jpg"
 import { Link } from "react-router-dom";
 const QuieroAdoptar = () => {
   return (
     
     <div className={styles.container}>
-      <Navbar />
+      <BarraDeNavegacion />
 
       <div className={styles.mainAdoptar} >
 

@@ -14,3 +14,4 @@ export const GET_PRESS = 'GET_PRESS';
 export const POST_ADOPTION = 'POST_ADOPTION';
 export const POST_CONTRIBUTION = 'POST_CONTRIBUTION';
 export const POST_VOLUNTEER = 'POST_VOLUNTEER';
+export const POST_MELI = 'POST_MELI'

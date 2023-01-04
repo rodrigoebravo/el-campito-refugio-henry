@@ -1,13 +1,13 @@
 import { React } from "react";
 import styles from "./ConocenosDetalle.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import imgDetalle from '../../assets/img/img-nosotros.jpg'
 
 const ConocenosDetalle = () => {
   return (
     <div className={styles.container}>
-      <Navbar />
+      <BarraDeNavegacion />
       <div className={styles.conocenosContenedor}>
       <img src={imgDetalle} className={styles.imgConocenos} alt="Nosotros"/>
        <div className={styles.div}>

@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../Footer/Footer";
 import grafica from "../../assets/img/prensa/grafica.png"
 import radio from "../../assets/img/prensa/radio.png"
@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const Prensa = () => {
   return(
     <div className={styles.container}>
-    <NavBar/>
+    <BarraDeNavegacion/>
        <main className={styles.parentColumn}>
         <div className={styles.parentColumn}>
             <section>

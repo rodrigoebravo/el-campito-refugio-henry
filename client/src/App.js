@@ -26,6 +26,7 @@ import PrensaRadio from "./components/Prensa/Radio/PrensaRadio.jsx";
 import PrensaAmigos from "./components/Prensa/ArtistasAmigos/ArtistasAmigos.jsx";
 import Profile from "./components/Profile/Profile";
 import NoAccess from "./components/NoAccess/NoAccess";
+import Pay from "./components/Pay/Pay"
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -54,6 +55,8 @@ function App() {
       <Route exact path={"/prensa/radio"} component={PrensaRadio} />
       <Route exact path={"/prensa/amigos"} component={PrensaAmigos} />
       <Route exact path={"/profile"} component={Profile} />
+      <Route exact path={"/pay"} component={Pay} />
+
 
       {(user && user.data?.info.roles.includes("admin")) ||
       (user && user.data?.info.roles.includes("superAdmin")) ? (

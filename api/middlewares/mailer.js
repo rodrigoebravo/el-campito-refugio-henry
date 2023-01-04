@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 const Usuario = require("../models/nosql/users");
 
+
 const mailer = async (req, res, next) => {
   const { email, pass } = req.body;
 
@@ -10,13 +11,13 @@ const mailer = async (req, res, next) => {
     // } else {
     console.log(email);
     console.log(pass);
-    let transporter = nodemailer.createTransport({
+      let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "elcampitorefugiodev@gmail.com", // generated ethereal user
-        pass: "gfbjvbpweuafacmp ", // generated ethereal password
+        user: process.env.GMAIL_USER, // generated ethereal user
+        pass: process.env.GMAIL_PASSWORD, // generated ethereal password
       },
     });
 

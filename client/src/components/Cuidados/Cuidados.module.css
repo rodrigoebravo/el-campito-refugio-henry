@@ -1,9 +1,11 @@
-.container{
+.container {
   padding: 50px;
 }
-main {
+
+#main {
   padding: 50px;
 }
+
 .parentColumn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,10 +16,11 @@ main {
   flex-direction: column;
   width: 100%;
 }
-.h2cuidados{
+
+.h2cuidados {
   margin-bottom: 20px;
   font-family: 'Trashhand';
-  font-size: 2.8em;  
+  font-size: 2.8em;
   color: #6B639A;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
@@ -26,46 +29,53 @@ main {
   font-weight: bold;
 
 }
-.pCuidados{
+
+.pCuidados {
   margin-bottom: 20px;
-      display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 1em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 1em;
 
 }
-.imgCuidados{
-  width:100%;
-   height:auto
+
+.imgCuidados {
+  width: 100%;
+  height: auto
 }
-.box{
+
+.box {
   width: 25%;
   padding: 0px;
-    height: 300px;
+  height: 300px;
 }
-.boxContainer{
+
+.boxContainer {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.parent{
+
+.parent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
+
 @media (max-width: 800px) {
-  .box{
+  .box {
     width: 50%;
   }
-  main{
-    padding:30px
+
+  main {
+    padding: 30px
   }
 }

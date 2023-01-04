@@ -2,14 +2,14 @@
 import { React } from "react";
 import styles from "./QuieroSerVoluntario.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import { Link } from "react-router-dom";
 import imgVoluntarios from "../../assets/img/img-voluntariado.png"
 
 const QuieroSerVoluntario = () => {
   return (
     <div className={styles.container}>
-      <Navbar />
+      <BarraDeNavegacion />
       <div className={styles.div}>
         <h2 className={styles.h2Voluntario}>¡QUIERO SER VOLUNTARIO!</h2>
         <p className={styles.pVoluntario}><span  className={styles.spanVoluntario}>¡En El Campito hay mucho por hacer!</span></p>

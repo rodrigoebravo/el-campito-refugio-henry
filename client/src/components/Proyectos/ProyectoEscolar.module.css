@@ -1,20 +1,23 @@
-.container{
+.container {
   padding: 50px;
 }
+
 @font-face {
   font-family: "Trashhand";
   src: url("../../assets/fonts/TrashHand.TTF");
 }
+
 @font-face {
   font-family: "Seravek";
   src: url("../../assets/fonts/Seravek.ttf");
 }
 
-.proyectoEscolarmain{
+.proyectoEscolarmain {
   font-size: 1em;
-  padding: 50px; 
+  padding: 50px;
 }
-.h2ProyectoEscolar{
+
+.h2ProyectoEscolar {
   margin-top: 20px;
   color: #55BA68;
   font-family: 'Trashhand';
@@ -26,24 +29,27 @@
   margin-inline-end: 0px;
   font-weight: bold;
 }
-.pProyectoEscolar{
+
+.pProyectoEscolar {
   margin-top: 20px;
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
-  margin-inline-end: 0px; 
+  margin-inline-end: 0px;
   font-size: 1em;
 }
-.ulProyectoEscolar ::before{
-  content: "\2022"; 
+
+.ulProyectoEscolar ::before {
+  content: "\2022";
   color: #55BA68;
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
-.aProyectoEscolar{
+
+.aProyectoEscolar {
   color: #55BA68;
   text-decoration: none;
   cursor: pointer;
@@ -51,12 +57,14 @@
   font-size: 1em;
 
 }
-.spanProyectoEscolar{
+
+.spanProyectoEscolar {
   font-weight: bold;
   text-align: center;
 
 }
-.buttonProyectoEscolar{
+
+.buttonProyectoEscolar {
   width: auto;
   padding: 20px;
   min-height: 0;
@@ -69,43 +77,51 @@
   color: #FFFFFF;
   font-size: 1.8em;
 }
-.infoProyectoEscolar{
+
+.infoProyectoEscolar {
   display: flex;
+  margin-top: 6rem;
   flex-direction: column;
   align-items: center;
 }
-.boxContainer{
+
+.boxContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-flow: flex wrap;
-      flex-flow: flex wrap;
+  flex-flow: flex wrap;
 }
-.box{
+
+.box {
   height: 250px;
   width: 25%;
-  
+
 }
-.imgProyectoEscolar{
+
+.imgProyectoEscolar {
   width: 100%;
   overflow-clip-margin: content-box;
   overflow: clip;
 }
+
 @media (max-width: 800px) {
   .box {
     height: 250px;
     width: 50%;
   }
-  .buttonProyectoEscolar{
+
+  .buttonProyectoEscolar {
     font-size: 1.5em;
   }
-  .spanProyectoEscolar{
+
+  .spanProyectoEscolar {
     margin-top: 20px;
   }
-  }
+}

@@ -19,6 +19,14 @@ import dotenv from "dotenv";
 dotenv.config();
 // const {NAME_CLOUDINARY} = process.env;
 
+export default function postMeli(title, unit_price) {
+  return async function () {
+    const post = await axios
+      .post("http://localhost:3001/mercadopago", title, unit_price)
+      .then((res) => (window.location.href = res.data.init_point));
+    return post;
+  };
+}
 
 export function postDog(payload) {
   return async function () {
