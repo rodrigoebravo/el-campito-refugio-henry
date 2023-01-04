@@ -9,7 +9,7 @@ const adminDogs = async (req, res) => {
     if (filtro) {
       if (filtro.name) {
         const { name } = filtro;
-        console.log(filtro);
+
         dogs = await dogModel
           .find({ name: new RegExp(name, "i") })
           .sort({ name: orden });
@@ -46,7 +46,7 @@ const adminDogs = async (req, res) => {
       };
       newDogs.push(newObj);
     });
-    console.log(newDogs);
+
     res.status(201).send(newDogs);
   } catch (error) {
     res.status(400).send({ error: "Error en la solicitud" });
@@ -82,8 +82,6 @@ const adminUpdateDog = async (req, res) => {
       body,
     } = req;
 
-    console.log(req.body);
-
     const dog = await dogModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
     });
@@ -97,10 +95,6 @@ const adminUpdateDog = async (req, res) => {
 const adminCreateDog = async (req, res) => {
   try {
     const { body } = req;
-
-    console.log(body);
-
-    // body.images = body.images.split(' '); // .replace('[','').replace(']','')
 
     const dog = await dogModel.create(body);
 
