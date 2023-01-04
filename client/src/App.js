@@ -55,6 +55,7 @@ function App() {
       <Route exact path={"/prensa/amigos"} component={PrensaAmigos} />
       <Route exact path={"/profile"} component={Profile} />
 
+
       {(user && user.data?.info.roles.includes("admin")) ||
       (user && user.data?.info.roles.includes("superAdmin")) ? (
         <Route exact path={"/admin"} component={AdminIndex} />

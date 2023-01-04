@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../Footer/Footer";
 import styles from "./Cuidados.module.css"
 import imgVoluntario2 from "../../assets/img/escolar/img-voluntarios2.jpg"
@@ -13,7 +13,7 @@ import imgVoluntario9 from "../../assets/img/escolar/img-voluntarios9.jpg"
 const Cuidados = () => {
   return (
     <div className={styles.container}>
-    <NavBar/>
+    <BarraDeNavegacion/>
       <main className={styles.parentColumn} id="main">
         <div className={styles.parent}>
             <section>

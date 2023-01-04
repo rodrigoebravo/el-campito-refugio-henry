@@ -3,7 +3,7 @@ import mercadoLibre from "../../assets/img/logosPasarelas/mercado-pago.png";
 import cafecito from "../../assets/img/logosPasarelas/cafecito.png";
 import paypal from "../../assets/img/logosPasarelas/paypal.svg";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import { useDispatch } from "react-redux";
 import postMeli from "../../redux/actions/action";
 
@@ -16,7 +16,7 @@ const QuieroColaborar = () => {
 
   return (
     <div className={styles.container}>
-      <Navbar />
+      <BarraDeNavegacion />
       <main className={styles.colaborar}>
         <section>
           <h2 className={styles.h2Colborar}>¡QUIERO COLABORAR!</h2>
@@ -87,7 +87,7 @@ const QuieroColaborar = () => {
                 alt="Logo de mercado pago"
               />
             </div>
-            <button className={styles.buttonML}>$200</button>
+            <button className={styles.buttonML} onClick={() => handleClick("$300", 300)}>$200</button>
             <button
               className={styles.buttonML}
               onClick={() => handleClick("$300", 300)}

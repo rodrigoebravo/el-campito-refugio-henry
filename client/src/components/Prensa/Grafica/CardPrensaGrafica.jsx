@@ -6,9 +6,8 @@ const CardPrensaGrafica = ({ img, media, date, title, description, link }) => {
   
   return (
     <div className={styles.cardSize} >
-    
-    <a href={link} className={styles.aPrensa}> <h3 className={styles.h3CardPress}>{title}</h3></a>
-     <img className={styles.imgCardPress} src={img}/>
+     <a href={link} className={styles.aPrensa}> <h3 className={styles.h3CardPress}>{title}</h3></a>
+     <img alt="prensaGrafica"className={styles.imgCardPress} src={img}/>
      <p className={styles.pCardPress}>{description}</p>
      <div>
        <p className={styles.pCardPress}><span className={styles.spanCardPress}><FcNews/> {media}</span></p>

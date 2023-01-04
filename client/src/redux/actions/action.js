@@ -28,7 +28,6 @@ export default function postMeli(title, unit_price) {
   };
 }
 
-
 export function postDog(payload) {
   return async function () {
     const post = await axios.post('/api/dogs', payload)

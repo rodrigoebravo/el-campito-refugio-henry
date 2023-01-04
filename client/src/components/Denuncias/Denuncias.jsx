@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../Footer/Footer";
 import imgDenuncia from "../../assets/img/img-denuncias.jpg"
 import styles from "./Denuncias.module.css"
 const Denuncias = () => {
   return (
     <div className={styles.container}>
-    <NavBar/>
+    <BarraDeNavegacion/>
     <main className={styles.parent}>
         <section className={styles.denunciasSection}>
             <h2 className={styles.h2Denuncias}>DENUNCIAS SOBRE EL MALTRATO</h2>

@@ -1,7 +1,7 @@
 import { React } from "react";
 import styles from "./Visitas.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import correa from "../../assets/img/visitas/correa.png"
 import repelente from "../../assets/img/visitas/repelente.png"
 import protector from "../../assets/img/visitas/protector.png"
@@ -14,7 +14,7 @@ import tren from  "../../assets/img/visitas/tren.png"
 const Visitas = () => {
   return (
     <div className={styles.container}>
-      <Navbar />
+      <BarraDeNavegacion />
       <main className={styles.visitas}>
         <div className={styles.parentColumn}>
             <section>
