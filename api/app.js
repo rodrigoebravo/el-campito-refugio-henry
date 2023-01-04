@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const dotenv = require('dotenv');
 
 const app = express();
 
@@ -57,5 +58,22 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(status).send(message);
 });
+
+//-----------------------mercado pago-----------------------//
+dotenv.config();
+
+const mercadopago = require('mercadopago');
+
+mercadopago.configure({
+  access_token: process.env.ACCESS_TOKEN,
+});
+
+// importa el módulo de rutas de Mercado Pago
+const mercadopagoRoutes = require('./routers/mercadopago');
+
+// asigna un manejador de rutas a la ruta '/mercadopago'
+app.use('/mercadopago', mercadopagoRoutes);
+
+//-----------------------fin mercado pago-----------------------//
 
 module.exports = app;

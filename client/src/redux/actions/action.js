@@ -23,6 +23,13 @@ export function postDog(payload) {
   }
 }
 
+export default function postMeli(title, unit_price) {
+  return async function () {
+    const post = await axios.post('http://localhost:3001/mercadopago', title, unit_price).then((res)=>window.location.href = res.data.init_point)
+    return post
+  }
+}
+
 export const postCloudinaryPhoto = (postData) => {
   return async (dispatch) => {
     console.log(postData); // dman2cjk5

@@ -2,7 +2,7 @@
 import { React } from "react";
 import style from "./QuieroSerVoluntario.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import Navbar from "../Navbar/NavBar";
 
 const QuieroSerVoluntario = () => {
   return (

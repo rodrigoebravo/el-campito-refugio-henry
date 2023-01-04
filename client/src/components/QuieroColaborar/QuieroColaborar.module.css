@@ -119,6 +119,12 @@
   align-self: flex-end;
 }
 
+.priceInput{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
 @media (max-width: 600px) {
   .pasarleML,
   .pasarelaDM {

@@ -10,7 +10,8 @@ import {
     CLEAR_ALL_DOGS,
     FILTER_DOGS_BY_GENDER,
     FILTER_DOGS_BY_AGE,
-    FILTER_DOGS_BY_SIZE
+    FILTER_DOGS_BY_SIZE,
+    POST_MELI
 } from '../actions/types'
 
 const initialState = {
@@ -60,6 +61,10 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 dog: action.payload
+            }
+        case POST_MELI:
+            return {
+                ...state,
             }
         case GET_CLOUDINARY_RESPONSE:
             const link =  action.payload;

@@ -2,8 +2,18 @@ import style from './QuieroColaborar.module.css'
 // import mercadoLibre from '../../img/logosPasarelas/mercadolibre.svg'
 // import dineroMail from '../../img/logosPasarelas/dineromail.svg'
 import Footer from '../Footer/Footer'
-import Navbar from '../NavBar/NavBar'
+import Navbar from '../Navbar/NavBar'
+import { useDispatch } from 'react-redux';
+import postMeli from "../../redux/actions/action"
+
 const QuieroColaborar = () => {
+  
+  const dispatch = useDispatch();
+
+  const handleClick = (title, unit_price) => {
+    dispatch(postMeli({ title, unit_price }));
+  }
+
   return (
     <div>
       <Navbar/>
@@ -27,21 +37,26 @@ const QuieroColaborar = () => {
           <p>Si querés colaborar mensualmente con el refugio y con tus ahijados,
            ahora podés hacerlo utilizando tu tarjeta de crédito. Elegí el monto que
            quieras donar, y se debitará automáticamente de tu cuenta todos los meses</p>
-          <button className={style.debitoButton}>Completá el formulario</button>
+          <button className={style.debitoButton}>
+            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848573564c018579faf7e504ff">
+              Suscribirme
+            </a>
+          </button>
         </div>
+
       </div>    
         <div className={style.pasarleML}>
         <img src ="https://res.cloudinary.com/dakezkhho/image/upload/v1671806580/refugio/medios%20de%20pago/mercadolibre_jhklsb.svg" className={style.imgML} alt="Logo Mercado Libre"/>
         <div className={style.pasarelDMbuttons}>
-        <div className={style.noWrap}> <button className={style.buttonML}>$200</button>
-          <button className={style.buttonML}>$300</button>
-          <button className={style.buttonML}>$500</button>
-          <button className={style.buttonML}>$1000</button></div>
-          <div className={style.noWrap}><button className={style.buttonML}>$3000</button>
-          <button className={style.buttonML}>$5000</button>
-          <button className={style.buttonML}>$7000</button>
-          <button className={style.buttonML}>$10000</button>
-          <button className={style.buttonML}>$_____</button></div>
+        <div className={style.noWrap}> <button className={style.buttonML} onClick={() => handleClick('$200', 200)}>$200</button>
+          <button className={style.buttonML} onClick={() => handleClick('$300', 300)}>$300</button>
+          <button className={style.buttonML} onClick={() => handleClick('$500', 500)}>$500</button>
+          <button className={style.buttonML} onClick={() => handleClick('$1000', 1000)}>$1000</button></div>
+          <div className={style.noWrap}><button className={style.buttonML} onClick={() => handleClick('$3000', 3000)}>$3000</button>
+          <button className={style.buttonML} onClick={() => handleClick('$5000', 5000)}>$5000</button>
+          <button className={style.buttonML} onClick={() => handleClick('$7000', 7000)}>$7000</button>
+          <button className={style.buttonML} onClick={() => handleClick('$10000', 10000)}>$10000</button>
+          <button className={style.buttonML}>$<input type='number' placeholder='Ingrese un valor' classname={style.priceInput}></input></button></div>
         </div>
       </div>  
       <div className={style.pasarelaDM}>

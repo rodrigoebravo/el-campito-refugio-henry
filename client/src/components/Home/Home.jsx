@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
+import Navbar from '../Navbar/NavBar'
 import IconsBar from "../IconsBar/IconsBar";
 // import homeimg from '../../img/homeimg.jpg'
 import style from "./Home.module.css";
@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <NavBar />
+      <Navbar />
       <div className={style.homeContenedor}>
         <div className={style.halfHomeContenedor}>
           <div className={style.IconsBar}>

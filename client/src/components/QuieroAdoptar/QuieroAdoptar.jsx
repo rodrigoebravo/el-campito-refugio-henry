@@ -1,13 +1,13 @@
 import { React } from "react";
 import style from "./QuieroAdoptar.module.css";
 import Footer from "../Footer/Footer";
-import Navbar from "../NavBar/NavBar";
+import Navbar from '../Navbar/NavBar'
+
 const QuieroAdoptar = () => {
   return (
     /*el navbar puede ir aca o  colocarlo para que salga en todas las rutas*/
     <div className={style.div}>
-      <Navbar />
-
+      <Navbar/> 
       <div className={style.adoptarContenedor}>
         <h1 className={style.h1Adoptar}>¡Quiero Adoptar!</h1>
         <h3>¿Por qué adoptar en vez de comprar?</h3>
