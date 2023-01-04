@@ -6,11 +6,13 @@ import styles from "./Home.module.css";
 import Footer from "../Footer/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../Modal/Modal";
+// import Registro from "../ProfileAuth0/RegisterGoogle/Registro";
 
 const Home = () => {
     const { user } = useAuth0();
   return (
     <div className={styles.container}>
+        {/* <Registro/> */}
         {console.log(user)}
         {user ? <Modal /> : <></>}
       <BarraDeNavegacion />

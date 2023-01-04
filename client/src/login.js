@@ -58,8 +58,9 @@ export function registerUserGoogle(dataUser) {
     const registerData = await axios.post("/api/auth/register", dataUser);
     // console.log(Login, "Soy Login");
     localStorage.setItem("user", JSON.stringify(registerData));
+    localStorage.setItem("userRegister", JSON.stringify(registerData));
     // window.location.reload();
-    // console.log(data, "Soy data");
+    console.log(registerData, "Soy data");
   };
 }
 
@@ -82,3 +83,61 @@ export function emailAvailable(email) {
     }
   };
 }
+
+export function payWithPayPal() {
+  return async function () {
+    const response = await axios.post(
+      "http://localhost:3001/api/paypal/create-order"
+    );
+    console.log(response.data.links[1].href)
+    // const data = response;
+    window.location.href = response.data.links[1].href;
+    // console.log(data);
+  };
+}
+
+
+
+export function captureData() {
+  return async function (req,res) {
+    let {token} = await req.query
+
+
+    console.log(token)
+    
+
+  };
+}
+
+
+// if (user) {
+  //   let loginUsers = {
+  //     email: user.email,
+  //     pass: user.name,
+  //   };
+
+  //   setTimeout(loginUserGoogle(loginUsers));
+  //   // logout()
+  // }
+
+  // if(user && !items){
+  //   let registerUsers = {
+  //     email: user.email,
+  //     pass: user.name,
+  //     name:user.name,
+  //     image:user.picture
+  //   };
+  //   // setTimeout()
+  //   // logout()
+  //   setTimeout(registerUserGoogle(registerUsers))
+  //   let register = emailAvailable(user.email)
+  //   if(register) {
+  //     let loginUsers = {
+  //       email: user.email,
+  //       pass: user.name,
+  //     }
+  //     setTimeout(loginUserGoogle(loginUsers));
+  //   }
+  // }
+    
+  // }

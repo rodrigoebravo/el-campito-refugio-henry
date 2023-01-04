@@ -6,10 +6,8 @@ import {
 } from "../../redux/actions/action";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./CardDogDetails.module.css";
-// import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
-// import Navbar from "../NavBar/NavBar"
 import Footer from "../Footer/Footer";
 
 const CardDogDetails = (props) => {
@@ -35,7 +33,6 @@ const CardDogDetails = (props) => {
   } else {
     return (
       <div className={styles.divContenedor}>
-        {/* <Navbar/> */}
         <div className={styles.divImgs}>
           {photoActual !== 0 ? (
             <button

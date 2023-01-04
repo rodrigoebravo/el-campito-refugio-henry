@@ -22,7 +22,7 @@ const initialState = {
     allUsers: [],
     allDogs: [],
     press:[],
-    responseCloudinary: ""    
+    responseCloudinary: "",
 
 }
 
