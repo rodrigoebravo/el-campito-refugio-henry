@@ -126,6 +126,12 @@ body {
   color: #FFFFFF;
 }
 
+.buttonFormDiv{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
 .buttonForm {
   width: 30%;
   min-width: 235px;

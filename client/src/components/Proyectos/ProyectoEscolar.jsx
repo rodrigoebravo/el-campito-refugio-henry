@@ -1,5 +1,5 @@
 import React from "react";
-import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
+import NavBar from "../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../Footer/Footer";
 import styles from "./ProyectoEscolar.module.css";
 import imgVoluntario2 from "../../assets/img/escolar/img-voluntarios2.jpg";
