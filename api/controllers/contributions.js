@@ -8,97 +8,107 @@ const { contributionsModel, usersModel, dogModel } = require("../models");
 const contributionPost = async (req, res) => {
   try {
     const {
-      body: { name, email, phone, idDog, type, ...dataContibution },
+      body: { email, dogName, type, ...dataContibution },
     } = req;
 
+    let newCertificate = {},  certificateSee = {};
 
-    if(name == undefined && email == undefined && type == undefined){ 
+    let myDog = await dogModel.findOne({name: dogName});
+    let userDb = await usersModel.findOne({ email });
 
-       const newCertificate = await contributionsModel.create({
-        // user: user._id,
-        dog: idDog,
-        type:"donación",
-        ...dataContibution,
-      });
+    if ( !userDb || userDb === {} ) {
+      userDb = await usersModel.create({ email });
+    };
 
-      const certificate = await contributionsModel.findById({_id: newCertificate._id}).populate("dog", {
-        name: 1,
-      }); 
+    if ( !dogName ) {
+    
+      if ( !email  || !userDb || userDb === {} ) {
+        newCertificate = await contributionsModel.create({          
+          type:"donación",
+          ...dataContibution,
+        });   
+        certificateSee =  await contributionsModel.findById({_id: newCertificate._id});        
 
+        return res.json(certificateSee);
+      };
 
-      const { dog, ...dataCertificate } = certificate.toObject(); //salida 
+      if ( type === "sponsoreo" && email) {
 
-      res.status(201).send({
-        user: "Anónimo",
-        dog: dataDog.name,
-        idDog,
+        newCertificate = await contributionsModel.create({          
+          type:"sponsoreo",
+          user: userDb._id,
+          ...dataContibution,
+      });      
+
+      let myRol = userDb.roles?.find(r=> r === "sponsor");
+
+      if(!myRol) userDb.roles = [...userDb.roles, "sponsor"]; 
+      userDb.contribution = [...userDb.contribution, newCertificate._id];
+      await userDb.save();
+        
+      } else {
+
+        newCertificate = await contributionsModel.create({          
+          type:"donación",
+          user: userDb._id,
+          ...dataContibution,
+      });      
+
+      let myRol = userDb.roles?.find(r=> r === "donante");
+
+      if(!myRol) userDb.roles = [...userDb.roles, "donante"]; 
+      userDb.contribution = [...userDb.contribution, newCertificate._id];
+      await userDb.save();
+      };
+      
+
+      certificateSee =  await contributionsModel.findById({_id: newCertificate._id})
+      .populate("user"); 
+
+      const { user,...dataCertificate  } = certificateSee.toObject(); 
+
+      return res.status(201).send({
+        name: user.name,
+        idUser: user._id,
         ...dataCertificate
       }); 
+    };
 
-      // res.json(certificate); 
-
-    }else {
-
-      let userDb = await usersModel.findOne({ email });
-  
-      if (!userDb) {
-        userDb = await usersModel.create({
-          name,
-          email,
-          phone,
-        });
-      }
-  
-      await usersModel.findByIdAndUpdate(
-        { _id: userDb._id },
-        {
-          name,
-          email,
-          phone
-        },
-      );
-  
-      const newCertificate = await contributionsModel.create({
-        user: userDb._id,
-        dog: idDog,
-        type,
-        ...dataContibution,
+    if( email && dogName && type === "padrinazgo" ){ 
+      newCertificate = await contributionsModel.create({
+          user: userDb._id,
+          dog: myDog._id,
+          type:"padrinazgo",
+          ...dataContibution,
       });
 
-      if(name && email){
-        if (type === "padrinazgo")  userDb.roles = [...userDb.roles, "padrino"]; 
-        if (type === "donación")  userDb.roles = [...userDb.roles, "donante"]; 
+      let myRol = userDb.roles?.find(r=> r === "padrino");
 
-        
-        userDb.contribution = [...userDb.contribution, newCertificate._id];
-        await userDb.save();
-      }
-  
-      if (type === "padrinazgo") {
-        const dog = await dogModel.findById({ _id: idDog });
-  
-        dog.godparents = [...dog.godparents, userDb._id];
-        await dog.save();
-      }
+      if(!myRol) userDb.roles = [...userDb.roles, "padrino"];
+      userDb.contribution = [...userDb.contribution, newCertificate._id];      
+      await userDb.save();  
 
-      const certificate = await contributionsModel.findById({_id: newCertificate._id}).populate("user dog"); 
+      let myGodParent = myDog.godparents?.find(p=> p === userDb._id);
 
-      const { user, dog, ...dataCertificate  } = certificate.toObject(); 
+      if(!myGodParent)  myDog.godparents = [...myDog.godparents, userDb._id];
+      await myDog.save();
+      
+      certificateSee =  await contributionsModel.findById({_id: newCertificate._id})
+      .populate("user dog"); 
 
-      res.status(201).send({
+      const { user, dog, ...dataCertificate  } = certificateSee.toObject();
+      
+      return res.status(201).send({
         name: user.name,
         idUser: user._id,
         dog: dog.name,
-        idDog,
+        idDog: dog._id,
         ...dataCertificate
       }); 
+    };     
 
-      // res.json(certificate)
-    }
-    
-  } catch (error) {
-    res.status(404).send({ error });
-  }
+  
+    } catch (error) { res.status(404).send({ error }) }
 };
 
 module.exports = {

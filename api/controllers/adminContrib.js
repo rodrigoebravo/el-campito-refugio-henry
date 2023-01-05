@@ -119,61 +119,107 @@ const adminUpdateContrib = async (req, res) => {
 const adminCreateContrib = async (req, res) => {
   try {
     const {
-      body: { name, email, phone, idDog, type, ...dataContibution },
+      body: { email, dogName, type, ...dataContibution },
     } = req;
 
+    let newCertificate = {},  certificateSee = {};
+
+    let myDog = await dogModel.findOne({name: dogName});
     let userDb = await usersModel.findOne({ email });
-  
-    if (!userDb) {
-      userDb = await usersModel.create({
-        name,
-        email,
-        phone,
-      });
-    }
 
-    // await usersModel.findByIdAndUpdate(
-    //   { _id: userDb._id },
-    //   {
-    //     name,
-    //     email,
-    //     phone
-    //   },
-    // );
+    if ( !userDb || userDb === {} ) {
+      userDb = await usersModel.create({ email });
+    };
 
-    const newCertificate = await contributionsModel.create({
-      user: userDb._id,
-      dog: idDog,
-      type,
-      ...dataContibution,
-    });
+    if ( !dogName ) {
+    
+      if ( !email  || !userDb || userDb === {} ) {
+        newCertificate = await contributionsModel.create({          
+          type:"donación",
+          ...dataContibution,
+        });   
+        certificateSee =  await contributionsModel.findById({_id: newCertificate._id});        
 
-    if(name && email){
+        return res.json(certificateSee);
+      };
+
+      if ( type === "sponsoreo" && email) {
+
+        newCertificate = await contributionsModel.create({          
+          type:"sponsoreo",
+          user: userDb._id,
+          ...dataContibution,
+      });      
+
+      let myRol = userDb.roles?.find(r=> r === "sponsor");
+
+      if(!myRol) userDb.roles = [...userDb.roles, "sponsor"]; 
       userDb.contribution = [...userDb.contribution, newCertificate._id];
       await userDb.save();
-    }
+        
+      } else {
 
-    if (type === "padrinazgo") {
-      const dog = await dogModel.findById({ _id: idDog });
+        newCertificate = await contributionsModel.create({          
+          type:"donación",
+          user: userDb._id,
+          ...dataContibution,
+      });      
 
-      dog.godparents = [...dog.godparents, userDb._id];
-      await dog.save();
-    }
+      let myRol = userDb.roles?.find(r=> r === "donante");
 
-    const certificate = await contributionsModel.findById({_id: newCertificate._id}).populate("user"); 
+      if(!myRol) userDb.roles = [...userDb.roles, "donante"]; 
+      userDb.contribution = [...userDb.contribution, newCertificate._id];
+      await userDb.save();
+      };
+      
 
-    const { user, ...dataCertificate  } = certificate.toObject(); 
+      certificateSee =  await contributionsModel.findById({_id: newCertificate._id})
+      .populate("user"); 
 
-    res.status(201).send({data: {
-      name: user.name,
-      ...dataCertificate
-    }}); 
-    
+      const { user,...dataCertificate  } = certificateSee.toObject(); 
 
-    
-  } catch (error) {
-    res.status(404).send({ error });
-  }
+      return res.status(201).send({
+        name: user.name,
+        idUser: user._id,
+        ...dataCertificate
+      }); 
+    };
+
+    if( email && dogName && type === "padrinazgo" ){ 
+      newCertificate = await contributionsModel.create({
+          user: userDb._id,
+          dog: myDog._id,
+          type:"padrinazgo",
+          ...dataContibution,
+      });
+
+      let myRol = userDb.roles?.find(r=> r === "padrino");
+
+      if(!myRol) userDb.roles = [...userDb.roles, "padrino"];
+      userDb.contribution = [...userDb.contribution, newCertificate._id];      
+      await userDb.save();  
+
+      let myGodParent = myDog.godparents?.find(p=> p === userDb._id);
+
+      if(!myGodParent)  myDog.godparents = [...myDog.godparents, userDb._id];
+      await myDog.save();
+      
+      certificateSee =  await contributionsModel.findById({_id: newCertificate._id})
+      .populate("user dog"); 
+
+      const { user, dog, ...dataCertificate  } = certificateSee.toObject();
+      
+      return res.status(201).send({
+        name: user.name,
+        idUser: user._id,
+        dog: dog.name,
+        idDog: dog._id,
+        ...dataCertificate
+      }); 
+    };     
+
+  
+    } catch (error) { res.status(404).send({ error }) }
 };
 
 const adminDeleteContrib = async (req, res) => {

@@ -9,7 +9,7 @@ const Adopcion = (props) =>{
 
     const user = JSON.parse(localStorage.getItem('user')) || undefined;
 
-    const idDog = props.match.params._id;
+    const dogName = props.match.params.dog;
     
     const [storage, setStorage] = React.useState({ 
             name:"undefined", email:"undefined", 
@@ -58,9 +58,9 @@ const Adopcion = (props) =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>ID del Camperito</label>
                     <input 
-                        value={!idDog? undefined : idDog}  
+                        value={!dogName? undefined : dogName}  
                         type="text"      className={styles.input} 
-                        {...register('idDog', {required: true })}
+                        {...register('dogName', {required: true })}
                     />
                     {errors.name?.type === 'required' && <p>ID del Camperito necesario</p>}                    
                 </div>

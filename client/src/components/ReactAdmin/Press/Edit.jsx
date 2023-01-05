@@ -21,6 +21,7 @@ const PressEdit = (props) => {
       disableAuthentication
       mutationMode="pessimistic"
     >
+    <div>
       <SimpleShowLayout>
         <Grid container spacing={3}>
           <Grid item xs={9}>
@@ -50,9 +51,9 @@ const PressEdit = (props) => {
           </Grid>
           <Grid item xs={3} style={{ textAlign: "center" }}>
             <ImageField
-              source="img.src"
+              source="img.src" 
               sx={{
-                "& img": {
+                "& img.src": {
                   maxWidth: 1000,
                   maxHeight: 1000,
                   objectFit: "contain",
@@ -79,7 +80,7 @@ const PressEdit = (props) => {
                   { id: "Radio / Audio", name: "Radio / Audio" },
                   { id: "Artistas Amigos", name: "Artistas Amigos" },
                 ]}
-                fullWidth
+                
               />
             </Grid>
             <Grid item xs={3}>
@@ -106,11 +107,12 @@ const PressEdit = (props) => {
           </Grid>
         </FormTab>
         <FormTab label="Multimedia">
-          <ImageInput source="img" label="Fótografía" >
-              <ImageField source="src" title="title" />
+          <ImageInput source="img" label="Fotografía" >
+              <ImageField source="src"  />
           </ImageInput>
         </FormTab>
       </TabbedForm>
+      </div>
     </Edit>
   );
 };

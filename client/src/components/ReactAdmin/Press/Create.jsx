@@ -28,7 +28,7 @@ const PressCreate = (props) => {
                   { id: "Radio / Audio", name: "Radio / Audio" },
                   { id: "Artistas Amigos", name: "Artistas Amigos" },
                 ]}
-                fullWidth
+                
               />
         <TextInput source="link" label="URL" fullWidth />
         <DateInput source="date" label="Fecha" fullWidth />

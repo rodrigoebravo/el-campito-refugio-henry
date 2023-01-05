@@ -132,14 +132,12 @@ const dataProvider = {
 
     }
 
-    console.log(params.data);
-
     const http = await httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "PUT",
       body: JSON.stringify(params.data),
     }); 
 
-    const { json } = http;  console.log(json);
+    const { json } = http;
 
 
     return {

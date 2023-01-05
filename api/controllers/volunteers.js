@@ -9,7 +9,7 @@ const CreateVolunteer = async (req, res) => {
     //buscar usuario
     const userDb = await usersModel.findOne({ email });
 
-    if (!userDb) {
+    if (!userDb || userDb === {}) {
 
       const newUser = await usersModel.create({
         name, birthday, email, phone

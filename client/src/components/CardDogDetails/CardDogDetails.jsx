@@ -109,9 +109,9 @@ const CardDogDetails = (props) => {
         </div>
         <p><span>Si quer&eacute;s adoptar completa el siguiente formulario:</span></p>
         <Link className={styles.buttonAdoptar}
-              to={`/adoptionForm/${detailsDogs._id}`}>ADOPTAME</Link>
+              to={`/adoptionForm/${detailsDogs.name}`}>ADOPTAME</Link>
         <p ><span>Si quer&eacute;s colaborar podes hacerlo en:</span></p>
-        <Link to={`/colaborar/${detailsDogs._id}`} className={styles.buttonAdoptar}>APADRINAR</Link>
+        <Link to={`/colaborar/${detailsDogs.name}`} className={styles.buttonAdoptar}>APADRINAR</Link>
      <Footer/>
       </div>
     );
