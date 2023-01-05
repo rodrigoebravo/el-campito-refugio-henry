@@ -84,8 +84,17 @@ nav a:hover {
         display: flex !important;
       }
 @media (max-width: 800px) {
-nav{
-  
+  .navIcon{
+    display:flex;
+  position: absolute;
+  top: 20px; 
+  right: 30px;
+}
+.imgLogo{
+  position: absolute;
+  top: 10px; 
+  left: 30px;
+  max-width: 110px;
 }
   .headerNav{
     width: 100%;
@@ -98,12 +107,7 @@ nav{
   .hidden {
     display: none !important;
   }
-  .navIcon {
-    margin-right: 30px;
-		display: flex;
-    align-self: flex-end;
-     
-	}
+  
   .navLinks{
     display:none
   }

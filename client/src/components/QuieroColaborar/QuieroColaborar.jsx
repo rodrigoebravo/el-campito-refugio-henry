@@ -69,12 +69,18 @@ const QuieroColaborar = () => {
                 debitar&aacute; autom&aacute;ticamente de tu cuenta todos los
                 meses.
               </p>
-              <a
-                href="https://www.donaronline.org/refugio-el-campito/colabore-con-el-refugio-el-campito"
-                className={styles.buttonForm}
-              >
-                Complet&aacute; el formulario{" "}
-              </a>{" "}
+              <div className={styles.buttonFormDiv}>
+                <button className={styles.buttonForm}>
+                  <a href="https://www.donaronline.org/refugio-el-campito/colabore-con-el-refugio-el-campito">
+                    Completá el formulario
+                  </a>
+                </button>
+                <button className={styles.buttonForm}>
+                  <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848573564c018579faf7e504ff">  
+                    Suscripción por Mercado Pago
+                  </a>
+                </button>
+              </div>
               {/* funcional para demo */}
               {/* <button className={styles.buttonForm}> Complet&aacute; el formulario </button> */}
             </div>

@@ -76,8 +76,6 @@ const adminUpdateDog = async (req, res) => {
       body,
     } = req;
 
-    console.log(req.body);
-
     const dog = await dogModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
     });
@@ -91,10 +89,6 @@ const adminUpdateDog = async (req, res) => {
 const adminCreateDog = async (req, res) => {
   try {
     const { body } = req;
-
-    console.log(body);
-
-    // body.images = body.images.split(' '); // .replace('[','').replace(']','')
 
     const dog = await dogModel.create(body);
 

@@ -68,6 +68,10 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 dog: action.payload
             }
+        case POST_MELI:
+            return {
+                ...state,
+            }
         case GET_CLOUDINARY_RESPONSE:
             const link =  action.payload;
             return {
