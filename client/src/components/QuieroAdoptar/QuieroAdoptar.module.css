@@ -115,6 +115,13 @@
 @media (max-width: 800px) {
   .mainAdoptar{
     padding:15px
+
+  }
+  .imgAdoptar{
+    display:none
+  }
+  .pAdoptar{
+    font-size: 0.9em;
   }
   .imgAdoptar{
     display:none
