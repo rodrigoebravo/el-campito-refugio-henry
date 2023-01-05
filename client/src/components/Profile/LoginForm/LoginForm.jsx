@@ -77,9 +77,9 @@ const LoginForm = () => {
             ></input>
             {errors.pass && <p>{errors.pass}</p>}
           </form>
-          {errors["pass"] || errors["email"] ? (
+          {errors["pass"] || errors["email"] || input.email === "" ? (
             <Button variant="contained" 
-            // disabled
+            disabled
             onClick={() => {
               const funcion1 = loginUser(input);
               const funcion2 = handleSubmitLogin;

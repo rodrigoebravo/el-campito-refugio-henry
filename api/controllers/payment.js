@@ -91,8 +91,9 @@ const captureOrder = async (req, res) => {
 
     console.log(response.data);
     
-    res.json(response.data)//respuesta de la data en json
-    // res.redirect('http://localhost:3000/pay'); //respuesta con redirect
+    // res.json(response.data)//respuesta de la data en json
+    res.redirect('http://localhost:3000/pay'); 
+    //respuesta con redirect
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ message: "Internal Server error caputure" });
