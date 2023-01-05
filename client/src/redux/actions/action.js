@@ -12,7 +12,8 @@ import {
   POST_VOLUNTEER,
   POST_ADOPTION,
   POST_CONTRIBUTION,
-  GET_PRESS
+  GET_PRESS,
+  GET_USERS_EMAIL
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
@@ -192,4 +193,21 @@ export function loginFunctionA0(payload) {
     const post = await axios.post("/api/auth/login", payload);
     return post;
   };
+}
+
+
+
+export const getUsersEmail = () => {
+  return async function (dispatch) {
+    try {
+      let json = await axios("/api/users")
+      let json2 = json.data.map(e => e.email)
+      return dispatch({
+        type: GET_USERS_EMAIL,
+        payload: json2
+      })
+    } catch {
+      console.log("error en trar users EMAIL")
+    }
+  }
 }

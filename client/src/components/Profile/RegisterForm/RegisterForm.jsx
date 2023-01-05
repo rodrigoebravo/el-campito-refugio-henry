@@ -103,7 +103,7 @@ const RegisterForm = () => {
             ></input>
             {errors.pass && <p>{errors.pass}</p>}
 
-            {errors["pass"] || errors["email"] ? (
+            {errors["pass"] || errors["email"] || input.email === ""? (
               <Button variant="contained" disabled>
                 Registrarse
               </Button>
@@ -114,7 +114,9 @@ const RegisterForm = () => {
         </div>
         
         <RegisterGoogle className={styles.buttonLogin} />
+        
       </div>
+
     </div>
   );
 };
