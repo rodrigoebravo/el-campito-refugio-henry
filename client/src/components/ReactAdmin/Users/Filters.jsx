@@ -27,7 +27,7 @@ const Filters = () => {
             label="Super Administrador"
             value={{ roles: "superAdmin" }}
           />
-          <FilterListItem label="Administrador" value={{ roles: "public" }} />
+          <FilterListItem label="Administrador" value={{ roles: "admin" }} />
           <FilterListItem label="Voluntario" value={{ roles: "voluntario" }} />
           <FilterListItem label="Equipo 1" value={{ roles: "equipo1" }} />
           <FilterListItem label="Equipo 2" value={{ roles: "equipo2" }} />

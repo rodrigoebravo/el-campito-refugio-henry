@@ -2,7 +2,6 @@ import { Admin, Resource } from "react-admin";
 import dataProvider from "../../dataProvider";
 import PetsIcon from "@mui/icons-material/Pets";
 import DogsList from "./Dogs/List";
-import DogsShow from "./Dogs/Show";
 import DogsEdit from "./Dogs/Edit";
 import DogsCreate from "./Dogs/Create";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -35,9 +34,8 @@ import SsidChartIcon from "@mui/icons-material/SsidChart";
 import Stats from "./Stats/Stats";
 
 const AdminIndex = () => {
-  
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user)
+  console.log(user);
   return (
     <Admin dataProvider={dataProvider}>
       <Resource
@@ -45,7 +43,6 @@ const AdminIndex = () => {
         list={DogsList}
         create={DogsCreate}
         edit={DogsEdit}
-        show={DogsShow}
         icon={PetsIcon}
         options={{ label: "Perritos" }}
       />
