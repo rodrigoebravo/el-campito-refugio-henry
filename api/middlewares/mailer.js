@@ -6,12 +6,12 @@ const mailer = async (req, res, next) => {
   try {
     const { email, pass } = req.body;
 
-    // let user = await usersModel.findOne({ email });
+    let user = await usersModel.findOne({ email });
 
-    // if (user) {
-    //   // res.status(200).send("usuario registrado");
-    //   console.log("usuario registrado");
-    // } else {
+    if (user) {
+      // res.status(200).send("usuario registrado");
+      console.log("usuario registrado");
+    } else {
       let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,
@@ -39,9 +39,9 @@ const mailer = async (req, res, next) => {
       });
     // }
     next();
-  } catch (error) {
+  }
+} catch (error) {
     console.error(error);
   }
 };
-
 module.exports = mailer;
