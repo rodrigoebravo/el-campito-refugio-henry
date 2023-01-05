@@ -1,158 +1,293 @@
-.div {
-  margin: 7rem;
-}
-.p {
-  margin: 7px;
+.container {
+  padding: 50px;
 }
 
-.contenedorPasarelas {
-  color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin: 30px 0 30px 0;
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Trashhand";
+  src: url("../../assets/fonts/TrashHand.TTF");
+}
+
+@font-face {
+  font-family: "Seravek";
+  src: url("../../assets/fonts/Seravek.ttf");
+}
+
+body {
+  font-family: 'Seravek', 'sans-serif';
+  font-size: 1.125em;
+  color: #444445;
+  font-weight: 300;
+}
+
+.colaborar section {
+  margin-bottom: 20px;
+  padding: 40px;
+
+}
+
+.h2Colborar {
+  color: #55BA68;
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.h3Colaborar {
+  margin-bottom: 20px;
+  font-size: 1.2500em;
+  color: #FFFFFF;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pColaborar {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+}
+
+.pCuentaBancaria {
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 1em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.aColaborar {
+  color: #55BA68;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.spanColaborar {
+  font-weight: bold;
+}
+
+.parentGrid2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  padding: 0px;
+  margin: 0px
+}
+
 .cuentaBancaria {
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
-  letter-spacing: 0.06em;
-  background: #e48125;
+  background-color: #E48125;
   border-radius: 25px;
-  height: 316px;
-  width: 27%;
-  padding: 20px;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 1.15em;
+  padding: 40px;
+  max-height: 300px;
+  min-height: 300px;
 }
+
 .debitoAutomatico {
+  background-color: #6B639A;
   border-radius: 25px;
-  background: #6b639a;
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: 0.06em;
-  height: 316px;
-  width: 63%;
-  /* height: 100%;*/
+  padding: 40px;
+  max-height: 300px;
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  padding: 20px;
+  color: #FFFFFF;
 }
 
-.debitoAutomatico > p {
-  color: #ffffff;
-}
-.cuentaBancaria > p {
-  color: #ffffff;
-}
-.pasarleML,
-.pasarelaDM {
+.buttonFormDiv{
   display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.noWrap {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.pasarelMLbuttons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  /* grid-template-columns:  repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);*/
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
-.pasarelaDMbuttons {
+.buttonForm {
+  width: 30%;
+  min-width: 235px;
+  font-size: 1em;
+  color: #6B639A;
+  height: auto;
+  background-color: #FAFAFA;
+  margin-top: 20px;
+  align-self: flex-end;
+  min-height: 60px !important;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.parentGrid5 {
+  -ms-grid-columns: none;
+  grid-template-columns: none;
+  gap: 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -ms-grid-columns: 29% 17% 17% 17% 17%;
+  grid-template-columns: 29% 17% 17% 17% 17%;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.medioDePagoML,
+.medioDePagoCF,
+.medioDePagoPaypal {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex-wrap: nowrap;
+  border: 3px solid #4FA7C1;
+  padding: 50px;
+  margin: 0px;
+  align-items: center;
+  text-align: center;
+  border-radius: 25px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: -webkit-fill-available;
 }
 
 .buttonML,
-.buttonDM {
-  background: #4fa7c1;
-  width: 217px;
-  height: 135px;
-  color: white;
-  margin: 5px;
-
-  /* Celeste */
-  border: 3px solid #4fa7c1;
-  border-radius: 25px;
-}
-.buttonDM {
-  background: #388b47;
-  border: 3px solid #388b47;
-}
-.imgML,
-.imgDM {
-  margin: 10px;
-  padding: 15px;
-  width: 334px;
-  height: 250px;
-  border: 3px solid #4fa7c1;
-  border-radius: 25px;
-  align-self: center;
-}
-.imgDM {
-  border: 3px solid #55ba68;
-}
-.h1Colaborar {
-  color: #55ba68;
-}
-
-.debitoButton {
-  background: #fafafa;
-  border-radius: 16px;
-  border: 3px solid;
-  color: #6b639a;
-  width: 241px;
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+.buttonCF,
+.buttonPaypal {
+  cursor: pointer;
+  background-color: #4FA7C1;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 15px;
+  border: 0px;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 32px;
-  align-self: flex-end;
+  color: #FFFFFF;
+  font-size: 1.8em;
+  height: 100%;
+  min-height: 150px;
 }
 
-@media (max-width: 600px) {
-  .pasarleML,
-  .pasarelaDM {
-    flex-direction: column;
-  }
-  .buttonML {
-    width: 100px;
-    height: 100px;
-  }
-  .buttonDM {
-    height: 70px;
+.buttonML:hover {
+  background-color: #3C7E91;
+}
+
+.buttonCF {
+  background-color: #55BA68;
+}
+
+.buttonCF:hover {
+  background-color: #2B5D34;
+}
+
+.buttonPaypal {
+  background-color: #F9C0C1;
+  min-height: 150px;
+  height: 100%;
+}
+
+.buttonPaypal:hover {
+  background-color: #BB9091;
+}
+
+.medioDePagoCF {
+  border: 3px solid #55BA68;
+}
+
+.medioDePagoPaypal {
+  border: 3px solid #F9C0C1;
+  height: -webkit-fill-available;
+  max-height: 150px;
+}
+
+.imgColaborar {
+  width: 100%;
+}
+
+.noButton {
+  text-align: center;
+  font-weight: 100;
+  color: #FFFFFF;
+  font-size: 14.4px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.inputColaborar {
+  border: 0px;
+  border-bottom: 3px solid white;
+  background: transparent;
+  margin-bottom: 10px;
+  margin-top: 35px;
+  width: 85%;
+}
+
+.parentGridPaypal {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -ms-grid-columns: 29% 70.5%;
+  grid-template-columns: 29% 70.5%;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+  padding: 10px 0;
+}
+
+@media (max-width: 800px) {
+  .colaborar section {
+    padding: 40px
   }
 
-  .imgML,
-  .imgDM {
-    align-content: center;
-    height: 150px;
+  .parentGrid2,
+  .parentGrid5,
+  .parentGridPaypal {
+    grid-template-columns: none;
+    gap: 10px;
   }
-  .contenedorPasarelas {
-    flex-direction: column;
-  }
-  .cuentaBancaria {
-    width: 80%;
-  }
+
   .debitoAutomatico {
-    width: 85%;
-    padding: 10px;
-  }
-  .pasarelMLbuttons,
-  .pasarelaDMbuttons {
-    justify-content: center;
-  }
-  .debitoAutomatico {
-    height: 100%;
-    font-size: 15px;
+    font-size: 0.8em;
   }
 }
