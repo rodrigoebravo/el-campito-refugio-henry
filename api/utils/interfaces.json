@@ -1,0 +1,32 @@
+[
+    {
+      "_id": "63a9ee3426acafe5090a3453",
+      "imgVoluntarios": {
+        "src": "https://res.cloudinary.com/dakezkhho/image/upload/v1671839435/refugio/interface/img-voluntariado_vsrx84.png",
+        "index": 99
+      },
+      "voluntarioText": "Todos los años El Campito abre la inscripción para reclutar voluntarios que posean un real compromiso para trabajar en las distintas áreas de nuestro refugio ¡Vos podés ser uno de ellos!<br /><br />No todos los que se anoten serán voluntarios, pues se elegirán para tareas específicas y la cantidad de los mismos será determinada por la naturaleza de esas tareas a desarrollar.<br /><br />Por favor les pedimos que piensen muy cuidadosamente acerca de la posibilidad de dar su tiempo antes de enviarnos su solicitud.<br /><br />",
+      "escolarText": "Si bien el enfoque básico es el mismo para todos, hemos incluido el uso de términos como eutanasia, criaderos clandestinos y zoonosis para los niños de mayor edad.<br /><br />Las charlas de concientización son dictadas por voluntarios del refugio y se llevan a cabo virtualmente o en los establecimientos escolares (muchos de los colegios realizan un trabajo previo sobre la temática), con una duración aproximada de 1.30 a 2.00 horas.<br /><br />",
+      "visitasText": "Por ahora las visitas están suspendidas hasta nuevo aviso, pero igual queremos contarte de qué se trata:<br /><br />Las visitas son el primer domingo de cada mes y los sábados siguientes. Se suspende por lluvia o mal clima, por esto aconsejamos siempre chequear nuestras redes sociales antes de salir. No hace falta que te anotes previamente.",
+      "colaboraText": "El Campito Refugio es una ONG con sus balances al día.<br /> Nuestra cuenta bancaria está auditada a nombre del refugio por lo cual cada donación es rendida.<br /> Para solicitar tu recibo legal o confirmar una transacción, envianos el comprobante a madrinasdelcampito@gmail.com<br />",
+      "imgNosotros": {
+        "src": "https://res.cloudinary.com/dakezkhho/image/upload/v1671839435/refugio/interface/img-voluntariado_vsrx84.png",
+        "index": 98
+      },
+      "homeText": "Somos una ONG sin fines de lucro que trabaja rescatando, recuperando y dando en adopción. Además buscamos generar conciencia para lograr una sociedad más inclusiva y respetuosa.",
+      "slider": [
+        {
+          "src": "https://res.cloudinary.com/dakezkhho/image/upload/v1671839426/refugio/interface/img-principal_yyc423.jpg",
+          "index": 0
+        },
+        {
+          "src": "https://res.cloudinary.com/dakezkhho/image/upload/v1671839425/refugio/interface/slider2_pbmfeh.jpg",
+          "index": 1
+        },
+        {
+          "src": "https://res.cloudinary.com/dakezkhho/image/upload/v1671839425/refugio/interface/slider3_bsxufn.jpg",
+          "index": 2
+        }
+      ]
+    }
+  ]
