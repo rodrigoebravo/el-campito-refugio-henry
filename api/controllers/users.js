@@ -1,14 +1,15 @@
 const { usersModel } = require("../models");
 
 
-// const getUsers = async (req, res) => {
-//   try {
-//     const users = await usersModel.find({isDelete: false});
-//     res.status(201).send(users);
-//   } catch (e) {
-//     res.status(404).send({ error: e });
-//   }
-// };
+const getUsers = async (req, res) => {
+  try {
+    const users = await usersModel.find({isDelete: false});
+    res.status(201).send(users);
+  } catch (e) {
+    res.status(404).send({ error: e });
+  }
+};
+
 
 // const getUsersId = async (req, res) => {
 //   try {
@@ -38,6 +39,6 @@ const createUser = async (req, res) => {
 
 module.exports = {
   createUser,
-  // getUsers, 
+  getUsers, 
   // getUsersId,
 };

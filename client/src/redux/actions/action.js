@@ -11,17 +11,33 @@ import {
   FILTER_DOGS_BY_SIZE,
   POST_VOLUNTEER,
   POST_ADOPTION,
-  POST_CONTRIBUTION
+  POST_CONTRIBUTION,
+  GET_PRESS
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
 dotenv.config();
 // const {NAME_CLOUDINARY} = process.env;
 
+/* export default function postMeli(title, unit_price) {
+  return async function () {
+    const post = await axios
+      .post("http://localhost:3001/mercadopago", title, unit_price)
+      .then((res) => (window.location.href = res.data.init_point));
+    return post;
+  };
+} */
 
 export function postDog(payload) {
   return async function () {
     const post = await axios.post('/api/dogs', payload)
+    return post
+  }
+}
+
+export default function postMeli(title, unit_price) {
+  return async function () {
+    const post = await axios.post('http://localhost:3001/mercadopago', title, unit_price).then((res)=>window.location.href = res.data.init_point)
     return post
   }
 }
@@ -150,4 +166,30 @@ export function postContribution (data) {
   }
 }
 
+export const getPress = () => {
+  return async function (dispatch) {
+    try {
+      let json = await axios("/api/press")
+      return dispatch({
+        type: GET_PRESS,
+        payload: json.data
+      })
+    } catch {
+      console.log("error en traer press")
+    }
+  }
+}
 
+export function registerFunction(payload) {
+  return async function () {
+    const post = await axios.post("/api/auth/register", payload);
+    return post;
+  };
+}
+
+export function loginFunctionA0(payload) {
+  return async function () {
+    const post = await axios.post("/api/auth/login", payload);
+    return post;
+  };
+}

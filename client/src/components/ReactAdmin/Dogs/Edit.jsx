@@ -13,13 +13,13 @@ import {
 } from "react-admin";
 import { Grid } from "@mui/material";
 
-const valida = (values) => {
-  const errors = {};
-  // if (!values.name) errors.name = 'required';
-  // if (!values.age) errors.age = 'required';
+// const valida = (values) => {
+//   const errors = {};
+//   if (!values.name) errors.name = 'required';
+//   if (!values.age) errors.age = 'required';
 
-  return errors;
-};
+//   return errors;
+// };
 
 const DogsEdit = (props) => {
   return (
@@ -28,6 +28,7 @@ const DogsEdit = (props) => {
       {...props}
       disableAuthentication
       mutationMode="pessimistic"
+      redirect={false}
     >
       <SimpleShowLayout>
         <Grid container spacing={3}>

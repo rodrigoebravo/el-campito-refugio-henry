@@ -9,7 +9,7 @@ const adminDogs = async (req, res) => {
     if (filtro) {
       if (filtro.name) {
         const { name } = filtro;
-        console.log(filtro);
+
         dogs = await dogModel
           .find({ name: new RegExp(name, "i") })
           .sort({ name: orden });
@@ -46,7 +46,7 @@ const adminDogs = async (req, res) => {
       };
       newDogs.push(newObj);
     });
-    console.log(newDogs);
+
     res.status(201).send(newDogs);
   } catch (error) {
     res.status(400).send({ error: "Error en la solicitud" });
@@ -60,44 +60,27 @@ const adminDogsId = async (req, res) => {
     } = req;
 
     const dog = await dogModel.findById({ _id: id });
+    let { images: imgs, ...data } = dog.toObject();
 
-    let aux = [];
-    if (dog.images && dog.images.length > 0) {
-      dog.images.forEach((i, index) => {
-        aux.push({ src: i || "", index: index });
-      });
-    }
-    let newObj = {
-      _id: dog._id || "",
-      name: dog.name || "",
-      gender: dog.gender || "",
-      age: dog.age || "",
-      size: dog.size || "",
-      race: dog.race || "",
-      video: dog.video || "",
-      images: aux || [],
-      features: dog.features || "",
-      references: dog.references || [],
-      isSponsored: dog.isSponsored || false,
-      toAdopt: dog.toAdopt || false,
-      adopters: dog.adopters || [],
-      godparents: dog.godparents || [],
-    };
-
-    res.json(newObj);
+    res.json({
+      ...data,
+      images: imgs.map((img, index) => {
+        return {
+          src: img || "",
+          index,
+        };
+      }),
+    });
   } catch (e) {
     res.status(404).send({ error: e });
   }
 };
-
 const adminUpdateDog = async (req, res) => {
   try {
     const {
       params: { id },
       body,
     } = req;
-
-    console.log(req.body);
 
     const dog = await dogModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
@@ -112,10 +95,6 @@ const adminUpdateDog = async (req, res) => {
 const adminCreateDog = async (req, res) => {
   try {
     const { body } = req;
-
-    console.log(body);
-
-    // body.images = body.images.split(' '); // .replace('[','').replace(']','')
 
     const dog = await dogModel.create(body);
 

@@ -13,6 +13,7 @@ const contributionPost = async (req, res) => {
 
     let newCertificate = {},  certificateSee = {};
 
+
     let myDog = await dogModel.findOne({name: dogName});
     let userDb = await usersModel.findOne({ email });
 
@@ -29,6 +30,7 @@ const contributionPost = async (req, res) => {
         });   
         certificateSee =  await contributionsModel.findById({_id: newCertificate._id});        
 
+
         return res.json(certificateSee);
       };
 
@@ -42,6 +44,7 @@ const contributionPost = async (req, res) => {
 
       let myRol = userDb.roles?.find(r=> r === "sponsor");
 
+
       if(!myRol) userDb.roles = [...userDb.roles, "sponsor"]; 
       userDb.contribution = [...userDb.contribution, newCertificate._id];
       await userDb.save();
@@ -54,7 +57,9 @@ const contributionPost = async (req, res) => {
           ...dataContibution,
       });      
 
+
       let myRol = userDb.roles?.find(r=> r === "donante");
+
 
       if(!myRol) userDb.roles = [...userDb.roles, "donante"]; 
       userDb.contribution = [...userDb.contribution, newCertificate._id];
@@ -84,11 +89,13 @@ const contributionPost = async (req, res) => {
 
       let myRol = userDb.roles?.find(r=> r === "padrino");
 
+
       if(!myRol) userDb.roles = [...userDb.roles, "padrino"];
       userDb.contribution = [...userDb.contribution, newCertificate._id];      
       await userDb.save();  
 
       let myGodParent = myDog.godparents?.find(p=> p === userDb._id);
+
 
       if(!myGodParent)  myDog.godparents = [...myDog.godparents, userDb._id];
       await myDog.save();
@@ -99,6 +106,8 @@ const contributionPost = async (req, res) => {
       const { user, dog, ...dataCertificate  } = certificateSee.toObject();
       
       return res.status(201).send({
+
+
         name: user.name,
         idUser: user._id,
         dog: dog.name,

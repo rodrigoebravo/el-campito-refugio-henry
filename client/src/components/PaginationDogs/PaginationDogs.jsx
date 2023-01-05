@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import style from "./PaginationDogs.module.css";
-import Button from "@mui/material/Button";
+import styles from "./PaginationDogs.module.css";
+
+import { withStyles } from "@mui/material";
 
 const PaginationDogs = ({ itemsPerPage, paginationFunction, currentPage }) => {
   const allDogs = useSelector((state) => state.allDogs);
@@ -14,16 +15,15 @@ const PaginationDogs = ({ itemsPerPage, paginationFunction, currentPage }) => {
   }
 
   return (
-    <div className={style.container}>
-      <div className={style.container2}>
+    <div className={styles.container}>
+      <div className={withStyles.container2}>
         {currentPage > 1 ? (
-          <Button
-            sx={{margin: "0 1rem"}}
-            variant="contained"
+          <button
+            className={styles.buttonPagDog}
             onClick={() => paginationFunction(currentPage - 1)}
           >
             prev
-          </Button>
+          </button>
         ) : (
           <></>
         )}
@@ -40,13 +40,12 @@ const PaginationDogs = ({ itemsPerPage, paginationFunction, currentPage }) => {
           })} */}
 
         {currentPage >= 0 && pageDogs.length > currentPage ? (
-          <Button
-          sx={{margin: "0 1rem"}}
-            variant="contained"
+          <button
+           className={styles.buttonPagDog}
             onClick={() => paginationFunction(currentPage + 1)}
           >
             next
-          </Button>
+          </button>
         ) : (
           <></>
         )}

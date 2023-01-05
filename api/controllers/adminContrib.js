@@ -153,6 +153,7 @@ const adminCreateContrib = async (req, res) => {
 
       let myRol = userDb.roles?.find(r=> r === "sponsor");
 
+
       if(!myRol) userDb.roles = [...userDb.roles, "sponsor"]; 
       userDb.contribution = [...userDb.contribution, newCertificate._id];
       await userDb.save();

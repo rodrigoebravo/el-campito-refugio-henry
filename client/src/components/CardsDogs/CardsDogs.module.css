@@ -7,11 +7,12 @@
 }
 .h2 {
   font-family: "TrashHand", sans-serif;
-  color: #e48125;
+  color: #55BA68;
   font-style: normal;
   font-weight: 400;
-  font-size: 48px;
+  font-size: 2.8em;
   line-height: 51px;
+  font-weight: bold;
 }
 .divCards {
   display: flex;
@@ -23,6 +24,10 @@
 }
 .card {
   margin: 2rem;
+  border: 3px solid #55BA68;
+  border-radius: 25px;
+  padding:5px
+
 }
 .btnBack{
   position: absolute;
@@ -33,7 +38,7 @@
 .Link {
   text-decoration: none;
   color: #000;
-  font-family: Seravek, Calibri, Roboto, Arial, sans-serif;
+  font-family: 'Seravek', Calibri, Roboto, Arial, sans-serif;
 }
 
 @media (max-width:600px) {

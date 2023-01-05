@@ -11,10 +11,13 @@ const adoptionPost = async (req, res) => {
     const {
      body:{ name, birthday, email, phone, dogName, ...dataAdopter }
     } = req;
+
+
     console.log(dogName)
 
     let userDb = await usersModel.findOne({ email });
     let dogDb = await dogModel.findOne({ name: dogName });
+
 
     if (!userDb) {
 
@@ -30,7 +33,9 @@ const adoptionPost = async (req, res) => {
       });
      
     };
+
     // console.log(userDb._id); console.log(dogDb._id);
+
     const newCertificate = await adoptionsModel.create({
       user: userDb._id,
       nameUser: userDb.name,
@@ -57,8 +62,9 @@ const adoptionPost = async (req, res) => {
           user:{ _id: user, name: nameUser },
           dog:{_id: dog, name: nameDog },
           ...dataAdop} = adoptDb.toObject(); 
-        
+
         //  res.status(200).send(adoptDb);  
+
 
         res.status(200).send({data:{
           nameUser, user, nameDog, dog,

@@ -1,7 +1,9 @@
 const dbConnect = require("./config/mongo");
 const print = require("./utils/myConsole"); 
 const app = require("./app");
-require("dotenv").config();
+const dotenv = require ('dotenv');
+
+dotenv.config();
 
 // const pushDatabase = require("./utils/pushDatabase");
 // const pushDBusers = require("./utils/pushDBusers");
