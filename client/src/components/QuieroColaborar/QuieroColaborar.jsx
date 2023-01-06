@@ -187,6 +187,20 @@ const QuieroColaborar = () => {
               DONÁ; VÍA PAYPAL
             </button>
           </article>
+          <article className={styles.parentGridPaypal}>
+            <div className={styles.medioDePagoPaypal}>
+            <img
+                src={cafecito}
+                className={styles.imgColaborar}
+                alt="Logo de cafecito"
+              />
+            </div>
+            <button className={styles.buttonPaypal}>
+              <a href="https://cafecito.app/refugioelcampito" rel='noreferrer' target='_blank'>  
+                INVITANOS UN CAFECITO
+              </a>
+            </button>
+          </article>
         </section>
       </main>
 

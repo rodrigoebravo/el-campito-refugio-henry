@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { payment } = require("mercadopago");
 const mercadopago = require("mercadopago");
 
 router.post("/", async (req, res) => {
@@ -19,7 +20,6 @@ router.post("/", async (req, res) => {
       pending: "",
     },
     auto_return: "approved",
-    /* collector_id: 1265040282,  */ //este id se obtiene en "https://api.mercadopago.com/users/me?access_token=ACCESS_TOKEN"
     payment_methods: {
       excluded_payment_types: [
         {
@@ -34,8 +34,6 @@ router.post("/", async (req, res) => {
     const response = await mercadopago.preferences.create(preference);
     const paymentUrl = response.body;
     res.status(200).send(paymentUrl);
-    /* const paymentUrl = response.body.init_point; 
-      res.redirect(paymentUrl);  */
   } catch (error) {
     console.log(error);
     res.send(error);
