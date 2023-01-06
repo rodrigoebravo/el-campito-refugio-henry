@@ -58,20 +58,20 @@ app.use((err, req, res, next) => {
 });
 
 //-----------------------mercado pago-----------------------//
-dotenv.config();
+// dotenv.config();
 
-const mercadopago = require("mercadopago");
+// const mercadopago = require("mercadopago");
 
-//mercadopago.configurations.setAccessToken(process.env.ACCESS_TOKEN);
-mercadopago.configure({
-  access_token: process.env.ACCESS_TOKEN,
-});
+// //mercadopago.configurations.setAccessToken(process.env.ACCESS_TOKEN);
+// mercadopago.configure({
+//   access_token: process.env.ACCESS_TOKEN,
+// });
 
-// importa el módulo de rutas de Mercado Pago
-const mercadopagoRoutes = require("./routers/mercadopago");
+// // importa el módulo de rutas de Mercado Pago
+// const mercadopagoRoutes = require("./routers/mercadopago");
 
-// asigna un manejador de rutas a la ruta '/mercadopago'
-app.use("/mercadopago", mercadopagoRoutes);
+// // asigna un manejador de rutas a la ruta '/mercadopago'
+// app.use("/mercadopago", mercadopagoRoutes);
 
 //-----------------------fin mercado pago-----------------------//
 

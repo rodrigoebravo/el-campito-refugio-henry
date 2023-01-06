@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 
 const mailer = async (req, res, next) => {
   try {
-    const { email, pass } = req.body;
+    const { email, pass, name, organization, phone, type, description } = req.body;
     let url = req.url;
     let route = url.split("/").pop(); 
 

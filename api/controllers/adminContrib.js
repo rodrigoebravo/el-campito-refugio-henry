@@ -14,9 +14,36 @@ const adminContrib = async (req, res) => {
 
       let {user , dog, type, total, ...data} = c.toObject(); 
     
-      if(user == undefined && dog == undefined || dog == undefined ){
+      if ( user == undefined && dog == undefined ){
         return {
-          name: "Anonimo",
+          name: "Anónimo",
+          type,
+          total,
+          ...data
+        }
+      }
+
+      if ( user == {} && dog == {} ){
+        return {
+          name: "Anónimo",
+          type,
+          total,
+          ...data
+        }
+      }
+
+      if ( user && dog == undefined ) {
+        return {
+          name: user.name,
+          type,
+          total,
+          ...data
+        }
+      }
+
+      if ( user == undefined && dog  ) {
+        return {
+          nameDog: dog.name,
           type,
           total,
           ...data
@@ -25,6 +52,7 @@ const adminContrib = async (req, res) => {
 
       return {
         name: user.name,
+        nameUser: user.name,
         nameDog: dog.name,
         type,
         total,
@@ -59,12 +87,12 @@ const adminContribId = async (req, res) => {
     const { user, dog, ...data } = contributions.toObject();
 
     res.json({
-      name: user.name || null,
-      phone: user.phone || null,
-      email: user.email || null,
-      dog: dog.name || null,
-      idUSer: user._id || null,
-      idDog: dog._id || null,
+      name: user.name || undefined,
+      phone: user.phone || undefined,
+      email: user.email || undefined,
+      dog: dog.name || undefined,
+      idUSer: user._id || undefined,
+      idDog: dog._id || undefined,
       ...data,
     });
   } catch (e) {
@@ -118,24 +146,33 @@ const adminUpdateContrib = async (req, res) => {
 
 const adminCreateContrib = async (req, res) => {
   try {
-    const {
-      body: { email, dogName, type, ...dataContibution },
-    } = req;
+
+    const data  = req.body;  console.log(data);
+
+    const  { email, dogName, type, name, ...dataContibution } = data.toObject();   
 
     let newCertificate = {},  certificateSee = {};
 
-    let myDog = await dogModel.findOne({name: dogName});
-    let userDb = await usersModel.findOne({ email });
+    if ( dogName ) {
+      let myDog = await dogModel.findOne({name: dogName});
+    } else { let myDog = {} };
 
-    if ( !userDb || userDb === {} ) {
-      userDb = await usersModel.create({ email });
-    };
+    if ( email ) {
+      let userDb = await usersModel.findOne({ email });
+    } else { let userDb = {} };
+    
+    if ( email ) {
+      if ( !userDb || userDb === {} ) {
+        if ( name ) userDb = await usersModel.create({ email, name });
+        userDb = await usersModel.create({ email });
+      };
+    };    
 
     if ( !dogName ) {
     
-      if ( !email  || !userDb || userDb === {} ) {
+      if ( !email ) {
         newCertificate = await contributionsModel.create({          
-          type:"donación",
+          type,
           ...dataContibution,
         });   
         certificateSee =  await contributionsModel.findById({_id: newCertificate._id});        
@@ -143,32 +180,34 @@ const adminCreateContrib = async (req, res) => {
         return res.json(certificateSee);
       };
 
-      if ( type === "sponsoreo" && email) {
+      if ( type === "sponsoreo" && email ) {
 
         newCertificate = await contributionsModel.create({          
-          type:"sponsoreo",
+          type,
           user: userDb._id,
           ...dataContibution,
-      });      
+        });      
 
-      let myRol = userDb.roles?.find(r=> r === "sponsor");
+        let myRol = userDb.roles?.find((r)=> r === "sponsor") || "";
 
-
-      if(!myRol) userDb.roles = [...userDb.roles, "sponsor"]; 
-      userDb.contribution = [...userDb.contribution, newCertificate._id];
-      await userDb.save();
+        if( !userDb.hasOwnProperty("roles") ) userDb.roles = [];
+        if( !myRol || myRol !== "sponsor" ) userDb.roles = [...userDb.roles, "sponsor"]; 
+        userDb.contribution = [...userDb.contribution, newCertificate._id];
+        await userDb.save();
         
-      } else {
+      };
+      if ( type === "donación" && email ) {
 
         newCertificate = await contributionsModel.create({          
-          type:"donación",
+          type,
           user: userDb._id,
           ...dataContibution,
       });      
 
-      let myRol = userDb.roles?.find(r=> r === "donante");
+      let myRol = userDb.roles?.find(r=> r === "donante") || "";
 
-      if(!myRol) userDb.roles = [...userDb.roles, "donante"]; 
+      if( !userDb.hasOwnProperty("roles") ) userDb.roles = [];
+      if( !myRol || myRol !== "donante" ) userDb.roles = [...userDb.roles, "donante"]; 
       userDb.contribution = [...userDb.contribution, newCertificate._id];
       await userDb.save();
       };
@@ -194,15 +233,18 @@ const adminCreateContrib = async (req, res) => {
           ...dataContibution,
       });
 
-      let myRol = userDb.roles?.find(r=> r === "padrino");
+      let myRol = userDb.roles?.find(r=> r === "padrino") || "";
 
-      if(!myRol) userDb.roles = [...userDb.roles, "padrino"];
+      if( !userDb.hasOwnProperty("roles") ) userDb.roles = [];
+      if( !myRol || myRol !== "padrino" ) userDb.roles = [...userDb.roles, "padrino"];
       userDb.contribution = [...userDb.contribution, newCertificate._id];      
       await userDb.save();  
 
-      let myGodParent = myDog.godparents?.find(p=> p === userDb._id);
+      let myGodParent = myDog.godparents?.find(p=> p === userDb._id) || undefined;
 
-      if(!myGodParent)  myDog.godparents = [...myDog.godparents, userDb._id];
+      if( !myGodParent || myGodParent !== userDb._id ) {
+        myDog.godparents = [...myDog.godparents, userDb._id];
+      }  
       await myDog.save();
       
       certificateSee =  await contributionsModel.findById({_id: newCertificate._id})
