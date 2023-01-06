@@ -22,7 +22,6 @@ import Footer from "../Footer/Footer";
   let currentPageItems = allDogs?.slice(firsItemPerPage, lastItemPerPage);
 
   function pagination(page) {
-    // console.log(page - 1, "soy page ");
     setCurrentPage(page);
   }
 
