@@ -6,7 +6,6 @@ import styles from "./Home.module.css";
 import Footer from "../Footer/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
 import ModalLogin from "../ModalLogin/ModalLogin";
-import Registro from "../ProfileAuth0/RegisterGoogle/Registro";
 import ModalRegister from "../ModalRegister/ModalRegister";
 import { emailAvailable } from "../../login";
 import { useDispatch, useSelector } from "react-redux";

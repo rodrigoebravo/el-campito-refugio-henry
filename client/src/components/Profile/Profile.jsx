@@ -7,7 +7,8 @@ import RegisterForm from "./RegisterForm/RegisterForm";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
 import Registro from "../ProfileAuth0/RegisterGoogle/Registro";
-import Loading from "../Loading/Loading"
+import Loading from "../Loading/Loading";
+import { updateRole } from "../../login";
 
 const Profile = () => {
   const [items, setItems] = useState([]);
@@ -25,7 +26,8 @@ const Profile = () => {
     }
   }, []);
 
-  console.log(items, "soy items");
+
+  // console.log(items, "soy items");
   function logoutSession() {
     localStorage.removeItem("user");
     window.location.reload();
@@ -34,8 +36,7 @@ const Profile = () => {
   if (isLoading) {
     return <Registro />;
   } else if (items.length === 0 && user) {
-    return <Loading/>;
-
+    return <Loading />;
   } else {
     return (
       <div className={styles.divUserData}>
@@ -68,7 +69,10 @@ const Profile = () => {
                 <></>
               )}
               <h2>Email: {items.data?.info.email}</h2>
-              <h2>Tu rol de usuario es: {items.data?.info.roles}</h2>
+              <h2>
+                Tu rol de usuario es:{" "}
+                {items.data?.info.roles.map((e) => e + " ")}
+              </h2>
               {items.data?.info.roles.includes("admin") ||
               items.data?.info.roles.includes("super") ? (
                 <h4>Puedes acceder al Panel de administrador</h4>
@@ -88,6 +92,18 @@ const Profile = () => {
                 <Link to="/" className={styles.ButtonDashboard2}>
                   Home
                 </Link>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    let update = updateRole();
+                    update();
+                    console.log("CLICK");
+                  }}
+                >
+                  Actualizar Estado
+                </Button>
+
+                
 
                 <Button
                   id="ButtonDashboard2"
@@ -103,6 +119,7 @@ const Profile = () => {
                   Cerrar Sesión
                 </Button>
                 {/* <UserDBRegister/> */}
+                
               </div>
             </div>
           </div>

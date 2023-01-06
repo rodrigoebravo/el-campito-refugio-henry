@@ -119,16 +119,16 @@ const adminUpdateContrib = async (req, res) => {
 const adminCreateContrib = async (req, res) => {
   try {
     const {
-      body: { email, dogName, type, ...dataContibution },
+      body: { email, dogName,name, type, ...dataContibution },
     } = req;
-
+    console.log(dataContibution,"soy data ocntrib")
     let newCertificate = {},  certificateSee = {};
 
     let myDog = await dogModel.findOne({name: dogName});
     let userDb = await usersModel.findOne({ email });
 
     if ( !userDb || userDb === {} ) {
-      userDb = await usersModel.create({ email });
+      userDb = await usersModel.create({ email,name });
     };
 
     if ( !dogName ) {
@@ -145,15 +145,14 @@ const adminCreateContrib = async (req, res) => {
 
       if ( type === "sponsoreo" && email) {
 
-        newCertificate = await contributionsModel.create({          
-          type:"sponsoreo",
+        newCertificate = await contributionsModel.create({
           user: userDb._id,
           ...dataContibution,
       });      
 
       let myRol = userDb.roles?.find(r=> r === "sponsor");
 
-
+      if(!userDb.roles) userDb.roles = []
       if(!myRol) userDb.roles = [...userDb.roles, "sponsor"]; 
       userDb.contribution = [...userDb.contribution, newCertificate._id];
       await userDb.save();
@@ -220,7 +219,7 @@ const adminCreateContrib = async (req, res) => {
     };     
 
   
-    } catch (error) { res.status(404).send({ error }) }
+    } catch (error) { res.json({ error }) }
 };
 
 const adminDeleteContrib = async (req, res) => {

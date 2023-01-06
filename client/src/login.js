@@ -26,16 +26,18 @@ export function updateRole() {
     const localInfo = JSON.parse(localStorage.getItem("user"));
     const localInfoRole = JSON.parse(localStorage.getItem("user"));
     let id = localInfo.data?.info._id;
-    let localRole = localInfoRole.data?.info.roles;
+    let localRoles = localInfoRole.data?.info.roles;
     const user = await axios.get(`http://localhost:3001/api/users/${id}`);
 
     dataRoles = user.data.roles;
-    if (dataRoles !== localRole) {
+    if (dataRoles.toString() !== localRoles.toString()) {
       localStorage.removeItem("user");
       window.location.reload();
       console.log("Hay que actualizar");
+      alert("Tu perfil se encuentra desactualizado, reinicia tu sesion");
     } else {
       console.log("Todo bien");
+      alert("Tu perfil esta actualizado");
     }
     return dataRoles;
   };
@@ -47,10 +49,8 @@ export function loginUserGoogle(dataUser) {
       const Login = await axios.post("/api/auth/login", dataUser);
       console.log(Login, "Soy Login de funcition login");
       localStorage.setItem("user", JSON.stringify(Login));
-      // window.location.reload();
-      // console.log(data, "Soy data");
     } catch {
-      alert("eror");
+      alert("Error En iniciar sesión con Google,Pruba cambiando tu contraseña");
     }
   };
 }
@@ -64,7 +64,7 @@ export function registerUserGoogle(dataUser) {
     });
     let includes = data.includes(dataUser.email);
     if (!dataUser) return alert("Ingrese Informacion");
-    if (includes) return alert("El Email Ya Registrado");
+    if (includes) return alert("El Email Ya Fue Registrado");
     ///////////////////////////////////////////////////
 
     try {
@@ -75,13 +75,13 @@ export function registerUserGoogle(dataUser) {
       registerData();
       console.log(registerData, "soy dATA ENVIDA");
       console.log(dataUser, "dATA ENVIDA");
-      localStorage.setItem("user", JSON.stringify(registerData));
+      // localStorage.setItem("user", JSON.stringify(registerData));
       // window.location.reload();
       // console.log(registerData, "Soy data de fun register de login");
       registerData();
-      alert("se pudo");
+      alert("Se registro correctamente");
     } catch {
-      alert("ERROR AL REGISTRARSE");
+      // alert("ERROR AL REGISTRARSE");
     }
   };
 }
@@ -130,42 +130,19 @@ export function payWithPayPal() {
   };
 }
 
-export function captureData() {
-  return async function (req, res) {
-    let { token } = await req.query;
+// export function captureData() {
+//   return async function (req, res) {
+//     let { token } = await req.query;
 
-    console.log(token);
+//     console.log(token);
+//   };
+// }
+
+export function changePassword() {
+  return async function (req, res) {
+    // traer el id y el usuario registrado de la bd con el email
+    // luego comporbar que conicida el email con el ingresado anteriormente
+    // modificar el valor de pass de db atravez de un put el valor ingresado 
+    // 
   };
 }
-
-// if (user) {
-//   let loginUsers = {
-//     email: user.email,
-//     pass: user.name,
-//   };
-
-//   setTimeout(loginUserGoogle(loginUsers));
-//   // logout()
-// }
-
-// if(user && !items){
-//   let registerUsers = {
-//     email: user.email,
-//     pass: user.name,
-//     name:user.name,
-//     image:user.picture
-//   };
-//   // setTimeout()
-//   // logout()
-//   setTimeout(registerUserGoogle(registerUsers))
-//   let register = emailAvailable(user.email)
-//   if(register) {
-//     let loginUsers = {
-//       email: user.email,
-//       pass: user.name,
-//     }
-//     setTimeout(loginUserGoogle(loginUsers));
-//   }
-// }
-
-// }

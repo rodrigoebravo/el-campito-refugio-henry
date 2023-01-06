@@ -26,7 +26,8 @@ import PrensaRadio from "./components/Prensa/Radio/PrensaRadio.jsx";
 import PrensaAmigos from "./components/Prensa/ArtistasAmigos/ArtistasAmigos.jsx";
 import Profile from "./components/Profile/Profile";
 import NoAccess from "./components/NoAccess/NoAccess";
-import Pay from "./components/Pay/Pay"
+import Pay from "./components/Pay/Pay";
+import RecuperarCuenta from "./components/RecuperarCuenta/RecuperarCuenta"
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -36,14 +37,14 @@ function App() {
       <Route exact path={"/"} component={Home} />
       <Route exact path={"/detalle"} component={ConocenosDetalle} />
       <Route exact path={"/adoptar"} component={QuieroAdoptar} />
-      <Route exact path={"/colaborar"} component={QuieroColaborar} />
+      <Route path={"/colaborar"} component={QuieroColaborar} />
       <Route exact path={"/voluntario"} component={QuieroSerVoluntario} />
       <Route exact path={"/visitas"} component={Visitas} />
       <Route exact path={"/contactanos"} component={Contactanos} />
       <Route exact path={"/adoptar/perros"} component={CardsDogs} />
       <Route exact path={"/adoptar/perros/:id"} component={CardDogDetails} />
       <Route exact path={"/volunteerForm"} component={Voluntario} />
-      <Route exact path={"/AdoptionForm"} component={Adopcion} />
+      <Route path={"/AdoptionForm"} component={Adopcion} />
       <Route exact path={"/ContactForm"} component={Contacto} />
       <Route exact path={"/proyectos"} component={Proyectos} />
       <Route exact path={"/proyectoescolar"} component={ProyectoEscolar} />
@@ -56,7 +57,7 @@ function App() {
       <Route exact path={"/prensa/amigos"} component={PrensaAmigos} />
       <Route exact path={"/profile"} component={Profile} />
       <Route exact path={"/pay"} component={Pay} />
-
+      <Route exact path={"/recuperar"} component={RecuperarCuenta} />
 
       {(user && user.data?.info.roles.includes("admin")) ||
       (user && user.data?.info.roles.includes("superAdmin")) ? (

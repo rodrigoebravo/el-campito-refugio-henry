@@ -25,7 +25,8 @@ const userScheme = new mongoose.Schema(
     roles: { 
       type: [String], 
       enum: ["public", "superAdmin", "admin", "voluntario", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante"], 
-      default: "public"
+      default: ["public"]
+      // default: "public" aterior
 
     }, 
     image: {
