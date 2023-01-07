@@ -27,7 +27,8 @@ import PrensaAmigos from "./components/Prensa/ArtistasAmigos/ArtistasAmigos.jsx"
 import Profile from "./components/Profile/Profile";
 import NoAccess from "./components/NoAccess/NoAccess";
 import Pay from "./components/Pay/Pay";
-import RecuperarCuenta from "./components/RecuperarCuenta/RecuperarCuenta"
+import RecuperarCuenta from "./components/RecuperarCuenta/RecuperarCuenta";
+import ProfileEdit from "./components/ProfileEdit/ProfileEdit";
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -58,6 +59,13 @@ function App() {
       <Route exact path={"/profile"} component={Profile} />
       <Route exact path={"/pay"} component={Pay} />
       <Route exact path={"/recuperar"} component={RecuperarCuenta} />
+
+      {/* <Route exact path={"/profile/edit"} component={ProfileEdit} /> */}
+      {user && user.data?.info ? (
+        <Route exact path={"/profile/edit"} component={ProfileEdit} />
+      ) : (
+        <Route exact path={"/profile/edit"} component={NoAccess} />
+      )}
 
       {(user && user.data?.info.roles.includes("admin")) ||
       (user && user.data?.info.roles.includes("superAdmin")) ? (

@@ -118,11 +118,13 @@ export function emailAvailable(email) {
   };
 }
 
-export function payWithPayPal() {
+export function payWithPayPal(monto) {
   return async function () {
     const response = await axios.post(
-      "http://localhost:3001/api/paypal/create-order"
+      "http://localhost:3001/api/paypal/create-order",
+      monto
     );
+    console.log(monto,"soy monto login")
     console.log(response.data.links[1].href);
     // const data = response;
     window.location.href = response.data.links[1].href;
@@ -142,7 +144,7 @@ export function changePassword() {
   return async function (req, res) {
     // traer el id y el usuario registrado de la bd con el email
     // luego comporbar que conicida el email con el ingresado anteriormente
-    // modificar el valor de pass de db atravez de un put el valor ingresado 
-    // 
+    // modificar el valor de pass de db atravez de un put el valor ingresado
+    //
   };
 }

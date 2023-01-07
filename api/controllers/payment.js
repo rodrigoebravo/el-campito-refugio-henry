@@ -6,9 +6,15 @@ const {
   PAYPAL_API_SECRET,
 } = require("../config/paypal");
 
-const {adminCreateContrib} = require("./adminContrib");
+const { adminCreateContrib } = require("./adminContrib");
 
+let pago = 0
 const createOrder = async (req, res) => {
+  const monto = req.body;
+  // console.log(a,"soy a ")
+  pago = monto.monto // pago es la variable que obtiene el valor que entra por body
+  console.log(monto.monto,"soy monto payment")
+
   try {
     const order = {
       intent: "CAPTURE",
@@ -16,7 +22,7 @@ const createOrder = async (req, res) => {
         {
           amount: {
             currency_code: "USD",
-            value: "105.70",
+            value: pago,
           },
         },
       ],
@@ -95,14 +101,12 @@ const captureOrder = async (req, res) => {
       detail: "Este pago fue realizado correctamente",
       name: info.payer.name.given_name + " " + info.payer.name.surname,
       email: info.payer.email_address,
-      total: 5,
-      method: "paypal"
+      total: pago, // pago es el valor que ingresa desde body
+      method: "paypal",
     };
-    console.log(obj,"soy obj")
+    console.log(obj, "soy obj");
 
     // adminCreateContrib(obj)
-
-
 
     // res.json(response.data)
     //respuesta de la data en json
@@ -110,7 +114,7 @@ const captureOrder = async (req, res) => {
     //respuesta con redirect
   } catch (error) {
     console.log(error.message);
-     res.status(500).json({ message: "Internal Server error caputure" });
+    res.status(500).json({ message: "Internal Server error caputure" });
   }
 };
 
