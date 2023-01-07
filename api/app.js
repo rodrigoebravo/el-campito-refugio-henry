@@ -15,7 +15,7 @@ const app = express();
 //     .then(res => console.log("cargado"))
 // }
 
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 
 app.use(cors()); //error de origen cruzado
 app.use(express.json()); //Manejar data .json

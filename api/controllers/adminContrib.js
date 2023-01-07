@@ -1,4 +1,4 @@
-const { contributionsModel, usersModel, dogModel } = require("../models");
+const { contributionsModel, usersModel, dogModel } = require("../models/index");
 
 const adminContrib = async (req, res) => {
   try {
@@ -149,24 +149,28 @@ const adminCreateContrib = async (req, res) => {
 
     const data  = req.body;  console.log(data);
 
-    const  { email, dogName, type, name, ...dataContibution } = data.toObject();   
+    const  { email, dogName, type, name, ...dataContibution } = data;   
 
-    let newCertificate = {},  certificateSee = {};
+    // console.log(email); console.log(dogName);  console.log(dataContibution);
+
+    let newCertificate = {},  certificateSee = {}, myDog = {}, rol = [], myGodParent = [] ;
 
     if ( dogName ) {
-      let myDog = await dogModel.findOne({name: dogName});
-    } else { let myDog = {} };
+      myDog = await dogModel.findOne({name: dogName}); 
+    };  console.log(myDog);
 
     if ( email ) {
-      let userDb = await usersModel.findOne({ email });
-    } else { let userDb = {} };
+      let userDb = await usersModel.findOne({ email: email }) || undefined; console.log("linea 164",userDb);
+      // console.log(userDb.email); console.log(email);
+      if ( userDb.email !== "email"  ) {
+        if ( name ) {  
+          userDb = await usersModel.create({ email, name })  
+        } else {
+          userDb = await usersModel.create({ email });
+        }  
+      }; 
+    };   console.log("linea 171",userDb);
     
-    if ( email ) {
-      if ( !userDb || userDb === {} ) {
-        if ( name ) userDb = await usersModel.create({ email, name });
-        userDb = await usersModel.create({ email });
-      };
-    };    
 
     if ( !dogName ) {
     
@@ -176,7 +180,7 @@ const adminCreateContrib = async (req, res) => {
           ...dataContibution,
         });   
         certificateSee =  await contributionsModel.findById({_id: newCertificate._id});        
-
+        console.log(certificateSee);
         return res.json(certificateSee);
       };
 
@@ -188,12 +192,13 @@ const adminCreateContrib = async (req, res) => {
           ...dataContibution,
         });      
 
-        let myRol = userDb.roles?.find((r)=> r === "sponsor") || "";
-
+        if( userDb.hasOwnProperty("roles")  ){
+          rol = userDb.roles.find(r=> r === "sponsor") || "";
+        };
         if( !userDb.hasOwnProperty("roles") ) userDb.roles = [];
-        if( !myRol || myRol !== "sponsor" ) userDb.roles = [...userDb.roles, "sponsor"]; 
-        userDb.contribution = [...userDb.contribution, newCertificate._id];
-        await userDb.save();
+        if( !rol || rol !== "sponsor" ) userDb.roles = [...userDb.roles, "sponsor"];
+        userDb.contribution = [...userDb.contribution, newCertificate._id];      
+        await userDb.save(); 
         
       };
       if ( type === "donación" && email ) {
@@ -204,12 +209,14 @@ const adminCreateContrib = async (req, res) => {
           ...dataContibution,
       });      
 
-      let myRol = userDb.roles?.find(r=> r === "donante") || "";
-
+      if( userDb.hasOwnProperty("roles")  ){
+        rol = userDb.roles.find(r=> r === "donante") || "";
+      };
       if( !userDb.hasOwnProperty("roles") ) userDb.roles = [];
-      if( !myRol || myRol !== "donante" ) userDb.roles = [...userDb.roles, "donante"]; 
-      userDb.contribution = [...userDb.contribution, newCertificate._id];
-      await userDb.save();
+      if( !rol || rol !== "donante" ) userDb.roles = [...userDb.roles, "donante"];
+      userDb.contribution = [...userDb.contribution, newCertificate._id];      
+      await userDb.save(); 
+      
       };
       
 
@@ -226,22 +233,26 @@ const adminCreateContrib = async (req, res) => {
     };
 
     if( email && dogName && type === "padrinazgo" ){ 
+      
       newCertificate = await contributionsModel.create({
           user: userDb._id,
           dog: myDog._id,
-          type:"padrinazgo",
+          type,
           ...dataContibution,
-      });
+      }); console.log(newCertificate);
 
-      let myRol = userDb.roles?.find(r=> r === "padrino") || "";
 
+      if( userDb.hasOwnProperty("roles")  ){
+        rol = userDb.roles.find(r=> r === "padrino") || "";
+      };
       if( !userDb.hasOwnProperty("roles") ) userDb.roles = [];
-      if( !myRol || myRol !== "padrino" ) userDb.roles = [...userDb.roles, "padrino"];
+      if( !rol || rol !== "padrino" ) userDb.roles = [...userDb.roles, "padrino"];
       userDb.contribution = [...userDb.contribution, newCertificate._id];      
       await userDb.save();  
 
-      let myGodParent = myDog.godparents?.find(p=> p === userDb._id) || undefined;
-
+      if ( myDog.hasOwnProperty("myGodParent") ) {
+        myGodParent = myDog.godparents.find(p=> p === userDb._id) || undefined;
+      };
       if( !myGodParent || myGodParent !== userDb._id ) {
         myDog.godparents = [...myDog.godparents, userDb._id];
       }  
@@ -251,14 +262,18 @@ const adminCreateContrib = async (req, res) => {
       .populate("user dog"); 
 
       const { user, dog, ...dataCertificate  } = certificateSee.toObject();
+
+      console.log(user); console.log(dog);
+
+      // res.json("hecho")
       
-      return res.status(201).send({
+      return res.status(201).send({data:{
         name: user.name,
         idUser: user._id,
         dog: dog.name,
         idDog: dog._id,
         ...dataCertificate
-      }); 
+      }}); 
     };     
 
   
