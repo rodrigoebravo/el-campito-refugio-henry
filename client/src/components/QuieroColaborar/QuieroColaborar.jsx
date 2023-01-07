@@ -263,7 +263,7 @@ const QuieroColaborar = () => {
                 alt="Logo de Cafecito"
               />
             </div>
-            <button className={styles.buttonPaypal} onClick={payWithPayPal()}>
+            {/* <button className={styles.buttonPaypal} onClick={payWithPayPal()}>
               DONÁ VÍA PAYPAL
             </button>
           </article>
@@ -274,7 +274,7 @@ const QuieroColaborar = () => {
                 className={styles.imgColaborar}
                 alt="Logo de cafecito"
               />
-            </div>
+            </div> */}
             <button className={styles.buttonPaypal}>
               <a href="https://cafecito.app/refugioelcampito" rel='noreferrer' target='_blank'>  
                 INVITANOS UN CAFECITO
