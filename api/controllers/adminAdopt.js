@@ -8,6 +8,8 @@ const adminAdoptions = async (req, res) => {
       .filter((a)=> a.user && a.dog )
       .map(adop=> { 
 
+        adop.date = adop.date?.toJSON().slice(0, 10);
+
         const { user, dog, ...data } = adop.toObject(); 
 
         return {
@@ -37,7 +39,9 @@ const adminAdoptions = async (req, res) => {
         params: { id },
       } = req;
   
-      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog");      
+      const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog");
+      
+      adoption.date = adoption.date?.toJSON().slice(0, 10);
      
       const { user, dog, ...data } = adoption.toObject(); 
 
@@ -63,6 +67,8 @@ const adminAdoptions = async (req, res) => {
         params: { id },
         body: { birthday, email, phone,  ...dataAdop },
       } = req;
+
+      console.log(dataAdop); console.log(mail);
   
       await adoptionsModel.findByIdAndUpdate({ _id: id }, dataAdop, {
         returnOriginal: false,
@@ -74,7 +80,7 @@ const adminAdoptions = async (req, res) => {
 
       if ( dataAdop.isPending === false ) roles.concat('adoptante');
 
-      await usersModel.findByIdAndUpdate({ _id: user._id },
+      await usersModel.findByIdAndUpdate({ _id: users1._id },
         { birthday, phone, email, roles }
       );   
   

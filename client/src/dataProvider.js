@@ -173,6 +173,8 @@ const dataProvider = {
       params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros);
       params.data.imgNosotros = await pushCloudinary( params.data.imgVoluntarios);
     }
+    console.log(resource);
+    console.log(params.data);
 
     const http = await httpClient(`${apiUrl}/${resource}`, {
 
@@ -180,9 +182,8 @@ const dataProvider = {
       body: JSON.stringify(params.data),
     });
 
-
-    const { json } = http;
-
+    // const  json  = http.toObject();     
+    const  json  = http; 
 
     return {
       data: { ...params.data, id: json._id },
