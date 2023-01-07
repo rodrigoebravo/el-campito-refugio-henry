@@ -18,7 +18,6 @@
     {
         "email": "jorgeruiz@gasnna.com",
         "type": "donación", 
-        "date":"2020-12-07T12:49:36.889Z",
         "total": 200,
         "method": "mercadopago"
     },
@@ -40,9 +39,20 @@
       },
       {
         "email": "shtast@mail.com",
+        "name": "Sasha Milens",
         "dogName": "Isadora",
         "type": "padrinazgo",
         "total": 20000,
+        "detail": "para hacer mas linda la vida de Isa",
+        "method": "mercadoPago",
+        "date": "2021-08-20T12:51:34.724Z"
+      },
+      {
+        "email": "patatas@mail.com",
+        "name": "Patricia Milens",
+        "dogName": "Bala",
+        "type": "padrinazgo",
+        "total": 2000,
         "detail": "para hacer mas linda la vida de Isa",
         "method": "mercadoPago",
         "date": "2021-08-20T12:51:34.724Z"

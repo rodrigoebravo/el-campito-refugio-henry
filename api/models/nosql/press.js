@@ -41,13 +41,13 @@ const pressScheme = new mongoose.Schema(
 );
 
 
-pressScheme.pre('find', function() {
-  this.where({ isDelete: false });
-});
+// pressScheme.pre('find', function() {
+//   this.where({ isDelete: false });
+// });
 
-pressScheme.pre('findOne', function() {
-  this.where({ isDelete: false });
-});
+// pressScheme.pre('findOne', function() {
+//   this.where({ isDelete: false });
+// });
 
 
 // pressScheme.plugin(mongooseDelete, { overrideMethods: "all" });

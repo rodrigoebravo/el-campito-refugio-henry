@@ -167,13 +167,18 @@ const dataProvider = {
         params.data.imgVoluntarios
       );
     }
+    console.log(resource);
+    console.log(params.data);
 
     const http = await httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
       body: JSON.stringify(params.data),
     });
 
-    const { json } = http;
+
+    // const  json  = http.toObject();     
+    const  json  = http; 
+    
 
     return {
       data: { ...params.data, id: json._id },

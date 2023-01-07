@@ -7,6 +7,7 @@ import RegisterForm from "./RegisterForm/RegisterForm";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
 import Registro from "../ProfileAuth0/RegisterGoogle/Registro";
+import Loading from "../Loading/Loading"
 
 const Profile = () => {
   const [items, setItems] = useState([]);
@@ -33,7 +34,7 @@ const Profile = () => {
   if (isLoading) {
     return <Registro />;
   } else if (items.length === 0 && user) {
-    return <Registro />;
+    return <Loading/>;
 
   } else {
     return (

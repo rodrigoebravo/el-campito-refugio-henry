@@ -3,7 +3,9 @@ const { usersModel } = require("../models");
 
 const adminUsers = async (req, res) => {
   try {
-    const users = await usersModel.find({ isDelete: false });
+
+    // const users = await usersModel.find({isDelete: false}) 
+    const users = await usersModel.find({}) 
 
     const userMapping = users.map((user, index) => {
       const { image: img, ...data } = user.toObject();
