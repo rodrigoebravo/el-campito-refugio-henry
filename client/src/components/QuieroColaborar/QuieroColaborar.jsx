@@ -138,12 +138,12 @@ const QuieroColaborar = () => {
             >
               $7000
             </button>
-            <button
+            {/* <button
               className={styles.buttonML}
               onClick={() => handleClick(unique, 10000)}
             >
               $10000
-            </button>
+            </button> */}
             <form onSubmit={(e) => { e.preventDefault(); handleClick(unique, parseInt(value)); }}>
               <button type="submit" className={styles.buttonML}>
                 $ <input 
