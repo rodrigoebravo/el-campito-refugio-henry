@@ -6,7 +6,14 @@ const {
   PAYPAL_API_SECRET,
 } = require("../config/paypal");
 
+const { adminCreateContrib } = require("./adminContrib");
+
+let pago = 0;
 const createOrder = async (req, res) => {
+  const monto = req.body;
+  // console.log(a,"soy a ")
+  pago = monto.monto; // pago es la variable que obtiene el valor que entra por body
+  console.log(monto.monto, "soy monto payment");
 
   try {
     const order = {
@@ -15,7 +22,7 @@ const createOrder = async (req, res) => {
         {
           amount: {
             currency_code: "USD",
-            value: "105.70",
+            value: pago,
           },
         },
       ],
@@ -74,7 +81,7 @@ const createOrder = async (req, res) => {
 };
 
 const captureOrder = async (req, res) => {
-  console.log("entre a cpture order")
+  console.log("entre a cpture order");
   const { token } = req.query;
 
   try {
@@ -90,24 +97,36 @@ const captureOrder = async (req, res) => {
     );
 
     console.log(response.data);
-    
-    // res.json(response.data)//respuesta de la data en json
-    res.redirect('http://localhost:3000/pay'); 
+    let info = response.data;
+    let obj = {
+      detail: "Este pago fue realizado correctamente",
+      name: info.payer.name.given_name + " " + info.payer.name.surname,
+      email: info.payer.email_address,
+      total: pago, // pago es el valor que ingresa desde body
+      method: "paypal",
+    };
+    console.log(obj, "soy obj");
+
+    // adminCreateContrib(obj)
+
+    // res.json(response.data)
+    //respuesta de la data en json
+    res.redirect("http://localhost:3000/pay");
     //respuesta con redirect
   } catch (error) {
     console.log(error.message);
-    return res.status(500).json({ message: "Internal Server error caputure" });
+    res.status(500).json({ message: "Internal Server error caputure" });
   }
 };
 
 
 const cancelPayment = (req, res) => {
-  console.log("Se cancelo la operacion")
-  res.redirect('http://localhost:3000');
+  console.log("Se cancelo la operacion");
+  res.redirect("http://localhost:3000");
 };
 
 module.exports = {
   captureOrder,
   cancelPayment,
-  createOrder
+  createOrder,
 };

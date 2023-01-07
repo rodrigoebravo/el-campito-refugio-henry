@@ -126,7 +126,7 @@ body {
   color: #FFFFFF;
 }
 
-.buttonFormDiv{
+.buttonFormDiv {
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
@@ -200,6 +200,9 @@ body {
   height: 100%;
   min-height: 150px;
 }
+.btnPaypalMonto{
+  padding: 1rem;
+}
 
 .buttonML:hover {
   background-color: #3C7E91;
@@ -223,15 +226,19 @@ body {
   background-color: #BB9091;
 }
 
-.medioDePagoCF {
-  border: 3px solid #55BA68;
-}
-
 .medioDePagoPaypal {
   border: 3px solid #F9C0C1;
+ }
+/* .medioDePagoCF {
+  border: 3px solid #55BA68;
+/* }
+ */
+
+
+.medioDePagoCF {
+  border: 3px solid #55BA68;
   height: -webkit-fill-available;
-  max-height: 150px;
-}
+  max-height: 150px;}
 
 .imgColaborar {
   width: 100%;
@@ -250,12 +257,20 @@ body {
 }
 
 .inputColaborar {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
   border: 0px;
   border-bottom: 3px solid white;
   background: transparent;
   margin-bottom: 10px;
   margin-top: 35px;
   width: 85%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .parentGridPaypal {

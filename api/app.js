@@ -15,7 +15,7 @@ const app = express();
 //     .then(res => console.log("cargado"))
 // }
 
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 
 app.use(cors()); //error de origen cruzado
 app.use(express.json()); //Manejar data .json
@@ -73,6 +73,6 @@ const mercadopagoRoutes = require("./routers/mercadopago");
 // asigna un manejador de rutas a la ruta '/mercadopago'
 app.use("/mercadopago", mercadopagoRoutes);
 
-//-----------------------fin mercado pago-----------------------//
+// -----------------------fin mercado pago-----------------------//
 
 module.exports = app;

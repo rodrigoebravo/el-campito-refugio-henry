@@ -31,6 +31,7 @@ const LoginForm = () => {
     email: "",
     pass: "",
   });
+  const [contador, setContador] = useState(0);
 
   function handleChange(e) {
     setInput({
@@ -77,20 +78,18 @@ const LoginForm = () => {
             ></input>
             {errors.pass && <p>{errors.pass}</p>}
           </form>
-          {errors["pass"] || errors["email"] || input.email === "" ? (
-            <Button variant="contained" 
-            disabled
-            onClick={() => {
-              const funcion1 = loginUser(input);
-              const funcion2 = handleSubmitLogin;
-              funcion1();
-              funcion2();}}>
+          {errors["pass"] ||
+          errors["email"] ||
+          input.email === "" ||
+          input.pass === "" ? (
+            <Button variant="contained" disabled>
               Iniciar Sesión
             </Button>
           ) : (
             <Button
               variant="contained"
               onClick={() => {
+                setContador(contador + 1);
                 const funcion1 = loginUser(input);
                 const funcion2 = handleSubmitLogin;
                 funcion1();
@@ -100,10 +99,18 @@ const LoginForm = () => {
               Iniciar Sesión
             </Button>
           )}
+          {contador < 2 ? (
+            <></>
+          ) : (
+            <div>
+              <h3>
+                Recuperar cuenta <button>x</button>
+              </h3>
+            </div>
+          )}
         </div>
 
         <LoginGoogle className={styles.loginGoogle} />
-        
       </div>
     </div>
   );

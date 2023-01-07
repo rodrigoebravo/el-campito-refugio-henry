@@ -1,5 +1,5 @@
 const models = {
-    usersModel: require("./nosql/users"),
+    usersModel: require("./nosql/users.js"),
     dogModel: require("./nosql/dogs"),
     adoptionsModel: require("./nosql/adoptions"),
     volunteersModel: require("./nosql/volunteers"),
