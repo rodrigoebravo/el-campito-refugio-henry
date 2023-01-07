@@ -3,17 +3,26 @@ const { usersModel } = require("../models");
 
 const adminUsers = async (req, res) => {
   try {
+    const range = JSON.parse(req.query.range);
     const filtro = JSON.parse(req.query.filter);
     const ordenar = JSON.parse(req.query.sort);
-    let orden = ordenar[1].toLowerCase() || "asc";
+    let orden = ordenar[1].toLowerCase() === "asc" ? 1 : -1;
 
     let find = {
       ...filtro,
       name: new RegExp(filtro.name, "i"),
-      isDelete: false,
+      roles: new RegExp(filtro.roles, "i"),
     };
 
-    const users = await usersModel.find(find).sort(orden);
+    let rango = [Number(range[0]), Number(range[1] - range[0])];
+
+    const todos = await usersModel.find(find).sort([["name", 1]]);
+
+    const users = await usersModel
+      .find(find)
+      .skip(rango[0])
+      .limit(rango[1] + 1)
+      .sort([["name", orden]]);
 
     const userMapping = users.map((user, index) => {
       const { image: img, ...data } = user.toObject();
@@ -23,6 +32,7 @@ const adminUsers = async (req, res) => {
         image: { src: img || "", index },
       };
     });
+    res.set("Content-Range", todos.length);
     res.status(201).send(userMapping);
   } catch (e) {
     res.status(404).send({ error: e });

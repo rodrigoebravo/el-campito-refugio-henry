@@ -2,18 +2,25 @@ const { dogModel } = require("../models");
 
 const adminDogs = async (req, res) => {
   try {
+    const range = JSON.parse(req.query.range);
     const filtro = JSON.parse(req.query.filter);
     const ordenar = JSON.parse(req.query.sort);
-    let orden = ordenar[1].toLowerCase() || "asc";
+    let orden = ordenar[1].toLowerCase() === "asc" ? 1 : -1;
 
     let find = {
       ...filtro,
       name: new RegExp(filtro.name, "i"),
       isDelete: false,
     };
+    let rango = [Number(range[0]), Number(range[1] - range[0])];
 
-    const dogs = await dogModel.find(find).sort(orden);
+    const todos = await dogModel.find(find).sort([["name", 1]]);
 
+    const dogs = await dogModel
+      .find(find)
+      .skip(rango[0])
+      .limit(rango[1] + 1)
+      .sort([["name", orden]]);
     let newDogs = [];
     dogs.forEach((obj) => {
       let aux = [];
@@ -41,6 +48,8 @@ const adminDogs = async (req, res) => {
       };
       newDogs.push(newObj);
     });
+
+    res.set("Content-Range", todos.length);
     res.status(201).send(newDogs);
   } catch (error) {
     res.status(400).send({ error: "Error en la solicitud" });
@@ -117,35 +126,39 @@ const adminCreateDog = async (req, res) => {
 //   }
 // };
 
-
 const adminDeleteDog = async (req, res) => {
   try {
-
-    const id = req.params.id; 
-    const { query: { filter} } = req; 
+    const id = req.params.id;
+    const {
+      query: { filter },
+    } = req;
 
     if (!filter) {
-      let dogDelete = await dogModel.findByIdAndUpdate({ _id: id }, { isDelete: true },
+      let dogDelete = await dogModel.findByIdAndUpdate(
+        { _id: id },
+        { isDelete: true },
         {
           returnOriginal: false,
-        });
+        }
+      );
 
       res.status(201).send(dogDelete);
-
     } else {
+      let { id } = JSON.parse(filter);
+      let listDeleteDogs = [];
 
-      let { id } = JSON.parse(filter); 
-      let listDeleteDogs = []; 
-
-      for(let dog of id){
-        let dogsDeletes = await dogModel.findByIdAndUpdate({ _id: dog }, { isDelete: true },
+      for (let dog of id) {
+        let dogsDeletes = await dogModel.findByIdAndUpdate(
+          { _id: dog },
+          { isDelete: true },
           {
             returnOriginal: false,
-          });
-        listDeleteUsers.push(dogsDeletes)
+          }
+        );
+        listDeleteUsers.push(dogsDeletes);
       }
 
-      res.status(200).send(listDeleteDogs)
+      res.status(200).send(listDeleteDogs);
     }
   } catch (e) {
     res.status(404).send({ error: e });
