@@ -5,9 +5,10 @@ const PressList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="media" label="Medio" />
-        <TextField source="title" label="Titulo" />
         <TextField source="date" label="Fecha" />
+        <TextField source="media" label="Medio" />
+        <TextField source="title" label="Titular" />
+        <TextField source="type" label="Soporte" />        
         <EditButton
           basepath="/api/admin/press"
           label="Ver Detalles"

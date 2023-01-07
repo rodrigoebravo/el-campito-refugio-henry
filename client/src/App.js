@@ -73,6 +73,7 @@ function App() {
       ) : (
         <Route exact path={"/admin"} component={NoAccess} />
       )}
+  
     </BrowserRouter>
   );
 }

@@ -39,13 +39,13 @@ const interfacesScheme = new mongoose.Schema(
 );
 
 
-interfacesScheme.pre('find', function() {
-  this.where({ isDelete: false });
-});
+// interfacesScheme.pre('find', function() {
+//   this.where({ isDelete: false });
+// });
 
-interfacesScheme.pre('findOne', function() {
-  this.where({ isDelete: false });
-});
+// interfacesScheme.pre('findOne', function() {
+//   this.where({ isDelete: false });
+// });
 
 
 // interfacesScheme.plugin(mongooseDelete, { overrideMethods: "all" });

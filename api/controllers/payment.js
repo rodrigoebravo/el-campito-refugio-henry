@@ -8,12 +8,12 @@ const {
 
 const { adminCreateContrib } = require("./adminContrib");
 
-let pago = 0
+let pago = 0;
 const createOrder = async (req, res) => {
   const monto = req.body;
   // console.log(a,"soy a ")
-  pago = monto.monto // pago es la variable que obtiene el valor que entra por body
-  console.log(monto.monto,"soy monto payment")
+  pago = monto.monto; // pago es la variable que obtiene el valor que entra por body
+  console.log(monto.monto, "soy monto payment");
 
   try {
     const order = {
