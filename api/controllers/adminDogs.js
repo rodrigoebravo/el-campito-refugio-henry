@@ -104,20 +104,55 @@ const adminCreateDog = async (req, res) => {
   }
 };
 
+// const adminDeleteDog = async (req, res) => {
+//   try {
+//     // const { body } = req;
+//     const { id } = req.params;
+
+//     const dogDelete = await dogModel.findByIdAndUpdate(
+//       { _id: id },
+//       { isDelete: true },
+//       {
+//         returnOriginal: false,
+//       }
+//     );
+
+//     res.status(201).send(dogDelete);
+//   } catch (e) {
+//     res.status(404).send({ error: e });
+//   }
+// };
+
+
 const adminDeleteDog = async (req, res) => {
   try {
-    // const { body } = req;
-    const { id } = req.params;
 
-    const dogDelete = await dogModel.findByIdAndUpdate(
-      { _id: id },
-      { isDelete: true },
-      {
-        returnOriginal: false,
+    const id = req.params.id; 
+    const { query: { filter} } = req; 
+
+    if (!filter) {
+      let dogDelete = await dogModel.findByIdAndUpdate({ _id: id }, { isDelete: true },
+        {
+          returnOriginal: false,
+        });
+
+      res.status(201).send(dogDelete);
+
+    } else {
+
+      let { id } = JSON.parse(filter); 
+      let listDeleteDogs = []; 
+
+      for(let dog of id){
+        let dogsDeletes = await dogModel.findByIdAndUpdate({ _id: dog }, { isDelete: true },
+          {
+            returnOriginal: false,
+          });
+        listDeleteUsers.push(dogsDeletes)
       }
-    );
 
-    res.status(201).send(dogDelete);
+      res.status(200).send(listDeleteDogs)
+    }
   } catch (e) {
     res.status(404).send({ error: e });
   }
