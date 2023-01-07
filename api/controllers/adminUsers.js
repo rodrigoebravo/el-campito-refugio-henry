@@ -1,3 +1,4 @@
+const { json } = require("express");
 const { usersModel } = require("../models");
 
 const adminUsers = async (req, res) => {
@@ -79,18 +80,38 @@ const adminCreateUser = async (req, res) => {
 
 const adminDeleteUser = async (req, res) => {
   try {
-    // const { body } = req;
     const id = req.params.id;
+    const {
+      query: { filter },
+    } = req;
 
-    const userDelete = await usersModel.findByIdAndUpdate(
-      { _id: id },
-      { isDelete: true },
-      {
-        returnOriginal: false,
+    if (!filter) {
+      let userDelete = await usersModel.findByIdAndUpdate(
+        { _id: id },
+        { isDelete: true },
+        {
+          returnOriginal: false,
+        }
+      );
+
+      res.status(201).send(userDelete);
+    } else {
+      let { id } = JSON.parse(filter);
+      let listDeleteUsers = [];
+
+      for (let user of id) {
+        let usersDeletes = await usersModel.findByIdAndUpdate(
+          { _id: user },
+          { isDelete: true },
+          {
+            returnOriginal: false,
+          }
+        );
+        listDeleteUsers.push(usersDeletes);
       }
-    );
 
-    res.status(201).send(userDelete);
+      res.status(200).send(listDeleteUsers);
+    }
   } catch (e) {
     res.status(404).send({ error: e });
   }

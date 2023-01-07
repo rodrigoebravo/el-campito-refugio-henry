@@ -57,13 +57,13 @@ function App() {
       <Route exact path={"/profile"} component={Profile} />
       <Route exact path={"/pay"} component={Pay} />
 
-
-      {(user && user.data?.info.roles.includes("admin")) ||
+      <Route exact path={"/admin"} component={AdminIndex} />
+      {/* {(user && user.data?.info.roles.includes("admin")) ||
       (user && user.data?.info.roles.includes("superAdmin")) ? (
         <Route exact path={"/admin"} component={AdminIndex} />
       ) : (
         <Route exact path={"/admin"} component={NoAccess} />
-      )}
+      )} */}
     </BrowserRouter>
   );
 }
