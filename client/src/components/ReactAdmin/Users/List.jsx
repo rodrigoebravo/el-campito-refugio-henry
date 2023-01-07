@@ -26,10 +26,9 @@ const UsersList = (props) => {
     <List
       {...data}
       aside={<Filters />}
-      empty={<Emptyness />}
-      pagination={<Pagination limit={<h1>No Results Found</h1>} />}
+      pagination={<Pagination limit={<Emptyness />} />}
     >
-      <Datagrid>
+      <Datagrid bulkActionButtons={false}>
         <TextField source="name" label="Nombre" />
         <TextField source="email" label="Email" />
         <TextField source="roles" label="Rol" />

@@ -59,7 +59,7 @@ const data = [
 ];
 
 const Filters = ({ prop }) => (
-  <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 650 }}>
+  <Card sx={{ order: -1, mr: 2, mt: 8 }}>
     <CardContent>
       <button onClick={(e) => prop(e)}>Cambiar</button>
     </CardContent>
@@ -127,7 +127,7 @@ export default function Grafico() {
         <Filters prop={handleChange} />
       </Grid>
       <Grid item xs={6}>
-        <Card sx={{ mr: 0, ml: 0, mt: 5, width: 1300, height: 800 }}>
+        <Card sx={{ mr: 0, ml: 0, mt: 5 }}>
           <CardContent>{state ? <Barra /> : <Linear />}</CardContent>
         </Card>
       </Grid>

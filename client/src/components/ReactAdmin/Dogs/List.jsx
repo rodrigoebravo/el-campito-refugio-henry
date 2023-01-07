@@ -25,10 +25,9 @@ const DogsList = (props) => {
         {...data}
         aside={<Filters />}
         exporter={dogExporter}
-        empty={<Emptyness />}
-        pagination={<Pagination limit={<h1>No Results Found</h1>} />}
+        pagination={<Pagination limit={<Emptyness />} />}
       >
-        <Datagrid>
+        <Datagrid bulkActionButtons={false}>
           <ImageField
             source="images[0].src"
             label="Perrito"

@@ -7,9 +7,9 @@ import AddHomeIcon from "@mui/icons-material/AddHome";
 
 const Filters = () => {
   return (
-    <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 650 }}>
+    <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 450 }}>
       <CardContent>
-        <FilterLiveSearch source="name" />
+        <FilterLiveSearch source="name" placeholder="Buscar por nombre..." />
         <FilterList label="Adoptable?" icon={<AddHomeIcon />}>
           <FilterListItem label="Sí" value={{ toAdopt: true }} />
           <FilterListItem label="No" value={{ toAdopt: false }} />
