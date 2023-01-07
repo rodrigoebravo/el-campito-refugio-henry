@@ -12,13 +12,16 @@ const adminContrib = async (req, res) => {
      
     const contributionMapping = contributions.map((c) => {
 
-      let {user , dog, type, total, ...data} = c.toObject(); 
+      let {user , dog,  ...data} = c.toObject(); 
     
       if ( user == undefined && dog == undefined ){
         return {
           name: "Anónimo",
-          type,
-          total,
+          phone: "",
+          email: "",
+          nameDog: "",
+          idUser: "",
+          idDog: "",
           ...data
         }
       }
@@ -26,8 +29,11 @@ const adminContrib = async (req, res) => {
       if ( user == {} && dog == {} ){
         return {
           name: "Anónimo",
-          type,
-          total,
+          phone: "",
+          email: "",
+          nameDog: "",
+          idUser: "",
+          idDog: "",
           ...data
         }
       }
@@ -35,8 +41,11 @@ const adminContrib = async (req, res) => {
       if ( user && dog == undefined ) {
         return {
           name: user.name,
-          type,
-          total,
+          phone: "",
+          email: "",
+          nameDog: "",
+          idUser: user._id,
+          idDog: "",
           ...data
         }
       }
@@ -44,18 +53,22 @@ const adminContrib = async (req, res) => {
       if ( user == undefined && dog  ) {
         return {
           nameDog: dog.name,
-          type,
-          total,
+          name: "",
+          phone: "",
+          email: "",
+          idUser: "",
+          idDog: dog._id,
           ...data
         }
       }
 
       return {
         name: user.name,
-        nameUser: user.name,
+        phone: user.phone || "",
+        email: user.email || "",
         nameDog: dog.name,
-        type,
-        total,
+        idUser: user._id,
+        idDog: dog._id,
         ...data
       }
 
@@ -87,12 +100,12 @@ const adminContribId = async (req, res) => {
     const { user, dog, ...data } = contributions.toObject();
 
     res.json({
-      name: user.name || undefined,
-      phone: user.phone || undefined,
-      email: user.email || undefined,
-      dog: dog.name || undefined,
-      idUSer: user._id || undefined,
-      idDog: dog._id || undefined,
+      name: user.name || "",
+      phone: user.phone || "",
+      email: user.email || "",
+      nameDog: dog.name || "",
+      idUser: user._id || null,
+      idDog: dog._id || null,
       ...data,
     });
   } catch (e) {
@@ -105,7 +118,7 @@ const adminUpdateContrib = async (req, res) => {
   try {
     const {
       params: { id },
-      body: { name, birthday, email, phone, ...dataCont },
+      body: { email, dogName, name, ...dataCont },
     } = req;
 
     console.log(req.body)
@@ -114,27 +127,20 @@ const adminUpdateContrib = async (req, res) => {
       returnOriginal: false,
     });
 
-    const u = usersModel.findById({ email });
-
-    await usersModel.findByIdAndUpdate(
-      { _id: u._id },
-      { name, birthday, email, phone }
-    );
-
+    
     const contri = await contributionsModel
       .findById({ _id: id })
-      .populate("user dog", {
-        name: 1,
-        _id: 1,
-      });
+      .populate("user dog");
 
     const { user, dog, ...data } = contri.toObject();
 
     res.json({data: {
       user: user.name,
       dog: dog.name,
-      idUser: user._id,
-      idDog: dog._id,
+      idUser: user._id || null,
+      idDog: dog._id || null,
+      phone: user.phone || "",
+      email: user.email || "",
       ...data,
     }});
   } catch (e) {
@@ -153,22 +159,22 @@ const adminCreateContrib = async (req, res) => {
 
     // console.log(email); console.log(dogName);  console.log(dataContibution);
 
-    let newCertificate = {},  certificateSee = {}, myDog = {}, rol = [], myGodParent = [] ;
+    let newCertificate = {},  certificateSee = {}, userDb = {}, myDog = {}, rol = [], myGodParent = [] ;
 
     if ( dogName ) {
       myDog = await dogModel.findOne({name: dogName}); 
-    };  console.log(myDog);
-
+    };  console.log(myDog); 
+ 
     if ( email ) {
-      let userDb = await usersModel.findOne({ email: email }) || undefined; console.log("linea 164",userDb);
-      // console.log(userDb.email); console.log(email);
-      if ( userDb.email !== "email"  ) {
+      userDb = await usersModel.findOne({ email: email }) || undefined; console.log("linea 164",userDb);
+      console.log(email); 
+      if ( userDb === undefined ) {
         if ( name ) {  
           userDb = await usersModel.create({ email, name })  
         } else {
           userDb = await usersModel.create({ email });
         }  
-      }; 
+      };  
     };   console.log("linea 171",userDb);
     
 
@@ -181,7 +187,16 @@ const adminCreateContrib = async (req, res) => {
         });   
         certificateSee =  await contributionsModel.findById({_id: newCertificate._id});        
         console.log(certificateSee);
-        return res.json(certificateSee);
+
+        return res.status(201).send({data:{
+          name: "",
+          idUser: null,
+          phone: "",
+          email: "",
+          dog: "",
+          idDog: null,
+          ...certificateSee._doc
+        }}); ;
       };
 
       if ( type === "sponsoreo" && email ) {
@@ -225,11 +240,15 @@ const adminCreateContrib = async (req, res) => {
 
       const { user,...dataCertificate  } = certificateSee.toObject(); 
 
-      return res.status(201).send({
+      return res.status(201).send({data:{
         name: user.name,
         idUser: user._id,
+        phone: user.phone || "",
+        email: user.email || "",
+        dog: "",
+        idDog: null,
         ...dataCertificate
-      }); 
+      }}); 
     };
 
     if( email && dogName && type === "padrinazgo" ){ 
@@ -270,6 +289,8 @@ const adminCreateContrib = async (req, res) => {
       return res.status(201).send({data:{
         name: user.name,
         idUser: user._id,
+        phone: user.phone || "",
+        email: user.email || "",
         dog: dog.name,
         idDog: dog._id,
         ...dataCertificate

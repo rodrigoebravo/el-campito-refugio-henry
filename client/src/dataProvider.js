@@ -182,9 +182,8 @@ const dataProvider = {
       body: JSON.stringify(params.data),
     });
 
-
-    const { json } = http.toObject(); 
-
+    // const  json  = http.toObject();     
+    const  json  = http; 
 
     return {
       data: { ...params.data, id: json._id },
