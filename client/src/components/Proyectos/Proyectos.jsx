@@ -10,7 +10,7 @@ const Proyectos = () => {
           <BarraDeNavegacion/>
           <h2 className= {styles.h2Proyectos}>Proyectos</h2>
           <section className={styles.boxContainer}>
-            <Link to ="./proyectoescolar" className={styles.linkProyectos}>
+            <Link to ="/proyectoescolar" className={styles.linkProyectos}>
                 <h3>El campito escolar</h3>
             </Link>
           </section>

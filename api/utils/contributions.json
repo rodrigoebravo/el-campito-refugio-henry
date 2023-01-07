@@ -1,47 +1,62 @@
 [
     {
         "email": "paulaspeciale@gmail.com", 
-        "dog":"asas63a4e100d8a9a6d8dd76c2bcasa",
         "type": "sponsoreo", 
+        "date":"2022-12-27T12:49:36.889Z",
         "detail": "sponsoreo para evento de fin de año",   
         "total": 1000000,
-        "method": "donaronline",
-        "isPending": false
+        "method": "donaronline"
     },
     {
         "email": "luismora@gasnna.com", 
-        "dog":"63a4e100d8a9a6d8dd76c2b9",
+        "dogName":"Batman",
         "type": "padrinazgo", 
-        "detail": "",   
+        "date":"2022-10-27T12:49:36.889Z",
         "total": 100,
-        "method": "cafecito",
-        "isPending": false
+        "method": "cafecito"
     },
     {
-        "email": "jorgeruiz@gasnna.com", 
-        "dog":"",
+        "email": "jorgeruiz@gasnna.com",
         "type": "donación", 
-        "detail": "sponsoreo para evento de fin de año",   
+        "date":"2020-12-07T12:49:36.889Z",
         "total": 200,
-        "method": "mercadopago",
-        "isPending": false
+        "method": "mercadopago"
     },
     {
-        "email": "", 
-        "dog":"",
         "type": "donación", 
-        "detail": "",   
         "total": 3000,
-        "method": "mercadopago",
-        "isPending": false
+        "method": "mercadopago"
     },
     {
-        "email": "", 
-        "dog":"",
         "type": "donación", 
-        "detail": "",   
         "total": 1000,
-        "method": "mercadopago",
-        "isPending": false
-    }
+        "method": "mercadopago"
+    },
+    {
+        "type": "donación",
+        "total": 20000,
+        "method": "mercadoPago",
+        "date": "2022-12-27T12:49:36.889Z"
+      },
+      {
+        "email": "shtast@mail.com",
+        "dogName": "Isadora",
+        "type": "padrinazgo",
+        "total": 20000,
+        "detail": "para hacer mas linda la vida de Isa",
+        "method": "mercadoPago",
+        "date": "2021-08-20T12:51:34.724Z"
+      },
+      {
+        "type": "donación",
+        "total": 20000,
+        "method": "mercadoPago",
+        "date": "2000-12-27T13:30:03.162Z"
+      },
+      {
+        "type": "donación",
+        "total": 20000,
+        "method": "mercadoPago",
+        "date": "2019-12-17T14:06:46.570Z"
+      }
 ]

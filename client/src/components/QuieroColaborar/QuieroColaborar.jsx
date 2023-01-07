@@ -7,6 +7,7 @@ import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import { useDispatch } from "react-redux";
 import postMeli from "../../redux/actions/action";
 import { useState } from "react";
+import { payWithPayPal } from "../../login";
 
 const QuieroColaborar = () => {
   const dispatch = useDispatch();
@@ -95,7 +96,12 @@ const QuieroColaborar = () => {
                 alt="Logo de mercado pago"
               />
             </div>
-            <button className={styles.buttonML} onClick={() => handleClick(unique, 200)}>$200</button>
+            <button
+              className={styles.buttonML}
+              onClick={() => handleClick("$200", 200)}
+            >
+              $200
+            </button>
             <button
               className={styles.buttonML}
               onClick={() => handleClick(unique, 300)}
@@ -183,8 +189,8 @@ const QuieroColaborar = () => {
                 alt="Logo de pay pal"
               />
             </div>
-            <button className={styles.buttonPaypal}>
-              DONÁ; VÍA PAYPAL
+            <button className={styles.buttonPaypal} onClick={payWithPayPal()}>
+              DONÁ VÍA PAYPAL
             </button>
           </article>
           <article className={styles.parentGridPaypal}>
