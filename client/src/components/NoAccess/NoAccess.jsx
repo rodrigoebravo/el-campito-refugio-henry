@@ -10,7 +10,7 @@ const NoAccess = () => {
   return (
     <div className={styles.div}>
       <h2 className={styles.text}>
-        Usted no tiene los permisos para ingresar al panel de administrador
+        Usted no tiene los permisos para ingresar a este Apartado
       </h2>
     </div>
   );
