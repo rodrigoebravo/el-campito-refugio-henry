@@ -19,7 +19,6 @@ import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
 import ContribShow from "./Contributions/Show";
 import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
-import VoluntShow from "./Volunteers/Show";
 import VoluntEdit from "./Volunteers/Edit";
 import VoluntList from "./Volunteers/List";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
@@ -28,8 +27,6 @@ import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
 import HomeIcon from "@mui/icons-material/Home";
 import InterfacesEdit from "./Interfaces/Edit";
-import InterfacesList from "./Interfaces/List";
-import InterfacesShow from "./Interfaces/Show";
 import SsidChartIcon from "@mui/icons-material/SsidChart";
 import Stats from "./Stats/Stats";
 
@@ -76,7 +73,6 @@ const AdminIndex = () => {
         name="api/admin/volunteers"
         list={VoluntList}
         edit={VoluntEdit}
-        show={VoluntShow}
         icon={HandshakeRoundedIcon}
         options={{ label: "Voluntarios" }}
       />
@@ -90,9 +86,7 @@ const AdminIndex = () => {
       />
       <Resource
         name="api/admin/interfaces"
-        list={InterfacesList}
-        edit={InterfacesEdit}
-        show={InterfacesShow}
+        list={InterfacesEdit}
         icon={HomeIcon}
         options={{ label: "Interfaz de Usuario" }}
       />
