@@ -29,8 +29,8 @@ Además encontramos los folders:
 En `api` crear un archivo llamado: `.env` que tenga las `variables de entorno`:
 
 ```env
-USER = reuht
-PASS = YbbTtnRbBGBHb1jf
+USER = elcampito 
+PASS = ZoSzoSTtKgz8vhdb
 NAME_DB = dbapi
 PORT = 3001
 FRONT = 3000

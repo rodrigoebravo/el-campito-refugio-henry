@@ -1,14 +1,21 @@
-import { List, Datagrid, TextField, EditButton } from "react-admin";
+import { List, Datagrid, TextField, EditButton, Pagination } from "react-admin";
 import InfoIcon from "@mui/icons-material/Info";
+import Filters from "./Filters";
+import { Emptyness } from "../utils";
 
 const PressList = (props) => {
   return (
-    <List {...props}>
-      <Datagrid>
+    <List
+      {...props}
+      aside={<Filters />}
+      emptyWhileLoading
+      pagination={<Pagination limit={<Emptyness />} />}
+    >
+      <Datagrid bulkActionButtons={false}>
         <TextField source="date" label="Fecha" />
         <TextField source="media" label="Medio" />
         <TextField source="title" label="Titular" />
-        <TextField source="type" label="Soporte" />        
+        <TextField source="type" label="Soporte" />
         <EditButton
           basepath="/api/admin/press"
           label="Ver Detalles"

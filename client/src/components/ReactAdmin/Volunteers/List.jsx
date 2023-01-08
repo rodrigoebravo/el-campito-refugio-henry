@@ -6,9 +6,13 @@ import {
   EditButton,
   // InfoIcon,
   DeleteWithConfirmButton,
+  EditButton,
+  BooleanField,
 } from "react-admin";
-
+import InfoIcon from "@mui/icons-material/Info";
 import Filters from "./Filters";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const VoluntList = (props) => {
   return (
@@ -25,6 +29,7 @@ const VoluntList = (props) => {
           // icon={<InfoIcon />}
         />
         {/* <ShowButton /> */}
+
         <DeleteWithConfirmButton basepath="/api/admin/volunteers" />
       </Datagrid>
     </List>

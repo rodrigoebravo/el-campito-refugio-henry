@@ -321,6 +321,41 @@ const adminDeleteContrib = async (req, res) => {
   }
 };
 
+
+// const adminDeleteContrib = async (req, res) => {
+//   try {
+
+//     const id = req.params.id; 
+//     const { query: { filter} } = req; 
+
+//     if (!filter) {
+//       let userDelete = await usersModel.findByIdAndUpdate({ _id: id }, { isDelete: true },
+//         {
+//           returnOriginal: false,
+//         });
+
+//       res.status(201).send(userDelete);
+
+//     } else {
+
+//       let { id } = JSON.parse(filter); 
+//       let listDeleteUsers = []; 
+
+//       for(let user of id){
+//         let usersDeletes = await usersModel.findByIdAndUpdate({ _id: user }, { isDelete: true },
+//           {
+//             returnOriginal: false,
+//           });
+//         listDeleteUsers.push(usersDeletes)
+//       }
+
+//       res.status(200).send(listDeleteUsers)
+//     }
+//   } catch (e) {
+//     res.status(404).send({ error: e });
+//   }
+// };
+
 module.exports = {
   adminCreateContrib,
   adminDeleteContrib,

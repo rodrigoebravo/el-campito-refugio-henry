@@ -69,7 +69,7 @@ router.get("/users", adminUsers);
 router.get("/users/:id", adminUsersId);
 router.post("/users", adminCreateUser);
 router.put("/users/:id", adminUpdateUser);
-router.delete("/users/:id", adminDeleteUser);
+router.delete("/users/:id?", adminDeleteUser);
 
 //------ /api/admin/adoptions
 router.get("/adoptions", adminAdoptions);

@@ -1,43 +1,77 @@
-
 import {
-  Toolbar, SaveButton, Edit, SimpleForm, TextInput, ImageInput, ImageField
-} from 'react-admin';
+  Toolbar,
+  SaveButton,
+  Edit,
+  TextInput,
+  ImageInput,
+  ImageField,
+  useGetOne,
+  TabbedForm,
+  FormTab,
+} from "react-admin";
 
-const CustomToolbar = props => (
-  <Toolbar
-      {...props}
-      sx={{ display: 'flex', justifyContent: 'space-between' }}
-  >
-      <SaveButton />
-  </Toolbar>
-);
+import { Loader, CustomToolbar } from "../utils";
 
-const InterfacesEdit = (props) => {
+const InterfacesEdit = () => {
+  const { data, isLoading, error } = useGetOne("api/admin/interfaces", {
+    id: "63b565a050554e3431bb3e0e",
+  });
+  if (isLoading) {
+    return <Loader />;
+  }
+  if (error) {
+    return <p>ERROR</p>;
+  }
   return (
     <Edit
       title={"Editar datos"}
-      {...props}
+      {...data}
       disableAuthentication
       mutationMode="pessimistic"
     >
-      <SimpleForm  toolbar={<CustomToolbar />}>
-        <ImageInput source="slider" label="Fotografías de Slider" multiple>
+      <TabbedForm toolbar={<CustomToolbar />}>
+        <FormTab label="Slider/Home">
+          <ImageInput source="slider" label="Fotografías de Slider" multiple>
             <ImageField source="src" title="title" />
-        </ImageInput>
-        <TextInput source="homeText" label="Texto del Home" fullWidth />
-        <ImageInput source="imgNosotros" label="Fótografía en Nosotros" >
+          </ImageInput>
+        </FormTab>
+        <FormTab label="Nosotros/Colabora">
+          <TextInput
+            source="colaboraText"
+            label="Texto en Colaborá"
+            fullWidth
+            multiline
+          />
+          <ImageInput source="imgNosotros" label="Fótografía en Nosotros">
             <ImageField source="src" title="title" />
-        </ImageInput>
-        <TextInput source="colaboraText" label="Texto en Colaborá" fullWidth />
-        
-        <TextInput source="visitasText" label="Texto en Visitas" fullWidth />
-        <TextInput source="escolarText" label="Texto en Escolar" fullWidth />
-        <ImageInput source="imgVoluntarios" label="Fótografía en Voluntarios" >
+          </ImageInput>
+        </FormTab>
+        <FormTab label="Vistas/Escuelas">
+          <TextInput
+            source="visitasText"
+            label="Texto en Visitas"
+            fullWidth
+            multiline
+          />
+          <TextInput
+            source="escolarText"
+            label="Texto en Escolar"
+            fullWidth
+            multiline
+          />
+        </FormTab>
+        <FormTab label="Voluntarios">
+          <TextInput
+            source="voluntarioText"
+            label="Texto en Voluntarios"
+            fullWidth
+            multiline
+          />
+          <ImageInput source="imgVoluntarios" label="Fótografía en Voluntarios">
             <ImageField source="src" title="title" />
-        </ImageInput>
-        <TextInput source="voluntarioText" label="Texto en Voluntarios" fullWidth />
-          
-      </SimpleForm>
+          </ImageInput>
+        </FormTab>
+      </TabbedForm>
     </Edit>
   );
 };

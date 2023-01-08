@@ -3,26 +3,22 @@ import {
   SimpleForm,
   TextInput,
   TextField,
+
   BooleanInput,
-  SelectInput,
-  DateInput,
-  CheckboxGroupInput,
+  DateField,
+  TextInput,
 } from "react-admin";
+import { Grid } from "@mui/material";
 
-const convertStringToNumber = (value) => {
-  const float = parseFloat(value);
-  return isNaN(float) ? null : float;
-};
-
-const VoluntEdit = (props) => {
+const VoluntShow = () => {
   return (
     <Edit
       title={"Editar datos"}
-      {...props}
       disableAuthentication
       mutationMode="pessimistic"
+      redirect={false}
     >
-      <SimpleForm>
+     <SimpleForm>
         <h1>ADHESION AL VOLUNTARIADO</h1>
         <br></br><br></br>
         <h3>User:</h3>
@@ -91,8 +87,9 @@ const VoluntEdit = (props) => {
         <TextInput source="question" label="Comentarios" fullWidth />
         <BooleanInput label="Pendiente" source="isPending" />
       </SimpleForm>
+
     </Edit>
   );
 };
 
-export default VoluntEdit;
+export default VoluntShow;

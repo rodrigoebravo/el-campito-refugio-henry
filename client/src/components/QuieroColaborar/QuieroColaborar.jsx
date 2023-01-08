@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styles from "./QuieroColaborar.module.css";
 import mercadoLibre from "../../assets/img/logosPasarelas/mercado-pago.png";
 import cafecito from "../../assets/img/logosPasarelas/cafecito.png";
@@ -10,10 +11,21 @@ import { payWithPayPal } from "../../login";
 
 const QuieroColaborar = () => {
   const dispatch = useDispatch();
+  const [input, setInput] = useState({
+    monto: "",
+  });
+  console.log(input);
 
   const handleClick = (title, unit_price) => {
     dispatch(postMeli({ title, unit_price }));
   };
+
+  function handleChange(e) {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  }
 
   return (
     <div className={styles.container}>
@@ -77,7 +89,7 @@ const QuieroColaborar = () => {
                   </a>
                 </button>
                 <button className={styles.buttonForm}>
-                  <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848573564c018579faf7e504ff">  
+                  <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848573564c018579faf7e504ff">
                     Suscripción por Mercado Pago
                   </a>
                 </button>
@@ -144,40 +156,95 @@ const QuieroColaborar = () => {
             </button>
           </article>
           <article className={styles.parentGrid5}>
-            <div className={styles.medioDePagoCF}>
-              <img
-                src={cafecito}
-                className={styles.imgColaborar}
-                alt="Logo de dinero mail"
-              />
-            </div>
-            <button className={styles.buttonCF}>$15</button>
-            <button className={styles.buttonCF}>$50</button>
-            <button className={styles.buttonCF}>$100</button>
-            <div className={styles.buttonCF}>
-              <input className={styles.inputColaborar} type="text" />
-              <p className={styles.noButton}>Otro $ (solo n&uacute;meros,</p>
-              <p className={styles.noButton}>sin centavos)</p>
-            </div>
-            <button className={styles.buttonCF}>US15</button>
-            <button className={styles.buttonCF}>US50</button>
-            <button className={styles.buttonCF}>US100</button>
-            <div className={styles.buttonCF}>
-              <input className={styles.inputColaborar} type="text" />
-              <p className={styles.noButton}>Otro $ (solo n&uacute;meros,</p>
-              <p className={styles.noButton}>sin centavos)</p>
-            </div>
-          </article>
-          <article className={styles.parentGridPaypal}>
             <div className={styles.medioDePagoPaypal}>
               <img
                 src={paypal}
                 className={styles.imgColaborar}
-                alt="Logo de pay pal"
+                alt="Logo de dinero mail"
               />
             </div>
-            <button className={styles.buttonPaypal} onClick={payWithPayPal()}>
-              DON&Aacute; V&Iacute;A PAYPAL
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "5" })}
+            >
+              US5
+            </button>
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "10" })}
+            >
+              US10
+            </button>
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "15" })}
+            >
+              US15
+            </button>
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "20" })}
+            >
+              US20
+            </button>
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "25" })}
+            >
+              US25
+            </button>
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "50" })}
+            >
+              US50
+            </button>
+            <button
+              className={styles.buttonPaypal}
+              onClick={payWithPayPal({ monto: "100" })}
+            >
+              US100
+            </button>
+            <div className={styles.buttonPaypal}>
+              <input
+                className={styles.inputColaborar}
+                type="number"
+                name="monto"
+                value={input.monto}
+                onChange={handleChange}
+              ></input>
+              <p className={styles.noButton}>
+                Otro $ (solo n&uacute;meros, sin centavos)
+              </p>
+              {input.monto === "" ? (
+                <button
+                  type="submit"
+                  className={styles.btnPaypalMonto}
+                  disabled
+                >
+                  Continuar
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className={styles.btnPaypalMonto}
+                  onClick={payWithPayPal(input)}
+                >
+                  Continuar
+                </button>
+              )}
+            </div>
+          </article>
+          <article className={styles.parentGridPaypal}>
+            <div className={styles.medioDePagoCF}>
+              <img
+                src={cafecito}
+                className={styles.imgColaborar}
+                alt="Logo de Cafecito"
+              />
+            </div>
+            <button className={styles.buttonCF} onClick={payWithPayPal()}>
+              Donar Cafecito
             </button>
           </article>
         </section>
