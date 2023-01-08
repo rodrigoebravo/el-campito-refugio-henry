@@ -6,7 +6,7 @@ const {
   PAYPAL_API_SECRET,
 } = require("../config/paypal");
 
-const {adminCreateContrib} = require("./adminContrib.js");
+const {adminCreateContrib} = require("../utils/adminCreateContrib");
 
 const createOrder = async (req, res) => {
   try {
@@ -101,7 +101,8 @@ const captureOrder = async (req, res) => {
     };
     console.log(obj,"soy obj")
 
-    // adminCreateContrib(obj)
+    
+    adminCreateContrib(obj)
 
 
 

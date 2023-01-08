@@ -5,10 +5,12 @@ const usersScheme = new mongoose.Schema(
   {
     name: {
       type: String,
+      default: "requerir"
     },
 
     birthday: {
       type: Date,
+      default: "requerir"
     },
     email: {
       type: String,
@@ -16,6 +18,7 @@ const usersScheme = new mongoose.Schema(
     },
     phone: {
       type: String,
+      default: "requerir"
     },
     pass: {
       type: String,
@@ -30,6 +33,7 @@ const usersScheme = new mongoose.Schema(
     }, 
     image: {
       type: String,
+      default: "Not image"
     },
     volunteer: {
       type: mongoose.Types.ObjectId,

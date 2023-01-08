@@ -121,7 +121,7 @@ const adminUpdateContrib = async (req, res) => {
       body: { email, dogName, name, ...dataCont },
     } = req;
 
-    console.log(req.body)
+    // console.log(req.body)
 
     await contributionsModel.findByIdAndUpdate({ _id: id }, dataCont, {
       returnOriginal: false,
@@ -196,7 +196,7 @@ const adminCreateContrib = async (req, res) => {
           dog: "",
           idDog: null,
           ...certificateSee._doc
-        }}); ;
+        }}); 
       };
 
       if ( type === "sponsoreo" && email ) {

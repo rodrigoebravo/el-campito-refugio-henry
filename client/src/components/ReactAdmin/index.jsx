@@ -18,14 +18,14 @@ import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import ContribCreate from "./Contributions/Create";
 import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
-import ContribShow from "./Contributions/Show";
+// import ContribShow from "./Contributions/Show";
 import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
-import VoluntShow from "./Volunteers/Show";
+// import VoluntShow from "./Volunteers/Show";
 import VoluntEdit from "./Volunteers/Edit";
 import VoluntList from "./Volunteers/List";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import AdopList from "./Adoptions/List";
-import AdopShow from "./Adoptions/Show";
+// import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
 import HomeIcon from "@mui/icons-material/Home";
 import InterfacesEdit from "./Interfaces/Edit";
@@ -71,7 +71,7 @@ const AdminIndex = () => {
         list={ContribList}
         create={ContribCreate}
         edit={ContribEdit}
-        show={ContribShow}
+        // show={ContribShow}
         icon={VolunteerActivismIcon}
         options={{ label: "Contribuciones" }}
       />
@@ -79,7 +79,7 @@ const AdminIndex = () => {
         name="api/admin/volunteers"
         list={VoluntList}
         edit={VoluntEdit}
-        show={VoluntShow}
+        // show={VoluntShow}
         icon={HandshakeRoundedIcon}
         options={{ label: "Voluntarios" }}
       />
@@ -87,7 +87,7 @@ const AdminIndex = () => {
         name="api/admin/adoptions"
         list={AdopList}
         edit={AdopEdit}
-        show={AdopShow}
+        // show={AdopShow}
         icon={FavoriteRoundedIcon}
         options={{ label: "Adopciones" }}
       />

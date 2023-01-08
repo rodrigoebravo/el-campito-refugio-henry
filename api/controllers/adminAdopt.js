@@ -1,4 +1,5 @@
 const { adoptionsModel, usersModel, dogModel } = require("../models");
+const mongoose = require("mongoose"); 
 
 const adminAdoptions = async (req, res) => {
     try {
@@ -65,34 +66,39 @@ const adminAdoptions = async (req, res) => {
     try {
       const {
         params: { id },
-        body: { birthday, email, phone,  ...dataAdop },
+        body: { birthday, email, phone, nameUser,  ...dataAdop },
       } = req;
 
-      console.log(dataAdop); console.log(mail);
+      console.log(dataAdop); console.log(email); console.log(id); 
   
+      // let aux = JSON.parse(`ObjectId(${id})`); console.log(aux);
+
       await adoptionsModel.findByIdAndUpdate({ _id: id }, dataAdop, {
         returnOriginal: false,
       });       
 
-      const users1 = await usersModel.findOne({ email })
+      const users1 = await usersModel.findOne({ email }) || undefined; console.log("linea 80",users1);
       
-      let roles = users1.roles;
+      if ( users1 !== undefined )  {
+        let roles = users1.roles;
+        if ( dataAdop.isPending === false ) roles.concat('adoptante');
+        if ( !birthday )  birthday = users1.birthday; 
+        if ( !phone )  phone = users1.phone; 
+        if ( !nameUser ) nameUser = users1.name;
 
-      if ( dataAdop.isPending === false ) roles.concat('adoptante');
-
-      await usersModel.findByIdAndUpdate({ _id: users1._id },
-        { birthday, phone, email, roles }
-      );   
+        await usersModel.findByIdAndUpdate({ _id: users1._id },
+          { name: nameUser, birthday, phone, roles }
+      ); 
+      }
   
       const adoption = await adoptionsModel.findById({ _id: id }).populate("user dog", {
         name: 1,
         _id: 1
-      });
+      }); console.log(adoption);
 
-      const { user, dog, ...data } = adoption.toObject();    
-     
+      const { user, dog, ...data } = adoption.toObject();         
 
-       
+      console.log(user); console.log(dog);
       
       res.json({
         user: user._id,

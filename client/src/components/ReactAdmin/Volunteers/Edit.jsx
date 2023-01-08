@@ -2,6 +2,7 @@ import {
   Edit,
   SimpleForm,
   TextInput,
+  TextField,
   BooleanInput,
   SelectInput,
   DateInput,
@@ -22,9 +23,13 @@ const VoluntEdit = (props) => {
       mutationMode="pessimistic"
     >
       <SimpleForm>
+        <h1>ADHESION AL VOLUNTARIADO</h1>
+        <br></br><br></br>
+        <h3>User:</h3>
+        <TextField source="email" label="e-mail" fullWidth />
+        <br/>
         <TextInput source="name" label="Voluntario" fullWidth />
-        <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
-        <TextInput source="email" label="e-mail" fullWidth />
+        <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />        
         <TextInput source="phone" label="Teléfono" fullWidth />
         <TextInput source="location" label="Domicilio" fullWidth />
         <TextInput source="area" label="Localidad" fullWidth />

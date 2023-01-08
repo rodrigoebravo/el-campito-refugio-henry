@@ -1,33 +1,41 @@
 const linkPreviewGenerator = require("link-preview-generator");
 const { pressModel } = require("../models/index"); 
-const info = require("./prensa.json"); 
+const info = require("./prensa5.json"); 
 
 const pushDBpress = () =>{
 
-    let infoNews = [];
+    try {
 
-    info.forEach(async(element) => {
+        let infoNews = [];
 
-       await linkPreviewGenerator(element.link)
-       .then(r=>{
-        r.date = element.date;
-        r.media = element.media;
-        r.link = element.link;
-        r.type = element.type;
+        info.forEach(async(element) => {
 
-        infoNews.push(r);   
-       })   
-       .catch(e=> infoNews.push({})  )  
-          
-
-             
-    });
+            const { link, ...data } = element;
     
+            let previewData = {}; 
+        
+            if (link) {
+                previewData = await linkPreviewGenerator(link) || {} ;
+            };        
+        
+            const press = await pressModel.create({
+            ...data,
+            ...previewData
+            });
 
-    const press = await pressModel.create(r);
+            infoNews.push(press);                   
+        });
+    
+        console.log(infoNews)
+        console.log("Estado de DB: press cargados")
 
-    console.log(infoNews)
-    console.log("Estado de DB: press cargados")
+        return infoNews;
+        
+    } catch (error) {
+        console.log(error);
+    }
+
+    
    
 };
 

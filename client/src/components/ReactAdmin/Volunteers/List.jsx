@@ -2,7 +2,9 @@ import {
   List,
   Datagrid,
   TextField,
-  ShowButton,
+  // ShowButton,
+  EditButton,
+  // InfoIcon,
   DeleteWithConfirmButton,
 } from "react-admin";
 
@@ -13,10 +15,17 @@ const VoluntList = (props) => {
     <List {...props} aside={<Filters />}>
       <Datagrid>
         <TextField source="name" label="Voluntario" />
+        <TextField source="modality" label="Modalidad"  />
         <TextField source="email" label="Email" sortable={false} />
-        <TextField source="phone" label="Teléfono" sortable={false} />
+        <TextField source="phone" label="Teléfono"  />
+       
+        <EditButton
+          basepath="/api/admin/volunteers"
+          label="Ver detalles"
+          // icon={<InfoIcon />}
+        />
+        {/* <ShowButton /> */}
         <DeleteWithConfirmButton basepath="/api/admin/volunteers" />
-        <ShowButton />
       </Datagrid>
     </List>
   );
