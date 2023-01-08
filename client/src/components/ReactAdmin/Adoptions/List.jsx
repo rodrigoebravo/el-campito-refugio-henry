@@ -11,9 +11,11 @@ const AdopList = (props) => {
   return (
     <List {...props}>
       <Datagrid>
-        <TextField source="name" label="Adoptante" />
-        <TextField source="email" label="e-mail" />
-        <TextField source="dog" label="Camperito" />
+        <TextField source="nameDog" label="Camperito" />
+        <TextField source="email" label="user ID" />
+        <TextField source="nameUser" label="Adoptante" />
+        <TextField source="phone" label="Teléfono" />
+        
         <EditButton basepath="/api/admin/adoptions" />
         <DeleteWithConfirmButton basepath="/api/admin/adoptions" />
         <ShowButton />

@@ -1,10 +1,9 @@
 import {
   Edit,
-  TabbedForm,
-  SimpleShowLayout,
-  FormTab,
+  SimpleForm,
+  TextInput,
   TextField,
-  ImageField,
+
   BooleanInput,
   DateField,
   TextInput,
@@ -19,135 +18,76 @@ const VoluntShow = () => {
       mutationMode="pessimistic"
       redirect={false}
     >
-      <>
-        <SimpleShowLayout>
-          <Grid container spacing={3}>
-            <Grid item lg={9}>
-              <TextField
-                source="name"
-                label={false}
-                sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-              />
-              <br></br>
-              <TextField
-                label={false}
-                source="email"
-                sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
-              />
-              <br></br>
-              <DateField
-                label={false}
-                source="date"
-                sx={{ fontWeight: "light" }}
-              />
-            </Grid>
-            <Grid item lg={3} style={{ textAlign: "center" }}>
-              <ImageField
-                source="images[0].src"
-                sx={{
-                  "& img": {
-                    maxWidth: 1000,
-                    maxHeight: 1000,
-                    objectFit: "contain",
-                  },
-                }}
-              />
-            </Grid>
-          </Grid>
-        </SimpleShowLayout>
-        <TabbedForm>
-          <FormTab label="Informacion general">
-            <Grid container spacing={3}>
-              <Grid item lg={3}>
-                <h5>Profesión</h5>
-                <TextField
-                  source="profession"
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-              <Grid item lg={3}>
-                <h5>Modalidad</h5>
-                <TextField
-                  source="modality"
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-              <Grid item lg={12}>
-                <h5>Interes en ser voluntario</h5>
-                <TextField
-                  source="purpose"
-                  label={false}
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-              <Grid item lg={12}>
-                <TextField
-                  source="description"
-                  label={false}
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-              <Grid item lg={12}>
-                <TextField
-                  source="question"
-                  label={false}
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-            </Grid>
-          </FormTab>
+     <SimpleForm>
+        <h1>ADHESION AL VOLUNTARIADO</h1>
+        <br></br><br></br>
+        <h3>User:</h3>
+        <TextField source="email" label="e-mail" fullWidth />
+        <br/>
+        <TextInput source="name" label="Voluntario" fullWidth />
+        <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />        
+        <TextInput source="phone" label="Teléfono" fullWidth />
+        <TextInput source="location" label="Domicilio" fullWidth />
+        <TextInput source="area" label="Localidad" fullWidth />
+        <TextInput source="profession" label="Profesión" fullWidth />
+        <TextInput
+          source="interest"
+          label="Área de interés en particular para trabajar en el refugio"
+          fullWidth
+        />
+        <SelectInput
+          source="modality"
+          labelpublic="Modalidad"
+          choices={[
+            { id: "presencial", name: "presencial" },
+            { id: "virtual", name: "virtual" },
+            { id: "hibrido", name: "hibrido" },
+          ]}
+        />
+        <TextInput
+          source="availability"
+          label="Tiempo dispone (horas a la semana)"
+          type="number"
+          parse={convertStringToNumber}
+          fullWidth
+        />
 
-          <FormTab label="Disponibilidad">
-            <Grid container spacing={3}>
-              <Grid item lg={3}>
-                <h5>Localidad</h5>
-                <TextInput source="area" label={false} fullWidth />
-              </Grid>
-              <Grid item lg={3}>
-                <h5>Direccion</h5>
-                <TextInput source="location" label={false} fullWidth />
-              </Grid>
-            </Grid>
-            <Grid container spacing={3}>
-              <Grid item lg={4}>
-                <h5>Disponibilidad</h5>
-                <TextInput source="clarification" label={false} fullWidth />
-              </Grid>
-              <Grid item lg={3}>
-                <h5>Dias de la semana</h5>
-                <TextInput source="days" fullWidth />
-              </Grid>
-            </Grid>
-          </FormTab>
+        <CheckboxGroupInput source="days" label="Días disponibles" choices={[
+            { id: 'lunes', name: 'lunes' },
+            { id: 'martes', name: 'martes' },
+            { id: 'miércoles', name: 'miércoles' },
+            { id: 'jueves', name: 'jueves' },
+            { id: 'viernes', name: 'viernes' },
+            { id: 'sábado', name: 'sábado' },
+        ]} />
+        <TextInput source="clarification" label="aclaración sobre disponibilidad" fullWidth />
+        <TextInput source="description" label="Que puede sumar" fullWidth />
+        <TextInput
+          source="purpose"
+          label="Por que querés ser voluntario"
+          fullWidth
+        />
+        <SelectInput
+          source="vehicle"
+          labelpublic="Vehículo propio"
+          choices={[
+            { id: "si", name: "si" },
+            { id: "no", name: "no" },
+          ]}
+        />
+        <SelectInput
+          source="carpooling"
+          labelpublic="Carpooling"
+          choices={[
+            { id: "si", name: "si" },
+            { id: "no", name: "no" },
+            { id: "tal vez", name: "tal vez" },
+          ]}
+        />
+        <TextInput source="question" label="Comentarios" fullWidth />
+        <BooleanInput label="Pendiente" source="isPending" />
+      </SimpleForm>
 
-          <FormTab label="Movilidad">
-            <Grid container spacing={3}>
-              <Grid item lg={2}>
-                <BooleanInput
-                  source="vehicle"
-                  label="Vehiculo"
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-              <Grid item lg={3}>
-                <BooleanInput
-                  source="carpooling"
-                  label="Puede hacer carpooling"
-                  sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-                />
-              </Grid>
-            </Grid>
-          </FormTab>
-
-          <FormTab label="Estado">
-            <BooleanInput
-              source="isPending"
-              label="Estado del usuario, activo/inactivo"
-              sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-            />
-          </FormTab>
-        </TabbedForm>
-      </>
     </Edit>
   );
 };

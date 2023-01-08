@@ -2,6 +2,9 @@ import {
   List,
   Datagrid,
   TextField,
+  // ShowButton,
+  EditButton,
+  // InfoIcon,
   DeleteWithConfirmButton,
   EditButton,
   BooleanField,
@@ -16,20 +19,17 @@ const VoluntList = (props) => {
     <List {...props} aside={<Filters />}>
       <Datagrid>
         <TextField source="name" label="Voluntario" />
+        <TextField source="modality" label="Modalidad"  />
         <TextField source="email" label="Email" sortable={false} />
-        <BooleanField
-          source="isPending"
-          label="Estado"
-          TrueIcon={CancelIcon}
-          FalseIcon={CheckCircleIcon}
-          valueLabelTrue="Inactivo"
-          valueLabelFalse="Activo"
-        />
+        <TextField source="phone" label="Teléfono"  />
+       
         <EditButton
           basepath="/api/admin/volunteers"
           label="Ver detalles"
-          icon={<InfoIcon />}
+          // icon={<InfoIcon />}
         />
+        {/* <ShowButton /> */}
+
         <DeleteWithConfirmButton basepath="/api/admin/volunteers" />
       </Datagrid>
     </List>

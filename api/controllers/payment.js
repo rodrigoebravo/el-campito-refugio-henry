@@ -6,7 +6,9 @@ const {
   PAYPAL_API_SECRET,
 } = require("../config/paypal");
 
-const { adminCreateContrib } = require("./adminContrib");
+
+const {adminCreateContrib} = require("../utils/adminCreateContrib");
+
 
 let pago = 0;
 const createOrder = async (req, res) => {
@@ -106,7 +108,8 @@ const captureOrder = async (req, res) => {
     };
     console.log(obj, "soy obj");
 
-    // adminCreateContrib(obj)
+    
+    adminCreateContrib(obj)
 
     // res.json(response.data)
     //respuesta de la data en json
