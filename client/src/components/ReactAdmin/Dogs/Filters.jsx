@@ -1,10 +1,4 @@
-import {
-  FilterLiveSearch,
-  FilterList,
-  FilterListItem,
-  Loading,
-  useListContext,
-} from "react-admin";
+import { FilterLiveSearch, FilterList, FilterListItem } from "react-admin";
 import { Card, CardContent } from "@mui/material";
 import CakeIcon from "@mui/icons-material/Cake";
 import TransgenderIcon from "@mui/icons-material/Transgender";
@@ -12,27 +6,18 @@ import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import AddHomeIcon from "@mui/icons-material/AddHome";
 
 const Filters = () => {
-  const { isLoading } = useListContext();
-  if (isLoading)
-    return (
-      <Loading
-        sx={{ order: -1, ml: 90, mt: 8, width: 400, height: 650 }}
-        loadingPrimary="Cargando resultados"
-        loadingSecondary="Aguarde por favor"
-      />
-    );
   return (
-    <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 650 }}>
+    <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 450 }}>
       <CardContent>
-        <FilterLiveSearch source="name" />
-        <FilterList label="Adoptable" icon={<AddHomeIcon />}>
-          <FilterListItem label="Sí" value={{ adoptable: true }} />
-          <FilterListItem label="No" value={{ adoptable: false }} />
+        <FilterLiveSearch source="name" placeholder="Buscar por nombre..." />
+        <FilterList label="Adoptable?" icon={<AddHomeIcon />}>
+          <FilterListItem label="Sí" value={{ toAdopt: true }} />
+          <FilterListItem label="No" value={{ toAdopt: false }} />
         </FilterList>
-        <FilterList label="Apadrinable" icon={<AccessibilityNewIcon />}>
-          <FilterListItem label="Sí" value={{ apadrinable: true }} />
-          <FilterListItem label="No" value={{ apadrinable: false }} />
-        </FilterList>
+        {/* <FilterList label="Apadrinable" icon={<AccessibilityNewIcon />}>
+          <FilterListItem label="Sí" value={{ godparents: true }} />
+          <FilterListItem label="No" value={{ godparents: false }} />
+        </FilterList> */}
         <FilterList label="Edad" icon={<CakeIcon />}>
           <FilterListItem label="Cachorro" value={{ age: "cachorro" }} />
           <FilterListItem label="Adulto" value={{ age: "adulto" }} />

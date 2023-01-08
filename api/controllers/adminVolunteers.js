@@ -2,15 +2,23 @@ const { volunteersModel, usersModel } = require("../models");
 
 const adminVolunteer = async (req, res) => {
   try {
+    const range = JSON.parse(req.query.range);
     const filtro = JSON.parse(req.query.filter);
-    const checkFiltro = filtro || {};
     const ordenar = JSON.parse(req.query.sort);
-    const orden = ordenar[1].toLowerCase() || "asc";
-    console.log(orden);
+    let orden = ordenar[1].toLowerCase() === "asc" ? 1 : -1;
+    let rango = [Number(range[0]), Number(range[1] - range[0])];
 
+    let find = {
+      ...filtro,
+      name: new RegExp(filtro.name, "i"),
+    };
+
+    const todos = await volunteersModel.find(find);
     const volunteers = await volunteersModel
-      .find(checkFiltro)
-      .sort({ name: orden })
+      .find(find)
+      .skip(rango[0])
+      .limit(rango[1] + 1)
+      .sort([["name", orden]])
       .populate("user", {
         contribution: 0,
         adoptions: 0,
@@ -36,7 +44,7 @@ const adminVolunteer = async (req, res) => {
         };
         return response;
       });
-
+    res.set("Content-Range", todos.length);
     res.status(201).send(volunteersMapping);
   } catch (error) {
     res.status(404).send({ error });
