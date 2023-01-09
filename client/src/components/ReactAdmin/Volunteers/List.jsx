@@ -3,16 +3,14 @@ import {
   Datagrid,
   TextField,
   // ShowButton,
-  EditButton,
   // InfoIcon,
   DeleteWithConfirmButton,
   EditButton,
-  BooleanField,
 } from "react-admin";
-import InfoIcon from "@mui/icons-material/Info";
+// import InfoIcon from "@mui/icons-material/Info";
 import Filters from "./Filters";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CancelIcon from "@mui/icons-material/Cancel";
+// import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+// import CancelIcon from "@mui/icons-material/Cancel";
 
 const VoluntList = (props) => {
   return (

@@ -16,7 +16,7 @@ const Contacto = () =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Nombre y Apellido</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
-                        {...register('name', {required: true })} />
+                        {...register('fullName', {required: true })} />
                     {errors.name?.type === 'required' && <p>Ingrese su nombre</p>}                    
                 </div>
                 
@@ -42,7 +42,7 @@ const Contacto = () =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Teléfono</label>
                     <input type="tel" className={styles.input} placeholder="ej: 1161906190" 
-                        {...register('phone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
+                        {...register('telephone', { required: true, pattern: /^\d{3}\d{3}\d{4}$/ })}
                     />
                     {errors.telephone?.type === 'required' && <p>Número de telefono requerido</p>}
                     {errors.telephone?.type === 'pattern' && <p>El numero ingresado es invalido</p>}
@@ -50,14 +50,14 @@ const Contacto = () =>{
                 
                 <div className = {styles.item}>
                     <label className={styles.label}>Asunto</label>
-                    <select className={styles.select} {...register('type', {required: true})}>
+                    <select className={styles.select} {...register('asunto', {required: true})}>
                         <option value="adopciones">adopciones</option>                        
                         <option value="consulta">consulta general</option>
                         <option value="reclamo">reclamo</option>
                         <option value="donaciones">donaciones</option>
                         <option value="débitos automáticos">débitos automáticos</option>
                         <option value="campito escolar">charlas para colegios</option>
-                        <option value="visita">visita</option>
+                        <option value="visitas">visita</option>
                         <option value="denuncias">denuncias</option>
                         <option value="prensa">para medios de comunicación</option>
                         <option value="felicitaciones">felicitaciones</option>
@@ -69,7 +69,7 @@ const Contacto = () =>{
                 <div className = {styles.item}>
                     <label className={styles.label}>Cuéntenos !!! Su consulta es importante para nosotros 😊 !!</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
-                        {...register('description', {required: true })} />
+                        {...register('consulta', {required: true })} />
                     {errors.description?.type === 'required' && <p>Ingrese su nombre</p>}                    
                 </div>
 

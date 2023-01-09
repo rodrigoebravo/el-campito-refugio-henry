@@ -14,6 +14,8 @@ import {
   GET_PRESS,
   POST_MELI,
   GET_USERS_EMAIL,
+  POST_ADOPTION,
+  POST_CONTACTO
 } from "../actions/types";
 
 const initialState = {
@@ -146,6 +148,10 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         userEmail: action.payload,
+      };
+    case POST_CONTACTO:
+      return {
+        ...state,
       };
 
     default:

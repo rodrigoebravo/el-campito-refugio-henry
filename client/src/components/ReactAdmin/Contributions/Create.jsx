@@ -1,5 +1,4 @@
-import { Create, SimpleForm, TextInput, DateInput, SelectInput,
-  BooleanInput } from "react-admin";
+import { Create, SimpleForm, TextInput, DateInput, SelectInput } from "react-admin";
 
 const convertStringToNumber = value => {
     const float = parseFloat(value);
