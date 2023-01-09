@@ -8,7 +8,7 @@ import {
   BooleanInput,
   DateField,
   NumberInput,
-  SelectArrayInput,
+  CheckboxGroupInput,
   TextInput,
   ImageInput,
   DateInput,
@@ -41,7 +41,7 @@ const UsersEdit = () => {
             </Grid>
             <Grid item lg={3} style={{ textAlign: "center" }}>
               <ImageField
-                source="images[0].src"
+                source="images.src"
                 sx={{
                   "& img": {
                     maxWidth: 1000,
@@ -62,9 +62,9 @@ const UsersEdit = () => {
               </Grid>
               <Grid item lg={3}>
                 <h5>Roles</h5>
-                <SelectArrayInput
+                <CheckboxGroupInput
                   source="roles"
-                  labelpublic="Rol"
+                  labelpublic="Roles de usuario"
                   fullWidth
                   choices={[
                     { id: "public", name: "public" },
@@ -84,7 +84,7 @@ const UsersEdit = () => {
               </Grid>
               <Grid item lg={10}>
                 <h5>Imagen de perfil</h5>
-                <ImageInput source="images" label={false} multiple>
+                <ImageInput source="image" label={false} multiple>
                   <ImageField source="src" title="title" />
                 </ImageInput>
               </Grid>

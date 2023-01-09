@@ -166,7 +166,7 @@ const adminCreateContrib = async (req, res) => {
     };  console.log(myDog); 
  
     if ( email ) {
-      userDb = await usersModel.findOne({ email: email }) || undefined; console.log("linea 164",userDb);
+      userDb = await usersModel.findOne({ email: email }) || undefined; console.log("linea 169",userDb);
       console.log(email); 
       if ( userDb === undefined ) {
         if ( name ) {  
@@ -175,7 +175,7 @@ const adminCreateContrib = async (req, res) => {
           userDb = await usersModel.create({ email });
         }  
       };  
-    };   console.log("linea 171",userDb);
+    };   console.log("linea 178",userDb);
     
 
     if ( !dogName ) {
