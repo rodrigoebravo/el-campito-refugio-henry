@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #fafafa;
+   
 }
 
 .divContenedor {
@@ -55,6 +55,9 @@
     font-family: 'Seravek', 'sans-serif';
     color: #444445;
     font-weight: 300;
+    border: 3px solid #4FA7C1 ;
+    border-radius: 15px;
+    padding: 15px;
 }
 
 .required{
@@ -64,7 +67,7 @@
 .input{
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #888;
+    border-bottom: 2px solid #55BA68;
     width: 65%;
     font-size: 1em;
     padding-bottom: 5px;
@@ -73,19 +76,19 @@
 .input:focus, .inputDate:focus {
   outline:none;
   outline-offset: 0;
-  border-bottom: 2px solid #E48125;
+  border-bottom: 2px solid #4FA7C1;
 }
 
 .input:active, .inputDate:active{
   outline:none;
   outline-offset: 0;
-  border-bottom: 2px solid #E48125;
+  border-bottom: 2px solid #4FA7C1;
 }
 
 .inputDate{
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #888;
+    border-bottom: 2px solid #55BA68;
     font-size: 20px;
     padding-bottom: 5px;
 }
@@ -99,8 +102,8 @@
 }
 
 .checkbox:active{
-    color:#E48125;
-    background-color:#E48125;
+    color:#4FA7C1;
+    background-color:#4FA7C1;
 }
 
 .select{
@@ -112,18 +115,18 @@
 
 .submit{
     width: 100px;
-    background-color: #E48125;
+    background-color: #4FA7C1;
     border: 1px solid transparent;
     border-radius: 8px;
     color: white;
     font-size: 20px;
     padding: 10px;
-    margin: -20px 0px 50px 0px;
+    align-self: flex-end;
     cursor: pointer;
 }
 
 .submit:hover{
-    background-color: orange;
+    background-color: #4FA7C1;
     transform: scale(1.05);
 }
 .h3form{
@@ -132,6 +135,10 @@
     font-size: 2.8em;
     padding-bottom: 10px;
 }
+.input::placeholder { 
+    color: #55BA68;
+    opacity: 1;
+  }
 .buttonLoad {
     width: auto;
     padding: 20px;
@@ -144,7 +151,42 @@
     font-weight: bold;
     color: #FFFFFF;
     font-size: 1.8em;
-    background-color: #F9C0C1;
+    background-color: #4FA7C1;
     text-decoration: none;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .mainContainer{
+        margin-top: 60px;;
+    }
+    .submit{
+       align-self: flex-end;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .mainContainer{
+      padding-top: 50px;
+  
+    }
+    .buttonLoad{
+        height: 200px;
+        padding:-20px;
+       
+    }
+    .item{
+      width:250px;
+    
+      
+    }
+    .divContenedor{
+      margin:0px;
+     
+      padding:0px
+    }
+    .footerAdopcion{
+        padding:20px;
+         margin-left:30px;
+      }
+  
   }

@@ -134,3 +134,17 @@
 .span:hover {
   color: #0640ae;
 }
+@media (max-width: 768px) {
+  .divUserData{
+    width: 100%;
+  }
+}
+@media (max-width: 360px) {
+  .divSubLogins{
+    width: 90%;
+    padding:10px
+  }
+  .span{
+    padding:10px
+  }
+}

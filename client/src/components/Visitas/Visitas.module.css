@@ -45,8 +45,7 @@ strong{
         -ms-flex-direction: column;
             flex-direction: column;
             width: 100%;
-            padding: 50px;
-            margin-top: 40px;   
+          
                    
 }
 
@@ -60,16 +59,12 @@ strong{
             flex-direction: column;   
 }
 .h2Visitas{
-    margin-top: 20px;
+   
     color: #E48125;
     font-family: 'Trashhand';
     font-size: 2.8em;
     display: block;
-    
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+ 
     font-weight: bold;
 
 }
@@ -128,8 +123,9 @@ text-align: center;
             flex-direction: row;
 }
 .pMargin{
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 20px;
+    margin-bottom: 30px;
+   
 }
 .h4Visitas{
     margin-top: 20px;  
@@ -144,11 +140,12 @@ text-align: center;
     font-weight: bold;
     color: #E48125;
     font-size: 1em;
-
-
-   
-}
-@media (max-width: 800px) {
+ }
+ .sectionVisitas{
+    margin:0px;
+    padding:0px
+ }
+@media (max-width: 768px) {
     .parentTransporte{
         display: flex;
         flex-direction: column;  
@@ -166,4 +163,19 @@ text-align: center;
         width: 100%;
     }
   }
-  
+  @media (max-width: 360px) {
+    .visitas{
+        margin:0px;
+        margin-top:30px;
+        padding:0px
+    }
+    .parent{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .imgVisitas{
+        align-self: center;
+        margin-top: 10px;
+    }
+  }

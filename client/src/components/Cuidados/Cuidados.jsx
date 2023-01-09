@@ -16,7 +16,7 @@ const Cuidados = () => {
     <BarraDeNavegacion/>
       <main className={styles.parentColumn} id="main">
         <div className={styles.parent}>
-            <section>
+            <section className={styles.sectionCuidados}>
                 <h2 className={styles.h2cuidados}>CUIDADOS DENTRO DEL REFUGIO</h2>
                 <p className={styles.pCuidados}>En todos los años que El Campito lleva adelante tareas de recuperaci&oacute;n, son incontables los casos con
                     los que trabajamos mano a pata.
@@ -59,8 +59,8 @@ const Cuidados = () => {
                 <img src={imgVoluntario9} alt=""  className={styles.imgCuidados}/>
             </div>
         </section>
-        <div class="parent margin-top">
-            <section>
+        <div>
+         <section className={styles.sectionCuidados}>
                 <h2 className={styles.h2cuidados}>LOS DISCAS</h2>
                 <p className={styles.pCuidados}>Son perros paral&iacute;ticos, ciegos, o con tres patas.
                     Somos el &uacute;nico refugio del mundo que cuida 130 perros que para trasladarse necesitan carros, como

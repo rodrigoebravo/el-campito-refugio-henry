@@ -10,6 +10,7 @@ const ArtistasAmigos = () => {
   return (
     <div className={styles.container}>
       <BarraDeNavegacion />
+      <div className={styles.amigosInfo}>
       <h2 className={styles.h2PrensaAmigos}>Artistas Amigos</h2>
       <div className={styles.card}>
         {press?.map((el) => {
@@ -21,6 +22,7 @@ const ArtistasAmigos = () => {
             ></iframe>
           );
         })}
+      </div>
       </div>
       <Footer />
     </div>

@@ -74,7 +74,7 @@ nav a:hover {
 }
 .imgLogo{
    height:auto;
-    width:55%}
+   width:163px}
 .navIcon {
       display: none;}
 
@@ -83,7 +83,7 @@ nav a:hover {
         display: -ms-flexbox !important;
         display: flex !important;
       }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .navIcon{
     display:flex;
   position: absolute;
@@ -145,4 +145,9 @@ nav a:hover {
     margin-top: 20px;
     align-self: flex-end;
 }
+}
+@media (max-width: 360px) {
+  .navLinksActive{
+    margin:10px;
+  }
 }

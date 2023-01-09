@@ -8,13 +8,13 @@ import { TiLocation  } from "react-icons/ti";
 
 const Footer = () => {
     return (
-        <div >
+        <div  >
         <footer>
         <div className={styles.footerContainer}>
             <img src={logoFooter}  className={styles.imgFooter} alt="Logo carita de perro del campito"/>
             <div>
                 <div className={styles.infoContainer}>
-                <TiLocation />
+                <TiLocation className={styles.iFooter} />
                     <p className={styles.pFooter}>Estamos en Esteban Echeverr&iacute;a, Argentina</p>
                </div>
                <div className={styles.infoContainer}>

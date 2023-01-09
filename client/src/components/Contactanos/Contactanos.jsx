@@ -13,7 +13,7 @@ const Contactanos = () => {
                 <Form/>
         </section>
         <section className={styles.sectionContactanos} >
-            <p><span className={styles.spanContactanos}>Contactanos a nuestras redes sociales o a</span></p>
+            <p className={styles.pContactanos}><span className={styles.spanContactanos}>Contactanos a nuestras redes sociales o a</span></p>
             <button className={styles.buttonContactanos}>institucional@elcampitorefugio.org</button>
         </section>
             <Footer/>

@@ -73,7 +73,7 @@ const Prensa = () => {
             </section>
             <section className={styles.prensaButtonContainer}>
                 <p className={styles.pPrensaC}>Si trabajas en un medio de comunicaci&oacute;n y quer&eacute;s comunicarte con nosotros, escribinos:</p>
-                <button className={styles.buttonPrensa}><span>prensa@elcampitorefugio.org</span></button>
+                <button className={styles.buttonPrensa}><span className={styles.spanPrensa}>prensa@elcampitorefugio.org</span></button>
                 
             </section>
 
