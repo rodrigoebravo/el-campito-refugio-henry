@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./CardDogDetails.module.css";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 
 import Footer from "../Footer/Footer"
  
@@ -39,46 +40,40 @@ const CardDogDetails = (props) => {
     
     return (
       <div className={styles.divContenedor}>
-
+        <BarraDeNavegacion/>
         <div className={styles.divImgs}>
-          {photoActual !== 0 ? (
-            <button
-              className={styles.btnButton}
-              onClick={() => setPhotoActual(photoActual - 1)}
-            >
-              prev
-            </button>
-          ) : (
-            <button
-              className={styles.btnButton}
-              disabled
-              onClick={() => setPhotoActual(photoActual - 1)}
-            >
-              prev
-            </button>
-          )}
-          <img
+        <img
             className={styles.imgDog}
             alt="imgsola"
             src={detailsDogs.images[photoActual]}
           ></img>
-
+        <div>
+          {photoActual !== 0 ? (
+            <button
+              className={styles.btnButton}
+              onClick={() => setPhotoActual(photoActual - 1)}
+            >prev</button>
+          ) : (
+            <button
+              className={styles.btnButton}
+              disabled
+              onClick={() => setPhotoActual(photoActual - 1)}
+            >prev</button>
+          )}
+        
           {photoActual >= 0 && detailsDogs.images.length - 1 > photoActual ? (
             <button 
             className={styles.btnButton}
               onClick={() => setPhotoActual(photoActual + 1)}
-            >
-              next
-            </button>
+            >next</button>
           ) : (
             <button
               className={styles.btnButton}
               disabled
               onClick={() => setPhotoActual(photoActual + 1)}
-            >
-              next
-            </button>
+            >next</button>
           )}
+          </div>
         </div>
 
         <div className={styles.divCaracteristicas}>
@@ -124,7 +119,7 @@ const CardDogDetails = (props) => {
           )}
         </div>
 
-        <p>
+        <p className={styles.pMarginleft}>
           <span>
             Si quer&eacute;s adoptar completa el siguiente formulario:
           </span>
@@ -145,7 +140,7 @@ const CardDogDetails = (props) => {
           APADRINAR
         </Link>
         
-        <Footer />
+       <div className={styles.footerDetail}> <Footer /></div>
         
       </div>
     );

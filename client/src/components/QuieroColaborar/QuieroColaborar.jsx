@@ -35,7 +35,7 @@ const QuieroColaborar = () => {
     <div className={styles.container}>
       <BarraDeNavegacion />
       <main className={styles.colaborar}>
-        <section>
+        <section className={styles.section}>
           <h2 className={styles.h2Colborar}>¡QUIERO COLABORAR!</h2>
           <p className={styles.pColaborar}>
             El Campito Refugio es una ONG con sus balances al día.
@@ -112,7 +112,7 @@ const QuieroColaborar = () => {
             </div>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$200", 200)}
+              onClick={() => handleClick(unique, 200)}
             >
               $200
             </button>
@@ -170,6 +170,23 @@ const QuieroColaborar = () => {
                   <p className={styles.noButton}>
                     Otro monto (solo números, sin centavos)
                   </p>
+                  {input.monto === "" ? (
+                <button
+                  type="submit"
+                  className={styles.btnPaypalMonto}
+                  disabled
+                >
+                  Continuar
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className={styles.btnPaypalMonto}
+                  onClick={handleClick(unique, input)}
+                >
+                  Continuar
+                </button>
+              )}
               </button>
             </form>
           </article>
@@ -271,7 +288,7 @@ const QuieroColaborar = () => {
         </section>
       </main>
 
-      <Footer />
+      <div className={styles.footerColaborar}><Footer /></div>
     </div>
   );
 };

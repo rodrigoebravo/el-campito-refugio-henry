@@ -3,13 +3,14 @@
   padding: 50px;
 }
 .card{
-  margin:10px;
-  padding:10px;
+  margin:20px;
+ 
   width: 100%;
   display: grid;
-  grid-template-columns: 25% 25% 25% ;
+  grid-template-columns: 50% 50% ;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: 20px;
+
 
 }
 .h2PrensaAmigos{
@@ -35,17 +36,18 @@
   .card{
     grid-template-columns: 50% 50%;
     align-items: center;
+    grid-gap:0px;
   }
   .iframePrensaAmigos{
-    width: 200px;
+  width: 200px;
   height: 240px;
-  margin:5px
+  margin:15px
   }
 }
 @media (max-width: 360px) {
   .card{
     grid-template-columns: 100%;
-    align-items: center;
+      align-items: center;
   }
   .amigosInfo{
     margin-top:40px

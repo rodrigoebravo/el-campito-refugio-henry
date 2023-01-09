@@ -24,18 +24,17 @@ const Footer = () => {
         <div className={styles.redes}>
                 <h4 className={styles.h4Footer}>¡Seguinos!</h4>
                 <a
-                  href="https://www.instagram.com/refugioelcampihref/"
+                  href="https://www.instagram.com/refugioelcampito"
                   rel="noreferrer"
+                  target="_blank"
                 ><i class="fa-brands fa-instagram"></i></a>
                 <a
-                  href="https://www.facebook.com/elcampihrefrefugio" rel="noreferrer" ><i class="fa-brands fa-facebook"></i></a>
+                  href="https://es-la.facebook.com/elcampitorefugio" rel="noreferrer"  target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a
-                  href="https://www.youtube.com/@campihrefrefugio" rel="noreferrer"><i class="fa-brands fa-youtube"></i></a>
-                <a
-                  href="https://twitter.com/elcampihref" rel="noreferrer">
-                 <i class="fa-brands fa-twitter"></i></a>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-tiktok"></i>
+                  href="https://www.youtube.com/@campihrefrefugio" rel="noreferrer"  target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://twitter.com/elcampito" rel="noreferrer"  target="_blank"><i class="fa-brands fa-twitter"  ></i></a>
+                <a href="https://www.linkedin.com/in/el-campito-refugio-9669b1b7/" rel="noreferrer"  target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@refugioelcampito" rel="noreferrer"  target="_blank"><i class="fa-brands fa-tiktok"  ></i></a>
             </div>
         </div>
         <p className={styles.derechos}>El Campito Refugio. Todos los derechos reservados.</p>

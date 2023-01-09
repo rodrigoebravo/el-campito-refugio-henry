@@ -1,23 +1,27 @@
-import React from "react";
-
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import BarraDeNavegacion from "../../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../../Footer/Footer";
-
+import { getPress } from "../../../redux/actions/action";
 import styles from "./PrensaTelevision.module.css"
-import press from "./prensa.json"
+
 import CardPrensaTelevision from "./CardPrensaTelevision";
 
 const PrensaGrafica = () => {
-
-  //aca va un useefect
+  const press = useSelector((state) => state.press);  
+  const pressTelevision = press.filter(el=> el.type==="Televisión / Audiovisual")
+  console.log(pressTelevision)
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(getPress());
+    }, [dispatch]);
 
   return(
     <div className={styles.container}> 
      <BarraDeNavegacion/>
      <h2 className={styles.h2PrensaTele}>Prensa Television</h2>
      <div className={styles.card}>
-     {press?.map((el) => {
+     {pressTelevision?.map((el) => {
             return (
              
                 
@@ -25,7 +29,7 @@ const PrensaGrafica = () => {
                     key={el._id}
                     link={el.link}
                     media={el.media}
-                    logo={el.logo}
+                    logo={el.favicon}
                     title={el.title}
                     description={el.description}
                   />

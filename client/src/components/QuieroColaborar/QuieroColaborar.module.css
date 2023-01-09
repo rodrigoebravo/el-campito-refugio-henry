@@ -2,34 +2,13 @@
   padding: 50px;
 }
 
-* {
-  padding: 0px;
-  margin: 0px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "Trashhand";
-  src: url("../../assets/fonts/TrashHand.TTF");
-}
-
-@font-face {
-  font-family: "Seravek";
-  src: url("../../assets/fonts/Seravek.ttf");
-}
-
-body {
-  font-family: 'Seravek', 'sans-serif';
-  font-size: 1.125em;
-  color: #444445;
-  font-weight: 300;
-}
-
 .colaborar section {
   margin-bottom: 20px;
-  padding: 40px;
 
+
+}
+.section{
+  padding: 10px;
 }
 
 .h2Colborar {
@@ -96,7 +75,8 @@ body {
   grid-template-columns: auto auto;
   gap: 10px;
   padding: 0px;
-  margin: 0px
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
 .cuentaBancaria {
@@ -107,14 +87,13 @@ body {
   font-size: 1.15em;
   padding: 40px;
   max-height: 300px;
-  min-height: 300px;
+ 
 }
 
 .debitoAutomatico {
   background-color: #6B639A;
   border-radius: 25px;
-  padding: 40px;
-  max-height: 300px;
+  padding: 35px;
   min-height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -130,6 +109,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .buttonForm {
@@ -148,6 +128,7 @@ body {
   border: 0px;
   font-weight: bold;
   margin: 0px;
+
 }
 
 .parentGrid5 {
@@ -306,22 +287,57 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media (max-width: 768px) {
   .colaborar section {
-    padding: 40px
+    padding: 20px
   }
 
   .parentGrid2,
   .parentGrid5,
   .parentGridPaypal {
-    grid-template-columns: none;
+    grid-template-columns:none;
     gap: 10px;
   }
 
   .debitoAutomatico {
     font-size: 0.8em;
   }
+  
 }
 @media (max-width: 360px) {
   .colaborar section {
-    padding: 0px
+    padding: 10px
+  }
+  .parentGrid2  {
+   width: 100%;
+   padding:0;
+   margin: 0;
+  }
+  .container{
+    padding:20px
+  }
+  .cuentaBancaria{
+    font-size: 1em;
+   padding: 20px;
+   height: 250px;
+   width: 300px;
+  }
+  .debitoAutomatico{
+    font-size: 1em;
+    padding: 20px;
+   height: 450px;
+   width: 300px;
+  }
+  .buttonFormDiv{
+    display:flex;
+    flex-direction: column;
+    margin:-10px;
+    padding:10px
+  }
+  .buttonForm{
+    margin:10px;
+    
+  }
+  .footerColaborar{
+    margin-left: 20px;
+    padding:20px
   }
 }

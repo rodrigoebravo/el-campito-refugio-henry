@@ -10,6 +10,7 @@
 .divImgs {
   width: 70%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -21,6 +22,8 @@
   border-radius: 25px;
   border: 3px solid #4FA7C1;
   padding: 10px;
+  width:800px ;
+  height: auto;
 }
 .divCaracteristicas{
   display: flex;
@@ -35,17 +38,18 @@
     margin:15px
 }
 .btnButton{
+  
   background-color: #4FA7C1;
   border: 3px solid #4FA7C1;
-  width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 15px;
-     font-weight: bold;
-    color: #FFFFFF;
-    font-size: 1em;
-   margin:15px;
-   padding:15px
+  width: 30%;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1em;
+  margin:15px;
+  padding:15px;
+  padding-right: 30px;
    
 }
 .btnButton:hover{
@@ -69,9 +73,35 @@
   background-color: #F9C0C1;
   text-decoration: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .imgDog{
     width:90%;
   }
   p{font-size: 1em;}
+  .divImgs{
+    margin-top:60px
+  }
+}
+@media (max-width: 360px) {
+  .imgDog{
+    width:100%;
+  }
+  .divImgs{
+    margin-top:70px
+  }
+  .footerDetail{
+    margin-left: 30px;
+    padding:20px
+  }
+  .pMarginleft{
+    margin-left:30px;
+  }
+  .btnButton{
+    width: 30%;
+    font-size: 0.8em;
+    padding: 10px;
+    padding-right: 19px;
+    border-radius: 10px;
+    margin:20px;
+  }
 }

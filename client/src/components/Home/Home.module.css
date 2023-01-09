@@ -147,10 +147,14 @@ a{
     width: 100%;
     padding: 0;
     margin:0;
+    margin-top:30px;
   }
   .boxBgPink,.boxBgGreen,.boxBgOrange,.boxBgPurple,.boxBgLightOrange,.boxBgLightBlue,.boxBgGrey{
     width: 100%;
     height: auto
-    
+   
+  }
+  .boxContainer{
+    margin-bottom: 30px;
   }
 }

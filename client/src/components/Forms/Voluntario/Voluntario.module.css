@@ -183,11 +183,18 @@
         height: 200px;
     }
     .item{
-        width: 250px;
+        width: 270px;
         margin-left: -50px;
     }
   .footerVoluntario{
-    padding:20px;
+    margin-left: 30px;
+    padding:20px
     
+  }
+  .h3form{
+    margin-left: 20px;
+  }
+  .submit{
+    margin-right: -20px;
   }
   }

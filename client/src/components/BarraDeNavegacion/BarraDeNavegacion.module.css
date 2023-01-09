@@ -150,4 +150,10 @@ nav a:hover {
   .navLinksActive{
     margin:10px;
   }
+  .navIcon{
+    
+  position: absolute;
+  top: 5px; 
+  
+}
 }

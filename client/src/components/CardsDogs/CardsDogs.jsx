@@ -51,7 +51,9 @@ import Footer from "../Footer/Footer";
     return <Loading />;
   } else {
     return (
-      <div><BarraDeNavegacion/>
+      <div >
+
+      <BarraDeNavegacion/>
       <div className={style.divContainer}>
       
         <h2 className={style.h2}>Conocenos Nuestros Perritos</h2>
@@ -82,7 +84,7 @@ import Footer from "../Footer/Footer";
           currentPage={currentPage}
         />
       </div>
-      <Footer/>
+      <div className={style.footerDogs}><Footer/></div>
       </div>
     );
   }

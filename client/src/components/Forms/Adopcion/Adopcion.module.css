@@ -145,6 +145,7 @@
     min-height: 0;
     height: 75px;
     margin: 100px;
+    
     text-align: center;
     border-radius: 15px;
     border: 0px;
@@ -171,12 +172,12 @@
     }
     .buttonLoad{
         height: 200px;
-        padding:-20px;
+       
        
     }
     .item{
       width:250px;
-    
+      margin-left:-40px
       
     }
     .divContenedor{
@@ -184,6 +185,9 @@
      
       padding:0px
     }
+    .submit{
+       margin-right: -30px;
+     }
     .footerAdopcion{
         padding:20px;
          margin-left:30px;

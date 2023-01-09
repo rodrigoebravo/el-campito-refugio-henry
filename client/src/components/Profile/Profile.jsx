@@ -140,7 +140,7 @@ const Profile = () => {
                 <>
                   <LoginForm />
 
-                  <h2>
+                  <h2 className={styles.h2profile}>
                     Si no tienes cuenta
                     <span onClick={handleButtonClick} className={styles.span}>
                       registrate

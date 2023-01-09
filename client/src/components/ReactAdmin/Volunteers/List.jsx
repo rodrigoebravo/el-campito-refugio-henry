@@ -6,7 +6,6 @@ import {
   EditButton,
   // InfoIcon,
   DeleteWithConfirmButton,
-  EditButton,
   BooleanField,
 } from "react-admin";
 import InfoIcon from "@mui/icons-material/Info";

@@ -17,7 +17,7 @@ const Denuncias = () => {
             <p>No hay que tener miedo. Hay que insistir. Involucr&aacute;ndose e insistiendo podemos lograr un cambio. An&iacute;mense
                 y sean la voz de los que no tienen voz. Luchen por ellos.</p>
             <p><span>El maltrato animal es:</span></p>
-            <ul>
+            <ul className={styles.listasDenuncia}>
                 <li>Un delito penado por el C&oacute;digo Penal. LEY 14.346.
                 </li>
                 <li>Un delito de Acci&oacute;n P&uacute;blica, es decir que puede ser denunciado por cualquier persona.
@@ -25,7 +25,7 @@ const Denuncias = () => {
                 <li>Un delito que se puede denunciar ante la Polic&iacute;a, el Juzgado del Crimen o la Fiscal&iacute;a seg&uacute;n la
                     jurisdicci&oacute;n.</li>
             </ul>
-            <ol>
+            <ol className={styles.listasDenuncia}>
                 <li>Las denuncias son personales, debe efectuarlas la persona que presencia el hecho.
                 </li>
                 <li>El/la denunciante debe ser mayor de edad (18 años) y acreditar su identidad con Documento Nacional
@@ -60,7 +60,7 @@ const Denuncias = () => {
                 siempre la denuncia con la mayor cantidad posible de pruebas e informaci&oacute;n sobre la situaci&oacute;n del
                 animal, tales como fotograf&iacute;as, v&iacute;deos, testimonios de testigos de los hechos.</p>
             <p><span>Es importante tener presente estos datos:</span></p>
-            <ul>
+            <ul className={styles.listasDenuncia}>
                 <li>Lugar donde se produce el maltrato (agresi&oacute;n, detecci&oacute;n de animales en malas condiciones, etc.).
                 </li>
                 <li>Fecha y hora exacta en la que lo hemos presenciado.

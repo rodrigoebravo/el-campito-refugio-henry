@@ -7,6 +7,8 @@ import television from "../../assets/img/prensa/television.png"
 import artistas from "../../assets/img/prensa/artistas.png"
 import styles from "./Prensa.module.css"
 import { Link } from "react-router-dom";
+
+
 const Prensa = () => {
   return(
     <div className={styles.container}>
