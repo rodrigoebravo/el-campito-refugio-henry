@@ -6,7 +6,9 @@ const {
   PAYPAL_API_SECRET,
 } = require("../config/paypal");
 
-const { adminCreateContrib } = require("./adminContrib");
+
+const {adminCreateContrib} = require("../utils/adminCreateContrib");
+
 
 let pago = 0;
 const createOrder = async (req, res) => {
@@ -34,6 +36,7 @@ const createOrder = async (req, res) => {
         cancel_url: "http://localhost:3001/api/paypal/cancel-order",
       },
     };
+
 
     // format the body
     const params = new URLSearchParams();
@@ -106,7 +109,8 @@ const captureOrder = async (req, res) => {
     };
     console.log(obj, "soy obj");
 
-    // adminCreateContrib(obj)
+    
+    adminCreateContrib(obj)
 
     // res.json(response.data)
     //respuesta de la data en json
@@ -117,6 +121,7 @@ const captureOrder = async (req, res) => {
     res.status(500).json({ message: "Internal Server error caputure" });
   }
 };
+
 
 const cancelPayment = (req, res) => {
   console.log("Se cancelo la operacion");

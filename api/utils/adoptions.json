@@ -170,11 +170,11 @@
       "sterilization": "No estamos de acuerdo."
     },
     {
-      "name": "Pedrito Navaja",
-      "email": "pedrito@gmail.com",
+      "name": "Claudia Santos",
+      "email": "clausss@gmail.com",
       "phone": "011723823454",
       "birthday": "1999-02-08T00:00:00.000Z",
-      "dogName": "Isadora",
+      "dogName": "Akamaru",
       "idDog": "63b459d371d82d4a80fa61c9",
       "location": "Mernet 823",
       "area": "Pilar",
@@ -209,5 +209,176 @@
       "moving": "no lo hemos pensado",
       "adaptation": "no",
       "sterilization": "desconocemos"
+    }, 
+    {
+      "name": "Mariela Torres",
+      "email": "torresma@gmail.com",
+      "phone": "011223823454",
+      "birthday": "1967-02-08T00:00:00.000Z",
+      "dogName": "Dulce",
+      "idDog": "63b459d371d82d4a80fa61c3",
+      "location": "Luis Vernet 823",
+      "area": "Pilar",
+      "people": 4,
+      "accordance": "si",
+      "description": "Somos una pareja con dos niños, uno de 1 año y uno de 5 años. Todos los miembre de la flia están de acuerdo",
+      "otherAnimals": "no",
+      "expatiate": "no tenemos otros animales",
+      "castrated": "no",
+      "reason": "no estoy de acuerdo",
+      "vaccinated": "si",
+      "events": "Tuve un perro que heredé de mis padres y murió de viejo",
+      "holidays": "En vacaciones se quedará en una guardería de perros",
+      "babies": "Ya tenemos un bebé en casa y todo está bien",
+      "allergies": "Si aparecen alergias, veremos como acomodar la convivencia sin excluir a nadie",
+      "items": [
+        "compañia",
+        "guardia"
+      ],
+      "home": [
+        "departamento",
+        "casa"
+      ],
+      "freshAir": [
+        "balcón",
+        "patio"
+      ],
+      "status": "propietario",
+      "authorization": "si",
+      "sleep": "dentro de la casa",
+      "loneliness": "Nunca estará sola xq mi mujer siemrpe esta en casa con los niños",
+      "walk": "Todos los días, a la tardecita cuando vuekvo del trabajo",
+      "moving": "Se viene con la familia",
+      "adaptation": "no",
+      "sterilization": "estamos de acuerdo"
+    },
+    {
+      "name": "Marcos Saicha",
+      "email": "marr@gmail.com",
+      "phone": "011523823454",
+      "birthday": "1974-02-09",
+      "dogName": "André",
+      "idDog": "63b459d371d82d4a80fa61c4",
+      "location": "Branca Fernet 1223",
+      "area": "Pilar",
+      "people": 2,
+      "accordance": "si",
+      "description": "mi novia y yo estamos de acuerdo",
+      "otherAnimals": "si",
+      "expatiate": "tenemos un gato",
+      "castrated": "si",
+      "reason": "castración por corte",
+      "vaccinated": "si",
+      "events": "No tuvimos otros animales",
+      "holidays": "vendra con nosotros en vacaciones",
+      "babies": "cuando tengamos un bebe será también su mascota",
+      "allergies": "No tenemos alergias, pero si nuestro hijo tuviese deberiamos regalar el perro",
+      "items": [
+        "defensa",
+        "compañia",
+        "guardia"
+      ],
+      "home": [
+        "departamento"
+      ],
+      "freshAir": [
+        "balcón"
+      ],
+      "status": "alquilo",
+      "authorization": "si",
+      "sleep": "dentro del dpto",
+      "loneliness": "mientras estemos en el trabajo, hasta las 17 hs.",
+      "walk": "día por medio, daremos una vuelta x el barrio",
+      "moving": "se viene con nosotros",
+      "adaptation": "no",
+      "sterilization": "no se de que se trate"
+    },
+    {
+      "name": "Lara Posca",
+      "email": "lariña@gmail.com",
+      "phone": "011723823454",
+      "birthday": "1999-02-08T00:00:00.000Z",
+      "dogName": "Leo de Burzaco",
+      "idDog": "63b459d371d82d4a80fa61c0",
+      "location": "Mernet 823",
+      "area": "Pilar",
+      "people": 6,
+      "accordance": "si",
+      "description": "todos estamos de acuerdo y felices, somo una pareja con 4 hermosos hijos y dos hijas perrunas",
+      "otherAnimals": "si",
+      "expatiate": "tenemos dos perritas con discapacidades",
+      "castrated": "si",
+      "reason": "castración química",
+      "vaccinated": "si",
+      "events": "todavía las tenemos",
+      "holidays": "vacacionamos todos juntos",
+      "babies": "no hay problemas con los bebés",
+      "allergies": "No hay alergias, pero si aparecen veremos como acomodarnos",
+      "items": [
+        "compañia"
+      ],
+      "home": [
+        "departamento",
+        "casa", 
+        "campo"
+      ],
+      "freshAir": [
+        "balcón",
+        "patio",
+        "parque"
+
+      ],
+      "status": "propietario",
+      "authorization": "si",
+      "sleep": "tenemos casa de perros, cómoda, fuera de la casa",
+      "loneliness": "nunca, siempre hay alguien en la casa. Como mucho, pequeños ratos",
+      "walk": "tienen mucho espacio verde para correr",
+      "moving": "se mudan también",
+      "adaptation": "si",
+      "sterilization": "no es necesario"
+    },
+    {
+      "name": "Mariano Devoto",
+      "email": "devoto45i@gmail.com",
+      "phone": "1152536478",
+      "birthday": "1977-10-31T00:00:00.000Z",
+      "dogName": "Bala",
+      "idDog": "63b459d371d82d4a80fa61c3",
+      "location": "Francisco Cabral 1234",
+      "area": "Pilar",
+      "people": 2,
+      "accordance": "si",
+      "description": "Dos adultos, padre y madre. Dos niños (hijos adoptados), una niña de 6 años y un niño de 8 años hermanos de sangre adoptados en el mismo momento.",
+      "otherAnimals": "si",
+      "expatiate": "Un pez que tenemos en la pescera del comedor y un cachorro que los abuelos le regalaron a los niños.",
+      "castrated": "si",
+      "reason": "No creemos en ese método de control de la natalidad canina",
+      "vaccinated": "si",
+      "events": "no",
+      "holidays": "llevarlos con la flia",
+      "babies": "Todo seguira igual. Nada cambia.",
+      "allergies": "En principio, nadie es alergico.",
+      "items": [
+        "compañia",
+        "otros"
+      ],
+      "home": [
+        "casa",
+        "casa en barrio cerrado",
+        "campo"
+      ],
+      "freshAir": [
+        "parque",
+        "otros"
+      ],
+      "status": "propietario",
+      "authorization": "si",
+      "sleep": "En el cuarto de mascotas, dentro de la casa.",
+      "loneliness": "Nunca",
+      "walk": "todos los días en el parque de la casa, y una vez cada tres días por el exterior.",
+      "moving": "Se van con nosotros",
+      "adaptation": "si",
+      "sterilization": "No estamos de acuerdo."
     }
+    
   ]

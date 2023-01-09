@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./QuieroColaborar.module.css";
 import mercadoLibre from "../../assets/img/logosPasarelas/mercado-pago.png";
 import cafecito from "../../assets/img/logosPasarelas/cafecito.png";
@@ -7,25 +7,29 @@ import Footer from "../Footer/Footer";
 import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import { useDispatch } from "react-redux";
 import postMeli from "../../redux/actions/action";
+import { useState } from "react";
 import { payWithPayPal } from "../../login";
 
 const QuieroColaborar = () => {
   const dispatch = useDispatch();
+  const [value, setValue] = useState(0); //para input del usuario
+  const unique = "Donación única"
   const [input, setInput] = useState({
     monto: "",
   });
+  
   console.log(input);
 
   const handleClick = (title, unit_price) => {
     dispatch(postMeli({ title, unit_price }));
   };
-
-  function handleChange(e) {
+ 
+ function handleChange(e) {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
-  }
+  } 
 
   return (
     <div className={styles.container}>
@@ -34,14 +38,14 @@ const QuieroColaborar = () => {
         <section>
           <h2 className={styles.h2Colborar}>¡QUIERO COLABORAR!</h2>
           <p className={styles.pColaborar}>
-            El Campito Refugio es una ONG con sus balances al d&iacute;a.
+            El Campito Refugio es una ONG con sus balances al día.
           </p>
           <p className={styles.pColaborar}>
-            Nuestra cuenta bancaria est&aacute; auditada a nombre del refugio
-            por lo cual cada donaci&oacute;n es rendida.
+            Nuestra cuenta bancaria está auditada a nombre del refugio
+            por lo cual cada donación es rendida.
           </p>
           <p className={styles.pColaborar}>
-            Para solicitar tu recibo legal o confirmar una transacci&oacute;n,
+            Para solicitar tu recibo legal o confirmar una transacción,
             envianos el comprobante a{" "}
             <span className={styles.spanColaborar}>
               <a className={styles.aColaborar} href="/#">
@@ -72,14 +76,14 @@ const QuieroColaborar = () => {
 
             <div className={styles.debitoAutomatico}>
               <h3>
-                <span>POR D&Eacute;BITO AUTOM&Aacute;TICO</span>
+                <span>POR DÉBITO AUTOMÁTICO</span>
               </h3>
               <h3>CON TARJETA VISA Y VISA ELECTRON</h3>
               <p>
-                Si quer&eacute;s ser madrina o padrino del refugio colaborando
-                mensualmente, pod&eacute;s hacerlo utilizando tu tarjeta de
-                cr&eacute;dito. Eleg&iacute; el monto que quieras donar, y se
-                debitar&aacute; autom&aacute;ticamente de tu cuenta todos los
+                Si querés ser madrina o padrino del refugio colaborando
+                mensualmente, podés hacerlo utilizando tu tarjeta de
+                crédito. Elegí el monto que quieras donar, y se
+                debitará automáticamente de tu cuenta todos los
                 meses.
               </p>
               <div className={styles.buttonFormDiv}>
@@ -114,46 +118,60 @@ const QuieroColaborar = () => {
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$300", 300)}
+              onClick={() => handleClick(unique, 300)}
             >
               $300
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$500", 500)}
+              onClick={() => handleClick(unique, 500)}
             >
               $500
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$1000", 1000)}
+              onClick={() => handleClick(unique, 1000)}
             >
               $1000
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$3000", 3000)}
+              onClick={() => handleClick(unique, 3000)}
             >
               $3000
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$5000", 5000)}
+              onClick={() => handleClick(unique, 5000)}
             >
               $5000
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$7000", 7000)}
+              onClick={() => handleClick(unique, 7000)}
             >
               $7000
             </button>
-            <button
+            {/* <button
               className={styles.buttonML}
-              onClick={() => handleClick("$10000", 10000)}
+              onClick={() => handleClick(unique, 10000)}
             >
               $10000
-            </button>
+            </button> */}
+            <form onSubmit={(e) => { e.preventDefault(); handleClick(unique, parseInt(value)); }}>
+              <button type="submit" className={styles.buttonML}>
+                $ <input 
+                    type="number" min="1" step="any"
+                    style={{ color: "#FFFFFF", fontWeight: "bold", fontSize: "1.2em"}} //hice estilos en linea porque no funcionaba exportando css
+                    appearance="none" 
+                    className={styles.inputColaborar}
+                    value={value} onChange={(e) => setValue(e.target.value)} 
+                  />
+                  <p className={styles.noButton}>
+                    Otro monto (solo números, sin centavos)
+                  </p>
+              </button>
+            </form>
           </article>
           <article className={styles.parentGrid5}>
             <div className={styles.medioDePagoPaypal}>
@@ -205,6 +223,9 @@ const QuieroColaborar = () => {
             >
               US100
             </button>
+
+            {/* Paypal Nico  */}
+            
             <div className={styles.buttonPaypal}>
               <input
                 className={styles.inputColaborar}
@@ -212,9 +233,9 @@ const QuieroColaborar = () => {
                 name="monto"
                 value={input.monto}
                 onChange={handleChange}
-              ></input>
+              />
               <p className={styles.noButton}>
-                Otro $ (solo n&uacute;meros, sin centavos)
+                Otro monto (solo números, sin centavos)
               </p>
               {input.monto === "" ? (
                 <button
@@ -233,7 +254,7 @@ const QuieroColaborar = () => {
                   Continuar
                 </button>
               )}
-            </div>
+            </div> 
           </article>
           <article className={styles.parentGridPaypal}>
             <div className={styles.medioDePagoCF}>
@@ -244,7 +265,7 @@ const QuieroColaborar = () => {
               />
             </div>
             <button className={styles.buttonCF} onClick={payWithPayPal()}>
-              Donar Cafecito
+              <a href="https://cafecito.app/refugioelcampito" target="_blank" rel="noreferrer" className={styles.linkCafecito}>Donar Cafecito</a>
             </button>
           </article>
         </section>

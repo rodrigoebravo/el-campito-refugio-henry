@@ -1,43 +1,48 @@
 import { Admin, Resource } from "react-admin";
 import dataProvider from "../../dataProvider";
-import PetsIcon from "@mui/icons-material/Pets";
+// Dogs
 import DogsList from "./Dogs/List";
-import DogsShow from "./Dogs/Show";
 import DogsEdit from "./Dogs/Edit";
 import DogsCreate from "./Dogs/Create";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+// Users
 import UsersList from "./Users/List";
-import UsersShow from "./Users/Show";
 import UsersEdit from "./Users/Edit";
 import UsersCreate from "./Users/Create";
-import RadioIcon from "@mui/icons-material/Radio";
+// Press
 import PressCreate from "./Press/Create";
 import PressEdit from "./Press/Edit";
 import PressList from "./Press/List";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
+// Contribution
 import ContribCreate from "./Contributions/Create";
 import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
-import ContribShow from "./Contributions/Show";
+// import ContribShow from "./Contributions/Show";
 import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
-import VoluntShow from "./Volunteers/Show";
+// import VoluntShow from "./Volunteers/Show";
+
 import VoluntEdit from "./Volunteers/Edit";
 import VoluntList from "./Volunteers/List";
-import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+// Adoptions
 import AdopList from "./Adoptions/List";
-import AdopShow from "./Adoptions/Show";
+// import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
-import HomeIcon from "@mui/icons-material/Home";
+// Interface
 import InterfacesEdit from "./Interfaces/Edit";
-import InterfacesList from "./Interfaces/List";
-import InterfacesShow from "./Interfaces/Show";
-import SsidChartIcon from "@mui/icons-material/SsidChart";
+// Graphs
 import Stats from "./Stats/Stats";
+// Icons
+import PetsIcon from "@mui/icons-material/Pets";
+import HomeIcon from "@mui/icons-material/Home";
+import RadioIcon from "@mui/icons-material/Radio";
+import SsidChartIcon from "@mui/icons-material/SsidChart";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
+import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 
 const AdminIndex = () => {
-  
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user)
+  console.log(user);
   return (
     <Admin dataProvider={dataProvider}>
       <Resource
@@ -45,7 +50,6 @@ const AdminIndex = () => {
         list={DogsList}
         create={DogsCreate}
         edit={DogsEdit}
-        show={DogsShow}
         icon={PetsIcon}
         options={{ label: "Perritos" }}
       />
@@ -54,7 +58,6 @@ const AdminIndex = () => {
         list={UsersList}
         create={UsersCreate}
         edit={UsersEdit}
-        show={UsersShow}
         icon={AccountCircleIcon}
         options={{ label: "Usuarios" }}
       />
@@ -71,7 +74,7 @@ const AdminIndex = () => {
         list={ContribList}
         create={ContribCreate}
         edit={ContribEdit}
-        show={ContribShow}
+        // show={ContribShow}
         icon={VolunteerActivismIcon}
         options={{ label: "Contribuciones" }}
       />
@@ -79,7 +82,7 @@ const AdminIndex = () => {
         name="api/admin/volunteers"
         list={VoluntList}
         edit={VoluntEdit}
-        show={VoluntShow}
+        // show={VoluntShow}
         icon={HandshakeRoundedIcon}
         options={{ label: "Voluntarios" }}
       />
@@ -87,23 +90,19 @@ const AdminIndex = () => {
         name="api/admin/adoptions"
         list={AdopList}
         edit={AdopEdit}
-        show={AdopShow}
+        // show={AdopShow}
         icon={FavoriteRoundedIcon}
         options={{ label: "Adopciones" }}
       />
       <Resource
         name="api/admin/interfaces"
-        list={InterfacesList}
-        edit={InterfacesEdit}
-        show={InterfacesShow}
+        list={InterfacesEdit}
         icon={HomeIcon}
         options={{ label: "Interfaz de Usuario" }}
       />
       <Resource
         name="api/admin/stats"
         list={Stats}
-        // edit={AdopEdit}
-        // show={AdopShow}
         icon={SsidChartIcon}
         options={{ label: "Estadisticas" }}
       />

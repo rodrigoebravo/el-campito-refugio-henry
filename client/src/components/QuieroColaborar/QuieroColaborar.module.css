@@ -289,6 +289,20 @@ input[type=number]::-webkit-outer-spin-button {
   column-gap: 10px;
   padding: 10px 0;
 }
+.linkCafecito{
+  color: white;
+}
+.linkCafecito:link{
+  text-decoration: none;
+}
+
+.linkCafecito:active{
+  text-decoration: none;
+ }
+
+.linkCafecito:visited{
+  text-decoration: none;
+}
 
 @media (max-width: 768px) {
   .colaborar section {

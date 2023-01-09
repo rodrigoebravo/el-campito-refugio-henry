@@ -16,11 +16,13 @@ const AdopEdit = (props) => {
         <h3>Camperito</h3>
         <TextField  source="nameDog"  fullWidth />
         <br></br>
-        <h2>Adoptante (nombre y apellido)</h2>
+        <h3>Adoptante (nombre y apellido)</h3>
         <TextField  source="nameUser"  fullWidt />
         <br></br>
-        <TextInput source="birthday" label="Fecha de Nacimiento" fullWidth />
-        <TextInput source="email" label="e-mail" fullWidth />
+        <h3>User:</h3>
+        <TextField source="email" label="e-mail" fullWidth />
+        <br/>
+        <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
         <TextInput source="phone" label="Teléfono" fullWidth />
         <TextInput source="location" label="Domicilio" fullWidth />
         <TextInput source="area" label="Localidad" fullWidth />
