@@ -4,7 +4,7 @@ import {
   TextField,
   // ShowButton,
   // InfoIcon,
-  DeleteWithConfirmButton,
+  // DeleteWithConfirmButton,
   EditButton,
 } from "react-admin";
 // import InfoIcon from "@mui/icons-material/Info";
@@ -15,7 +15,7 @@ import Filters from "./Filters";
 const VoluntList = (props) => {
   return (
     <List {...props} aside={<Filters />}>
-      <Datagrid>
+      <Datagrid bulkActionButtons={false}>
         <TextField source="name" label="Voluntario" />
         <TextField source="modality" label="Modalidad"  />
         <TextField source="email" label="Email" sortable={false} />
@@ -27,8 +27,7 @@ const VoluntList = (props) => {
           // icon={<InfoIcon />}
         />
         {/* <ShowButton /> */}
-
-        <DeleteWithConfirmButton basepath="/api/admin/volunteers" />
+        {/* <DeleteWithConfirmButton basepath="/api/admin/volunteers" /> */}
       </Datagrid>
     </List>
   );

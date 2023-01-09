@@ -3,22 +3,22 @@ import {
   Datagrid,
   TextField,
   EditButton,
-  ShowButton,
-  DeleteWithConfirmButton,
+  // ShowButton,
+  // DeleteWithConfirmButton,
 } from "react-admin";
 
 const AdopList = (props) => {
   return (
     <List {...props}>
-      <Datagrid>
+      <Datagrid bulkActionButtons={false}>
         <TextField source="nameDog" label="Camperito" />
         <TextField source="email" label="user ID" />
         <TextField source="nameUser" label="Adoptante" />
         <TextField source="phone" label="Teléfono" />
         
         <EditButton basepath="/api/admin/adoptions" />
-        <DeleteWithConfirmButton basepath="/api/admin/adoptions" />
-        <ShowButton />
+        {/* <DeleteWithConfirmButton basepath="/api/admin/adoptions" />
+        <ShowButton /> */}
       </Datagrid>
     </List>
   );
