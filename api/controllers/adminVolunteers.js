@@ -10,8 +10,8 @@ const adminVolunteer = async (req, res) => {
 
     let find = {
       ...filtro,
-      name: new RegExp(filtro.name, "i"),
-    };
+      name: new RegExp(filtro.name, "i") || "",
+    } || {};
 
     const todos = await volunteersModel.find(find);
     const volunteers = await volunteersModel
@@ -33,9 +33,11 @@ const adminVolunteer = async (req, res) => {
       .map((v) => {
         // console.log(v);
         const {
-          user: { _id, ...basicData },
+          user: { _id, ...basicData },          
           ...dataVolunteer
         } = v.toObject();
+
+        dataVolunteer.date = dataVolunteer.date.toJSON().slice(0, 10);
 
         let response = {
           idUser: _id,
@@ -74,6 +76,8 @@ const adminVolunteerId = async (req, res) => {
       user: { _id, ...basicData },
       ...dataVolunteer
     } = volunteer.toObject();
+
+    dataVolunteer.date = dataVolunteer.date.toJSON().slice(0, 10);
 
     res.status(200).send({
       idUser: _id,

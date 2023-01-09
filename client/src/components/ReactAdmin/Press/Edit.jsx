@@ -8,7 +8,8 @@ import {
   TextField,
   ImageInput,
   ImageField,
-  SelectInput
+  SelectInput,
+  BooleanInput
 } from "react-admin";
 
 import { Grid } from "@mui/material";
@@ -110,7 +111,9 @@ const PressEdit = (props) => {
           <ImageInput source="img" label="Fotografía" >
               <ImageField source="src"  />
           </ImageInput>
+          <BooleanInput label="Desactivado" source="isDelete" />  
         </FormTab>
+
       </TabbedForm>
       </div>
     </Edit>

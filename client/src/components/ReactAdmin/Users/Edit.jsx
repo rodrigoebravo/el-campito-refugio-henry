@@ -6,7 +6,6 @@ import {
   TextField,
   ImageField,
   BooleanInput,
-  DateField,
   NumberInput,
   CheckboxGroupInput,
   TextInput,
@@ -101,6 +100,10 @@ const UsersEdit = () => {
                 <h5>Numero de telefono</h5>
                 <NumberInput fullWidth source="phone" />
               </Grid>
+              <Grid item lg={3}>                
+                <BooleanInput label="Desactivado" source="isDelete" />
+              </Grid>
+              <BooleanInput label="Desactivado" source="isDelete" />  
             </Grid>
           </FormTab>
         </TabbedForm>

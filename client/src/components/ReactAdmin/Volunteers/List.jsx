@@ -2,6 +2,7 @@ import {
   List,
   Datagrid,
   TextField,
+  DateField,
   // ShowButton,
   // InfoIcon,
   // DeleteWithConfirmButton,
@@ -16,6 +17,7 @@ const VoluntList = (props) => {
   return (
     <List {...props} aside={<Filters />}>
       <Datagrid bulkActionButtons={false}>
+        <DateField source="date" label="Fecha" />
         <TextField source="name" label="Voluntario" />
         <TextField source="modality" label="Modalidad"  />
         <TextField source="email" label="Email" sortable={false} />

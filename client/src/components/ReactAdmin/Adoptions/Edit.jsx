@@ -95,6 +95,7 @@ const AdopEdit = (props) => {
         ]} />
         <TextInput source="sterilization" label="¿Qué piensa de la esterilización?" fullWidth />
         <BooleanInput label="Pendiente" source="isPending" />
+        <BooleanInput label="Desactivado" source="isDelete" />       
       
 
       </SimpleForm>

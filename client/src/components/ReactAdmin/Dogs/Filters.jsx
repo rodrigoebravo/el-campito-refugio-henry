@@ -2,7 +2,7 @@ import { FilterLiveSearch, FilterList, FilterListItem } from "react-admin";
 import { Card, CardContent } from "@mui/material";
 import CakeIcon from "@mui/icons-material/Cake";
 import TransgenderIcon from "@mui/icons-material/Transgender";
-import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
+// import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import AddHomeIcon from "@mui/icons-material/AddHome";
 
 const Filters = () => {

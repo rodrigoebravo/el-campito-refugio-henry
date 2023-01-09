@@ -62,6 +62,8 @@ const adminContrib = async (req, res) => {
         }
       }
 
+      data.date = data.date.toJSON().slice(0, 10);
+
       return {
         name: user.name,
         phone: user.phone || "",
@@ -99,6 +101,8 @@ const adminContribId = async (req, res) => {
 
     const { user, dog, ...data } = contributions.toObject();
 
+    data.date = data.date.toJSON().slice(0, 10);
+
     res.json({
       name: user.name || "",
       phone: user.phone || "",
@@ -133,6 +137,8 @@ const adminUpdateContrib = async (req, res) => {
       .populate("user dog");
 
     const { user, dog, ...data } = contri.toObject();
+
+    
 
     res.json({data: {
       user: user.name,

@@ -136,6 +136,9 @@ const DogsEdit = (props) => {
                   <ImageField source="src" title="title" />
                 </ImageInput>
               </Grid>
+              <Grid item lg={3}>                
+                <BooleanInput label="Desactivado" source="isDelete" />
+              </Grid>
             </Grid>
           </FormTab>
         </TabbedForm>

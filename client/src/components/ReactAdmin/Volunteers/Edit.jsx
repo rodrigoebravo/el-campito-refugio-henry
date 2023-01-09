@@ -91,6 +91,7 @@ const VoluntShow = () => {
         />
         <TextInput source="question" label="Comentarios" fullWidth />
         <BooleanInput label="Pendiente" source="isPending" />
+        <BooleanInput label="Desactivado" source="isDelete" />  
       </SimpleForm>
 
     </Edit>

@@ -2,6 +2,7 @@ import {
   List,
   Datagrid,
   TextField,
+  DateField,
   EditButton,
   // ShowButton,
   // DeleteWithConfirmButton,
@@ -11,6 +12,7 @@ const ContribList = (props) => {
   return (
     <List {...props}>
       <Datagrid bulkActionButtons={false}>
+        <DateField source="date" label="Fecha" />
         <TextField source="name" label="Contribuyente" />
         <TextField source="total" label="Monto" />
         <TextField source="method" label="Metodo de" />

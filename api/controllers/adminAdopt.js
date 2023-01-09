@@ -13,6 +13,8 @@ const adminAdoptions = async (req, res) => {
 
         const { user, dog, ...data } = adop.toObject(); 
 
+        // data.date = data.date.toJSON().slice(0, 10);
+
         return {
           user: user._id,
           nameUser: user.name,
@@ -45,6 +47,8 @@ const adminAdoptions = async (req, res) => {
       adoption.date = adoption.date?.toJSON().slice(0, 10);
      
       const { user, dog, ...data } = adoption.toObject(); 
+
+      // data.date = data.date.toJSON().slice(0, 10);
 
       res.json({
         user: user._id,
