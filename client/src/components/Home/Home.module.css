@@ -1,3 +1,22 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-size: 1em;
+  font-family: 'Seravek', 'sans-serif';
+ 
+}
+@font-face {
+  font-family: "Trashhand";
+  src: url("../../assets/fonts/TrashHand.TTF");
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("../../assets/fonts/Seravek.ttf");
+}
 .container{
   padding: 50px;
 }
@@ -104,11 +123,11 @@ a{
     overflow: clip;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .home{
     width: 100%;
     padding: 0;
-  margin:0;
+    margin:0;
   }
   .articleHome {
     flex-direction: column;
@@ -119,6 +138,18 @@ a{
   }
   .boxBgPink,.boxBgGreen,.boxBgOrange,.boxBgPurple,.boxBgLightOrange,.boxBgLightBlue,.boxBgGrey{
     width: 50%;
+    height: auto
+    
+  }
+}
+@media (max-width: 360px) {
+  .home,.articleHome{
+    width: 100%;
+    padding: 0;
+    margin:0;
+  }
+  .boxBgPink,.boxBgGreen,.boxBgOrange,.boxBgPurple,.boxBgLightOrange,.boxBgLightBlue,.boxBgGrey{
+    width: 100%;
     height: auto
     
   }

@@ -32,3 +32,9 @@ iframe{
   margin:5px;
 
 }
+@media (max-width: 360px) {
+  .cardSize{ 
+    display:flex;
+    flex-direction: column;
+  }
+}

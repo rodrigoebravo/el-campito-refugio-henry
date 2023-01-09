@@ -75,7 +75,11 @@
 
 }
 .prensaButtonContainer{
- align-content: center;
+ display:flex;
+flex-direction: column;
+flex-wrap: wrap;  
+align-content: center;
+align-items: center;
   
         
 }
@@ -87,10 +91,7 @@
   text-align: center;
 }
 
-.prensaButtonContainer{
-  align-content: center;
-}
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .prensaContainer{
     flex-direction: column;
     gap: 30px;
@@ -98,4 +99,10 @@
   .pLightOrange{
     text-align: center;
   }
+}
+@media (max-width: 360px) {
+
+  .spanPrensa{
+  font-size: 0.7em;
+}
 }

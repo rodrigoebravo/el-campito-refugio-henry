@@ -290,7 +290,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 10px 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .colaborar section {
     padding: 40px
   }
@@ -304,5 +304,10 @@ input[type=number]::-webkit-outer-spin-button {
 
   .debitoAutomatico {
     font-size: 0.8em;
+  }
+}
+@media (max-width: 360px) {
+  .colaborar section {
+    padding: 0px
   }
 }

@@ -61,3 +61,8 @@
 .ButtonDashboard2:hover {
   background-color: #0640ae;
 }
+@media (max-width: 360px) {
+  .divSubContendor2{
+    padding: 10px;
+  }
+}

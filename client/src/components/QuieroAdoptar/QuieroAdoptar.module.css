@@ -112,7 +112,7 @@
   
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .mainAdoptar{
     padding:15px
 
@@ -128,5 +128,27 @@
   }
   .pAdoptar{
     font-size: 0.9em;
+  }
+  .adoptarContenedor{
+    padding:0px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 360px) {
+  .mainAdoptar{
+    margin-top:20px;
+  }
+  .adoptarContenedor, .mainAdoptar{
+    margin:0px;
+    margin-top:30px;
+    padding:0px;
+
+  }
+ 
+  .buttonAdoptar{
+    height: 150px;
+  }
+  .imgAdoptar{
+    display: none;
   }
 }

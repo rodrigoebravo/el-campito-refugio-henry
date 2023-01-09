@@ -34,7 +34,8 @@ const PrensaGrafica = () => {
             );
           })}
           </div>
-     <Footer/>
+          <div className={styles.footerTelevision}>
+      <Footer /></div>
     </div>
   )
 }

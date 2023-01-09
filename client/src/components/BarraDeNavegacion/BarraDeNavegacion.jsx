@@ -22,7 +22,7 @@ const BarraDeNavegacion = () => {
 		<div className={styles.headerNav}>
 		<Link to="./"><img src={Logo} className={styles.imgLogo} alt="Logo del campito"/></Link>
 		<div onClick={handleClick} className={styles.navIcon}>
-				{open ? <FiX /> :<i class="fas fa-bars appear fa-4xs"></i>}	</div>
+				{open ? <i class="fas fa-bars appear fa-4xs"></i> :<i class="fas fa-bars appear fa-4xs"></i>}	</div>
 		</div>
 		<nav>
 			<ul className={open ? styles.navLinksActive : styles.navLinks}>

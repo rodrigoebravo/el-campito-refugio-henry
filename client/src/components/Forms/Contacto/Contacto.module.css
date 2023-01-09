@@ -1,13 +1,8 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-   
-}
 .mainContainer{
-    width: 30vw; 
-   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
 }
 
 .form{
@@ -18,25 +13,39 @@
 }
 
 .item{
-    display:flex;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    background-color: white;
+    min-height: 160px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
 }
 
 .label {
-    
-    font-family: 'Seravek', 'sans-serif';
+    display: flex;
+    flex-direction: column;
     font-size: 1em;
+    font-family: 'Seravek', 'sans-serif';
     color: #444445;
-    font-weight: 300;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 15px;
+    border: 3px solid #4FA7C1 ;
+    letter-spacing: 1px;
 }
 
 .input{
-    background: #f2f2f2;
-    border: 1px solid #888;
-    border-radius: 8px;
-    font-size: 20px;
-    padding: 10px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #F9C0C1;
+    font-size: 1em;
+    padding-bottom: 5px;
+    width: 60%;
 }
 
 .inputAsunto{
@@ -50,16 +59,62 @@
 
 .submit{
     width: 100px;
-    background-color: #E48125;
+    background-color: #4FA7C1;
     border: 1px solid transparent;
     border-radius: 8px;
     color: white;
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
+    align-self: flex-end;
 }
 
 .submit:hover{
-    background-color: orange;
+    background-color: #4FA7C1;
     transform: scale(1.05);
 }
+
+.input::placeholder { 
+    color: #F9C0C1;
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+  
+    .divContenedor{
+ margin-left:30px ;
+   }
+    .mainContainer{
+    width: 100%;
+    margin:0px;
+
+    margin-left: 30px;
+    
+   
+   }
+    .item{
+        margin:10px;
+        width: 90%;
+   
+    }
+    .input{
+        width: 80%;
+    }
+    .submit{
+        margin-right: 30px;
+    }
+  }
+  @media (max-width: 360px) {
+    .mainContainer{
+        width: 100%;
+    margin:-10px}
+    .item{
+        margin:20px;
+        padding:10px;
+        width: 100%;
+    }
+    .submit{
+        margin-right: -20px;
+        margin-bottom: 10px; 
+    }
+  
+  }

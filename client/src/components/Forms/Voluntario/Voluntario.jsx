@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import styles from "./Voluntario.module.css";
-// import Navbar from "../../NavBar/NavBar";
+import BarraDeNavegacion from "../../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../../Footer/Footer";
 import { postVolunteer } from "../../../redux/actions/action";
+
 
 const Voluntario = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
@@ -51,7 +52,7 @@ const Voluntario = (props) => {
 
   return (
     <div className={styles.divContenedor}>
-      {/* <Navbar/> */}
+      <BarraDeNavegacion/>
       {storage.name === "undefined" ? (
         <button className={styles.buttonLoad} onClick={() => handleClick()}>
           {" "}
@@ -226,7 +227,7 @@ const Voluntario = (props) => {
               )}
             </div>
 
-            <div className={styles.itemCheckbox}>
+            <div className={styles.item}>
               <label className={styles.label}>¿De cuáles días dispones?</label>
               <div className={styles.checkboxContainer}>
                 <input
@@ -375,7 +376,8 @@ const Voluntario = (props) => {
           </form>
         </div>
       )}
-      <Footer />
+      <div className={styles.footerVoluntario}>
+      <Footer  /></div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import styles from "./Adopcion.module.css";
 import Footer from "../../Footer/Footer";
 import { postAdoption } from "../../../redux/actions/action";
+import BarraDeNavegacion from "../../BarraDeNavegacion/BarraDeNavegacion";
 
 const Adopcion = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
@@ -52,6 +53,7 @@ const Adopcion = (props) => {
 
   return (
     <div className={styles.divContenedor}>
+    <BarraDeNavegacion/>
       {storage.name === "undefined" ? (
         <button className={styles.buttonLoad} onClick={() => handleClick()}>
           {" "}
@@ -443,7 +445,7 @@ const Adopcion = (props) => {
               )}
             </div>
 
-            <div className={styles.itemCheckbox}>
+             <div className={styles.item}>
               <label className={styles.label}>¿Donde vivirá el adoptado?</label>
               <div className={styles.checkboxContainer}>
                 <input
@@ -697,8 +699,8 @@ const Adopcion = (props) => {
           </form>
         </div>
       )}
-
-      <Footer />
+      <div className={styles.footerAdopcion}>
+      <Footer /></div>
     </div>
   );
 };

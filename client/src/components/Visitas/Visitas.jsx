@@ -17,7 +17,7 @@ const Visitas = () => {
       <BarraDeNavegacion />
       <main className={styles.visitas}>
         <div className={styles.parentColumn}>
-            <section>
+         <section className={styles.sectionVisitas}>
                 <h2 className={styles.h2Visitas}>VISITAS</h2>
                 <p className={styles.pVisitas}>Por ahora las visitas est&aacute;n suspendidas hasta nuevo aviso, pero igual queremos contarte de
                     qu&eacute; se
@@ -58,7 +58,7 @@ const Visitas = () => {
                 <h2 className={styles.h2Visitas}>¡Mientras ellos esperan su familia para siempre, seamos la manada que los acompaña!
                 </h2>
             </section>
-            <section>
+            <section className={styles.sectionVisitas}>
                 <h4 className={styles.h4Visitas}>¿C&oacute;MO LLEGAR?</h4>
                 <div className={styles.transporteContainer}>
                 <div className={styles.transporte}>

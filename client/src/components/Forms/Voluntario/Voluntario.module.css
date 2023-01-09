@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #fafafa;
+  
 }
 
 .divContenedor {
@@ -55,6 +55,11 @@
     font-family: 'Seravek', 'sans-serif';
     color: #444445;
     font-weight: 300;
+    border-radius: 15px;
+    padding: 15px;
+    border: 3px solid #E48125 ;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .required {
@@ -64,7 +69,7 @@
 .input {
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #888;
+    border-bottom: 2px solid #55BA68;
     width: 65%;
     font-size: 1em;
     padding-bottom: 5px;
@@ -74,20 +79,20 @@
 .inputDate:focus {
     outline: none;
     outline-offset: 0;
-    border-bottom: 2px solid #E48125;
+    border-bottom: 2px solid #55BA68;
 }
 
 .input:active,
 .inputDate:active {
     outline: none;
     outline-offset: 0;
-    border-bottom: 2px solid #E48125;
+    border-bottom: 2px solid #55BA68;
 }
 
 .inputDate {
     background: transparent;
     border: 0;
-    border-bottom: 2px solid #888;
+    border-bottom: 2px solid #55BA68;
     font-size: 20px;
     padding-bottom: 5px;
 }
@@ -101,8 +106,8 @@
 }
 
 .checkbox:active {
-    color: #E48125;
-    background-color: #E48125;
+    color: #55BA68;
+    background-color: #55BA68;
 }
 
 .select {
@@ -120,7 +125,7 @@
     color: white;
     font-size: 20px;
     padding: 10px;
-    margin: -20px 0px 50px 0px;
+    align-self: flex-end;
     cursor: pointer;
 }
 
@@ -152,3 +157,37 @@
     text-decoration: none;
     cursor: pointer;
 }
+.input::placeholder { 
+    color: #55BA68;
+    opacity: 1;
+  }
+@media (max-width: 768px) {
+    .div {
+      margin: 3rem;
+    }
+    .divContenedor{
+        margin-top: 70px;
+    }  
+}
+
+  @media (max-width: 360px) {
+    .div{
+      margin:0px;
+      margin-top:30px
+    }
+    .divContenedor{
+        margin-top: 80px;
+        margin-left: 10px;
+    }  
+    .buttonLoad{
+        height: 200px;
+    }
+    .item{
+        width: 250px;
+        margin-left: -50px;
+    }
+  .footerVoluntario{
+    padding:20px;
+    
+  }
+  }
