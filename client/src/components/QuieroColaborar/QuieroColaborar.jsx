@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./QuieroColaborar.module.css";
 import mercadoLibre from "../../assets/img/logosPasarelas/mercado-pago.png";
 import cafecito from "../../assets/img/logosPasarelas/cafecito.png";
@@ -9,26 +9,27 @@ import { useDispatch } from "react-redux";
 import postMeli from "../../redux/actions/action";
 import { useState } from "react";
 import { payWithPayPal } from "../../login";
-import { payWithPayPal } from "../../login";
 
 const QuieroColaborar = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState(0); //para input del usuario
-  const unique = "Donación única"  const [input, setInput] = useState({
+  const unique = "Donación única"
+  const [input, setInput] = useState({
     monto: "",
   });
+  
   console.log(input);
 
   const handleClick = (title, unit_price) => {
     dispatch(postMeli({ title, unit_price }));
   };
-
-  function handleChange(e) {
+ 
+ function handleChange(e) {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
-  }
+  } 
 
   return (
     <div className={styles.container}>
@@ -117,12 +118,6 @@ const QuieroColaborar = () => {
             </button>
             <button
               className={styles.buttonML}
-              onClick={() => handleClick("$200", 200)}
-            >
-              $200
-            </button>
-            <button
-              className={styles.buttonML}
               onClick={() => handleClick(unique, 300)}
             >
               $300
@@ -172,6 +167,9 @@ const QuieroColaborar = () => {
                     className={styles.inputColaborar}
                     value={value} onChange={(e) => setValue(e.target.value)} 
                   />
+                  <p className={styles.noButton}>
+                    Otro monto (solo números, sin centavos)
+                  </p>
               </button>
             </form>
           </article>
@@ -225,6 +223,9 @@ const QuieroColaborar = () => {
             >
               US100
             </button>
+
+            {/* Paypal Nico  */}
+            
             <div className={styles.buttonPaypal}>
               <input
                 className={styles.inputColaborar}
@@ -232,9 +233,9 @@ const QuieroColaborar = () => {
                 name="monto"
                 value={input.monto}
                 onChange={handleChange}
-              ></input>
+              />
               <p className={styles.noButton}>
-                Otro $ (solo n&uacute;meros, sin centavos)
+                Otro monto (solo números, sin centavos)
               </p>
               {input.monto === "" ? (
                 <button
@@ -253,7 +254,7 @@ const QuieroColaborar = () => {
                   Continuar
                 </button>
               )}
-            </div>
+            </div> 
           </article>
           <article className={styles.parentGridPaypal}>
             <div className={styles.medioDePagoCF}>
@@ -263,22 +264,8 @@ const QuieroColaborar = () => {
                 alt="Logo de Cafecito"
               />
             </div>
-            {/* <button className={styles.buttonPaypal} onClick={payWithPayPal()}>
-              DONÁ VÍA PAYPAL
-            </button>
-          </article>
-          <article className={styles.parentGridPaypal}>
-            <div className={styles.medioDePagoPaypal}>
-            <img
-                src={cafecito}
-                className={styles.imgColaborar}
-                alt="Logo de cafecito"
-              />
-            </div> */}
-            <button className={styles.buttonPaypal}>
-              <a href="https://cafecito.app/refugioelcampito" rel='noreferrer' target='_blank'>  
-                INVITANOS UN CAFECITO
-              </a>
+            <button className={styles.buttonCF} onClick={payWithPayPal()}>
+              <a href="https://cafecito.app/refugioelcampito" target="_blank" rel="noreferrer" className={styles.linkCafecito}>Donar Cafecito</a>
             </button>
           </article>
         </section>

@@ -11,5 +11,3 @@ const RecuperarCuenta = () => {
 };
 
 export default RecuperarCuenta;
-
-export default RecuperarCuenta
