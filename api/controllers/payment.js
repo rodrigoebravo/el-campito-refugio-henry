@@ -37,6 +37,7 @@ const createOrder = async (req, res) => {
       },
     };
 
+
     // format the body
     const params = new URLSearchParams();
     params.append("grant_type", "client_credentials");
@@ -120,6 +121,7 @@ const captureOrder = async (req, res) => {
     res.status(500).json({ message: "Internal Server error caputure" });
   }
 };
+
 
 const cancelPayment = (req, res) => {
   console.log("Se cancelo la operacion");

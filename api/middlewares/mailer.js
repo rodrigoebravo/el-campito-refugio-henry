@@ -35,7 +35,7 @@ const mailer = async (req, res, next) => {
         pass: process.env.GMAIL_PASSWORD, // generated ethereal password
       },
     });
-
+  
     // send mail with defined transport object
 
     await transporter.sendMail({
@@ -50,6 +50,9 @@ const mailer = async (req, res, next) => {
     console.error(error);
   }
 };
+
+
+
 
 module.exports = mailer;
 // ---------------------------------------------------------
