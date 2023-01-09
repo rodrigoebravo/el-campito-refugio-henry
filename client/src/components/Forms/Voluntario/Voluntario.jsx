@@ -123,10 +123,10 @@ const Voluntario = (props) => {
                   pattern: /^\d{3}\d{3}\d{4}$/,
                 })}
               />
-              {errors.telephone?.type === "required" && (
+              {errors.phone?.type === "required" && (
                 <p>Número de telefono requerido</p>
               )}
-              {errors.telephone?.type === "pattern" && (
+              {errors.phone?.type === "pattern" && (
                 <p>El numero ingresado es invalido</p>
               )}
             </div>

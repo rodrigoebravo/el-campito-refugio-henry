@@ -3,12 +3,17 @@ import {
   SimpleForm,
   TextInput,
   TextField,
-
+  SelectInput,
   BooleanInput,
-  DateField,
-  TextInput,
+  CheckboxGroupInput,
+  DateInput,
 } from "react-admin";
-import { Grid } from "@mui/material";
+
+
+const convertStringToNumber = (value) => {
+  const float = parseFloat(value);
+  return isNaN(float) ? null : float;
+}; 
 
 const VoluntShow = () => {
   return (
