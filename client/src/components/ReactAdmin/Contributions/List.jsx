@@ -3,23 +3,34 @@ import {
   Datagrid,
   TextField,
   EditButton,
-  // ShowButton,
-  // DeleteWithConfirmButton,
+  ShowButton,
+  DeleteWithConfirmButton,
+  Pagination,
+  useGetList,
+  DateField,
 } from "react-admin";
+import { Loader, Emptyness, exporter } from "../utils";
 
-const ContribList = (props) => {
+const ContribList = () => {
+  const { data, isLoading } = useGetList("api/admin/contributions", {
+    page: 1,
+    perPage: 10,
+  });
+  if (isLoading) return <Loader />;
   return (
-    <List {...props}>
+    <List
+      {...data}
+      exporter={exporter}
+      pagination={<Pagination limit={<Emptyness />} />}
+    >
       <Datagrid bulkActionButtons={false}>
-        <TextField source="name" label="Contribuyente" />
-        <TextField source="total" label="Monto" />
-        <TextField source="method" label="Metodo de" />
-        <TextField source="type" label="Tipo" />
+        <DateField source="date" label="Fecha" />
         <TextField source="nameDog" label="Beneficiado/a" />
-        
+        <TextField source="type" label="Tipo" />
+        <TextField source="total" label="Monto" />
         <EditButton basepath="/api/admin/contributions" />
-        {/* <DeleteWithConfirmButton basepath="/api/admin/contributions" /> */}
-        {/* <ShowButton /> */}
+        <DeleteWithConfirmButton basepath="/api/admin/contributions" />
+        <ShowButton />
       </Datagrid>
     </List>
   );

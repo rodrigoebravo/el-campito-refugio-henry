@@ -11,7 +11,7 @@ import {
 import Filters from "./Filters";
 import PersonOffIcon from "@mui/icons-material/PersonOff";
 import InfoIcon from "@mui/icons-material/Info";
-import { dogExporter, Loader, Emptyness } from "../utils";
+import { exporter, Loader, Emptyness } from "../utils";
 
 const DogsList = (props) => {
   const { data, isLoading } = useGetList("api/admin/dogs", {
@@ -24,7 +24,7 @@ const DogsList = (props) => {
       <List
         {...data}
         aside={<Filters />}
-        exporter={dogExporter}
+        exporter={exporter}
         pagination={<Pagination limit={<Emptyness />} />}
       >
         <Datagrid bulkActionButtons={false}>

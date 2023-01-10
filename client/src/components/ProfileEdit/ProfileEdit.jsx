@@ -1,52 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./ProfileEdit.module.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { editProfile } from "../../login";
+
+import ImageUpload from "../ImageUpload/ImageUpload";
 
 const ProfileEdit = () => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
-  const id = user.data.info._id;
-  const dispatch = useDispatch()
-
-  console.log(id, "soy user");
+  const responseCloudinary = useSelector((state) => state.responseCloudinary);
+  // console.log(responseCloudinary, "soy responseCloudinary");
+  // console.log(id, "soy user");
   const [input, setInput] = useState({
     image: "",
     phone: "",
     birthday: "",
   });
   console.log(input);
-  function handleChange(e) {
-    // console.log(input.name.trim());
 
+  function handleChange(e) {
+    // postCloudinaryPhoto(input.image);
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
-    // setErrors(
-    //   validate({
-    //     ...input,
-    //     [e.target.name]: e.target.value,
-    //   })
-    // );
+    
   }
-
+  let imagenLocal = user.data.info.image;
+  console.log(responseCloudinary.length, "soy response claudinary");
   function handleSubmit(e) {
     e.preventDefault();
-    // if (
-    //   input.name === "" ||
-    //   input.duration === "" ||
-    //   input.difficulty === "" ||
-    //   input.season === "" ||
-    //   input.countryId.length === 0
-    // )
-    //   return alert("You must fill in the fields");
 
-    // dispatch(editProfile(input));
-    alert("Actity Created");
+    responseCloudinary.length > 0
+      ? setInput({
+          ...input,
+          image: responseCloudinary,
+        })
+      : setInput({
+          ...input,
+          image: imagenLocal,
+        });
+
+    console.log(input, "soy input de handle");
+    let id = user.data.info._id;
+    // setTimeout(() => {
+    //   let data = editProfile(input, id);
+    //   // postCloudinaryPhoto(input.image)
+    //   data();
+    // }, 4000);
+    let data = editProfile(input, id);
+    //   // postCloudinaryPhoto(input.image)
+    data();
+
     setInput({
       image: "",
       phone: "",
-      birthday: ""
+      birthday: "",
     });
   }
 
@@ -59,7 +68,7 @@ const ProfileEdit = () => {
         </Link>
       </div>
       <form className={styles.form}>
-        <div>
+        <div className={styles.divForm}>
           <div className={styles.item}>
             <label className={styles.label}>Nombre de usario</label>
             <input
@@ -83,23 +92,21 @@ const ProfileEdit = () => {
             <div className={styles.divImg}>
               {user.data.info.image ? (
                 <div>
-
-                  <img src={user.data.info.image} />
-                  <h6>imagen Actual</h6>
-
+                  <h6>Imagen Actual</h6>
+                  <img alt="profile imagen" src={user.data.info.image} />
                 </div>
               ) : (
                 <></>
               )}
+              <ImageUpload />
+              {responseCloudinary.length > 0 ? <h6>Imagen Nueva</h6> : null}
 
-             
-              <input
-                type="file"
-                name="image"
-                value={input.image}
-                onChange={handleChange}
-                className={styles.inputImg}
-              />
+              {/* {responseCloudinary.length === 0 ? null : (
+                <div>
+                  <img alt="profile imagen" src={responseCloudinary} />
+                  <h6>Nueva Imagen</h6>
+                </div>
+              )} */}
             </div>
           </div>
           <div className={styles.item}>
@@ -125,7 +132,12 @@ const ProfileEdit = () => {
               placeholder="Fecha de Nacimiento"
             />
           </div>
-          <input type="submit" value="Enviar" className={styles.submit} />
+          <input
+            type="submit"
+            value="Enviar"
+            onClick={handleSubmit}
+            className={styles.submit}
+          />
         </div>
       </form>
     </div>

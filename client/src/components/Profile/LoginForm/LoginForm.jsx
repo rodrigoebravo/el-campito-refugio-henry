@@ -3,6 +3,7 @@ import { loginUser } from "../../../login";
 import Button from "@mui/material/Button";
 import LoginGoogle from "../../ProfileAuth0/LoginGoogle/LoginGoogle";
 import styles from "./LoginForm.module.css";
+import { Link } from "react-router-dom";
 
 function validate(input) {
   let errors = {};
@@ -104,7 +105,10 @@ const LoginForm = () => {
           ) : (
             <div>
               <h3>
-                Recuperar cuenta <button>x</button>
+                <Link to="/recuperar">
+                  <span>Recuperar cuenta</span>
+                </Link>
+                {/* <button>x</button> */}
               </h3>
             </div>
           )}

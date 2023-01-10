@@ -1,25 +1,10 @@
-import {
-  FilterLiveSearch,
-  FilterList,
-  FilterListItem,
-  Loading,
-  useListContext,
-} from "react-admin";
+import { FilterLiveSearch, FilterList, FilterListItem } from "react-admin";
 import { Card, CardContent } from "@mui/material";
 import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 import NoCrashIcon from "@mui/icons-material/NoCrash";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 
 const Filters = () => {
-  const { isLoading } = useListContext();
-  if (isLoading)
-    return (
-      <Loading
-        sx={{ order: -1, ml: 90, mt: 8, width: 400, height: 650 }}
-        loadingPrimary="Cargando resultados"
-        loadingSecondary="Aguarde por favor"
-      />
-    );
   return (
     <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 450 }}>
       <CardContent>

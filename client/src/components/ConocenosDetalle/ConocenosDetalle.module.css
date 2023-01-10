@@ -54,6 +54,14 @@
 .liOconocenos{
   display: list-item;
   text-align: -webkit-match-parent; 
+  font-family: 'Seravek', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #444445;
+
 }
 .liOconocenos::marker{color: #E48125;}
 .h1Conocenos {
@@ -93,6 +101,12 @@
   .imgConocenos{
     display:none
   }
+  .conocenosContenedor{
+    padding-bottom: 0px;
+  }
+  .h1Conocenos{
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 360px) {
   .conocenosContenedor,.div{
@@ -101,7 +115,7 @@
     padding:0px
   }
   .container{
-   
+    padding: 35px;
     padding-top:30px;
 
   }

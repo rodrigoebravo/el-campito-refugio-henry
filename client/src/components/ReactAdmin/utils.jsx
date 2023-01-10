@@ -10,15 +10,14 @@ export const Loader = () => (
   />
 );
 
-export const dogExporter = (posts) => {
+export const exporter = (posts) => {
   jsonExport(
     posts,
     {
-      headers: ["_id", "name", "gender"],
       rowDelimiter: ";",
     },
     (err, cvs) => {
-      downloadCSV(cvs, "Listado_Perros");
+      downloadCSV(cvs, "Listado_Administracion");
     }
   );
 };

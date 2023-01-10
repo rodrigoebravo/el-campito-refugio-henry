@@ -41,14 +41,27 @@
   font-family: 'Seravek', Calibri, Roboto, Arial, sans-serif;
 }
 
-@media (max-width:600px) {
+@media (max-width:768px) {
   .h2{
     font-size: 40px;
   }
+  .card {
+    margin: 1.5rem;
+  }
+   .divContainer{
+    margin-top:80px
+  }
 }
 
-@media (max-width:400px) {
+@media (max-width:360px) {
   .h2{
     font-size: 30px;
   }
+  .divContainer{
+    margin-top:80px
+  }
+  .footerDogs{
+    margin-left: 40px;
+    padding:10px
+      }
 }

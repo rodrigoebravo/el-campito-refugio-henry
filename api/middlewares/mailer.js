@@ -4,32 +4,52 @@ const nodemailer = require("nodemailer");
 
 const mailer = async (req, res, next) => {
   try {
-    const { email, pass, fullName, organization, telephone, asunto, consulta,
-      date, location, area, profession, interest, modality, availability, days,
-      clarification, description, purpose, vehicle, carpooling, question,
-      name, phone, birthday
-      
+    const {
+      email,
+      pass,
+      fullName,
+      organization,
+      telephone,
+      asunto,
+      consulta,
+      date,
+      location,
+      area,
+      profession,
+      interest,
+      modality,
+      availability,
+      days,
+      clarification,
+      description,
+      purpose,
+      vehicle,
+      carpooling,
+      question,
+      name,
+      phone,
+      birthday,
     } = req.body;
 
     let url = req.url;
     let route = url.split("/").pop();
 
-    let aux = { }
+    let aux = {};
 
     if (!organization) organization = "ninguna";
 
     if (url === "conatcto" || url === "volunteers" || url === "adoptions") {
-
       let campito = "";
 
-      if ( url === "adoptions") campito = "adoptantesdelcampito@gmail.com";
-      if ( url === "volunteers" ) campito = "institucional@elcampitorefugio.org.ar";
+      if (url === "adoptions") campito = "adoptantesdelcampito@gmail.com";
+      if (url === "volunteers")
+        campito = "institucional@elcampitorefugio.org.ar";
 
-      if ( url === "contacto" ) {
+      if (url === "contacto") {
         switch (asunto) {
           case "adopciones":
             campito = "adoptantesdelcampito@gmail.com";
-            break;    
+            break;
           case "consulta":
             campito = "institucional@elcampitorefugio.org.ar";
             break;
@@ -41,7 +61,7 @@ const mailer = async (req, res, next) => {
             break;
           case "débitos automáticos":
             campito = "debito@elcampitorefugio.org.ar";
-            break;    
+            break;
           case "campito escolar":
             campito = "institucional@elcampitorefugio.org.ar";
             break;
@@ -64,9 +84,8 @@ const mailer = async (req, res, next) => {
             campito = "institucional@elcampitorefugio.org.ar";
             break;
         }
-      };
-
-    };
+      }
+    }
 
     const messages = {
       login: `
@@ -84,7 +103,7 @@ const mailer = async (req, res, next) => {
                 <br>
                     <img src='https://doprod-statics.s3.amazonaws.com/pictures/logo/9343/large_fit_6709cfc0-d706-49ed-ba8e-d9682a4b8305.png' alt='Elcampito.jpeg' />
                 <br>`,
-       contacto: `<h2>COPIA DE LA CONSULTA</h2>
+      contacto: `<h2>COPIA DE LA CONSULTA</h2>
                 <h4>Nombre: ${fullName}</h4>
                 <h4>Teléfono: ${telephone}</h4>
                 <h4>Correo: ${email}</h4>
@@ -97,7 +116,7 @@ const mailer = async (req, res, next) => {
                 <br>
                     <img src='https://doprod-statics.s3.amazonaws.com/pictures/logo/9343/large_fit_6709cfc0-d706-49ed-ba8e-d9682a4b8305.png' alt='Elcampito.jpeg' />
                 <br>`,
-        volunteers: `<h2>COPIA DE LA CONSULTA</h2>
+      volunteers: `<h2>COPIA DE LA CONSULTA</h2>
                 <h4>Nombre: ${fullName}</h4>
                 <h4>Teléfono: ${telephone}</h4>
                 <h4>Correo: ${email}</h4>
@@ -110,7 +129,7 @@ const mailer = async (req, res, next) => {
                 <br>
                     <img src='https://doprod-statics.s3.amazonaws.com/pictures/logo/9343/large_fit_6709cfc0-d706-49ed-ba8e-d9682a4b8305.png' alt='Elcampito.jpeg' />
                 <br>`,
-        adoptions: `<h2>COPIA DE LA CONSULTA</h2>
+      adoptions: `<h2>COPIA DE LA CONSULTA</h2>
                 <h4>Nombre: ${fullName}</h4>
                 <h4>Teléfono: ${telephone}</h4>
                 <h4>Correo: ${email}</h4>
@@ -134,13 +153,13 @@ const mailer = async (req, res, next) => {
         pass: process.env.GMAIL_PASSWORD, // generated ethereal password
       },
     });
-  
+
     // send mail with defined transport object
 
     await transporter.sendMail({
       from: '"El campito Refugio" <elcampitorefugiodev@gmail.com>', // sender address
-      to: ( campito ) ? `${email},${campito}` : `${email}`, // list of receivers
-      subject: ( pass ) ? `Bienvenido ${pass}` : `${asunto}`, // Subject line
+      to: campito ? `${email},${campito}` : `${email}`, // list of receivers
+      subject: pass ? `Bienvenido ${pass}` : `${asunto}`, // Subject line
       html: messages[route], // html body
     });
 
@@ -149,9 +168,6 @@ const mailer = async (req, res, next) => {
     console.error(error);
   }
 };
-
-
-
 
 module.exports = mailer;
 // ---------------------------------------------------------

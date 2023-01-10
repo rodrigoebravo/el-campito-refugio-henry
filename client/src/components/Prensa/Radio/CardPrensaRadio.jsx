@@ -11,7 +11,7 @@ const CardPrensaTelevision = ({ link, logo,media,title, date }) => {
      <img alt="logoprensa"src={logo} className={styles.imgLogoTele}/>
       <p className={styles.pCardPress}><FcSpeaker/><span>{media}</span></p>
       <h3 className={styles.h3CardPress}>{title}</h3>
-       <p className={styles.pCardPress}><FcPlanner/>{date}</p>
+       <p className={styles.pCardPress}><FcPlanner/>{date.slice(0,10)}</p>
      </div>
     </div>
   );

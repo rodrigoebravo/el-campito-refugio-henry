@@ -32,11 +32,11 @@ const DogsEdit = (props) => {
                 sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
               />
               <br></br>
-              {/* <TextField
+              <TextField
                 label={false}
                 source="_id"
                 sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
-              /> */}
+              />
             </Grid>
             <Grid item lg={3} style={{ textAlign: "center" }}>
               <ImageField
@@ -101,16 +101,16 @@ const DogsEdit = (props) => {
           </FormTab>
           <FormTab label="Caracteristicas">
             <Grid container spacing={2}>
-              <Grid item lg={7}>
+              <Grid item lg={6}>
                 <CheckboxGroupInput
                   source="references"
                   label={false}
                   choices={[
-                    { id: "Se lleva con perros", name: "Se lleva con perros" },
-                    { id: "Se lleva con hembras", name: "Se lleva con hembras" },
-                    { id: "Cuidados especiales", name: "Cuidados especiales" },
-                    { id: "Discapacitado", name: "Discapacitado" },
-                    { id: "Carácter especial", name: "Carácter especial" },
+                    { id: "a000", name: "Se lleva con perros" },
+                    { id: "u001", name: "Se lleva con hembras	" },
+                    { id: "u002", name: "Cuidados especiales	" },
+                    { id: "u003", name: "Discapacitado" },
+                    { id: "a004", name: "Carácter especial" },
                   ]}
                   fullWidth
                 />
@@ -124,12 +124,15 @@ const DogsEdit = (props) => {
               <Grid item lg={2}>
                 <BooleanInput label="¿ Se puede adoptar ?" source="toAdopt" />
               </Grid>
+              <Grid item lg={2}>
+                <BooleanInput label="Desactivado" source="isDelete" />
+              </Grid>
             </Grid>
             <Grid container spacing={2}>
-              {/* <Grid item lg> */}
+              <Grid item lg>
                 <h4>Descripcion</h4>
                 <TextInput source="features" label={false} fullWidth />
-              {/* </Grid> */}
+              </Grid>
               <Grid item lg={12}>
                 <h4>Imagenes</h4>
                 <ImageInput source="images" label={false} multiple>

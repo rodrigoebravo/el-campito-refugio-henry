@@ -28,6 +28,7 @@ const initialState = {
   press: [],
   responseCloudinary: "",
   userEmail: [],
+  userProfile:[]
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -162,7 +163,11 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
       };
-
+      case "GET_USERS_PROFILE":
+      return {
+        ...state,
+        userProfile: action.payload,
+      }
     default:
       return {
         ...state,

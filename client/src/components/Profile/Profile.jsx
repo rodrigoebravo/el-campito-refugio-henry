@@ -7,7 +7,7 @@ import RegisterForm from "./RegisterForm/RegisterForm";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Registro from "../ProfileAuth0/RegisterGoogle/Registro";
 import Loading from "../Loading/Loading";
-import { updateRole } from "../../login";
+import { updateProfile } from "../../login";
 
 const Profile = () => {
   const [items, setItems] = useState([]);
@@ -36,6 +36,8 @@ const Profile = () => {
   } else if (items.length === 0 && user) {
     return <Loading />;
   } else {
+    let id = items.data?.info._id;
+    {console.log(id);}
     return (
       <div className={styles.divUserData}>
         {items.data?.info ? (
@@ -90,13 +92,16 @@ const Profile = () => {
                 <Link to="/" className={styles.ButtonDashboard2}>
                   Home
                 </Link>
-                <Link to="/profile/edit" className={styles.ButtonDashboard2}>
+                <Link
+                  to={`/profile/edit/${id}`}
+                  className={styles.ButtonDashboard2}
+                >
                   Editar Perfil
                 </Link>
                 <buton
                   className={styles.ButtonDashboard2}
                   onClick={() => {
-                    let update = updateRole();
+                    let update = updateProfile();
                     update();
                     console.log("CLICK");
                   }}
