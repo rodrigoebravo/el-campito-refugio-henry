@@ -10,6 +10,7 @@ import imgVoluntario6 from "../../assets/img/escolar/img-voluntarios6.jpg"
 import imgVoluntario7 from "../../assets/img/escolar/img-voluntarios7.jpg"
 import imgVoluntario8 from "../../assets/img/escolar/img-voluntarios8.jpg"
 import imgVoluntario9 from "../../assets/img/escolar/img-voluntarios9.jpg"
+
 const Cuidados = () => {
   return (
     <div className={styles.container}>

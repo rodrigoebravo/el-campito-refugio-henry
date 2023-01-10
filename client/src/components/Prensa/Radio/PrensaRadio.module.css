@@ -22,7 +22,7 @@
     margin:10px
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .card{
     grid-template-columns: 50% 50%
   }
@@ -30,7 +30,7 @@
     margin-top:30px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .card{
     grid-template-columns: 100% ;
     margin:0px;

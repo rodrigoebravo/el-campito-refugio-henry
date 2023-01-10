@@ -5,12 +5,11 @@ import {
   FormTab,
   TextField,
   ImageField,
-  BooleanInput,
-  DateField,
   NumberInput,
   SelectArrayInput,
   TextInput,
   ImageInput,
+  BooleanInput,
   DateInput,
 } from "react-admin";
 import { Grid } from "@mui/material";
@@ -41,7 +40,7 @@ const UsersEdit = () => {
             </Grid>
             <Grid item lg={3} style={{ textAlign: "center" }}>
               <ImageField
-                source="images[0].src"
+                source="image.src"
                 sx={{
                   "& img": {
                     maxWidth: 1000,
@@ -84,7 +83,7 @@ const UsersEdit = () => {
               </Grid>
               <Grid item lg={10}>
                 <h5>Imagen de perfil</h5>
-                <ImageInput source="images" label={false} multiple>
+                <ImageInput source="image" label={false} multiple>
                   <ImageField source="src" title="title" />
                 </ImageInput>
               </Grid>
@@ -100,6 +99,9 @@ const UsersEdit = () => {
               <Grid item lg={3}>
                 <h5>Numero de telefono</h5>
                 <NumberInput fullWidth source="phone" />
+              </Grid>
+              <Grid item lg={3}>
+                <BooleanInput label="Desactivado" source="isDelete" />
               </Grid>
             </Grid>
           </FormTab>

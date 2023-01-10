@@ -3,6 +3,7 @@ import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../Footer/Footer";
 import imgDenuncia from "../../assets/img/img-denuncias.jpg"
 import styles from "./Denuncias.module.css"
+
 const Denuncias = () => {
   return (
     <div className={styles.container}>

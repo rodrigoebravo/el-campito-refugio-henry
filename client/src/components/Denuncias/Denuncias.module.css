@@ -70,7 +70,7 @@ body {
     text-align: left;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
 .imgDenuncia{
   display:none
 }
@@ -85,7 +85,7 @@ body {
   margin:0px
 }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .parent{
     margin:0;
     padding: 0px;

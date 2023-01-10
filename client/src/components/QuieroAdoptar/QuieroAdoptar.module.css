@@ -91,6 +91,8 @@
   font-size: 1.8em;
   background-color: #F9C0C1;
   text-decoration: none;
+
+ 
 }
 .buttonContenedor {
   display: block;
@@ -112,7 +114,7 @@
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .mainAdoptar{
     padding:15px
 
@@ -134,7 +136,7 @@
     margin-top: 10px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .mainAdoptar{
     margin-top:20px;
   }

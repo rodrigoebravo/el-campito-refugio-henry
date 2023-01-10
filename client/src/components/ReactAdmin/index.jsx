@@ -17,7 +17,6 @@ import ContribCreate from "./Contributions/Create";
 import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
 // import ContribShow from "./Contributions/Show";
-import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 // import VoluntShow from "./Volunteers/Show";
 
 import VoluntEdit from "./Volunteers/Edit";
@@ -37,6 +36,7 @@ import RadioIcon from "@mui/icons-material/Radio";
 import SsidChartIcon from "@mui/icons-material/SsidChart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 
 const AdminIndex = () => {

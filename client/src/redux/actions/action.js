@@ -13,7 +13,8 @@ import {
   POST_ADOPTION,
   POST_CONTRIBUTION,
   GET_PRESS,
-  GET_USERS_EMAIL
+  GET_USERS_EMAIL,
+  POST_CONTACTO
 } from './types';
 import axios from 'axios';
 import dotenv from "dotenv";
@@ -208,6 +209,35 @@ export const getUsersEmail = () => {
       })
     } catch {
       console.log("error en trar users EMAIL")
+    }
+  }
+}
+export function dataProfile(id) {
+  return async function (dispatch) {
+    try {
+      const userEmail = await axios.get(
+        `http://localhost:3001/api/users/${id}`
+      );
+      return dispatch({
+        type: "GET_USERS_PROFILE",
+        payload: userEmail.data.email,
+      });
+      // console.log(userEmail.data.email);
+    } catch {
+      console.log("error al traer datos");
+    }
+  };
+}
+
+export const postContacto = (data) => {
+  return async function (dispatch) {
+    try {
+      await axios.post("/api/contacto", data);
+      return dispatch({
+        type: POST_CONTACTO,
+      })
+    } catch {
+      console.log("error en envio de consulta: contacto")
     }
   }
 }

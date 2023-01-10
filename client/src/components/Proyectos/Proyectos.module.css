@@ -49,13 +49,13 @@ body {
   margin-inline-end: 0px;
   font-weight: bold;
 }
-@media (max-width: 768px) {
+@media (max-width: 834px) {
 .boxContainer {
     width: 50%;
     height: auto !important;
 }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .boxContainer {
     width: 100%;
     height: auto !important;

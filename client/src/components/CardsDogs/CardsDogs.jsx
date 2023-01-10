@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs,filterDogsByGender,filterDogsByAge, filterDogsBySize} from "../../redux/actions/action";
+import {
+  getDogs,
+  filterDogsByGender,
+  filterDogsByAge,
+  filterDogsBySize,
+} from "../../redux/actions/action";
 import CardDog from "../CardDog/CardDog";
 import PaginateDogs from "../PaginationDogs/PaginationDogs";
 import { Link } from "react-router-dom";
@@ -10,7 +15,7 @@ import Filters from "../Filters/Filters";
 import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import Footer from "../Footer/Footer";
 
- const CardsDogs = () => {
+const CardsDogs = () => {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
 
@@ -25,17 +30,19 @@ import Footer from "../Footer/Footer";
     setCurrentPage(page);
   }
 
-  function filterGender(e){ //filtrado por Genero
+  function filterGender(e) {
+    //filtrado por Genero
     e.preventDefault();
     dispatch(filterDogsByGender(e.target.value));
     setCurrentPage(1);
   }
-  function filterAge(e){ //filtrado por Edad
+  function filterAge(e) {
+    //filtrado por Edad
     e.preventDefault();
     dispatch(filterDogsByAge(e.target.value));
     setCurrentPage(1);
   }
-  function filterSize(e){
+  function filterSize(e) {
     e.preventDefault();
     dispatch(filterDogsBySize(e.target.value));
     setCurrentPage(1);
@@ -51,40 +58,47 @@ import Footer from "../Footer/Footer";
     return <Loading />;
   } else {
     return (
-      <div >
-
-      <BarraDeNavegacion/>
-      <div className={style.divContainer}>
-      
-        <h2 className={style.h2}>Conocenos Nuestros Perritos</h2>
-        <div>
-          <Filters filterGender={filterGender} filterAge={filterAge} filterSize={filterSize}/>
+      <div>
+        <BarraDeNavegacion />
+        <div className={style.divContainer}>
+          <h2 className={style.h2}>Conocenos Nuestros Perritos</h2>
+          <div>
+            <Filters
+              filterGender={filterGender}
+              filterAge={filterAge}
+              filterSize={filterSize}
+            />
+          </div>
+          <div className={style.divCards}>
+            {/* {console.log(allDogs)} */}
+            {currentPageItems?.map((dog) => {
+              return (
+                <div key={dog._id} className={style.card}>
+                  <Link
+                    to={"/adoptar/perros/" + dog._id}
+                    className={style.Link}
+                  >
+                    <CardDog
+                      key={dog._id}
+                      img={dog.images[0]}
+                      name={dog.name}
+                      gender={dog.gender}
+                      id={dog._id}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+          <PaginateDogs
+            paginationFunction={pagination}
+            itemsPerPage={itemsPerPage}
+            currentPage={currentPage}
+          />
         </div>
-        <div className={style.divCards}>
-          {/* {console.log(allDogs)} */}
-          {currentPageItems?.map((dog) => {
-            return (
-              <div key={dog._id} className={style.card}>
-                <Link to={"/adoptar/perros/" + dog._id} className={style.Link}>
-                  <CardDog
-                    key={dog._id}
-                    img={dog.images[0]}
-                    name={dog.name}
-                    gender={dog.gender}
-                    id={dog._id}
-                  />
-                </Link>
-              </div>
-            );
-          })}
+        <div className={style.footerDogs}>
+          <Footer />
         </div>
-        <PaginateDogs
-          paginationFunction={pagination}
-          itemsPerPage={itemsPerPage}
-          currentPage={currentPage}
-        />
-      </div>
-      <div className={style.footerDogs}><Footer/></div>
       </div>
     );
   }

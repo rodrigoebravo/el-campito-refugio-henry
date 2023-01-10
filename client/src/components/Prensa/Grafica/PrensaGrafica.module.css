@@ -19,7 +19,7 @@
     font-weight: bold;
     
 }
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .card{
     grid-template-columns: 100%;
     padding: 0px;
@@ -28,7 +28,7 @@
     
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .card{
     width: 100%;
     margin:0;

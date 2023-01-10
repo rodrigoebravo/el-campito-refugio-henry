@@ -83,7 +83,7 @@ nav a:hover {
         display: -ms-flexbox !important;
         display: flex !important;
       }
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .navIcon{
     display:flex;
   position: absolute;

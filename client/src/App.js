@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import ConocenosDetalle from "./components/ConocenosDetalle/ConocenosDetalle";
 import QuieroAdoptar from "./components/QuieroAdoptar/QuieroAdoptar";
@@ -29,6 +29,7 @@ import NoAccess from "./components/NoAccess/NoAccess";
 import Pay from "./components/Pay/Pay";
 import RecuperarCuenta from "./components/RecuperarCuenta/RecuperarCuenta";
 import ProfileEdit from "./components/ProfileEdit/ProfileEdit";
+import ChangePassword from "./components/ChangePassword/ChangePassword";
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -58,13 +59,20 @@ function App() {
       <Route exact path={"/prensa/amigos"} component={PrensaAmigos} />
       <Route exact path={"/profile"} component={Profile} />
       <Route exact path={"/pay"} component={Pay} />
-      <Route exact path={"/recuperar"} component={RecuperarCuenta} />
 
       {/* <Route exact path={"/profile/edit"} component={ProfileEdit} /> */}
       {user && user.data?.info ? (
-        <Route exact path={"/profile/edit"} component={ProfileEdit} />
+        <Switch>
+          <Route path={"/profile/edit/:id"} component={ProfileEdit} />
+          <Route path={"/cambiarPassword"} component={NoAccess} />
+          <Route exact path={"/recuperar"} component={NoAccess} />
+        </Switch>
       ) : (
-        <Route exact path={"/profile/edit"} component={NoAccess} />
+        <Switch>
+          <Route exact path={"/recuperar"} component={RecuperarCuenta} />
+          <Route path={"/profile/edit"} component={NoAccess} />
+          <Route path={"/cambiarPassword"} component={ChangePassword} />
+        </Switch>
       )}
 
       {(user && user.data?.info.roles.includes("admin")) ||
@@ -73,7 +81,6 @@ function App() {
       ) : (
         <Route exact path={"/admin"} component={NoAccess} />
       )}
-  
     </BrowserRouter>
   );
 }

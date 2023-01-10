@@ -145,7 +145,7 @@ text-align: center;
     margin:0px;
     padding:0px
  }
-@media (max-width: 768px) {
+@media (max-width: 834px) {
     .parentTransporte{
         display: flex;
         flex-direction: column;  
@@ -154,6 +154,7 @@ text-align: center;
     }
     .visitas{
         width: 100%;
+        margin-top:40px;
     }
     .transporteContainer{
         display: flex;
@@ -163,7 +164,7 @@ text-align: center;
         width: 100%;
     }
   }
-  @media (max-width: 360px) {
+  @media (max-width: 428px) {
     .visitas{
         margin:0px;
         margin-top:30px;
@@ -178,4 +179,9 @@ text-align: center;
         align-self: center;
         margin-top: 10px;
     }
+  }
+  @media (max-width: 320px) {
+.aVisitas{
+    font-size: 0.8em;
+}
   }

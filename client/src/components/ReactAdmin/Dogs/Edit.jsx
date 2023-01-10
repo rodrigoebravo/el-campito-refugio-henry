@@ -101,7 +101,7 @@ const DogsEdit = (props) => {
           </FormTab>
           <FormTab label="Caracteristicas">
             <Grid container spacing={2}>
-              <Grid item lg={7}>
+              <Grid item lg={6}>
                 <CheckboxGroupInput
                   source="references"
                   label={false}
@@ -123,6 +123,9 @@ const DogsEdit = (props) => {
               </Grid>
               <Grid item lg={2}>
                 <BooleanInput label="¿ Se puede adoptar ?" source="toAdopt" />
+              </Grid>
+              <Grid item lg={2}>
+                <BooleanInput label="Desactivado" source="isDelete" />
               </Grid>
             </Grid>
             <Grid container spacing={2}>

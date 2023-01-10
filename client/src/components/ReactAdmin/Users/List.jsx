@@ -16,7 +16,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 
 import Filters from "./Filters";
 
-const UsersList = (props) => {
+const UsersList = () => {
   const { data, isLoading } = useGetList("api/admin/users", {
     page: 1,
     perPage: 10,
@@ -30,8 +30,8 @@ const UsersList = (props) => {
     >
       <Datagrid bulkActionButtons={false}>
         <TextField source="name" label="Nombre" />
-        <TextField source="email" label="Email" />
-        <TextField source="roles" label="Rol" />
+        <TextField source="email" label="Email" sortable={false} />
+        <TextField source="roles" label="Rol" sortable={false} />
         <BooleanField
           source="isDelete"
           label="Estado"

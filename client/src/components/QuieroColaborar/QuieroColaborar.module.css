@@ -7,7 +7,8 @@
 
 
 }
-.section{
+
+.section {
   padding: 10px;
 }
 
@@ -87,7 +88,7 @@
   font-size: 1.15em;
   padding: 40px;
   max-height: 300px;
- 
+
 }
 
 .debitoAutomatico {
@@ -181,7 +182,8 @@
   height: 100%;
   min-height: 150px;
 }
-.btnPaypalMonto{
+
+.btnPaypalMonto {
   padding: 1rem;
 }
 
@@ -209,7 +211,8 @@
 
 .medioDePagoPaypal {
   border: 3px solid #F9C0C1;
- }
+}
+
 /* .medioDePagoCF {
   border: 3px solid #55BA68;
 /* }
@@ -219,7 +222,8 @@
 .medioDePagoCF {
   border: 3px solid #55BA68;
   height: -webkit-fill-available;
-  max-height: 150px;}
+  max-height: 150px;
+}
 
 .imgColaborar {
   width: 100%;
@@ -270,22 +274,24 @@ input[type=number]::-webkit-outer-spin-button {
   column-gap: 10px;
   padding: 10px 0;
 }
-.linkCafecito{
+
+.linkCafecito {
   color: white;
 }
-.linkCafecito:link{
+
+.linkCafecito:link {
   text-decoration: none;
 }
 
-.linkCafecito:active{
-  text-decoration: none;
- }
-
-.linkCafecito:visited{
+.linkCafecito:active {
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+.linkCafecito:visited {
+  text-decoration: none;
+}
+
+@media (max-width: 834px) {
   .colaborar section {
     padding: 20px
   }
@@ -293,51 +299,150 @@ input[type=number]::-webkit-outer-spin-button {
   .parentGrid2,
   .parentGrid5,
   .parentGridPaypal {
-    grid-template-columns:none;
+    grid-template-columns: none;
     gap: 10px;
   }
 
   .debitoAutomatico {
     font-size: 0.8em;
   }
-  
+
 }
+
+@media (max-width: 540px) and (min-width: 400px) {
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px 31px;
+    height: 466px;
+    width: 375px;
+
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    margin-top: 44px;
+    align-items: flex-end;
+    margin-bottom: 35px;
+    width: 87%;
+    align-items: initial;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 360px) {
   .colaborar section {
     padding: 10px
   }
-  .parentGrid2  {
-   width: 100%;
-   padding:0;
-   margin: 0;
+
+  .parentGrid2 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
   }
-  .container{
-    padding:20px
+
+  .container {
+    padding: 20px
   }
-  .cuentaBancaria{
-    font-size: 1em;
-   padding: 20px;
-   height: 250px;
-   width: 300px;
-  }
-  .debitoAutomatico{
+
+  .cuentaBancaria {
     font-size: 1em;
     padding: 20px;
-   height: 450px;
-   width: 300px;
+    height: 250px;
+    width: 310px !important;
   }
-  .buttonFormDiv{
-    display:flex;
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px;
+    height: 450px;
+    width: 310px !important;
+  }
+
+  .buttonFormDiv {
+    display: flex;
     flex-direction: column;
-    margin:-10px;
-    padding:10px
+    margin: -10px;
+    padding: 10px
   }
-  .buttonForm{
-    margin:10px;
+
+  .buttonForm {
+    margin: 10px;
+
+  }
+
+  .footerColaborar {
+    margin-left: 20px;
+    padding: 20px
+  }
+}
+
+@media (max-width:400px) {
+  .cuentaBancaria {
+    background-color: #E48125;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 1.0em;
+    padding: 29px 16px;
+    width: 14.7rem;
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .debitoAutomatico {
+    background-color: #6B639A;
+    border-radius: 25px;
+    padding: 15px 27px;
+    /* min-height: 282px; */
+    width: 236px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    align-items: center;
+  }
+
+  .buttonForm {
+    margin: 0.3rem 0;
+    width: 225px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .cuentaBancaria {
+    font-size: 0.8em;
+    padding: 20px 10px;
+    height: 250px;
+    width: 270px !important;
+  }
+
+  .debitoAutomatico {
+    font-size: 0.8em;
+    padding: 20px 9px;
+    height: 360px;
+    width: 270px !important;
+  }
+}
+@media (max-width: 428px) and (min-width: 412px) {
+  .debitoAutomatico {
+    width: 280px;
+    font-size: 0.9em;
+   
+  }
+  .cuentaBancaria {
+    width: 280px;
+    font-size: 0.9em;
+  }
+    .buttonFormDiv {
+    margin-left: 35px;
     
   }
-  .footerColaborar{
-    margin-left: 20px;
-    padding:20px
+  .buttonForm{
+    margin-bottom: 10px;
   }
+
 }
