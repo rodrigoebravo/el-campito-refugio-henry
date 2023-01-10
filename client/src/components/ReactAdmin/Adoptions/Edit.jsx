@@ -1,103 +1,273 @@
-import { Edit, SimpleForm, TextInput, BooleanInput, SelectInput,
-  DateInput, CheckboxGroupInput, TextField } from "react-admin";
-
+import {
+  Edit,
+  SimpleShowLayout,
+  TabbedForm,
+  FormTab,
+  DateField,
+  BooleanInput,
+  TextField,
+} from "react-admin";
+import { Grid } from "@mui/material";
 
 const AdopEdit = (props) => {
-  return ( 
+  return (
     <Edit
       title={"Editar datos"}
       {...props}
       disableAuthentication
       mutationMode="pessimistic"
     >
-      <SimpleForm> 
-        <h1>SOLICITUD DE ADOPCION</h1>
-        <br></br><br></br>
-        <h3>Camperito</h3>
-        <TextField  source="nameDog"  fullWidth />
-        <br></br>
-        <h3>Adoptante (nombre y apellido)</h3>
-        <TextField  source="nameUser"  fullWidt />
-        <br></br>
-        <h3>User:</h3>
-        <TextField source="email" label="e-mail" fullWidth />
-        <br/>
-        <DateInput source="birthday" label="Fecha de Nacimiento" fullWidth />
-        <TextInput source="phone" label="Teléfono" fullWidth />
-        <TextInput source="location" label="Domicilio" fullWidth />
-        <TextInput source="area" label="Localidad" fullWidth />
-        <TextInput source="people" label="Personas en la casa" fullWidth />
-        <SelectInput source="accordance" labelpublic="Conformidad de los integrantes" choices={[
-            { id: 'si', name: 'si' },
-            { id: 'no', name: 'no' },
-            { id: 'tal vez', name: 'tal vez' },
-        ]} />
-        <TextInput source="description" label="Composición del Núcleo Familiar"  fullWidth />
-        <SelectInput source="otherAnimals" labelpublic="Otros animales" choices={[
-            { id: 'si', name: 'si' },
-            { id: 'no', name: 'no' },
-        ]} />
-        <TextInput source="expatiate" label="¿Cuantos? Amplía"  fullWidth />
-        <SelectInput source="castrated" labelpublic="¿Están castrados?" choices={[
-            { id: 'si', name: 'si' },
-            { id: 'no', name: 'no' },
-        ]} />
-        <TextInput source="reason" label="Método de castración. O explicar negativa"  fullWidth />
-        <SelectInput source="vaccinated" labelpublic="¿Están vacunados?" choices={[
-            { id: 'si', name: 'si' },
-            { id: 'no', name: 'no' },
-        ]} />
-        <TextInput source="events" label="Tuvo otros animales? ¿Qué pasó con ellos?"  fullWidth />
-        <TextInput source="holidays" label="Ante las vacaciones..."  fullWidth />
-        <TextInput source="babies" label="Ante un embarazo..."  fullWidth />
-        <TextInput source="allergies" label="Ante alergias..."  fullWidth />
-        <CheckboxGroupInput source="items" label="Interés por el animal" choices={[
-            { id: 'defensa', name: 'defensa' },
-            { id: 'compañia', name: 'compañia' },
-            { id: 'guardia', name: 'guardia' },
-            { id: 'caza', name: 'caza' },
-            { id: 'deporte y aire libre', name: 'deporte y aire libre' },
-            { id: 'otros', name: 'otros' },
-        ]} />
-        <CheckboxGroupInput source="home" label="Donde vivirá?" choices={[
-            { id: 'departamento', name: 'departamento' },
-            { id: 'ph', name: 'ph' },
-            { id: 'casa', name: 'casa' },
-            { id: 'casa en barrio cerrado', name: 'casa en barrio cerrado' },
-            { id: 'quinta', name: 'quinta' },
-            { id: 'campo', name: 'campo' },
-            { id: 'otros', name: 'otros' },
-        ]} />
-        <CheckboxGroupInput source="freshAir" label="Espacio al aire libre?" choices={[
-            { id: 'balcón', name: 'balcón' },
-            { id: 'patio', name: 'patio' },
-            { id: 'terraza', name: 'terraza' },
-            { id: 'parque', name: 'parque' },
-            { id: 'otros', name: 'otros' },
-        ]} />
-        <SelectInput source="status" labelpublic="¿Alquila o es propietario?" choices={[
-            { id: 'propietario', name: 'propietario' },
-            { id: 'alquilo', name: 'alquilo' },
-        ]} />
-        <SelectInput source="authorization" labelpublic="Autorización para tener animales" choices={[
-            { id: 'si', name: 'si' },
-            { id: 'no', name: 'no' },
-            { id: 'tal vez', name: 'tal vez' },
-        ]} />
-        <TextInput source="sleep" label="¿Dónde dormirá el adoptado?"  fullWidth />
-        <TextInput source="loneliness" label="¿Estará solo? ¿Cuánto tiempo?"  fullWidth />
-        <TextInput source="walk" label="¿Quién lo paseará? ¿Cuántas veces al día?"  fullWidth />
-        <TextInput source="moving" label="En caso de mudarse..."  fullWidth />
-        <SelectInput source="adaptation" labelpublic="¿Están de acuerdo en tener un tiempo de adaptación?" choices={[
-            { id: 'si', name: 'si' },
-            { id: 'no', name: 'no' },
-            { id: 'tal vez', name: 'tal vez' },
-        ]} />
-        <TextInput source="sterilization" label="¿Qué piensa de la esterilización?" fullWidth />
-        <BooleanInput label="Pendiente" source="isPending" />
-      
+      <>
+        <SimpleShowLayout>
+          <Grid container spacing={3}>
+            <Grid item lg={9}>
+              <h1>Solicitud de adopcion</h1>
+              <TextField
+                label={false}
+                source="nameDog"
+                sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+              />
+            </Grid>
+          </Grid>
+        </SimpleShowLayout>
+        <TabbedForm>
+          <FormTab label="Datos del adoptante">
+            <Grid container spacing={3}>
+              <Grid item lg={3}>
+                <h5>Nombre</h5>
+                <TextField
+                  source="nameUser"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={2}>
+                <h5>Fecha de nacimiento</h5>
+                <DateField
+                  source="birthday"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={2}>
+                <h5>Localidad</h5>
+                <TextField
+                  source="area"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={3}>
+                <h5>Direccion</h5>
+                <TextField
+                  source="location"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={3}>
+                <h5>Correo electronico</h5>
+                <TextField
+                  source="email"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={3}>
+                <h5>Numero de telefono</h5>
+                <TextField
+                  source="phone"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+            </Grid>
+          </FormTab>
 
-      </SimpleForm>
+          <FormTab label="Datos de la vivienda">
+            <Grid container spacing={3}>
+              <Grid item lg={2}>
+                <h5>Personas en la casa</h5>
+                <TextField
+                  source="people"
+                  fullwidth
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={3}>
+                <h5>Estan de acuerdo en adoptar?</h5>
+                <TextField
+                  source="accordance"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={3}>
+                <h5>Estan vacunados?</h5>
+                <TextField
+                  source="vaccinated"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={6}>
+                <h5>Composicion de la familia</h5>
+                <TextField
+                  source="description"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+            </Grid>
+            <br></br>
+            <Grid container spacing={1}>
+              <Grid item lg={2}>
+                <BooleanInput
+                  disabled
+                  source="otherAnimals"
+                  label="Otros animales?"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={2}>
+                <h5>Cuantos? Explicacion</h5>
+                <TextField
+                  source="expatiate"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={2}>
+                <h5>Estan castrados?</h5>
+                <TextField
+                  source="castrated"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={3}>
+                <h5>Metodo de castracion / Explicacion de negativa</h5>
+                <TextField
+                  source="reason"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+
+              <Grid item lg={3}>
+                <h5>Tuvo otros animales? Que paso con ellos?</h5>
+                <TextField
+                  source="events"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+            </Grid>
+          </FormTab>
+
+          <FormTab label="Cuestionario de adopcion">
+            <Grid container spacing={4}>
+              <Grid item lg={5}>
+                <h5>Ante las vacaciones</h5>
+                <TextField
+                  source="holidays"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Ante un embarazo</h5>
+                <TextField
+                  source="babies"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Ante alergias</h5>
+                <TextField
+                  source="allergies"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Interes por el animal</h5>
+                <TextField
+                  source="items"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Donde vivirá?</h5>
+                <TextField
+                  source="home"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Espacio al aire libre?</h5>
+                <TextField
+                  source="freshAir"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Alquila o es propietario?</h5>
+                <TextField
+                  source="status"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Autorización para tener animales</h5>
+                <TextField
+                  source="authorization"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>Dónde dormirá el adoptado?</h5>
+                <TextField
+                  source="sleep"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>¿Estará solo? ¿Cuánto tiempo?</h5>
+                <TextField
+                  source="loneliness"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>¿Quién lo paseará? ¿Cuántas veces al día?</h5>
+                <TextField
+                  source="walk"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>En caso de mudarse</h5>
+                <TextField
+                  source="moving"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>¿Están de acuerdo en tener un tiempo de adaptación?</h5>
+                <TextField
+                  source="adaptation"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+              <Grid item lg={5}>
+                <h5>¿Qué piensa de la esterilización?</h5>
+                <TextField
+                  source="sterilization"
+                  sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+                />
+              </Grid>
+            </Grid>
+          </FormTab>
+          <FormTab label="Estado de la solicitud">
+            <BooleanInput
+              source="isPending"
+              label="Estado de solicitud pendiente/aprobada"
+              sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+            />
+            <BooleanInput
+              label="Desactivado"
+              source="isDelete"
+              sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
+            />
+          </FormTab>
+        </TabbedForm>
+      </>
     </Edit>
   );
 };

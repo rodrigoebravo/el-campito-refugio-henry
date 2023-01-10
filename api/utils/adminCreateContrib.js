@@ -148,7 +148,8 @@ const adminCreateContrib = async (data) => {
       };     
   
     
-      } catch (error) { res.status(404).send({ error }) }
+      // } catch (error) { res.status(404).send({ error }) }
+    } catch (error) { console.log("error en post create Contrib") }
   };
 
   module.exports = {

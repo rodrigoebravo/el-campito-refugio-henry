@@ -80,8 +80,12 @@
     padding-top: 30px
   }
   .h2cuidados{
-    margin:0px;
-
+    
+    margin-top: 70px;
+    margin-bottom: 0px;    
+  }
+  .sectionCuidados{
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 360px) {
@@ -100,7 +104,10 @@
     width: 100%;
   }
   .h2cuidados{
-    margin-top:20px;
-
+    margin-top:40px;
+    margin-bottom: 0px;   
+  }
+  .pCuidados{
+    margin-block-start: 0.5em;
   }
 }

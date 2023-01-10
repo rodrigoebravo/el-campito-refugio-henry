@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router";
 import styles from "./QuieroColaborar.module.css";
 import mercadoLibre from "../../assets/img/logosPasarelas/mercado-pago.png";
 import cafecito from "../../assets/img/logosPasarelas/cafecito.png";
@@ -30,6 +31,11 @@ const QuieroColaborar = () => {
       [e.target.name]: e.target.value,
     });
   } 
+  const history = useHistory();
+  let names = history.location.pathname.replace("/colaborar/", "");
+  if(names === "/colaborar"){
+    names = undefined
+  }
 
   return (
     <div className={styles.container}>
@@ -183,43 +189,43 @@ const QuieroColaborar = () => {
             </div>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "5" })}
+              onClick={payWithPayPal({ monto: "5" ,nombreDePerro:names})}
             >
               US5
             </button>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "10" })}
+              onClick={payWithPayPal({ monto: "10" ,nombreDePerro:names})}
             >
               US10
             </button>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "15" })}
+              onClick={payWithPayPal({ monto: "15" ,nombreDePerro:names})}
             >
               US15
             </button>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "20" })}
+              onClick={payWithPayPal({ monto: "20" ,nombreDePerro:names})}
             >
               US20
             </button>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "25" })}
+              onClick={payWithPayPal({ monto: "25",nombreDePerro:names })}
             >
               US25
             </button>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "50" })}
+              onClick={payWithPayPal({ monto: "50",nombreDePerro:names })}
             >
               US50
             </button>
             <button
               className={styles.buttonPaypal}
-              onClick={payWithPayPal({ monto: "100" })}
+              onClick={payWithPayPal({ monto: "100",nombreDePerro:names })}
             >
               US100
             </button>

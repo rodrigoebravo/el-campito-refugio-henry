@@ -2,34 +2,14 @@
   padding: 50px;
 }
 
-* {
-  padding: 0px;
-  margin: 0px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "Trashhand";
-  src: url("../../assets/fonts/TrashHand.TTF");
-}
-
-@font-face {
-  font-family: "Seravek";
-  src: url("../../assets/fonts/Seravek.ttf");
-}
-
-body {
-  font-family: 'Seravek', 'sans-serif';
-  font-size: 1.125em;
-  color: #444445;
-  font-weight: 300;
-}
-
 .colaborar section {
   margin-bottom: 20px;
-  padding: 40px;
 
+
+}
+
+.section {
+  padding: 10px;
 }
 
 .h2Colborar {
@@ -96,7 +76,8 @@ body {
   grid-template-columns: auto auto;
   gap: 10px;
   padding: 0px;
-  margin: 0px
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
 .cuentaBancaria {
@@ -107,14 +88,13 @@ body {
   font-size: 1.15em;
   padding: 40px;
   max-height: 300px;
-  min-height: 300px;
+
 }
 
 .debitoAutomatico {
   background-color: #6B639A;
   border-radius: 25px;
-  padding: 40px;
-  max-height: 300px;
+  padding: 35px;
   min-height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -130,6 +110,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .buttonForm {
@@ -148,6 +129,7 @@ body {
   border: 0px;
   font-weight: bold;
   margin: 0px;
+
 }
 
 .parentGrid5 {
@@ -200,7 +182,8 @@ body {
   height: 100%;
   min-height: 150px;
 }
-.btnPaypalMonto{
+
+.btnPaypalMonto {
   padding: 1rem;
 }
 
@@ -228,7 +211,8 @@ body {
 
 .medioDePagoPaypal {
   border: 3px solid #F9C0C1;
- }
+}
+
 /* .medioDePagoCF {
   border: 3px solid #55BA68;
 /* }
@@ -238,7 +222,8 @@ body {
 .medioDePagoCF {
   border: 3px solid #55BA68;
   height: -webkit-fill-available;
-  max-height: 150px;}
+  max-height: 150px;
+}
 
 .imgColaborar {
   width: 100%;
@@ -289,24 +274,26 @@ input[type=number]::-webkit-outer-spin-button {
   column-gap: 10px;
   padding: 10px 0;
 }
-.linkCafecito{
+
+.linkCafecito {
   color: white;
 }
-.linkCafecito:link{
+
+.linkCafecito:link {
   text-decoration: none;
 }
 
-.linkCafecito:active{
+.linkCafecito:active {
   text-decoration: none;
- }
+}
 
-.linkCafecito:visited{
+.linkCafecito:visited {
   text-decoration: none;
 }
 
 @media (max-width: 768px) {
   .colaborar section {
-    padding: 40px
+    padding: 20px
   }
 
   .parentGrid2,
@@ -319,9 +306,125 @@ input[type=number]::-webkit-outer-spin-button {
   .debitoAutomatico {
     font-size: 0.8em;
   }
+
 }
+
+@media (max-width: 540px) and (min-width: 400px) {
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px 31px;
+    height: 466px;
+    width: 375px;
+
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    margin-top: 44px;
+    align-items: flex-end;
+    margin-bottom: 35px;
+    width: 87%;
+    align-items: initial;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 360px) {
   .colaborar section {
-    padding: 0px
+    padding: 10px
+  }
+
+  .parentGrid2 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    padding: 20px
+  }
+
+  .cuentaBancaria {
+    font-size: 1em;
+    padding: 20px;
+    height: 250px;
+    width: 300px;
+  }
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px;
+    height: 450px;
+    width: 300px;
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    flex-direction: column;
+    margin: -10px;
+    padding: 10px
+  }
+
+  .buttonForm {
+    margin: 10px;
+
+  }
+
+  .footerColaborar {
+    margin-left: 20px;
+    padding: 20px
+  }
+}
+
+@media (max-width:400px) {
+  .cuentaBancaria {
+    background-color: #E48125;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 1.0em;
+    padding: 29px 16px;
+    width: 14.7rem;
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .debitoAutomatico {
+    background-color: #6B639A;
+    border-radius: 25px;
+    padding: 15px 27px;
+    /* min-height: 282px; */
+    width: 236px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    align-items: center;
+  }
+
+  .buttonForm {
+    margin: 0.3rem 0;
+    width: 225px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 322px) {
+  .cuentaBancaria {
+    font-size: 1em;
+    padding: 20px 10px;
+    height: 250px;
+    width: 17rem;
+  }
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px 9px;
+    height: 466px;
+    width: 260px;
+
   }
 }

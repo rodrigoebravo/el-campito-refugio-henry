@@ -212,6 +212,22 @@ export const getUsersEmail = () => {
     }
   }
 }
+export function dataProfile(id) {
+  return async function (dispatch) {
+    try {
+      const userEmail = await axios.get(
+        `http://localhost:3001/api/users/${id}`
+      );
+      return dispatch({
+        type: "GET_USERS_PROFILE",
+        payload: userEmail.data.email,
+      });
+      // console.log(userEmail.data.email);
+    } catch {
+      console.log("error al traer datos");
+    }
+  };
+}
 
 export const postContacto = (data) => {
   return async function (dispatch) {

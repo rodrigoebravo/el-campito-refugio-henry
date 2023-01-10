@@ -31,7 +31,7 @@ const Home = () => {
       return info;
     }
     // };
-  }, []);
+  }, [dispatch]);
 
   let aux = null;
   const aca = () => {

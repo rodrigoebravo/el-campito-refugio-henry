@@ -10,7 +10,7 @@ const Filters = () => {
         <FilterLiveSearch source="name" placeholder="Buscar por nombre..." />
         <h4>Rol</h4>
         <FilterLiveSearch source="roles" placeholder="Buscar por rol..." />
-        <FilterList label="Condición" icon={<AssignmentIndIcon />}>
+        <FilterList label="Estado" icon={<AssignmentIndIcon />}>
           <FilterListItem label="Activo" value={{ isDelete: false }} />
           <FilterListItem label="Inactivo" value={{ isDelete: true }} />
         </FilterList>

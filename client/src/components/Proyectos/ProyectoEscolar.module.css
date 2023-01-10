@@ -124,6 +124,9 @@
   .spanProyectoEscolar {
     margin-top: 20px;
   }
+  .proyectoEscolarmain{
+    padding: 20px;
+  }
 }
 @media (max-width: 360px) {
   .proyectoEscolarmain{

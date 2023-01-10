@@ -14,6 +14,7 @@
   -webkit-box-direction: normal;
  
   flex-direction: row;
+  margin:5px;
 }
 .denunciasSection {
   width: 70%;
@@ -59,8 +60,14 @@ body {
   color: #444445;
     font-weight: 300;
 }
-ul li{
-  font-size: 1em;
+.listasDenuncia{
+  font-family: 'Seravek';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
