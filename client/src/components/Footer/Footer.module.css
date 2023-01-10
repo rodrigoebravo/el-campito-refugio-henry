@@ -142,3 +142,8 @@ i {
     margin-left: 20px;
 }
 }
+@media (width: 428px) {
+    .footerContainer{
+        margin-left: 20px;
+    }
+    }
