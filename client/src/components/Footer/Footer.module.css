@@ -142,7 +142,7 @@ i {
     margin-left: 20px;
 }
 }
-@media (width: 428px) {
+@media (max-width: 427px) {
     .footerContainer{
         margin-left: 20px;
     }
