@@ -47,7 +47,7 @@ const Adopcion = (props) => {
     // e.preventDefault();
     dispatch(postAdoption(data));
     alert("form create successfuly!");
-    // window.location.reload();
+    window.location.reload();
     // e.target.reset();
   };
 

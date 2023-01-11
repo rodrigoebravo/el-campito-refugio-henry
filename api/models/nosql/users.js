@@ -10,7 +10,7 @@ const usersScheme = new mongoose.Schema(
 
     birthday: {
       type: Date,
-      default: "requerir"
+      // default: "requerir"
     },
     email: {
       type: String,

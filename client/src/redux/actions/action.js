@@ -241,3 +241,14 @@ export const postContacto = (data) => {
     }
   }
 }
+
+export function getSlider() {
+  return async function (dispatch) {
+    const responce = await axios('http://localhost:3001/api/interfaces');
+    const arrayImg = responce.data[0].slider;
+    return dispatch({
+      type: 'GET_SLIDER',
+      payload: arrayImg,
+    });
+  };
+}

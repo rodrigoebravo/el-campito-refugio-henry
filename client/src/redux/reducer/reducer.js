@@ -16,7 +16,7 @@ import {
   GET_USERS_EMAIL,
   POST_ADOPTION,
   POST_CONTACTO,
-  POST_VOLUNTEER
+  POST_VOLUNTEER,
 } from "../actions/types";
 
 const initialState = {
@@ -28,7 +28,8 @@ const initialState = {
   press: [],
   responseCloudinary: "",
   userEmail: [],
-  userProfile:[]
+  userProfile: [],
+  slider: [],
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -163,11 +164,16 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
       };
-      case "GET_USERS_PROFILE":
+    case "GET_USERS_PROFILE":
       return {
         ...state,
         userProfile: action.payload,
-      }
+      };
+    case "GET_SLIDER":
+      return {
+        ...state,
+        slider: action.payload,
+      };
     default:
       return {
         ...state,
