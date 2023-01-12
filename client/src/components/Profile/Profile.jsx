@@ -37,7 +37,7 @@ const Profile = () => {
     return <Loading />;
   } else {
     let id = items.data?.info._id;
-    {console.log(id);}
+    console.log(id);
     return (
       <div className={styles.divUserData}>
         {items.data?.info ? (

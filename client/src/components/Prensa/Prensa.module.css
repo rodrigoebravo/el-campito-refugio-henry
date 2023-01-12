@@ -91,7 +91,7 @@ align-items: center;
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .prensaContainer{
     flex-direction: column;
     gap: 30px;
@@ -100,7 +100,7 @@ align-items: center;
     text-align: center;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
 
   .spanPrensa{
   font-size: 0.7em;

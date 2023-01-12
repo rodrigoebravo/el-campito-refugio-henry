@@ -70,31 +70,31 @@ body {
     text-align: left;
 }
 
-@media (max-width: 768px) {
-.imgDenuncia{
-  display:none
-}
-.denunciasSection{
-  width: 100%;
-}
-.parent{
-  margin:15px;
- 
-}
-.denunciasSection{
-  margin:0px
-}
-}
-@media (max-width: 360px) {
-  .parent{
-    margin:0;
-    padding: 0px;
-  }
+@media (max-width: 834px) {
   .imgDenuncia{
     display:none
   }
   .denunciasSection{
     width: 100%;
   }
-  
-}
+  .parent{
+    margin:15px;
+   
+  }
+  .denunciasSection{
+    margin:0px
+  }
+  }
+  @media (max-width: 428px) {
+    .parent{
+      margin:0;
+      padding: 0px;
+    }
+    .imgDenuncia{
+      display:none
+    }
+    .denunciasSection{
+      width: 100%;
+    }
+    
+  }

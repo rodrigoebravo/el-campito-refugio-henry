@@ -76,7 +76,7 @@
   width:100%;
   height:auto
 }
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .div {
     margin: 3rem;
   }
@@ -85,7 +85,7 @@
   }
 
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .div{
     margin:0px;
     margin-top:30px

@@ -71,7 +71,7 @@
   flex-direction: row;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .box {
     width: 50%;
   }
@@ -88,7 +88,7 @@
     margin-bottom: 40px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .parentColumn{
     margin:0px;
     margin-top: 40px;
@@ -104,10 +104,22 @@
     width: 100%;
   }
   .h2cuidados{
-    margin-top:40px;
+    margin-top:50px;
     margin-bottom: 0px;   
   }
   .pCuidados{
     margin-block-start: 0.5em;
+  }
+}
+@media (max-width: 414px) {
+  .h2cuidados{
+    margin-top:70px;
+   
+  }
+}
+@media (width: 428px) {
+  .h2cuidados{
+    margin-top:90px;
+   
   }
 }

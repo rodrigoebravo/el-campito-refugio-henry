@@ -156,7 +156,7 @@
     text-decoration: none;
     cursor: pointer;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 834px) {
     .mainContainer{
         margin-top: 60px;;
     }
@@ -165,7 +165,7 @@
     }
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 428px) {
     .mainContainer{
       padding-top: 50px;
   
@@ -189,8 +189,11 @@
        margin-right: -30px;
      }
     .footerAdopcion{
-        padding:20px;
-         margin-left:30px;
+        padding:10px;
+         margin-left:10px;
       }
   
+  }
+  @media (max-width: 320px) {
+
   }

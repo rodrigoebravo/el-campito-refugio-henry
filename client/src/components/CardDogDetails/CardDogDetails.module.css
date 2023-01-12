@@ -78,7 +78,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .imgDog {
     width: 90%;
   }
@@ -92,7 +92,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .imgDog {
     width: 100%;
   }
@@ -117,5 +117,11 @@
     padding-right: 19px;
     border-radius: 10px;
     margin: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .btnButton {
+    margin: 15px;
   }
 }

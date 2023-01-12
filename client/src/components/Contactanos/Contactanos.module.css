@@ -49,7 +49,8 @@
     font-size: 1.8em;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 834px) {
     .buttonContactanos {
 
         width: 70%;
@@ -73,7 +74,7 @@
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 424px) {
     .buttonContactanos {
         padding: 0px;
         margin: 0px;
@@ -95,3 +96,13 @@
         margin: 10px;
     }
 }
+@media (width: 428px) {
+  .buttonContactanos{
+    font-size: 0.8em;
+  }  
+}
+@media (width: 320px) {
+    .buttonContactanos{
+      font-size: 0.7em;
+    }  
+  }

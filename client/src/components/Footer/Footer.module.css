@@ -98,7 +98,7 @@ i {
     font-size: 1.8em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
     .imgFooter {
         display: none
     }
@@ -114,7 +114,7 @@ i {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 428px) {
     i {
         height: 1rem;
         font-size: 3em !important;
@@ -136,4 +136,9 @@ i {
     .redes {
         padding: 20px;
     }
+}
+@media (max-width: 414px) {
+.footerContainer{
+    margin-left: 20px;
+}
 }

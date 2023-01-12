@@ -233,6 +233,7 @@ export const postContacto = (data) => {
   return async function (dispatch) {
     try {
       await axios.post("/api/contacto", data);
+      console.log(data)
       return dispatch({
         type: POST_CONTACTO,
       })
@@ -240,4 +241,15 @@ export const postContacto = (data) => {
       console.log("error en envio de consulta: contacto")
     }
   }
+}
+
+export function getSlider() {
+  return async function (dispatch) {
+    const responce = await axios('http://localhost:3001/api/interfaces');
+    const arrayImg = responce.data[0].slider;
+    return dispatch({
+      type: 'GET_SLIDER',
+      payload: arrayImg,
+    });
+  };
 }

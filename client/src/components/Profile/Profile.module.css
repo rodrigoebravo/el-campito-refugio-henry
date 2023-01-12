@@ -134,28 +134,32 @@
 .span:hover {
   color: #0640ae;
 }
-.h2profile{
-  
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-  
+
+.h2profile {
+
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+
 }
-@media (max-width: 768px) {
-  .divUserData{
+
+@media (max-width: 834px) {
+  .divUserData {
     width: 100%;
   }
 }
-@media (max-width: 360px) {
-  .divSubLogins{
-    
-    padding:10px;
+
+@media (max-width: 428px) {
+  .divSubLogins {
+
+    padding: 10px;
     align-items: center;
   }
-  .span{
-    padding:10px
+
+  .span {
+    padding: 10px
   }
-  
+
 }

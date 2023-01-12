@@ -111,7 +111,7 @@
   overflow: clip;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .box {
     height: 250px;
     width: 50%;
@@ -128,7 +128,7 @@
     padding: 20px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .proyectoEscolarmain{
     margin:0px;
     padding: 0px;

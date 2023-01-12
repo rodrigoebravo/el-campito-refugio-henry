@@ -41,7 +41,7 @@
   font-family: 'Seravek', Calibri, Roboto, Arial, sans-serif;
 }
 
-@media (max-width:768px) {
+@media (max-width:834px) {
   .h2{
     font-size: 40px;
   }
@@ -53,7 +53,7 @@
   }
 }
 
-@media (max-width:360px) {
+@media (max-width:428px) {
   .h2{
     font-size: 30px;
   }
