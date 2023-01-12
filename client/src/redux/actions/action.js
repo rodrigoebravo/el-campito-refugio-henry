@@ -233,6 +233,7 @@ export const postContacto = (data) => {
   return async function (dispatch) {
     try {
       await axios.post("/api/contacto", data);
+      console.log(data)
       return dispatch({
         type: POST_CONTACTO,
       })

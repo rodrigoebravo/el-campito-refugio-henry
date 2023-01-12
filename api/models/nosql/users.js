@@ -18,18 +18,15 @@ const usersScheme = new mongoose.Schema(
     },
     phone: {
       type: String,
-      default: "requerir"
     },
     pass: {
       type: String,
-      required: true,
-      default: "1234",
+      required: true
     },
     roles: { 
       type: [String], 
       enum: ["public", "superAdmin", "admin", "voluntario", "equipo1", "equipo2", "equipo3", "visitante", "donante", "padrino", "sponsor", "adoptante"], 
       default: ["public"]
-      // default: "public" aterior
 
     }, 
     image: {

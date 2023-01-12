@@ -21,11 +21,11 @@ const adminContrib = async (req, res) => {
       if (user == undefined && dog == undefined) {
         return {
           name: "Anónimo",
-          phone: "",
-          email: "",
-          nameDog: "",
-          idUser: "",
-          idDog: "",
+          phone: " ",
+          email: " ",
+          nameDog: " ",
+          idUser: " ",
+          idDog: " ",
           ...data,
         };
       }
@@ -33,11 +33,11 @@ const adminContrib = async (req, res) => {
       if (user == {} && dog == {}) {
         return {
           name: "Anónimo",
-          phone: "",
-          email: "",
-          nameDog: "",
-          idUser: "",
-          idDog: "",
+          phone: " ",
+          email: " ",
+          nameDog: " ",
+          idUser: " ",
+          idDog: " ",
           ...data,
         };
       }
@@ -45,11 +45,11 @@ const adminContrib = async (req, res) => {
       if (user && dog == undefined) {
         return {
           name: user.name,
-          phone: "",
-          email: "",
-          nameDog: "",
+          phone: " ",
+          email: " ",
+          nameDog: " ",
           idUser: user._id,
-          idDog: "",
+          idDog: " ",
           ...data,
         };
       }
@@ -57,10 +57,10 @@ const adminContrib = async (req, res) => {
       if (user == undefined && dog) {
         return {
           nameDog: dog.name,
-          name: "",
-          phone: "",
-          email: "",
-          idUser: "",
+          name: " ",
+          phone: " ",
+          email: " ",
+          idUser: " ",
           idDog: dog._id,
           ...data,
         };
@@ -69,8 +69,8 @@ const adminContrib = async (req, res) => {
 
       return {
         name: user.name,
-        phone: user.phone || "",
-        email: user.email || "",
+        phone: user.phone || " ",
+        email: user.email || " ",
         nameDog: dog.name,
         idUser: user._id,
         idDog: dog._id,
@@ -104,12 +104,12 @@ const adminContribId = async (req, res) => {
     data.date = data.date.toJSON().slice(0, 10);
 
     res.json({
-      name: user.name || "",
-      phone: user.phone || "",
-      email: user.email || "",
-      nameDog: dog.name || "",
-      idUser: user._id || null,
-      idDog: dog._id || null,
+      name: user?.name || " ",
+      phone: user?.phone || " ",
+      email: user?.email || " ",
+      nameDog: dog?.name || " ",
+      idUser: user?._id || undefined,
+      idDog: dog?._id || undefined,
       ...data,
     });
   } catch (e) {
@@ -122,7 +122,7 @@ const adminUpdateContrib = async (req, res) => {
   try {
     const {
       params: { id },
-      body: { email, dogName, name, ...dataCont },
+      body: { email, nameDog, name, phone, idUser, idDog, ...dataCont },
     } = req;
 
     // console.log(req.body)
@@ -139,12 +139,12 @@ const adminUpdateContrib = async (req, res) => {
 
     res.json({
       data: {
-        user: user.name,
-        dog: dog.name,
-        idUser: user._id || null,
-        idDog: dog._id || null,
-        phone: user.phone || "",
-        email: user.email || "",
+        name: user.name,
+        nameDog: dog.name,
+        idUser: user._id || undefined,
+        idDog: dog._id || undefined,
+        phone: user.phone || " ",
+        email: user.email || " ",
         ...data,
       },
     });
@@ -160,9 +160,9 @@ const adminCreateContrib = async (req, res) => {
     const data = req.body;
     console.log(data);
 
-    const { email, dogName, type, name, ...dataContibution } = data;
+    const { email, nameDog, type, name, ...dataContibution } = data;
 
-    // console.log(email); console.log(dogName);  console.log(dataContibution);
+    // console.log(email); console.log(nameDog);  console.log(dataContibution);
 
     let newCertificate = {},
       certificateSee = {},
@@ -171,14 +171,14 @@ const adminCreateContrib = async (req, res) => {
       rol = [],
       myGodParent = [];
 
-    if (dogName) {
-      myDog = await dogModel.findOne({ name: dogName });
+    if (nameDog) {
+      myDog = await dogModel.findOne({ name: nameDog });
     }
     console.log(myDog);
 
     if (email) {
       userDb = (await usersModel.findOne({ email: email })) || undefined;
-      console.log("linea 164", userDb);
+      console.log("linea 169", userDb);
       console.log(email);
       if (userDb === undefined) {
         if (name) {
@@ -188,9 +188,9 @@ const adminCreateContrib = async (req, res) => {
         }
       }
     }
-    console.log("linea 171", userDb);
+    console.log("linea 178", userDb);
 
-    if (!dogName) {
+    if (!nameDog) {
       if (!email) {
         newCertificate = await contributionsModel.create({
           type,
@@ -221,14 +221,19 @@ const adminCreateContrib = async (req, res) => {
           ...dataContibution,
         });
 
-        if (userDb.hasOwnProperty("roles")) {
-          rol = userDb.roles.find((r) => r === "sponsor") || "";
-        }
-        if (!userDb.hasOwnProperty("roles")) userDb.roles = [];
+        rol = userDb.roles?.find((r) => r === "sponsor") || undefined;
+        userDb.roles = userDb.roles || [];
         if (!rol || rol !== "sponsor")
           userDb.roles = [...userDb.roles, "sponsor"];
         userDb.contribution = [...userDb.contribution, newCertificate._id];
-        await userDb.save();
+        // await userDb.save();
+        await usersModel.findByIdAndUpdate(
+          { _id: userDb._id },
+          { contribution: userDb.contribution, roles: userDb.roles },
+          {
+            returnOriginal: false,
+          }
+        );
       }
       if (type === "donación" && email) {
         newCertificate = await contributionsModel.create({
@@ -236,15 +241,21 @@ const adminCreateContrib = async (req, res) => {
           user: userDb._id,
           ...dataContibution,
         });
+        console.log("linea 77");
 
-        if (userDb.hasOwnProperty("roles")) {
-          rol = userDb.roles.find((r) => r === "donante") || "";
-        }
-        if (!userDb.hasOwnProperty("roles")) userDb.roles = [];
+        rol = userDb.roles?.find((r) => r === "donante") || undefined;
+        userDb.roles = userDb.roles || [];
         if (!rol || rol !== "donante")
           userDb.roles = [...userDb.roles, "donante"];
         userDb.contribution = [...userDb.contribution, newCertificate._id];
-        await userDb.save();
+        // await userDb.save();
+        await usersModel.findByIdAndUpdate(
+          { _id: userDb._id },
+          { contribution: userDb.contribution, roles: userDb.roles },
+          {
+            returnOriginal: false,
+          }
+        );
       }
 
       certificateSee = await contributionsModel
@@ -259,14 +270,14 @@ const adminCreateContrib = async (req, res) => {
           idUser: user._id,
           phone: user.phone || "",
           email: user.email || "",
-          dog: "",
+          nameDog: "",
           idDog: null,
           ...dataCertificate,
         },
       });
     }
 
-    if (email && dogName && type === "padrinazgo") {
+    if (email && nameDog && type === "padrinazgo") {
       newCertificate = await contributionsModel.create({
         user: userDb._id,
         dog: myDog._id,
@@ -275,23 +286,34 @@ const adminCreateContrib = async (req, res) => {
       });
       console.log(newCertificate);
 
-      if (userDb.hasOwnProperty("roles")) {
-        rol = userDb.roles.find((r) => r === "padrino") || "";
-      }
-      if (!userDb.hasOwnProperty("roles")) userDb.roles = [];
+      rol = userDb.roles?.find((r) => r === "padrino") || undefined;
+      userDb.roles = userDb.roles || [];
       if (!rol || rol !== "padrino")
         userDb.roles = [...userDb.roles, "padrino"];
       userDb.contribution = [...userDb.contribution, newCertificate._id];
-      await userDb.save();
+      // await userDb.save();
+      await usersModel.findByIdAndUpdate(
+        { _id: userDb._id },
+        { contribution: userDb.contribution, roles: userDb.roles },
+        {
+          returnOriginal: false,
+        }
+      );
 
-      if (myDog.hasOwnProperty("myGodParent")) {
-        myGodParent =
-          myDog.godparents.find((p) => p === userDb._id) || undefined;
-      }
+      myGodParent =
+        myDog.godparents?.find((p) => p === userDb._id) || undefined;
+      myDog.godparents = myDog.godparents || [];
       if (!myGodParent || myGodParent !== userDb._id) {
         myDog.godparents = [...myDog.godparents, userDb._id];
       }
-      await myDog.save();
+      // await myDog.save();
+      await dogModel.findByIdAndUpdate(
+        { _id: myDog._id },
+        { godparents: myDog.godparents },
+        {
+          returnOriginal: false,
+        }
+      );
 
       certificateSee = await contributionsModel
         .findById({ _id: newCertificate._id })
@@ -310,7 +332,7 @@ const adminCreateContrib = async (req, res) => {
           idUser: user._id,
           phone: user.phone || "",
           email: user.email || "",
-          dog: dog.name,
+          nameDog: dog.name,
           idDog: dog._id,
           ...dataCertificate,
         },

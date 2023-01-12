@@ -3,7 +3,9 @@ const { volunteersModel, usersModel } = require("../models");
 const CreateVolunteer = async (req, res) => {
   try {
     const {
-      body: { name, email, phone, birthday, ...data }
+      body: { name, email, phone, birthday,
+              //  pass, _id, roles, 
+               ...data }
     } = req; 
 
     //buscar usuario
@@ -21,8 +23,12 @@ const CreateVolunteer = async (req, res) => {
         ...data,
       });
 
-      newUser.volunteer = volunteer._id; // id data volunteer
-      await newUser.save();
+      // newUser.volunteer = volunteer._id; // id data volunteer
+      // await newUser.save();
+      await usersModel.findByIdAndUpdate({ _id: newUser._id }, 
+        { volunteer: volunteer._id }, {
+        returnOriginal: false,
+      });
 
       const newVolunteer = await volunteersModel.findById({ _id: volunteer._id })
       .populate("user", {
@@ -55,8 +61,13 @@ const CreateVolunteer = async (req, res) => {
         ...data,
       });
 
-      userDb.volunteer = newVolunteer._id; // id data volunteer
-      await userDb.save();
+      // userDb.volunteer = newVolunteer._id; // id data volunteer
+      // await userDb.save();
+      await usersModel.findByIdAndUpdate({ _id: userDb._id }, 
+        { volunteer: newVolunteer._id }, {
+        returnOriginal: false,
+      });
+
 
       const volunteerDb = await volunteersModel.findById({ _id: newVolunteer._id })
       .populate("user", {

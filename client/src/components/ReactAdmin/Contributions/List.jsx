@@ -2,9 +2,9 @@ import {
   List,
   Datagrid,
   TextField,
-  EditButton,
+  // EditButton,
   ShowButton,
-  DeleteWithConfirmButton,
+  // DeleteWithConfirmButton,
   Pagination,
   useGetList,
   DateField,
@@ -25,11 +25,12 @@ const ContribList = () => {
     >
       <Datagrid bulkActionButtons={false}>
         <DateField source="date" label="Fecha" />
+        <TextField source="name" label="Contribuyente" />
         <TextField source="nameDog" label="Beneficiado/a" />
         <TextField source="type" label="Tipo" />
         <TextField source="total" label="Monto" />
-        <EditButton basepath="/api/admin/contributions" />
-        <DeleteWithConfirmButton basepath="/api/admin/contributions" />
+        {/* <EditButton basepath="/api/admin/contributions" />
+        <DeleteWithConfirmButton basepath="/api/admin/contributions" /> */}
         <ShowButton />
       </Datagrid>
     </List>
