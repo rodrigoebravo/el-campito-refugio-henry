@@ -3,10 +3,10 @@ import check from "../../assets/img/icons/check.gif";
 // import { Link } from "react-router-dom";
 import styles from "./Pay.module.css"
 const Pay = () => {
-  // function goHome() {
-  //   window.location = process.env.FRONT || "http://localhost:3000/";
-  // }
-  // setTimeout(goHome, 3000);
+  function goHome() {
+    window.location = process.env.FRONT || "http://localhost:3000/";
+  }
+  setTimeout(goHome, 3000);
 
   
   return (

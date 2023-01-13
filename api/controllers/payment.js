@@ -102,14 +102,17 @@ const captureOrder = async (req, res) => {
     let obj = {
       detail: "Este pago fue realizado correctamente",
       name: info.payer.name.given_name + " " + info.payer.name.surname,
+      nameDog: "Batman",
       email: info.payer.email_address,
-      total: pago, // pago es el valor que ingresa desde body
+      total: 2500, // pago es el valor que ingresa desde body
       method: "paypal",
+      type: "padrinazgo"
     };
     console.log(obj, "soy obj");
 
     
-    adminCreateContrib(obj)
+    let payDb = adminCreateContrib(obj);
+    
 
     // res.json(response.data)
     //respuesta de la data en json

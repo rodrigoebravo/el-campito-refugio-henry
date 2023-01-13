@@ -79,7 +79,7 @@ const adminUpdatePress = async (req, res) => {
       params: { id },
       body,
     } = req;
-
+    console.log(body);
     const press = await pressModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
     });

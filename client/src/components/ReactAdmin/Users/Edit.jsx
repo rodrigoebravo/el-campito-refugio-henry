@@ -40,7 +40,7 @@ const UsersEdit = () => {
             </Grid>
             <Grid item lg={3} style={{ textAlign: "center" }}>
               <ImageField
-                source="images.src"
+                source="image.src"
                 sx={{
                   "& img": {
                     maxWidth: 1000,

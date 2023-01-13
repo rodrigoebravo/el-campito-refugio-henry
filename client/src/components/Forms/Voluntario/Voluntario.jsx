@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom'; // version 5.2.0
 import styles from "./Voluntario.module.css";
 // import Navbar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
@@ -8,6 +9,8 @@ import { postVolunteer } from "../../../redux/actions/action";
 
 const Voluntario = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
+
+  let history = useHistory();
 
   const [storage, setStorage] = React.useState({
     name: "undefined",
@@ -17,9 +20,7 @@ const Voluntario = (props) => {
   });
 
   // React.useEffect(()=>{
-  // },[user]);
-
-  console.log(storage);
+  // },[user]);  
 
   const {
     register,
@@ -47,6 +48,7 @@ const Voluntario = (props) => {
     alert("form create successfuly!");
     // e.target.reset();
     // window.location.reload();
+    history.push ('./');
   };
 
   return (
@@ -67,6 +69,7 @@ const Voluntario = (props) => {
                 value={
                   !storage.name ||
                   storage.name === "undefined" ||
+                  storage.birthday === "requerir" ||
                   storage.name === ""
                     ? undefined
                     : storage.name
@@ -112,6 +115,7 @@ const Voluntario = (props) => {
                 value={
                   !storage.phone ||
                   storage.phone === "undefined" ||
+                  storage.phone === "requerir" ||
                   storage.phone === ""
                     ? undefined
                     : storage.phone
@@ -137,6 +141,7 @@ const Voluntario = (props) => {
                 value={
                   !storage.birthday ||
                   storage.birthday === "undefined" ||
+                  storage.birthday === "requerir" ||
                   storage.birthday.includes("2022") ||
                   storage.birthday.includes("2023") ||
                   storage.birthday === ""
@@ -148,7 +153,7 @@ const Voluntario = (props) => {
                 min="1923-01-01"
                 {...register("birthday", { required: true })}
               />
-              {errors.date?.type === "required" && (
+              {errors.birthday?.type === "required" && (
                 <p>Fecha de nacimiento requerida</p>
               )}
             </div>
@@ -161,7 +166,7 @@ const Voluntario = (props) => {
                 className={styles.input}
                 {...register("area", { required: true })}
               />
-              {errors.location?.type === "required" && (
+              {errors.area?.type === "required" && (
                 <p>Localidad requerida</p>
               )}
             </div>
@@ -282,6 +287,9 @@ const Voluntario = (props) => {
                 />
                 <p>Sábado</p>
               </div>
+              {errors.days?.type === "required" && (
+                <p>Elija, al menos, un día</p>
+              )}
             </div>
 
             <div className={styles.item}>
@@ -301,9 +309,11 @@ const Voluntario = (props) => {
 
             <div className={styles.item}>
               <label className={styles.label}>
-                ¿Qué crees que podes sumar personalmente? (No es una pregunta
-                sobre tu profesión, sino sobre vos)
+                ¿Qué crees que podes sumar personalmente?
               </label>
+              <h4> 
+                - No es una pregunta sobre tu profesión, sino sobre vos - 
+              </h4>
               <input
                 type="text"
                 className={styles.input}

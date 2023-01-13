@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom'; // version 5.2.0
 import { useForm } from "react-hook-form";
 import styles from "./Adopcion.module.css";
 import Footer from "../../Footer/Footer";
@@ -8,7 +9,11 @@ import { postAdoption } from "../../../redux/actions/action";
 const Adopcion = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
 
-  const idDog = props.match.params._id;
+  let history = useHistory();
+
+  const nameDog = props.location.pathname.split("/").pop(); 
+  
+  console.log(props);
 
   const [storage, setStorage] = React.useState({
     name: "undefined",
@@ -48,6 +53,7 @@ const Adopcion = (props) => {
     alert("form create successfuly!");
     // window.location.reload();
     // e.target.reset();
+    history.push ('./adoptar');
   };
 
   return (
@@ -62,15 +68,15 @@ const Adopcion = (props) => {
           <h2 className={styles.h3form}>Formulario de Adopción</h2>
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <div className={styles.item}>
-              <label className={styles.label}>ID del Camperito</label>
+              <label className={styles.label}>Nombre del Camperito</label>
               <input
-                value={!idDog ? undefined : idDog}
+                value={!nameDog ? undefined : nameDog}
                 type="text"
                 className={styles.input}
-                {...register("idDog", { required: true })}
+                {...register("nameDog", { required: true })}
               />
               {errors.name?.type === "required" && (
-                <p>ID del Camperito necesario</p>
+                <p>Nombre del Camperito necesario</p>
               )}
             </div>
 
@@ -80,6 +86,7 @@ const Adopcion = (props) => {
                 value={
                   !storage.name ||
                   storage.name === "undefined" ||
+                  storage.name === "requerir" ||
                   storage.name === ""
                     ? undefined
                     : storage.name
@@ -100,6 +107,7 @@ const Adopcion = (props) => {
                 value={
                   !storage.birthday ||
                   storage.birthday === "undefined" ||
+                  storage.birthday === "requerir" ||
                   storage.birthday.includes("2022") ||
                   storage.birthday.includes("2023") ||
                   storage.birthday === ""
@@ -111,7 +119,7 @@ const Adopcion = (props) => {
                 min="1923-01-01"
                 {...register("birthday", { required: true })}
               />
-              {errors.date?.type === "required" && (
+              {errors.birthday?.type === "required" && (
                 <p>Fecha de nacimiento requerida</p>
               )}
             </div>
@@ -147,6 +155,7 @@ const Adopcion = (props) => {
                 value={
                   !storage.phone ||
                   storage.phone === "undefined" ||
+                  storage.phone === "requerir" ||
                   storage.phone === ""
                     ? undefined
                     : storage.phone
@@ -158,10 +167,10 @@ const Adopcion = (props) => {
                   pattern: /^\d{3}\d{3}\d{4}$/,
                 })}
               />
-              {errors.telephone?.type === "required" && (
+              {errors.phone?.type === "required" && (
                 <p>Número de telefono requerido</p>
               )}
-              {errors.telephone?.type === "pattern" && (
+              {errors.phone?.type === "pattern" && (
                 <p>El numero ingresado es invalido</p>
               )}
             </div>
@@ -296,7 +305,7 @@ const Adopcion = (props) => {
                 placeholder="Tu respuesta"
                 {...register("reason", { required: true })}
               />
-              {errors.expatiate?.type === "required" && (
+              {errors.reason?.type === "required" && (
                 <p>haga, al menos, un breve comentario</p>
               )}
             </div>
@@ -325,7 +334,7 @@ const Adopcion = (props) => {
                 placeholder="Tu respuesta"
                 {...register("events", { required: true })}
               />
-              {errors.expatiate?.type === "required" && (
+              {errors.events?.type === "required" && (
                 <p>haga, al menos, un breve comentario</p>
               )}
             </div>
@@ -515,7 +524,7 @@ const Adopcion = (props) => {
 
             <div className={styles.item}>
               <label className={styles.label}>
-                ¿Posee espacio al aire libre
+                ¿Posee espacio al aire libre?
               </label>
               <div className={styles.checkboxContainer}>
                 <input

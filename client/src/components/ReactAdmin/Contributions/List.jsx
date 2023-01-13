@@ -3,8 +3,8 @@ import {
   Datagrid,
   TextField,
   DateField,
-  EditButton,
-  // ShowButton,
+  // EditButton,
+  ShowButton,
   // DeleteWithConfirmButton,
 } from "react-admin";
 
@@ -19,9 +19,9 @@ const ContribList = (props) => {
         <TextField source="type" label="Tipo" />
         <TextField source="nameDog" label="Beneficiado/a" />
         
-        <EditButton basepath="/api/admin/contributions" />
+        {/* <EditButton basepath="/api/admin/contributions" /> */}
         {/* <DeleteWithConfirmButton basepath="/api/admin/contributions" /> */}
-        {/* <ShowButton /> */}
+        <ShowButton />
       </Datagrid>
     </List>
   );

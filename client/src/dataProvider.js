@@ -67,10 +67,10 @@ const dataProvider = {
   update: async (resource, params) => {
     switch (resource) {
       case "api/admin/users":
-        if (params.data.image === null) params.data.image = "";
-        else if (params.data.image.hasOwnProperty("rawFile"))
+        if (params.data.image) {
+          if (params.data.image.hasOwnProperty("rawFile"))
           params.data.image = await pushCloudinary(params.data.image);
-        else params.data.image = params.data.image.src;
+          else params.data.image = params.data.image.src;}
         break;
 
       case "api/admin/dogs":
@@ -90,40 +90,34 @@ const dataProvider = {
         }
         break;
       case "api/admin/interfaces":
-        if (params.data.imgVoluntarios === null)
-          params.data.imgVoluntarios = "";
-        else if (params.data.imgVoluntarios.hasOwnProperty("rawFile"))
-          params.data.imgVoluntarios = await pushCloudinary(
-            params.data.imgVoluntarios
-          );
-        else params.data.imgVoluntarios = params.data.imgVoluntarios.src;
-
-        if (params.data.imgNosotros === null) params.data.imgNosotros = "";
-        else if (params.data.imgNosotros.hasOwnProperty("rawFile"))
-          params.data.imgNosotros = await pushCloudinary(
-            params.data.imgNosotros
-          );
-        else params.data.imgVoluntarios = params.data.imgVoluntarios.src;
-
+        if (params.data.imgVoluntarios) {
+          if (params.data.imgVoluntarios.rawFile) {
+          params.data.imgVoluntarios = await pushCloudinary(params.data.imgVoluntarios )
+         }  else if (params.data.imgVoluntarios.index) {
+          params.data.imgVoluntarios = params.data.imgVoluntarios.src
+         } else { params.data.imgVoluntarios = params.data.imgVoluntarios.src };
+        };
+        if (params.data.imgNosotros) {        
+         if ( params.data.imgNosotros.rawFile) {
+          params.data.imgNosotros = await pushCloudinary(params.data.imgNosotros)
+        } else if (params.data.imgNosotros.index) { 
+          params.data.imgNosotros = params.data.imgNosotros.src 
+        } else { params.data.imgNosotros = params.data.imgNosotros.src };
+        };
         if (params.data.slider.length > 0) {
-          let newSlider = [];
-          params.data.slider.forEach(async (e) => {
-            if (e.hasOwnProperty("rawFile")) {
-              e = await pushCloudinary(e);
-            } else {
-              e = e.src;
-            }
-            newSlider.push(e);
-          });
-          params.data.slider = newSlider;
+          const oldImages = params.data.slider.filter((obj) => obj.index);
+          const urlsOld = oldImages.map((img) => img.src);
+          const newImg = params.data.slider.filter((img) => img.rawFile);
+          const urlNew = await pushCloudinary(newImg);
+          params.data.slider = [...urlsOld, ...urlNew];
         }
 
         break;
       case "api/admin/press":
-        if (params.data.img === null) params.data.img = "";
-        else if (params.data.img.hasOwnProperty("rawFile"))
+        if (params.data.img === null)  {  params.data.img = "" 
+        } else if (params.data.img.hasOwnProperty("rawFile"))
           params.data.img = await pushCloudinary(params.data.img);
-        else params.data.img = params.data.img.src;
+        else {params.data.img = params.data.img.src};
         break;
       default:
         break;

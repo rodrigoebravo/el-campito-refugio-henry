@@ -42,6 +42,7 @@ const InterfacesEdit = () => {
             fullWidth
             multiline
           />
+          
           <ImageInput source="imgNosotros" label="Fótografía en Nosotros">
             <ImageField source="src" title="title" />
           </ImageInput>

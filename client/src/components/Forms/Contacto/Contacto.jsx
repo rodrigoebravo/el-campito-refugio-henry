@@ -1,13 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "./Contacto.module.css";
+import { postContacto } from "../../../redux/actions/action";
+import { useDispatch } from "react-redux";
+
 
 const Contacto = () =>{
     
     const { register, handleSubmit, formState:{ errors } } = useForm();
 
+    const dispatch = useDispatch();
+
     const onSubmit = (data) => {
-        console.log(data)
+        dispatch(postContacto(data));
     }
      
     return(
@@ -17,7 +22,7 @@ const Contacto = () =>{
                     <label className={styles.label}>Nombre y Apellido</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
                         {...register('fullName', {required: true })} />
-                    {errors.name?.type === 'required' && <p>Ingrese su nombre</p>}                    
+                    {errors.fullName?.type === 'required' && <p>Ingrese su nombre</p>}                    
                 </div>
                 
                 <div className = {styles.item}>
@@ -70,7 +75,7 @@ const Contacto = () =>{
                     <label className={styles.label}>Cuéntenos !!! Su consulta es importante para nosotros 😊 !!</label>
                     <input type="text" className={styles.input} placeholder="Tu respuesta"
                         {...register('consulta', {required: true })} />
-                    {errors.description?.type === 'required' && <p>Ingrese su nombre</p>}                    
+                    {errors.consulta?.type === 'required' && <p>Ingrese su nombre</p>}                    
                 </div>
 
                 <input type="submit" value="Enviar" className = {styles.submit}/>
