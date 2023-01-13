@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
 import homeimg from "../../assets/img/homeimg.jpg";
-import styles from "./Home.module.css";
-import Footer from "../Footer/Footer";
-import { useAuth0 } from "@auth0/auth0-react";
-import ModalLogin from "../ModalLogin/ModalLogin";
-import ModalRegister from "../ModalRegister/ModalRegister";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsersEmail } from "../../redux/actions/action";
+import { useAuth0 } from "@auth0/auth0-react";
+import BarraDeNavegacion from "../BarraDeNavegacion/BarraDeNavegacion";
+// import homeimg from "../../assets/img/homeimg.jpg";
+// import { Slide,Slideshow } from "../Slider/Slider";
+// import {getSlider} from "../../redux/actions/actions"
+import styles from "./Home.module.css";
+import Footer from "../Footer/Footer";
+import ModalLogin from "../ModalLogin/ModalLogin";
+import ModalRegister from "../ModalRegister/ModalRegister";
 
 const Home = () => {
   const { user } = useAuth0();
+  // const imagenes = useSelector((state) => state.slider);
   const dispatch = useDispatch();
   const [userGoogle, setUserGoogle] = useState();
   const usersEmail = useSelector((state) => state.userEmail);
@@ -23,7 +27,7 @@ const Home = () => {
     dispatch(getUsersEmail());
     // return () => {
     setUserGoogle(user?.email);
-
+    // dispatch(getSlider());
     if (userGoogle) {
       let info = usersEmail.includes(userGoogle);
       // console.log(datass);
@@ -60,7 +64,7 @@ const Home = () => {
   //     let data =  serUserGoogle(userType)
 
   // })
-  console.log(localStore)
+  console.log(localStore);
 
   return (
     <div className={styles.container}>
@@ -92,6 +96,85 @@ const Home = () => {
               className={styles.imgHome}
               alt="Perro con humano"
             />
+            {/* aca va el slider */}
+            {/* <main>
+              <Slideshow
+                controles={true}
+                autoplay={true}
+                velocidad="2000"
+                intervalo="3000"
+              >
+                <Slide>
+                  <a href="https://www.instagram.com/refugioelcampito/">
+                    <img src={imagenes[0]} alt="" />
+                  </a>
+                </Slide>
+                {imagenes[1] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[1]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+                {imagenes[2] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[2]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+                {imagenes[3] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[3]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+                {imagenes[4] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[4]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+                {imagenes[5] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[5]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+                {imagenes[6] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[6]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+                {imagenes[7] ? (
+                  <Slide>
+                    <a href="https://www.instagram.com/refugioelcampito/">
+                      <img src={imagenes[7]} alt="" />
+                    </a>
+                  </Slide>
+                ) : (
+                  <></>
+                )}
+              </Slideshow>
+            </main> */}
+            {/* aca termino el slider */}
           </article>
         </section>
         <section className={styles.boxContainer}>

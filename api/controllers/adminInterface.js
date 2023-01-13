@@ -81,9 +81,20 @@ const adminUpdateInterface = async (req, res) => {
       body,
     } = req;
 
+    let obj = {
+      imgVoluntarios: body.imgVoluntarios,
+      voluntarioText: body.voluntarioText,
+      escolarText: body.escolarText,
+      visitasText: body.visitasText,
+      colaboraText: body.colaboraText,
+      imgNosotros: body.imgNosotros,
+      homeText: body.homeText,
+      slider: body.slider
+    };
+
     const interface = await interfacesModel.findByIdAndUpdate(
       { _id: id },
-      body,
+      obj,
       {
         returnOriginal: false,
       }

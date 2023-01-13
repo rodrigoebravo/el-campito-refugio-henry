@@ -14,9 +14,9 @@ import PressEdit from "./Press/Edit";
 import PressList from "./Press/List";
 // Contribution
 import ContribCreate from "./Contributions/Create";
-import ContribEdit from "./Contributions/Edit";
+// import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
-// import ContribShow from "./Contributions/Show";
+import ContribShow from "./Contributions/Show";
 // import VoluntShow from "./Volunteers/Show";
 
 import VoluntEdit from "./Volunteers/Edit";
@@ -72,8 +72,8 @@ const AdminIndex = () => {
         name="api/admin/contributions"
         list={ContribList}
         create={ContribCreate}
-        edit={ContribEdit}
-        // show={ContribShow}
+        // edit={ContribEdit}
+        show={ContribShow}
         icon={VolunteerActivismIcon}
         options={{ label: "Contribuciones" }}
       />

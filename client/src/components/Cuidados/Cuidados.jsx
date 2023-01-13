@@ -34,7 +34,7 @@ const Cuidados = () => {
                 </p>
             </section>
         </div>
-        <section className={styles.boxContainer}>
+        {/* <section className={styles.boxContainer}>
             <div className={styles.box}>
                 <img src={imgVoluntario2} className={styles.imgCuidados} alt="" />
             </div>
@@ -59,7 +59,7 @@ const Cuidados = () => {
             <div className={styles.box}>
                 <img src={imgVoluntario9} alt=""  className={styles.imgCuidados}/>
             </div>
-        </section>
+        </section> */}
         <div>
          <section className={styles.sectionCuidados}>
                 <h2 className={styles.h2cuidados}>LOS DISCAS</h2>

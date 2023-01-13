@@ -93,7 +93,7 @@
   font-weight: bold;
   color: #444445;
 }
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .div {
     margin: 1rem;
     padding: 0px;
@@ -108,7 +108,7 @@
     margin-bottom: 10px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 428px) {
   .conocenosContenedor,.div{
     margin:0px;
     margin-top:30px;

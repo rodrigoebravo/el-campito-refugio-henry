@@ -222,3 +222,14 @@ export function dataProfile(id) {
     return dataProfile;
   };
 }
+
+// export function sendMail(emailData) {
+//   return async function (req, res) {
+//     const recoveryEmail = await axios.post(
+//       "http://localhost:3001/api/password/"
+//     );
+//     console.log(recoveryEmail);
+//   };
+//   alert("Se envio un correo para recuperar tu cuenta.");
+//   window.location = "http://localhost:3000/";
+// }

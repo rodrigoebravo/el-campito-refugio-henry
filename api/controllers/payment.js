@@ -102,20 +102,35 @@ const captureOrder = async (req, res) => {
 
     console.log(response.data);
     let info = response.data;
+    // let obj = {
+    //   // detail:
+    //   //   (names && `Este pago fue realizado correctamente a ${names}`|| 
+    //   //   "Este pago fue realizado correctamente"),
+    //   detail: "Este pago fue realizado correctamente",
+    //   name: info.payer.name.given_name + " " + info.payer.name.surname,
+    //   email: info.payer.email_address,
+    //   total: pago, // pago es el valor que ingresa desde body
+    //   method: "paypal",
+    // };
+    // console.log(obj, "soy obj");
+
+    
+    // adminCreateContrib(obj)
+    // let aux = {}
+
     let obj = {
-      // detail:
-      //   (names && `Este pago fue realizado correctamente a ${names}`|| 
-      //   "Este pago fue realizado correctamente"),
       detail: "Este pago fue realizado correctamente",
       name: info.payer.name.given_name + " " + info.payer.name.surname,
+      nameDog: names,
       email: info.payer.email_address,
       total: pago, // pago es el valor que ingresa desde body
       method: "paypal",
+      type: (names && "padrinazgo" || "donación")
     };
     console.log(obj, "soy obj");
 
     
-    adminCreateContrib(obj)
+    let payDb = adminCreateContrib(obj);
 
     // res.json(response.data)
     //respuesta de la data en json
