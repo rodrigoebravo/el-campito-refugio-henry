@@ -1,7 +1,7 @@
 const linkPreviewGenerator = require("link-preview-generator");
-const { pressModel } = require("../models");
+const { escolarModel } = require("../models");
 
-const adminPress = async (req, res) => {
+const adminEscolar = async (req, res) => {
   try {
     const range = JSON.parse(req.query.range);
     const filtro = JSON.parse(req.query.filter);
@@ -11,24 +11,23 @@ const adminPress = async (req, res) => {
 
     let find = {
       ...filtro,
-      media: new RegExp(filtro.media, "i"),
-      type: new RegExp(filtro.type, "i"),
+      category: new RegExp(filtro.category, "i"),
+      date: new RegExp(filtro.date, "i"),
       title: new RegExp(filtro.title, "i"),
     };
 
-    const todos = await pressModel.find(find);
-    const press = await pressModel
+    const todos = await escolarModel.find(find);
+    const escolar = await escolarModel
       .find(find)
       .skip(rango[0])
       .limit(rango[1] + 1)
       .sort([["date", orden]]);
 
-    let newPress = [];
-    press.forEach((obj, index) => {
+    let newEscolar = [];
+    escolar.forEach((obj, index) => {
       let newObj = {
         _id: obj._id,
-        media: obj.media || "",
-        type: obj.type || "",
+        category: obj.category || "",
         link: obj.link || "",
         date: obj.date?.toJSON().slice(0, 10) || "",
         title: obj.title || "",
@@ -37,90 +36,97 @@ const adminPress = async (req, res) => {
         favicon: obj.favicon || "",
         isDelete: obj.isDelete,
       };
-      newPress.push(newObj);
+      newEscolar.push(newObj);
     });
 
     res.set("Content-Range", todos.length);
-    res.status(201).send(newPress);
+    res.status(201).send(newEscolar);
   } catch (e) {
     res.status(404).send({ error: e });
   }
 };
 
-const adminPressId = async (req, res) => {
+const adminEscolarId = async (req, res) => {
   try {
     const {
       params: { id },
     } = req;
 
-    const press = await pressModel.findById({ _id: id });
+    const escolar = await escolarModel.findById({ _id: id });
 
-    let newPress = {
-      _id: press._id,
-      media: press.media,
-      type: obj.type || "",
-      link: press.link || "",
-      date: press.date?.toJSON().slice(0, 10) || "",
-      title: press.title || "",
-      description: press.description || "",
-      img: { src: press.img, index: 0 } || { src: "", index: 0 },
-      favicon: press.favicon || "",
-      isDelete: press.isDelete,
+    let newEscolar = {
+      _id: escolar._id,
+      category: escolar.category,
+      link: escolar.link || "",
+      date: escolar.date?.toJSON().slice(0, 10) || "",
+      title: escolar.title || "",
+      description: escolar.description || "",
+      img: { src: escolar.img, index: 0 } || { src: "", index: 0 },
+      favicon: escolar.favicon || "",
+      isDelete: escolar.isDelete,
     };
-    // console.log(newPress);
-    res.json(newPress);
+    // console.log(newEscolar);
+    res.json(newEscolar);
   } catch (e) {
     res.status(404).send({ error: e });
   }
 };
 
-const adminUpdatePress = async (req, res) => {
+const adminUpdateEscolar = async (req, res) => {
   try {
     const {
       params: { id },
       body,
     } = req;
 
-    const press = await pressModel.findByIdAndUpdate({ _id: id }, body, {
+    const escolar = await escolarModel.findByIdAndUpdate({ _id: id }, body, {
       returnOriginal: false,
     });
 
-    res.json({ data: press });
+    res.json({ data: escolar });
   } catch (e) {
     res.status(404).send({ error: e });
   }
 };
 
-const adminCreatePress = async (req, res) => {
+const adminCreateEscolar = async (req, res) => {
   try {
-    const { date, media, link, type } = req.body;
+    const { date, category, link, type } = req.body;
 
     let previewData = {};
 
     if (link) {
       previewData = await linkPreviewGenerator(link);
     }
-     // console.log(typeof previewData);
 
-    const press = await pressModel.create({
+    // console.log({
+    //   date,
+    //   category,
+    //   link,
+    //   ...previewData
+    // })
+
+    // console.log(typeof previewData);
+
+    const escolar = await escolarModel.create({
       date,
-      media,
+      category,
       link,
       type,
       ...previewData,
     });
 
-    res.status(200).send({ data: press });
+    res.status(200).send({ data: escolar });
   } catch (e) {
     res.send({ error: e });
   }
 };
 
-const adminDeletePress = async (req, res) => {
+const adminDeleteEscolar = async (req, res) => {
   try {
     const id = req.params.id;
 
-    const pressDelete = await pressModel.findByIdAndUpdate(
+    const escolarDelete = await escolarModel.findByIdAndUpdate(
       { _id: id },
       { isDelete: true },
       {
@@ -128,13 +134,13 @@ const adminDeletePress = async (req, res) => {
       }
     );
 
-    res.status(201).send(pressDelete);
+    res.status(201).send(escolarDelete);
   } catch (e) {
     res.status(404).send({ error: e });
   }
 };
 
-// const adminDeletePress = async (req, res) => {
+// const adminDeleteEscolar = async (req, res) => {
 //   try {
 //     const id = req.params.id;
 //     const {
@@ -142,7 +148,7 @@ const adminDeletePress = async (req, res) => {
 //     } = req;
 
 //     if (!filter) {
-//       let pressDelete = await pressModel.findByIdAndUpdate(
+//       let escolarDelete = await escolarModel.findByIdAndUpdate(
 //         { _id: id },
 //         { isDelete: true },
 //         {
@@ -150,34 +156,34 @@ const adminDeletePress = async (req, res) => {
 //         }
 //       );
 
-//       res.status(201).send(pressDelete);
+//       res.status(201).send(escolarDelete);
 //     } else {
 //       let { id } = JSON.parse(filter);
-//       let listDeletePress = [];
+//       let listDeleteEscolar = [];
 
-//       for (let press of id) {
-//         let presssDelete = await pressModel.findByIdAndUpdate(
-//           { _id: press },
+//       for (let escolar of id) {
+//         let escolarsDelete = await escolarModel.findByIdAndUpdate(
+//           { _id: escolar },
 //           { isDelete: true },
 //           {
 //             returnOriginal: false,
 //           }
 //         );
-//         listDeletePress.push(presssDelete);
+//         listDeleteEscolar.push(escolarsDelete);
 //       }
 
-//       res.status(200).send(listDeletePress);
-//     }   
-
+//       res.status(200).send(listDeleteEscolar);
+//     }
+       
 //   } catch (e) {
 //     res.status(404).send({ error: e });
 //   }
 // };
 
 module.exports = {
-  adminPress,
-  adminPressId,
-  adminCreatePress,
-  adminUpdatePress,
-  adminDeletePress,
+  adminEscolar,
+  adminEscolarId,
+  adminCreateEscolar,
+  adminUpdateEscolar,
+  adminDeleteEscolar,
 };

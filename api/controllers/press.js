@@ -2,7 +2,7 @@ const { pressModel } = require("../models");
 
 const getPress = async (req, res) => {
   try {
-    const press = await pressModel.find({});
+    const press = await pressModel.find({isDelete: false});
 
     res.status(201).send(press);
   } catch (e) {

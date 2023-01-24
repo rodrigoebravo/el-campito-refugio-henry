@@ -54,6 +54,14 @@ const {
   adminDeleteInterface
 } = require("../controllers/adminInterface"); 
 
+const {
+  adminEscolar,
+  adminEscolarId,
+  adminCreateEscolar,
+  adminUpdateEscolar,
+  adminDeleteEscolar
+} = require("../controllers/adminEscolar"); 
+
 
 
 
@@ -104,5 +112,12 @@ router.get("/interfaces/:id", adminInterfaceId);
 router.put("/interfaces/:id", adminUpdateInterface);
 router.post("/interfaces", adminCreateInterface);
 router.delete("/interfaces/:id", adminDeleteInterface);
+
+//------ /api/admin/escolar
+router.get("/escolar", adminEscolar);
+router.get("/escolar/:id", adminEscolarId);
+router.post("/escolar", adminCreateEscolar);
+router.put("/escolar/:id", adminUpdateEscolar);
+router.delete("/escolar/:id", adminDeleteEscolar);
 
 module.exports = router;
