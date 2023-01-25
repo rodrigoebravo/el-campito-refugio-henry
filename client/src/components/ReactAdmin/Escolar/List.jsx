@@ -10,8 +10,8 @@ import InfoIcon from "@mui/icons-material/Info";
 import Filters from "./Filters";
 import { Emptyness, exporter, Loader } from "../utils";
 
-const PressList = (props) => {
-  const { data, isLoading } = useGetList("api/admin/press", {
+const EscolarList = (props) => {
+  const { data, isLoading } = useGetList("api/admin/escolar", {
     page: 1,
     perPage: 10,
   });
@@ -27,11 +27,10 @@ const PressList = (props) => {
       >
         <Datagrid bulkActionButtons={false}>
           <TextField source="date" label="Fecha" />
-          <TextField source="media" label="Medio" />
+          <TextField source="category" label="Categoría" />
           <TextField source="title" label="Titular" />
-          <TextField source="type" label="Soporte" />
           <EditButton
-            basepath="/api/admin/press"
+            basepath="/api/admin/escolar"
             label="Ver Detalles"
             icon={<InfoIcon />}
           />
@@ -40,4 +39,4 @@ const PressList = (props) => {
     );
 };
 
-export default PressList;
+export default EscolarList;

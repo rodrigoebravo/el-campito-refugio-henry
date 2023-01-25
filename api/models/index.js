@@ -5,7 +5,8 @@ const models = {
     volunteersModel: require("./nosql/volunteers"),
     pressModel: require("./nosql/press"),
     contributionsModel: require("./nosql/contributions"),
-    interfacesModel: require("./nosql/interfaces")
+    interfacesModel: require("./nosql/interfaces"),
+    escolarModel: require("./nosql/escolar")
 
 }
 

@@ -1,34 +1,48 @@
 import { Admin, Resource } from "react-admin";
 import dataProvider from "../../dataProvider";
+
 // Dogs
 import DogsList from "./Dogs/List";
 import DogsEdit from "./Dogs/Edit";
 import DogsCreate from "./Dogs/Create";
+
 // Users
 import UsersList from "./Users/List";
 import UsersEdit from "./Users/Edit";
 import UsersCreate from "./Users/Create";
+
 // Press
 import PressCreate from "./Press/Create";
 import PressEdit from "./Press/Edit";
 import PressList from "./Press/List";
+
 // Contribution
 import ContribCreate from "./Contributions/Create";
 // import ContribEdit from "./Contributions/Edit";
 import ContribList from "./Contributions/List";
 import ContribShow from "./Contributions/Show";
-// import VoluntShow from "./Volunteers/Show";
 
+// Volunteers
+// import VoluntShow from "./Volunteers/Show";
 import VoluntEdit from "./Volunteers/Edit";
 import VoluntList from "./Volunteers/List";
+
 // Adoptions
 import AdopList from "./Adoptions/List";
 // import AdopShow from "./Adoptions/Show";
 import AdopEdit from "./Adoptions/Edit";
+
+// Escolar
+import EscolarCreate from "./Escolar/Create";
+import EscolarEdit from "./Escolar/Edit";
+import EscolarList from "./Escolar/List";
+
 // Interface
 import InterfacesEdit from "./Interfaces/Edit";
+
 // Graphs
 import Stats from "./Stats/Stats";
+
 // Icons
 import PetsIcon from "@mui/icons-material/Pets";
 import HomeIcon from "@mui/icons-material/Home";
@@ -38,6 +52,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 
 const AdminIndex = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -92,6 +107,14 @@ const AdminIndex = () => {
         // show={AdopShow}
         icon={FavoriteRoundedIcon}
         options={{ label: "Adopciones" }}
+      />
+      <Resource
+        name="api/admin/escolar"
+        list={EscolarList}
+        create={EscolarCreate}
+        edit={EscolarEdit}
+        icon={SchoolRoundedIcon}
+        options={{ label: "Campito Escolar" }}
       />
       <Resource
         name="api/admin/interfaces"
