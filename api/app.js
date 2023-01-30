@@ -45,6 +45,7 @@ app.use("/api/admin/adoptions", require("./hook/adopHook"));
 app.use("/api/admin/press", require("./hook/pressHook"));
 app.use("/api/admin/contributions", require("./hook/contribHook"));
 app.use("/api/admin/interfaces", require("./hook/interfaceHook"));
+app.use("/api/admin/escolar", require("./hook/escolarHook"));
 
 app.use("/api", require("./routers"));
 

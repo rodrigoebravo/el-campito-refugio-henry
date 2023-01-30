@@ -125,6 +125,14 @@ const dataProvider = {
           params.data.img = await pushCloudinary(params.data.img);
         else params.data.img = params.data.img.src;
         break;
+      
+      case "api/admin/escolar":
+        if (params.data.img === null) params.data.img = "";
+        else if (params.data.img.hasOwnProperty("rawFile"))
+          params.data.img = await pushCloudinary(params.data.img);
+        else params.data.img = params.data.img.src;
+        break;
+        
       default:
         break;
     }
