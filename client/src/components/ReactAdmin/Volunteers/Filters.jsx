@@ -9,6 +9,10 @@ const Filters = () => {
     <Card sx={{ order: -1, mr: 2, mt: 8, width: 280, height: 450 }}>
       <CardContent>
         <FilterLiveSearch source="name" placeholder="Buscar por nombre..." />
+        <FilterList label="Estado" icon={<AssignmentIndIcon />}>
+          <FilterListItem label="Pendiente" value={{ isPending: true }} />
+          <FilterListItem label="Aprobado" value={{ isPending: false }} />      
+        </FilterList>
         <FilterList label="Modalidad" icon={<MapsHomeWorkIcon />}>
           <FilterListItem
             label="Presencial"
@@ -20,10 +24,6 @@ const Filters = () => {
         <FilterList label="Carpooling" icon={<NoCrashIcon />}>
           <FilterListItem label="Sí" value={{ carpooling: true }} />
           <FilterListItem label="No" value={{ carpooling: false }} />
-        </FilterList>
-        <FilterList label="Condición" icon={<AssignmentIndIcon />}>
-          <FilterListItem label="Pendiente" value={{ isPending: true }} />
-          <FilterListItem label="Aprobado" value={{ isPending: false }} />
         </FilterList>
       </CardContent>
     </Card>

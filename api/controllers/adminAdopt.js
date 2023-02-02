@@ -10,8 +10,13 @@ const adminAdoptions = async (req, res) => {
     let dog = new RegExp(filtro.nameDog, "i");
     let nombre = new RegExp(filtro.nameUser, "i");
 
+    let find = {
+      ...filtro,
+      isDelete: false,
+    };
+
     const adoptions = await adoptionsModel
-      .find({ isDelete: false })
+      .find(find)  
       .populate("user dog")
       .skip(rango[0])
       .limit(rango[1] + 1);

@@ -13,6 +13,7 @@ const adminEscolar = async (req, res) => {
       ...filtro,
       category: new RegExp(filtro.category, "i"),
       title: new RegExp(filtro.title, "i"),
+      isDelete: false,
     };
 
     // const todos = await escolarModel.find(find);

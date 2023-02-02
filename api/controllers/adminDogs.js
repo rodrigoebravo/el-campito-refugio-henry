@@ -10,7 +10,7 @@ const adminDogs = async (req, res) => {
     let find = {
       ...filtro,
       name: new RegExp(filtro.name, "i"),
-      isDelete: false,
+      // isDelete: false,
     };
     let rango = [Number(range[0]), Number(range[1] - range[0])];
 
@@ -45,6 +45,7 @@ const adminDogs = async (req, res) => {
         toAdopt: obj.toAdopt || false,
         adopters: obj.adopters || [],
         godparents: obj.godparents || [],
+        isDelete: obj.isDelete || false,
       };
       newDogs.push(newObj);
     });

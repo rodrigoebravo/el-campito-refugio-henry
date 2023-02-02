@@ -114,7 +114,7 @@ const AdminIndex = () => {
         create={EscolarCreate}
         edit={EscolarEdit}
         icon={SchoolRoundedIcon}
-        options={{ label: "Campito Escolar" }}
+        options={{ label: "Educación & Conciencia" }}
       />
       <Resource
         name="api/admin/interfaces"

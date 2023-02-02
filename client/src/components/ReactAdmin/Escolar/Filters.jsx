@@ -11,7 +11,9 @@ const Filters = () => {
         <h4>Categoría</h4>       
         <FilterList label="Elegir una opción" >
           <FilterListItem label="Campito Escolar" value={{ category: "escolar" }} />
-          <FilterListItem label="Talleres, charlas y otros" value={{ category: "talleres" }} />
+          <FilterListItem label="Talleres" value={{ category: "talleres" }} />
+          <FilterListItem label="Charlas" value={{ category: "charlas" }} />
+          <FilterListItem label="Capacitaciones" value={{ category: "capacitaciones" }} />
         </FilterList>
     
       </CardContent>
