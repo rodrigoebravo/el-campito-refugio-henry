@@ -1,4 +1,4 @@
-import { FilterLiveSearch } from "react-admin";
+import { FilterLiveSearch, FilterList, FilterListItem } from "react-admin";
 import { Card, CardContent } from "@mui/material";
 
 const Filters = () => {
@@ -7,10 +7,15 @@ const Filters = () => {
       <CardContent>
         <h4>Titulo</h4>
         <FilterLiveSearch source="title" placeholder="Buscar por titular..." />
-        <h4>Categoría</h4>
-        <FilterLiveSearch source="category" placeholder="Buscar por categoría..." />
-        <h4>Fecha</h4>
-        <FilterLiveSearch source="date" placeholder="Buscar por fecha..." />
+
+        <h4>Categoría</h4>       
+        <FilterList label="Elegir una opción" >
+          <FilterListItem label="Campito Escolar" value={{ category: "escolar" }} />
+          <FilterListItem label="Talleres" value={{ category: "talleres" }} />
+          <FilterListItem label="Charlas" value={{ category: "charlas" }} />
+          <FilterListItem label="Capacitaciones" value={{ category: "capacitaciones" }} />
+        </FilterList>
+    
       </CardContent>
     </Card>
   );

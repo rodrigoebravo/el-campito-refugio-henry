@@ -10,9 +10,14 @@ const adminVolunteer = async (req, res) => {
 
     delete filtro["name"];
 
-    const todos = await volunteersModel.find(filtro);
+    let find = {
+      ...filtro,
+      isDelete: false,
+    };
+
+    // const todos = await volunteersModel.find(filtro);
     const volunteers = await volunteersModel
-      .find(filtro)
+      .find(find)
       .skip(rango[0])
       .limit(rango[1] + 1)
       .populate("user", {
@@ -45,7 +50,7 @@ const adminVolunteer = async (req, res) => {
         return response;
       });
 
-    res.set("Content-Range", todos.length);
+    // res.set("Content-Range", todos.length);
     res.status(201).send(volunteersMapping.filter((e) => nombre.test(e.name)));
   } catch (error) {
     console.log(error);
@@ -154,22 +159,16 @@ const adminDeleteVolunteer = async (req, res) => {
   try {
     const id = req.params.id;
 
-    const volunteerDelete = await volunteersModel
-      .findByIdAndUpdate({ _id: id }, { returnOriginal: false })
-      .populate("user", {
-        contribution: 0,
-        adoptions: 0,
-        isDelete: 0,
-        volunteer: 0,
-        pass: 0,
-      });
+    console.log(id);
 
-    const {
-      user: { _id, ...basicData },
-      ...dataVolun
-    } = volunteerDelete.toObject();
-
-    res.status(201).send({ idUser: _id, ...basicData, ...dataVolun });
+    const volunteerDelete = await volunteersModel.findByIdAndUpdate(
+      { _id: id },
+      { isDelete: true },
+      {
+        returnOriginal: false,
+      }
+    );
+    res.status(201).send(volunteerDelete);
   } catch (e) {
     res.status(404).send({ error: e });
   }

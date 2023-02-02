@@ -9,6 +9,7 @@ dotenv.config();
 // const pushDBusers = require("./utils/pushDBusers");
 // const { pushDBvolunteers } = require("./utils/pushDBvolunteers");
 // const pushDBpress = require("./utils/pushDBpress");
+// const pushDBescolar = require("./utils/pushEscolar")
 
 
 const PORT = process.env.PORT || 3001;
@@ -21,6 +22,7 @@ dbConnect().then((res) => {
   // pushDBusers();
   // pushDBvolunteers();
   // pushDBpress();
+  // pushDBescolar();
 
   app.listen(process.env.PORT, () => {
     print.succe("Successfully connected");

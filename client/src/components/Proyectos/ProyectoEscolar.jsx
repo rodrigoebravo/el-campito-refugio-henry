@@ -143,7 +143,7 @@ const ProyectoEscolar = () => {
             </span>
           </p>
           <button className={styles.buttonProyectoEscolar}>
-            institucional@elcampitorefugio.org
+            escolar@elcampitorefugio.org
           </button>
           <p className={styles.pProyectoEscolar}>
             <span className={styles.spanProyectoEscolar}>¡Te esperamos!</span>

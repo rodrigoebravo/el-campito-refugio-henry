@@ -12,11 +12,11 @@ const adminEscolar = async (req, res) => {
     let find = {
       ...filtro,
       category: new RegExp(filtro.category, "i"),
-      date: new RegExp(filtro.date, "i"),
       title: new RegExp(filtro.title, "i"),
+      isDelete: false,
     };
 
-    const todos = await escolarModel.find(find);
+    // const todos = await escolarModel.find(find);
     const escolar = await escolarModel
       .find(find)
       .skip(rango[0])
@@ -39,7 +39,8 @@ const adminEscolar = async (req, res) => {
       newEscolar.push(newObj);
     });
 
-    res.set("Content-Range", todos.length);
+    // res.set("Content-Range", todos.length);
+    // console.log(newEscolar); 
     res.status(201).send(newEscolar);
   } catch (e) {
     res.status(404).send({ error: e });

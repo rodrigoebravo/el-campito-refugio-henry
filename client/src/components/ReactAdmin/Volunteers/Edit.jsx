@@ -142,14 +142,10 @@ const VoluntShow = () => {
           <FormTab label="Estado">
             <BooleanInput
               source="isPending"
-              label="Estado del usuario, activo/inactivo"
+              label="Estado del voluntariado: PENDIENTE"
               sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
             />
-            <BooleanInput
-              label="Desactivado"
-              source="isDelete"
-              sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
-            />
+         
           </FormTab>
         </TabbedForm>
       </>

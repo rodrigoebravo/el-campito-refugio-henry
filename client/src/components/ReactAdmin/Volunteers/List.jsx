@@ -11,7 +11,7 @@ import {
 import InfoIcon from "@mui/icons-material/Info";
 import Filters from "./Filters";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CancelIcon from "@mui/icons-material/Cancel";
+import AdjustIcon from '@mui/icons-material/Adjust';
 import { Loader, Emptyness } from "../utils";
 
 const VoluntList = () => {
@@ -35,10 +35,11 @@ const VoluntList = () => {
         <BooleanField
           source="isPending"
           label="Condición"
-          TrueIcon={CancelIcon}
+          TrueIcon={AdjustIcon}
           FalseIcon={CheckCircleIcon}
           valueLabelTrue="Inactivo"
           valueLabelFalse="Activo"
+          sortable={false}
         />
         <EditButton
           basepath="/api/admin/volunteers"

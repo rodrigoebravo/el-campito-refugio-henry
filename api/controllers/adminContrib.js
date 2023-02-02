@@ -3,11 +3,11 @@ const { contributionsModel, usersModel, dogModel } = require("../models/index");
 const adminContrib = async (req, res) => {
   try {
     const range = JSON.parse(req.query.range);
-    const filtro = JSON.parse(req.query.filter);
+    // const filtro = JSON.parse(req.query.filter);
     let rango = [Number(range[0]), Number(range[1] - range[0])];
 
     const contributions = await contributionsModel
-      .find({ isDelete: false })
+      .find({}) //   isDelete: false 
       .populate("user dog", {
         _id: 1,
         name: 1,

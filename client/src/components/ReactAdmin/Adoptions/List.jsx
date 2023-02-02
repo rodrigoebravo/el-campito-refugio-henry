@@ -12,7 +12,7 @@ import Filters from "./Filters";
 import { Loader, Emptyness, exporter } from "../utils";
 import InfoIcon from "@mui/icons-material/Info";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CancelIcon from "@mui/icons-material/Cancel";
+import AdjustIcon from '@mui/icons-material/Adjust';
 
 const AdopList = () => {
   const { data, isLoading } = useGetList("api/admin/adoptions", {
@@ -35,9 +35,9 @@ const AdopList = () => {
         <TextField source="phone" label="Teléfono" sortable={false} />
         <BooleanField
           source="isPending"
-          label="Estado"
-          TrueIcon={CheckCircleIcon}
-          FalseIcon={CancelIcon}
+          label="Condición"
+          TrueIcon={AdjustIcon}
+          FalseIcon={CheckCircleIcon}
           valueLabelTrue="Inactivo"
           valueLabelFalse="Activo"
           sortable={false}

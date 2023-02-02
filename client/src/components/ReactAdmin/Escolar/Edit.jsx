@@ -76,6 +76,8 @@ const EscolarEdit = (props) => {
                 choices={[
                   { id: "escolar", name: "escolar" },
                   { id: "talleres", name: "talleres" },
+                  { id: "charlas", name: "charlas" },
+                  { id: "capacitaciones", name: "capacitaciones" },
                 ]}
                 
               />

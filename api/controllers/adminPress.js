@@ -14,6 +14,7 @@ const adminPress = async (req, res) => {
       media: new RegExp(filtro.media, "i"),
       type: new RegExp(filtro.type, "i"),
       title: new RegExp(filtro.title, "i"),
+      isDelete: false,
     };
 
     const todos = await pressModel.find(find);

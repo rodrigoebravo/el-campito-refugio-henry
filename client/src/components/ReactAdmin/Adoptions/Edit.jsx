@@ -254,18 +254,15 @@ const AdopEdit = (props) => {
               </Grid>
             </Grid>
           </FormTab>
+          
           <FormTab label="Estado de la solicitud">
             <BooleanInput
               source="isPending"
-              label="Estado de solicitud pendiente/aprobada"
-              sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
-            />
-            <BooleanInput
-              label="Desactivado"
-              source="isDelete"
-              sx={{ fontSize: "h5.fontSize", fontWeight: "light" }}
-            />
+              label="Estado de la adopción: PENDIENTE"
+              sx={{ fontSize: "h4.fontSize", fontWeight: "light" }}
+            />         
           </FormTab>
+          
         </TabbedForm>
       </>
     </Edit>

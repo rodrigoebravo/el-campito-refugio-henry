@@ -7,8 +7,7 @@ import {
 
   const valida = (values) => {
     const errors = {};
-    if (!values.media) errors.media = 'required';
-    if (!values.type) errors.type = 'required';
+    if (!values.category) errors.category = 'required';
     if (!values.date) errors.date = 'required';
 
     return errors
@@ -24,6 +23,8 @@ const EscolarCreate = (props) => {
                 choices={[
                   { id: "escolar", name: "escolar" },
                   { id: "talleres", name: "talleres" },
+                  { id: "charlas", name: "charlas" },
+                  { id: "capacitaciones", name: "capacitaciones" },
                 ]}
                 
               />
