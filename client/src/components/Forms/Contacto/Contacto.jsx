@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import styles from "./Contacto.module.css";
 import { postContacto } from "../../../redux/actions/action";
 import { useDispatch } from "react-redux";
+import swal from "sweetalert";
 
 const Contacto = () => {
   let history = useHistory();
@@ -18,7 +19,13 @@ const Contacto = () => {
 // console.log(register)
   const onSubmit = (data) => {
     dispatch(postContacto(data));
-    alert("Gracias por Contactarse con el staff de El campito.");
+    console.log(data)
+    swal({
+      title: "Gracias por Contactarse con el staff de El campito.",
+      icon: "success",
+      button: "Cerrar",
+    });
+    // alert("Gracias por Contactarse con el staff de El campito.");
     history.push("../");
   };
 
