@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import styles from "./Adopcion.module.css";
 import Footer from "../../Footer/Footer";
 import { postAdoption } from "../../../redux/actions/action";
-import   Loading  from "../../Loading/Loading";
+import swal from "sweetalert";
 
 const Adopcion = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
@@ -51,27 +51,30 @@ const Adopcion = (props) => {
     console.log(data);
     // e.preventDefault();
     dispatch(postAdoption(data));
-    alert("Solicitud de adopcion Completada!");
+    swal({
+      title: "Solicitud de adopcion Completada!",
+      icon: "success",
+      button: "Cerrar",
+    });
     // window.location.reload();
     // e.target.reset();
     history.push("../");
   };
-  useEffect(() =>{
-    if(storage.name === "undefined"){
+  useEffect(() => {
+    if (storage.name === "undefined") {
       // console.log("ejecutando infinitamente")
-      handleClick()
+      handleClick();
     }
-  })
-
+  });
 
   return (
     <div className={styles.divContenedor}>
       {storage.name === "undefined" ? (
-      //    <button className={styles.buttonLoad} onClick={() => handleClick()}>
-      //    {" "}
-      //    Llenar el Formulario de Adopción{" "}
-      //  </button>
-      <h2>cargando</h2>
+        //    <button className={styles.buttonLoad} onClick={() => handleClick()}>
+        //    {" "}
+        //    Llenar el Formulario de Adopción{" "}
+        //  </button>
+        <h2>cargando</h2>
       ) : (
         <div className={styles.mainContainer}>
           <h2 className={styles.h3form}>Formulario de Adopción</h2>
@@ -123,7 +126,6 @@ const Adopcion = (props) => {
                     ? undefined
                     : storage.birthday
                 }
-                
                 type="date"
                 className={styles.inputDate}
                 min="1923-01-01"
