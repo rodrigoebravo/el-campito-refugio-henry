@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom"; // version 5.2.0
 import { useForm } from "react-hook-form";
 import styles from "./Adopcion.module.css";
 import Footer from "../../Footer/Footer";
 import { postAdoption } from "../../../redux/actions/action";
+import   Loading  from "../../Loading/Loading";
 
 const Adopcion = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
@@ -56,13 +57,14 @@ const Adopcion = (props) => {
     history.push("../");
   };
 
+
   return (
     <div className={styles.divContenedor}>
       {storage.name === "undefined" ? (
-        <button className={styles.buttonLoad} onClick={() => handleClick()}>
-          {" "}
-          Llenar el Formulario de Adopción{" "}
-        </button>
+         <button className={styles.buttonLoad} onClick={() => handleClick()}>
+         {" "}
+         Llenar el Formulario de Adopción{" "}
+       </button>
       ) : (
         <div className={styles.mainContainer}>
           <h2 className={styles.h3form}>Formulario de Adopción</h2>
@@ -104,7 +106,7 @@ const Adopcion = (props) => {
             <div className={styles.item}>
               <label className={styles.label}>Fecha de nacimiento</label>
               <input
-                value={
+                defaultValue={
                   !storage.birthday ||
                   storage.birthday === "undefined" ||
                   storage.birthday === "requerir" ||
@@ -114,6 +116,7 @@ const Adopcion = (props) => {
                     ? undefined
                     : storage.birthday
                 }
+                
                 type="date"
                 className={styles.inputDate}
                 min="1923-01-01"
@@ -152,7 +155,7 @@ const Adopcion = (props) => {
             <div className={styles.item}>
               <label className={styles.label}>Teléfono</label>
               <input
-                value={
+                defaultValue={
                   !storage.phone ||
                   storage.phone === "undefined" ||
                   storage.phone === "requerir" ||
@@ -239,6 +242,7 @@ const Adopcion = (props) => {
               </label>
               <input
                 type="text"
+                defaultValue="propiedad por defecto"
                 className={styles.input}
                 placeholder="Tu respuesta"
                 {...register("description", { required: true })}

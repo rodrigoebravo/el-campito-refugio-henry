@@ -18,6 +18,7 @@ const Contacto = () => {
 // console.log(register)
   const onSubmit = (data) => {
     dispatch(postContacto(data));
+    console.log(data)
     alert("Gracias por Contactarse con el staff de El campito.");
     history.push("../");
   };

@@ -45,7 +45,7 @@ const Voluntario = (props) => {
     console.log(data);
     // e.preventDefault();
     dispatch(postVolunteer(data));
-    alert("form create successfuly!");
+    alert("Gracias por llenar la solicitud para ser Voluntario");
     // e.target.reset();
     // window.location.reload();
     history.push ('./');

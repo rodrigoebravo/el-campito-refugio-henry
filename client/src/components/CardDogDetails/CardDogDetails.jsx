@@ -15,6 +15,7 @@ import Footer from "../Footer/Footer";
 const CardDogDetails = (props) => {
   const dispatch = useDispatch();
   const detailsDogs = useSelector((state) => state.detailsDogs);
+  console.log(detailsDogs);
 
   const [photoActual, setPhotoActual] = useState(0);
   useEffect(
@@ -35,111 +36,132 @@ const CardDogDetails = (props) => {
   } else {
     return (
       <div className={styles.divContenedor}>
-      <BarraDeNavegacion/>
-      <div className={styles.divImgs}>
-      <img
-          className={styles.imgDog}
-          alt="imgsola"
-          src={detailsDogs.images[photoActual]}
-        ></img>
-      <div>
-        {photoActual !== 0 ? (
-          <button
-            className={styles.btnButton}
-            onClick={() => setPhotoActual(photoActual - 1)}
-          >prev</button>
+        <BarraDeNavegacion />
+        <div className={styles.divImgs}>
+          <img
+            className={styles.imgDog}
+            alt="imgsola"
+            src={detailsDogs.images[photoActual]}
+          ></img>
+          <div>
+            {photoActual !== 0 ? (
+              <button
+                className={styles.btnButton}
+                onClick={() => setPhotoActual(photoActual - 1)}
+              >
+                prev
+              </button>
+            ) : (
+              <button
+                className={styles.btnButtonDisabled}
+                disabled
+                onClick={() => setPhotoActual(photoActual - 1)}
+              >
+                prev
+              </button>
+            )}
+
+            {photoActual >= 0 && detailsDogs.images.length - 1 > photoActual ? (
+              <button
+                className={styles.btnButton}
+                onClick={() => setPhotoActual(photoActual + 1)}
+              >
+                next
+              </button>
+            ) : (
+              <button
+                className={styles.btnButtonDisabled}
+                disabled
+                onClick={() => setPhotoActual(photoActual + 1)}
+              >
+                next
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.divCaracteristicas}>
+          <p>
+            <span>Nombre: </span>
+            {detailsDogs.name}
+          </p>
+
+          <p>
+            <span>Genero: </span>
+            {detailsDogs.gender ? detailsDogs.gender : <>No hay info</>}
+          </p>
+          <p>
+            <span>Edad: </span>
+            {detailsDogs.age ? detailsDogs.age : <>No hay info</>}
+          </p>
+          <p>
+            <span>Tamaño: </span>
+            {detailsDogs.size ? detailsDogs.size : <>No hay info</>}
+          </p>
+          <p>
+            {" "}
+            <span>Raza: </span>{" "}
+            {detailsDogs.race ? detailsDogs.size : <>No hay info</>}
+          </p>
+
+          <p>
+            <span>Caracteristicas: </span>{" "}
+            {detailsDogs.features ? detailsDogs.features : <>No hay info</>}
+          </p>
+
+          <p>
+            <span>Referencias: </span>{" "}
+          </p>
+
+          {detailsDogs.references ? (
+            detailsDogs.references.map((ref) => {
+              return <p key={ref}> {ref}</p>;
+            })
+          ) : (
+            <>No hay info</>
+          )}
+        </div>
+        {console.log(detailsDogs.toAdopt, "soy el render")}
+        {detailsDogs.toAdopt ? (
+          <div className={styles.divButtons}>
+            <p className={styles.pMarginleft}>
+              <span>
+                Si quer&eacute;s adoptar completa el siguiente formulario:
+              </span>
+            </p>
+            <Link
+              className={styles.buttonAdoptar}
+              to={`/adoptionForm/${detailsDogs.name}`}
+            >
+              ADOPTAME
+            </Link>
+          </div>
         ) : (
-          <button
-            className={styles.btnButton}
-            disabled
-            onClick={() => setPhotoActual(photoActual - 1)}
-          >prev</button>
+          <></>
         )}
-      
-        {photoActual >= 0 && detailsDogs.images.length - 1 > photoActual ? (
-          <button 
-          className={styles.btnButton}
-            onClick={() => setPhotoActual(photoActual + 1)}
-          >next</button>
+        {detailsDogs.isSponsored ? (
+          <div className={styles.divButtons}>
+            <p>
+              <span>Si quer&eacute;s colaborar podes hacerlo en:</span>
+            </p>
+            <Link
+              to={`/colaborar/${detailsDogs.name}`}
+              className={styles.buttonAdoptar}
+            >
+              APADRINAR
+            </Link>
+          </div>
         ) : (
-          <button
-            className={styles.btnButton}
-            disabled
-            onClick={() => setPhotoActual(photoActual + 1)}
-          >next</button>
+          <></>
         )}
+
+        <div className={styles.footerDetail}>
+          {" "}
+          <Footer />
         </div>
       </div>
-
-      <div className={styles.divCaracteristicas}>
-
-        <p>
-          <span>Nombre: </span>
-          {detailsDogs.name}
-        </p>
-
-        <p>
-          <span>Genero: </span>
-          {detailsDogs.gender ? detailsDogs.gender : <>No hay info</>}
-        </p>
-        <p>
-          <span>Edad: </span>
-          {detailsDogs.age ? detailsDogs.age : <>No hay info</>}
-        </p>
-        <p>
-          <span>Tamaño: </span>
-          {detailsDogs.size ? detailsDogs.size : <>No hay info</>}
-        </p>
-        <p>
-          {" "}
-          <span>Raza: </span>{" "}
-          {detailsDogs.race ? detailsDogs.size : <>No hay info</>}
-        </p>
-
-        <p>
-          <span>Caracteristicas: </span>{" "}
-          {detailsDogs.features ? detailsDogs.features : <>No hay info</>}
-        </p>
-
-        <p>
-          <span>Referencias: </span>{" "}
-        </p>
-        
-        {detailsDogs.references ? (
-          detailsDogs.references.map((ref) => {
-            return <p key={ref}> {ref}</p>;
-          })
-        ) : (
-          <>No hay info</>
-        )}
-      </div>
-
-      <p className={styles.pMarginleft}>
-        <span>
-          Si quer&eacute;s adoptar completa el siguiente formulario:
-        </span>
-      </p>
-      <Link
-        className={styles.buttonAdoptar}
-        to={`/adoptionForm/${detailsDogs.name}`}
-      >
-        ADOPTAME
-      </Link>
-      <p>
-        <span>Si quer&eacute;s colaborar podes hacerlo en:</span>
-      </p>
-      <Link
-        to={`/colaborar/${detailsDogs.name}`}
-        className={styles.buttonAdoptar}
-      >
-        APADRINAR
-      </Link>
-      
-     <div className={styles.footerDetail}> <Footer /></div>
-      
-    </div>
-  );
-}
+    );
+  }
 };
 
 export default CardDogDetails;

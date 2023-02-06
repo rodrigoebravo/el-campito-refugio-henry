@@ -7,6 +7,12 @@
 
 }
 
+.divButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .divImgs {
   width: 70%;
   display: flex;
@@ -55,10 +61,27 @@
 
 }
 
+.btnButtonDisabled {
+
+  background-color: #4fa6c13e;
+  border: 3px solid #4fa6c14c;
+  width: 30%;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1em;
+  margin: 15px;
+  padding: 15px;
+  padding-right: 30px;
+
+}
+
+
 .btnButton:hover {
   background-color: #FFFFFF;
   color: #4FA7C1;
-  border: 3px solid #4FA7C1;
+  transform: scale(1.2);
 
 }
 
