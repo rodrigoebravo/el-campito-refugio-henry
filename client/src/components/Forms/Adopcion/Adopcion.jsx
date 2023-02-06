@@ -51,20 +51,27 @@ const Adopcion = (props) => {
     console.log(data);
     // e.preventDefault();
     dispatch(postAdoption(data));
-    alert("form create successfuly!");
+    alert("Solicitud de adopcion Completada!");
     // window.location.reload();
     // e.target.reset();
     history.push("../");
   };
+  useEffect(() =>{
+    if(storage.name === "undefined"){
+      // console.log("ejecutando infinitamente")
+      handleClick()
+    }
+  })
 
 
   return (
     <div className={styles.divContenedor}>
       {storage.name === "undefined" ? (
-         <button className={styles.buttonLoad} onClick={() => handleClick()}>
-         {" "}
-         Llenar el Formulario de Adopción{" "}
-       </button>
+      //    <button className={styles.buttonLoad} onClick={() => handleClick()}>
+      //    {" "}
+      //    Llenar el Formulario de Adopción{" "}
+      //  </button>
+      <h2>cargando</h2>
       ) : (
         <div className={styles.mainContainer}>
           <h2 className={styles.h3form}>Formulario de Adopción</h2>

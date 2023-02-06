@@ -37,7 +37,7 @@ const mdwAdoptions = async (req, res, next) => {
       nameDog,
     } = req.body;
 
-    let campito = "adoptantesdelcampito@gmail.com"; // "adoptantesdelcampito@gmail.com";
+    let campito = "elcampitorefugiodev@gmail.com"; // "adoptantesdelcampito@gmail.com";
 
     let destino = "";
     let vivienda = "";
