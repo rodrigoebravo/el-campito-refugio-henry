@@ -1,0 +1,125 @@
+.container{
+  padding: 50px;
+}
+
+.div {
+  padding: 50px;
+}
+.pConodenos {
+  font-family: 'Seravek', 'sans-serif';
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #444445;
+  display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.h3Naranja {
+  font-family: 'Seravek', 'sans-serif';
+  color: #e48125;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.ulConocenos{
+  list-style: none;
+}
+.liConocenos{
+  font-family: 'Seravek', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #444445;
+}
+.liConocenos::before {
+  content: "\2022";
+  color: #e48125;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+.olConocenos{
+  list-style-type: decimal;
+  }
+.liOconocenos{
+  display: list-item;
+  text-align: -webkit-match-parent; 
+  font-family: 'Seravek', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #444445;
+
+}
+.liOconocenos::marker{color: #E48125;}
+.h1Conocenos {
+  font-family: 'Trashhand';
+  color: #e48125;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.8em;
+  line-height: 51px;
+}
+.conocenosContenedor{
+  display: flex;
+  flex-direction: row-reverse;
+  padding:20px
+}
+.imgConocenos{
+  max-height: 800px;
+  
+    width: 60%;
+
+  height: 100%;
+  margin: 5rem;
+  overflow-clip-margin: content-box;
+    overflow: clip;
+ 
+}
+.spanConocenos{
+  font-family: 'Seravek', 'sans-serif';
+  font-weight: bold;
+  color: #444445;
+}
+@media (max-width: 834px) {
+  .div {
+    margin: 1rem;
+    padding: 0px;
+  }
+  .imgConocenos{
+    display:none
+  }
+  .conocenosContenedor{
+    padding-bottom: 0px;
+  }
+  .h1Conocenos{
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 428px) {
+  .conocenosContenedor,.div{
+    margin:0px;
+    margin-top:30px;
+    padding:0px
+  }
+  .container{
+    padding: 35px;
+    padding-top:30px;
+
+  }
+  .pConodenos,.liConocenos,.olConocenos{
+    margin:10px
+  }
+}

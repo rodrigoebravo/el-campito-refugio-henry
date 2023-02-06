@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.google_btn {
+	width: 13rem;
+	height: 3rem;
+	display: flex;
+	background-color: #1976d2;
+	border-radius: 0.3rem;
+	box-shadow: 0 3px 4px 0 rgb(0 0 0 / 25%);
+	justify-content: space-around;
+	align-content: space-around;
+	flex-direction: row;
+	align-items: center;
+}
+
+.google_btn .google_icon_wrapper {
+	margin: 0.1rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 0.3rem;
+	background-color: #fff;
+}
+
+.google_btn .google_icon {
+	margin-top: 11px;
+	margin-left: 11px;
+	width: 18px;
+	height: 18px;
+}
+
+.google_btn .btn_text {
+	color: #fff;
+	font-size: 0.7rem;
+	letter-spacing: 0.2px;
+	font-family: "Roboto";
+}
+
+.google_btn:hover {
+	box-shadow: 0 0 6px #00288f;
+	cursor: pointer;
+}
+
+.google_btn:active {
+	background: #1669f2;
+}

@@ -1,0 +1,452 @@
+.container {
+  padding: 50px;
+}
+
+.colaborar section {
+  margin-bottom: 20px;
+
+
+}
+
+.section {
+  padding: 10px;
+}
+
+.h2Colborar {
+  color: #55BA68;
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.h3Colaborar {
+  margin-bottom: 20px;
+  font-size: 1.2500em;
+  color: #FFFFFF;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pColaborar {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+}
+
+.pCuentaBancaria {
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 1em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.aColaborar {
+  color: #55BA68;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.spanColaborar {
+  font-weight: bold;
+}
+
+.parentGrid2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+.cuentaBancaria {
+  background-color: #E48125;
+  border-radius: 25px;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size: 1.15em;
+  padding: 40px;
+  max-height: 300px;
+
+}
+
+.debitoAutomatico {
+  background-color: #6B639A;
+  border-radius: 25px;
+  padding: 35px;
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.buttonFormDiv {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.buttonForm {
+  width: 30%;
+  min-width: 235px;
+  font-size: 1em;
+  color: #6B639A;
+  height: auto;
+  background-color: #FAFAFA;
+  margin-top: 20px;
+  align-self: flex-end;
+  min-height: 60px !important;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  margin: 0px;
+
+}
+
+.parentGrid5 {
+  -ms-grid-columns: none;
+  grid-template-columns: none;
+  gap: 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -ms-grid-columns: 29% 17% 17% 17% 17%;
+  grid-template-columns: 29% 17% 17% 17% 17%;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.medioDePagoML,
+.medioDePagoCF,
+.medioDePagoPaypal {
+  display: flex;
+  border: 3px solid #4FA7C1;
+  padding: 50px;
+  margin: 0px;
+  align-items: center;
+  text-align: center;
+  border-radius: 25px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: -webkit-fill-available;
+}
+
+.buttonML,
+.buttonCF,
+.buttonPaypal {
+  cursor: pointer;
+  background-color: #4FA7C1;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.8em;
+  height: 100%;
+  min-height: 150px;
+}
+
+.btnPaypalMonto {
+  padding: 1rem;
+}
+
+.buttonML:hover {
+  background-color: #3C7E91;
+}
+
+.buttonCF {
+  background-color: #55BA68;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonCF:hover {
+  background-color: #2B5D34;
+}
+
+.buttonPaypal {
+  background-color: #F9C0C1;
+  min-height: 150px;
+  height: 100%;
+}
+
+.buttonPaypal:hover {
+  background-color: #BB9091;
+}
+
+.medioDePagoPaypal {
+  border: 3px solid #F9C0C1;
+}
+
+/* .medioDePagoCF {
+  border: 3px solid #55BA68;
+/* }
+ */
+
+
+.medioDePagoCF {
+  border: 3px solid #55BA68;
+  height: -webkit-fill-available;
+  max-height: 150px;
+}
+
+.imgColaborar {
+  width: 100%;
+}
+
+.noButton {
+  text-align: center;
+  font-weight: 100;
+  color: #FFFFFF;
+  font-size: 14.4px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.inputColaborar {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 0px;
+  border-bottom: 3px solid white;
+  background: transparent;
+  margin-bottom: 10px;
+  margin-top: 35px;
+  width: 85%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.parentGridPaypal {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: initial;
+  -ms-flex-pack: initial;
+  justify-content: initial;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -ms-grid-columns: 29% 70.5%;
+  grid-template-columns: 29% 70.5%;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+  padding: 10px 0;
+}
+
+.linkCafecito {
+  color: white;
+}
+
+.linkCafecito:link {
+  text-decoration: none;
+}
+
+.linkCafecito:active {
+  text-decoration: none;
+}
+
+.linkCafecito:visited {
+  text-decoration: none;
+}
+
+@media (max-width: 834px) {
+  .colaborar section {
+    padding: 20px
+  }
+
+  .parentGrid2,
+  .parentGrid5,
+  .parentGridPaypal {
+    grid-template-columns: none;
+    gap: 10px;
+  }
+
+  .debitoAutomatico {
+    font-size: 0.8em;
+  }
+
+}
+
+@media (max-width: 540px) and (min-width: 400px) {
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px 31px;
+    height: 466px;
+    width: 375px;
+
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    margin-top: 44px;
+    align-items: flex-end;
+    margin-bottom: 35px;
+    width: 87%;
+    align-items: initial;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 360px) {
+  .colaborar section {
+    padding: 10px
+  }
+
+  .parentGrid2 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    padding: 20px
+  }
+
+  .cuentaBancaria {
+    font-size: 1em;
+    padding: 20px;
+    height: 250px;
+    width: 310px !important;
+  }
+
+  .debitoAutomatico {
+    font-size: 1em;
+    padding: 20px;
+    height: 450px;
+    width: 310px !important;
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    flex-direction: column;
+    margin: -10px;
+    padding: 10px
+  }
+
+  .buttonForm {
+    margin: 10px;
+
+  }
+
+  .footerColaborar {
+    margin-left: 20px;
+    padding: 20px
+  }
+}
+
+@media (max-width:400px) {
+  .cuentaBancaria {
+    background-color: #E48125;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 1.0em;
+    padding: 29px 16px;
+    width: 14.7rem;
+  }
+
+  .buttonFormDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .debitoAutomatico {
+    background-color: #6B639A;
+    border-radius: 25px;
+    padding: 15px 27px;
+    /* min-height: 282px; */
+    width: 236px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    align-items: center;
+  }
+
+  .buttonForm {
+    margin: 0.3rem 0;
+    width: 225px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .cuentaBancaria {
+    font-size: 0.8em;
+    padding: 20px 10px;
+    height: 250px;
+    width: 270px !important;
+  }
+
+  .debitoAutomatico {
+    font-size: 0.8em;
+    padding: 20px 9px;
+    height: 360px;
+    width: 270px !important;
+  }
+}
+@media (max-width: 428px) and (min-width: 412px) {
+  .debitoAutomatico {
+    width: 280px;
+    font-size: 0.9em;
+   
+  }
+  .cuentaBancaria {
+    width: 280px;
+    font-size: 0.9em;
+  }
+    .buttonFormDiv {
+    margin-left: 35px;
+    
+  }
+  .buttonForm{
+    margin-bottom: 10px;
+  }
+
+}

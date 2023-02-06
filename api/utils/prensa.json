@@ -1,0 +1,99 @@
+[
+  {
+    "media":"Perfil",
+    "link":"https://www.perfil.com/noticias/sociedad/en-tres-de-cada-cuatro-hogares-argentinos-hay-al-menos-una-mascota-y-mas-del-60-son-adoptadas.phtml",
+    "date":"",
+    "type":"Prensa Gráfica"
+  },
+  {
+    "media":"El Diario Sur",
+    "link":"https://www.eldiariosur.com/esteban-echeverria/2022/7/7/asi-estan-los-130-perros-que-rescato-el-refugio-el-campito-de-monte-grande-desde-temperley-villa-crespo-54707.html",
+    "date":"2022-07-07",
+    "type":"Prensa Gráfica"
+  },
+  {
+  "media":"Expresion Norte",
+  "link":"https://expresionnorte.com.ar/el-campito-refugio-lanzo-la-primera-plataforma-de-adopcion-de-animales-del-pais/",
+  "date":"2022-04-29",
+  "type":"Prensa Gráfica"    
+  },
+  {
+  "media":"Info Cielo",
+  "link":"https://infocielo.com/animales/una-ong-esteban-echeverria-creo-la-primera-plataforma-adoptar-animales-del-pais-n736769",
+  "date":"2022-12-21",
+  "type":"Prensa Gráfica"
+  },
+  {
+    "media":"Info Region",
+    "link":"https://www.inforegion.com.ar/2022/03/14/vuelve-la-colecta-del-refugio-el-campito/",
+    "date":"2022-03-14",    
+    "type":"Prensa Gráfica"
+  }, 
+  {
+    "media":"Clarin",
+    "link":"https://www.clarin.com/zonales/buscaran-hogares-adoptivos-52-perros-salchichas-rescatados-criaderos-clandestinos_0_id1I3rNFLB.html",
+    "date":"2022-07-06",    
+    "type":"Prensa Gráfica"
+  },
+  {
+    "media":"Info Región",
+    "link":"https://www.inforegion.com.ar/2022/02/16/esteban-echeverria-un-refugio-de-animales-como-regalo-de-aniversario/",
+    "date":"2022-02-16",
+    "type":"Prensa Gráfica"
+  },
+  {
+    "media":"Youtube",
+    "link":"https://www.youtube.com/watch?v=pKI9UGVqd90",
+    "type":"Televisión / Audiovisual"
+  },
+  {
+    "media":"Youtube",
+    "link":"https://www.youtube.com/watch?v=ejG0qY0bAbQ",
+    "type":"Televisión / Audiovisual"
+  },
+  {
+  "media":"Canal 9",
+  "link":"https://www.youtube.com/watch?v=E5sLKDInH_M",
+  "type":"Televisión / Audiovisual"    
+  },
+  {
+  "media":"Canal 9",
+  "link":"https://www.youtube.com/watch?v=t7xkGBGgi6g",  
+  "type":"Televisión / Audiovisual"
+  },
+  {
+    "media":"Canal 13",
+    "link":"https://www.youtube.com/watch?v=faooIXjCUaE",
+    "type":"Televisión / Audiovisual"
+  }, 
+  {
+    "media":"TN",
+    "link":"https://www.youtube.com/watch?v=ZuZ0HnnYRU4",
+    "type":"Televisión / Audiovisual"
+  },
+  {
+    "media":"Apple Podcasts",
+    "link":"https://pateducadoracanina.com/convivir-a-lo-piracan-capitulo-199/",
+    "type":"Radio / Audio"
+  },
+  {
+    "media":"Apple Podcasts",
+    "link":"https://podcasts.apple.com/ar/podcast/mitos-sobre-perros-j%C3%B3venes-cap%C3%ADtulo-194/id1156074185?i=1000587170075",
+    
+    "type":"Radio / Audio"
+  },
+  {
+    "media":"Apple Podcasts",
+    "link":"https://pateducadoracanina.com/la-soledad-de-la-exploradora-canina-capitulo-197/",
+
+    "type":"Radio / Audio"
+  },
+  {
+    "media":"Apple Podcasts",
+    "link":"https://podcasts.apple.com/ar/podcast/c%C3%B3mo-acompa%C3%B1ar-a-un-perro-lleno-de/id1156074185?i=1000587804681",
+
+    "type":"Radio / Audio"
+  }
+  
+  
+]

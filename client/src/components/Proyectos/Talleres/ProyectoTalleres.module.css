@@ -1,0 +1,27 @@
+.h2Talleres{
+  margin-top: 20px;
+  margin-left: 50px;
+  font-family: 'Trashhand';
+    font-size: 2.8em;
+    color: #4FA7C1 !important;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.contenedorTalleres{
+  margin:20px;
+}
+@media (max-width: 834px) {
+  .contenedorTalleres{
+    margin-top: 70px;
+}
+
+}
+@media (max-width: 428px) {
+
+  .contenedorTalleres{
+    margin-top: 70px;
+}
+}

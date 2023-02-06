@@ -1,0 +1,606 @@
+[
+    {
+        "name": "Paula Speciale",
+        "birthday": "1986-02-20",
+        "email": "paulaspeciale@gmail.com",
+        "pass": "Clave1234#",
+        "roles": ["voluntario","equipo1","admin"],
+        "image": "",
+        "contribution": [
+          
+        ],
+        "adoptions": [
+          
+        ]
+    },
+    {
+      "name": "Enzo Calvi",
+      "birthday": "2000-02-20",
+      "email": "enzocalvi243@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo2","admin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ]
+    },
+    {
+      "name": "Joseph Villalba Osorio",
+      "birthday": "2000-02-20",
+      "email": "jhosephvillalba@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo3","admin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ]
+    },
+    {
+      "name": "Ariel Cazzulino Hartvig",
+      "birthday": "2000-02-20",
+      "email": "arielcazzulino@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo1","admin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ]
+    },
+    {
+      "name": "Matías Dentoni",
+      "birthday": "1977-10-31",
+      "email": "matiasdentoni@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo2","admin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ]
+    },
+    {
+      "name": "Jorge Chacin",
+      "birthday": "2000-02-20",
+      "email": "jorge12chacin@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo3","admin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ] 
+    },
+    {
+      "name": "Tomas Wolfmann",
+      "birthday": "2000-02-20",
+      "email": "tomiwolfman@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo1","admin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ]
+    },
+    {
+      "name": "Nicolas Oviedo",
+      "birthday": "2000-02-20",
+      "email": "briannoviedo@gmail.com",
+      "pass": "Clave1234#",
+      "roles": ["voluntario","equipo2","superAdmin"],
+      "image": "",
+      "contribution": [
+        
+      ],
+      "adoptions": [
+        
+      ] 
+    },
+  {
+    "name": "Mors Villalba Osorio",
+    "email": "mors97@mail.com",
+    "birthday": "2019-11-04",
+    "phone": "3205220867",
+    "roles": ["public"],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Marco Martinez",
+    "email": "marcos@gmail.com",
+    "birthday": "",
+    "phone": "11-319-695-01",
+    "roles": [
+      "voluntario"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Pablo Cepa",
+    "email": "apalala@hsjsj.com",
+    "birthday": "2000-02-20",
+    "phone": "02323930202",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+    ]
+  },
+  {
+    "name": "Luiso Morat",
+    "email": "luisomorat@gasnna.com",
+    "birthday": "2002-12-24",
+    "phone": "",
+    "roles": [
+      "public","sponsor"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Josefina Gomez",
+    "email": "jgrgeruiz@gasnna.com",
+    "birthday": "2001-12-24",
+    "phone": "",
+    "roles": [
+      "public","visitante"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Carlin Parranza",
+    "email": "parranzaca@gasnna.com",
+    "birthday": "2002-12-24",
+    "phone": "",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Paula Gomez",
+    "email": "paulag@gasnna.com",
+    "birthday": "2001-12-24",
+    "phone": "",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Laura Gidalgo",
+    "email": "lau43444@gasnna.com",
+    "birthday": "2022-12-24",
+    "phone": "",
+    "roles": [
+      "public",
+      "adoptante",
+      "donante"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Raul Flanco",
+    "email": "raulFlanci@gmail.com",
+    "birthday": "2000-12-25",
+    "phone": "",
+    "roles": [
+      "superAdmin"
+    ],
+    "image": "https://res.cloudinary.com/dman2cjk5/image/upload/v1671105249/refugio/pfp_zt2gk5.jpg",
+      
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Paula Rabal",
+    "email": "paaaarab@gmail.com",
+    "birthday": "2002-02-26",
+    "phone": "",
+    "roles": [
+      "equipo1","voluntario"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Renzo Valvi",
+    "email": "renzovalvi243@gmail.com",
+    "birthday": "2000-12-26",
+    "phone": "",
+    "roles": [
+      "voluntario","public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Matías Rami",
+    "email": "matiasra@gmail.com",
+    "birthday": "1957-10-31",
+    "phone": "1152536478",
+    "roles": [
+      "admin"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+    ]
+  },
+  {
+    "name": "Jorge Pacin",
+    "email": "jorge12pacin@gmail.com",
+    "birthday": "2001-12-26",
+    "phone": "",
+    "roles": [
+      "adoptante"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Tomas Mann",
+    "email": "tomiman@gmail.com",
+    "birthday": "2001-12-26",
+    "phone": "",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Nicolas Vohiedo",
+    "email": "briannoviedo@gmail.com",
+    "birthday": "2002-12-26",
+    "phone": "",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Joseph Villalba Osorio",
+    "email": "jhos555alba@gmail.com",
+    "birthday": "2002-12-26",
+    "phone": "3002asas1",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Ariel  Hartvig",
+    "email": "ari2111o@gmail.com",
+    "birthday": "2022-12-26",
+    "phone": "",
+    "roles": [
+      "donante"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Paco Parranza",
+    "email": "carranzapaco@gasnna.com",
+    "birthday": "2022-12-26",
+    "phone": "022203345466",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Pedro Penalty",
+    "email": "pediia@gmail.com",
+    "birthday": "1967-02-08",
+    "phone": "011223823454",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+    ]
+  },
+  {
+    "name": "Luis Buena",
+    "email": "lesdsia@gmail.com",
+    "birthday": "1999-02-08",
+    "phone": "011723823454",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Luis Parra",
+    "email": "parradsia@gmail.com",
+    "birthday": "1999-02-08",
+    "phone": "011723823454",
+    "roles": [
+      "public"
+    ],
+    "image":"",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+    ]
+  },
+  {
+    "name": "Emilio Raza",
+    "email": "emaile2@gmail.com",
+    "birthday": "2022-12-29",
+    "phone": "",
+    "roles": [
+      "public"
+    ],
+    "image":"https://i.stack.imgur.com/l60Hf.png",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "El Campito Refugio",
+    "email": "elcampitorefugiodev@gmail.com",
+    "birthday": "2022-12-29",
+    "phone": "",
+    "roles": [
+      "admin"
+    ],
+    "image": "https://lh3.googleusercontent.com/a/AEdFTp7a2KEdCmtTXHKpnKTe0uPgpvLEKCXQxJmumvzL=s96-c",
+      
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Morticia Adams",
+    "email": "morticia@gmail.ex",
+    "birthday": "2002-07-30",
+    "phone": "9954586",
+    "roles": [
+      "public"
+    ],
+    "image": "http://res.cloudinary.com/dman2cjk5/image/upload/v1672327672/refugio/labrador_rfrehd.jpg",
+      
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "imagenelcampito@gmail.com",
+    "email": "imagenelcampito@gmail.com",
+    "birthday": "2022-12-30",
+    "phone": "",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Paulo Mansio",
+    "email": "cpaoooo@gasnna.com",
+    "birthday": "1941-08-23",
+    "phone": "022as3345466",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "María Luccini",
+    "email": "mar@hmail.com",
+    "birthday": "1986-04-23",
+    "phone": "1142526470",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Santiago Samuel",
+    "email": "sasddffg@asass.com",
+    "birthday": "1967-06-23",
+    "phone": "1142526476",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  },
+  {
+    "name": "Matías Mengoni",
+    "email": "matiasmi@gmail.com",
+    "birthday": "1955-01-31",
+    "phone": "1142526478",
+    "roles": [
+      "public"
+    ],
+    "image": "",
+    
+    "contribution": [
+      
+    ],
+    "adoptions": [
+      
+    ]
+  }
+
+]

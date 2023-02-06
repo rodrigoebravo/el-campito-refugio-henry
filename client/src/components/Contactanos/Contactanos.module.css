@@ -1,0 +1,108 @@
+.mainContactanos {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h2Contactanos {
+
+    color: #F9C0C1;
+    font-family: 'Trashhand';
+    font-size: 2.8em;
+
+
+
+}
+
+.spanContactanos {
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Seravek', 'sans-serif';
+    font-size: 1.125em;
+    color: #444445;
+}
+
+.sectionContactanos {
+    width: 100% !important;
+    margin: 10px;
+
+    -webkit-box-pack: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column
+}
+
+.buttonContactanos {
+    width: auto;
+    padding: 20px;
+    min-height: 0;
+    height: 75px;
+    margin-top: 20px;
+    background-color: #F9C0C1;
+    text-align: center;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.8em;
+}
+
+
+@media (max-width: 834px) {
+    .buttonContactanos {
+
+        width: 70%;
+        font-size: 1.3em;
+    }
+
+    .spanContactanos {
+        font-size: 1.1em;
+    }
+
+    .mainContactanos {
+        margin: 0px;
+        margin-top: 90px;
+
+    }
+
+    .sectionContactanos {
+        margin: 0px;
+        padding: 0px;
+    }
+
+}
+
+@media (max-width: 424px) {
+    .buttonContactanos {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .mainContactanos {
+        padding: 50px;
+    }
+
+    .sectionContactanos {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .pContactanos {
+        margin: 10px;
+    }
+}
+@media (width: 428px) {
+  .buttonContactanos{
+    font-size: 0.8em;
+  }  
+}
+@media (width: 320px) {
+    .buttonContactanos{
+      font-size: 0.7em;
+    }  
+  }

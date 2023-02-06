@@ -1,0 +1,154 @@
+.container{
+  padding: 50px;
+}
+.mainAdoptar{
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 50px;
+  margin: 0px;
+}
+.imgContenedor{
+  margin:0;
+  padding:0;
+  width: 70%;
+  display: block;
+}
+.liAdoptar {
+  font-family: 'Seravek', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 25px;
+  letter-spacing: 0.06em;
+  color: #444445;
+}
+
+.ulAdoptar {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.adoptarContenedor {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.liAdoptar::before {
+  content: "\2022";
+  color: #f9c0c1;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+
+.h2Adoptar {
+  font-family: "TrashHand", sans-serif;
+  color: #f9c0c1;
+  font-style: normal;
+  font-size: 2.8em;
+  margin-top:0px;
+  line-height: 51px;
+  display: block;
+  
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.spanAdoptar{
+  font-weight: bold;
+}
+.pAdoptar{
+    margin-bottom: 20px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1em;
+    font-weight: 300;
+    color: #444445;
+    font-family: 'Seravek', 'sans-serif';
+   
+}
+.buttonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.buttonAdoptar {
+  width: auto;
+  padding: 20px;
+  min-height: 0;
+  height: 75px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.8em;
+  background-color: #F9C0C1;
+  text-decoration: none;
+}
+.buttonContenedor {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  margin:0px;
+  
+}
+.imgAdoptar{
+ padding-top: 50px;
+  margin: 0px;
+ 
+  overflow-clip-margin: content-box;
+  overflow: clip;
+
+  
+}
+
+@media (max-width: 834px) {
+  .mainAdoptar{
+    padding:15px
+
+  }
+  .imgAdoptar{
+    display:none
+  }
+  .pAdoptar{
+    font-size: 0.9em;
+  }
+  .imgAdoptar{
+    display:none
+  }
+  .pAdoptar{
+    font-size: 0.9em;
+  }
+  .adoptarContenedor{
+    padding:0px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 428px) {
+  .mainAdoptar{
+    margin-top:20px;
+  }
+  .adoptarContenedor, .mainAdoptar{
+    margin:0px;
+    margin-top:30px;
+    padding:0px;
+
+  }
+ 
+  .buttonAdoptar{
+    height: 150px;
+  }
+  .imgAdoptar{
+    display: none;
+  }
+}

@@ -1,0 +1,238 @@
+[
+    {
+    
+        "name": "Luis Mora",
+        "birthday": "1987-02-11",
+        "email": "luismora@gasnna.com", 
+        "telephone": "1154637281",
+        "location": "José Mármol 2323",
+        "area": "Pilar",
+        "profession": "veterinario", 
+        "interest": "Me gustaría colaborar en el cuidado clínico/veterinario de los perros",
+        "modality": "presencial", 
+        "availability": 10,
+        "days": [ "lunes", "miércoles" ],
+        "clarification": "5 horas casa día de la semana",
+        "description": "Creo que puedo aportar mi empatía y cariño en el cuidado de los perritos, y que mi acción profesional este cargado de amor a ellos",
+        "purpose": "Quiero ser voluntario del Campito porque me preocupa la situación de los perritos que están en una situación dificil y quiero hacer algo al respecto",
+        "vehicle": "si",
+        "carpooling": "no",    
+        "question": "Me gustaría ser acompañado por mi hijo de 12 años mientras hago mi labor voluntaria, para brindarle un ejemplo de servicio y cariños a los animales"
+      
+    
+    },
+    {
+    
+        "name": "Paola Gutierrez",
+        "birthday": "2001-04-30",
+        "email": "paolag@gasnna.com", 
+        "telephone": "0348815123413",
+        "location": "Larrañaga 223",
+        "area": "Lanus",
+        "profession": "panchera", 
+        "interest": "me gustan mucho los perros y quisiera estar con ellos",
+        "modality": "hibrido", 
+        "availability": 10,
+        "days": [ "jueves", "miércoles" ],
+        "clarification": "puedo ir un día x 6 horas y el resto colaborar con algo virtual",
+        "description": "creo que puedo sumar mi dedicación y cariño",
+        "purpose":"quiero ser voluntaria para ayudar a los perritos",
+        "vehicle": "no",
+        "carpooling": "no",    
+        "question": "solo podría ir un día para allá. El otro puedo hacer algo online"
+      
+    
+    },
+    {
+    
+        "name": "Laura Fidalgo",
+        "birthday": "1977-10-01",
+        "email": "lau43444@gasnna.com", 
+        "telephone": "111565781222",
+        "location": "Avenida del Libertador 2353 ",
+        "area": "CABA",
+        "profession": "bailarina", 
+        "interest": "me inetersa pasear a los perros",
+        "modality": "presencial", 
+        "availability": 3,
+        "days": [ "miércoles" ],
+        "clarification": "",
+        "description": "puedo brindar un poco de dedicación y atención",
+        "purpose":"quiero ser voluntaria porque creo que tengo amor para dar",
+        "vehicle": "si",
+        "carpooling": "no",    
+        "question": "nada que agregar"
+      
+    
+    },
+    {
+    
+        "name": "Josefa González",
+        "birthday": "1957-08-17",
+        "email": "jorgeruiz@gasnna.com", 
+        "telephone": "023482323343",
+        "location": "Belgrano 423 ",
+        "area": "Esteban Echeverria",
+        "profession": "ama de casa y jubilada", 
+        "interest": "quisiera alimentar y cuidar a los perros",
+        "modality": "presencial", 
+        "availability": 25,
+        "days": [ "lunes","miércoles","viernes","sábado" ],
+        "clarification": "un día podría hacer carpooling, pero el resto quiero estar ahí con los perritos",
+        "description": "puedo dar mi amor y cuidado",
+        "purpose":"quiero ser voluntaria para devolver lo que la vida me dió",
+        "vehicle": "si",
+        "carpooling": "si",    
+        "question": "creo que puse todo"
+      
+    
+    },
+    {
+    
+        "name": "Carlos Carranza",
+        "birthday": "1977-08-23",
+        "email": "carranzaca@gasnna.com", 
+        "telephone": "022203345466",
+        "location": "Laurina Rivarola 826 ",
+        "area": "Luján",
+        "profession": "fletero", 
+        "interest": "Me interesa toda la labor del refugio",
+        "modality": "presencial", 
+        "availability": 4,
+        "days": [ "sábado" ],
+        "clarification": "puedo dedicar 4 hs los sábados desde las 14 hs en adelante",
+        "description": "puedo colaborar en el traslado de los perros",
+        "purpose":"quiero ser voluntario para ser de utilidad a esta gran obra",
+        "vehicle": "si",
+        "carpooling": "si",    
+        "question": "..."
+      
+    
+    },   
+    {
+      "name": "Luisa Porra",
+        "birthday": "1987-02-11",
+        "email": "luismora@gasnna.com", 
+        "telephone": "1154637281",
+      "location": "Barmol 4329",
+      "area": "Pilar",
+      "profession": "veterinario",
+      "interest": "Me gustaría colaborar en el cuidado clínico/veterinario de los perros",
+      "modality": "presencial",
+      "availability": 15,
+      "days": [
+        "lunes",
+        "miércoles",
+        "viernes"
+      ],
+      "clarification": "5 horas cada día de la semana",
+      "description": "Creo que puedo aportar mi empatía y cariño en el cuidado de los perritos, y que mi acción profesional este cargado de amor a ellos",
+      "purpose": "Quiero ser voluntario del Campito porque me preocupa la situación de los perritos que están en una situación dificil y quiero hacer algo al respecto",
+      "vehicle": "si",
+      "carpooling": "no",
+      "question": "Me gustaría ser acompañado por mi hijo de 12 años mientras hago mi labor voluntaria, para brindarle un ejemplo de servicio y cariños a los animales",
+      "isPending": false,
+      "isDelete": false,
+      "date": "2022-12-24T21:46:49.980Z"
+    },
+    {
+      "name": "Mara Puig",
+        "birthday": "1997-02-11",
+        "email": "mara@gasnna.com", 
+        "telephone": "1154637281",
+      "location": "Belgrano 423 ",
+      "area": "Esteban Echeverria",
+      "profession": "ama de casa y jubilada",
+      "interest": "quisiera alimentar y cuidar a los perros",
+      "modality": "presencial",
+      "availability": 25,
+      "days": [
+        "lunes",
+        "miércoles",
+        "viernes",
+        "sábado"
+      ],
+      "clarification": "un día podría hacer carpooling, pero el resto quiero estar ahí con los perritos",
+      "description": "puedo dar mi amor y cuidado",
+      "purpose": "quiero ser voluntaria para devolver lo que la vida me dió",
+      "vehicle": "si",
+      "carpooling": "si",
+      "question": "creo que puse todo",
+      "isPending": false,
+      "isDelete": false,
+      "date": "2022-12-24T21:46:50.049Z"
+    },
+    {
+      "name": "Marta Hearne",
+        "birthday": "1977-02-11",
+        "email": "mahearne@gasnna.com", 
+        "telephone": "1154637281",
+      "location": "Laurina Rivarola 826 ",
+      "area": "Luján",
+      "profession": "ama de casa",
+      "interest": "Me interesa toda la labor del refugio",
+      "modality": "presencial",
+      "availability": 4,
+      "days": [
+        "sábado"
+      ],
+      "clarification": "puedo dedicar 4 hs los sábados desde las 14 hs en adelante",
+      "description": "puedo colaborar en el traslado de los perros",
+      "purpose": "quiero ser voluntario para ser de utilidad a esta gran obra",
+      "vehicle": "si",
+      "carpooling": "si",
+      "question": "...",
+      "isPending": false,
+      "isDelete": false,
+      "date": "2022-12-24T21:46:50.083Z"
+    },
+    {
+      "name": "Pedro Castillo",
+        "birthday": "1987-02-11",
+        "email": "pcastillo@gasnna.com", 
+        "telephone": "1154637281",
+      "location": "Lisandro 223",
+      "area": "Lanus",
+      "profession": "panchera",
+      "interest": "me gustan mucho los perros y quisiera estar con ellos",
+      "modality": "hibrido",
+      "availability": 10,
+      "days": [
+        "jueves",
+        "miércoles"
+      ],
+      "clarification": "puedo ir un día x 6 horas y el resto colaborar con algo virtual",
+      "description": "creo que puedo sumar mi dedicación y cariño",
+      "purpose": "quiero ser voluntaria para ayudar a los perritos",
+      "vehicle": "no",
+      "carpooling": "no",
+      "question": "solo podría ir un día para allá. El otro puedo hacer algo online",
+      "isPending": false,
+      "isDelete": false,
+      "date": "2022-12-24T21:46:50.881Z"
+    },
+    {
+      "name": "Luisa Mansilla",
+        "birthday": "1987-02-11",
+        "email": "luiam@gasnna.com", 
+        "telephone": "1154637281",
+      "location": "Avenida del Libertador 2353 ",
+      "area": "CABA",
+      "profession": "bailarina",
+      "interest": "me inetersa pasear a los perros",
+      "modality": "presencial",
+      "availability": 3,
+      "days": [
+        "miércoles"
+      ],
+      "clarification": "",
+      "description": "puedo brindar un poco de dedicación y atención",
+      "purpose": "quiero ser voluntaria porque creo que tengo amor para dar",
+      "vehicle": "si",
+      "carpooling": "no",
+      "question": "nada que agregar",
+      "isPending": false,
+      "isDelete": false,
+      "date": "2022-12-24T21:46:50.892Z"
+    }
+]

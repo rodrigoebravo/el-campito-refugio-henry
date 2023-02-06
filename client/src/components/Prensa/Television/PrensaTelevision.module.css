@@ -1,0 +1,33 @@
+.container {
+  padding: 50px;
+}
+
+.h2PrensaTele {
+  padding: 50px;
+  margin-bottom: 20px;
+  color: #6B639A;
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+@media (max-width: 834px) {
+  .h2PrensaTele {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 50px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 428px) {
+  .container {
+    padding: 0;
+    padding-top: 50px;
+
+  }
+
+  .footerTelevision {
+    padding: 30px;
+  }
+}

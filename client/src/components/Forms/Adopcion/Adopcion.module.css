@@ -1,0 +1,199 @@
+.mainContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.divContenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 50vw;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    min-height: 160px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+
+.itemCheckbox{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    min-height: 160px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    font-family: 'Seravek', 'sans-serif';
+    color: #444445;
+    font-weight: 300;
+    border: 3px solid #4FA7C1 ;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.required{
+    color: red;
+}
+
+.input{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #55BA68;
+    width: 65%;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+.input:focus, .inputDate:focus {
+  outline:none;
+  outline-offset: 0;
+  border-bottom: 2px solid #4FA7C1;
+}
+
+.input:active, .inputDate:active{
+  outline:none;
+  outline-offset: 0;
+  border-bottom: 2px solid #4FA7C1;
+}
+
+.inputDate{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #55BA68;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.checkboxContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 20px;
+    height:fit-content;
+}
+
+.checkbox:active{
+    color:#4FA7C1;
+    background-color:#4FA7C1;
+}
+
+.select{
+    width: min-content;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.submit{
+    width: 100px;
+    background-color: #4FA7C1;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #4FA7C1;
+    transform: scale(1.05);
+}
+.h3form{
+    color: #55BA68;
+    font-family: 'Trashhand';
+    font-size: 2.8em;
+    padding-bottom: 10px;
+}
+.input::placeholder { 
+    color: #55BA68;
+    opacity: 1;
+  }
+.buttonLoad {
+    width: auto;
+    padding: 20px;
+    min-height: 0;
+    height: 75px;
+    margin: 100px;
+    
+    text-align: center;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    background-color: #4FA7C1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @media (max-width: 834px) {
+    .mainContainer{
+        margin-top: 60px;;
+    }
+    .submit{
+       align-self: flex-end;
+    }
+  }
+
+  @media (max-width: 428px) {
+    .mainContainer{
+      padding-top: 50px;
+  
+    }
+    .buttonLoad{
+        height: 200px;
+       
+       
+    }
+    .item{
+      width:250px;
+      margin-left:-40px
+      
+    }
+    .divContenedor{
+      margin:0px;
+     
+      padding:0px
+    }
+    .submit{
+       margin-right: -30px;
+     }
+    .footerAdopcion{
+        padding:10px;
+         margin-left:10px;
+      }
+  
+  }
+  @media (max-width: 320px) {
+
+  }

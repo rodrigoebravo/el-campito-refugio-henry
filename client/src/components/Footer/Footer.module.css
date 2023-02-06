@@ -1,0 +1,144 @@
+footer {
+
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+
+    flex-direction: column;
+    padding: 50px 20px 10px 20px;
+
+    justify-content: space-around;
+
+    -ms-flex-align: space-around;
+
+    text-align: center;
+}
+
+.footerContainer {
+
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+
+    flex-direction: row;
+
+    justify-content: space-around;
+    -webkit-box-align: center;
+
+    align-items: center;
+    text-align: left;
+
+}
+
+.infoContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+
+
+
+}
+
+.redes {
+    margin-top: 40px;
+}
+
+.derechos {
+    margin-top: 50px;
+}
+
+.pFooter {
+    margin: 10px;
+
+    text-align: left;
+}
+
+.h4Footer {
+    font-size: 1.2em;
+    font-weight: 900;
+    margin: 0px;
+}
+
+.derechos {
+    margin-top: 50px;
+    font-size: 1em;
+    color: #444445;
+    font-weight: 300;
+    text-align: center;
+}
+
+.imgFooter {
+    width: 15%;
+    height: auto;
+    margin: 10px
+}
+
+i {
+    color: #E48125;
+    font-size: 1.6em;
+    margin: 10px;
+    align-self: flex-end;
+}
+
+.iFooter {
+    color: #E48125;
+    font-size: 1.8em;
+}
+
+@media (max-width: 834px) {
+    .imgFooter {
+        display: none
+    }
+
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px 10px 20px;
+    }
+
+    .redes {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 428px) {
+    i {
+        height: 1rem;
+        font-size: 3em !important;
+        margin: 10px;
+    }
+
+    .footerContainer,
+    footer {
+        margin: 0px;
+        padding: 0px;
+        ;
+    }
+
+    .pFooter {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .redes {
+        padding: 20px;
+    }
+}
+@media (max-width: 414px) {
+.footerContainer{
+    margin-left: 20px;
+}
+}

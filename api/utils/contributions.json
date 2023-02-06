@@ -1,0 +1,72 @@
+[
+    {
+        "email": "paulaspeciale@gmail.com", 
+        "type": "sponsoreo", 
+        "date":"2022-12-27T12:49:36.889Z",
+        "detail": "sponsoreo para evento de fin de año",   
+        "total": 1000000,
+        "method": "donaronline"
+    },
+    {
+        "email": "luismora@gasnna.com", 
+        "dogName":"Batman",
+        "type": "padrinazgo", 
+        "date":"2022-10-27T12:49:36.889Z",
+        "total": 100,
+        "method": "cafecito"
+    },
+    {
+        "email": "jorgeruiz@gasnna.com",
+        "type": "donación", 
+        "total": 200,
+        "method": "mercadopago"
+    },
+    {
+        "type": "donación", 
+        "total": 3000,
+        "method": "mercadopago"
+    },
+    {
+        "type": "donación", 
+        "total": 1000,
+        "method": "mercadopago"
+    },
+    {
+        "type": "donación",
+        "total": 20000,
+        "method": "mercadoPago",
+        "date": "2022-12-27T12:49:36.889Z"
+      },
+      {
+        "email": "shtast@mail.com",
+        "name": "Sasha Milens",
+        "dogName": "Isadora",
+        "type": "padrinazgo",
+        "total": 20000,
+        "detail": "para hacer mas linda la vida de Isa",
+        "method": "mercadoPago",
+        "date": "2021-08-20T12:51:34.724Z"
+      },
+      {
+        "email": "patatas@mail.com",
+        "name": "Patricia Milens",
+        "dogName": "Bala",
+        "type": "padrinazgo",
+        "total": 2000,
+        "detail": "para hacer mas linda la vida de Isa",
+        "method": "mercadoPago",
+        "date": "2021-08-20T12:51:34.724Z"
+      },
+      {
+        "type": "donación",
+        "total": 20000,
+        "method": "mercadoPago",
+        "date": "2000-12-27T13:30:03.162Z"
+      },
+      {
+        "type": "donación",
+        "total": 20000,
+        "method": "mercadoPago",
+        "date": "2019-12-17T14:06:46.570Z"
+      }
+]
