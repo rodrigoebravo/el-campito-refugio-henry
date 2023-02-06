@@ -4,7 +4,7 @@ const getDogs = async (req, res) => {
   try {
     // const { filter, range, sort} = req;
     // console.log({filter, range:range[0], sort});
-    const users = await dogModel.find({});
+    const users = await dogModel.find({isDelete: false});
     console.log(users,"soy yo")
     res.status(201).send(users);
   } catch (e) {
