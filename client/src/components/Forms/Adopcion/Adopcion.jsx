@@ -242,7 +242,6 @@ const Adopcion = (props) => {
               </label>
               <input
                 type="text"
-                defaultValue="propiedad por defecto"
                 className={styles.input}
                 placeholder="Tu respuesta"
                 {...register("description", { required: true })}
