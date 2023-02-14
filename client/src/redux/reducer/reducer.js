@@ -17,6 +17,7 @@ import {
   POST_ADOPTION,
   POST_CONTACTO,
   POST_VOLUNTEER,
+  GET_PROYECTOS
 } from "../actions/types";
 
 const initialState = {
@@ -30,6 +31,7 @@ const initialState = {
   userEmail: [],
   userProfile: [],
   slider: [],
+  proyectos:[]
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -174,6 +176,11 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         slider: action.payload,
       };
+    case GET_PROYECTOS:
+        return {
+          ...state,
+          proyectos: action.payload,
+        };  
     default:
       return {
         ...state,

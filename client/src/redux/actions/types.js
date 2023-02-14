@@ -17,3 +17,4 @@ export const POST_VOLUNTEER = 'POST_VOLUNTEER';
 export const POST_MELI = 'POST_MELI';
 export const GET_USERS_EMAIL = 'GET_USERS_EMAIL';
 export const POST_CONTACTO = 'POST_CONTACTO';
+export const GET_PROYECTOS = 'GET_PROYECTOS';

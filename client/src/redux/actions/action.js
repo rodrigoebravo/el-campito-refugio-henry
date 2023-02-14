@@ -15,8 +15,10 @@ import {
   GET_PRESS,
   GET_USERS_EMAIL,
   POST_CONTACTO,
-} from "./types";
-import axios from "axios";
+  GET_PROYECTOS
+} from './types';
+import axios from 'axios';
+
 import dotenv from "dotenv";
 dotenv.config();
 // const {NAME_CLOUDINARY} = process.env;
@@ -188,6 +190,20 @@ export const getPress = () => {
     }
   };
 };
+
+export const getProyectos= () => {
+  return async function (dispatch) {
+    try {
+      let json = await axios("/api/escolar")
+      return dispatch({
+        type: GET_PROYECTOS,
+        payload: json.data
+      })
+    } catch {
+      console.log("error en traer proyectos")
+    }
+  }
+}
 
 export function registerFunction(payload) {
   return async function () {
