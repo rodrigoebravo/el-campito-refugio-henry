@@ -16,7 +16,8 @@ import Voluntario from "./components/Forms/Voluntario/Voluntario.jsx";
 import Adopcion from "./components/Forms/Adopcion/Adopcion.jsx";
 import Contacto from "./components/Forms/Contacto/Contacto";
 import Proyectos from "./components/Proyectos/Proyectos.jsx";
-import ProyectoEscolar from "./components/Proyectos/ProyectoEscolar.jsx";
+import ProyectoEscolar from "./components/Proyectos/Escolar/ProyectoEscolar";
+import ProyectoTalleres from "./components/Proyectos/Talleres/ProyectoTalleres";
 import Cuidados from "./components/Cuidados/Cuidados.jsx";
 import Denuncias from "./components/Denuncias/Denuncias.jsx";
 import Prensa from "./components/Prensa/Prensa.jsx";
@@ -50,6 +51,7 @@ function App() {
       <Route exact path={"/ContactForm"} component={Contacto} />
       <Route exact path={"/proyectos"} component={Proyectos} />
       <Route exact path={"/proyectoescolar"} component={ProyectoEscolar} />
+      <Route exact path={"/proyectotalleres"} component={ProyectoTalleres} />
       <Route exact path={"/cuidados"} component={Cuidados} />
       <Route exact path={"/denuncias"} component={Denuncias} />
       <Route exact path={"/prensa"} component={Prensa} />

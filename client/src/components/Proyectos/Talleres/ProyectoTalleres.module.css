@@ -1,0 +1,121 @@
+.h2Talleres{
+    margin-top: 20px;
+    margin-left: 100px;
+    font-family: 'Trashhand';
+      font-size: 2.8em;
+      color: #4FA7C1 !important;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+  }
+  .contenedorTalleres{
+    margin:40px;
+    margin-top: 0;
+    padding: 50px;
+  }
+  .pProyectoEscolar {
+    margin-top: 20px;
+    display: block;
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1.3em;
+    font-stretch: expanded;
+  }
+
+  .imgProyectoEscolar {
+    width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+
+  .boxContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-flow: flex wrap;
+    flex-flow: flex wrap;
+    margin-bottom: 150px;
+  }
+  
+  .box {
+    height: 250px;
+    width: 25%;
+  
+  }
+
+  .videosBox {
+    /* margin-top: 150px; */
+  }
+  .buttonVideo {
+    cursor: pointer;
+    border: none;
+  }
+  .id {
+    display: none;
+  }
+
+
+  @media (max-width: 834px) {
+    .contenedorTalleres{
+      margin-top: 70px;
+    }
+  
+  }
+  @media (max-width: 428px) {
+  
+    .contenedorTalleres{
+      margin-top: 70px;
+  }
+  }
+
+  .pProyectoEscolar {
+    margin-top: 20px;
+    display: block;
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1.3em;
+    font-stretch: expanded;
+  }
+
+  .imgProyectoEscolar {
+    width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+
+  .boxContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-flow: flex wrap;
+    flex-flow: flex wrap;
+    margin-bottom: 150px;
+  }
+  
+  .box {
+    height: 250px;
+    width: 25%;
+  
+  }
+
+  .videosBox {
+    /* margin-top: 150px; */
+  }

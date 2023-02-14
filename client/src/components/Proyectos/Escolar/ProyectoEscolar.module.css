@@ -1,0 +1,172 @@
+.container {
+  padding: 50px;
+}
+
+
+
+.proyectoEscolarmain {
+  font-size: 1em;
+  padding: 50px;
+  padding-top: 0px;
+}
+
+.h2ProyectoEscolar {
+  margin-top: 20px;
+  color: #55BA68;
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.pProyectoEscolar {
+  margin-top: 20px;
+  display: block;
+  margin-block-start: 1.5em;
+  margin-block-end: 1.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 1.3em;
+  font-stretch: expanded;
+}
+
+.ulProyectoEscolar ::before {
+  content: "\2022";
+  color: #55BA68;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: 1em;
+}
+
+.aProyectoEscolar {
+  color: #55BA68;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+
+}
+
+.spanProyectoEscolar {
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.buttonProyectoEscolar {
+  width: auto;
+  padding: 20px;
+  min-height: 0;
+  height: 75px;
+  margin-top: 20px;
+  background-color: #55BA68;
+  border-radius: 15px;
+  border: 0px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.8em;
+}
+
+.infoProyectoEscolar {
+  display: flex;
+  margin-top: 6rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-flow: flex wrap;
+  flex-flow: flex wrap;
+}
+
+.box {
+  height: 250px;
+  width: 25%;
+
+}
+
+.imgProyectoEscolar {
+  width: 100%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.h2Talleres{
+  margin-top: 20px;
+  margin-left: 50px;
+  font-family: 'Trashhand';
+    font-size: 2.8em;
+    color: #4FA7C1 !important;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.containerVideos {
+  margin-top: 3rem;
+  padding: 3rem;
+  border-radius: 5%;
+  border-color: black;
+  border: 4px;
+}
+.buttonVideo {
+  cursor: pointer;
+  border: none;
+}
+.id {
+  display: none;
+}
+
+@media (max-width: 834px) {
+  .box {
+    height: 250px;
+    width: 50%;
+  }
+
+  .buttonProyectoEscolar {
+    font-size: 1.5em;
+  }
+
+  .spanProyectoEscolar {
+    margin-top: 20px;
+  }
+  .proyectoEscolarmain{
+    padding: 20px;
+  }
+}
+@media (max-width: 428px) {
+  .proyectoEscolarmain{
+    margin:0px;
+    padding: 0px;
+  }
+  .boxContainer{
+    margin:0px;
+    padding: 0px;
+  }
+  .box {
+    height: 250px;
+    width: 100%;
+  }
+  .buttonProyectoEscolar{
+    font-size: 1em;
+  }
+  section{
+    margin-bottom: 0px ;
+  }
+}
