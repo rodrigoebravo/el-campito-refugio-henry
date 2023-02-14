@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'; // version 5.2.0
@@ -6,6 +6,7 @@ import styles from "./Voluntario.module.css";
 // import Navbar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
 import { postVolunteer } from "../../../redux/actions/action";
+import swal from "sweetalert";
 
 const Voluntario = (props) => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
@@ -45,20 +46,31 @@ const Voluntario = (props) => {
     console.log(data);
     // e.preventDefault();
     dispatch(postVolunteer(data));
-    alert("form create successfuly!");
+    swal({
+      title: "Gracias por llenar la solicitud para ser Voluntario!",
+      icon: "success",
+      button: "Cerrar",
+    });
+    // alert("Gracias por llenar la solicitud para ser Voluntario");
     // e.target.reset();
     // window.location.reload();
     history.push ('./');
   };
+  useEffect(() =>{
+    if(storage.name === "undefined"){
+      handleClick()
+    }
+  })
 
   return (
     <div className={styles.divContenedor}>
       {/* <Navbar/> */}
       {storage.name === "undefined" ? (
-        <button className={styles.buttonLoad} onClick={() => handleClick()}>
-          {" "}
-          Llenar el Formulario para Voluntariado{" "}
-        </button>
+        // <button className={styles.buttonLoad} onClick={() => handleClick()}>
+        //   {" "}
+        //   Llenar el Formulario para Voluntariado{" "}
+        // </button>
+        <h2>Cargando</h2>
       ) : (
         <div className={styles.mainContainer}>
           <h2 className={styles.h3form}>Convocatoria a Voluntarios</h2>
