@@ -244,7 +244,7 @@ const QuieroColaborar = () => {
             </button>
 
             {/* Paypal Nico  */}
-           
+
             <button
               className={styles.buttonPaypal}
               onClick={payWithPayPal({
@@ -272,37 +272,6 @@ const QuieroColaborar = () => {
                 Otro monto (solo números, sin centavos)
               </p>
             </button>
-            {/* </form> */}
-
-            {/* <div className={styles.buttonPaypal}>
-              <input
-                className={styles.inputColaborar}
-                type="number"
-                name="monto"
-                value={input.monto}
-                onChange={handleChange}
-              />
-              <p className={styles.noButton}>
-                Otro monto (solo números, sin centavos)
-              </p>
-              {input.monto === "" ? (
-                <button
-                  type="submit"
-                  className={styles.btnPaypalMonto}
-                  disabled
-                >
-                  Continuar
-                </button>
-              ) : (
-                <button
-                  type="submit"
-                  className={styles.btnPaypalMonto}
-                  onClick={payWithPayPal(input)}
-                >
-                  Continuar
-                </button>
-              )}
-            </div> */}
           </article>
           <article className={styles.parentGridPaypal}>
             <div className={styles.medioDePagoCF}>
@@ -312,7 +281,6 @@ const QuieroColaborar = () => {
                 alt="Logo de Cafecito"
               />
             </div>
-            {/* <button className={styles.buttonCF} href="https://cafecito.app/refugioelcampito" target="_blank" rel="noreferrer"> */}
             <a
               href="https://cafecito.app/refugioelcampito"
               target="_blank"
@@ -321,7 +289,6 @@ const QuieroColaborar = () => {
             >
               Donar Cafecito
             </a>
-            {/* </button> */}
           </article>
         </section>
       </main>

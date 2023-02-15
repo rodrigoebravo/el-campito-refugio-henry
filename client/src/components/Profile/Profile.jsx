@@ -106,7 +106,7 @@ const Profile = () => {
                     console.log("CLICK");
                   }}
                 >
-                  Actualizar Estado
+                  Actualizar Perfil
                 </buton>
 
                 <button

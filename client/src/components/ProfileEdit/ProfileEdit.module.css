@@ -5,7 +5,10 @@
   align-items: center;
   flex-direction: column;
 }
-
+.divsdate{
+  display: flex;
+  flex-direction: column;
+}
 .div2 {
   display: flex;
   flex-direction: row;
@@ -80,11 +83,16 @@
   background: transparent;
   border: 0;
   border-bottom: 2px solid #888;
-  width: 65%;
+  width: 100%;
   font-size: 1em;
   padding-bottom: 5px;
 }
-.inputImg{
+
+.inputNone {
+  display: none;
+}
+
+.inputImg {
   display: flex;
   align-items: center;
   margin: 0 3rem;
@@ -112,7 +120,7 @@
   padding-bottom: 5px;
 }
 
-.submit{
+.submit {
   width: 100px;
   background-color: #E48125;
   border: 1px solid transparent;
@@ -123,12 +131,45 @@
   margin: -20px 0px 50px 0px;
   cursor: pointer;
 }
+.submit2{
+  width: 150px;
+  background-color: #E48125;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  margin: -20px 0px 50px 0px;
+  cursor: pointer;
+}
 
-.submit:hover{
+.submit:hover ,.submit2:hover  {
   background-color: orange;
   transform: scale(1.05);
 }
-.divImg{
+
+.divImg {
   display: flex;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 25rem
+}
+
+.ButtonEdit {
+  margin: 1rem 0;
+  display: flex;
+  background-color: #1976d2;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 1rem;
+  height: 2rem;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.ButtonEdit:hover {
+  background-color: #0640ae;
 }
