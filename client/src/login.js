@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 
 export function loginUser(dataUser) {
   return async function () {
@@ -37,12 +38,19 @@ export function updateProfile() {
       localRoles.birthday === dataRoles.birthday &&
       dataRoles.roles.toString() === localRoles.roles.toString()
     ) {
-      alert("Tu perfil esta actualizado");
+      swal({
+        title: "Tu perfil esta actualizado!",
+        icon: "success",
+        button: "Cerrar",
+      });
     } else {
-      console.log("Todo bien");
       localStorage.removeItem("user");
+      swal({
+        title: "Tu perfil se encuentra desactualizado, reinicia tu sesion",
+        icon: "warning",
+        button: "Cerrar",
+      });
       window.location.reload();
-      alert("Tu perfil se encuentra desactualizado, reinicia tu sesion");
     }
   };
 }
@@ -140,27 +148,15 @@ export function editProfile(emailData, id) {
     // luego comporbar que conicida el email con el ingresado anteriormente
     // modificar el valor de pass de db atravez de un put el valor ingresado
 
-    // const id = req.params
-    // const data = req.body
     const edit = await axios.put(
       `http://localhost:3001/api/users/${id}`,
       emailData
     );
-
-    console.log(edit, "soy data22");
-    console.log(id, "soy data e id");
-    alert("Cambios Guardados");
-    // const dataUsers = await axios.get("http://localhost:3001/api/users/");
-    // let data = dataUsers.data.map((e) => {
-    //   let objEmail = e.email;
-    //   let objId = e._id;
-    //   let info = { email: objEmail, id: objId };
-    //   return info;
-    // });
-    // console.log(data);
-    // let edit = data.find((e) => e.email === emailData)
-    // console.log(edit.email)
-    // console.log(edit.id)
+    swal({
+      title: "Cambios guardados!",
+      icon: "success",
+      button: "Cerrar",
+    });
   };
 }
 

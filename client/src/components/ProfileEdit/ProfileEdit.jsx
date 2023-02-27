@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ProfileEdit.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -9,13 +9,48 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 const ProfileEdit = () => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
   const responseCloudinary = useSelector((state) => state.responseCloudinary);
-  // console.log(responseCloudinary, "soy responseCloudinary");
-  // console.log(id, "soy user");
+
+  let img = "";
+  if (responseCloudinary) {
+    img = responseCloudinary;
+  } else {
+    img = user.data.info.image;
+  }
+
   const [input, setInput] = useState({
-    image: "",
-    phone: "",
-    birthday: "",
+    image: img,
+    phone: user.data.info.phone || "",
+    birthday: user.data.info.birthday || "",
   });
+
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  let handleButtonClick = (e) => {
+    e.preventDefault();
+    setButtonClicked(!buttonClicked);
+  };
+  const [buttonClicked2, setButtonClicked2] = useState(false);
+
+  let handleButtonClick2 = (e) => {
+    e.preventDefault();
+    setButtonClicked2(!buttonClicked2);
+  };
+  const [buttonClicked3, setButtonClicked3] = useState(false);
+  let handleButtonClick3 = (e) => {
+    e.preventDefault();
+    setButtonClicked3(!buttonClicked3);
+  };
+  const [buttonClicked4, setButtonClicked4] = useState(false);
+  let handleButtonClick4 = (e) => {
+    e.preventDefault();
+    setButtonClicked4(!buttonClicked4);
+    setInput({
+      image: img,
+      phone: input.phone,
+      birthday: input.birthday,
+    });
+  };
+
   console.log(input);
 
   function handleChange(e) {
@@ -24,32 +59,13 @@ const ProfileEdit = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
-    
   }
-  let imagenLocal = user.data.info.image;
-  console.log(responseCloudinary.length, "soy response claudinary");
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    responseCloudinary.length > 0
-      ? setInput({
-          ...input,
-          image: responseCloudinary,
-        })
-      : setInput({
-          ...input,
-          image: imagenLocal,
-        });
-
-    console.log(input, "soy input de handle");
     let id = user.data.info._id;
-    // setTimeout(() => {
-    //   let data = editProfile(input, id);
-    //   // postCloudinaryPhoto(input.image)
-    //   data();
-    // }, 4000);
     let data = editProfile(input, id);
-    //   // postCloudinaryPhoto(input.image)
     data();
 
     setInput({
@@ -58,6 +74,7 @@ const ProfileEdit = () => {
       birthday: "",
     });
   }
+
 
   return (
     <div className={styles.div}>
@@ -74,6 +91,7 @@ const ProfileEdit = () => {
             <input
               type="name"
               value={user.data.info.name}
+              disabled
               onChange={handleChange}
               className={styles.input}
             ></input>
@@ -83,6 +101,7 @@ const ProfileEdit = () => {
             <input
               type="email"
               value={user.data.info.email}
+              disabled
               onChange={handleChange}
               className={styles.input}
             ></input>
@@ -93,51 +112,136 @@ const ProfileEdit = () => {
               {user.data.info.image ? (
                 <div>
                   <h6>Imagen Actual</h6>
-                  <img alt="profile imagen" src={user.data.info.image} />
+                  <img
+                    alt="profile imagen"
+                    src={user.data.info.image}
+                    width="200"
+                  />
                 </div>
               ) : (
                 <></>
               )}
-              <ImageUpload />
+
+              {buttonClicked ? (
+                <div>
+                  <ImageUpload />
+                  {/* <input
+                    value={img}
+                    type="text"
+                    name="image"
+                    onChange={handleChange}
+                    className={styles.input}
+                  /> */}
+                </div>
+              ) : (
+                <>
+                  <button onClick={handleButtonClick} className={styles.ButtonEdit}>Modificar</button>
+                </>
+              )}
+              {/* <ImageUpload />
               {responseCloudinary.length > 0 ? <h6>Imagen Nueva</h6> : null}
 
-              {/* {responseCloudinary.length === 0 ? null : (
-                <div>
-                  <img alt="profile imagen" src={responseCloudinary} />
-                  <h6>Nueva Imagen</h6>
-                </div>
+              {user.data.info.image ? (
+                <input
+                  value={img}
+                  type="text"
+                  name="image"
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+              ) : (
+                <>
+                   <input
+                    // defaultValue={user.data.info.image || responseCloudinary }
+                    // value={responseCloudinary}
+                    type="text"
+                    name="image"
+                    defaultValue={responseCloudinary}
+                    onChange={handleChange}
+                    // className={styles.inputNone}
+                  /> 
+                </>
               )} */}
             </div>
           </div>
           <div className={styles.item}>
             <label className={styles.label}>Telefono</label>
-            <input
-              value={input.phone}
-              type="tel"
-              name="phone"
-              onChange={handleChange}
-              className={styles.input}
-              placeholder="(Código de área) Número"
-            />
+
+            {user.data.info.phone ? (
+              <div className={styles.divsdate}>
+                {buttonClicked2 ? (
+                  <input
+                    defaultValue={user.data.info.phone}
+                    type="number"
+                    name="phone"
+                    onChange={handleChange}
+                    className={styles.input}
+                    placeholder="(Código de área) Número"
+                  />
+                ) : (
+                  <>
+                    <label>{user.data.info.phone}</label>
+                    <button onClick={handleButtonClick2} className={styles.ButtonEdit}>Modificar</button>
+                  </>
+                )}
+              </div>
+            ) : (
+              <input
+                value={input.phone}
+                type="number"
+                name="phone"
+                onChange={handleChange}
+                className={styles.input}
+                placeholder="(Código de área) Número"
+              />
+            )}
           </div>
           <div className={styles.item}>
             <label className={styles.label}>Fecha de Nacimiento</label>
-            <input
-              value={input.birthday}
-              min="1950-01-01"
-              type="date"
-              name="birthday"
-              className={styles.input}
-              onChange={handleChange}
-              placeholder="Fecha de Nacimiento"
-            />
+            {user.data.info.birthday ? (
+              <div className={styles.divsdate}>
+                {buttonClicked3 ? (
+                  <input
+                    defaultValue={user.data.info.birthday}
+                    min="1950-01-01"
+                    type="date"
+                    name="birthday"
+                    className={styles.input}
+                    onChange={handleChange}
+                    placeholder="Fecha de Nacimiento"
+                  />
+                ) : (
+                  <>
+                    <label> {user.data.info.birthday.substring(0, 10)}</label>
+                    <button onClick={handleButtonClick3} className={styles.ButtonEdit}>Modificar</button>
+                  </>
+                )}
+              </div>
+            ) : (
+              <input
+                value={input.birthday}
+                min="1950-01-01"
+                type="date"
+                name="birthday"
+                className={styles.input}
+                onChange={handleChange}
+                placeholder="Fecha de Nacimiento"
+              />
+            )}
           </div>
-          <input
-            type="submit"
-            value="Enviar"
-            onClick={handleSubmit}
-            className={styles.submit}
-          />
+
+          {buttonClicked4 ? (
+            <input
+              type="submit"
+              value="Enviar"
+              onClick={handleSubmit}
+              className={styles.submit}
+            />
+          ) : (
+            <button onClick={handleButtonClick4} className={styles.submit2}>
+              Confirmar Cambios
+            </button>
+          )}
         </div>
       </form>
     </div>

@@ -61,7 +61,7 @@ const ImagenUpload = () => {
                         { !cloudImages ? null :                            
                                 <div className="video" >
                                     <button  onClick={(e)=>handleDelete(e)}>X</button>
-                                    <img src={cloudImages} alt="algo falló" width="500" ></img>                                                              
+                                    <img src={cloudImages} alt="algo falló" width="300" ></img>                                                              
                                 </div>
                         }
             </div>
