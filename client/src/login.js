@@ -28,7 +28,7 @@ export function updateProfile() {
     const localInfoRole = JSON.parse(localStorage.getItem("user"));
     let id = localInfo.data?.info._id;
     let localRoles = localInfoRole.data?.info;
-    const user = await axios.get(`http://localhost:3001/api/users/${id}`);
+    const user = await axios.get(`/api/users/${id}`);
 
     dataRoles = user.data;
 
@@ -70,7 +70,7 @@ export function loginUserGoogle(dataUser) {
 export function registerUserGoogle(dataUser) {
   return async function () {
     // validacion que no este registrado//
-    const dataUsers = await axios.get("http://localhost:3001/api/users/");
+    const dataUsers = await axios.get("/api/users/");
     let data = dataUsers.data.map((e) => {
       return e.email;
     });
@@ -81,7 +81,7 @@ export function registerUserGoogle(dataUser) {
 
     try {
       const registerData = await axios.post(
-        "http://localhost:3001/api/auth/register",
+        "/api/auth/register",
         dataUser
       );
       registerData();
@@ -100,7 +100,7 @@ export function registerUserGoogle(dataUser) {
 
 export function emailAvailable(email) {
   return async function () {
-    const dataUsers = await axios.get("http://localhost:3001/api/users/");
+    const dataUsers = await axios.get("/api/users/");
     let data = dataUsers.data.map((e) => {
       return e.email;
     });
@@ -133,7 +133,7 @@ export function emailAvailable(email) {
 export function payWithPayPal(monto, names) {
   return async function () {
     const response = await axios.post(
-      "http://localhost:3001/api/paypal/create-order",
+      "/api/paypal/create-order",
       { monto, names }
     );
     console.log(monto, "soy monto login");
@@ -148,8 +148,8 @@ export function editProfile(emailData, id) {
     // luego comporbar que conicida el email con el ingresado anteriormente
     // modificar el valor de pass de db atravez de un put el valor ingresado
 
-    const edit = await axios.put(
-      `http://localhost:3001/api/users/${id}`,
+    await axios.put(
+      `/api/users/${id}`,
       emailData
     );
     swal({
@@ -162,7 +162,7 @@ export function editProfile(emailData, id) {
 
 export function changePassword(emailData) {
   return async function (req, res) {
-    const dataUsers = await axios.get("http://localhost:3001/api/users/");
+    const dataUsers = await axios.get("/api/users/");
     let data = dataUsers.data.map((e) => {
       let objEmail = e.email;
       let objId = e._id;
@@ -177,13 +177,13 @@ export function changePassword(emailData) {
 
     if (edit) {
       const recoveryEmail = await axios.post(
-        "http://localhost:3001/api/password/",
+        "/api/password/",
         { email, id }
       );
       console.log(recoveryEmail);
     }
     alert("Se envio un correo para recuperar tu cuenta.");
-    window.location = "http://localhost:3000/";
+    window.location = "/";
   };
 }
 
@@ -198,12 +198,12 @@ export function updatePassword(obj) {
       console.log(pass, "soy pass");
       console.log(id, "soy id");
       const recoveryEmail = await axios.put(
-        `http://localhost:3001/api/users/password/${id}`,
+        `/api/users/password/${id}`,
         { pass }
       );
       console.log(recoveryEmail, "soy id");
       alert("Se Cambio tu contaseña.");
-      window.location = "http://localhost:3000/";
+      window.location = "/";
     } catch {
       alert("Hubo un error al cambiar la contraseña");
     }
@@ -212,7 +212,7 @@ export function updatePassword(obj) {
 
 export function dataProfile(id) {
   return async function () {
-    const userEmail = await axios.get(`http://localhost:3001/api/users/${id}`);
+    const userEmail = await axios.get(`/api/users/${id}`);
     let dataProfile = userEmail.data.email;
     console.log(dataProfile);
     return dataProfile;

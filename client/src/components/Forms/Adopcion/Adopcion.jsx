@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom"; // version 5.2.0
 import { useForm } from "react-hook-form";
 import styles from "./Adopcion.module.css";
-import Footer from "../../Footer/Footer";
+import Footer from "../../UserInterface/Footer/Footer";
 import { postAdoption } from "../../../redux/actions/action";
 import swal from "sweetalert";
 

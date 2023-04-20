@@ -1,9 +1,11 @@
 const axios = require("axios");
 const {
   PAYPAL_API,
-  HOST,
   PAYPAL_API_CLIENT,
   PAYPAL_API_SECRET,
+  PAYPAL_BRAND,
+  FRONT,
+  BACK
 } = require("../config/paypal");
 
 
@@ -31,11 +33,11 @@ const createOrder = async (req, res) => {
         },
       ],
       application_context: {
-        brand_name: "El campito Refugio",
+        brand_name: PAYPAL_BRAND, //  "El campito Refugio", BORRAR  COMENTARIO DESPUES DE PRUEBAS
         landing_page: "NO_PREFERENCE",
         user_action: "PAY_NOW",
-        return_url: "http://localhost:3001/api/paypal/capture-order",
-        cancel_url: "http://localhost:3001/api/paypal/cancel-order",
+        return_url: `${BACK}/api/paypal/capture-order`,
+        cancel_url: `${BACK}/api/paypal/cancel-order`,
       },
     };
 
@@ -48,7 +50,7 @@ const createOrder = async (req, res) => {
     const {
       data: { access_token },
     } = await axios.post(
-      "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+      `${PAYPAL_API}/v1/oauth2/token`,
       params,
       {
         headers: {
@@ -80,12 +82,12 @@ const createOrder = async (req, res) => {
     return res.json(response.data);
   } catch (error) {
     console.log(error.message);
-    return res.status(500).json("Something goes wrong crate");
+    return res.status(500).json("Something goes wrong create");
   }
 };
 
 const captureOrder = async (req, res) => {
-  console.log("entre a cpture order");
+  console.log("entre a capture order");
   const { token } = req.query;
 
   try {
@@ -134,7 +136,7 @@ const captureOrder = async (req, res) => {
 
     // res.json(response.data)
     //respuesta de la data en json
-    res.redirect("http://localhost:3000/pay");
+    res.redirect(`${FRONT}/pay`);
     //respuesta con redirect
   } catch (error) {
     console.log(error.message);
@@ -145,7 +147,7 @@ const captureOrder = async (req, res) => {
 
 const cancelPayment = (req, res) => {
   console.log("Se cancelo la operacion");
-  res.redirect("http://localhost:3000");
+  res.redirect(FRONT); // "http://localhost:3000" boorrar comentario después de pruebas
 };
 
 module.exports = {

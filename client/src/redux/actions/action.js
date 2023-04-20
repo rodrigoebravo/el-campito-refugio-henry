@@ -23,14 +23,7 @@ import dotenv from "dotenv";
 dotenv.config();
 // const {NAME_CLOUDINARY} = process.env;
 
-/* export default function postMeli(title, unit_price) {
-  return async function () {
-    const post = await axios
-      .post("http://localhost:3001/mercadopago", title, unit_price)
-      .then((res) => (window.location.href = res.data.init_point));
-    return post;
-  };
-} */
+
 
 export function postDog(payload) {
   return async function () {
@@ -42,7 +35,7 @@ export function postDog(payload) {
 export default function postMeli(title, unit_price) {
   return async function () {
     const post = await axios
-      .post("http://localhost:3001/mercadopago", title, unit_price)
+      .post("/mercadopago", title, unit_price)
       .then((res) => (window.location.href = res.data.init_point));
     return post;
   };
@@ -237,7 +230,7 @@ export function dataProfile(id) {
   return async function (dispatch) {
     try {
       const userEmail = await axios.get(
-        `http://localhost:3001/api/users/${id}`
+        `/api/users/${id}`
       );
       return dispatch({
         type: "GET_USERS_PROFILE",
@@ -266,7 +259,7 @@ export const postContacto = (data) => {
 
 export function getSlider() {
   return async function (dispatch) {
-    const responce = await axios("http://localhost:3001/api/interfaces");
+    const responce = await axios("/api/interfaces");
     const arrayImg = responce.data[0].slider;
     return dispatch({
       type: "GET_SLIDER",

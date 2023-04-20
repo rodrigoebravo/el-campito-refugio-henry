@@ -4,7 +4,6 @@ import {
   TextInput,
   DateInput,
   SelectInput,
-  BooleanInput,
 } from "react-admin";
 
 const convertStringToNumber = (value) => {

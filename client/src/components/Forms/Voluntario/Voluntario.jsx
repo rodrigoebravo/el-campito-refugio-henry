@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'; // version 5.2.0
 import styles from "./Voluntario.module.css";
 // import Navbar from "../../NavBar/NavBar";
-import Footer from "../../Footer/Footer";
+import Footer from "../../UserInterface/Footer/Footer";
 import { postVolunteer } from "../../../redux/actions/action";
 import swal from "sweetalert";
 

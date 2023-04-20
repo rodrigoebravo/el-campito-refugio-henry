@@ -25,8 +25,8 @@ const Filters = () => {
         </FilterList>
         <FilterList label="Edad" icon={<CakeIcon />}>
           <FilterListItem label="Cachorro" value={{ age: "cachorro" }} />
+          <FilterListItem label="Adulto jóven" value={{ age: "adulto jóven" }} />
           <FilterListItem label="Adulto" value={{ age: "adulto" }} />
-          <FilterListItem label="Adulto" value={{ age: "adulto jóven" }} />
           <FilterListItem label="Viejito" value={{ age: "viejito" }} />
         </FilterList>
         <FilterList label="Sexo" icon={<TransgenderIcon />}>

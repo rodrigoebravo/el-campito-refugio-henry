@@ -1,0 +1,58 @@
+.cardSize{ 
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border: 3px solid #4FA7C1;
+  border-radius: 20px;
+  padding: 20px;
+
+}
+.imgCardPress{
+  width: 100%;
+  border-radius: 20px;
+}
+.pCardPress{
+  font-size: 1em;
+  font-family: 'Seravek', 'sans-serif';
+  letter-spacing:normal
+}
+.spanCardPress{
+ display:block;
+ 
+  background-color: #4FA7C1;
+  border-radius: 10px;
+  padding: 5px;
+  margin:5px;
+
+ 
+  color:white
+}
+.h3CardPress{
+  font-family: 'Seravek', 'sans-serif';
+}
+.aPrensa{
+  text-decoration: none;
+}
+.prensaGraficaIcons{
+align-content: flex-end;
+
+
+}
+@media (max-width: 768px) {
+  .cardSize{ 
+    width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  .prensaGraficaIcons{
+    width: 80%;
+    align-content: center;
+  }
+  
+}
+@media (max-width: 360px) {
+  .cardSize{ 
+    width: 100%;
+  }
+}

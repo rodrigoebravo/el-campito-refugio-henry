@@ -1,0 +1,68 @@
+.container {
+  padding: 50px;
+}
+
+.card {
+  margin: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  grid-gap: 30px;
+  justify-items: center;
+
+
+}
+
+.h2PrensaAmigos {
+  color: #4FA7C1;
+  font-family: 'Trashhand';
+  font-size: 2.8em;
+
+}
+
+.iframePrensaAmigos {
+  width: 400px;
+  height: 480px;
+
+
+}
+
+.amigosInfo {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 834px) {
+
+  .h2PrensaAmigos {
+    text-align: center;
+  }
+
+  .card {
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    grid-gap: 0px;
+  }
+
+  .iframePrensaAmigos {
+    width: 200px;
+    height: 240px;
+    margin: 15px
+  }
+}
+
+@media (max-width: 428px) {
+  .card {
+    grid-template-columns: 100%;
+    align-items: center;
+  }
+
+  .amigosInfo {
+    margin-top: 40px
+  }
+}

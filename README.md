@@ -123,13 +123,19 @@ El administrador podrá, a través de un panel de administración, incorporar di
 # Equipo de Desarrollo: DINAMO
 
 - Paula Speciale : paulaspeciale paulaspeciale@gmail.com
+      https://www.linkedin.com/in/paula-speciale-b834b826/
 - Enzo Calvi : e1eternauta enzocalvi243@gmail.com
+      https://www.linkedin.com/in/enzo-calvi-564388213/
 - Joseph Villalba Osorio : reuht jhosephvillalba@gmail.com
+      https://www.linkedin.com/in/joseph-villalba-6889b795/
 - Matías Dentoni: SoyDento matiasdentoni@gmail.com
+      https://www.linkedin.com/in/matiasdentoni/
 - Ariel Cazzulino Hartvig : arielcazzulino arielcazzulino@gmail.com
+      https://www.linkedin.com/in/ariel-cazzulino-hartvig/
 - Jorge Chacin : Jorge12chacin jorge12chacin@gmail.com
-- Tomas Wolfmann: tomiwolf tomiwolfman@gmail.com
+      https://www.linkedin.com/in/jorge-chacin-615072b2/
 - Nicolas Oviedo: Nicovied0 briannoviedo@gmail.com
+      https://www.linkedin.com/in/nicoboviedo/
 
 ## **views**
 

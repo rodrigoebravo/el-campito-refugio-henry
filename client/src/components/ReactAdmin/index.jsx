@@ -1,5 +1,5 @@
 import { Admin, Resource } from "react-admin";
-import dataProvider from "../../dataProvider";
+import dataProvider from "./dataProvider";
 
 // Dogs
 import DogsList from "./Dogs/List";
