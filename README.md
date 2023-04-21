@@ -2,13 +2,15 @@
 
 # **PF - Henry: El Campito Refugio ONG**
 
+La app está contruida con React, Redux, Node, Express y MongoAtlas entre otras.
+
 ## Objetivos del Proyecto
 
-- Construir una App utlizando React, Redux, Node y MongoDB entre otras.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Practicar métodos de SCRUM.
+Atar de manera dinámica los contenidos de la interfaz de usuario a información guardada en las tablas de base de datos y que estos puedan ser editados desde el Panel Admin.
+
+Deberán verificar, en principio, las rutas existentes de consulta al Back/DB, y crear las faltantes para crear y guardar los elemento (texto, fotografías, etc) necesarios para renderizar en la interfaz de usuario; y que estás pueda ser cambiado a lo largo del tiempo por personal autorizado de la ONG desde el dashboard de administración. Así también, crear las tablas/schemas en la base de dato para el guardado de los mismo.
+
+La implementación deseada requiere cambios tanto a nivel de Frontend, de Backend y de Base de Datos. Hecho que requiere en una primera instancia recorrer toda la estructura de la app para conocer sus componentes, y comprender que nuevos componentes requieren ser creados, siguiendo las buenas prácticas, una arquitectura lógica y ordenada, y la mayor claridad para la lectura de proximos equipos de desarrollos que trabajen sobre las aplicación.
 
 <img height="350" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/logoElCampito_za9dew.jpg" />
 
@@ -16,7 +18,13 @@
 
 El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
 
-En `api` podrá encontrar además del archivo `app.js` (para levantar la app y sicronizar con la DB).
+En `api` desde la consola hacer: 
+```env
+npm i
+```
+*Instalara las dependencias para el Back desde `package.json`.
+
+En `api` podrá encontrar además del archivo `index.js` (para levantar la app y sicronizar con la DB), un archivo `app.js` con los midlewares iniciales. 
 Además encontramos los folders:
 
 - [config] ---> aquí se configura la base de datos usando la dependencia Mongoose.
@@ -48,15 +56,27 @@ PAYPAL_API=https://api-m.sandbox.paypal.com
 
 El contenido de `client` fue creado usando: Create React App, y revestido de las dependencias necesarias para implementar Redux.
 
+En `api` desde la consola hacer: 
+```env
+npm i
+```
+*Instalara las dependencias para el Front desde `package.json`.
+
 En `client` podrá encontrar, dentro de `src`, además del archivo `index.js` (con el ReactDOM) y `app` (con las rutas del front), los siguientes folders:
 
 - [assets] ---> para incorporar todo tipo de archivo multimedia (imagenes, videos, tutoriales, audios).
 - [components] ---> modularizamos aqui todos los componentes.
-- [hooks] ---> además de todos los hooks nativos de `react` podemos crear nuestros propios hooks funcionales que realicen alguna acción dentro de los componente, pero que extraemos el código y lo ponemos aquí para no recargar el componente y que quede por demás extenso. En la medida de lo posible, la lógica siempre fuera del componente.
 - [redux] ---> aqui `actions.js`, `reducer.js` y `store.js` para el manejo de un store global.
-- [styles] ---> aquí todos los archivos de estilos modularizados que serán llamados luego por los componentes.
 
 <img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/front_bwpmeg.png" />
+
+#### dentro de /components
+
+- [ ControlledActions ] ---> componentes con un grado de control como login, register, etc.
+- [ Forms ] ---> formularios para la interrelación con el usuario.
+- [ ReactAdmin ] ---> componentes que conforman el Panel de Administrador.
+- [ UserInterface ] ---> componentes de la interfaz de usuario.
+- y otros...
 
 ## **Branches**
 
@@ -96,7 +116,7 @@ El administrador podrá, a través de un panel de administración, incorporar di
 - [ ] React
 - [ ] Redux
 - [ ] Express
-- [ ] MongoDB - Mongoose
+- [ ] MongoAtlas - Mongoose
 
 #### Plataformas de apoyo organizacional
 
@@ -120,22 +140,9 @@ El administrador podrá, a través de un panel de administración, incorporar di
 - [ ] Al menos tener 5 rutas del backend con sus tests respectivos
 - [ ] Al menos tener 5 modelos de la base de datos con sus tests respectivos
 
-# Equipo de Desarrollo: DINAMO
+# Equipo de Desarrollo: 
 
-- Paula Speciale : paulaspeciale paulaspeciale@gmail.com
-      https://www.linkedin.com/in/paula-speciale-b834b826/
-- Enzo Calvi : e1eternauta enzocalvi243@gmail.com
-      https://www.linkedin.com/in/enzo-calvi-564388213/
-- Joseph Villalba Osorio : reuht jhosephvillalba@gmail.com
-      https://www.linkedin.com/in/joseph-villalba-6889b795/
-- Matías Dentoni: SoyDento matiasdentoni@gmail.com
-      https://www.linkedin.com/in/matiasdentoni/
-- Ariel Cazzulino Hartvig : arielcazzulino arielcazzulino@gmail.com
-      https://www.linkedin.com/in/ariel-cazzulino-hartvig/
-- Jorge Chacin : Jorge12chacin jorge12chacin@gmail.com
-      https://www.linkedin.com/in/jorge-chacin-615072b2/
-- Nicolas Oviedo: Nicovied0 briannoviedo@gmail.com
-      https://www.linkedin.com/in/nicoboviedo/
+...
 
 ## **views**
 
@@ -150,7 +157,7 @@ Algunas vistas de diseño mobile...
 <img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-14-07-769_com.mi.globalbrowser_fgmt4a.jpg" />
 <img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671748721/refugio/mobile/Screenshot_2022-12-21-09-13-12-754_com.mi.globalbrowser_dgkehb.jpg" />
 
-## Diagrama de relaciones de la DB
+## Diagrama de relaciones de la DB hasta diciembre de 2022
 
 La app contara con una base de datos dinamica que permitira almacenar datos y relacionarlos de manera tal de presentar al administrador información útil y sensible para asistirlo en sus funciones organizacionales.
 
@@ -159,6 +166,13 @@ La app contara con una base de datos dinamica que permitira almacenar datos y re
 ## Panel de Aministrador
 
 Desde el Panel de Administrador podrán consultar todas las tables de la base de dato, crear nuevos input y editarlos en caso de requerir modificaciones.
+
+```env
+USUARIO DE PRUEBA PARA EL PANEL DE ADMINISTRACIÓN:
+
+usuarioAdministradorDev@gmail.com
+Pass: admin123
+```
 
 <img height="400" src="https://res.cloudinary.com/dakezkhho/image/upload/v1671750561/refugio/readme/admin_mayyzz.jpg" />
 
